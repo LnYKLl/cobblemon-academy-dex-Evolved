@@ -2,21 +2,46 @@
   "id": "flapple",
   "dexnum": 841,
   "name": "Flapple",
+  "nameFr": "Pomdrapi",
+  "description": "Il a évolué après avoir mangé une pomme acide. Il concentre dans ses joues un liquide si corrosif qu'il peut provoquer des brûlures.",
   "primaryType": "grass",
   "secondaryType": "dragon",
+  "primaryTypeFr": "Plante",
+  "secondaryTypeFr": "Dragon",
+  "height": 3,
+  "weight": 10,
   "maleRatio": 0.5,
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 0.8,
+    "height": 1.5,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "ripen",
-    "gluttony",
-    "h:hustle"
+    {
+      "id": "ripen",
+      "name": "Mûrissement",
+      "hidden": false
+    },
+    {
+      "id": "gluttony",
+      "name": "Gloutonnerie",
+      "hidden": false
+    },
+    {
+      "id": "hustle",
+      "name": "Agitation",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "grass",
     "dragon"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 70,
     "attack": 110,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 170,
   "experienceGroup": "erratic",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -42,130 +69,457 @@
         "item": "minecraft:apple",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:apple"
       },
       {
         "item": "cobblemon:yache_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Nanone"
       }
     ]
   },
   "moves": [
-    "1:wingattack",
-    "1:recycle",
-    "1:withdraw",
-    "1:astonish",
-    "1:growth",
-    "1:twister",
-    "4:acidspray",
-    "8:acrobatics",
-    "12:leechseed",
-    "16:protect",
-    "20:dragonbreath",
-    "24:dragondance",
-    "28:dragonpulse",
-    "32:gravapple",
-    "36:irondefense",
-    "40:fly",
-    "44:dragonrush",
-    "egg:defensecurl",
-    "egg:recycle",
-    "egg:rollout",
-    "egg:suckerpunch",
-    "tm:acidspray",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:airslash",
-    "tm:bulletseed",
-    "tm:dracometeor",
-    "tm:dragondance",
-    "tm:dragonpulse",
-    "tm:dualwingbeat",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:fly",
-    "tm:focusenergy",
-    "tm:gigadrain",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:grassyglide",
-    "tm:grassyterrain",
-    "tm:heavyslam",
-    "tm:hyperbeam",
-    "tm:irondefense",
-    "tm:leafstorm",
-    "tm:magicalleaf",
-    "tm:outrage",
-    "tm:pounce",
-    "tm:protect",
-    "tm:recycle",
-    "tm:rest",
-    "tm:rollout",
-    "tm:scaryface",
-    "tm:seedbomb",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:sunnyday",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:trailblaze",
-    "tm:twister",
-    "tm:uturn",
-    "tutor:aerialace",
-    "tutor:dracometeor",
-    "tutor:dragonpulse",
-    "tutor:dualwingbeat",
-    "tutor:endeavor",
-    "tutor:energyball",
-    "tutor:focusenergy",
-    "tutor:gigadrain",
-    "tutor:gigaimpact",
-    "tutor:grassyglide",
-    "tutor:hyperbeam",
-    "tutor:irondefense",
-    "tutor:magicalleaf",
-    "tutor:outrage",
-    "tutor:recycle",
-    "tutor:rest",
-    "tutor:rollout",
-    "tutor:seedbomb",
-    "tutor:sleeptalk",
-    "tutor:suckerpunch",
-    "tutor:twister"
+    {
+      "id": "wingattack",
+      "name": "Cru-Ailes",
+      "category": "1"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "1"
+    },
+    {
+      "id": "withdraw",
+      "name": "Repli",
+      "category": "1"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "1"
+    },
+    {
+      "id": "growth",
+      "name": "Croissance",
+      "category": "1"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "1"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "4"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "8"
+    },
+    {
+      "id": "leechseed",
+      "name": "Vampigraine",
+      "category": "12"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "16"
+    },
+    {
+      "id": "dragonbreath",
+      "name": "Draco-Souffle",
+      "category": "20"
+    },
+    {
+      "id": "dragondance",
+      "name": "Danse Draco",
+      "category": "24"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "28"
+    },
+    {
+      "id": "gravapple",
+      "name": "Force G",
+      "category": "32"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "36"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "40"
+    },
+    {
+      "id": "dragonrush",
+      "name": "Draco-Charge",
+      "category": "44"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "egg"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "egg"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "egg"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "egg"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "tm"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tm"
+    },
+    {
+      "id": "dragondance",
+      "name": "Danse Draco",
+      "category": "tm"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "tm"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "leafstorm",
+      "name": "Tempête Verte",
+      "category": "tm"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [
     "Gmax"
   ],
-  "types": [],
   "evolutions": [],
-  "spawns": [
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 3.2,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_starlight_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/rare_is_starlight_forest.json"
-      }
-    ]
-  ],
-  "implemented": false,
+  "preEvolution": "applin",
+  "spawns": [],
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/flapple.png"
@@ -175,6 +529,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/flapple.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/flapple.json"
   ]
 }

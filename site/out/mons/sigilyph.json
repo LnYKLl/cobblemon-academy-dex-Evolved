@@ -2,20 +2,45 @@
   "id": "sigilyph",
   "dexnum": 561,
   "name": "Sigilyph",
+  "nameFr": "Cryptéro",
+  "description": "Dieu protecteur d'une ville antique, il suivait toujours le même itinéraire afin de prévenir tout risque d'invasion.",
   "primaryType": "psychic",
   "secondaryType": "flying",
+  "primaryTypeFr": "Psy",
+  "secondaryTypeFr": "Vol",
+  "height": 14,
+  "weight": 140,
   "maleRatio": 0.5,
+  "baseScale": 0.85,
+  "hitbox": {
+    "width": 1,
+    "height": 2.3,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "wonderskin",
-    "magicguard",
-    "h:tintedlens"
+    {
+      "id": "wonderskin",
+      "name": "Peau Miracle",
+      "hidden": false
+    },
+    {
+      "id": "magicguard",
+      "name": "Garde Magik",
+      "hidden": false
+    },
+    {
+      "id": "tintedlens",
+      "name": "Lentiteintée",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "flying"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 72,
     "attack": 58,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 172,
   "experienceGroup": "medium_fast",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,148 +68,690 @@
         "item": "minecraft:ender_pearl",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:ender_pearl"
       },
       {
         "item": "cobblemon:light_clay",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Lumargile"
       },
       {
         "item": "cobblemon:colbur_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Lampou"
       }
     ]
   },
   "moves": [
-    "1:gust",
-    "1:miracleeye",
-    "1:psywave",
-    "1:synchronoise",
-    "1:mirrormove",
-    "1:confusion",
-    "5:gravity",
-    "10:hypnosis",
-    "15:aircutter",
-    "20:psybeam",
-    "25:whirlwind",
-    "30:cosmicpower",
-    "35:airslash",
-    "40:psychic",
-    "45:tailwind",
-    "50:lightscreen",
-    "50:reflect",
-    "55:skyattack",
-    "60:skillswap",
-    "egg:ancientpower",
-    "egg:psychoshift",
-    "egg:roost",
-    "tm:aerialace",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:ancientpower",
-    "tm:calmmind",
-    "tm:chargebeam",
-    "tm:cosmicpower",
-    "tm:darkpulse",
-    "tm:dazzlinggleam",
-    "tm:defog",
-    "tm:dreameater",
-    "tm:dualwingbeat",
-    "tm:endure",
-    "tm:energyball",
-    "tm:expandingforce",
-    "tm:facade",
-    "tm:flash",
-    "tm:flashcannon",
-    "tm:fly",
-    "tm:futuresight",
-    "tm:gigaimpact",
-    "tm:gravity",
-    "tm:heatwave",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:imprison",
-    "tm:lightscreen",
-    "tm:magiccoat",
-    "tm:magicroom",
-    "tm:pluck",
-    "tm:powerswap",
-    "tm:protect",
-    "tm:psybeam",
-    "tm:psychic",
-    "tm:psychocut",
-    "tm:psychup",
-    "tm:psyshock",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:roost",
-    "tm:safeguard",
-    "tm:shadowball",
-    "tm:shockwave",
-    "tm:signalbeam",
-    "tm:skillswap",
-    "tm:skyattack",
-    "tm:sleeptalk",
-    "tm:smackdown",
-    "tm:solarbeam",
-    "tm:speedswap",
-    "tm:steelwing",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:swift",
-    "tm:tailwind",
-    "tm:telekinesis",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunderwave",
-    "tm:trick",
-    "tm:trickroom",
-    "tm:zenheadbutt",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:ancientpower",
-    "tutor:calmmind",
-    "tutor:chargebeam",
-    "tutor:darkpulse",
-    "tutor:dazzlinggleam",
-    "tutor:defog",
-    "tutor:dualwingbeat",
-    "tutor:energyball",
-    "tutor:expandingforce",
-    "tutor:flashcannon",
-    "tutor:gigaimpact",
-    "tutor:gravity",
-    "tutor:heatwave",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:magiccoat",
-    "tutor:magicroom",
-    "tutor:psychic",
-    "tutor:psychocut",
-    "tutor:rest",
-    "tutor:roost",
-    "tutor:shadowball",
-    "tutor:shockwave",
-    "tutor:signalbeam",
-    "tutor:skillswap",
-    "tutor:skyattack",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:tailwind",
-    "tutor:telekinesis",
-    "tutor:trick",
-    "tutor:zenheadbutt"
+    {
+      "id": "gust",
+      "name": "Tornade",
+      "category": "1"
+    },
+    {
+      "id": "miracleeye",
+      "name": "Œil Miracle",
+      "category": "1"
+    },
+    {
+      "id": "psywave",
+      "name": "Vague Psy",
+      "category": "1"
+    },
+    {
+      "id": "synchronoise",
+      "name": "Synchropeine",
+      "category": "1"
+    },
+    {
+      "id": "mirrormove",
+      "name": "Mimique",
+      "category": "1"
+    },
+    {
+      "id": "confusion",
+      "name": "Choc Mental",
+      "category": "1"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "5"
+    },
+    {
+      "id": "hypnosis",
+      "name": "Hypnose",
+      "category": "10"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "15"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "20"
+    },
+    {
+      "id": "whirlwind",
+      "name": "Cyclone",
+      "category": "25"
+    },
+    {
+      "id": "cosmicpower",
+      "name": "Force Cosmique",
+      "category": "30"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "35"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "40"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "45"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "50"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "50"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "55"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "60"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "egg"
+    },
+    {
+      "id": "psychoshift",
+      "name": "Échange Psy",
+      "category": "egg"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "cosmicpower",
+      "name": "Force Cosmique",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "expandingforce",
+      "name": "Vaste Pouvoir",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "futuresight",
+      "name": "Prescience",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tm"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tm"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "tm"
+    },
+    {
+      "id": "powerswap",
+      "name": "Permuforce",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tm"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "speedswap",
+      "name": "Permuvitesse",
+      "category": "tm"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "expandingforce",
+      "name": "Vaste Pouvoir",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tutor"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -192,23 +761,24 @@
         "rarity": "uncommon",
         "weight": 60.0,
         "levels": "24-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_badlands",
             "#cobblemon:is_desert"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0561_sigilyph.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0561_sigilyph.json",
+        "spawnId": "sigilyph-1",
         "structures": [
           "#cobblemon:ruin"
         ],
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "sigilyph",
+        "type": "pokemon"
       }
     ],
     [
@@ -220,22 +790,23 @@
         "rarity": "common",
         "weight": 60.0,
         "levels": "24-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0561_sigilyph.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0561_sigilyph.json",
+        "spawnId": "sigilyph-2",
         "structures": [
           "minecraft:desert_well"
         ],
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "sigilyph",
+        "type": "pokemon"
       }
     ],
     [
@@ -247,19 +818,20 @@
         "rarity": "common",
         "weight": 60.0,
         "levels": "24-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0561_sigilyph.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0561_sigilyph.json",
+        "spawnId": "sigilyph-3",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "sigilyph",
+        "type": "pokemon"
       }
     ],
     [
@@ -270,19 +842,20 @@
         "rarity": "common",
         "weight": 60.0,
         "levels": "24-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0561_sigilyph.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0561_sigilyph.json",
+        "spawnId": "sigilyph-4",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "sigilyph",
+        "type": "pokemon"
       }
     ],
     [
@@ -294,15 +867,16 @@
         "rarity": "uncommon",
         "weight": 6.0,
         "levels": "24-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_end"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0561_sigilyph.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0561_sigilyph.json",
+        "spawnId": "sigilyph-5",
+        "spawnType": "grounded",
+        "pokemon": "sigilyph",
+        "type": "pokemon"
       }
     ],
     [
@@ -310,18 +884,19 @@
         "rarity": "uncommon",
         "weight": 10.0,
         "levels": "24-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0561_sigilyph.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0561_sigilyph.json",
+        "spawnId": "sigilyph-7",
         "structures": [
           "#aether:dungeons"
-        ]
+        ],
+        "spawnType": "grounded",
+        "pokemon": "sigilyph",
+        "type": "pokemon"
       }
     ],
     [
@@ -329,34 +904,19 @@
         "rarity": "common",
         "weight": 6.0,
         "levels": "24-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "the_bumblezone:howling_constructs"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0561_sigilyph.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0561_sigilyph.json",
+        "spawnId": "sigilyph-8",
+        "spawnType": "grounded",
+        "pokemon": "sigilyph",
+        "excludeStructures": [
+          "#the_bumblezone:sempiternal_sanctums"
         ],
-        "rarity": "rare",
-        "weight": 7.7,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/rare_crystallized_desert.json"
+        "type": "pokemon"
       }
     ]
   ],
@@ -370,6 +930,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/sigilyph.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/sigilyph.json"
   ]
 }

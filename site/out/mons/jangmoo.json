@@ -2,20 +2,45 @@
   "id": "jangmoo",
   "dexnum": 782,
   "name": "Jangmo-o",
+  "nameFr": "Bébécaille",
+  "description": "Il ne tourne jamais le dos à son adversaire en combat. Les guerriers d'autrefois s'en faisaient un compagnon, car ils appréciaient sa bravoure.",
   "primaryType": "dragon",
   "secondaryType": "",
+  "primaryTypeFr": "Dragon",
+  "secondaryTypeFr": "",
+  "height": 6,
+  "weight": 297,
   "maleRatio": 0.5,
+  "baseScale": 0.75,
+  "hitbox": {
+    "width": 0.75,
+    "height": 1.2,
+    "fixed": false
+  },
   "labels": [
     "gen7"
   ],
   "abilities": [
-    "bulletproof",
-    "soundproof",
-    "h:overcoat"
+    {
+      "id": "bulletproof",
+      "name": "Pare-Balles",
+      "hidden": false
+    },
+    {
+      "id": "soundproof",
+      "name": "Anti-Bruit",
+      "hidden": false
+    },
+    {
+      "id": "overcoat",
+      "name": "Envelocape",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "dragon"
   ],
+  "eggCycles": 40,
   "baseStats": {
     "hp": 45,
     "attack": 55,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 60,
   "experienceGroup": "slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,109 +68,508 @@
         "item": "cobblemon:dragon_scale",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "Écaille Draco"
       },
       {
         "item": "cobblemon:razor_claw",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Griffe Rasoir"
       },
       {
         "item": "cobblemon:roseli_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Selro"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:leer",
-    "1:bide",
-    "4:protect",
-    "8:dragontail",
-    "12:scaryface",
-    "16:headbutt",
-    "20:workup",
-    "24:screech",
-    "28:irondefense",
-    "32:dragonclaw",
-    "36:nobleroar",
-    "40:dragondance",
-    "44:outrage",
-    "egg:counter",
-    "egg:dragonbreath",
-    "egg:focuspunch",
-    "tm:aquatail",
-    "tm:bodyslam",
-    "tm:breakingswipe",
-    "tm:brickbreak",
-    "tm:bulkup",
-    "tm:bulldoze",
-    "tm:dracometeor",
-    "tm:dragoncheer",
-    "tm:dragonclaw",
-    "tm:dragondance",
-    "tm:dragonpulse",
-    "tm:dragontail",
-    "tm:dualchop",
-    "tm:earthquake",
-    "tm:echoedvoice",
-    "tm:endure",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:focusblast",
-    "tm:focuspunch",
-    "tm:headbutt",
-    "tm:irondefense",
-    "tm:ironhead",
-    "tm:irontail",
-    "tm:lowkick",
-    "tm:outrage",
-    "tm:payback",
-    "tm:protect",
-    "tm:rest",
-    "tm:reversal",
-    "tm:roar",
-    "tm:rockslide",
-    "tm:rocktomb",
-    "tm:safeguard",
-    "tm:sandstorm",
-    "tm:scaleshot",
-    "tm:scaryface",
-    "tm:screech",
-    "tm:shadowclaw",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:workup",
-    "tm:xscissor",
-    "tutor:aquatail",
-    "tutor:bulkup",
-    "tutor:bulldoze",
-    "tutor:dracometeor",
-    "tutor:dragonpulse",
-    "tutor:dualchop",
-    "tutor:falseswipe",
-    "tutor:focuspunch",
-    "tutor:irondefense",
-    "tutor:ironhead",
-    "tutor:irontail",
-    "tutor:lowkick",
-    "tutor:outrage",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:scaleshot",
-    "tutor:shadowclaw",
-    "tutor:sleeptalk",
-    "tutor:xscissor"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "1"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "4"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "8"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "12"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "16"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "20"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "24"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "28"
+    },
+    {
+      "id": "dragonclaw",
+      "name": "Draco-Griffe",
+      "category": "32"
+    },
+    {
+      "id": "nobleroar",
+      "name": "Râle Mâle",
+      "category": "36"
+    },
+    {
+      "id": "dragondance",
+      "name": "Danse Draco",
+      "category": "40"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "44"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "egg"
+    },
+    {
+      "id": "dragonbreath",
+      "name": "Draco-Souffle",
+      "category": "egg"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "egg"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "breakingswipe",
+      "name": "Abattage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tm"
+    },
+    {
+      "id": "dragoncheer",
+      "name": "Cri Draconique",
+      "category": "tm"
+    },
+    {
+      "id": "dragonclaw",
+      "name": "Draco-Griffe",
+      "category": "tm"
+    },
+    {
+      "id": "dragondance",
+      "name": "Danse Draco",
+      "category": "tm"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tm"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "dualchop",
+      "name": "Double Baffe",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "focusblast",
+      "name": "Exploforce",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "dualchop",
+      "name": "Double Baffe",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "legacy"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "jangmoo_hakamoo",
@@ -161,6 +587,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -171,15 +598,16 @@
         "rarity": "ultra-rare",
         "weight": 6.0,
         "levels": "5-30",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_jungle"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0782_jangmoo.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0782_jangmoo.json",
+        "spawnId": "jangmoo-1",
+        "spawnType": "grounded",
+        "pokemon": "jangmoo",
+        "type": "pokemon"
       }
     ],
     [
@@ -191,34 +619,16 @@
         "rarity": "rare",
         "weight": 7.5,
         "levels": "5-30",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_tropical_island"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0782_jangmoo.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "ultra-rare",
-        "weight": 6.9,
-        "levels": "31-48",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/ultra-rare_scarlet_forest.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0782_jangmoo.json",
+        "spawnId": "jangmoo-2",
+        "spawnType": "grounded",
+        "pokemon": "jangmoo",
+        "type": "pokemon"
       }
     ]
   ],
@@ -232,6 +642,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/jangmoo.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/jangmoo.json"
   ]
 }

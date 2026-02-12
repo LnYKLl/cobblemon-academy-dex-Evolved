@@ -2,20 +2,45 @@
   "id": "flittle",
   "dexnum": 955,
   "name": "Flittle",
+  "nameFr": "Flotillon",
+  "description": "Il lévite à un centimètre du sol grâce à l'énergie psychique qui émane des volants de son abdomen.",
   "primaryType": "psychic",
   "secondaryType": "",
+  "primaryTypeFr": "Psy",
+  "secondaryTypeFr": "",
+  "height": 2,
+  "weight": 15,
   "maleRatio": 0.5,
+  "baseScale": 0.45,
+  "hitbox": {
+    "width": 1,
+    "height": 1.3,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "anticipation",
-    "frisk",
-    "h:speedboost"
+    {
+      "id": "anticipation",
+      "name": "Anticipation",
+      "hidden": false
+    },
+    {
+      "id": "frisk",
+      "name": "Fouille",
+      "hidden": false
+    },
+    {
+      "id": "speedboost",
+      "name": "Turbo",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "flying"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 30,
     "attack": 35,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 51,
   "experienceGroup": "medium_slow",
   "catchRate": 120,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,89 +68,366 @@
         "item": "minecraft:chicken",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:chicken"
       },
       {
         "item": "cobblemon:tanga_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Panga"
       }
     ]
   },
   "moves": [
-    "1:growl",
-    "1:peck",
-    "5:confusion",
-    "8:babydolleyes",
-    "11:disarmingvoice",
-    "15:quickattack",
-    "19:psybeam",
-    "24:pluck",
-    "29:agility",
-    "34:uproar",
-    "egg:allyswitch",
-    "egg:hypnosis",
-    "egg:roost",
-    "tm:agility",
-    "tm:allyswitch",
-    "tm:babydolleyes",
-    "tm:batonpass",
-    "tm:calmmind",
-    "tm:confuseray",
-    "tm:disarmingvoice",
-    "tm:endure",
-    "tm:facade",
-    "tm:foulplay",
-    "tm:helpinghand",
-    "tm:lightscreen",
-    "tm:mudslap",
-    "tm:pluck",
-    "tm:pounce",
-    "tm:protect",
-    "tm:psybeam",
-    "tm:psychic",
-    "tm:psychicterrain",
-    "tm:psyshock",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:roost",
-    "tm:sandstorm",
-    "tm:seedbomb",
-    "tm:skillswap",
-    "tm:sleeptalk",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:trick",
-    "tm:trickroom",
-    "tm:uproar",
-    "tm:uturn",
-    "tm:zenheadbutt",
-    "tutor:allyswitch",
-    "tutor:babydolleyes",
-    "tutor:calmmind",
-    "tutor:foulplay",
-    "tutor:helpinghand",
-    "tutor:mudslap",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:roost",
-    "tutor:seedbomb",
-    "tutor:skillswap",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:trick",
-    "tutor:uproar",
-    "tutor:zenheadbutt"
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "peck",
+      "name": "Picpic",
+      "category": "1"
+    },
+    {
+      "id": "confusion",
+      "name": "Choc Mental",
+      "category": "5"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "8"
+    },
+    {
+      "id": "disarmingvoice",
+      "name": "Voix Enjôleuse",
+      "category": "11"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "15"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "19"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "24"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "29"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "34"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "egg"
+    },
+    {
+      "id": "hypnosis",
+      "name": "Hypnose",
+      "category": "egg"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "disarmingvoice",
+      "name": "Voix Enjôleuse",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psychicterrain",
+      "name": "Champ Psychique",
+      "category": "tm"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "flittle_espathra",
@@ -141,6 +445,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -151,38 +456,26 @@
         "rarity": "uncommon",
         "weight": 5.04,
         "levels": "1-26",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_arid"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0955_flittle.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0955_flittle.json",
+        "spawnId": "flittle-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 3.1,
-        "levels": "3-18",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/common_crystallized_desert.json"
+        "spawnType": "grounded",
+        "pokemon": "flittle",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
       }
     ]
   ],
@@ -196,6 +489,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/flittle.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/flittle.json"
   ]
 }

@@ -2,19 +2,40 @@
   "id": "pineco",
   "dexnum": 204,
   "name": "Pineco",
+  "nameFr": "Pomdepik",
+  "description": "Pomdepik s'accroche à une branche d'arbre et attend patiemment que sa proie passe. Si ce Pokémon est dérangé pendant qu'il mange par quelqu'un qui secoue son arbre, il tombe au sol et explose sans prévenir.",
   "primaryType": "bug",
   "secondaryType": "",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "",
+  "height": 6,
+  "weight": 72,
   "maleRatio": 0.5,
+  "baseScale": 0.75,
+  "hitbox": {
+    "width": 0.9,
+    "height": 0.95,
+    "fixed": false
+  },
   "labels": [
     "gen2"
   ],
   "abilities": [
-    "sturdy",
-    "h:overcoat"
+    {
+      "id": "sturdy",
+      "name": "Fermeté",
+      "hidden": false
+    },
+    {
+      "id": "overcoat",
+      "name": "Envelocape",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 50,
     "attack": 65,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 58,
   "experienceGroup": "medium_fast",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -40,123 +63,593 @@
         "item": "minecraft:string",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:string"
       },
       {
         "item": "cobblemon:occa_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Chocco"
       },
       {
         "item": "cobblemon:iron_ball",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Balle Fer"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:protect",
-    "6:selfdestruct",
-    "9:bugbite",
-    "12:takedown",
-    "17:rapidspin",
-    "20:bide",
-    "23:naturalgift",
-    "28:spikes",
-    "31:payback",
-    "34:explosion",
-    "39:irondefense",
-    "42:gyroball",
-    "45:doubleedge",
-    "egg:counter",
-    "egg:flail",
-    "egg:pinmissile",
-    "egg:powertrick",
-    "egg:sandtomb",
-    "egg:swift",
-    "egg:toxicspikes",
-    "tm:autotomize",
-    "tm:bodyslam",
-    "tm:bugbite",
-    "tm:bugbuzz",
-    "tm:bulldoze",
-    "tm:curse",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:drillrun",
-    "tm:endure",
-    "tm:explosion",
-    "tm:facade",
-    "tm:gigadrain",
-    "tm:gravity",
-    "tm:gyroball",
-    "tm:headbutt",
-    "tm:helpinghand",
-    "tm:icespinner",
-    "tm:irondefense",
-    "tm:lightscreen",
-    "tm:lunge",
-    "tm:naturalgift",
-    "tm:painsplit",
-    "tm:payback",
-    "tm:pinmissile",
-    "tm:poisonjab",
-    "tm:pounce",
-    "tm:protect",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:revenge",
-    "tm:reversal",
-    "tm:rockblast",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:rollout",
-    "tm:sandstorm",
-    "tm:sandtomb",
-    "tm:seedbomb",
-    "tm:selfdestruct",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:spikes",
-    "tm:stealthrock",
-    "tm:strength",
-    "tm:stringshot",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:toxicspikes",
-    "tm:venoshock",
-    "tutor:bugbite",
-    "tutor:bulldoze",
-    "tutor:drillrun",
-    "tutor:gigadrain",
-    "tutor:gravity",
-    "tutor:helpinghand",
-    "tutor:irondefense",
-    "tutor:painsplit",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:rollout",
-    "tutor:seedbomb",
-    "tutor:sleeptalk",
-    "tutor:spikes",
-    "tutor:stealthrock",
-    "tutor:stringshot",
-    "tutor:swift",
-    "tutor:trick"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "1"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "6"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "9"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "12"
+    },
+    {
+      "id": "rapidspin",
+      "name": "Tour Rapide",
+      "category": "17"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "20"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "23"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "28"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "31"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "34"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "39"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "42"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "45"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "egg"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "egg"
+    },
+    {
+      "id": "pinmissile",
+      "name": "Dard-Nuée",
+      "category": "egg"
+    },
+    {
+      "id": "powertrick",
+      "name": "Astuce Force",
+      "category": "egg"
+    },
+    {
+      "id": "sandtomb",
+      "name": "Tourbi-Sable",
+      "category": "egg"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "egg"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "egg"
+    },
+    {
+      "id": "autotomize",
+      "name": "Allègement",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "tm"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "icespinner",
+      "name": "Cryo-Pirouette",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "tm"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "pinmissile",
+      "name": "Dard-Nuée",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "sandtomb",
+      "name": "Tourbi-Sable",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "sweetscent",
+      "name": "Doux Parfum",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "refresh",
+      "name": "Régénération",
+      "category": "special"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "pineco_forretress",
@@ -174,30 +667,9 @@
           "minLevel": 31
         }
       ]
-    },
-    {
-      "id": "pineco_forretressshulker",
-      "variant": "level_up",
-      "result": "forretress shulker",
-      "consumeHeldItem": true,
-      "permanent": true,
-      "learnableMoves": [
-        "mirrorshot",
-        "autotomize",
-        "heavyslam"
-      ],
-      "requirements": [
-        {
-          "variant": "level",
-          "minLevel": 31
-        },
-        {
-          "variant": "held_item",
-          "itemCondition": "minecraft:shulker_shell"
-        }
-      ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -208,38 +680,20 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "4-29",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_taiga"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0204_pineco.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0204_pineco.json",
+        "spawnId": "pineco-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 3.7,
-        "levels": "4-18",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/common_scarlet_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "pineco",
+        "type": "pokemon"
       }
     ]
   ],
@@ -253,6 +707,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation2/pineco.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation2/pineco.json"
   ]
 }

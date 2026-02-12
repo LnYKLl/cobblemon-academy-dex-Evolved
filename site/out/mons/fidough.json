@@ -2,20 +2,41 @@
   "id": "fidough",
   "dexnum": 926,
   "name": "Fidough",
+  "nameFr": "Pâtachiot",
+  "description": "Ce Pokémon est moite et lisse au toucher. Il fait fermenter ce qui se trouve à proximité grâce à la levure que contient son souffle.",
   "primaryType": "fairy",
   "secondaryType": "",
+  "primaryTypeFr": "Fée",
+  "secondaryTypeFr": "",
+  "height": 3,
+  "weight": 109,
   "maleRatio": 0.5,
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 1.1,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "owntempo",
-    "h:klutz"
+    {
+      "id": "owntempo",
+      "name": "Tempo Perso",
+      "hidden": false
+    },
+    {
+      "id": "klutz",
+      "name": "Maladresse",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field",
     "mineral"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 37,
     "attack": 55,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 62,
   "experienceGroup": "medium_slow",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,94 +64,386 @@
         "item": "minecraft:bread",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:bread"
       },
       {
         "item": "cobblemon:nanab_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Nanab"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:growl",
-    "3:lick",
-    "6:tailwhip",
-    "8:covet",
-    "11:bite",
-    "15:babydolleyes",
-    "18:playrough",
-    "22:workup",
-    "26:batonpass",
-    "30:roar",
-    "33:doubleedge",
-    "36:charm",
-    "40:crunch",
-    "45:lastresort",
-    "egg:copycat",
-    "egg:howl",
-    "egg:sweetscent",
-    "egg:wish",
-    "egg:yawn",
-    "tm:agility",
-    "tm:alluringvoice",
-    "tm:babydolleyes",
-    "tm:batonpass",
-    "tm:bodyslam",
-    "tm:charm",
-    "tm:covet",
-    "tm:crunch",
-    "tm:dazzlinggleam",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:firefang",
-    "tm:helpinghand",
-    "tm:icefang",
-    "tm:lastresort",
-    "tm:mistyterrain",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:playrough",
-    "tm:protect",
-    "tm:psychicfangs",
-    "tm:psychup",
-    "tm:raindance",
-    "tm:rest",
-    "tm:roar",
-    "tm:sleeptalk",
-    "tm:snarl",
-    "tm:stompingtantrum",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thunderfang",
-    "tm:trailblaze",
-    "tm:workup",
-    "tutor:babydolleyes",
-    "tutor:covet",
-    "tutor:dazzlinggleam",
-    "tutor:endeavor",
-    "tutor:firefang",
-    "tutor:helpinghand",
-    "tutor:icefang",
-    "tutor:lastresort",
-    "tutor:mudslap",
-    "tutor:playrough",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:sleeptalk",
-    "tutor:snarl",
-    "tutor:stompingtantrum",
-    "tutor:thunderfang"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "lick",
+      "name": "Léchouille",
+      "category": "3"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "6"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "8"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "11"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "15"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "18"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "22"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "26"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "30"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "33"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "36"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "40"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "45"
+    },
+    {
+      "id": "copycat",
+      "name": "Photocopie",
+      "category": "egg"
+    },
+    {
+      "id": "howl",
+      "name": "Grondement",
+      "category": "egg"
+    },
+    {
+      "id": "sweetscent",
+      "name": "Doux Parfum",
+      "category": "egg"
+    },
+    {
+      "id": "wish",
+      "name": "Vœu",
+      "category": "egg"
+    },
+    {
+      "id": "yawn",
+      "name": "Bâillement",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "alluringvoice",
+      "name": "Voix Envoûtante",
+      "category": "tm"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tm"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tm"
+    },
+    {
+      "id": "mistyterrain",
+      "name": "Champ Brumeux",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychicfangs",
+      "name": "Psycho-Croc",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tutor"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "fidough_dachsbun",
@@ -144,6 +459,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -154,19 +470,20 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "6-31",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0926_fidough.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0926_fidough.json",
+        "spawnId": "fidough-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "fidough",
+        "type": "pokemon"
       }
     ],
     [
@@ -177,60 +494,23 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "6-31",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0926_fidough.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0926_fidough.json",
+        "spawnId": "fidough-2",
         "structures": [
           "#minecraft:village"
         ],
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 2.4,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:starlight_permafrost_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/uncommon_starlight_permafrost_forest.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 5.7,
-        "levels": "10-24",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:torreya_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/torreya_forest/common_torreya_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "fidough",
+        "type": "pokemon"
       }
     ]
   ],
@@ -244,6 +524,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/fidough.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/fidough.json"
   ]
 }

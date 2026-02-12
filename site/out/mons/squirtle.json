@@ -2,21 +2,42 @@
   "id": "squirtle",
   "dexnum": 7,
   "name": "Squirtle",
+  "nameFr": "Carapuce",
+  "description": "La carapace de Carapuce ne sert pas qu'à le protéger. La forme ronde de sa carapace et ses rainures lui permettent d'améliorer son hydrodynamisme. Ce Pokémon nage extrêmement vite.",
   "primaryType": "water",
   "secondaryType": "",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "",
+  "height": 5,
+  "weight": 90,
   "maleRatio": 0.875,
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 0.6,
+    "height": 1.2,
+    "fixed": false
+  },
   "labels": [
     "gen1",
     "starter"
   ],
   "abilities": [
-    "torrent",
-    "h:raindish"
+    {
+      "id": "torrent",
+      "name": "Torrent",
+      "hidden": false
+    },
+    {
+      "id": "raindish",
+      "name": "Cuvette",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "monster",
     "water_1"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 44,
     "attack": 48,
@@ -33,8 +54,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 63,
   "experienceGroup": "medium_slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -42,115 +65,496 @@
         "item": "minecraft:turtle_scute",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:turtle_scute"
       },
       {
         "item": "cobblemon:mystic_water",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Eau Mystique"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:tailwhip",
-    "1:bubble",
-    "3:watergun",
-    "6:withdraw",
-    "9:rapidspin",
-    "12:bite",
-    "15:waterpulse",
-    "18:protect",
-    "21:raindance",
-    "24:aquatail",
-    "27:shellsmash",
-    "30:irondefense",
-    "33:hydropump",
-    "36:skullbash",
-    "egg:aquajet",
-    "egg:aquaring",
-    "egg:fakeout",
-    "egg:flail",
-    "egg:foresight",
-    "egg:lifedew",
-    "egg:mirrorcoat",
-    "egg:mist",
-    "egg:mudsport",
-    "egg:refresh",
-    "egg:waterspout",
-    "egg:wavecrash",
-    "egg:yawn",
-    "tm:aquatail",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:brickbreak",
-    "tm:brine",
-    "tm:chillingwater",
-    "tm:dig",
-    "tm:dive",
-    "tm:doubleedge",
-    "tm:endure",
-    "tm:facade",
-    "tm:fling",
-    "tm:flipturn",
-    "tm:focuspunch",
-    "tm:gyroball",
-    "tm:hail",
-    "tm:haze",
-    "tm:headbutt",
-    "tm:helpinghand",
-    "tm:hydropump",
-    "tm:icebeam",
-    "tm:icepunch",
-    "tm:icespinner",
-    "tm:icywind",
-    "tm:irondefense",
-    "tm:irontail",
-    "tm:liquidation",
-    "tm:megakick",
-    "tm:megapunch",
-    "tm:muddywater",
-    "tm:mudshot",
-    "tm:poweruppunch",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:rocksmash",
-    "tm:rollout",
-    "tm:sleeptalk",
-    "tm:strength",
-    "tm:substitute",
-    "tm:surf",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:waterpledge",
-    "tm:waterpulse",
-    "tm:weatherball",
-    "tm:whirlpool",
-    "tm:workup",
-    "tm:zenheadbutt",
-    "tutor:aquatail",
-    "tutor:dive",
-    "tutor:flipturn",
-    "tutor:focuspunch",
-    "tutor:helpinghand",
-    "tutor:icebeam",
-    "tutor:icepunch",
-    "tutor:icywind",
-    "tutor:irondefense",
-    "tutor:irontail",
-    "tutor:liquidation",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:rollout",
-    "tutor:sleeptalk",
-    "tutor:waterpledge",
-    "tutor:waterpulse",
-    "tutor:zenheadbutt"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "1"
+    },
+    {
+      "id": "bubble",
+      "name": "Écume",
+      "category": "1"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "3"
+    },
+    {
+      "id": "withdraw",
+      "name": "Repli",
+      "category": "6"
+    },
+    {
+      "id": "rapidspin",
+      "name": "Tour Rapide",
+      "category": "9"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "12"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "15"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "18"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "21"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "24"
+    },
+    {
+      "id": "shellsmash",
+      "name": "Exuviation",
+      "category": "27"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "30"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "33"
+    },
+    {
+      "id": "skullbash",
+      "name": "Coud'Krâne",
+      "category": "36"
+    },
+    {
+      "id": "aquajet",
+      "name": "Aqua-Jet",
+      "category": "egg"
+    },
+    {
+      "id": "aquaring",
+      "name": "Anneau Hydro",
+      "category": "egg"
+    },
+    {
+      "id": "fakeout",
+      "name": "Bluff",
+      "category": "egg"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "egg"
+    },
+    {
+      "id": "foresight",
+      "name": "Clairvoyance",
+      "category": "egg"
+    },
+    {
+      "id": "lifedew",
+      "name": "Fontaine de Vie",
+      "category": "egg"
+    },
+    {
+      "id": "mirrorcoat",
+      "name": "Voile Miroir",
+      "category": "egg"
+    },
+    {
+      "id": "mist",
+      "name": "Brume",
+      "category": "egg"
+    },
+    {
+      "id": "mudsport",
+      "name": "Lance-Boue",
+      "category": "egg"
+    },
+    {
+      "id": "refresh",
+      "name": "Régénération",
+      "category": "egg"
+    },
+    {
+      "id": "waterspout",
+      "name": "Giclédo",
+      "category": "egg"
+    },
+    {
+      "id": "wavecrash",
+      "name": "Aquatacle",
+      "category": "egg"
+    },
+    {
+      "id": "yawn",
+      "name": "Bâillement",
+      "category": "egg"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "flipturn",
+      "name": "Eau Revoir",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icespinner",
+      "name": "Cryo-Pirouette",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "megakick",
+      "name": "Ultimawashi",
+      "category": "tm"
+    },
+    {
+      "id": "megapunch",
+      "name": "Ultimapoing",
+      "category": "tm"
+    },
+    {
+      "id": "muddywater",
+      "name": "Ocroupi",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "poweruppunch",
+      "name": "Poing Boost",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "waterpledge",
+      "name": "Aire d'Eau",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tutor"
+    },
+    {
+      "id": "flipturn",
+      "name": "Eau Revoir",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpledge",
+      "name": "Aire d'Eau",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "squirtle_wartortle",
@@ -166,6 +570,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -175,9 +580,6 @@
         "rarity": "ultra-rare",
         "weight": 6.0,
         "levels": "5-31",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_freshwater",
@@ -190,19 +592,20 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0007_squirtle.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0007_squirtle.json",
+        "spawnId": "squirtle-1",
         "nearbyBlocks": {
           "selectors": [
-            "#minecraft:water"
-          ],
-          "resolved": [
-            "#minecraft:water"
+            "minecraft:water"
           ]
         },
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "squirtle",
+        "type": "pokemon"
       }
     ],
     [
@@ -213,9 +616,6 @@
         "rarity": "ultra-rare",
         "weight": 6.0,
         "levels": "5-31",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_freshwater",
@@ -228,10 +628,14 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0007_squirtle.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0007_squirtle.json",
+        "spawnId": "squirtle-2",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "squirtle",
+        "type": "pokemon"
       }
     ],
     [
@@ -239,9 +643,6 @@
         "rarity": "ultra-rare",
         "weight": 6.0,
         "levels": "5-31",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_freshwater",
@@ -254,10 +655,14 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0007_squirtle.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0007_squirtle.json",
+        "spawnId": "squirtle-3",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "squirtle",
+        "type": "pokemon"
       }
     ],
     [
@@ -268,9 +673,6 @@
         "rarity": "ultra-rare",
         "weight": 6.0,
         "levels": "5-31",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_freshwater",
@@ -283,12 +685,16 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0007_squirtle.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0007_squirtle.json",
+        "spawnId": "squirtle-4",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "squirtle",
+        "type": "pokemon"
       }
     ],
     [
@@ -296,9 +702,6 @@
         "rarity": "ultra-rare",
         "weight": 6.0,
         "levels": "5-31",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_freshwater",
@@ -311,31 +714,16 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0007_squirtle.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0007_squirtle.json",
+        "spawnId": "squirtle-5",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 3.31,
-        "levels": "1-15",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:warm_shore"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/warm_shore/rare_warm_shore.json"
+        "spawnType": "fishing",
+        "pokemon": "squirtle",
+        "type": "pokemon"
       }
     ]
   ],
@@ -349,7 +737,7 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/squirtle.json",
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/squirtle.json",
     "datapacks\\Academy\\data\\cobblemon\\species\\generation1\\squirtle.json"
   ]
 }

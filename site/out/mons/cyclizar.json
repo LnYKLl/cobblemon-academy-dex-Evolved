@@ -2,19 +2,40 @@
   "id": "cyclizar",
   "dexnum": 967,
   "name": "Cyclizar",
+  "nameFr": "Motorizard",
+  "description": "Il peut courir à 120 km/h avec un être humain sur le dos. La chaleur corporelle des personnes qu'il transporte le réchauffe et lui donne de l'énergie.",
   "primaryType": "dragon",
   "secondaryType": "normal",
+  "primaryTypeFr": "Dragon",
+  "secondaryTypeFr": "Normal",
+  "height": 16,
+  "weight": 630,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "height": 1.3,
+    "fixed": false,
+    "width": 1.3
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "shedskin",
-    "h:regenerator"
+    {
+      "id": "shedskin",
+      "name": "Mue",
+      "hidden": false
+    },
+    {
+      "id": "regenerator",
+      "name": "Régé-Force",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 30,
   "baseStats": {
     "hp": 70,
     "attack": 95,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 2
   },
+  "baseExperienceYield": 175,
   "experienceGroup": "medium_slow",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -40,102 +63,451 @@
         "item": "cobblemon:haban_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Fraigo"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:growl",
-    "7:rapidspin",
-    "11:taunt",
-    "14:breakingswipe",
-    "18:quickattack",
-    "23:bite",
-    "27:uturn",
-    "31:shedtail",
-    "36:dragonclaw",
-    "40:shiftgear",
-    "45:dragonpulse",
-    "51:doubleedge",
-    "57:dragonrush",
-    "egg:aquatail",
-    "egg:irontail",
-    "egg:knockoff",
-    "egg:powerwhip",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:aquatail",
-    "tm:bodyslam",
-    "tm:breakingswipe",
-    "tm:crunch",
-    "tm:doubleedge",
-    "tm:dracometeor",
-    "tm:dragoncheer",
-    "tm:dragonclaw",
-    "tm:dragonpulse",
-    "tm:dragontail",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:firefang",
-    "tm:gigaimpact",
-    "tm:hyperbeam",
-    "tm:hypervoice",
-    "tm:icespinner",
-    "tm:ironhead",
-    "tm:irontail",
-    "tm:knockoff",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:outrage",
-    "tm:overheat",
-    "tm:powerwhip",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:scaleshot",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:supercellslam",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:temperflare",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunderbolt",
-    "tm:thunderfang",
-    "tm:trailblaze",
-    "tm:uproar",
-    "tm:uturn",
-    "tm:wildcharge",
-    "tutor:aerialace",
-    "tutor:aquatail",
-    "tutor:dracometeor",
-    "tutor:dragonpulse",
-    "tutor:endeavor",
-    "tutor:firefang",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:hypervoice",
-    "tutor:ironhead",
-    "tutor:irontail",
-    "tutor:knockoff",
-    "tutor:mudslap",
-    "tutor:outrage",
-    "tutor:rest",
-    "tutor:scaleshot",
-    "tutor:sleeptalk",
-    "tutor:thunderbolt",
-    "tutor:thunderfang",
-    "tutor:uproar",
-    "tutor:wildcharge"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "rapidspin",
+      "name": "Tour Rapide",
+      "category": "7"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "11"
+    },
+    {
+      "id": "breakingswipe",
+      "name": "Abattage",
+      "category": "14"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "18"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "23"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "27"
+    },
+    {
+      "id": "shedtail",
+      "name": "Queulonage",
+      "category": "31"
+    },
+    {
+      "id": "dragonclaw",
+      "name": "Draco-Griffe",
+      "category": "36"
+    },
+    {
+      "id": "shiftgear",
+      "name": "Change-Vitesse",
+      "category": "40"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "45"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "51"
+    },
+    {
+      "id": "dragonrush",
+      "name": "Draco-Charge",
+      "category": "57"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "egg"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "egg"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "egg"
+    },
+    {
+      "id": "powerwhip",
+      "name": "Mégafouet",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "breakingswipe",
+      "name": "Abattage",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tm"
+    },
+    {
+      "id": "dragoncheer",
+      "name": "Cri Draconique",
+      "category": "tm"
+    },
+    {
+      "id": "dragonclaw",
+      "name": "Draco-Griffe",
+      "category": "tm"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tm"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "icespinner",
+      "name": "Cryo-Pirouette",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "powerwhip",
+      "name": "Mégafouet",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "supercellslam",
+      "name": "Volt Assaut",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "temperflare",
+      "name": "Indignition",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -143,40 +515,33 @@
           "natural"
         ],
         "rarity": "rare",
-        "weight": 6.6,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
+        "weight": 6.0,
+        "levels": "25-50",
         "biomeTags": {
           "include": [
-            "eternal_starlight:crystallized_desert"
+            "#cobblemon:is_badlands",
+            "#cobblemon:is_grassland"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/rare_crystallized_desert.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 2.0,
-        "levels": "30-50",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_overworld"
-          ]
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0967_cyclizar.json",
+        "spawnId": "cyclizar-1",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/cyclizar.json"
+        "spawnType": "grounded",
+        "pokemon": "cyclizar",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/cyclizar.png"
@@ -186,6 +551,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/cyclizar.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/cyclizar.json"
   ]
 }

@@ -2,20 +2,45 @@
   "id": "cetitan",
   "dexnum": 975,
   "name": "Cetitan",
+  "nameFr": "Balbalèze",
+  "description": "Ce Pokémon arpente les étendues de neige et de glace. Ses muscles puissants et son épaisse couche de graisse protègent son corps.",
   "primaryType": "ice",
   "secondaryType": "",
+  "primaryTypeFr": "Glace",
+  "secondaryTypeFr": "",
+  "height": 45,
+  "weight": 7000,
   "maleRatio": 0.5,
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 2.8,
+    "height": 2.8,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "thickfat",
-    "slushrush",
-    "h:sheerforce"
+    {
+      "id": "thickfat",
+      "name": "Isograisse",
+      "hidden": false
+    },
+    {
+      "id": "slushrush",
+      "name": "Chasse-Neige",
+      "hidden": false
+    },
+    {
+      "id": "sheerforce",
+      "name": "Sans Limite",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 25,
   "baseStats": {
     "hp": 170,
     "attack": 113,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 182,
   "experienceGroup": "medium_slow",
   "catchRate": 50,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,102 +68,428 @@
         "item": "minecraft:bone_block",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:bone_block"
       },
       {
         "item": "cobblemon:aspear_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Willia"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:powdersnow",
-    "6:growl",
-    "9:echoedvoice",
-    "12:iceshard",
-    "15:rest",
-    "19:takedown",
-    "25:flail",
-    "27:avalanche",
-    "31:bounce",
-    "36:bodyslam",
-    "40:amnesia",
-    "44:icespinner",
-    "49:doubleedge",
-    "53:blizzard",
-    "egg:bellydrum",
-    "egg:entrainment",
-    "egg:iciclecrash",
-    "egg:superpower",
-    "egg:yawn",
-    "tm:amnesia",
-    "tm:avalanche",
-    "tm:blizzard",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:bounce",
-    "tm:bulldoze",
-    "tm:charm",
-    "tm:chillingwater",
-    "tm:curse",
-    "tm:doubleedge",
-    "tm:earthquake",
-    "tm:echoedvoice",
-    "tm:endure",
-    "tm:facade",
-    "tm:gigaimpact",
-    "tm:hardpress",
-    "tm:heavyslam",
-    "tm:helpinghand",
-    "tm:highhorsepower",
-    "tm:hyperbeam",
-    "tm:hypervoice",
-    "tm:icebeam",
-    "tm:icefang",
-    "tm:icepunch",
-    "tm:icespinner",
-    "tm:iciclespear",
-    "tm:icywind",
-    "tm:knockoff",
-    "tm:liquidation",
-    "tm:playrough",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:sleeptalk",
-    "tm:snowscape",
-    "tm:stompingtantrum",
-    "tm:substitute",
-    "tm:superpower",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:waterpulse",
-    "tutor:bounce",
-    "tutor:bulldoze",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:highhorsepower",
-    "tutor:hyperbeam",
-    "tutor:hypervoice",
-    "tutor:icebeam",
-    "tutor:icefang",
-    "tutor:icepunch",
-    "tutor:icywind",
-    "tutor:knockoff",
-    "tutor:liquidation",
-    "tutor:playrough",
-    "tutor:rest",
-    "tutor:sleeptalk",
-    "tutor:stompingtantrum",
-    "tutor:superpower",
-    "tutor:waterpulse"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "powdersnow",
+      "name": "Poudreuse",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "6"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "9"
+    },
+    {
+      "id": "iceshard",
+      "name": "Éclats Glace",
+      "category": "12"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "15"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "19"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "25"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "27"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "31"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "36"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "40"
+    },
+    {
+      "id": "icespinner",
+      "name": "Cryo-Pirouette",
+      "category": "44"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "49"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "53"
+    },
+    {
+      "id": "bellydrum",
+      "name": "Cognobidon",
+      "category": "egg"
+    },
+    {
+      "id": "entrainment",
+      "name": "Ten-Danse",
+      "category": "egg"
+    },
+    {
+      "id": "iciclecrash",
+      "name": "Chute Glace",
+      "category": "egg"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "egg"
+    },
+    {
+      "id": "yawn",
+      "name": "Bâillement",
+      "category": "egg"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "tm"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hardpress",
+      "name": "Pression Extrême",
+      "category": "tm"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tm"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icespinner",
+      "name": "Cryo-Pirouette",
+      "category": "tm"
+    },
+    {
+      "id": "iciclespear",
+      "name": "Stalactite",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tutor"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "cetoddle",
   "spawns": [
     [
       {
@@ -147,19 +500,20 @@
         "rarity": "uncommon",
         "weight": 0.48,
         "levels": "28-52",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_frozen_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0975_cetitan.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0975_cetitan.json",
+        "spawnId": "cetitan-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "cetitan",
+        "type": "pokemon"
       }
     ],
     [
@@ -171,39 +525,21 @@
         "rarity": "uncommon",
         "weight": 0.8,
         "levels": "28-52",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_glacial",
             "#cobblemon:is_tundra"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0975_cetitan.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0975_cetitan.json",
+        "spawnId": "cetitan-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 5.8,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:starlight_permafrost_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/rare_starlight_permafrost_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "cetitan",
+        "type": "pokemon"
       }
     ]
   ],
@@ -217,6 +553,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/cetitan.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/cetitan.json"
   ]
 }

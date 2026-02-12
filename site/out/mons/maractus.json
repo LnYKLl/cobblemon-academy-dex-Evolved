@@ -2,20 +2,45 @@
   "id": "maractus",
   "dexnum": 556,
   "name": "Maractus",
+  "nameFr": "Maracachi",
+  "description": "Il vit dans les endroits secs. Quand il bouge son corps en rythme, il fait un bruit de maracas.",
   "primaryType": "grass",
   "secondaryType": "",
+  "primaryTypeFr": "Plante",
+  "secondaryTypeFr": "",
+  "height": 10,
+  "weight": 280,
   "maleRatio": 0.5,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 1,
+    "height": 1.5,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "waterabsorb",
-    "chlorophyll",
-    "h:stormdrain"
+    {
+      "id": "waterabsorb",
+      "name": "Absorbe-Eau",
+      "hidden": false
+    },
+    {
+      "id": "chlorophyll",
+      "name": "Chlorophylle",
+      "hidden": false
+    },
+    {
+      "id": "stormdrain",
+      "name": "Lavabo",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "grass"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 75,
     "attack": 86,
@@ -32,122 +57,533 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 161,
   "experienceGroup": "medium_fast",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
-    "amount": 4,
+    "amount": 5,
     "entries": [
       {
         "item": "minecraft:cactus",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:cactus"
+      },
+      {
+        "item": "cobblemon:grassy_seed",
+        "percentage": 5.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Graine Herbe"
       },
       {
         "item": "cobblemon:miracle_seed",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Graine Miracle"
       },
       {
         "item": "cobblemon:sticky_barb",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Piquants"
       }
     ]
   },
   "moves": [
-    "1:peck",
-    "1:absorb",
-    "1:needlearm",
-    "1:ingrain",
-    "1:afteryou",
-    "1:spikyshield",
-    "4:growth",
-    "8:megadrain",
-    "12:leechseed",
-    "16:suckerpunch",
-    "20:pinmissile",
-    "24:gigadrain",
-    "28:sweetscent",
-    "32:synthesis",
-    "36:petalblizzard",
-    "40:cottonspore",
-    "44:sunnyday",
-    "48:solarbeam",
-    "52:acupressure",
-    "56:petaldance",
-    "60:cottonguard",
-    "egg:grasswhistle",
-    "egg:leechseed",
-    "egg:woodhammer",
-    "egg:worryseed",
-    "tm:aerialace",
-    "tm:afteryou",
-    "tm:assurance",
-    "tm:bounce",
-    "tm:bulletseed",
-    "tm:drainpunch",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:gigadrain",
-    "tm:grassknot",
-    "tm:grassyglide",
-    "tm:grassyterrain",
-    "tm:helpinghand",
-    "tm:hypervoice",
-    "tm:knockoff",
-    "tm:leafstorm",
-    "tm:naturepower",
-    "tm:petalblizzard",
-    "tm:pinmissile",
-    "tm:poisonjab",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:safeguard",
-    "tm:screech",
-    "tm:seedbomb",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:spikes",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:sunnyday",
-    "tm:synthesis",
-    "tm:terablast",
-    "tm:throatchop",
-    "tm:uproar",
-    "tm:weatherball",
-    "tm:worryseed",
-    "tutor:aerialace",
-    "tutor:afteryou",
-    "tutor:bounce",
-    "tutor:drainpunch",
-    "tutor:endeavor",
-    "tutor:energyball",
-    "tutor:gigadrain",
-    "tutor:grassyglide",
-    "tutor:helpinghand",
-    "tutor:hypervoice",
-    "tutor:knockoff",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:seedbomb",
-    "tutor:sleeptalk",
-    "tutor:spikes",
-    "tutor:suckerpunch",
-    "tutor:synthesis",
-    "tutor:throatchop",
-    "tutor:uproar",
-    "tutor:worryseed"
+    {
+      "id": "peck",
+      "name": "Picpic",
+      "category": "1"
+    },
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "1"
+    },
+    {
+      "id": "needlearm",
+      "name": "Poing Dard",
+      "category": "1"
+    },
+    {
+      "id": "ingrain",
+      "name": "Racines",
+      "category": "1"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "1"
+    },
+    {
+      "id": "spikyshield",
+      "name": "Pico-Défense",
+      "category": "1"
+    },
+    {
+      "id": "growth",
+      "name": "Croissance",
+      "category": "4"
+    },
+    {
+      "id": "megadrain",
+      "name": "Méga-Sangsue",
+      "category": "8"
+    },
+    {
+      "id": "leechseed",
+      "name": "Vampigraine",
+      "category": "12"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "16"
+    },
+    {
+      "id": "pinmissile",
+      "name": "Dard-Nuée",
+      "category": "20"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "24"
+    },
+    {
+      "id": "sweetscent",
+      "name": "Doux Parfum",
+      "category": "28"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "32"
+    },
+    {
+      "id": "petalblizzard",
+      "name": "Tempête Florale",
+      "category": "36"
+    },
+    {
+      "id": "cottonspore",
+      "name": "Spore Coton",
+      "category": "40"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "44"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "48"
+    },
+    {
+      "id": "acupressure",
+      "name": "Acupression",
+      "category": "52"
+    },
+    {
+      "id": "petaldance",
+      "name": "Danse Fleurs",
+      "category": "56"
+    },
+    {
+      "id": "cottonguard",
+      "name": "Cotogarde",
+      "category": "60"
+    },
+    {
+      "id": "grasswhistle",
+      "name": "Siffl'Herbe",
+      "category": "egg"
+    },
+    {
+      "id": "leechseed",
+      "name": "Vampigraine",
+      "category": "egg"
+    },
+    {
+      "id": "woodhammer",
+      "name": "Martobois",
+      "category": "egg"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "drainpunch",
+      "name": "Vampi-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "leafstorm",
+      "name": "Tempête Verte",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "petalblizzard",
+      "name": "Tempête Florale",
+      "category": "tm"
+    },
+    {
+      "id": "pinmissile",
+      "name": "Dard-Nuée",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "drainpunch",
+      "name": "Vampi-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -157,39 +593,27 @@
         "rarity": "common",
         "weight": 10.0,
         "levels": "21-46",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_badlands",
             "#cobblemon:is_desert"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0556_maractus.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0556_maractus.json",
+        "spawnId": "maractus-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 2.1,
-        "levels": "20-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/uncommon_crystallized_desert.json"
+        "spawnType": "grounded",
+        "pokemon": "maractus",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
       }
     ]
   ],
@@ -203,6 +627,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/maractus.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/maractus.json"
   ]
 }

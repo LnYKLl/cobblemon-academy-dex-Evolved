@@ -2,20 +2,45 @@
   "id": "tranquill",
   "dexnum": 520,
   "name": "Tranquill",
+  "nameFr": "Colombeau",
+  "description": "Quel que soit le lieu où il se trouve, il arrive toujours à retrouver son Dresseur comme son propre nid.",
   "primaryType": "normal",
   "secondaryType": "flying",
+  "primaryTypeFr": "Normal",
+  "secondaryTypeFr": "Vol",
+  "height": 6,
+  "weight": 150,
   "maleRatio": 0.5,
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 0.6,
+    "height": 1.3,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "bigpecks",
-    "superluck",
-    "h:rivalry"
+    {
+      "id": "bigpecks",
+      "name": "Cœur de Coq",
+      "hidden": false
+    },
+    {
+      "id": "superluck",
+      "name": "Chanceux",
+      "hidden": false
+    },
+    {
+      "id": "rivalry",
+      "name": "Rivalité",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "flying"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 62,
     "attack": 77,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 125,
   "experienceGroup": "medium_slow",
   "catchRate": 120,
+  "baseFriendship": 50,
   "drops": {
     "amount": 5,
     "entries": [
@@ -41,97 +68,410 @@
         "item": "minecraft:feather",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:feather"
       },
       {
         "item": "minecraft:chicken",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:chicken"
       },
       {
         "item": "cobblemon:sharp_beak",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Bec Pointu"
       },
       {
         "item": "cobblemon:razz_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Framby"
       }
     ]
   },
   "moves": [
-    "1:gust",
-    "1:growl",
-    "1:leer",
-    "1:quickattack",
-    "1:razorwind",
-    "12:taunt",
-    "16:aircutter",
-    "20:swagger",
-    "26:featherdance",
-    "34:detect",
-    "38:airslash",
-    "44:roost",
-    "50:tailwind",
-    "56:skyattack",
-    "egg:bestow",
-    "egg:defog",
-    "egg:hypnosis",
-    "egg:luckychant",
-    "egg:morningsun",
-    "egg:nightslash",
-    "egg:wish",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:defog",
-    "tm:dualwingbeat",
-    "tm:echoedvoice",
-    "tm:endure",
-    "tm:facade",
-    "tm:featherdance",
-    "tm:fly",
-    "tm:focusenergy",
-    "tm:heatwave",
-    "tm:pluck",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:roost",
-    "tm:skyattack",
-    "tm:sleeptalk",
-    "tm:steelwing",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swagger",
-    "tm:swift",
-    "tm:tailwind",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:uproar",
-    "tm:uturn",
-    "tm:workup",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:defog",
-    "tutor:dualwingbeat",
-    "tutor:focusenergy",
-    "tutor:heatwave",
-    "tutor:rest",
-    "tutor:roost",
-    "tutor:skyattack",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:tailwind",
-    "tutor:uproar"
+    {
+      "id": "gust",
+      "name": "Tornade",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "1"
+    },
+    {
+      "id": "razorwind",
+      "name": "Coupe-Vent",
+      "category": "1"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "12"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "16"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "20"
+    },
+    {
+      "id": "featherdance",
+      "name": "Danse Plumes",
+      "category": "26"
+    },
+    {
+      "id": "detect",
+      "name": "Détection",
+      "category": "34"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "38"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "44"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "50"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "56"
+    },
+    {
+      "id": "bestow",
+      "name": "Passe-Cadeau",
+      "category": "egg"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "egg"
+    },
+    {
+      "id": "hypnosis",
+      "name": "Hypnose",
+      "category": "egg"
+    },
+    {
+      "id": "luckychant",
+      "name": "Air Veinard",
+      "category": "egg"
+    },
+    {
+      "id": "morningsun",
+      "name": "Aurore",
+      "category": "egg"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "egg"
+    },
+    {
+      "id": "wish",
+      "name": "Vœu",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "featherdance",
+      "name": "Danse Plumes",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "tranquill_unfezant",
@@ -147,6 +487,7 @@
       ]
     }
   ],
+  "preEvolution": "pidove",
   "spawns": [
     [
       {
@@ -157,20 +498,27 @@
         "rarity": "common",
         "weight": 0.9,
         "levels": "21-36",
-        "contexts": [
-          "grounded"
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_mountain",
             "#cobblemon:is_sky"
+          ],
+          "exclude": [
+            "#cobblemon:is_volcanic"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0520_tranquill.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0520_tranquill.json",
+        "spawnId": "tranquill-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "tranquill",
+        "type": "pokemon"
       }
     ],
     [
@@ -182,8 +530,8 @@
         "rarity": "common",
         "weight": 0.9,
         "levels": "21-36",
-        "contexts": [
-          "grounded"
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
@@ -194,11 +542,15 @@
             "#cobblemon:is_tundra"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0520_tranquill.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0520_tranquill.json",
+        "spawnId": "tranquill-3",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "tranquill",
+        "type": "pokemon"
       }
     ],
     [
@@ -209,8 +561,8 @@
         "rarity": "common",
         "weight": 0.9,
         "levels": "21-36",
-        "contexts": [
-          "grounded"
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
@@ -221,33 +573,18 @@
             "#cobblemon:is_tundra"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0520_tranquill.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0520_tranquill.json",
+        "spawnId": "tranquill-4",
         "structures": [
           "#minecraft:village"
         ],
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 1.1,
-        "levels": "4-18",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:starlight_permafrost_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/common_starlight_permafrost_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "tranquill",
+        "type": "pokemon"
       }
     ]
   ],
@@ -261,6 +598,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/tranquill.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/tranquill.json"
   ]
 }

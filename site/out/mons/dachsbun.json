@@ -2,20 +2,41 @@
   "id": "dachsbun",
   "dexnum": 927,
   "name": "Dachsbun",
+  "nameFr": "Briochien",
+  "description": "Il est très apprécié depuis longtemps dans les villages agricoles, car le délicieux parfum qu'il dégage aide à faire croître le blé.",
   "primaryType": "fairy",
   "secondaryType": "",
+  "primaryTypeFr": "Fée",
+  "secondaryTypeFr": "",
+  "height": 5,
+  "weight": 149,
   "maleRatio": 0.5,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 1.3,
+    "height": 1.1,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "wellbakedbody",
-    "h:aromaveil"
+    {
+      "id": "wellbakedbody",
+      "name": "Bien Cuit",
+      "hidden": false
+    },
+    {
+      "id": "aromaveil",
+      "name": "Aroma-Voile",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field",
     "mineral"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 57,
     "attack": 80,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 2
   },
+  "baseExperienceYield": 167,
   "experienceGroup": "medium_slow",
   "catchRate": 90,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,102 +64,423 @@
         "item": "minecraft:bread",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:bread"
       },
       {
         "item": "cobblemon:nanab_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Nanab"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:growl",
-    "3:lick",
-    "6:tailwhip",
-    "8:covet",
-    "11:bite",
-    "15:babydolleyes",
-    "18:playrough",
-    "22:workup",
-    "29:batonpass",
-    "33:roar",
-    "38:doubleedge",
-    "42:charm",
-    "47:crunch",
-    "53:lastresort",
-    "egg:copycat",
-    "egg:howl",
-    "egg:sweetscent",
-    "egg:wish",
-    "egg:yawn",
-    "tm:agility",
-    "tm:alluringvoice",
-    "tm:babydolleyes",
-    "tm:batonpass",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:charm",
-    "tm:covet",
-    "tm:crunch",
-    "tm:dazzlinggleam",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:drainingkiss",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:firefang",
-    "tm:gigaimpact",
-    "tm:helpinghand",
-    "tm:hyperbeam",
-    "tm:icefang",
-    "tm:lastresort",
-    "tm:mistyterrain",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:playrough",
-    "tm:protect",
-    "tm:psychicfangs",
-    "tm:psychup",
-    "tm:raindance",
-    "tm:rest",
-    "tm:roar",
-    "tm:scaryface",
-    "tm:sleeptalk",
-    "tm:snarl",
-    "tm:stompingtantrum",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thunderfang",
-    "tm:trailblaze",
-    "tm:workup",
-    "tutor:babydolleyes",
-    "tutor:covet",
-    "tutor:dazzlinggleam",
-    "tutor:endeavor",
-    "tutor:firefang",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:icefang",
-    "tutor:lastresort",
-    "tutor:mudslap",
-    "tutor:playrough",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:sleeptalk",
-    "tutor:snarl",
-    "tutor:stompingtantrum",
-    "tutor:thunderfang"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "lick",
+      "name": "Léchouille",
+      "category": "3"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "6"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "8"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "11"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "15"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "18"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "22"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "29"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "33"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "38"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "42"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "47"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "53"
+    },
+    {
+      "id": "copycat",
+      "name": "Photocopie",
+      "category": "egg"
+    },
+    {
+      "id": "howl",
+      "name": "Grondement",
+      "category": "egg"
+    },
+    {
+      "id": "sweetscent",
+      "name": "Doux Parfum",
+      "category": "egg"
+    },
+    {
+      "id": "wish",
+      "name": "Vœu",
+      "category": "egg"
+    },
+    {
+      "id": "yawn",
+      "name": "Bâillement",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "alluringvoice",
+      "name": "Voix Envoûtante",
+      "category": "tm"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "drainingkiss",
+      "name": "Vampibaiser",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tm"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tm"
+    },
+    {
+      "id": "mistyterrain",
+      "name": "Champ Brumeux",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychicfangs",
+      "name": "Psycho-Croc",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tutor"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "fidough",
   "spawns": [
     [
       {
@@ -147,19 +491,20 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "26-48",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0927_dachsbun.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0927_dachsbun.json",
+        "spawnId": "dachsbun-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "dachsbun",
+        "type": "pokemon"
       }
     ],
     [
@@ -170,41 +515,23 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "26-48",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0927_dachsbun.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0927_dachsbun.json",
+        "spawnId": "dachsbun-2",
         "structures": [
           "#minecraft:village"
         ],
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 7.9,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:starlight_permafrost_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/rare_starlight_permafrost_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "dachsbun",
+        "type": "pokemon"
       }
     ]
   ],
@@ -218,6 +545,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/dachsbun.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/dachsbun.json"
   ]
 }

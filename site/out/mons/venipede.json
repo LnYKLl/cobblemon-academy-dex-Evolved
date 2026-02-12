@@ -2,20 +2,45 @@
   "id": "venipede",
   "dexnum": 543,
   "name": "Venipede",
+  "nameFr": "Venipatte",
+  "description": "Sa morsure est très venimeuse. Elle paralyse même les grands Pokémon oiseaux, ses prédateurs.",
   "primaryType": "bug",
   "secondaryType": "poison",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "Poison",
+  "height": 4,
+  "weight": 53,
   "maleRatio": 0.5,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 1,
+    "height": 0.9,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "poisonpoint",
-    "swarm",
-    "h:speedboost"
+    {
+      "id": "poisonpoint",
+      "name": "Point Poison",
+      "hidden": false
+    },
+    {
+      "id": "swarm",
+      "name": "Essaim",
+      "hidden": false
+    },
+    {
+      "id": "speedboost",
+      "name": "Turbo",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 30,
     "attack": 45,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 52,
   "experienceGroup": "medium_slow",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,89 +68,416 @@
         "item": "cobblemon:poison_barb",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Pic Venin"
       },
       {
         "item": "cobblemon:pecha_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Pêcha"
       }
     ]
   },
   "moves": [
-    "1:defensecurl",
-    "1:poisonsting",
-    "1:pursuit",
-    "4:rollout",
-    "8:protect",
-    "12:poisontail",
-    "16:screech",
-    "20:bugbite",
-    "24:venoshock",
-    "28:takedown",
-    "32:agility",
-    "36:toxic",
-    "40:venomdrench",
-    "44:doubleedge",
-    "egg:bite",
-    "egg:furycutter",
-    "egg:steamroller",
-    "egg:twineedle",
-    "tm:agility",
-    "tm:bugbite",
-    "tm:doubleedge",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:furycutter",
-    "tm:gyroball",
-    "tm:hex",
-    "tm:infestation",
-    "tm:irondefense",
-    "tm:payback",
-    "tm:pinmissile",
-    "tm:poisonjab",
-    "tm:poisontail",
-    "tm:protect",
-    "tm:rest",
-    "tm:rockclimb",
-    "tm:rocksmash",
-    "tm:rollout",
-    "tm:screech",
-    "tm:signalbeam",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:solarbeam",
-    "tm:spikes",
-    "tm:steelroller",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:toxic",
-    "tm:toxicspikes",
-    "tm:venomdrench",
-    "tm:venoshock",
-    "tutor:bugbite",
-    "tutor:endeavor",
-    "tutor:furycutter",
-    "tutor:irondefense",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:rollout",
-    "tutor:signalbeam",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:spikes",
-    "tutor:steelroller"
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "1"
+    },
+    {
+      "id": "poisonsting",
+      "name": "Dard-Venin",
+      "category": "1"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "1"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "4"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "8"
+    },
+    {
+      "id": "poisontail",
+      "name": "Queue-Poison",
+      "category": "12"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "16"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "20"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "24"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "28"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "32"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "36"
+    },
+    {
+      "id": "venomdrench",
+      "name": "Piège de Venin",
+      "category": "40"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "44"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "egg"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "egg"
+    },
+    {
+      "id": "steamroller",
+      "name": "Bulldoboule",
+      "category": "egg"
+    },
+    {
+      "id": "twineedle",
+      "name": "Double Dard",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "pinmissile",
+      "name": "Dard-Nuée",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "poisontail",
+      "name": "Queue-Poison",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockclimb",
+      "name": "Escalade",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tm"
+    },
+    {
+      "id": "steelroller",
+      "name": "Métalliroue",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "venomdrench",
+      "name": "Piège de Venin",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tutor"
+    },
+    {
+      "id": "steelroller",
+      "name": "Métalliroue",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "venipede_whirlipede",
@@ -141,6 +495,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -151,19 +506,23 @@
         "rarity": "common",
         "weight": 1.8,
         "levels": "1-26",
-        "contexts": [
-          "grounded"
+        "times": [
+          "night"
         ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0543_venipede.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0543_venipede.json",
+        "spawnId": "venipede-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "venipede",
+        "type": "pokemon"
       }
     ],
     [
@@ -175,19 +534,23 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "1-26",
-        "contexts": [
-          "grounded"
+        "times": [
+          "night"
         ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_jungle"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0543_venipede.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0543_venipede.json",
+        "spawnId": "venipede-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "venipede",
+        "type": "pokemon"
       }
     ],
     [
@@ -198,19 +561,27 @@
         "rarity": "common",
         "weight": 1.8,
         "levels": "1-26",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0543_venipede.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0543_venipede.json",
+        "spawnId": "venipede-3",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "venipede",
+        "excludeStructures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "excludeYLevel": {
+          "minY": -41,
+          "maxY": 9
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -222,16 +593,17 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "1-26",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_forest",
             "#cobblemon:nether/is_fungus"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0543_venipede.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0543_venipede.json",
+        "spawnId": "venipede-4",
+        "spawnType": "grounded",
+        "pokemon": "venipede",
+        "type": "pokemon"
       }
     ],
     [
@@ -242,9 +614,6 @@
         "rarity": "common",
         "weight": 1.8,
         "levels": "1-26",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -253,7 +622,8 @@
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0543_venipede.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0543_venipede.json",
+        "spawnId": "venipede-5",
         "structures": [
           "cobblemon:shipwreck_coves/lush_shipwreck_cove"
         ],
@@ -264,26 +634,10 @@
         "yLevel": {
           "minY": -41,
           "maxY": 9
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 2.0,
-        "levels": "4-19",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/common_dark_swamp.json"
+        "spawnType": "grounded",
+        "pokemon": "venipede",
+        "type": "pokemon"
       }
     ]
   ],
@@ -297,6 +651,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/venipede.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/venipede.json"
   ]
 }

@@ -2,21 +2,46 @@
   "id": "hoppip",
   "dexnum": 187,
   "name": "Hoppip",
+  "nameFr": "Granivol",
+  "description": "Ce Pokémon flotte à la dérive, porté par le vent. S'il sent qu'un vent très fort approche, Granivol attache ses feuilles aux autres Granivol pour ne pas être emporté par la bourrasque.",
   "primaryType": "grass",
   "secondaryType": "flying",
+  "primaryTypeFr": "Plante",
+  "secondaryTypeFr": "Vol",
+  "height": 4,
+  "weight": 5,
   "maleRatio": 0.5,
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 0.9,
+    "height": 0.9,
+    "fixed": false
+  },
   "labels": [
     "gen2"
   ],
   "abilities": [
-    "chlorophyll",
-    "leafguard",
-    "h:infiltrator"
+    {
+      "id": "chlorophyll",
+      "name": "Chlorophylle",
+      "hidden": false
+    },
+    {
+      "id": "leafguard",
+      "name": "Feuille Garde",
+      "hidden": false
+    },
+    {
+      "id": "infiltrator",
+      "name": "Infiltration",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "fairy",
     "grass"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 35,
     "attack": 35,
@@ -33,8 +58,10 @@
     "special_defence": 1,
     "speed": 0
   },
+  "baseExperienceYield": 50,
   "experienceGroup": "medium_slow",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -42,100 +69,544 @@
         "item": "cobblemon:yache_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Nanone"
       }
     ]
   },
   "moves": [
-    "1:splash",
-    "1:tackle",
-    "4:tailwhip",
-    "6:absorb",
-    "8:fairywind",
-    "10:poisonpowder",
-    "10:stunspore",
-    "10:sleeppowder",
-    "12:bulletseed",
-    "15:synthesis",
-    "19:leechseed",
-    "22:megadrain",
-    "24:acrobatics",
-    "27:cottonspore",
-    "29:uturn",
-    "32:gigadrain",
-    "35:bounce",
-    "38:memento",
-    "egg:aromatherapy",
-    "egg:confusion",
-    "egg:cottonguard",
-    "egg:encore",
-    "egg:grassyterrain",
-    "egg:ragepowder",
-    "egg:seedbomb",
-    "egg:strengthsap",
-    "egg:switcheroo",
-    "egg:worryseed",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:batonpass",
-    "tm:bounce",
-    "tm:bulletseed",
-    "tm:charm",
-    "tm:dazzlinggleam",
-    "tm:doubleedge",
-    "tm:encore",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:flash",
-    "tm:fling",
-    "tm:gigadrain",
-    "tm:grassknot",
-    "tm:grassyterrain",
-    "tm:headbutt",
-    "tm:helpinghand",
-    "tm:infestation",
-    "tm:leafstorm",
-    "tm:lightscreen",
-    "tm:lunge",
-    "tm:magicalleaf",
-    "tm:payday",
-    "tm:pollenpuff",
-    "tm:protect",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:seedbomb",
-    "tm:silverwind",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swordsdance",
-    "tm:synthesis",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:trailblaze",
-    "tm:uturn",
-    "tm:worryseed",
-    "tutor:aerialace",
-    "tutor:bounce",
-    "tutor:dazzlinggleam",
-    "tutor:energyball",
-    "tutor:gigadrain",
-    "tutor:helpinghand",
-    "tutor:magicalleaf",
-    "tutor:rest",
-    "tutor:seedbomb",
-    "tutor:sleeptalk",
-    "tutor:synthesis",
-    "tutor:tailwind",
-    "tutor:worryseed"
+    {
+      "id": "splash",
+      "name": "Trempette",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "4"
+    },
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "6"
+    },
+    {
+      "id": "fairywind",
+      "name": "Vent Féérique",
+      "category": "8"
+    },
+    {
+      "id": "poisonpowder",
+      "name": "Poudre Toxik",
+      "category": "10"
+    },
+    {
+      "id": "stunspore",
+      "name": "Para-Spore",
+      "category": "10"
+    },
+    {
+      "id": "sleeppowder",
+      "name": "Poudre Dodo",
+      "category": "10"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "12"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "15"
+    },
+    {
+      "id": "leechseed",
+      "name": "Vampigraine",
+      "category": "19"
+    },
+    {
+      "id": "megadrain",
+      "name": "Méga-Sangsue",
+      "category": "22"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "24"
+    },
+    {
+      "id": "cottonspore",
+      "name": "Spore Coton",
+      "category": "27"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "29"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "32"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "35"
+    },
+    {
+      "id": "memento",
+      "name": "Souvenir",
+      "category": "38"
+    },
+    {
+      "id": "aromatherapy",
+      "name": "Aromathérapie",
+      "category": "egg"
+    },
+    {
+      "id": "confusion",
+      "name": "Choc Mental",
+      "category": "egg"
+    },
+    {
+      "id": "cottonguard",
+      "name": "Cotogarde",
+      "category": "egg"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "egg"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "egg"
+    },
+    {
+      "id": "ragepowder",
+      "name": "Poudre Fureur",
+      "category": "egg"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "egg"
+    },
+    {
+      "id": "strengthsap",
+      "name": "Vole-Force",
+      "category": "egg"
+    },
+    {
+      "id": "switcheroo",
+      "name": "Passe-Passe",
+      "category": "egg"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "leafstorm",
+      "name": "Tempête Verte",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "tm"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tm"
+    },
+    {
+      "id": "payday",
+      "name": "Jackpot",
+      "category": "tm"
+    },
+    {
+      "id": "pollenpuff",
+      "name": "Boule Pollen",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "silverwind",
+      "name": "Vent Argenté",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tutor"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "legacy"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "sweetscent",
+      "name": "Doux Parfum",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "hoppip_skiploom",
@@ -151,50 +622,96 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
+    [
+      {
+        "presets": [
+          "natural",
+          "treetop"
+        ],
+        "rarity": "common",
+        "weight": 9.0,
+        "levels": "1-25",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_plains"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0187_hoppip.json",
+        "spawnId": "hoppip-1",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "weather": {
+          "isRaining": false
+        },
+        "spawnType": "grounded",
+        "pokemon": "hoppip",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural",
+          "treetop"
+        ],
+        "rarity": "common",
+        "weight": 9.0,
+        "levels": "1-25",
+        "biomeTags": {
+          "include": [
+            "aether:skyroot_grove",
+            "aether:skyroot_meadow"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0187_hoppip.json",
+        "spawnId": "hoppip-3",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "weather": {
+          "isRaining": false
+        },
+        "spawnType": "grounded",
+        "pokemon": "hoppip",
+        "type": "pokemon"
+      }
+    ],
     [
       {
         "presets": [
           "natural"
         ],
         "rarity": "common",
-        "weight": 3.2,
-        "levels": "4-18",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/common_scarlet_forest.json"
-      }
-    ],
-    [
-      {
-        "rarity": "common",
         "weight": 9.0,
-        "levels": "4-25",
-        "contexts": [
-          "grounded"
-        ],
+        "levels": "1-25",
         "biomeTags": {
           "include": [
-            "#cobblemon:is_plains"
+            "the_bumblezone:floral_meadow"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/wavimons/spawn_pool_world/0187_hoppip.json",
-        "sky": {
-          "canSeeSky": true
-        },
-        "weather": {
-          "isRaining": false
-        }
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0187_hoppip.json",
+        "spawnId": "hoppip-4",
+        "spawnType": "grounded",
+        "pokemon": "hoppip",
+        "excludeStructures": [
+          "#the_bumblezone:sempiternal_sanctums"
+        ],
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/wavimons/hoppip.png",
@@ -206,6 +723,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation2/hoppip.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation2/hoppip.json"
   ]
 }

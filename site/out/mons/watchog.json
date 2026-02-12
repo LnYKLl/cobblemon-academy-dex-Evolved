@@ -2,20 +2,45 @@
   "id": "watchog",
   "dexnum": 505,
   "name": "Watchog",
+  "nameFr": "Miradar",
+  "description": "Il attaque en crachant les graines des Baies qu'il accumule dans ses bajoues. S'il voit un ennemi, il dresse la queue.",
   "primaryType": "normal",
   "secondaryType": "",
+  "primaryTypeFr": "Normal",
+  "secondaryTypeFr": "",
+  "height": 11,
+  "weight": 270,
   "maleRatio": 0.5,
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 0.8,
+    "height": 2.55,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "illuminate",
-    "keeneye",
-    "h:analytic"
+    {
+      "id": "illuminate",
+      "name": "Lumiattirance",
+      "hidden": false
+    },
+    {
+      "id": "keeneye",
+      "name": "Regard Vif",
+      "hidden": false
+    },
+    {
+      "id": "analytic",
+      "name": "Analyste",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 60,
     "attack": 85,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 147,
   "experienceGroup": "medium_fast",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,137 +68,681 @@
         "item": "cobblemon:babiri_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Babiri"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:leer",
-    "1:bite",
-    "1:lowkick",
-    "1:confuseray",
-    "1:rototiller",
-    "8:bide",
-    "11:detect",
-    "13:sandattack",
-    "16:crunch",
-    "18:hypnosis",
-    "22:superfang",
-    "25:afteryou",
-    "29:focusenergy",
-    "32:psychup",
-    "36:hyperfang",
-    "39:nastyplot",
-    "43:meanlook",
-    "46:batonpass",
-    "50:slam",
-    "egg:assurance",
-    "egg:bulletseed",
-    "egg:flail",
-    "egg:foresight",
-    "egg:irontail",
-    "egg:pursuit",
-    "egg:revenge",
-    "egg:screech",
-    "egg:tearfullook",
-    "tm:afteryou",
-    "tm:aquatail",
-    "tm:assurance",
-    "tm:batonpass",
-    "tm:bulletseed",
-    "tm:confuseray",
-    "tm:covet",
-    "tm:crunch",
-    "tm:cut",
-    "tm:dig",
-    "tm:dreameater",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:firepunch",
-    "tm:flamethrower",
-    "tm:flash",
-    "tm:fling",
-    "tm:focusblast",
-    "tm:focusenergy",
-    "tm:focuspunch",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:gunkshot",
-    "tm:helpinghand",
-    "tm:hyperbeam",
-    "tm:icepunch",
-    "tm:irontail",
-    "tm:knockoff",
-    "tm:laserfocus",
-    "tm:lastresort",
-    "tm:lightscreen",
-    "tm:lowkick",
-    "tm:nastyplot",
-    "tm:poweruppunch",
-    "tm:protect",
-    "tm:psychup",
-    "tm:raindance",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:revenge",
-    "tm:rocksmash",
-    "tm:screech",
-    "tm:seedbomb",
-    "tm:shadowball",
-    "tm:shockwave",
-    "tm:signalbeam",
-    "tm:sleeptalk",
-    "tm:stompingtantrum",
-    "tm:strength",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superfang",
-    "tm:swift",
-    "tm:swordsdance",
-    "tm:terablast",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderpunch",
-    "tm:thunderwave",
-    "tm:workup",
-    "tm:zenheadbutt",
-    "tutor:afteryou",
-    "tutor:aquatail",
-    "tutor:covet",
-    "tutor:endeavor",
-    "tutor:firepunch",
-    "tutor:flamethrower",
-    "tutor:focusenergy",
-    "tutor:focuspunch",
-    "tutor:gigaimpact",
-    "tutor:gunkshot",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:icepunch",
-    "tutor:irontail",
-    "tutor:knockoff",
-    "tutor:laserfocus",
-    "tutor:lastresort",
-    "tutor:lowkick",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:seedbomb",
-    "tutor:shadowball",
-    "tutor:shockwave",
-    "tutor:signalbeam",
-    "tutor:sleeptalk",
-    "tutor:stompingtantrum",
-    "tutor:superfang",
-    "tutor:swift",
-    "tutor:thunderbolt",
-    "tutor:thunderpunch",
-    "tutor:zenheadbutt"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "1"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "1"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "1"
+    },
+    {
+      "id": "rototiller",
+      "name": "Fertilisation",
+      "category": "1"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "8"
+    },
+    {
+      "id": "detect",
+      "name": "Détection",
+      "category": "11"
+    },
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "13"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "16"
+    },
+    {
+      "id": "hypnosis",
+      "name": "Hypnose",
+      "category": "18"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "22"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "25"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "29"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "32"
+    },
+    {
+      "id": "hyperfang",
+      "name": "Croc de Mort",
+      "category": "36"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "39"
+    },
+    {
+      "id": "meanlook",
+      "name": "Regard Noir",
+      "category": "43"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "46"
+    },
+    {
+      "id": "slam",
+      "name": "Souplesse",
+      "category": "50"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "egg"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "egg"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "egg"
+    },
+    {
+      "id": "foresight",
+      "name": "Clairvoyance",
+      "category": "egg"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "egg"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "egg"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "egg"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "egg"
+    },
+    {
+      "id": "tearfullook",
+      "name": "Larme à l'Œil",
+      "category": "egg"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "focusblast",
+      "name": "Exploforce",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tm"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "poweruppunch",
+      "name": "Poing Boost",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tutor"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "patrat",
   "spawns": [
     [
       {
@@ -181,38 +752,20 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "20-42",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_grassland"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0505_watchog.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0505_watchog.json",
+        "spawnId": "watchog-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 0.8,
-        "levels": "4-19",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_starlight_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/common_is_starlight_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "watchog",
+        "type": "pokemon"
       }
     ]
   ],
@@ -226,6 +779,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/watchog.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/watchog.json"
   ]
 }

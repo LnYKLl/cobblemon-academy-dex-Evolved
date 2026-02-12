@@ -2,20 +2,41 @@
   "id": "tapubulu",
   "dexnum": 787,
   "name": "Tapu Bulu",
+  "nameFr": "Tokotoro",
+  "description": "Il est le gardien d'Ula-Ula et le maître des plantes. Il évite les combats inutiles en faisant tinter sa queue pour signaler son arrivée.",
   "primaryType": "grass",
   "secondaryType": "fairy",
+  "primaryTypeFr": "Plante",
+  "secondaryTypeFr": "Fée",
+  "height": 19,
+  "weight": 455,
   "maleRatio": -1,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1.1,
+    "height": 2.3,
+    "fixed": false
+  },
   "labels": [
     "gen7",
     "legendary"
   ],
   "abilities": [
-    "grassysurge",
-    "h:telepathy"
+    {
+      "id": "grassysurge",
+      "name": "Créa-Herbe",
+      "hidden": false
+    },
+    {
+      "id": "telepathy",
+      "name": "Télépathe",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 70,
     "attack": 130,
@@ -32,196 +53,581 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
   "catchRate": 3,
+  "baseFriendship": 50,
   "drops": {
     "amount": 0,
     "entries": []
   },
   "moves": [
-    "1:leafage",
-    "1:rototiller",
-    "1:rocksmash",
-    "5:withdraw",
-    "10:disable",
-    "15:leechseed",
-    "20:megadrain",
-    "25:whirlwind",
-    "30:hornattack",
-    "35:scaryface",
-    "40:hornleech",
-    "45:zenheadbutt",
-    "50:meanlook",
-    "55:naturesmadness",
-    "60:woodhammer",
-    "65:megahorn",
-    "70:skullbash",
-    "75:grassyterrain",
-    "tm:brickbreak",
-    "tm:brutalswing",
-    "tm:bulkup",
-    "tm:bulletseed",
-    "tm:calmmind",
-    "tm:closecombat",
-    "tm:darkestlariat",
-    "tm:dazzlinggleam",
-    "tm:dualchop",
-    "tm:echoedvoice",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:fling",
-    "tm:focusblast",
-    "tm:focuspunch",
-    "tm:gigadrain",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:grassyterrain",
-    "tm:guardswap",
-    "tm:highhorsepower",
-    "tm:hyperbeam",
-    "tm:irondefense",
-    "tm:lightscreen",
-    "tm:megahorn",
-    "tm:megapunch",
-    "tm:naturepower",
-    "tm:payback",
-    "tm:powerswap",
-    "tm:protect",
-    "tm:psychup",
-    "tm:reflect",
-    "tm:rest",
-    "tm:revenge",
-    "tm:roar",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:safeguard",
-    "tm:scaryface",
-    "tm:seedbomb",
-    "tm:sleeptalk",
-    "tm:smartstrike",
-    "tm:snarl",
-    "tm:solarbeam",
-    "tm:stoneedge",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superpower",
-    "tm:swordsdance",
-    "tm:synthesis",
-    "tm:taunt",
-    "tm:telekinesis",
-    "tm:terablast",
-    "tm:torment",
-    "tm:workup",
-    "tm:worryseed",
-    "tm:zenheadbutt",
-    "tutor:bulkup",
-    "tutor:calmmind",
-    "tutor:dazzlinggleam",
-    "tutor:dualchop",
-    "tutor:energyball",
-    "tutor:falseswipe",
-    "tutor:focuspunch",
-    "tutor:gigadrain",
-    "tutor:gigaimpact",
-    "tutor:highhorsepower",
-    "tutor:hyperbeam",
-    "tutor:irondefense",
-    "tutor:megahorn",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:seedbomb",
-    "tutor:sleeptalk",
-    "tutor:snarl",
-    "tutor:stoneedge",
-    "tutor:superpower",
-    "tutor:synthesis",
-    "tutor:telekinesis",
-    "tutor:worryseed",
-    "tutor:zenheadbutt"
+    {
+      "id": "leafage",
+      "name": "Feuillage",
+      "category": "1"
+    },
+    {
+      "id": "rototiller",
+      "name": "Fertilisation",
+      "category": "1"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "1"
+    },
+    {
+      "id": "withdraw",
+      "name": "Repli",
+      "category": "5"
+    },
+    {
+      "id": "disable",
+      "name": "Entrave",
+      "category": "10"
+    },
+    {
+      "id": "leechseed",
+      "name": "Vampigraine",
+      "category": "15"
+    },
+    {
+      "id": "megadrain",
+      "name": "Méga-Sangsue",
+      "category": "20"
+    },
+    {
+      "id": "whirlwind",
+      "name": "Cyclone",
+      "category": "25"
+    },
+    {
+      "id": "hornattack",
+      "name": "Koud'Korne",
+      "category": "30"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "35"
+    },
+    {
+      "id": "hornleech",
+      "name": "Encornebois",
+      "category": "40"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "45"
+    },
+    {
+      "id": "meanlook",
+      "name": "Regard Noir",
+      "category": "50"
+    },
+    {
+      "id": "naturesmadness",
+      "name": "Ire de la Nature",
+      "category": "55"
+    },
+    {
+      "id": "woodhammer",
+      "name": "Martobois",
+      "category": "60"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "65"
+    },
+    {
+      "id": "skullbash",
+      "name": "Coud'Krâne",
+      "category": "70"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "75"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "brutalswing",
+      "name": "Centrifugifle",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "tm"
+    },
+    {
+      "id": "darkestlariat",
+      "name": "Dark Lariat",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "dualchop",
+      "name": "Double Baffe",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "focusblast",
+      "name": "Exploforce",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "tm"
+    },
+    {
+      "id": "guardswap",
+      "name": "Permugarde",
+      "category": "tm"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tm"
+    },
+    {
+      "id": "megapunch",
+      "name": "Ultimapoing",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "powerswap",
+      "name": "Permuforce",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smartstrike",
+      "name": "Estocorne",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "dualchop",
+      "name": "Double Baffe",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tutor"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tutor"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
-  "spawns": [
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "60",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#minecraft:is_jungle",
-            "terralith:cave/underground_jungle",
-            "wythers:dripleaf_swamp",
-            "wythers:eucalyptus_deanei_forest",
-            "wythers:highland_tropical_rainforest",
-            "wythers:humid_tropical_grassland",
-            "wythers:jungle_canyon",
-            "wythers:subtropical_forest",
-            "wythers:subtropical_forest_edge",
-            "wythers:subtropical_grassland",
-            "wythers:tropical_forest",
-            "wythers:tropical_forest_canyon",
-            "wythers:tropical_grassland",
-            "wythers:tropical_island",
-            "wythers:tropical_rainforest"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-tapubulu.json",
-        "keyItem": "myths_and_legends:bulu_totem"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "60",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "minecraft:stony_shore",
-            "#cobblemon:is_beach",
-            "#c:stony_shores",
-            "terralith:basalt_cliffs",
-            "terralith:granite_cliffs",
-            "terralith:white_cliffs",
-            "wythers:calcite_coast",
-            "wythers:coastal_mangroves",
-            "wythers:cold_island",
-            "wythers:cold_stony_shore",
-            "wythers:deepslate_shore",
-            "wythers:frigid_island",
-            "wythers:frozen_island",
-            "wythers:gravelly_beach",
-            "wythers:icy_shore",
-            "wythers:mediterranean_island",
-            "wythers:temperate_island",
-            "wythers:tropical_island",
-            "wythers:warm_stony_shore"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-tapubulu.json",
-        "keyItem": "myths_and_legends:bulu_totem"
-      }
-    ]
-  ],
-  "implemented": false,
+  "preEvolution": null,
+  "spawns": [],
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/tapu_bulu.png"
@@ -231,6 +637,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/tapubulu.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/tapubulu.json"
   ]
 }

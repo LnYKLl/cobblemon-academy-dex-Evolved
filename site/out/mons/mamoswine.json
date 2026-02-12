@@ -2,20 +2,45 @@
   "id": "mamoswine",
   "dexnum": 473,
   "name": "Mamoswine",
+  "nameFr": "Mammochon",
+  "description": "Ses défenses spectaculaires sont glacées. Il a failli disparaître dans la canicule suivant l'ère glaciaire.",
   "primaryType": "ice",
   "secondaryType": "ground",
+  "primaryTypeFr": "Glace",
+  "secondaryTypeFr": "Sol",
+  "height": 25,
+  "weight": 2910,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "height": 3.5,
+    "fixed": false,
+    "width": 2.7
+  },
   "labels": [
     "gen4"
   ],
   "abilities": [
-    "oblivious",
-    "snowcloak",
-    "h:thickfat"
+    {
+      "id": "oblivious",
+      "name": "Benêt",
+      "hidden": false
+    },
+    {
+      "id": "snowcloak",
+      "name": "Rideau Neige",
+      "hidden": false
+    },
+    {
+      "id": "thickfat",
+      "name": "Isograisse",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 110,
     "attack": 130,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 265,
   "experienceGroup": "slow",
   "catchRate": 50,
+  "baseFriendship": 50,
   "drops": {
     "amount": 8,
     "entries": [
@@ -41,149 +68,707 @@
         "item": "minecraft:porkchop",
         "percentage": null,
         "quantityRange": "2-3",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:porkchop"
       },
       {
         "item": "minecraft:brown_wool",
         "percentage": null,
         "quantityRange": "2-3",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:brown_wool"
       },
       {
         "item": "cobblemon:never_melt_ice",
         "percentage": 10.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Glace Éternelle"
       },
       {
         "item": "cobblemon:aspear_berry",
         "percentage": 10.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Willia"
       }
     ]
   },
   "moves": [
-    "1:ancientpower",
-    "1:peck",
-    "1:odorsleuth",
-    "1:mudsport",
-    "1:powdersnow",
-    "1:mudslap",
-    "1:mudbomb",
-    "1:icefang",
-    "1:doublehit",
-    "1:furyattack",
-    "1:tackle",
-    "1:flail",
-    "15:iceshard",
-    "20:mist",
-    "25:endure",
-    "30:icywind",
-    "37:amnesia",
-    "44:takedown",
-    "51:earthquake",
-    "58:blizzard",
-    "65:thrash",
-    "egg:ancientpower",
-    "egg:bite",
-    "egg:curse",
-    "egg:doubleedge",
-    "egg:fissure",
-    "egg:freezedry",
-    "egg:iciclecrash",
-    "egg:mudbomb",
-    "tm:amnesia",
-    "tm:ancientpower",
-    "tm:avalanche",
-    "tm:babydolleyes",
-    "tm:blizzard",
-    "tm:block",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:charm",
-    "tm:curse",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:earthpower",
-    "tm:earthquake",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:furycutter",
-    "tm:gigaimpact",
-    "tm:hail",
-    "tm:hardpress",
-    "tm:haze",
-    "tm:headbutt",
-    "tm:heavyslam",
-    "tm:highhorsepower",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icefang",
-    "tm:iciclespear",
-    "tm:icywind",
-    "tm:ironhead",
-    "tm:knockoff",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:protect",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:reversal",
-    "tm:roar",
-    "tm:rockblast",
-    "tm:rockclimb",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:sandstorm",
-    "tm:sandtomb",
-    "tm:scaryface",
-    "tm:sleeptalk",
-    "tm:smackdown",
-    "tm:snowscape",
-    "tm:stealthrock",
-    "tm:stompingtantrum",
-    "tm:stoneedge",
-    "tm:strength",
-    "tm:substitute",
-    "tm:superpower",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:throatchop",
-    "tm:trailblaze",
-    "tutor:ancientpower",
-    "tutor:babydolleyes",
-    "tutor:block",
-    "tutor:bulldoze",
-    "tutor:earthpower",
-    "tutor:endeavor",
-    "tutor:furycutter",
-    "tutor:gigaimpact",
-    "tutor:highhorsepower",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icefang",
-    "tutor:icywind",
-    "tutor:ironhead",
-    "tutor:knockoff",
-    "tutor:mudslap",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:sleeptalk",
-    "tutor:stealthrock",
-    "tutor:stompingtantrum",
-    "tutor:stoneedge",
-    "tutor:superpower",
-    "tutor:throatchop"
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "1"
+    },
+    {
+      "id": "peck",
+      "name": "Picpic",
+      "category": "1"
+    },
+    {
+      "id": "odorsleuth",
+      "name": "Flair",
+      "category": "1"
+    },
+    {
+      "id": "mudsport",
+      "name": "Lance-Boue",
+      "category": "1"
+    },
+    {
+      "id": "powdersnow",
+      "name": "Poudreuse",
+      "category": "1"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "1"
+    },
+    {
+      "id": "mudbomb",
+      "name": "Boue-Bombe",
+      "category": "1"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "1"
+    },
+    {
+      "id": "doublehit",
+      "name": "Coup Double",
+      "category": "1"
+    },
+    {
+      "id": "furyattack",
+      "name": "Furie",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "1"
+    },
+    {
+      "id": "iceshard",
+      "name": "Éclats Glace",
+      "category": "15"
+    },
+    {
+      "id": "mist",
+      "name": "Brume",
+      "category": "20"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "25"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "30"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "37"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "44"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "51"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "58"
+    },
+    {
+      "id": "thrash",
+      "name": "Mania",
+      "category": "65"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "egg"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "egg"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "egg"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "egg"
+    },
+    {
+      "id": "fissure",
+      "name": "Abîme",
+      "category": "egg"
+    },
+    {
+      "id": "freezedry",
+      "name": "Lyophilisation",
+      "category": "egg"
+    },
+    {
+      "id": "iciclecrash",
+      "name": "Chute Glace",
+      "category": "egg"
+    },
+    {
+      "id": "mudbomb",
+      "name": "Boue-Bombe",
+      "category": "egg"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "tm"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "hardpress",
+      "name": "Pression Extrême",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "tm"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tm"
+    },
+    {
+      "id": "iciclespear",
+      "name": "Stalactite",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockclimb",
+      "name": "Escalade",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "sandtomb",
+      "name": "Tourbi-Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "tm"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tutor"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "legacy"
+    },
+    {
+      "id": "detect",
+      "name": "Détection",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "hornattack",
+      "name": "Koud'Korne",
+      "category": "legacy"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "piloswine",
   "spawns": [
     [
       {
@@ -194,38 +779,20 @@
         "rarity": "common",
         "weight": 0.1,
         "levels": "40-53",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_tundra"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0473_mamoswine.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0473_mamoswine.json",
+        "spawnId": "mamoswine-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 3.8,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:starlight_permafrost_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/rare_starlight_permafrost_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "mamoswine",
+        "type": "pokemon"
       }
     ]
   ],
@@ -239,6 +806,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation4/mamoswine.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation4/mamoswine.json"
   ]
 }

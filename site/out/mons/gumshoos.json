@@ -2,20 +2,45 @@
   "id": "gumshoos",
   "dexnum": 735,
   "name": "Gumshoos",
+  "nameFr": "Argouste",
+  "description": "D'un naturel très patient, il ne peut toutefois s'empêcher de bondir sur son plat favori, Rattata, s'il en voit un.",
   "primaryType": "normal",
   "secondaryType": "",
+  "primaryTypeFr": "Normal",
+  "secondaryTypeFr": "",
+  "height": 7,
+  "weight": 142,
   "maleRatio": 0.5,
+  "baseScale": 0.55,
+  "hitbox": {
+    "width": 1.25,
+    "height": 2,
+    "fixed": false
+  },
   "labels": [
     "gen7"
   ],
   "abilities": [
-    "stakeout",
-    "strongjaw",
-    "h:adaptability"
+    {
+      "id": "stakeout",
+      "name": "Filature",
+      "hidden": false
+    },
+    {
+      "id": "strongjaw",
+      "name": "Prognathe",
+      "hidden": false
+    },
+    {
+      "id": "adaptability",
+      "name": "Adaptabilité",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 88,
     "attack": 110,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 146,
   "experienceGroup": "medium_fast",
   "catchRate": 127,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,188 +68,665 @@
         "item": "cobblemon:pecha_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Pêcha"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:leer",
-    "1:pursuit",
-    "1:sandattack",
-    "1:odorsleuth",
-    "1:bide",
-    "1:hyperfang",
-    "1:payback",
-    "13:workup",
-    "19:bite",
-    "23:mudslap",
-    "27:superfang",
-    "31:takedown",
-    "35:scaryface",
-    "39:crunch",
-    "43:yawn",
-    "47:thrash",
-    "52:rest",
-    "egg:bide",
-    "egg:endeavor",
-    "egg:firefang",
-    "egg:icefang",
-    "egg:lastresort",
-    "egg:thunderfang",
-    "egg:yawn",
-    "tm:block",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:chillingwater",
-    "tm:crunch",
-    "tm:curse",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:dualchop",
-    "tm:earthquake",
-    "tm:echoedvoice",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:firefang",
-    "tm:firepunch",
-    "tm:fling",
-    "tm:focuspunch",
-    "tm:gigaimpact",
-    "tm:helpinghand",
-    "tm:hyperbeam",
-    "tm:icefang",
-    "tm:icepunch",
-    "tm:ironhead",
-    "tm:irontail",
-    "tm:knockoff",
-    "tm:lastresort",
-    "tm:lowsweep",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:payback",
-    "tm:protect",
-    "tm:psychicfangs",
-    "tm:raindance",
-    "tm:rest",
-    "tm:revenge",
-    "tm:reversal",
-    "tm:roar",
-    "tm:rocktomb",
-    "tm:sandstorm",
-    "tm:scaryface",
-    "tm:seedbomb",
-    "tm:shockwave",
-    "tm:sleeptalk",
-    "tm:stompingtantrum",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superfang",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunderfang",
-    "tm:thunderpunch",
-    "tm:torment",
-    "tm:trailblaze",
-    "tm:uturn",
-    "tm:wildcharge",
-    "tm:workup",
-    "tm:zenheadbutt",
-    "tutor:block",
-    "tutor:bulldoze",
-    "tutor:dualchop",
-    "tutor:endeavor",
-    "tutor:firefang",
-    "tutor:firepunch",
-    "tutor:focuspunch",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:icefang",
-    "tutor:icepunch",
-    "tutor:ironhead",
-    "tutor:irontail",
-    "tutor:knockoff",
-    "tutor:lastresort",
-    "tutor:mudslap",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:seedbomb",
-    "tutor:shockwave",
-    "tutor:sleeptalk",
-    "tutor:stompingtantrum",
-    "tutor:superfang",
-    "tutor:thunderfang",
-    "tutor:thunderpunch",
-    "tutor:wildcharge",
-    "tutor:zenheadbutt"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "1"
+    },
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "1"
+    },
+    {
+      "id": "odorsleuth",
+      "name": "Flair",
+      "category": "1"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "1"
+    },
+    {
+      "id": "hyperfang",
+      "name": "Croc de Mort",
+      "category": "1"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "1"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "13"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "19"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "23"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "27"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "31"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "35"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "39"
+    },
+    {
+      "id": "yawn",
+      "name": "Bâillement",
+      "category": "43"
+    },
+    {
+      "id": "thrash",
+      "name": "Mania",
+      "category": "47"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "52"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "egg"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "egg"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "egg"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "egg"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "egg"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "egg"
+    },
+    {
+      "id": "yawn",
+      "name": "Bâillement",
+      "category": "egg"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "dualchop",
+      "name": "Double Baffe",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tm"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tm"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tm"
+    },
+    {
+      "id": "lowsweep",
+      "name": "Balayette",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychicfangs",
+      "name": "Psycho-Croc",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "dualchop",
+      "name": "Double Baffe",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tutor"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "yungoos",
   "spawns": [
     [
       {
         "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 0.1,
-        "levels": "28-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_safari_surface"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_safari_surface/common_is_safari_surface.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
+          "natural",
+          "wild"
         ],
         "rarity": "common",
         "weight": 0.6,
-        "levels": "4-18",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/common_scarlet_forest.json"
-      }
-    ],
-    [
-      {
-        "rarity": "uncommon",
-        "weight": 2,
-        "levels": "35-47",
-        "contexts": [
-          "grounded"
-        ],
+        "levels": "20-42",
         "biomeTags": {
           "include": [
             "#cobblemon:is_plains"
           ]
         },
-        "source": "datapacks/MysticMons_v3.2.1/data/cobblemon/spawn_pool_world/gumshoos.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0735_gumshoos.json",
+        "spawnId": "gumshoos-1",
         "sky": {
-          "canSeeSky": true
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "gumshoos",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
         }
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/gumshoos.png"
@@ -232,6 +736,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/gumshoos.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/gumshoos.json"
   ]
 }

@@ -2,20 +2,45 @@
   "id": "sentret",
   "dexnum": 161,
   "name": "Sentret",
+  "nameFr": "Fouinette",
+  "description": "Lorsqu'un Fouinette dort, un autre monte la garde. La sentinelle réveille les autres au moindre signe de danger. Si un de ces Pokémon est séparé de sa meute, il est incapable de dormir, car il a peur.",
   "primaryType": "normal",
   "secondaryType": "",
+  "primaryTypeFr": "Normal",
+  "secondaryTypeFr": "",
+  "height": 8,
+  "weight": 60,
   "maleRatio": 0.5,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 0.7,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen2"
   ],
   "abilities": [
-    "runaway",
-    "keeneye",
-    "h:frisk"
+    {
+      "id": "runaway",
+      "name": "Fuite",
+      "hidden": false
+    },
+    {
+      "id": "keeneye",
+      "name": "Regard Vif",
+      "hidden": false
+    },
+    {
+      "id": "frisk",
+      "name": "Fouille",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 35,
     "attack": 46,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 43,
   "experienceGroup": "medium_fast",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,149 +68,756 @@
         "item": "cobblemon:silk_scarf",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Mouchoir Soie"
       },
       {
         "item": "cobblemon:oran_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Oran"
       }
     ]
   },
   "moves": [
-    "1:scratch",
-    "1:foresight",
-    "4:defensecurl",
-    "7:quickattack",
-    "13:furyswipes",
-    "16:helpinghand",
-    "19:followme",
-    "25:slam",
-    "28:rest",
-    "31:suckerpunch",
-    "36:amnesia",
-    "39:batonpass",
-    "42:mefirst",
-    "47:hypervoice",
-    "egg:assist",
-    "egg:babydolleyes",
-    "egg:captivate",
-    "egg:focusenergy",
-    "egg:lastresort",
-    "egg:naturalgift",
-    "egg:pursuit",
-    "egg:reversal",
-    "egg:slash",
-    "egg:tidyup",
-    "tm:amnesia",
-    "tm:aquatail",
-    "tm:assurance",
-    "tm:babydolleyes",
-    "tm:batonpass",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:brickbreak",
-    "tm:brutalswing",
-    "tm:captivate",
-    "tm:chargebeam",
-    "tm:charm",
-    "tm:chillingwater",
-    "tm:covet",
-    "tm:cut",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:echoedvoice",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:firepunch",
-    "tm:flamethrower",
-    "tm:fling",
-    "tm:focusenergy",
-    "tm:focuspunch",
-    "tm:furycutter",
-    "tm:grassknot",
-    "tm:growl",
-    "tm:headbutt",
-    "tm:helpinghand",
-    "tm:honeclaws",
-    "tm:hypervoice",
-    "tm:icebeam",
-    "tm:icepunch",
-    "tm:irontail",
-    "tm:knockoff",
-    "tm:lastresort",
-    "tm:naturalgift",
-    "tm:playrough",
-    "tm:poweruppunch",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:reversal",
-    "tm:rollout",
-    "tm:seedbomb",
-    "tm:shadowball",
-    "tm:shadowclaw",
-    "tm:shockwave",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:sunnyday",
-    "tm:superfang",
-    "tm:surf",
-    "tm:swift",
-    "tm:tailslap",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderpunch",
-    "tm:trailblaze",
-    "tm:trick",
-    "tm:uproar",
-    "tm:uturn",
-    "tm:waterpulse",
-    "tm:workup",
-    "tutor:aquatail",
-    "tutor:babydolleyes",
-    "tutor:chargebeam",
-    "tutor:covet",
-    "tutor:endeavor",
-    "tutor:firepunch",
-    "tutor:flamethrower",
-    "tutor:focusenergy",
-    "tutor:focuspunch",
-    "tutor:furycutter",
-    "tutor:helpinghand",
-    "tutor:hypervoice",
-    "tutor:icebeam",
-    "tutor:icepunch",
-    "tutor:irontail",
-    "tutor:knockoff",
-    "tutor:lastresort",
-    "tutor:playrough",
-    "tutor:rest",
-    "tutor:rollout",
-    "tutor:seedbomb",
-    "tutor:shadowball",
-    "tutor:shadowclaw",
-    "tutor:shockwave",
-    "tutor:sleeptalk",
-    "tutor:suckerpunch",
-    "tutor:superfang",
-    "tutor:swift",
-    "tutor:thunderbolt",
-    "tutor:thunderpunch",
-    "tutor:trick",
-    "tutor:uproar",
-    "tutor:waterpulse"
+    {
+      "id": "scratch",
+      "name": "Griffe",
+      "category": "1"
+    },
+    {
+      "id": "foresight",
+      "name": "Clairvoyance",
+      "category": "1"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "4"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "7"
+    },
+    {
+      "id": "furyswipes",
+      "name": "Combo-Griffe",
+      "category": "13"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "16"
+    },
+    {
+      "id": "followme",
+      "name": "Par Ici",
+      "category": "19"
+    },
+    {
+      "id": "slam",
+      "name": "Souplesse",
+      "category": "25"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "28"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "31"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "36"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "39"
+    },
+    {
+      "id": "mefirst",
+      "name": "Moi d'Abord",
+      "category": "42"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "47"
+    },
+    {
+      "id": "assist",
+      "name": "Assistance",
+      "category": "egg"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "egg"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "egg"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "egg"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "egg"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "egg"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "egg"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "egg"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "egg"
+    },
+    {
+      "id": "tidyup",
+      "name": "Grand Nettoyage",
+      "category": "egg"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "brutalswing",
+      "name": "Centrifugifle",
+      "category": "tm"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tm"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "poweruppunch",
+      "name": "Poing Boost",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailslap",
+      "name": "Plumo-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "detect",
+      "name": "Détection",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "dynamicpunch",
+      "name": "Dynamo-Poing",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "sentret_furret",
@@ -201,6 +835,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -210,9 +845,6 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "1-22",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether",
@@ -221,30 +853,15 @@
             "#cobblemon:is_tundra"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0161_sentret.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0161_sentret.json",
+        "spawnId": "sentret-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 3.5,
-        "levels": "4-18",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/common_scarlet_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "sentret",
+        "type": "pokemon"
       }
     ]
   ],
@@ -258,6 +875,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation2/sentret.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation2/sentret.json"
   ]
 }

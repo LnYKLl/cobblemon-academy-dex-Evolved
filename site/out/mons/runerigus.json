@@ -2,20 +2,41 @@
   "id": "runerigus",
   "dexnum": 867,
   "name": "Runerigus",
+  "nameFr": "Tutétékri",
+  "description": "Les motifs antiques qui ont été gravés en y incorporant une puissante malédiction ont aspiré l'âme de Tutafeh avant de prendre vie.",
   "primaryType": "ground",
   "secondaryType": "ghost",
+  "primaryTypeFr": "Sol",
+  "secondaryTypeFr": "Spectre",
+  "height": 16,
+  "weight": 666,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 2,
+    "height": 3,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "wanderingspirit",
-    "h:wanderingspirit"
+    {
+      "id": "wanderingspirit",
+      "name": "Âme Vagabonde",
+      "hidden": false
+    },
+    {
+      "id": "wanderingspirit",
+      "name": "Âme Vagabonde",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "mineral",
     "amorphous"
   ],
+  "eggCycles": 25,
   "baseStats": {
     "hp": 58,
     "attack": 95,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 169,
   "experienceGroup": "medium_fast",
   "catchRate": 90,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,133 +64,550 @@
         "item": "cobblemon:kasib_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Sédra"
       }
     ]
   },
   "moves": [
-    "1:shadowclaw",
-    "1:scaryface",
-    "1:astonish",
-    "1:protect",
-    "1:haze",
-    "1:nightshade",
-    "12:disable",
-    "16:brutalswing",
-    "20:craftyshield",
-    "24:hex",
-    "28:meanlook",
-    "32:slam",
-    "38:curse",
-    "44:shadowball",
-    "50:earthquake",
-    "56:powersplit",
-    "56:guardsplit",
-    "62:destinybond",
-    "egg:memento",
-    "tm:allyswitch",
-    "tm:amnesia",
-    "tm:bodypress",
-    "tm:brutalswing",
-    "tm:bulldoze",
-    "tm:calmmind",
-    "tm:curse",
-    "tm:darkpulse",
-    "tm:dragonpulse",
-    "tm:earthpower",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:faketears",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:guardswap",
-    "tm:haze",
-    "tm:hex",
-    "tm:hyperbeam",
-    "tm:imprison",
-    "tm:irondefense",
-    "tm:nastyplot",
-    "tm:nightshade",
-    "tm:payback",
-    "tm:phantomforce",
-    "tm:poltergeist",
-    "tm:powerswap",
-    "tm:protect",
-    "tm:psychic",
-    "tm:raindance",
-    "tm:rest",
-    "tm:revenge",
-    "tm:rockblast",
-    "tm:rockslide",
-    "tm:rocktomb",
-    "tm:safeguard",
-    "tm:sandstorm",
-    "tm:sandtomb",
-    "tm:scaryface",
-    "tm:shadowball",
-    "tm:shadowclaw",
-    "tm:skillswap",
-    "tm:sleeptalk",
-    "tm:stealthrock",
-    "tm:stoneedge",
-    "tm:substitute",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:toxicspikes",
-    "tm:trick",
-    "tm:trickroom",
-    "tm:willowisp",
-    "tm:wonderroom",
-    "tm:zenheadbutt",
-    "tutor:allyswitch",
-    "tutor:bulldoze",
-    "tutor:calmmind",
-    "tutor:darkpulse",
-    "tutor:dragonpulse",
-    "tutor:earthpower",
-    "tutor:energyball",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:irondefense",
-    "tutor:poltergeist",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:shadowball",
-    "tutor:shadowclaw",
-    "tutor:skillswap",
-    "tutor:sleeptalk",
-    "tutor:spikes",
-    "tutor:stealthrock",
-    "tutor:stoneedge",
-    "tutor:trick",
-    "tutor:wonderroom",
-    "tutor:zenheadbutt"
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "1"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "1"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "1"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "1"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "1"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "1"
+    },
+    {
+      "id": "disable",
+      "name": "Entrave",
+      "category": "12"
+    },
+    {
+      "id": "brutalswing",
+      "name": "Centrifugifle",
+      "category": "16"
+    },
+    {
+      "id": "craftyshield",
+      "name": "Vigilance",
+      "category": "20"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "24"
+    },
+    {
+      "id": "meanlook",
+      "name": "Regard Noir",
+      "category": "28"
+    },
+    {
+      "id": "slam",
+      "name": "Souplesse",
+      "category": "32"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "38"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "44"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "50"
+    },
+    {
+      "id": "powersplit",
+      "name": "Partage Force",
+      "category": "56"
+    },
+    {
+      "id": "guardsplit",
+      "name": "Partage Garde",
+      "category": "56"
+    },
+    {
+      "id": "destinybond",
+      "name": "Lien du Destin",
+      "category": "62"
+    },
+    {
+      "id": "memento",
+      "name": "Souvenir",
+      "category": "egg"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "brutalswing",
+      "name": "Centrifugifle",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "faketears",
+      "name": "Croco Larme",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "guardswap",
+      "name": "Permugarde",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "phantomforce",
+      "name": "Hantise",
+      "category": "tm"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tm"
+    },
+    {
+      "id": "powerswap",
+      "name": "Permuforce",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "sandtomb",
+      "name": "Tourbi-Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "yamask galarian",
   "spawns": [
     [
       {
         "presets": [
-          "natural"
+          "ruins"
         ],
         "rarity": "rare",
-        "weight": 1.3,
-        "levels": "18-41",
+        "weight": 1.0,
+        "levels": "34-43",
         "contexts": [
           "grounded"
         ],
+        "times": [
+          "night"
+        ],
         "biomeTags": {
           "include": [
-            "eternal_starlight:crystallized_desert"
+            "#cobblemon:is_overworld"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/rare_crystallized_desert.json"
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0867_runerigus.json",
+        "spawnId": "runerigus-2",
+        "pokemon": "runerigus",
+        "type": "pokemon"
       }
     ],
     [
@@ -181,16 +621,22 @@
         "contexts": [
           "grounded"
         ],
+        "times": [
+          "night"
+        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0867_runerigus.json"
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0867_runerigus.json",
+        "spawnId": "ccc-runerigus-2",
+        "pokemon": "runerigus",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/runerigus.png"
@@ -200,6 +646,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/runerigus.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/runerigus.json"
   ]
 }

@@ -2,20 +2,41 @@
   "id": "cramorant_gorging",
   "dexnum": 845,
   "name": "Cramorant Gorging",
+  "nameFr": "Cramorant Gorging",
+  "description": "Il s'est coincé un Pikachu dans la gorge par erreur. Il a du mal à respirer, mais cela ne le dérange pas vraiment.",
   "primaryType": "flying",
   "secondaryType": "water",
+  "primaryTypeFr": "Vol",
+  "secondaryTypeFr": "Eau",
+  "height": 8,
+  "weight": 180,
   "maleRatio": 0.5,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 0.6,
+    "height": 1.7,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "gulpmissile",
-    "h:gulpmissile"
+    {
+      "id": "gulpmissile",
+      "name": "Dégobage",
+      "hidden": false
+    },
+    {
+      "id": "gulpmissile",
+      "name": "Dégobage",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_1",
     "flying"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 70,
     "attack": 85,
@@ -32,8 +53,10 @@
     "special_defence": 2,
     "speed": 0
   },
+  "baseExperienceYield": 166,
   "experienceGroup": "medium_fast",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 6,
     "entries": [
@@ -41,126 +64,483 @@
         "item": "minecraft:feather",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:feather"
       },
       {
         "item": "minecraft:chicken",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:chicken"
       },
       {
         "item": "minecraft:cod",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:cod"
       },
       {
         "item": "cobblemon:wacan_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Parma"
       }
     ]
   },
   "moves": [
-    "1:belch",
-    "1:peck",
-    "1:stockpile",
-    "1:swallow",
-    "1:spitup",
-    "7:watergun",
-    "14:furyattack",
-    "21:pluck",
-    "28:dive",
-    "35:drillpeck",
-    "42:amnesia",
-    "49:thrash",
-    "56:hydropump",
-    "egg:aerialace",
-    "egg:aquacutter",
-    "egg:aquaring",
-    "egg:defog",
-    "egg:featherdance",
-    "egg:roost",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:amnesia",
-    "tm:assurance",
-    "tm:blizzard",
-    "tm:bravebird",
-    "tm:chillingwater",
-    "tm:defog",
-    "tm:dive",
-    "tm:dualwingbeat",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:featherdance",
-    "tm:fly",
-    "tm:gigaimpact",
-    "tm:hurricane",
-    "tm:hydropump",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:liquidation",
-    "tm:pluck",
-    "tm:pounce",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:reversal",
-    "tm:roost",
-    "tm:sleeptalk",
-    "tm:steelwing",
-    "tm:substitute",
-    "tm:superpower",
-    "tm:surf",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:throatchop",
-    "tm:uproar",
-    "tm:waterpulse",
-    "tm:weatherball",
-    "tm:whirlpool",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:defog",
-    "tutor:dive",
-    "tutor:dualwingbeat",
-    "tutor:endeavor",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:liquidation",
-    "tutor:rest",
-    "tutor:roost",
-    "tutor:sleeptalk",
-    "tutor:superpower",
-    "tutor:tailwind",
-    "tutor:throatchop",
-    "tutor:uproar",
-    "tutor:waterpulse"
+    {
+      "id": "belch",
+      "name": "Éructation",
+      "category": "1"
+    },
+    {
+      "id": "peck",
+      "name": "Picpic",
+      "category": "1"
+    },
+    {
+      "id": "stockpile",
+      "name": "Stockage",
+      "category": "1"
+    },
+    {
+      "id": "swallow",
+      "name": "Avale",
+      "category": "1"
+    },
+    {
+      "id": "spitup",
+      "name": "Relâche",
+      "category": "1"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "7"
+    },
+    {
+      "id": "furyattack",
+      "name": "Furie",
+      "category": "14"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "21"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "28"
+    },
+    {
+      "id": "drillpeck",
+      "name": "Bec Vrille",
+      "category": "35"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "42"
+    },
+    {
+      "id": "thrash",
+      "name": "Mania",
+      "category": "49"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "56"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "egg"
+    },
+    {
+      "id": "aquacutter",
+      "name": "Tranch'Aqua",
+      "category": "egg"
+    },
+    {
+      "id": "aquaring",
+      "name": "Anneau Hydro",
+      "category": "egg"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "egg"
+    },
+    {
+      "id": "featherdance",
+      "name": "Danse Plumes",
+      "category": "egg"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "featherdance",
+      "name": "Danse Plumes",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
         "rarity": "uncommon",
         "weight": 10.0,
         "levels": "23-48",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_coast",
@@ -171,10 +551,20 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0845_cramorant.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0845_cramorant.json",
+        "spawnId": "cramorant-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "cramorant",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
         }
       }
     ],
@@ -186,8 +576,8 @@
         "rarity": "uncommon",
         "weight": 10.0,
         "levels": "23-48",
-        "contexts": [
-          "surface"
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
@@ -199,11 +589,15 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0845_cramorant.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0845_cramorant.json",
+        "spawnId": "cramorant-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "surface",
+        "pokemon": "cramorant",
+        "type": "pokemon"
       }
     ],
     [
@@ -211,8 +605,8 @@
         "rarity": "uncommon",
         "weight": 6.0,
         "levels": "23-48",
-        "contexts": [
-          "fishing"
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
@@ -223,11 +617,18 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0845_cramorant.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0845_cramorant.json",
+        "spawnId": "cramorant-4",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "cramorant",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -235,8 +636,8 @@
         "rarity": "common",
         "weight": 2.0,
         "levels": "23-48",
-        "contexts": [
-          "fishing"
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
@@ -247,10 +648,23 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0845_cramorant.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0845_cramorant.json",
+        "spawnId": "cramorant-5",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "fishing",
+        "pokemon": "cramorant",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 3.0,
+          "condition": {
+            "minLureLevel": 3
+          }
         }
       }
     ],
@@ -259,27 +673,25 @@
         "rarity": "uncommon",
         "weight": 10.0,
         "levels": "23-48",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0845_cramorant.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0845_cramorant.json",
+        "spawnId": "cramorant-6",
         "nearbyBlocks": {
           "selectors": [
-            "#minecraft:water"
-          ],
-          "resolved": [
-            "#minecraft:water"
+            "minecraft:water"
           ]
         },
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "cramorant",
+        "type": "pokemon"
       }
     ],
     [
@@ -290,19 +702,20 @@
         "rarity": "uncommon",
         "weight": 10.0,
         "levels": "23-48",
-        "contexts": [
-          "surface"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0845_cramorant.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0845_cramorant.json",
+        "spawnId": "cramorant-7",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "surface",
+        "pokemon": "cramorant",
+        "type": "pokemon"
       }
     ],
     [
@@ -310,19 +723,23 @@
         "rarity": "uncommon",
         "weight": 6.0,
         "levels": "23-48",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0845_cramorant.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0845_cramorant.json",
+        "spawnId": "cramorant-8",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "cramorant",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -330,38 +747,29 @@
         "rarity": "common",
         "weight": 2.0,
         "levels": "23-48",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0845_cramorant.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0845_cramorant.json",
+        "spawnId": "cramorant-9",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "water"
-        ],
-        "rarity": "uncommon",
-        "weight": 2.0,
-        "levels": "18-34",
-        "contexts": [
-          "submerged"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_safari_ocean"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_safari_ocean/uncommon_is_safari_ocean.json"
+        "spawnType": "fishing",
+        "pokemon": "cramorant",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 3.0,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
       }
     ]
   ],
@@ -375,6 +783,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/cramorant.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/cramorant.json"
   ]
 }

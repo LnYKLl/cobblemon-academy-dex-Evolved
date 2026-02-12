@@ -2,20 +2,41 @@
   "id": "amaura",
   "dexnum": 698,
   "name": "Amaura",
+  "nameFr": "Amagara",
+  "description": "Ce Pokémon placide vivait dans des contrées au climat froid, loin de la menace d'un violent prédateur comme Rexillius.",
   "primaryType": "rock",
   "secondaryType": "ice",
+  "primaryTypeFr": "Roche",
+  "secondaryTypeFr": "Glace",
+  "height": 13,
+  "weight": 252,
   "maleRatio": 0.875,
+  "baseScale": 1.2,
+  "hitbox": {
+    "height": 2.15,
+    "fixed": false,
+    "width": 1
+  },
   "labels": [
     "gen6",
     "fossil"
   ],
   "abilities": [
-    "refrigerate",
-    "h:snowwarning"
+    {
+      "id": "refrigerate",
+      "name": "Peau Gelée",
+      "hidden": false
+    },
+    {
+      "id": "snowwarning",
+      "name": "Alerte Neige",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "monster"
   ],
+  "eggCycles": 30,
   "baseStats": {
     "hp": 77,
     "attack": 59,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 72,
   "experienceGroup": "medium_fast",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,146 +64,641 @@
         "item": "cobblemon:never_melt_ice",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Glace Éternelle"
       }
     ]
   },
   "moves": [
-    "1:growl",
-    "1:powdersnow",
-    "1:rockthrow",
-    "4:encore",
-    "8:ancientpower",
-    "12:icywind",
-    "16:round",
-    "20:mist",
-    "24:aurorabeam",
-    "28:thunderwave",
-    "32:naturepower",
-    "36:freezedry",
-    "40:icebeam",
-    "44:lightscreen",
-    "48:hail",
-    "52:blizzard",
-    "56:hyperbeam",
-    "egg:auroraveil",
-    "egg:barrier",
-    "egg:discharge",
-    "egg:haze",
-    "egg:mirrorcoat",
-    "egg:rockthrow",
-    "egg:takedown",
-    "tm:ancientpower",
-    "tm:aquatail",
-    "tm:auroraveil",
-    "tm:avalanche",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:calmmind",
-    "tm:chargebeam",
-    "tm:darkpulse",
-    "tm:dragontail",
-    "tm:dreameater",
-    "tm:earthpower",
-    "tm:echoedvoice",
-    "tm:encore",
-    "tm:endure",
-    "tm:facade",
-    "tm:flash",
-    "tm:flashcannon",
-    "tm:frostbreath",
-    "tm:hail",
-    "tm:haze",
-    "tm:hyperbeam",
-    "tm:hypervoice",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:irondefense",
-    "tm:ironhead",
-    "tm:irontail",
-    "tm:lightscreen",
-    "tm:magnetrise",
-    "tm:meteorbeam",
-    "tm:mudshot",
-    "tm:naturepower",
-    "tm:outrage",
-    "tm:protect",
-    "tm:psychup",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:roar",
-    "tm:rockblast",
-    "tm:rockpolish",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:round",
-    "tm:safeguard",
-    "tm:sandstorm",
-    "tm:sleeptalk",
-    "tm:stealthrock",
-    "tm:stoneedge",
-    "tm:substitute",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:waterpulse",
-    "tm:weatherball",
-    "tm:zenheadbutt",
-    "tutor:ancientpower",
-    "tutor:aquatail",
-    "tutor:bulldoze",
-    "tutor:calmmind",
-    "tutor:chargebeam",
-    "tutor:darkpulse",
-    "tutor:earthpower",
-    "tutor:flashcannon",
-    "tutor:hyperbeam",
-    "tutor:hypervoice",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:irondefense",
-    "tutor:ironhead",
-    "tutor:irontail",
-    "tutor:magnetrise",
-    "tutor:meteorbeam",
-    "tutor:outrage",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:sleeptalk",
-    "tutor:stealthrock",
-    "tutor:stoneedge",
-    "tutor:thunderbolt",
-    "tutor:waterpulse",
-    "tutor:zenheadbutt"
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "powdersnow",
+      "name": "Poudreuse",
+      "category": "1"
+    },
+    {
+      "id": "rockthrow",
+      "name": "Jet-Pierres",
+      "category": "1"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "4"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "8"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "12"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "16"
+    },
+    {
+      "id": "mist",
+      "name": "Brume",
+      "category": "20"
+    },
+    {
+      "id": "aurorabeam",
+      "name": "Onde Boréale",
+      "category": "24"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "28"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "32"
+    },
+    {
+      "id": "freezedry",
+      "name": "Lyophilisation",
+      "category": "36"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "40"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "44"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "48"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "52"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "56"
+    },
+    {
+      "id": "auroraveil",
+      "name": "Voile Aurore",
+      "category": "egg"
+    },
+    {
+      "id": "barrier",
+      "name": "Bouclier",
+      "category": "egg"
+    },
+    {
+      "id": "discharge",
+      "name": "Coup d'Jus",
+      "category": "egg"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "egg"
+    },
+    {
+      "id": "mirrorcoat",
+      "name": "Voile Miroir",
+      "category": "egg"
+    },
+    {
+      "id": "rockthrow",
+      "name": "Jet-Pierres",
+      "category": "egg"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "egg"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "auroraveil",
+      "name": "Voile Aurore",
+      "category": "tm"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "frostbreath",
+      "name": "Souffle Glacé",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tm"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tutor"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
-      "id": "amaura_aurorus",
-      "variant": "level_up",
-      "result": "aurorus",
       "consumeHeldItem": false,
+      "id": "amaura_aurorus",
       "learnableMoves": [
         "freezedry"
       ],
       "requirements": [
         {
-          "variant": "level",
-          "minLevel": 39
+          "minLevel": 39,
+          "variant": "level"
         },
         {
-          "variant": "time_range",
-          "range": "night"
+          "range": "night",
+          "variant": "time_range"
         }
-      ]
+      ],
+      "result": "aurorus",
+      "variant": "level_up"
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -190,19 +708,20 @@
         "rarity": "ultra-rare",
         "weight": 6.0,
         "levels": "11-36",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0698_amaura.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0698_amaura.json",
+        "spawnId": "amaura-1",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "amaura",
+        "type": "pokemon"
       }
     ]
   ],
@@ -216,6 +735,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation6/amaura.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation6/amaura.json"
   ]
 }

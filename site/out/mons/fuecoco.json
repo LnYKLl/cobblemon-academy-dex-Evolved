@@ -2,20 +2,41 @@
   "id": "fuecoco",
   "dexnum": 909,
   "name": "Fuecoco",
+  "nameFr": "Chochodile",
+  "description": "Il s'allonge sur des pierres chaudes et produit de l'énergie de type Feu grâce à la chaleur absorbée par ses écailles rectangulaires.",
   "primaryType": "fire",
   "secondaryType": "",
+  "primaryTypeFr": "Feu",
+  "secondaryTypeFr": "",
+  "height": 4,
+  "weight": 98,
   "maleRatio": 0.875,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 0.8,
+    "height": 1.1,
+    "fixed": false
+  },
   "labels": [
     "gen9",
     "starter"
   ],
   "abilities": [
-    "blaze",
-    "h:unaware"
+    {
+      "id": "blaze",
+      "name": "Brasier",
+      "hidden": false
+    },
+    {
+      "id": "unaware",
+      "name": "Inconscient",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 67,
     "attack": 45,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 62,
   "experienceGroup": "medium_slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,83 +64,359 @@
         "item": "cobblemon:charcoal_stick",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Bâton de charbon"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:leer",
-    "1:ember",
-    "7:round",
-    "12:bite",
-    "15:incinerate",
-    "17:yawn",
-    "21:snarl",
-    "25:roar",
-    "28:flamethrower",
-    "32:hypervoice",
-    "36:fireblast",
-    "egg:belch",
-    "egg:curse",
-    "egg:encore",
-    "egg:slackoff",
-    "tm:bodyslam",
-    "tm:crunch",
-    "tm:curse",
-    "tm:dig",
-    "tm:disarmingvoice",
-    "tm:encore",
-    "tm:endure",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firefang",
-    "tm:firepledge",
-    "tm:firespin",
-    "tm:flamecharge",
-    "tm:flamethrower",
-    "tm:flareblitz",
-    "tm:heatwave",
-    "tm:helpinghand",
-    "tm:hypervoice",
-    "tm:incinerate",
-    "tm:mudslap",
-    "tm:outrage",
-    "tm:overheat",
-    "tm:protect",
-    "tm:rest",
-    "tm:roar",
-    "tm:round",
-    "tm:seedbomb",
-    "tm:sleeptalk",
-    "tm:snarl",
-    "tm:stompingtantrum",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:takedown",
-    "tm:temperflare",
-    "tm:terablast",
-    "tm:thunderfang",
-    "tm:willowisp",
-    "tm:zenheadbutt",
-    "tutor:firefang",
-    "tutor:firepledge",
-    "tutor:flamethrower",
-    "tutor:heatwave",
-    "tutor:helpinghand",
-    "tutor:hypervoice",
-    "tutor:mudslap",
-    "tutor:outrage",
-    "tutor:rest",
-    "tutor:seedbomb",
-    "tutor:sleeptalk",
-    "tutor:snarl",
-    "tutor:stompingtantrum",
-    "tutor:thunderfang",
-    "tutor:zenheadbutt"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "ember",
+      "name": "Flammèche",
+      "category": "1"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "7"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "12"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "15"
+    },
+    {
+      "id": "yawn",
+      "name": "Bâillement",
+      "category": "17"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "21"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "25"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "28"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "32"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "36"
+    },
+    {
+      "id": "belch",
+      "name": "Éructation",
+      "category": "egg"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "egg"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "egg"
+    },
+    {
+      "id": "slackoff",
+      "name": "Paresse",
+      "category": "egg"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "disarmingvoice",
+      "name": "Voix Enjôleuse",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tm"
+    },
+    {
+      "id": "firepledge",
+      "name": "Aire de Feu",
+      "category": "tm"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "temperflare",
+      "name": "Indignition",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "firepledge",
+      "name": "Aire de Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "fuecoco_crocalor",
@@ -133,6 +432,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -142,19 +442,20 @@
         "rarity": "ultra-rare",
         "weight": 6.0,
         "levels": "5-31",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_badlands"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0909_fuecoco.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0909_fuecoco.json",
+        "spawnId": "fuecoco-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "fuecoco",
+        "type": "pokemon"
       }
     ],
     [
@@ -165,34 +466,16 @@
         "rarity": "ultra-rare",
         "weight": 6.0,
         "levels": "5-31",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_wasteland"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0909_fuecoco.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 3.31,
-        "levels": "1-15",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/rare_scarlet_forest.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0909_fuecoco.json",
+        "spawnId": "fuecoco-2",
+        "spawnType": "grounded",
+        "pokemon": "fuecoco",
+        "type": "pokemon"
       }
     ]
   ],
@@ -206,7 +489,7 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/fuecoco.json",
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/fuecoco.json",
     "datapacks\\Academy\\data\\cobblemon\\species\\generation9\\fuecoco.json"
   ]
 }

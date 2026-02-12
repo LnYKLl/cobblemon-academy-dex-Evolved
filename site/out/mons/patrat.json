@@ -2,20 +2,45 @@
   "id": "patrat",
   "dexnum": 504,
   "name": "Patrat",
+  "nameFr": "Ratentif",
+  "description": "Très prudent, il surveille attentivement son territoire, mais oublie souvent de regarder derrière lui.",
   "primaryType": "normal",
   "secondaryType": "",
+  "primaryTypeFr": "Normal",
+  "secondaryTypeFr": "",
+  "height": 5,
+  "weight": 116,
   "maleRatio": 0.5,
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 0.8,
+    "height": 1.3,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "runaway",
-    "keeneye",
-    "h:analytic"
+    {
+      "id": "runaway",
+      "name": "Fuite",
+      "hidden": false
+    },
+    {
+      "id": "keeneye",
+      "name": "Regard Vif",
+      "hidden": false
+    },
+    {
+      "id": "analytic",
+      "name": "Analyste",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 45,
     "attack": 55,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 51,
   "experienceGroup": "medium_fast",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,99 +68,494 @@
         "item": "cobblemon:babiri_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Babiri"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "3:leer",
-    "6:bite",
-    "8:bide",
-    "11:detect",
-    "13:sandattack",
-    "16:crunch",
-    "18:hypnosis",
-    "21:superfang",
-    "23:afteryou",
-    "26:focusenergy",
-    "28:workup",
-    "31:hyperfang",
-    "33:nastyplot",
-    "36:meanlook",
-    "38:batonpass",
-    "41:slam",
-    "egg:assurance",
-    "egg:bulletseed",
-    "egg:flail",
-    "egg:foresight",
-    "egg:irontail",
-    "egg:pursuit",
-    "egg:revenge",
-    "egg:screech",
-    "egg:tearfullook",
-    "tm:afteryou",
-    "tm:aquatail",
-    "tm:assurance",
-    "tm:batonpass",
-    "tm:bulletseed",
-    "tm:covet",
-    "tm:crunch",
-    "tm:cut",
-    "tm:dig",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:fling",
-    "tm:focusenergy",
-    "tm:grassknot",
-    "tm:gunkshot",
-    "tm:helpinghand",
-    "tm:irontail",
-    "tm:laserfocus",
-    "tm:lastresort",
-    "tm:lowkick",
-    "tm:nastyplot",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:revenge",
-    "tm:screech",
-    "tm:seedbomb",
-    "tm:shadowball",
-    "tm:shockwave",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superfang",
-    "tm:swordsdance",
-    "tm:terablast",
-    "tm:thunderbolt",
-    "tm:workup",
-    "tm:zenheadbutt",
-    "tutor:afteryou",
-    "tutor:aquatail",
-    "tutor:covet",
-    "tutor:endeavor",
-    "tutor:focusenergy",
-    "tutor:gunkshot",
-    "tutor:helpinghand",
-    "tutor:irontail",
-    "tutor:laserfocus",
-    "tutor:lastresort",
-    "tutor:lowkick",
-    "tutor:rest",
-    "tutor:seedbomb",
-    "tutor:shadowball",
-    "tutor:shockwave",
-    "tutor:sleeptalk",
-    "tutor:superfang",
-    "tutor:thunderbolt",
-    "tutor:zenheadbutt"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "3"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "6"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "8"
+    },
+    {
+      "id": "detect",
+      "name": "Détection",
+      "category": "11"
+    },
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "13"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "16"
+    },
+    {
+      "id": "hypnosis",
+      "name": "Hypnose",
+      "category": "18"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "21"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "23"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "26"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "28"
+    },
+    {
+      "id": "hyperfang",
+      "name": "Croc de Mort",
+      "category": "31"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "33"
+    },
+    {
+      "id": "meanlook",
+      "name": "Regard Noir",
+      "category": "36"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "38"
+    },
+    {
+      "id": "slam",
+      "name": "Souplesse",
+      "category": "41"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "egg"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "egg"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "egg"
+    },
+    {
+      "id": "foresight",
+      "name": "Clairvoyance",
+      "category": "egg"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "egg"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "egg"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "egg"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "egg"
+    },
+    {
+      "id": "tearfullook",
+      "name": "Larme à l'Œil",
+      "category": "egg"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tm"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tutor"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "patrat_watchog",
@@ -149,6 +571,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -158,38 +581,20 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "1-26",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_grassland"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0504_patrat.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0504_patrat.json",
+        "spawnId": "patrat-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 4.1,
-        "levels": "4-19",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_starlight_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/common_is_starlight_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "patrat",
+        "type": "pokemon"
       }
     ]
   ],
@@ -203,6 +608,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/patrat.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/patrat.json"
   ]
 }

@@ -2,20 +2,45 @@
   "id": "sunkern",
   "dexnum": 191,
   "name": "Sunkern",
+  "nameFr": "Tournegrin",
+  "description": "Tournegrin essaie de bouger le moins possible. C'est parce qu'il veut conserver tous les nutriments qu'il stocke dans son corps pour son évolution. Il ne mange pas, ne subsistant que grâce à la rosée matinale.",
   "primaryType": "grass",
   "secondaryType": "",
+  "primaryTypeFr": "Plante",
+  "secondaryTypeFr": "",
+  "height": 3,
+  "weight": 18,
   "maleRatio": 0.5,
+  "baseScale": 0.75,
+  "hitbox": {
+    "width": 0.4,
+    "height": 0.5,
+    "fixed": false
+  },
   "labels": [
     "gen2"
   ],
   "abilities": [
-    "chlorophyll",
-    "solarpower",
-    "h:earlybird"
+    {
+      "id": "chlorophyll",
+      "name": "Chlorophylle",
+      "hidden": false
+    },
+    {
+      "id": "solarpower",
+      "name": "Force Soleil",
+      "hidden": false
+    },
+    {
+      "id": "earlybird",
+      "name": "Matinal",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "grass"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 30,
     "attack": 30,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 36,
   "experienceGroup": "medium_slow",
   "catchRate": 235,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,103 +68,473 @@
         "item": "minecraft:wheat_seeds",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:wheat_seeds"
       },
       {
         "item": "cobblemon:coba_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Cobaba"
       }
     ]
   },
   "moves": [
-    "1:growth",
-    "1:grasswhistle",
-    "1:tackle",
-    "7:absorb",
-    "10:megadrain",
-    "16:razorleaf",
-    "19:worryseed",
-    "22:gigadrain",
-    "25:endeavor",
-    "28:synthesis",
-    "31:naturalgift",
-    "34:doubleedge",
-    "36:sunnyday",
-    "39:seedbomb",
-    "egg:bide",
-    "egg:curse",
-    "egg:encore",
-    "egg:grasswhistle",
-    "egg:grassyterrain",
-    "egg:ingrain",
-    "egg:leechseed",
-    "egg:morningsun",
-    "egg:naturalgift",
-    "egg:sweetscent",
-    "tm:afteryou",
-    "tm:bulletseed",
-    "tm:curse",
-    "tm:cut",
-    "tm:doubleedge",
-    "tm:earthpower",
-    "tm:encore",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:flash",
-    "tm:gigadrain",
-    "tm:grassknot",
-    "tm:grassyterrain",
-    "tm:helpinghand",
-    "tm:leafstorm",
-    "tm:lightscreen",
-    "tm:magicalleaf",
-    "tm:naturalgift",
-    "tm:naturepower",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:safeguard",
-    "tm:seedbomb",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:synthesis",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:trailblaze",
-    "tm:weatherball",
-    "tm:worryseed",
-    "tutor:afteryou",
-    "tutor:earthpower",
-    "tutor:endeavor",
-    "tutor:energyball",
-    "tutor:gigadrain",
-    "tutor:helpinghand",
-    "tutor:magicalleaf",
-    "tutor:rest",
-    "tutor:seedbomb",
-    "tutor:sleeptalk",
-    "tutor:synthesis",
-    "tutor:worryseed"
+    {
+      "id": "growth",
+      "name": "Croissance",
+      "category": "1"
+    },
+    {
+      "id": "grasswhistle",
+      "name": "Siffl'Herbe",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "7"
+    },
+    {
+      "id": "megadrain",
+      "name": "Méga-Sangsue",
+      "category": "10"
+    },
+    {
+      "id": "razorleaf",
+      "name": "Tranch'Herbe",
+      "category": "16"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "19"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "22"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "25"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "28"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "31"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "34"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "36"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "39"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "egg"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "egg"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "egg"
+    },
+    {
+      "id": "grasswhistle",
+      "name": "Siffl'Herbe",
+      "category": "egg"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "egg"
+    },
+    {
+      "id": "ingrain",
+      "name": "Racines",
+      "category": "egg"
+    },
+    {
+      "id": "leechseed",
+      "name": "Vampigraine",
+      "category": "egg"
+    },
+    {
+      "id": "morningsun",
+      "name": "Aurore",
+      "category": "egg"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "egg"
+    },
+    {
+      "id": "sweetscent",
+      "name": "Doux Parfum",
+      "category": "egg"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "leafstorm",
+      "name": "Tempête Verte",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tm"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tutor"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "sunkern_sunflora",
       "variant": "item_interact",
       "result": "sunflora",
-      "consumeHeldItem": true,
+      "consumeHeldItem": false,
       "learnableMoves": [],
       "requirements": [],
       "requiredContext": "cobblemon:sun_stone"
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -147,15 +544,13 @@
         "rarity": "common",
         "weight": 9.5,
         "levels": "1-18",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "minecraft:sunflower_plains"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0191_sunkern.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0191_sunkern.json",
+        "spawnId": "sunkern-1",
         "nearbyBlocks": {
           "selectors": [
             "minecraft:sunflower"
@@ -164,6 +559,15 @@
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "sunkern",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
         }
       }
     ],
@@ -175,9 +579,6 @@
         "rarity": "common",
         "weight": 9.5,
         "levels": "1-18",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -186,7 +587,8 @@
             "minecraft:sunflower_plains"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0191_sunkern.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0191_sunkern.json",
+        "spawnId": "sunkern-2",
         "nearbyBlocks": {
           "selectors": [
             "minecraft:sunflower"
@@ -195,6 +597,15 @@
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "sunkern",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
         }
       }
     ],
@@ -206,20 +617,21 @@
         "rarity": "common",
         "weight": 5.7,
         "levels": "1-18",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "aether:skyroot_grove",
             "aether:skyroot_meadow"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0191_sunkern.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0191_sunkern.json",
+        "spawnId": "sunkern-3",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "sunkern",
+        "type": "pokemon"
       }
     ],
     [
@@ -227,34 +639,19 @@
         "rarity": "common",
         "weight": 9.5,
         "levels": "1-18",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "the_bumblezone:floral_meadow"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0191_sunkern.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0191_sunkern.json",
+        "spawnId": "sunkern-4",
+        "spawnType": "grounded",
+        "pokemon": "sunkern",
+        "excludeStructures": [
+          "#the_bumblezone:sempiternal_sanctums"
         ],
-        "rarity": "common",
-        "weight": 3.8,
-        "levels": "4-18",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/common_scarlet_forest.json"
+        "type": "pokemon"
       }
     ]
   ],
@@ -268,6 +665,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation2/sunkern.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation2/sunkern.json"
   ]
 }

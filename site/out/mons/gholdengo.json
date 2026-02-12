@@ -2,19 +2,40 @@
   "id": "gholdengo",
   "dexnum": 1000,
   "name": "Gholdengo",
+  "nameFr": "Gromago",
+  "description": "Son corps serait composé de 1000 pièces. Sociable, il peut se lier d'amitié très rapidement avec n'importe qui.",
   "primaryType": "steel",
   "secondaryType": "ghost",
+  "primaryTypeFr": "Acier",
+  "secondaryTypeFr": "Spectre",
+  "height": 12,
+  "weight": 300,
   "maleRatio": -1,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.85,
+    "height": 2.15,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "goodasgold",
-    "h:goodasgold"
+    {
+      "id": "goodasgold",
+      "name": "Corps en Or",
+      "hidden": false
+    },
+    {
+      "id": "goodasgold",
+      "name": "Corps en Or",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 50,
   "baseStats": {
     "hp": 87,
     "attack": 60,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 275,
   "experienceGroup": "slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 48,
     "entries": [
@@ -40,84 +63,361 @@
         "item": "cobblemon:relic_coin",
         "percentage": null,
         "quantityRange": "24-48",
-        "source": "species"
+        "source": "species",
+        "itemName": "Pièce Relique"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:astonish",
-    "7:nightshade",
-    "14:confuseray",
-    "21:substitute",
-    "28:metalsound",
-    "35:shadowball",
-    "42:recover",
-    "49:powergem",
-    "56:makeitrain",
-    "63:nastyplot",
-    "70:memento",
-    "tm:chargebeam",
-    "tm:confuseray",
-    "tm:dazzlinggleam",
-    "tm:electroball",
-    "tm:endure",
-    "tm:flashcannon",
-    "tm:fling",
-    "tm:focusblast",
-    "tm:focuspunch",
-    "tm:gigaimpact",
-    "tm:heavyslam",
-    "tm:hex",
-    "tm:hyperbeam",
-    "tm:ironhead",
-    "tm:lightscreen",
-    "tm:lowkick",
-    "tm:lowsweep",
-    "tm:metalsound",
-    "tm:nastyplot",
-    "tm:nightshade",
-    "tm:poltergeist",
-    "tm:powergem",
-    "tm:protect",
-    "tm:psychic",
-    "tm:psyshock",
-    "tm:reflect",
-    "tm:rest",
-    "tm:sandstorm",
-    "tm:shadowball",
-    "tm:sleeptalk",
-    "tm:steelbeam",
-    "tm:substitute",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderpunch",
-    "tm:thunderwave",
-    "tm:trick",
-    "tutor:chargebeam",
-    "tutor:dazzlinggleam",
-    "tutor:flashcannon",
-    "tutor:focuspunch",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:ironhead",
-    "tutor:lowkick",
-    "tutor:poltergeist",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:shadowball",
-    "tutor:sleeptalk",
-    "tutor:steelbeam",
-    "tutor:thunderbolt",
-    "tutor:thunderpunch",
-    "tutor:trick"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "1"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "7"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "14"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "21"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "28"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "35"
+    },
+    {
+      "id": "recover",
+      "name": "Soin",
+      "category": "42"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "49"
+    },
+    {
+      "id": "makeitrain",
+      "name": "Ruée d'Or",
+      "category": "56"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "63"
+    },
+    {
+      "id": "memento",
+      "name": "Souvenir",
+      "category": "70"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "electroball",
+      "name": "Boule Élek",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "focusblast",
+      "name": "Exploforce",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "lowsweep",
+      "name": "Balayette",
+      "category": "tm"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "tm"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tm"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "gimmighoul",
   "spawns": [],
   "implemented": true,
   "images": {
@@ -129,6 +429,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/gholdengo.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/gholdengo.json"
   ]
 }

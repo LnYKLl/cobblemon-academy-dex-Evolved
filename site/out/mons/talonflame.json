@@ -2,19 +2,40 @@
   "id": "talonflame",
   "dexnum": 663,
   "name": "Talonflame",
+  "nameFr": "Flambusard",
+  "description": "Quand il s'abat sur ses proies, sa vitesse dépasse les 500 km/h. Il les achève d'un puissant coup de serre.",
   "primaryType": "fire",
   "secondaryType": "flying",
+  "primaryTypeFr": "Feu",
+  "secondaryTypeFr": "Vol",
+  "height": 12,
+  "weight": 245,
   "maleRatio": 0.5,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.8,
+    "height": 1.6,
+    "fixed": false
+  },
   "labels": [
     "gen6"
   ],
   "abilities": [
-    "flamebody",
-    "h:galewings"
+    {
+      "id": "flamebody",
+      "name": "Corps Ardent",
+      "hidden": false
+    },
+    {
+      "id": "galewings",
+      "name": "Ailes Bourrasque",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "flying"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 78,
     "attack": 81,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 3
   },
+  "baseExperienceYield": 175,
   "experienceGroup": "medium_slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 6,
     "entries": [
@@ -40,122 +63,537 @@
         "item": "minecraft:feather",
         "percentage": null,
         "quantityRange": "0-3",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:feather"
       },
       {
         "item": "minecraft:chicken",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:chicken"
       },
       {
         "item": "cobblemon:sharp_beak",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Bec Pointu"
       },
       {
         "item": "cobblemon:rawst_berry",
         "percentage": 10.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Fraive"
       }
     ]
   },
   "moves": [
-    "1:flareblitz",
-    "1:tackle",
-    "1:growl",
-    "1:quickattack",
-    "1:peck",
-    "1:ember",
-    "1:razorwind",
-    "1:flamecharge",
-    "1:mefirst",
-    "1:naturalgift",
-    "1:feint",
-    "15:flail",
-    "22:acrobatics",
-    "29:agility",
-    "38:aerialace",
-    "47:tailwind",
-    "56:steelwing",
-    "65:roost",
-    "74:fly",
-    "83:bravebird",
-    "egg:defog",
-    "egg:flamecharge",
-    "egg:mefirst",
-    "egg:naturalgift",
-    "egg:quickguard",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:bravebird",
-    "tm:bulkup",
-    "tm:defog",
-    "tm:doubleedge",
-    "tm:dualwingbeat",
-    "tm:endure",
-    "tm:facade",
-    "tm:featherdance",
-    "tm:fireblast",
-    "tm:firespin",
-    "tm:flamecharge",
-    "tm:flamethrower",
-    "tm:flareblitz",
-    "tm:fly",
-    "tm:gigaimpact",
-    "tm:heatwave",
-    "tm:honeclaws",
-    "tm:hurricane",
-    "tm:hyperbeam",
-    "tm:incinerate",
-    "tm:naturalgift",
-    "tm:overheat",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:roost",
-    "tm:sleeptalk",
-    "tm:snatch",
-    "tm:solarbeam",
-    "tm:steelwing",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:swordsdance",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:temperflare",
-    "tm:terablast",
-    "tm:thief",
-    "tm:upperhand",
-    "tm:uturn",
-    "tm:willowisp",
-    "tm:workup",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:bulkup",
-    "tutor:defog",
-    "tutor:dualwingbeat",
-    "tutor:flamethrower",
-    "tutor:gigaimpact",
-    "tutor:heatwave",
-    "tutor:hyperbeam",
-    "tutor:rest",
-    "tutor:roost",
-    "tutor:sleeptalk",
-    "tutor:snatch",
-    "tutor:swift",
-    "tutor:tailwind"
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "1"
+    },
+    {
+      "id": "peck",
+      "name": "Picpic",
+      "category": "1"
+    },
+    {
+      "id": "ember",
+      "name": "Flammèche",
+      "category": "1"
+    },
+    {
+      "id": "razorwind",
+      "name": "Coupe-Vent",
+      "category": "1"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "1"
+    },
+    {
+      "id": "mefirst",
+      "name": "Moi d'Abord",
+      "category": "1"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "1"
+    },
+    {
+      "id": "feint",
+      "name": "Ruse",
+      "category": "1"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "15"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "22"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "29"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "38"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "47"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "56"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "65"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "74"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "83"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "egg"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "egg"
+    },
+    {
+      "id": "mefirst",
+      "name": "Moi d'Abord",
+      "category": "egg"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "egg"
+    },
+    {
+      "id": "quickguard",
+      "name": "Prévention",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "featherdance",
+      "name": "Danse Plumes",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "temperflare",
+      "name": "Indignition",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "upperhand",
+      "name": "Prio-Parade",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "fletchinder",
   "spawns": [
     [
       {
@@ -166,8 +604,8 @@
         "rarity": "common",
         "weight": 0.06,
         "levels": "35-50",
-        "contexts": [
-          "grounded"
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
@@ -176,11 +614,15 @@
             "#cobblemon:is_taiga"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0663_talonflame.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0663_talonflame.json",
+        "spawnId": "talonflame-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "talonflame",
+        "type": "pokemon"
       }
     ],
     [
@@ -192,9 +634,6 @@
         "rarity": "common",
         "weight": 0.06,
         "levels": "35-50",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_forest",
@@ -204,7 +643,11 @@
             "#cobblemon:nether/is_warped"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0663_talonflame.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0663_talonflame.json",
+        "spawnId": "talonflame-3",
+        "spawnType": "grounded",
+        "pokemon": "talonflame",
+        "type": "pokemon"
       }
     ],
     [
@@ -216,39 +659,21 @@
         "rarity": "common",
         "weight": 0.06,
         "levels": "35-50",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "aether:skyroot_forest",
             "aether:skyroot_woodland"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0663_talonflame.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0663_talonflame.json",
+        "spawnId": "talonflame-4",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 1.2,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/rare_scarlet_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "talonflame",
+        "type": "pokemon"
       }
     ]
   ],
@@ -262,6 +687,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation6/talonflame.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation6/talonflame.json"
   ]
 }

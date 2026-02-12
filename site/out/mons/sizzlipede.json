@@ -2,20 +2,45 @@
   "id": "sizzlipede",
   "dexnum": 850,
   "name": "Sizzlipede",
+  "nameFr": "Grillepattes",
+  "description": "Il produit de la chaleur grâce au gaz inflammable qu'il emmagasine dans son corps. La partie jaune de son abdomen est particulièrement brûlante.",
   "primaryType": "fire",
   "secondaryType": "bug",
+  "primaryTypeFr": "Feu",
+  "secondaryTypeFr": "Insecte",
+  "height": 7,
+  "weight": 10,
   "maleRatio": 0.5,
+  "baseScale": 0.45,
+  "hitbox": {
+    "width": 1,
+    "height": 0.2,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "flashfire",
-    "whitesmoke",
-    "h:flamebody"
+    {
+      "id": "flashfire",
+      "name": "Torche",
+      "hidden": false
+    },
+    {
+      "id": "whitesmoke",
+      "name": "Écran Fumée",
+      "hidden": false
+    },
+    {
+      "id": "flamebody",
+      "name": "Corps Ardent",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 50,
     "attack": 65,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 61,
   "experienceGroup": "medium_fast",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -44,7 +71,8 @@
         "source": "species",
         "biomes": [
           "#cobblemon:nether/is_basalt"
-        ]
+        ],
+        "itemName": "minecraft:blaze_powder"
       },
       {
         "item": "cobblemon:charti_berry",
@@ -53,65 +81,284 @@
         "source": "species",
         "biomes": [
           "#cobblemon:nether/is_basalt"
-        ]
+        ],
+        "itemName": "Baie Charti"
       }
     ]
   },
   "moves": [
-    "1:ember",
-    "1:smokescreen",
-    "5:wrap",
-    "10:bite",
-    "15:flamewheel",
-    "20:bugbite",
-    "25:coil",
-    "30:slam",
-    "35:firespin",
-    "40:crunch",
-    "45:firelash",
-    "50:lunge",
-    "55:burnup",
-    "egg:defensecurl",
-    "egg:knockoff",
-    "egg:rollout",
-    "egg:strugglebug",
-    "tm:brutalswing",
-    "tm:bugbite",
-    "tm:bugbuzz",
-    "tm:crunch",
-    "tm:endure",
-    "tm:facade",
-    "tm:firespin",
-    "tm:heatcrash",
-    "tm:heatwave",
-    "tm:knockoff",
-    "tm:leechlife",
-    "tm:lunge",
-    "tm:powerwhip",
-    "tm:protect",
-    "tm:rest",
-    "tm:rollout",
-    "tm:scald",
-    "tm:scorchingsands",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:terablast",
-    "tm:venoshock",
-    "tutor:bugbite",
-    "tutor:heatwave",
-    "tutor:knockoff",
-    "tutor:leechlife",
-    "tutor:rest",
-    "tutor:rollout",
-    "tutor:scorchingsands",
-    "tutor:skittersmack",
-    "tutor:sleeptalk"
+    {
+      "id": "ember",
+      "name": "Flammèche",
+      "category": "1"
+    },
+    {
+      "id": "smokescreen",
+      "name": "Brouillard",
+      "category": "1"
+    },
+    {
+      "id": "wrap",
+      "name": "Ligotage",
+      "category": "5"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "10"
+    },
+    {
+      "id": "flamewheel",
+      "name": "Roue de Feu",
+      "category": "15"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "20"
+    },
+    {
+      "id": "coil",
+      "name": "Enroulement",
+      "category": "25"
+    },
+    {
+      "id": "slam",
+      "name": "Souplesse",
+      "category": "30"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "35"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "40"
+    },
+    {
+      "id": "firelash",
+      "name": "Fouet de Feu",
+      "category": "45"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "50"
+    },
+    {
+      "id": "burnup",
+      "name": "Flamme Ultime",
+      "category": "55"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "egg"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "egg"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "egg"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "egg"
+    },
+    {
+      "id": "brutalswing",
+      "name": "Centrifugifle",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "heatcrash",
+      "name": "Tacle Feu",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tm"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "tm"
+    },
+    {
+      "id": "powerwhip",
+      "name": "Mégafouet",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "tm"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "sizzlipede_centiskorch",
@@ -127,6 +374,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -137,20 +385,21 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "6-31",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_badlands",
             "#cobblemon:is_volcanic"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0850_sizzlipede.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0850_sizzlipede.json",
+        "spawnId": "sizzlipede-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "sizzlipede",
+        "type": "pokemon"
       }
     ],
     [
@@ -162,15 +411,31 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "6-31",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_basalt"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0850_sizzlipede.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0850_sizzlipede.json",
+        "spawnId": "sizzlipede-2",
+        "spawnType": "grounded",
+        "pokemon": "sizzlipede",
+        "type": "pokemon",
+        "drops": {
+          "amount": 2,
+          "entries": [
+            {
+              "item": "minecraft:blaze_powder",
+              "percentage": 5.0,
+              "quantityRange": null
+            },
+            {
+              "item": "cobblemon:charti_berry",
+              "percentage": 2.5,
+              "quantityRange": null
+            }
+          ]
+        }
       }
     ],
     [
@@ -182,34 +447,16 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "6-31",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_wasteland"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0850_sizzlipede.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 4.3,
-        "levels": "3-18",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/common_crystallized_desert.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0850_sizzlipede.json",
+        "spawnId": "sizzlipede-3",
+        "spawnType": "grounded",
+        "pokemon": "sizzlipede",
+        "type": "pokemon"
       }
     ]
   ],
@@ -223,6 +470,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/sizzlipede.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/sizzlipede.json"
   ]
 }

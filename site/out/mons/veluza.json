@@ -2,19 +2,40 @@
   "id": "veluza",
   "dexnum": 976,
   "name": "Veluza",
+  "nameFr": "Délestin",
+  "description": "Pour aiguiser son esprit et renforcer ses pouvoirs psychiques, il se défait de sa chair en trop. Celle-ci a un goût léger, mais exquis.",
   "primaryType": "water",
   "secondaryType": "psychic",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "Psy",
+  "height": 25,
+  "weight": 900,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1.1,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "moldbreaker",
-    "h:sharpness"
+    {
+      "id": "moldbreaker",
+      "name": "Brise Moule",
+      "hidden": false
+    },
+    {
+      "id": "sharpness",
+      "name": "Incisif",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_2"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 90,
     "attack": 102,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 167,
   "experienceGroup": "fast",
   "catchRate": 100,
+  "baseFriendship": 50,
   "drops": {
     "amount": 4,
     "entries": [
@@ -40,94 +63,388 @@
         "item": "minecraft:cod",
         "percentage": null,
         "quantityRange": "1-3",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:cod"
       },
       {
         "item": "minecraft:bone_meal",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:bone_meal"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:aquajet",
-    "7:pluck",
-    "11:waterpulse",
-    "15:focusenergy",
-    "20:slash",
-    "25:aquacutter",
-    "30:filletaway",
-    "35:nightslash",
-    "40:psychocut",
-    "45:liquidation",
-    "50:crunch",
-    "55:finalgambit",
-    "egg:recover",
-    "egg:thrash",
-    "tm:agility",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:chillingwater",
-    "tm:crunch",
-    "tm:doubleedge",
-    "tm:drillrun",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:expandingforce",
-    "tm:flipturn",
-    "tm:focusenergy",
-    "tm:gigaimpact",
-    "tm:hydropump",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icefang",
-    "tm:icywind",
-    "tm:liquidation",
-    "tm:painsplit",
-    "tm:pluck",
-    "tm:protect",
-    "tm:psychic",
-    "tm:psychicfangs",
-    "tm:psychicterrain",
-    "tm:psychocut",
-    "tm:raindance",
-    "tm:rest",
-    "tm:scaleshot",
-    "tm:sleeptalk",
-    "tm:snowscape",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:surf",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:waterfall",
-    "tm:waterpulse",
-    "tm:zenheadbutt",
-    "tutor:drillrun",
-    "tutor:endeavor",
-    "tutor:expandingforce",
-    "tutor:flipturn",
-    "tutor:focusenergy",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icefang",
-    "tutor:icywind",
-    "tutor:liquidation",
-    "tutor:painsplit",
-    "tutor:psychic",
-    "tutor:psychocut",
-    "tutor:rest",
-    "tutor:scaleshot",
-    "tutor:sleeptalk",
-    "tutor:waterpulse",
-    "tutor:zenheadbutt"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "aquajet",
+      "name": "Aqua-Jet",
+      "category": "1"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "7"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "11"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "15"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "20"
+    },
+    {
+      "id": "aquacutter",
+      "name": "Tranch'Aqua",
+      "category": "25"
+    },
+    {
+      "id": "filletaway",
+      "name": "Décharnement",
+      "category": "30"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "35"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "40"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "45"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "50"
+    },
+    {
+      "id": "finalgambit",
+      "name": "Tout ou Rien",
+      "category": "55"
+    },
+    {
+      "id": "recover",
+      "name": "Soin",
+      "category": "egg"
+    },
+    {
+      "id": "thrash",
+      "name": "Mania",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "expandingforce",
+      "name": "Vaste Pouvoir",
+      "category": "tm"
+    },
+    {
+      "id": "flipturn",
+      "name": "Eau Revoir",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psychicfangs",
+      "name": "Psycho-Croc",
+      "category": "tm"
+    },
+    {
+      "id": "psychicterrain",
+      "name": "Champ Psychique",
+      "category": "tm"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "expandingforce",
+      "name": "Vaste Pouvoir",
+      "category": "tutor"
+    },
+    {
+      "id": "flipturn",
+      "name": "Eau Revoir",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -137,18 +454,19 @@
         "rarity": "uncommon",
         "weight": 10.0,
         "levels": "23-48",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0976_veluza.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0976_veluza.json",
+        "spawnId": "veluza-1",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "veluza",
+        "type": "pokemon"
       }
     ],
     [
@@ -156,18 +474,22 @@
         "rarity": "uncommon",
         "weight": 10.0,
         "levels": "23-48",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0976_veluza.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0976_veluza.json",
+        "spawnId": "veluza-2",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "veluza",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -175,17 +497,27 @@
         "rarity": "common",
         "weight": 2.0,
         "levels": "23-48",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0976_veluza.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0976_veluza.json",
+        "spawnId": "veluza-3",
         "sky": {
           "canSeeSky": true
+        },
+        "spawnType": "fishing",
+        "pokemon": "veluza",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 3.0,
+          "condition": {
+            "minLureLevel": 3
+          }
         }
       }
     ],
@@ -197,20 +529,21 @@
         "rarity": "uncommon",
         "weight": 10.0,
         "levels": "23-48",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0976_veluza.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0976_veluza.json",
+        "spawnId": "veluza-4",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "veluza",
+        "type": "pokemon"
       }
     ],
     [
@@ -218,20 +551,24 @@
         "rarity": "uncommon",
         "weight": 10.0,
         "levels": "23-48",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0976_veluza.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0976_veluza.json",
+        "spawnId": "veluza-5",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "veluza",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -239,19 +576,29 @@
         "rarity": "common",
         "weight": 2.0,
         "levels": "23-48",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0976_veluza.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0976_veluza.json",
+        "spawnId": "veluza-6",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "fishing",
+        "pokemon": "veluza",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 3.0,
+          "condition": {
+            "minLureLevel": 3
+          }
         }
       }
     ],
@@ -263,15 +610,13 @@
         "rarity": "uncommon",
         "weight": 10.0,
         "levels": "23-48",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0976_veluza.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0976_veluza.json",
+        "spawnId": "veluza-7",
         "structures": [
           "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
         ],
@@ -281,7 +626,10 @@
         "yLevel": {
           "minY": -60,
           "maxY": 13
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "veluza",
+        "type": "pokemon"
       }
     ],
     [
@@ -289,15 +637,13 @@
         "rarity": "uncommon",
         "weight": 10.0,
         "levels": "23-48",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0976_veluza.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0976_veluza.json",
+        "spawnId": "veluza-8",
         "structures": [
           "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
         ],
@@ -307,7 +653,13 @@
         "yLevel": {
           "minY": -60,
           "maxY": 13
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "veluza",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -315,15 +667,13 @@
         "rarity": "common",
         "weight": 2.0,
         "levels": "23-48",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0976_veluza.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0976_veluza.json",
+        "spawnId": "veluza-9",
         "structures": [
           "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
         ],
@@ -333,26 +683,19 @@
         "yLevel": {
           "minY": -60,
           "maxY": 13
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "water"
-        ],
-        "rarity": "uncommon",
-        "weight": 2.2,
-        "levels": "18-34",
-        "contexts": [
-          "submerged"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_safari_ocean"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_safari_ocean/uncommon_is_safari_ocean.json"
+        "spawnType": "fishing",
+        "pokemon": "veluza",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 3.0,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
       }
     ]
   ],
@@ -366,6 +709,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/veluza.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/veluza.json"
   ]
 }

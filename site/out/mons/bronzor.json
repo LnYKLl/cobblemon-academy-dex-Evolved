@@ -2,20 +2,45 @@
   "id": "bronzor",
   "dexnum": 436,
   "name": "Bronzor",
+  "nameFr": "Archéomire",
+  "description": "Il rappelle des objets trouvés dans des sépultures anciennes. Nul ne sait s'ils sont liés.",
   "primaryType": "steel",
   "secondaryType": "psychic",
+  "primaryTypeFr": "Acier",
+  "secondaryTypeFr": "Psy",
+  "height": 5,
+  "weight": 605,
   "maleRatio": -1,
+  "baseScale": 0.65,
+  "hitbox": {
+    "width": 0.8,
+    "height": 1.25,
+    "fixed": false
+  },
   "labels": [
     "gen4"
   ],
   "abilities": [
-    "levitate",
-    "heatproof",
-    "h:heavymetal"
+    {
+      "id": "levitate",
+      "name": "Lévitation",
+      "hidden": false
+    },
+    {
+      "id": "heatproof",
+      "name": "Ignifugé",
+      "hidden": false
+    },
+    {
+      "id": "heavymetal",
+      "name": "Heavy Metal",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "mineral"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 57,
     "attack": 24,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 60,
   "experienceGroup": "medium_fast",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 4,
     "entries": [
@@ -41,146 +68,655 @@
         "item": "minecraft:raw_iron",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:raw_iron"
       },
       {
         "item": "cobblemon:mental_herb",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Herbe Mental"
       },
       {
         "item": "cobblemon:light_clay",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Lumargile"
       },
       {
         "item": "cobblemon:occa_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Chocco"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:confusion",
-    "4:confuseray",
-    "8:payback",
-    "12:imprison",
-    "16:gyroball",
-    "20:hypnosis",
-    "24:safeguard",
-    "28:extrasensory",
-    "32:heavyslam",
-    "36:irondefense",
-    "40:metalsound",
-    "44:futuresight",
-    "egg:feintattack",
-    "egg:gravity",
-    "egg:healblock",
-    "egg:psywave",
-    "egg:recycle",
-    "tm:allyswitch",
-    "tm:ancientpower",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:calmmind",
-    "tm:chargebeam",
-    "tm:confuseray",
-    "tm:dreameater",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:expandingforce",
-    "tm:facade",
-    "tm:flash",
-    "tm:flashcannon",
-    "tm:futuresight",
-    "tm:grassknot",
-    "tm:gravity",
-    "tm:guardswap",
-    "tm:gyroball",
-    "tm:heavyslam",
-    "tm:helpinghand",
-    "tm:hex",
-    "tm:icespinner",
-    "tm:imprison",
-    "tm:irondefense",
-    "tm:ironhead",
-    "tm:lightscreen",
-    "tm:metalsound",
-    "tm:payback",
-    "tm:powergem",
-    "tm:powerswap",
-    "tm:protect",
-    "tm:psychic",
-    "tm:psychicterrain",
-    "tm:psychup",
-    "tm:psyshock",
-    "tm:raindance",
-    "tm:recycle",
-    "tm:reflect",
-    "tm:rest",
-    "tm:rockblast",
-    "tm:rockpolish",
-    "tm:rockslide",
-    "tm:rocktomb",
-    "tm:rollout",
-    "tm:safeguard",
-    "tm:sandstorm",
-    "tm:shadowball",
-    "tm:signalbeam",
-    "tm:skillswap",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:speedswap",
-    "tm:stealthrock",
-    "tm:steelbeam",
-    "tm:steelroller",
-    "tm:stompingtantrum",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:takedown",
-    "tm:telekinesis",
-    "tm:terablast",
-    "tm:trick",
-    "tm:trickroom",
-    "tm:wonderroom",
-    "tm:zenheadbutt",
-    "tutor:allyswitch",
-    "tutor:ancientpower",
-    "tutor:block",
-    "tutor:bulldoze",
-    "tutor:calmmind",
-    "tutor:chargebeam",
-    "tutor:expandingforce",
-    "tutor:flashcannon",
-    "tutor:gravity",
-    "tutor:helpinghand",
-    "tutor:irondefense",
-    "tutor:ironhead",
-    "tutor:psychic",
-    "tutor:recycle",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rollout",
-    "tutor:shadowball",
-    "tutor:signalbeam",
-    "tutor:skillswap",
-    "tutor:sleeptalk",
-    "tutor:stealthrock",
-    "tutor:steelbeam",
-    "tutor:steelroller",
-    "tutor:stompingtantrum",
-    "tutor:telekinesis",
-    "tutor:trick",
-    "tutor:wonderroom",
-    "tutor:zenheadbutt"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "confusion",
+      "name": "Choc Mental",
+      "category": "1"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "4"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "8"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "12"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "16"
+    },
+    {
+      "id": "hypnosis",
+      "name": "Hypnose",
+      "category": "20"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "24"
+    },
+    {
+      "id": "extrasensory",
+      "name": "Extrasenseur",
+      "category": "28"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "32"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "36"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "40"
+    },
+    {
+      "id": "futuresight",
+      "name": "Prescience",
+      "category": "44"
+    },
+    {
+      "id": "feintattack",
+      "name": "Feinte",
+      "category": "egg"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "egg"
+    },
+    {
+      "id": "healblock",
+      "name": "Anti-Soin",
+      "category": "egg"
+    },
+    {
+      "id": "psywave",
+      "name": "Vague Psy",
+      "category": "egg"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "egg"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "expandingforce",
+      "name": "Vaste Pouvoir",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "futuresight",
+      "name": "Prescience",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "tm"
+    },
+    {
+      "id": "guardswap",
+      "name": "Permugarde",
+      "category": "tm"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "tm"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "icespinner",
+      "name": "Cryo-Pirouette",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "tm"
+    },
+    {
+      "id": "powerswap",
+      "name": "Permuforce",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psychicterrain",
+      "name": "Champ Psychique",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "speedswap",
+      "name": "Permuvitesse",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tm"
+    },
+    {
+      "id": "steelroller",
+      "name": "Métalliroue",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "expandingforce",
+      "name": "Vaste Pouvoir",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tutor"
+    },
+    {
+      "id": "steelroller",
+      "name": "Métalliroue",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "bronzor_bronzong",
@@ -198,24 +734,26 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
-        "presets": [
-          "natural"
-        ],
         "rarity": "common",
-        "weight": 4.3,
-        "levels": "5-22",
-        "contexts": [
-          "grounded"
-        ],
+        "weight": 5.4,
+        "levels": "5-30",
         "biomeTags": {
           "include": [
-            "eternal_starlight:crystallized_desert"
+            "the_bumblezone:howling_constructs"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/common_crystallized_desert.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0436_bronzor.json",
+        "spawnId": "bronzor-5",
+        "spawnType": "grounded",
+        "pokemon": "bronzor",
+        "excludeStructures": [
+          "#the_bumblezone:sempiternal_sanctums"
+        ],
+        "type": "pokemon"
       }
     ],
     [
@@ -224,65 +762,101 @@
           "natural"
         ],
         "rarity": "uncommon",
-        "weight": 3,
-        "levels": "20-30",
-        "contexts": [
-          "grounded"
-        ],
+        "weight": 8.4,
+        "levels": "5-30",
         "biomeTags": {
           "include": [
-            "#cobblemon:is_spooky"
+            "#cobblemon:is_jungle",
+            "#cobblemon:is_peak"
+          ],
+          "exclude": [
+            "#cobblemon:is_deep_dark"
           ]
         },
-        "source": "datapacks/MysticMons_v3.2.1/data/cobblemon/spawn_pool_world/bronzor.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0436_bronzor.json",
+        "spawnId": "bronzor-1",
         "sky": {
-          "canSeeSky": true
-        }
+          "minSkyLight": 0,
+          "maxSkyLight": 7
+        },
+        "spawnType": "grounded",
+        "pokemon": "bronzor",
+        "type": "pokemon"
       }
     ],
     [
       {
         "presets": [
-          "underground"
+          "natural",
+          "jungle_pyramid"
         ],
-        "rarity": "rare",
-        "weight": 3,
-        "levels": "20-30",
-        "contexts": [
-          "grounded"
-        ],
+        "rarity": "common",
+        "weight": 54.0,
+        "levels": "5-30",
         "biomeTags": {
           "include": [
-            "#cobblemon:is_cave"
+            "#cobblemon:is_overworld"
           ]
         },
-        "source": "datapacks/MysticMons_v3.2.1/data/cobblemon/spawn_pool_world/bronzor.json",
-        "sky": {
-          "canSeeSky": false
-        }
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0436_bronzor.json",
+        "spawnId": "bronzor-2",
+        "yLevel": {
+          "minY": 48
+        },
+        "spawnType": "grounded",
+        "pokemon": "bronzor",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "rarity": "common",
+        "weight": 54.0,
+        "levels": "5-30",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_overworld"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0436_bronzor.json",
+        "spawnId": "bronzor-3",
+        "structures": [
+          "#cobblemon:ruin"
+        ],
+        "yLevel": {
+          "minY": -37,
+          "maxY": 10
+        },
+        "spawnType": "grounded",
+        "pokemon": "bronzor",
+        "type": "pokemon"
       }
     ],
     [
       {
         "presets": [
-          "natural"
+          "trail_ruins"
         ],
-        "rarity": "rare",
-        "weight": 3,
-        "levels": "20-30",
-        "contexts": [
-          "grounded"
-        ],
+        "rarity": "common",
+        "weight": 54.0,
+        "levels": "5-30",
         "biomeTags": {
           "include": [
-            "#cobblemon:is_mountain"
+            "#cobblemon:is_overworld"
           ]
         },
-        "source": "datapacks/MysticMons_v3.2.1/data/cobblemon/spawn_pool_world/bronzor.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0436_bronzor.json",
+        "spawnId": "bronzor-4",
+        "yLevel": {
+          "minY": 48
+        },
+        "spawnType": "grounded",
+        "pokemon": "bronzor",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/bronzor.png"
@@ -292,6 +866,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation4/bronzor.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation4/bronzor.json"
   ]
 }

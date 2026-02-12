@@ -2,21 +2,46 @@
   "id": "tandemaus",
   "dexnum": 924,
   "name": "Tandemaus",
+  "nameFr": "Compagnol",
+  "description": "Ces Pokémon travaillent en équipe. À l'aide de leur incisive, ils extraient les matériaux nécessaires pour construire leur nid, puis ils les emportent.",
   "primaryType": "normal",
   "secondaryType": "",
+  "primaryTypeFr": "Normal",
+  "secondaryTypeFr": "",
+  "height": 3,
+  "weight": 18,
   "maleRatio": -1,
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 1.25,
+    "height": 0.75,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "runaway",
-    "pickup",
-    "h:owntempo"
+    {
+      "id": "runaway",
+      "name": "Fuite",
+      "hidden": false
+    },
+    {
+      "id": "pickup",
+      "name": "Ramassage",
+      "hidden": false
+    },
+    {
+      "id": "owntempo",
+      "name": "Tempo Perso",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field",
     "fairy"
   ],
+  "eggCycles": 10,
   "baseStats": {
     "hp": 50,
     "attack": 50,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 61,
   "experienceGroup": "fast",
   "catchRate": 150,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -42,96 +69,406 @@
         "item": "minecraft:wheat_seeds",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:wheat_seeds"
       },
       {
         "item": "cobblemon:chilan_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Zalis"
       }
     ]
   },
   "moves": [
-    "1:pound",
-    "1:babydolleyes",
-    "5:echoedvoice",
-    "8:helpinghand",
-    "11:superfang",
-    "14:doublehit",
-    "18:bulletseed",
-    "22:encore",
-    "26:playrough",
-    "30:hypervoice",
-    "33:charm",
-    "37:beatup",
-    "41:copycat",
-    "46:populationbomb",
-    "egg:afteryou",
-    "egg:batonpass",
-    "egg:bite",
-    "egg:feint",
-    "egg:switcheroo",
-    "egg:tickle",
-    "tm:aerialace",
-    "tm:afteryou",
-    "tm:agility",
-    "tm:babydolleyes",
-    "tm:batonpass",
-    "tm:beatup",
-    "tm:bulletseed",
-    "tm:charm",
-    "tm:crunch",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:echoedvoice",
-    "tm:encore",
-    "tm:endure",
-    "tm:facade",
-    "tm:faketears",
-    "tm:grassknot",
-    "tm:helpinghand",
-    "tm:hypervoice",
-    "tm:lowkick",
-    "tm:lowsweep",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:playrough",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:seedbomb",
-    "tm:shadowclaw",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superfang",
-    "tm:swift",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunderwave",
-    "tm:uturn",
-    "tm:waterpulse",
-    "tutor:aerialace",
-    "tutor:afteryou",
-    "tutor:babydolleyes",
-    "tutor:helpinghand",
-    "tutor:hypervoice",
-    "tutor:lowkick",
-    "tutor:mudslap",
-    "tutor:playrough",
-    "tutor:rest",
-    "tutor:seedbomb",
-    "tutor:shadowclaw",
-    "tutor:sleeptalk",
-    "tutor:superfang",
-    "tutor:swift",
-    "tutor:waterpulse"
+    {
+      "id": "pound",
+      "name": "Écras'Face",
+      "category": "1"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "1"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "5"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "8"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "11"
+    },
+    {
+      "id": "doublehit",
+      "name": "Coup Double",
+      "category": "14"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "18"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "22"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "26"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "30"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "33"
+    },
+    {
+      "id": "beatup",
+      "name": "Baston",
+      "category": "37"
+    },
+    {
+      "id": "copycat",
+      "name": "Photocopie",
+      "category": "41"
+    },
+    {
+      "id": "populationbomb",
+      "name": "Prolifération",
+      "category": "46"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "egg"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "egg"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "egg"
+    },
+    {
+      "id": "feint",
+      "name": "Ruse",
+      "category": "egg"
+    },
+    {
+      "id": "switcheroo",
+      "name": "Passe-Passe",
+      "category": "egg"
+    },
+    {
+      "id": "tickle",
+      "name": "Chatouille",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "beatup",
+      "name": "Baston",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "faketears",
+      "name": "Croco Larme",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "lowsweep",
+      "name": "Balayette",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "celebrate",
+      "name": "Célébration",
+      "category": "special"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "tandemaus_maushold",
@@ -147,6 +484,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -157,18 +495,25 @@
         "rarity": "common",
         "weight": 1.8,
         "levels": "6-31",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_temperate"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0924_tandemaus.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0924_tandemaus.json",
+        "spawnId": "tandemaus-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "tandemaus",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "day"
+          }
         }
       }
     ],
@@ -181,9 +526,6 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "6-31",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -193,10 +535,20 @@
             "#cobblemon:is_sandy"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0924_tandemaus.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0924_tandemaus.json",
+        "spawnId": "tandemaus-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "tandemaus",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "day"
+          }
         }
       }
     ],
@@ -208,9 +560,6 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "6-31",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -220,13 +569,23 @@
             "#cobblemon:is_sandy"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0924_tandemaus.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0924_tandemaus.json",
+        "spawnId": "tandemaus-3",
         "structures": [
           "#minecraft:village"
         ],
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "tandemaus",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "day"
+          }
         }
       }
     ],
@@ -238,18 +597,19 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "6-31",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0924_tandemaus.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0924_tandemaus.json",
+        "spawnId": "tandemaus-4",
         "sky": {
           "canSeeSky": false
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "tandemaus",
+        "type": "pokemon"
       }
     ],
     [
@@ -260,38 +620,20 @@
         "rarity": "common",
         "weight": 1.8,
         "levels": "6-31",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0924_tandemaus.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0924_tandemaus.json",
+        "spawnId": "tandemaus-5",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 3.3,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_starlight_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/uncommon_is_starlight_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "tandemaus",
+        "type": "pokemon"
       }
     ]
   ],
@@ -305,6 +647,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/tandemaus.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/tandemaus.json"
   ]
 }

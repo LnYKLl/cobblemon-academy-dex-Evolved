@@ -2,21 +2,46 @@
   "id": "rapidash",
   "dexnum": 78,
   "name": "Rapidash",
+  "nameFr": "Galopa",
+  "description": "On voit souvent Galopa trotter dans les champs et les plaines. Cependant, lorsque ce Pokémon s'en donne la peine, il peut galoper à plus de 240 km/h et sa crinière flamboyante s'embrase.",
   "primaryType": "fire",
   "secondaryType": "",
+  "primaryTypeFr": "Feu",
+  "secondaryTypeFr": "",
+  "height": 17,
+  "weight": 950,
   "maleRatio": 0.5,
+  "baseScale": 1.2,
+  "hitbox": {
+    "width": 0.9,
+    "height": 2,
+    "fixed": false
+  },
   "labels": [
     "gen1",
     "kantonian_form"
   ],
   "abilities": [
-    "runaway",
-    "flashfire",
-    "h:flamebody"
+    {
+      "id": "runaway",
+      "name": "Fuite",
+      "hidden": false
+    },
+    {
+      "id": "flashfire",
+      "name": "Torche",
+      "hidden": false
+    },
+    {
+      "id": "flamebody",
+      "name": "Corps Ardent",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 65,
     "attack": 100,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 2
   },
+  "baseExperienceYield": 175,
   "experienceGroup": "medium_fast",
   "catchRate": 60,
+  "baseFriendship": 50,
   "drops": {
     "amount": 4,
     "entries": [
@@ -46,7 +73,8 @@
         "biomes": [
           "#cobblemon:nether/is_overgrowth",
           "#cobblemon:nether/is_wasteland"
-        ]
+        ],
+        "itemName": "minecraft:leather"
       },
       {
         "item": "minecraft:blaze_powder",
@@ -56,7 +84,8 @@
         "biomes": [
           "#cobblemon:nether/is_overgrowth",
           "#cobblemon:nether/is_wasteland"
-        ]
+        ],
+        "itemName": "minecraft:blaze_powder"
       },
       {
         "item": "cobblemon:shuca_berry",
@@ -66,110 +95,578 @@
         "biomes": [
           "#cobblemon:nether/is_overgrowth",
           "#cobblemon:nether/is_wasteland"
-        ]
+        ],
+        "itemName": "Baie Jouca"
       }
     ]
   },
   "moves": [
-    "1:poisonjab",
-    "1:megahorn",
-    "1:growl",
-    "1:quickattack",
-    "1:tailwhip",
-    "1:ember",
-    "1:furyattack",
-    "1:smartstrike",
-    "1:tackle",
-    "15:flamecharge",
-    "20:agility",
-    "25:flamewheel",
-    "30:stomp",
-    "35:firespin",
-    "43:takedown",
-    "49:inferno",
-    "56:fireblast",
-    "63:flareblitz",
-    "egg:captivate",
-    "egg:doubleedge",
-    "egg:doublekick",
-    "egg:horndrill",
-    "egg:hypnosis",
-    "egg:morningsun",
-    "egg:thrash",
-    "tm:agility",
-    "tm:allyswitch",
-    "tm:batonpass",
-    "tm:bodyslam",
-    "tm:bounce",
-    "tm:captivate",
-    "tm:charm",
-    "tm:doubleedge",
-    "tm:drillrun",
-    "tm:echoedvoice",
-    "tm:endure",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firespin",
-    "tm:flamecharge",
-    "tm:flamethrower",
-    "tm:flareblitz",
-    "tm:gigaimpact",
-    "tm:headbutt",
-    "tm:heatwave",
-    "tm:highhorsepower",
-    "tm:hyperbeam",
-    "tm:incinerate",
-    "tm:irontail",
-    "tm:lowkick",
-    "tm:megahorn",
-    "tm:mysticalfire",
-    "tm:overheat",
-    "tm:payday",
-    "tm:playrough",
-    "tm:poisonjab",
-    "tm:protect",
-    "tm:rest",
-    "tm:scorchingsands",
-    "tm:sleeptalk",
-    "tm:smartstrike",
-    "tm:solarbeam",
-    "tm:solarblade",
-    "tm:strength",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:throatchop",
-    "tm:wildcharge",
-    "tm:willowisp",
-    "tutor:allyswitch",
-    "tutor:bounce",
-    "tutor:drillrun",
-    "tutor:flamethrower",
-    "tutor:gigaimpact",
-    "tutor:heatwave",
-    "tutor:highhorsepower",
-    "tutor:hyperbeam",
-    "tutor:irontail",
-    "tutor:lowkick",
-    "tutor:megahorn",
-    "tutor:mysticalfire",
-    "tutor:playrough",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:scorchingsands",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:throatchop",
-    "tutor:wildcharge"
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "1"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "1"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "1"
+    },
+    {
+      "id": "ember",
+      "name": "Flammèche",
+      "category": "1"
+    },
+    {
+      "id": "furyattack",
+      "name": "Furie",
+      "category": "1"
+    },
+    {
+      "id": "smartstrike",
+      "name": "Estocorne",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "15"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "20"
+    },
+    {
+      "id": "flamewheel",
+      "name": "Roue de Feu",
+      "category": "25"
+    },
+    {
+      "id": "stomp",
+      "name": "Écrasement",
+      "category": "30"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "35"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "43"
+    },
+    {
+      "id": "inferno",
+      "name": "Feu d'Enfer",
+      "category": "49"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "56"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "63"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "egg"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "egg"
+    },
+    {
+      "id": "doublekick",
+      "name": "Double Pied",
+      "category": "egg"
+    },
+    {
+      "id": "horndrill",
+      "name": "Empal'Korne",
+      "category": "egg"
+    },
+    {
+      "id": "hypnosis",
+      "name": "Hypnose",
+      "category": "egg"
+    },
+    {
+      "id": "morningsun",
+      "name": "Aurore",
+      "category": "egg"
+    },
+    {
+      "id": "thrash",
+      "name": "Mania",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tm"
+    },
+    {
+      "id": "mysticalfire",
+      "name": "Feu Ensorcelé",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "payday",
+      "name": "Jackpot",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smartstrike",
+      "name": "Estocorne",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "solarblade",
+      "name": "Lame Solaire",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tutor"
+    },
+    {
+      "id": "mysticalfire",
+      "name": "Feu Ensorcelé",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "legacy"
+    },
+    {
+      "id": "rage",
+      "name": "Frénésie",
+      "category": "legacy"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "skullbash",
+      "name": "Coud'Krâne",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [
     "Galar"
   ],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "ponyta",
   "spawns": [
     [
       {
@@ -179,21 +676,32 @@
         "rarity": "uncommon",
         "weight": 0.96,
         "levels": "40-50",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_grassland"
+          ],
+          "exclude": [
+            "#cobblemon:is_floral",
+            "#cobblemon:is_magical"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0078_rapidash.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0078_rapidash.json",
+        "spawnId": "rapidash-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
         },
         "weather": {
           "isRaining": false
+        },
+        "spawnType": "grounded",
+        "pokemon": "rapidash",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
         }
       }
     ],
@@ -205,35 +713,37 @@
         "rarity": "common",
         "weight": 0.6,
         "levels": "40-50",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_overgrowth",
             "#cobblemon:nether/is_wasteland"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0078_rapidash.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 2.8,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0078_rapidash.json",
+        "spawnId": "rapidash-2",
+        "spawnType": "grounded",
+        "pokemon": "rapidash",
+        "type": "pokemon",
+        "drops": {
+          "amount": 4,
+          "entries": [
+            {
+              "item": "minecraft:leather",
+              "percentage": null,
+              "quantityRange": "0-2"
+            },
+            {
+              "item": "minecraft:blaze_powder",
+              "percentage": 10.0,
+              "quantityRange": null
+            },
+            {
+              "item": "cobblemon:shuca_berry",
+              "percentage": 5.0,
+              "quantityRange": null
+            }
           ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/uncommon_scarlet_forest.json"
+        }
       }
     ]
   ],
@@ -247,6 +757,7 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/rapidash.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/rapidash.json",
+    "datapacks\\Journey Mounts\\data\\cobblemon\\species\\generation1\\rapidash.json"
   ]
 }

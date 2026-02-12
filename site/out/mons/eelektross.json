@@ -2,19 +2,40 @@
   "id": "eelektross",
   "dexnum": 604,
   "name": "Eelektross",
+  "nameFr": "Ohmassacre",
+  "description": "Il peut sortir de l'eau à la force de ses bras pour attraper des proies sur la rive. Il retourne à l'eau en un instant.",
   "primaryType": "electric",
   "secondaryType": "",
+  "primaryTypeFr": "Électrik",
+  "secondaryTypeFr": "",
+  "height": 21,
+  "weight": 805,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1.25,
+    "height": 2,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "levitate",
-    "h:levitate"
+    {
+      "id": "levitate",
+      "name": "Lévitation",
+      "hidden": false
+    },
+    {
+      "id": "levitate",
+      "name": "Lévitation",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "amorphous"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 85,
     "attack": 115,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 258,
   "experienceGroup": "slow",
   "catchRate": 30,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -40,164 +63,833 @@
         "item": "minecraft:slime_ball",
         "percentage": null,
         "quantityRange": "0-3",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:slime_ball"
       }
     ]
   },
   "moves": [
-    "1:crushclaw",
-    "1:headbutt",
-    "1:acid",
-    "1:discharge",
-    "1:crunch",
-    "1:gastroacid",
-    "1:thrash",
-    "1:zapcannon",
-    "1:coil",
-    "1:iondeluge",
-    "1:tackle",
-    "1:spark",
-    "5:wildcharge",
-    "tm:acidspray",
-    "tm:acrobatics",
-    "tm:aquatail",
-    "tm:bind",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:bounce",
-    "tm:brickbreak",
-    "tm:bulkup",
-    "tm:bulldoze",
-    "tm:charge",
-    "tm:chargebeam",
-    "tm:closecombat",
-    "tm:confuseray",
-    "tm:crunch",
-    "tm:cut",
-    "tm:dragonclaw",
-    "tm:dragonpulse",
-    "tm:dragontail",
-    "tm:drainpunch",
-    "tm:eerieimpulse",
-    "tm:electricterrain",
-    "tm:electroball",
-    "tm:electroweb",
-    "tm:endure",
-    "tm:facade",
-    "tm:firepunch",
-    "tm:flamethrower",
-    "tm:flash",
-    "tm:flashcannon",
-    "tm:focuspunch",
-    "tm:gastroacid",
-    "tm:gigadrain",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:headbutt",
-    "tm:heavyslam",
-    "tm:hex",
-    "tm:honeclaws",
-    "tm:hyperbeam",
-    "tm:irontail",
-    "tm:knockoff",
-    "tm:lightscreen",
-    "tm:liquidation",
-    "tm:lunge",
-    "tm:magnetrise",
-    "tm:outrage",
-    "tm:poweruppunch",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:risingvoltage",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:scaryface",
-    "tm:shockwave",
-    "tm:signalbeam",
-    "tm:sleeptalk",
-    "tm:stompingtantrum",
-    "tm:strength",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:supercellslam",
-    "tm:superfang",
-    "tm:superpower",
-    "tm:swift",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:throatchop",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderfang",
-    "tm:thunderpunch",
-    "tm:thunderwave",
-    "tm:uturn",
-    "tm:voltswitch",
-    "tm:wildcharge",
-    "tm:zenheadbutt",
-    "tutor:aquatail",
-    "tutor:bind",
-    "tutor:bounce",
-    "tutor:bulkup",
-    "tutor:bulldoze",
-    "tutor:chargebeam",
-    "tutor:dragonpulse",
-    "tutor:drainpunch",
-    "tutor:electroweb",
-    "tutor:firepunch",
-    "tutor:flamethrower",
-    "tutor:flashcannon",
-    "tutor:focuspunch",
-    "tutor:gastroacid",
-    "tutor:gigadrain",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:irontail",
-    "tutor:knockoff",
-    "tutor:liquidation",
-    "tutor:magnetrise",
-    "tutor:outrage",
-    "tutor:rest",
-    "tutor:risingvoltage",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:shockwave",
-    "tutor:signalbeam",
-    "tutor:sleeptalk",
-    "tutor:stompingtantrum",
-    "tutor:superfang",
-    "tutor:superpower",
-    "tutor:swift",
-    "tutor:throatchop",
-    "tutor:thunderbolt",
-    "tutor:thunderfang",
-    "tutor:thunderpunch",
-    "tutor:wildcharge",
-    "tutor:zenheadbutt"
+    {
+      "id": "crushclaw",
+      "name": "Éclate Griffe",
+      "category": "1"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "1"
+    },
+    {
+      "id": "acid",
+      "name": "Acide",
+      "category": "1"
+    },
+    {
+      "id": "discharge",
+      "name": "Coup d'Jus",
+      "category": "1"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "1"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "1"
+    },
+    {
+      "id": "thrash",
+      "name": "Mania",
+      "category": "1"
+    },
+    {
+      "id": "zapcannon",
+      "name": "Élecanon",
+      "category": "1"
+    },
+    {
+      "id": "coil",
+      "name": "Enroulement",
+      "category": "1"
+    },
+    {
+      "id": "iondeluge",
+      "name": "Déluge Plasmique",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "spark",
+      "name": "Étincelle",
+      "category": "1"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "5"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "tm"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dragonclaw",
+      "name": "Draco-Griffe",
+      "category": "tm"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tm"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "drainpunch",
+      "name": "Vampi-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "eerieimpulse",
+      "name": "Ondes Étranges",
+      "category": "tm"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "tm"
+    },
+    {
+      "id": "electroball",
+      "name": "Boule Élek",
+      "category": "tm"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "tm"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "poweruppunch",
+      "name": "Poing Boost",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "supercellslam",
+      "name": "Volt Assaut",
+      "category": "tm"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "voltswitch",
+      "name": "Change Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tutor"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "drainpunch",
+      "name": "Vampi-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tutor"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "eelektrik",
   "spawns": [
     [
       {
-        "presets": [
-          "water"
-        ],
-        "rarity": "rare",
-        "weight": 4.1,
-        "levels": "18-41",
-        "contexts": [
-          "submerged"
-        ],
+        "rarity": "common",
+        "weight": 0.01,
+        "levels": "36-52",
         "biomeTags": {
           "include": [
-            "#eternal_starlight:is_safari_ocean"
+            "#cobblemon:is_ocean"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_safari_ocean/rare_is_safari_ocean.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0604_eelektross.json",
+        "spawnId": "eelektross-4",
+        "sky": {
+          "canSeeSky": true
+        },
+        "spawnType": "fishing",
+        "pokemon": "eelektross",
+        "type": "pokemon",
+        "weightMultiplier": [
+          {
+            "multiplier": 3.0,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5.0,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "rarity": "common",
+        "weight": 0.05,
+        "levels": "36-52",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_overworld"
+          ],
+          "exclude": [
+            "#cobblemon:is_lush"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0604_eelektross.json",
+        "spawnId": "eelektross-5",
+        "sky": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7
+        },
+        "spawnType": "fishing",
+        "pokemon": "eelektross",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
+        }
+      }
+    ],
+    [
+      {
+        "rarity": "common",
+        "weight": 0.01,
+        "levels": "36-52",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_ocean"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0604_eelektross.json",
+        "spawnId": "eelektross-6",
+        "sky": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "fishing",
+        "pokemon": "eelektross",
+        "type": "pokemon",
+        "weightMultiplier": [
+          {
+            "multiplier": 3.0,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5.0,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ]
       }
     ],
     [
@@ -205,24 +897,22 @@
         "presets": [
           "water"
         ],
-        "rarity": "rare",
-        "weight": 0.1,
-        "levels": "39-60",
-        "contexts": [
-          "submerged"
-        ],
+        "rarity": "common",
+        "weight": 0.01,
+        "levels": "36-52",
         "biomeTags": {
           "include": [
-            "#cobblemon:is_cave"
-          ],
-          "exclude": [
-            "#cobblemon:is_lush"
+            "#cobblemon:is_ocean"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/eelektross.json",
-        "sky": {
-          "canSeeSky": false
-        }
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0604_eelektross.json",
+        "spawnId": "eelektross-1",
+        "yLevel": {
+          "maxY": 48
+        },
+        "spawnType": "submerged",
+        "pokemon": "eelektross",
+        "type": "pokemon"
       }
     ],
     [
@@ -231,65 +921,69 @@
           "water"
         ],
         "rarity": "uncommon",
-        "weight": 0.1,
-        "levels": "39-60",
-        "contexts": [
-          "submerged"
-        ],
+        "weight": 0.048,
+        "levels": "36-52",
         "biomeTags": {
           "include": [
-            "#cobblemon:is_lush"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/eelektross.json",
-        "sky": {
-          "canSeeSky": false
-        }
-      }
-    ],
-    [
-      {
-        "rarity": "rare",
-        "weight": 0.8,
-        "levels": "39-60",
-        "contexts": [
-          "fishing"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_cave"
+            "#cobblemon:is_overworld"
           ],
           "exclude": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/eelektross.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0604_eelektross.json",
+        "spawnId": "eelektross-2",
         "sky": {
-          "canSeeSky": false
-        }
+          "minSkyLight": 0,
+          "maxSkyLight": 7
+        },
+        "yLevel": {
+          "maxY": 48
+        },
+        "spawnType": "submerged",
+        "pokemon": "eelektross",
+        "excludeStructures": [
+          "#cobblemon:shipwreck_cove"
+        ],
+        "excludeYLevel": {
+          "minY": -60,
+          "maxY": 13
+        },
+        "type": "pokemon"
       }
     ],
     [
       {
-        "rarity": "uncommon",
-        "weight": 0.9,
-        "levels": "39-60",
-        "contexts": [
-          "submerged"
+        "presets": [
+          "water"
         ],
+        "rarity": "common",
+        "weight": 0.03,
+        "levels": "36-52",
         "biomeTags": {
           "include": [
-            "#cobblemon:is_lush"
+            "#cobblemon:is_overworld"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/eelektross.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0604_eelektross.json",
+        "spawnId": "eelektross-3",
+        "structures": [
+          "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
+        ],
         "sky": {
           "canSeeSky": false
-        }
+        },
+        "yLevel": {
+          "minY": -60,
+          "maxY": 13
+        },
+        "spawnType": "submerged",
+        "pokemon": "eelektross",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/eelektross.png"
@@ -299,6 +993,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/eelektross.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/eelektross.json"
   ]
 }

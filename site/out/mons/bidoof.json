@@ -2,21 +2,46 @@
   "id": "bidoof",
   "dexnum": 399,
   "name": "Bidoof",
+  "nameFr": "Keunotor",
+  "description": "Il ronge constamment des troncs et des pierres pour se faire les incisives. Il niche le long de l'eau.",
   "primaryType": "normal",
   "secondaryType": "",
+  "primaryTypeFr": "Normal",
+  "secondaryTypeFr": "",
+  "height": 5,
+  "weight": 200,
   "maleRatio": 0.5,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 1,
+    "height": 0.9,
+    "fixed": false
+  },
   "labels": [
     "gen4"
   ],
   "abilities": [
-    "simple",
-    "unaware",
-    "h:moody"
+    {
+      "id": "simple",
+      "name": "Simple",
+      "hidden": false
+    },
+    {
+      "id": "unaware",
+      "name": "Inconscient",
+      "hidden": false
+    },
+    {
+      "id": "moody",
+      "name": "Lunatique",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_1",
     "field"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 59,
     "attack": 45,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 50,
   "experienceGroup": "medium_fast",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -42,105 +69,521 @@
         "item": "minecraft:stick",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:stick"
       },
       {
         "item": "cobblemon:oran_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Oran"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:growl",
-    "5:defensecurl",
-    "9:rollout",
-    "13:headbutt",
-    "17:hyperfang",
-    "21:yawn",
-    "25:crunch",
-    "29:takedown",
-    "33:superfang",
-    "37:swordsdance",
-    "41:amnesia",
-    "45:superpower",
-    "49:curse",
-    "egg:defensecurl",
-    "egg:furyswipes",
-    "egg:mudsport",
-    "egg:odorsleuth",
-    "egg:quickattack",
-    "egg:skullbash",
-    "egg:watersport",
-    "tm:amnesia",
-    "tm:aquatail",
-    "tm:blizzard",
-    "tm:chargebeam",
-    "tm:covet",
-    "tm:crunch",
-    "tm:curse",
-    "tm:cut",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:echoedvoice",
-    "tm:endure",
-    "tm:facade",
-    "tm:furycutter",
-    "tm:grassknot",
-    "tm:headbutt",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:irontail",
-    "tm:lastresort",
-    "tm:mudslap",
-    "tm:pluck",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:rocksmash",
-    "tm:rollout",
-    "tm:shadowball",
-    "tm:shockwave",
-    "tm:sleeptalk",
-    "tm:stealthrock",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superfang",
-    "tm:superpower",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:workup",
-    "tutor:aquatail",
-    "tutor:chargebeam",
-    "tutor:covet",
-    "tutor:furycutter",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:irontail",
-    "tutor:lastresort",
-    "tutor:mudslap",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:rollout",
-    "tutor:shadowball",
-    "tutor:shockwave",
-    "tutor:sleeptalk",
-    "tutor:stealthrock",
-    "tutor:superfang",
-    "tutor:superpower",
-    "tutor:thunderbolt"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "5"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "9"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "13"
+    },
+    {
+      "id": "hyperfang",
+      "name": "Croc de Mort",
+      "category": "17"
+    },
+    {
+      "id": "yawn",
+      "name": "Bâillement",
+      "category": "21"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "25"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "29"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "33"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "37"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "41"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "45"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "49"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "egg"
+    },
+    {
+      "id": "furyswipes",
+      "name": "Combo-Griffe",
+      "category": "egg"
+    },
+    {
+      "id": "mudsport",
+      "name": "Lance-Boue",
+      "category": "egg"
+    },
+    {
+      "id": "odorsleuth",
+      "name": "Flair",
+      "category": "egg"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "egg"
+    },
+    {
+      "id": "skullbash",
+      "name": "Coud'Krâne",
+      "category": "egg"
+    },
+    {
+      "id": "watersport",
+      "name": "Tourniquet",
+      "category": "egg"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "rockclimb",
+      "name": "Escalade",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "bidoof_bibarel",
@@ -158,6 +601,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -167,19 +611,23 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "1-25",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_freshwater"
+          ],
+          "exclude": [
+            "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0399_bidoof.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0399_bidoof.json",
+        "spawnId": "bidoof-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "bidoof",
+        "type": "pokemon"
       }
     ],
     [
@@ -190,28 +638,26 @@
         "rarity": "uncommon",
         "weight": 8.4,
         "levels": "1-25",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest",
             "#cobblemon:is_taiga"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0399_bidoof.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0399_bidoof.json",
+        "spawnId": "bidoof-2",
         "nearbyBlocks": {
           "selectors": [
-            "#minecraft:water"
-          ],
-          "resolved": [
-            "#minecraft:water"
+            "minecraft:water"
           ]
         },
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "bidoof",
+        "type": "pokemon"
       }
     ],
     [
@@ -222,9 +668,6 @@
         "rarity": "uncommon",
         "weight": 8.4,
         "levels": "1-25",
-        "contexts": [
-          "surface"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest",
@@ -232,11 +675,15 @@
             "#cobblemon:is_taiga"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0399_bidoof.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0399_bidoof.json",
+        "spawnId": "bidoof-3",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "surface",
+        "pokemon": "bidoof",
+        "type": "pokemon"
       }
     ],
     [
@@ -244,9 +691,6 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "1-25",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest",
@@ -255,9 +699,20 @@
             "#cobblemon:is_taiga"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0399_bidoof.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0399_bidoof.json",
+        "spawnId": "bidoof-4",
         "sky": {
           "canSeeSky": true
+        },
+        "spawnType": "fishing",
+        "pokemon": "bidoof",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
         }
       }
     ],
@@ -266,9 +721,6 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "1-25",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest",
@@ -277,31 +729,23 @@
             "#cobblemon:is_taiga"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0399_bidoof.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0399_bidoof.json",
+        "spawnId": "bidoof-5",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 1.1,
-        "levels": "4-19",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/common_dark_swamp.json"
+        "spawnType": "fishing",
+        "pokemon": "bidoof",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
+        }
       }
     ]
   ],
@@ -315,6 +759,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation4/bidoof.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation4/bidoof.json"
   ]
 }

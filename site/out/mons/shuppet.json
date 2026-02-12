@@ -2,20 +2,45 @@
   "id": "shuppet",
   "dexnum": 353,
   "name": "Shuppet",
+  "nameFr": "Polichombr",
+  "description": "Polichombr grandit en se nourrissant des émotions négatives des gens, comme le désir de vengeance ou la jalousie. Il erre dans les villes à la recherche des gens qui n'ont pas de moral.",
   "primaryType": "ghost",
   "secondaryType": "",
+  "primaryTypeFr": "Spectre",
+  "secondaryTypeFr": "",
+  "height": 6,
+  "weight": 23,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen3"
   ],
   "abilities": [
-    "insomnia",
-    "frisk",
-    "h:cursedbody"
+    {
+      "id": "insomnia",
+      "name": "Insomnia",
+      "hidden": false
+    },
+    {
+      "id": "frisk",
+      "name": "Fouille",
+      "hidden": false
+    },
+    {
+      "id": "cursedbody",
+      "name": "Corps Maudit",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "amorphous"
   ],
+  "eggCycles": 25,
   "baseStats": {
     "hp": 44,
     "attack": 75,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 59,
   "experienceGroup": "fast",
   "catchRate": 225,
+  "baseFriendship": 35,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,134 +68,681 @@
         "item": "minecraft:phantom_membrane",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:phantom_membrane"
       },
       {
         "item": "cobblemon:spell_tag",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Rune Sort"
       }
     ]
   },
   "moves": [
-    "1:astonish",
-    "4:screech",
-    "7:nightshade",
-    "10:spite",
-    "16:willowisp",
-    "19:feintattack",
-    "22:hex",
-    "26:curse",
-    "30:shadowball",
-    "34:roleplay",
-    "38:suckerpunch",
-    "42:trick",
-    "48:phantomforce",
-    "egg:astonish",
-    "egg:confuseray",
-    "egg:destinybond",
-    "egg:disable",
-    "egg:foresight",
-    "egg:gunkshot",
-    "egg:imprison",
-    "egg:pursuit",
-    "egg:shadowsneak",
-    "tm:allyswitch",
-    "tm:calmmind",
-    "tm:chargebeam",
-    "tm:confuseray",
-    "tm:curse",
-    "tm:darkpulse",
-    "tm:dazzlinggleam",
-    "tm:dreameater",
-    "tm:embargo",
-    "tm:encore",
-    "tm:endure",
-    "tm:facade",
-    "tm:flash",
-    "tm:foulplay",
-    "tm:grudge",
-    "tm:gunkshot",
-    "tm:headbutt",
-    "tm:helpinghand",
-    "tm:hex",
-    "tm:icywind",
-    "tm:imprison",
-    "tm:lashout",
-    "tm:magiccoat",
-    "tm:magicroom",
-    "tm:metronome",
-    "tm:nastyplot",
-    "tm:nightshade",
-    "tm:ominouswind",
-    "tm:painsplit",
-    "tm:payback",
-    "tm:phantomforce",
-    "tm:poltergeist",
-    "tm:pounce",
-    "tm:protect",
-    "tm:psybeam",
-    "tm:psychic",
-    "tm:psychup",
-    "tm:raindance",
-    "tm:rest",
-    "tm:roleplay",
-    "tm:scaryface",
-    "tm:screech",
-    "tm:shadowball",
-    "tm:shockwave",
-    "tm:skillswap",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:snatch",
-    "tm:spite",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:sunnyday",
-    "tm:taunt",
-    "tm:telekinesis",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:torment",
-    "tm:trick",
-    "tm:trickroom",
-    "tm:willowisp",
-    "tutor:allyswitch",
-    "tutor:calmmind",
-    "tutor:chargebeam",
-    "tutor:darkpulse",
-    "tutor:dazzlinggleam",
-    "tutor:foulplay",
-    "tutor:gunkshot",
-    "tutor:helpinghand",
-    "tutor:icywind",
-    "tutor:lashout",
-    "tutor:magiccoat",
-    "tutor:magicroom",
-    "tutor:ominouswind",
-    "tutor:painsplit",
-    "tutor:poltergeist",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:roleplay",
-    "tutor:shadowball",
-    "tutor:shockwave",
-    "tutor:skillswap",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:snatch",
-    "tutor:spite",
-    "tutor:suckerpunch",
-    "tutor:telekinesis",
-    "tutor:thunderbolt",
-    "tutor:trick"
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "1"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "4"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "7"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "10"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "16"
+    },
+    {
+      "id": "feintattack",
+      "name": "Feinte",
+      "category": "19"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "22"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "26"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "30"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "34"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "38"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "42"
+    },
+    {
+      "id": "phantomforce",
+      "name": "Hantise",
+      "category": "48"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "egg"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "egg"
+    },
+    {
+      "id": "destinybond",
+      "name": "Lien du Destin",
+      "category": "egg"
+    },
+    {
+      "id": "disable",
+      "name": "Entrave",
+      "category": "egg"
+    },
+    {
+      "id": "foresight",
+      "name": "Clairvoyance",
+      "category": "egg"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "egg"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "egg"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "egg"
+    },
+    {
+      "id": "shadowsneak",
+      "name": "Ombre Portée",
+      "category": "egg"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "embargo",
+      "name": "Embargo",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "grudge",
+      "name": "Rancune",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tm"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tm"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tm"
+    },
+    {
+      "id": "metronome",
+      "name": "Métronome",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "tm"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "phantomforce",
+      "name": "Hantise",
+      "category": "tm"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tutor"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "nightmare",
+      "name": "Cauchemar",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "shuppet_banette",
@@ -186,6 +760,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -193,81 +768,53 @@
           "natural"
         ],
         "rarity": "common",
-        "weight": 7.0,
-        "levels": "7-32",
-        "contexts": [
-          "grounded"
+        "weight": 9.0,
+        "levels": "5-30",
+        "times": [
+          "night"
         ],
         "biomeTags": {
           "include": [
-            "#cobblemon:is_deep_dark",
             "#cobblemon:is_spooky"
           ]
         },
-        "source": "Cobblemon_MegaShowdown-10.0.7-release-fabric.jar!/data/cobblemon/spawn_pool_world/0353_shuppet.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0353_shuppet.json",
+        "spawnId": "shuppet-1",
         "sky": {
-          "canSeeSky": false
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 3.7,
-        "levels": "4-19",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
+          "minSkyLight": 8,
+          "maxSkyLight": 15
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/common_dark_swamp.json"
+        "spawnType": "grounded",
+        "pokemon": "shuppet",
+        "type": "pokemon"
       }
     ],
     [
       {
         "presets": [
-          "underground"
+          "natural",
+          "urban"
         ],
-        "rarity": "common",
-        "weight": 20.0,
-        "levels": "15-36",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "minecraft:deep_dark"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0353_shuppet.json",
-        "sky": {
-          "canSeeSky": false
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 10.0,
-        "levels": "15-36",
-        "contexts": [
-          "grounded"
+        "rarity": "uncommon",
+        "weight": 8.4,
+        "levels": "5-30",
+        "times": [
+          "night"
         ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0353_shuppet.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0353_shuppet.json",
+        "spawnId": "shuppet-2",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "shuppet",
+        "type": "pokemon"
       }
     ],
     [
@@ -275,26 +822,59 @@
         "presets": [
           "natural"
         ],
-        "rarity": "common",
-        "weight": 7.0,
-        "levels": "7-32",
-        "contexts": [
-          "grounded"
+        "rarity": "uncommon",
+        "weight": 8.4,
+        "levels": "5-30",
+        "times": [
+          "night"
         ],
         "biomeTags": {
           "include": [
-            "#cobblemon:is_deep_dark",
-            "#cobblemon:is_spooky"
+            "#cobblemon:is_overworld"
           ]
         },
-        "source": "datapacks/MegaShowdown/data/cobblemon/spawn_pool_world/0353_shuppet.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0353_shuppet.json",
+        "spawnId": "shuppet-3",
+        "structures": [
+          "#minecraft:village"
+        ],
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "shuppet",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "mansion"
+        ],
+        "rarity": "common",
+        "weight": 9.0,
+        "levels": "5-30",
+        "times": [
+          "night"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_overworld"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0353_shuppet.json",
+        "spawnId": "shuppet-4",
         "sky": {
           "canSeeSky": false
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "shuppet",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/shuppet.png"
@@ -304,6 +884,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation3/shuppet.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation3/shuppet.json"
   ]
 }

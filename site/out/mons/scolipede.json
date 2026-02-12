@@ -2,20 +2,45 @@
   "id": "scolipede",
   "dexnum": 545,
   "name": "Scolipede",
+  "nameFr": "Brutapode",
+  "description": "Il accule l'ennemi par ses mouvements rapides et l'attaque avec ses cornes. Il ne s'arrête qu'au coup de grâce.",
   "primaryType": "bug",
   "secondaryType": "poison",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "Poison",
+  "height": 25,
+  "weight": 2005,
   "maleRatio": 0.5,
+  "baseScale": 0.95,
+  "hitbox": {
+    "width": 2.5,
+    "height": 3,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "poisonpoint",
-    "swarm",
-    "h:speedboost"
+    {
+      "id": "poisonpoint",
+      "name": "Point Poison",
+      "hidden": false
+    },
+    {
+      "id": "swarm",
+      "name": "Essaim",
+      "hidden": false
+    },
+    {
+      "id": "speedboost",
+      "name": "Turbo",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 60,
     "attack": 100,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 3
   },
+  "baseExperienceYield": 243,
   "experienceGroup": "medium_slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,128 +68,608 @@
         "item": "cobblemon:poison_barb",
         "percentage": 10.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Pic Venin"
       },
       {
         "item": "cobblemon:pecha_berry",
         "percentage": 10.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Pêcha"
       }
     ]
   },
   "moves": [
-    "1:defensecurl",
-    "1:rollout",
-    "1:poisonsting",
-    "1:pursuit",
-    "1:protect",
-    "1:batonpass",
-    "1:steamroller",
-    "1:irondefense",
-    "12:poisontail",
-    "16:screech",
-    "20:bugbite",
-    "26:venoshock",
-    "34:takedown",
-    "42:agility",
-    "50:toxic",
-    "58:venomdrench",
-    "66:doubleedge",
-    "74:megahorn",
-    "egg:bite",
-    "egg:furycutter",
-    "egg:steamroller",
-    "egg:twineedle",
-    "tm:agility",
-    "tm:aquatail",
-    "tm:assurance",
-    "tm:batonpass",
-    "tm:bugbite",
-    "tm:bulldoze",
-    "tm:crosspoison",
-    "tm:cut",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:earthquake",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:furycutter",
-    "tm:gigaimpact",
-    "tm:gyroball",
-    "tm:hex",
-    "tm:hyperbeam",
-    "tm:infestation",
-    "tm:irondefense",
-    "tm:irontail",
-    "tm:megahorn",
-    "tm:payback",
-    "tm:pinmissile",
-    "tm:poisonjab",
-    "tm:poisontail",
-    "tm:protect",
-    "tm:rest",
-    "tm:rockclimb",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:rollout",
-    "tm:screech",
-    "tm:signalbeam",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:smartstrike",
-    "tm:snatch",
-    "tm:solarbeam",
-    "tm:spikes",
-    "tm:steelroller",
-    "tm:stompingtantrum",
-    "tm:strength",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superpower",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:throatchop",
-    "tm:toxic",
-    "tm:toxicspikes",
-    "tm:venomdrench",
-    "tm:venoshock",
-    "tm:xscissor",
-    "tutor:aquatail",
-    "tutor:bugbite",
-    "tutor:bulldoze",
-    "tutor:endeavor",
-    "tutor:furycutter",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:irondefense",
-    "tutor:irontail",
-    "tutor:megahorn",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:rollout",
-    "tutor:signalbeam",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:snatch",
-    "tutor:spikes",
-    "tutor:steelroller",
-    "tutor:stompingtantrum",
-    "tutor:superpower",
-    "tutor:throatchop",
-    "tutor:xscissor"
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "1"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "1"
+    },
+    {
+      "id": "poisonsting",
+      "name": "Dard-Venin",
+      "category": "1"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "1"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "1"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "1"
+    },
+    {
+      "id": "steamroller",
+      "name": "Bulldoboule",
+      "category": "1"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "1"
+    },
+    {
+      "id": "poisontail",
+      "name": "Queue-Poison",
+      "category": "12"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "16"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "20"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "26"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "34"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "42"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "50"
+    },
+    {
+      "id": "venomdrench",
+      "name": "Piège de Venin",
+      "category": "58"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "66"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "74"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "egg"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "egg"
+    },
+    {
+      "id": "steamroller",
+      "name": "Bulldoboule",
+      "category": "egg"
+    },
+    {
+      "id": "twineedle",
+      "name": "Double Dard",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "crosspoison",
+      "name": "Poison Croix",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "pinmissile",
+      "name": "Dard-Nuée",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "poisontail",
+      "name": "Queue-Poison",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockclimb",
+      "name": "Escalade",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "smartstrike",
+      "name": "Estocorne",
+      "category": "tm"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tm"
+    },
+    {
+      "id": "steelroller",
+      "name": "Métalliroue",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "venomdrench",
+      "name": "Piège de Venin",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tutor"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tutor"
+    },
+    {
+      "id": "steelroller",
+      "name": "Métalliroue",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "whirlipede",
   "spawns": [
     [
       {
@@ -173,19 +680,23 @@
         "rarity": "common",
         "weight": 0.02,
         "levels": "30-49",
-        "contexts": [
-          "grounded"
+        "times": [
+          "night"
         ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0545_scolipede.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0545_scolipede.json",
+        "spawnId": "scolipede-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "scolipede",
+        "type": "pokemon"
       }
     ],
     [
@@ -197,19 +708,23 @@
         "rarity": "common",
         "weight": 0.06,
         "levels": "30-49",
-        "contexts": [
-          "grounded"
+        "times": [
+          "night"
         ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_jungle"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0545_scolipede.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0545_scolipede.json",
+        "spawnId": "scolipede-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "scolipede",
+        "type": "pokemon"
       }
     ],
     [
@@ -220,19 +735,27 @@
         "rarity": "common",
         "weight": 0.02,
         "levels": "30-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0545_scolipede.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0545_scolipede.json",
+        "spawnId": "scolipede-3",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "scolipede",
+        "excludeStructures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "excludeYLevel": {
+          "minY": -41,
+          "maxY": 9
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -244,16 +767,17 @@
         "rarity": "common",
         "weight": 0.06,
         "levels": "30-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_forest",
             "#cobblemon:nether/is_fungus"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0545_scolipede.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0545_scolipede.json",
+        "spawnId": "scolipede-4",
+        "spawnType": "grounded",
+        "pokemon": "scolipede",
+        "type": "pokemon"
       }
     ],
     [
@@ -264,9 +788,6 @@
         "rarity": "common",
         "weight": 0.02,
         "levels": "30-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -275,7 +796,8 @@
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0545_scolipede.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0545_scolipede.json",
+        "spawnId": "scolipede-5",
         "structures": [
           "cobblemon:shipwreck_coves/lush_shipwreck_cove"
         ],
@@ -286,26 +808,10 @@
         "yLevel": {
           "minY": -41,
           "maxY": 9
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 9.6,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/rare_dark_swamp.json"
+        "spawnType": "grounded",
+        "pokemon": "scolipede",
+        "type": "pokemon"
       }
     ]
   ],
@@ -319,6 +825,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/scolipede.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/scolipede.json"
   ]
 }

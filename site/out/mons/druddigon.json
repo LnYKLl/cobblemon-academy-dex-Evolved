@@ -2,21 +2,46 @@
   "id": "druddigon",
   "dexnum": 621,
   "name": "Druddigon",
+  "nameFr": "Drakkarmin",
+  "description": "Il utilise ses ailes pour emmagasiner la chaleur du soleil. Si la température de son corps baisse, il ne peut plus bouger.",
   "primaryType": "dragon",
   "secondaryType": "",
+  "primaryTypeFr": "Dragon",
+  "secondaryTypeFr": "",
+  "height": 16,
+  "weight": 1390,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 2,
+    "height": 1.5,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "roughskin",
-    "sheerforce",
-    "h:moldbreaker"
+    {
+      "id": "roughskin",
+      "name": "Peau Dure",
+      "hidden": false
+    },
+    {
+      "id": "sheerforce",
+      "name": "Sans Limite",
+      "hidden": false
+    },
+    {
+      "id": "moldbreaker",
+      "name": "Brise Moule",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "dragon",
     "monster"
   ],
+  "eggCycles": 30,
   "baseStats": {
     "hp": 77,
     "attack": 120,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 170,
   "experienceGroup": "medium_fast",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -42,149 +69,718 @@
         "item": "cobblemon:dragon_fang",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Croc de Dragon"
       },
       {
         "item": "cobblemon:haban_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Fraigo"
       }
     ]
   },
   "moves": [
-    "1:leer",
-    "1:scratch",
-    "1:dragonrage",
-    "1:chipaway",
-    "5:bite",
-    "10:dragontail",
-    "15:metalclaw",
-    "20:scaryface",
-    "25:slash",
-    "30:dragonclaw",
-    "35:honeclaws",
-    "40:nightslash",
-    "45:ironhead",
-    "50:outrage",
-    "55:superpower",
-    "egg:crushclaw",
-    "egg:feintattack",
-    "egg:glare",
-    "egg:nightslash",
-    "egg:poisontail",
-    "egg:pursuit",
-    "egg:suckerpunch",
-    "tm:aerialace",
-    "tm:aquatail",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:chargebeam",
-    "tm:crunch",
-    "tm:cut",
-    "tm:darkpulse",
-    "tm:dig",
-    "tm:dracometeor",
-    "tm:dragonclaw",
-    "tm:dragonpulse",
-    "tm:dragontail",
-    "tm:dualwingbeat",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:facade",
-    "tm:firefang",
-    "tm:firepunch",
-    "tm:flamethrower",
-    "tm:flashcannon",
-    "tm:fling",
-    "tm:focusblast",
-    "tm:gigaimpact",
-    "tm:gunkshot",
-    "tm:heatwave",
-    "tm:honeclaws",
-    "tm:hyperbeam",
-    "tm:incinerate",
-    "tm:ironhead",
-    "tm:irontail",
-    "tm:lashout",
-    "tm:megapunch",
-    "tm:metalclaw",
-    "tm:outrage",
-    "tm:payback",
-    "tm:poisontail",
-    "tm:poweruppunch",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:revenge",
-    "tm:roar",
-    "tm:rockclimb",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:scaleshot",
-    "tm:scaryface",
-    "tm:shadowclaw",
-    "tm:shockwave",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:smackdown",
-    "tm:snarl",
-    "tm:snatch",
-    "tm:stealthrock",
-    "tm:stompingtantrum",
-    "tm:strength",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:sunnyday",
-    "tm:superpower",
-    "tm:surf",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thunderfang",
-    "tm:thunderpunch",
-    "tm:torment",
-    "tutor:aerialace",
-    "tutor:aquatail",
-    "tutor:bulldoze",
-    "tutor:chargebeam",
-    "tutor:darkpulse",
-    "tutor:dracometeor",
-    "tutor:dragonpulse",
-    "tutor:dualwingbeat",
-    "tutor:firefang",
-    "tutor:firepunch",
-    "tutor:flamethrower",
-    "tutor:flashcannon",
-    "tutor:gigaimpact",
-    "tutor:gunkshot",
-    "tutor:heatwave",
-    "tutor:hyperbeam",
-    "tutor:ironhead",
-    "tutor:irontail",
-    "tutor:lashout",
-    "tutor:outrage",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:scaleshot",
-    "tutor:shadowclaw",
-    "tutor:shockwave",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:snarl",
-    "tutor:snatch",
-    "tutor:stealthrock",
-    "tutor:stompingtantrum",
-    "tutor:suckerpunch",
-    "tutor:superpower",
-    "tutor:thunderfang",
-    "tutor:thunderpunch"
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "scratch",
+      "name": "Griffe",
+      "category": "1"
+    },
+    {
+      "id": "dragonrage",
+      "name": "Draco-Rage",
+      "category": "1"
+    },
+    {
+      "id": "chipaway",
+      "name": "Attrition",
+      "category": "1"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "5"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "10"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "15"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "20"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "25"
+    },
+    {
+      "id": "dragonclaw",
+      "name": "Draco-Griffe",
+      "category": "30"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "35"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "40"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "45"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "50"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "55"
+    },
+    {
+      "id": "crushclaw",
+      "name": "Éclate Griffe",
+      "category": "egg"
+    },
+    {
+      "id": "feintattack",
+      "name": "Feinte",
+      "category": "egg"
+    },
+    {
+      "id": "glare",
+      "name": "Regard Médusant",
+      "category": "egg"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "egg"
+    },
+    {
+      "id": "poisontail",
+      "name": "Queue-Poison",
+      "category": "egg"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "egg"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tm"
+    },
+    {
+      "id": "dragonclaw",
+      "name": "Draco-Griffe",
+      "category": "tm"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tm"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tm"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "focusblast",
+      "name": "Exploforce",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tm"
+    },
+    {
+      "id": "megapunch",
+      "name": "Ultimapoing",
+      "category": "tm"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "poisontail",
+      "name": "Queue-Poison",
+      "category": "tm"
+    },
+    {
+      "id": "poweruppunch",
+      "name": "Poing Boost",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "rockclimb",
+      "name": "Escalade",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -192,17 +788,53 @@
           "natural"
         ],
         "rarity": "rare",
-        "weight": 7.4,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
+        "weight": 10.0,
+        "levels": "24-49",
         "biomeTags": {
           "include": [
-            "eternal_starlight:dark_swamp"
+            "#cobblemon:is_overworld"
+          ],
+          "exclude": [
+            "#cobblemon:is_deep_dark",
+            "#cobblemon:is_mountain"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/rare_dark_swamp.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0621_druddigon.json",
+        "spawnId": "druddigon-1",
+        "sky": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7
+        },
+        "spawnType": "grounded",
+        "pokemon": "druddigon",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "uncommon",
+        "weight": 10.0,
+        "levels": "24-49",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_mountain"
+          ],
+          "exclude": [
+            "#cobblemon:is_deep_dark"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0621_druddigon.json",
+        "spawnId": "druddigon-2",
+        "sky": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7
+        },
+        "spawnType": "grounded",
+        "pokemon": "druddigon",
+        "type": "pokemon"
       }
     ],
     [
@@ -212,50 +844,29 @@
           "wild"
         ],
         "rarity": "rare",
-        "weight": 6.6,
-        "levels": "45-55",
-        "contexts": [
-          "grounded"
+        "weight": 10.0,
+        "levels": "24-49",
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
-            "#cobblemon:is_mountain",
-            "#cobblemon:is_cave"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0621_druddigon.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "ultra-rare",
-        "weight": 7.0,
-        "levels": "45-55",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_overworld",
-            "#cobblemon:is_cave"
-          ],
-          "exclude": [
-            "#cobblemon:is_deep_dark",
             "#cobblemon:is_mountain"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0621_druddigon.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0621_druddigon.json",
+        "spawnId": "druddigon-3",
         "sky": {
-          "minSkyLight": 0,
-          "maxSkyLight": 7
-        }
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "druddigon",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon_reanimodel/druddigon.png",
@@ -267,6 +878,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/druddigon.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/druddigon.json"
   ]
 }

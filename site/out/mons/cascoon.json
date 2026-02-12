@@ -2,19 +2,40 @@
   "id": "cascoon",
   "dexnum": 268,
   "name": "Cascoon",
+  "nameFr": "Blindalys",
+  "description": "Lorsqu'il est attaqué, Blindalys reste immobile, même s'il a très mal. En effet, s'il bougeait, son corps serait affaibli lors de son évolution. En revanche, ce Pokémon n'oubliera pas la douleur endurée.",
   "primaryType": "bug",
   "secondaryType": "",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "",
+  "height": 7,
+  "weight": 115,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 0.65,
+    "fixed": false
+  },
   "labels": [
     "gen3"
   ],
   "abilities": [
-    "shedskin",
-    "h:shedskin"
+    {
+      "id": "shedskin",
+      "name": "Mue",
+      "hidden": false
+    },
+    {
+      "id": "shedskin",
+      "name": "Mue",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 50,
     "attack": 35,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 72,
   "experienceGroup": "medium_fast",
   "catchRate": 120,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -40,34 +63,96 @@
         "item": "minecraft:string",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:string"
       },
       {
         "item": "cobblemon:pecha_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Pêcha"
       }
     ]
   },
   "moves": [
-    "1:harden",
-    "1:tackle",
-    "1:poisonsting",
-    "tm:bugbite",
-    "tm:electroweb",
-    "tm:irondefense",
-    "tm:skittersmack",
-    "tm:stringshot",
-    "tm:terablast",
-    "tutor:bugbite",
-    "tutor:electroweb",
-    "tutor:irondefense",
-    "tutor:skittersmack",
-    "tutor:stringshot"
+    {
+      "id": "harden",
+      "name": "Armure",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "poisonsting",
+      "name": "Dard-Venin",
+      "category": "1"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tutor"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "cascoon_dustox",
@@ -85,24 +170,38 @@
       ]
     }
   ],
+  "preEvolution": "wurmple",
   "spawns": [
     [
       {
         "presets": [
-          "natural"
+          "natural",
+          "treetop"
         ],
         "rarity": "common",
-        "weight": 2.8,
-        "levels": "4-19",
+        "weight": 1.5,
+        "levels": "7-21",
         "contexts": [
           "grounded"
         ],
         "biomeTags": {
           "include": [
-            "eternal_starlight:dark_swamp"
+            "#cobblemon:is_forest",
+            "#cobblemon:is_jungle"
+          ],
+          "exclude": [
+            "#cobblemon:is_freezing"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/common_dark_swamp.json"
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0268_cascoon.json",
+        "spawnId": "cascoon-1",
+        "sky": {
+          "canSeeSky": true,
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "pokemon": "cascoon",
+        "type": "pokemon"
       }
     ],
     [
@@ -126,16 +225,19 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/cascoon.json",
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0268_cascoon.json",
+        "spawnId": "ccc-cascoon-1",
         "sky": {
           "canSeeSky": true,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "pokemon": "cascoon",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/cascoon.png"
@@ -145,6 +247,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation3/cascoon.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation3/cascoon.json"
   ]
 }

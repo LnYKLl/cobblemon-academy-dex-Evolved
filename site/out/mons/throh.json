@@ -2,20 +2,45 @@
   "id": "throh",
   "dexnum": 538,
   "name": "Throh",
+  "nameFr": "Judokrak",
+  "description": "Ils aiment projeter ceux qui sont plus grand qu'eux. Ils changent de ceinture quand ils progressent.",
   "primaryType": "fighting",
   "secondaryType": "",
+  "primaryTypeFr": "Combat",
+  "secondaryTypeFr": "",
+  "height": 13,
+  "weight": 555,
   "maleRatio": 1,
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 1,
+    "height": 2,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "guts",
-    "innerfocus",
-    "h:moldbreaker"
+    {
+      "id": "guts",
+      "name": "Cran",
+      "hidden": false
+    },
+    {
+      "id": "innerfocus",
+      "name": "Attention",
+      "hidden": false
+    },
+    {
+      "id": "moldbreaker",
+      "name": "Brise Moule",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "human_like"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 120,
     "attack": 100,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 163,
   "experienceGroup": "medium_fast",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,161 +68,604 @@
         "item": "cobblemon:black_belt",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Ceinture Noire"
       },
       {
         "item": "cobblemon:razz_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Framby"
       },
       {
         "item": "cobblemon:expert_belt",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Ceinture Pro"
       }
     ]
   },
   "moves": [
-    "1:bind",
-    "1:leer",
-    "1:bide",
-    "1:matblock",
-    "5:focusenergy",
-    "10:circlethrow",
-    "15:wideguard",
-    "20:revenge",
-    "25:bulkup",
-    "30:stormthrow",
-    "35:vitalthrow",
-    "40:seismictoss",
-    "45:endure",
-    "50:reversal",
-    "55:superpower",
-    "tm:bind",
-    "tm:block",
-    "tm:bodyslam",
-    "tm:brickbreak",
-    "tm:bulkup",
-    "tm:bulldoze",
-    "tm:coaching",
-    "tm:dig",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:facade",
-    "tm:firepunch",
-    "tm:fling",
-    "tm:focusblast",
-    "tm:focusenergy",
-    "tm:focuspunch",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:helpinghand",
-    "tm:icepunch",
-    "tm:knockoff",
-    "tm:laserfocus",
-    "tm:lowkick",
-    "tm:lowsweep",
-    "tm:megakick",
-    "tm:megapunch",
-    "tm:painsplit",
-    "tm:payback",
-    "tm:poisonjab",
-    "tm:poweruppunch",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:revenge",
-    "tm:reversal",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:scaryface",
-    "tm:sleeptalk",
-    "tm:stompingtantrum",
-    "tm:stoneedge",
-    "tm:strength",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superpower",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thunderpunch",
-    "tm:workup",
-    "tm:zenheadbutt",
-    "tutor:bind",
-    "tutor:block",
-    "tutor:bulkup",
-    "tutor:bulldoze",
-    "tutor:coaching",
-    "tutor:firepunch",
-    "tutor:focusenergy",
-    "tutor:focuspunch",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:icepunch",
-    "tutor:knockoff",
-    "tutor:laserfocus",
-    "tutor:lowkick",
-    "tutor:painsplit",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:sleeptalk",
-    "tutor:stompingtantrum",
-    "tutor:stoneedge",
-    "tutor:superpower",
-    "tutor:thunderpunch",
-    "tutor:zenheadbutt"
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "1"
+    },
+    {
+      "id": "matblock",
+      "name": "Tatamigaeshi",
+      "category": "1"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "5"
+    },
+    {
+      "id": "circlethrow",
+      "name": "Projection",
+      "category": "10"
+    },
+    {
+      "id": "wideguard",
+      "name": "Garde Large",
+      "category": "15"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "20"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "25"
+    },
+    {
+      "id": "stormthrow",
+      "name": "Yama Arashi",
+      "category": "30"
+    },
+    {
+      "id": "vitalthrow",
+      "name": "Corps Perdu",
+      "category": "35"
+    },
+    {
+      "id": "seismictoss",
+      "name": "Frappe Atlas",
+      "category": "40"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "45"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "50"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "55"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "coaching",
+      "name": "Coaching",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "focusblast",
+      "name": "Exploforce",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "lowsweep",
+      "name": "Balayette",
+      "category": "tm"
+    },
+    {
+      "id": "megakick",
+      "name": "Ultimawashi",
+      "category": "tm"
+    },
+    {
+      "id": "megapunch",
+      "name": "Ultimapoing",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "poweruppunch",
+      "name": "Poing Boost",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tutor"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tutor"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "coaching",
+      "name": "Coaching",
+      "category": "tutor"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
         "presets": [
           "natural"
         ],
-        "rarity": "rare",
-        "weight": 5.4,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
+        "rarity": "uncommon",
+        "weight": 2.0,
+        "levels": "12-47",
         "biomeTags": {
           "include": [
-            "eternal_starlight:starlight_permafrost_forest"
+            "#cobblemon:is_mountain"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/rare_starlight_permafrost_forest.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0538_throh.json",
+        "spawnId": "throh-1",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "throh",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
       }
     ],
     [
       {
         "presets": [
-          "natural",
-          "wild"
+          "natural"
         ],
-        "rarity": "rare",
-        "weight": 8,
-        "levels": "39-45",
+        "rarity": "uncommon",
+        "weight": 3.0,
+        "levels": "12-62",
         "contexts": [
           "grounded"
         ],
         "biomeTags": {
           "include": [
-            "#cobblemon:is_savanna"
+            "#cobblemon:is_mountain"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0538_throh.json"
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0538_throh.json",
+        "spawnId": "throh-1",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "pokemon": "throh",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon_reanimodel/throh.png",
@@ -207,6 +677,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/throh.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/throh.json"
   ]
 }

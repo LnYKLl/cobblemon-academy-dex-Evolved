@@ -2,20 +2,45 @@
   "id": "drilbur",
   "dexnum": 529,
   "name": "Drilbur",
+  "nameFr": "Rototaupe",
+  "description": "Il tourbillonne sur lui-même pour se déplacer sous terre. Il peut atteindre les 50 km/h en ligne droite.",
   "primaryType": "ground",
   "secondaryType": "",
+  "primaryTypeFr": "Sol",
+  "secondaryTypeFr": "",
+  "height": 3,
+  "weight": 85,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 0.9,
+    "height": 0.8,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "sandrush",
-    "sandforce",
-    "h:moldbreaker"
+    {
+      "id": "sandrush",
+      "name": "Baigne Sable",
+      "hidden": false
+    },
+    {
+      "id": "sandforce",
+      "name": "Force Sable",
+      "hidden": false
+    },
+    {
+      "id": "moldbreaker",
+      "name": "Brise Moule",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 60,
     "attack": 85,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 66,
   "experienceGroup": "medium_fast",
   "catchRate": 120,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,105 +68,483 @@
         "item": "minecraft:dirt",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:dirt"
       },
       {
         "item": "cobblemon:soft_sand",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Sable Doux"
       },
       {
         "item": "cobblemon:pinap_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Nanana"
       }
     ]
   },
   "moves": [
-    "1:mudsport",
-    "1:rapidspin",
-    "1:mudslap",
-    "4:scratch",
-    "8:honeclaws",
-    "12:furyswipes",
-    "16:metalclaw",
-    "20:sandstorm",
-    "24:crushclaw",
-    "28:rockslide",
-    "32:dig",
-    "36:swordsdance",
-    "40:drillrun",
-    "44:earthquake",
-    "48:fissure",
-    "egg:metalsound",
-    "egg:skullbash",
-    "egg:slash",
-    "egg:submission",
-    "tm:aerialace",
-    "tm:brickbreak",
-    "tm:bulldoze",
-    "tm:curse",
-    "tm:cut",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:drillrun",
-    "tm:earthpower",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:facade",
-    "tm:fling",
-    "tm:helpinghand",
-    "tm:highhorsepower",
-    "tm:honeclaws",
-    "tm:irondefense",
-    "tm:metalclaw",
-    "tm:metalsound",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:poisonjab",
-    "tm:protect",
-    "tm:rest",
-    "tm:rockclimb",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:sandstorm",
-    "tm:sandtomb",
-    "tm:scorchingsands",
-    "tm:shadowclaw",
-    "tm:sleeptalk",
-    "tm:stealthrock",
-    "tm:stompingtantrum",
-    "tm:strength",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:xscissor",
-    "tutor:aerialace",
-    "tutor:bulldoze",
-    "tutor:drillrun",
-    "tutor:earthpower",
-    "tutor:helpinghand",
-    "tutor:highhorsepower",
-    "tutor:irondefense",
-    "tutor:mudslap",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:scorchingsands",
-    "tutor:shadowclaw",
-    "tutor:sleeptalk",
-    "tutor:stealthrock",
-    "tutor:stompingtantrum",
-    "tutor:xscissor"
+    {
+      "id": "mudsport",
+      "name": "Lance-Boue",
+      "category": "1"
+    },
+    {
+      "id": "rapidspin",
+      "name": "Tour Rapide",
+      "category": "1"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "1"
+    },
+    {
+      "id": "scratch",
+      "name": "Griffe",
+      "category": "4"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "8"
+    },
+    {
+      "id": "furyswipes",
+      "name": "Combo-Griffe",
+      "category": "12"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "16"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "20"
+    },
+    {
+      "id": "crushclaw",
+      "name": "Éclate Griffe",
+      "category": "24"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "28"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "32"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "36"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "40"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "44"
+    },
+    {
+      "id": "fissure",
+      "name": "Abîme",
+      "category": "48"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "egg"
+    },
+    {
+      "id": "skullbash",
+      "name": "Coud'Krâne",
+      "category": "egg"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "egg"
+    },
+    {
+      "id": "submission",
+      "name": "Sacrifice",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "tm"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockclimb",
+      "name": "Escalade",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "sandtomb",
+      "name": "Tourbi-Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "drilbur_excadrill",
@@ -157,6 +562,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -164,41 +570,29 @@
           "natural"
         ],
         "rarity": "common",
-        "weight": 2.6,
-        "levels": "3-19",
-        "contexts": [
-          "grounded"
-        ],
+        "weight": 9.0,
+        "levels": "8-33",
         "biomeTags": {
           "include": [
-            "eternal_starlight:crystallized_desert"
+            "#cobblemon:is_overworld"
+          ],
+          "exclude": [
+            "#cobblemon:is_deep_dark"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/common_crystallized_desert.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural",
-          "wild"
-        ],
-        "rarity": "common",
-        "weight": 10,
-        "levels": "20-30",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_cave"
-          ]
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0529_drilbur.json",
+        "spawnId": "drilbur-1",
+        "sky": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0529_drilbur.json"
+        "spawnType": "grounded",
+        "pokemon": "drilbur",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon_reanimodel/drilbur.png",
@@ -210,6 +604,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/drilbur.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/drilbur.json"
   ]
 }

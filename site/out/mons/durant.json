@@ -2,20 +2,45 @@
   "id": "durant",
   "dexnum": 632,
   "name": "Durant",
+  "nameFr": "Fermite",
+  "description": "Ils portent une armure de fer et se regroupent pour contrer les attaques de leurs prédateurs, les Aflamanoir.",
   "primaryType": "bug",
   "secondaryType": "steel",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "Acier",
+  "height": 3,
+  "weight": 330,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "swarm",
-    "hustle",
-    "h:truant"
+    {
+      "id": "swarm",
+      "name": "Essaim",
+      "hidden": false
+    },
+    {
+      "id": "hustle",
+      "name": "Agitation",
+      "hidden": false
+    },
+    {
+      "id": "truant",
+      "name": "Absentéisme",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 58,
     "attack": 109,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 169,
   "experienceGroup": "medium_fast",
   "catchRate": 90,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,111 +68,528 @@
         "item": "minecraft:raw_iron",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:raw_iron"
       },
       {
         "item": "cobblemon:occa_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Chocco"
       }
     ]
   },
   "moves": [
-    "1:sandattack",
-    "1:furycutter",
-    "4:visegrip",
-    "8:metalclaw",
-    "12:beatup",
-    "16:bugbite",
-    "20:bite",
-    "24:agility",
-    "28:dig",
-    "32:xscissor",
-    "36:crunch",
-    "40:metalsound",
-    "44:ironhead",
-    "48:entrainment",
-    "52:irondefense",
-    "56:guillotine",
-    "egg:feintattack",
-    "egg:firstimpression",
-    "egg:flail",
-    "egg:infestation",
-    "egg:metalburst",
-    "egg:strugglebug",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:batonpass",
-    "tm:beatup",
-    "tm:bugbite",
-    "tm:crunch",
-    "tm:cut",
-    "tm:dig",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:flashcannon",
-    "tm:furycutter",
-    "tm:gigaimpact",
-    "tm:helpinghand",
-    "tm:honeclaws",
-    "tm:infestation",
-    "tm:irondefense",
-    "tm:ironhead",
-    "tm:metalclaw",
-    "tm:metalsound",
-    "tm:protect",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:rockclimb",
-    "tm:rockpolish",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:sandstorm",
-    "tm:screech",
-    "tm:shadowclaw",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:steelbeam",
-    "tm:stompingtantrum",
-    "tm:stoneedge",
-    "tm:strength",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:superpower",
-    "tm:terablast",
-    "tm:thunderfang",
-    "tm:thunderwave",
-    "tm:xscissor",
-    "tutor:aerialace",
-    "tutor:bugbite",
-    "tutor:endeavor",
-    "tutor:energyball",
-    "tutor:flashcannon",
-    "tutor:furycutter",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:irondefense",
-    "tutor:ironhead",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:shadowclaw",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:steelbeam",
-    "tutor:stompingtantrum",
-    "tutor:stoneedge",
-    "tutor:superpower",
-    "tutor:thunderfang",
-    "tutor:xscissor"
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "1"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "1"
+    },
+    {
+      "id": "visegrip",
+      "name": "Force Poigne",
+      "category": "4"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "8"
+    },
+    {
+      "id": "beatup",
+      "name": "Baston",
+      "category": "12"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "16"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "20"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "24"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "28"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "32"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "36"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "40"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "44"
+    },
+    {
+      "id": "entrainment",
+      "name": "Ten-Danse",
+      "category": "48"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "52"
+    },
+    {
+      "id": "guillotine",
+      "name": "Guillotine",
+      "category": "56"
+    },
+    {
+      "id": "feintattack",
+      "name": "Feinte",
+      "category": "egg"
+    },
+    {
+      "id": "firstimpression",
+      "name": "Escarmouche",
+      "category": "egg"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "egg"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "egg"
+    },
+    {
+      "id": "metalburst",
+      "name": "Fulmifer",
+      "category": "egg"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "beatup",
+      "name": "Baston",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "tm"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "rockclimb",
+      "name": "Escalade",
+      "category": "tm"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -155,20 +599,21 @@
         "rarity": "common",
         "weight": 2.0,
         "levels": "23-48",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_badlands",
             "#cobblemon:is_hills"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0632_durant.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0632_durant.json",
+        "spawnId": "durant-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "durant",
+        "type": "pokemon"
       }
     ],
     [
@@ -179,20 +624,21 @@
         "rarity": "common",
         "weight": 10.0,
         "levels": "23-48",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_badlands",
             "#cobblemon:is_hills"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0632_durant.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0632_durant.json",
+        "spawnId": "durant-2",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "durant",
+        "type": "pokemon"
       }
     ],
     [
@@ -203,34 +649,16 @@
         "rarity": "common",
         "weight": 10.0,
         "levels": "23-48",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_mountain"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0632_durant.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 2.1,
-        "levels": "17-31",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/uncommon_crystallized_desert.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0632_durant.json",
+        "spawnId": "durant-3",
+        "spawnType": "grounded",
+        "pokemon": "durant",
+        "type": "pokemon"
       }
     ]
   ],
@@ -244,6 +672,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/durant.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/durant.json"
   ]
 }

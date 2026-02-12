@@ -2,20 +2,41 @@
   "id": "fennekin",
   "dexnum": 653,
   "name": "Fennekin",
+  "nameFr": "Feunnec",
+  "description": "Il a toujours une brindille avec lui en cas de petit creux. Il projette de l'air chaud par ses oreilles pour intimider ses ennemis.",
   "primaryType": "fire",
   "secondaryType": "",
+  "primaryTypeFr": "Feu",
+  "secondaryTypeFr": "",
+  "height": 4,
+  "weight": 94,
   "maleRatio": 0.875,
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 1,
+    "height": 1.4,
+    "fixed": false
+  },
   "labels": [
     "gen6",
     "starter"
   ],
   "abilities": [
-    "blaze",
-    "h:magician"
+    {
+      "id": "blaze",
+      "name": "Brasier",
+      "hidden": false
+    },
+    {
+      "id": "magician",
+      "name": "Magicien",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 40,
     "attack": 45,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 61,
   "experienceGroup": "medium_slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,111 +64,476 @@
         "item": "minecraft:blaze_powder",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:blaze_powder"
       },
       {
         "item": "cobblemon:charcoal_stick",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Bâton de charbon"
       }
     ]
   },
   "moves": [
-    "1:scratch",
-    "1:tailwhip",
-    "5:ember",
-    "11:howl",
-    "14:flamecharge",
-    "17:psybeam",
-    "20:firespin",
-    "25:luckychant",
-    "31:psyshock",
-    "35:flamethrower",
-    "38:willowisp",
-    "41:psychic",
-    "43:sunnyday",
-    "48:fireblast",
-    "egg:copycat",
-    "egg:heatwave",
-    "egg:hypnosis",
-    "egg:magicroom",
-    "egg:wish",
-    "tm:agility",
-    "tm:burningjealousy",
-    "tm:calmmind",
-    "tm:charm",
-    "tm:covet",
-    "tm:cut",
-    "tm:dreameater",
-    "tm:echoedvoice",
-    "tm:embargo",
-    "tm:encore",
-    "tm:endure",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firepledge",
-    "tm:firespin",
-    "tm:flamecharge",
-    "tm:flamethrower",
-    "tm:flareblitz",
-    "tm:foulplay",
-    "tm:grassknot",
-    "tm:heatwave",
-    "tm:helpinghand",
-    "tm:imprison",
-    "tm:incinerate",
-    "tm:irontail",
-    "tm:lightscreen",
-    "tm:magiccoat",
-    "tm:magicroom",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:overheat",
-    "tm:poweruppunch",
-    "tm:protect",
-    "tm:psybeam",
-    "tm:psychic",
-    "tm:psychicterrain",
-    "tm:psyshock",
-    "tm:raindance",
-    "tm:rest",
-    "tm:safeguard",
-    "tm:skillswap",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:trick",
-    "tm:trickroom",
-    "tm:willowisp",
-    "tm:workup",
-    "tutor:burningjealousy",
-    "tutor:calmmind",
-    "tutor:covet",
-    "tutor:firepledge",
-    "tutor:flamethrower",
-    "tutor:foulplay",
-    "tutor:heatwave",
-    "tutor:helpinghand",
-    "tutor:irontail",
-    "tutor:magiccoat",
-    "tutor:magicroom",
-    "tutor:mudslap",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:skillswap",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:trick"
+    {
+      "id": "scratch",
+      "name": "Griffe",
+      "category": "1"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "1"
+    },
+    {
+      "id": "ember",
+      "name": "Flammèche",
+      "category": "5"
+    },
+    {
+      "id": "howl",
+      "name": "Grondement",
+      "category": "11"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "14"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "17"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "20"
+    },
+    {
+      "id": "luckychant",
+      "name": "Air Veinard",
+      "category": "25"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "31"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "35"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "38"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "41"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "43"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "48"
+    },
+    {
+      "id": "copycat",
+      "name": "Photocopie",
+      "category": "egg"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "egg"
+    },
+    {
+      "id": "hypnosis",
+      "name": "Hypnose",
+      "category": "egg"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "egg"
+    },
+    {
+      "id": "wish",
+      "name": "Vœu",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "embargo",
+      "name": "Embargo",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firepledge",
+      "name": "Aire de Feu",
+      "category": "tm"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tm"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "poweruppunch",
+      "name": "Poing Boost",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psychicterrain",
+      "name": "Champ Psychique",
+      "category": "tm"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "firepledge",
+      "name": "Aire de Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "fennekin_braixen",
@@ -161,6 +549,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -170,38 +559,20 @@
         "rarity": "ultra-rare",
         "weight": 6.0,
         "levels": "5-31",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_desert"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0653_fennekin.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0653_fennekin.json",
+        "spawnId": "fennekin-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 3.31,
-        "levels": "1-15",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:torreya_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/torreya_forest/rare_torreya_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "fennekin",
+        "type": "pokemon"
       }
     ]
   ],
@@ -215,7 +586,7 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation6/fennekin.json",
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation6/fennekin.json",
     "datapacks\\Academy\\data\\cobblemon\\species\\generation6\\fennekin.json"
   ]
 }

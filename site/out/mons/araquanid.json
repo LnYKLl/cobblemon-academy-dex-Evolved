@@ -2,20 +2,41 @@
   "id": "araquanid",
   "dexnum": 752,
   "name": "Araquanid",
+  "nameFr": "Tarenbulle",
+  "description": "Il a pour habitude d'enfermer ce qui lui est cher dans sa bulle. Si son Dresseur n'est pas vigilant, Tarenbulle essaiera de l'y ranger lui aussi !",
   "primaryType": "water",
   "secondaryType": "bug",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "Insecte",
+  "height": 18,
+  "weight": 820,
   "maleRatio": 0.5,
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 2.5,
+    "height": 2.5,
+    "fixed": false
+  },
   "labels": [
     "gen7"
   ],
   "abilities": [
-    "waterbubble",
-    "h:waterabsorb"
+    {
+      "id": "waterbubble",
+      "name": "Aquabulle",
+      "hidden": false
+    },
+    {
+      "id": "waterabsorb",
+      "name": "Absorbe-Eau",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_1",
     "bug"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 68,
     "attack": 70,
@@ -32,8 +53,10 @@
     "special_defence": 2,
     "speed": 0
   },
+  "baseExperienceYield": 159,
   "experienceGroup": "medium_fast",
   "catchRate": 100,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,120 +64,534 @@
         "item": "cobblemon:mystic_water",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Eau Mystique"
       },
       {
         "item": "cobblemon:wepear_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Repoi"
       }
     ]
   },
   "moves": [
-    "1:wideguard",
-    "1:bubble",
-    "1:infestation",
-    "1:spiderweb",
-    "1:bugbite",
-    "1:bite",
-    "1:watergun",
-    "1:watersport",
-    "12:bubblebeam",
-    "16:aquaring",
-    "20:headbutt",
-    "26:crunch",
-    "32:soak",
-    "38:entrainment",
-    "44:lunge",
-    "50:liquidation",
-    "56:leechlife",
-    "62:mirrorcoat",
-    "egg:aurorabeam",
-    "egg:powersplit",
-    "egg:spitup",
-    "egg:stickyweb",
-    "egg:stockpile",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:bugbite",
-    "tm:bugbuzz",
-    "tm:chillingwater",
-    "tm:crunch",
-    "tm:dive",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:frostbreath",
-    "tm:gigadrain",
-    "tm:gigaimpact",
-    "tm:headbutt",
-    "tm:hydropump",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:infestation",
-    "tm:irondefense",
-    "tm:laserfocus",
-    "tm:leechlife",
-    "tm:liquidation",
-    "tm:lunge",
-    "tm:magiccoat",
-    "tm:magicroom",
-    "tm:poisonjab",
-    "tm:pounce",
-    "tm:protect",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:safeguard",
-    "tm:scaryface",
-    "tm:signalbeam",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:surf",
-    "tm:terablast",
-    "tm:trailblaze",
-    "tm:waterfall",
-    "tm:waterpulse",
-    "tm:wonderroom",
-    "tm:xscissor",
-    "tutor:bugbite",
-    "tutor:dive",
-    "tutor:endeavor",
-    "tutor:gigadrain",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:irondefense",
-    "tutor:laserfocus",
-    "tutor:leechlife",
-    "tutor:liquidation",
-    "tutor:magiccoat",
-    "tutor:magicroom",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:signalbeam",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:waterpulse",
-    "tutor:wonderroom",
-    "tutor:xscissor"
+    {
+      "id": "wideguard",
+      "name": "Garde Large",
+      "category": "1"
+    },
+    {
+      "id": "bubble",
+      "name": "Écume",
+      "category": "1"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "1"
+    },
+    {
+      "id": "spiderweb",
+      "name": "Toile",
+      "category": "1"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "1"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "1"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "1"
+    },
+    {
+      "id": "watersport",
+      "name": "Tourniquet",
+      "category": "1"
+    },
+    {
+      "id": "bubblebeam",
+      "name": "Bulles d'O",
+      "category": "12"
+    },
+    {
+      "id": "aquaring",
+      "name": "Anneau Hydro",
+      "category": "16"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "20"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "26"
+    },
+    {
+      "id": "soak",
+      "name": "Détrempage",
+      "category": "32"
+    },
+    {
+      "id": "entrainment",
+      "name": "Ten-Danse",
+      "category": "38"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "44"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "50"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "56"
+    },
+    {
+      "id": "mirrorcoat",
+      "name": "Voile Miroir",
+      "category": "62"
+    },
+    {
+      "id": "aurorabeam",
+      "name": "Onde Boréale",
+      "category": "egg"
+    },
+    {
+      "id": "powersplit",
+      "name": "Partage Force",
+      "category": "egg"
+    },
+    {
+      "id": "spitup",
+      "name": "Relâche",
+      "category": "egg"
+    },
+    {
+      "id": "stickyweb",
+      "name": "Toile Gluante",
+      "category": "egg"
+    },
+    {
+      "id": "stockpile",
+      "name": "Stockage",
+      "category": "egg"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "frostbreath",
+      "name": "Souffle Glacé",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tm"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "tm"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tm"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tutor"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "dewpider",
   "spawns": [
     [
       {
         "rarity": "uncommon",
         "weight": 0.96,
         "levels": "22-45",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest",
@@ -166,10 +603,17 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0752_araquanid.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0752_araquanid.json",
+        "spawnId": "araquanid-3",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "araquanid",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -177,9 +621,6 @@
         "rarity": "common",
         "weight": 0.2,
         "levels": "22-45",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest",
@@ -191,9 +632,22 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0752_araquanid.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0752_araquanid.json",
+        "spawnId": "araquanid-4",
         "sky": {
           "canSeeSky": true
+        },
+        "spawnType": "fishing",
+        "pokemon": "araquanid",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 3.0,
+          "condition": {
+            "minLureLevel": 3
+          }
         }
       }
     ],
@@ -202,9 +656,6 @@
         "rarity": "uncommon",
         "weight": 0.96,
         "levels": "22-45",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest",
@@ -216,12 +667,19 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0752_araquanid.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0752_araquanid.json",
+        "spawnId": "araquanid-5",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "araquanid",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -229,9 +687,6 @@
         "rarity": "common",
         "weight": 0.2,
         "levels": "22-45",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest",
@@ -243,11 +698,24 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0752_araquanid.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0752_araquanid.json",
+        "spawnId": "araquanid-6",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "fishing",
+        "pokemon": "araquanid",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 3.0,
+          "condition": {
+            "minLureLevel": 3
+          }
         }
       }
     ],
@@ -256,9 +724,6 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "22-45",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_freshwater"
@@ -267,11 +732,15 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0752_araquanid.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0752_araquanid.json",
+        "spawnId": "araquanid-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "araquanid",
+        "type": "pokemon"
       }
     ],
     [
@@ -282,9 +751,6 @@
         "rarity": "common",
         "weight": 0.2,
         "levels": "22-45",
-        "contexts": [
-          "seafloor"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_freshwater"
@@ -293,98 +759,14 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0752_araquanid.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0752_araquanid.json",
+        "spawnId": "araquanid-2",
         "sky": {
           "canSeeSky": true
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 6.8,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/rare_dark_swamp.json"
-      }
-    ],
-    [
-      {
-        "rarity": "ultra-rare",
-        "weight": 7,
-        "levels": "40-56",
-        "contexts": [
-          "fishing"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_overworld"
-          ],
-          "exclude": [
-            "#cobblemon:is_ocean"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0752_araquanid.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural",
-          "water"
-        ],
-        "rarity": "rare",
-        "weight": 8,
-        "levels": "40-56",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_overworld"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0752_araquanid.json",
-        "nearbyBlocks": {
-          "selectors": [
-            "minecraft:water"
-          ]
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "water"
-        ],
-        "rarity": "rare",
-        "weight": 5.4,
-        "levels": "40-56",
-        "contexts": [
-          "submerged"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_overworld"
-          ],
-          "exclude": [
-            "#cobblemon:is_freezing"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0752_araquanid.json",
-        "sky": {
-          "canSeeSky": true
-        }
+        "spawnType": "seafloor",
+        "pokemon": "araquanid",
+        "type": "pokemon"
       }
     ]
   ],
@@ -400,6 +782,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/araquanid.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/araquanid.json"
   ]
 }

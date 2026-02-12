@@ -2,20 +2,41 @@
   "id": "cobalion",
   "dexnum": 638,
   "name": "Cobalion",
+  "nameFr": "Cobaltium",
+  "description": "Un corps et un cœur en acier trempé, jadis au service de la défense des Pokémon blessés par les humains.",
   "primaryType": "steel",
   "secondaryType": "fighting",
+  "primaryTypeFr": "Acier",
+  "secondaryTypeFr": "Combat",
+  "height": 21,
+  "weight": 2500,
   "maleRatio": -1,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1.4,
+    "height": 2.5,
+    "fixed": false
+  },
   "labels": [
     "gen5",
     "legendary"
   ],
   "abilities": [
-    "justified",
-    "h:justified"
+    {
+      "id": "justified",
+      "name": "Cœur Noble",
+      "hidden": false
+    },
+    {
+      "id": "justified",
+      "name": "Cœur Noble",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 80,
   "baseStats": {
     "hp": 91,
     "attack": 90,
@@ -32,200 +53,641 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 290,
   "experienceGroup": "slow",
   "catchRate": 3,
+  "baseFriendship": 35,
   "drops": {
-    "amount": 1,
+    "amount": 5,
     "entries": [
       {
-        "item": "cobblemon:metal_coat",
+        "item": "cobblemon:rare_candy",
         "percentage": null,
+        "quantityRange": "2-6",
+        "source": "species",
+        "itemName": "Super Bonbon"
+      },
+      {
+        "item": "cobblemon:steel_gem",
+        "percentage": 50.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Joyau Acier"
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "minecraft:nether_star"
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Pilule Talent"
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Patch Talent"
       }
     ]
   },
   "moves": [
-    "1:quickattack",
-    "1:leer",
-    "1:helpinghand",
-    "1:workup",
-    "7:metalclaw",
-    "14:quickguard",
-    "21:doublekick",
-    "28:retaliate",
-    "35:metalburst",
-    "42:takedown",
-    "49:sacredsword",
-    "56:swordsdance",
-    "63:ironhead",
-    "70:closecombat",
-    "tm:aerialace",
-    "tm:airslash",
-    "tm:aurasphere",
-    "tm:block",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:bounce",
-    "tm:brickbreak",
-    "tm:calmmind",
-    "tm:closecombat",
-    "tm:coaching",
-    "tm:cut",
-    "tm:doubleedge",
-    "tm:endure",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:flashcannon",
-    "tm:focusblast",
-    "tm:gigaimpact",
-    "tm:heavyslam",
-    "tm:helpinghand",
-    "tm:honeclaws",
-    "tm:hyperbeam",
-    "tm:irondefense",
-    "tm:ironhead",
-    "tm:laserfocus",
-    "tm:magnetrise",
-    "tm:megahorn",
-    "tm:metalclaw",
-    "tm:metalsound",
-    "tm:poisonjab",
-    "tm:protect",
-    "tm:psychup",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:revenge",
-    "tm:reversal",
-    "tm:roar",
-    "tm:rockpolish",
-    "tm:rocksmash",
-    "tm:safeguard",
-    "tm:sandstorm",
-    "tm:scaryface",
-    "tm:sleeptalk",
-    "tm:smartstrike",
-    "tm:stealthrock",
-    "tm:steelbeam",
-    "tm:stoneedge",
-    "tm:strength",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superpower",
-    "tm:swift",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thunderwave",
-    "tm:upperhand",
-    "tm:vacuumwave",
-    "tm:voltswitch",
-    "tm:workup",
-    "tm:xscissor",
-    "tm:zenheadbutt",
-    "tutor:aerialace",
-    "tutor:block",
-    "tutor:bounce",
-    "tutor:calmmind",
-    "tutor:coaching",
-    "tutor:falseswipe",
-    "tutor:flashcannon",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:irondefense",
-    "tutor:ironhead",
-    "tutor:laserfocus",
-    "tutor:magnetrise",
-    "tutor:megahorn",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:sleeptalk",
-    "tutor:stealthrock",
-    "tutor:steelbeam",
-    "tutor:stoneedge",
-    "tutor:superpower",
-    "tutor:swift",
-    "tutor:vacuumwave",
-    "tutor:xscissor",
-    "tutor:zenheadbutt"
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "1"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "1"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "7"
+    },
+    {
+      "id": "quickguard",
+      "name": "Prévention",
+      "category": "14"
+    },
+    {
+      "id": "doublekick",
+      "name": "Double Pied",
+      "category": "21"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "28"
+    },
+    {
+      "id": "metalburst",
+      "name": "Fulmifer",
+      "category": "35"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "42"
+    },
+    {
+      "id": "sacredsword",
+      "name": "Lame Sainte",
+      "category": "49"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "56"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "63"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "70"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "aurasphere",
+      "name": "Aurasphère",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "tm"
+    },
+    {
+      "id": "coaching",
+      "name": "Coaching",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "focusblast",
+      "name": "Exploforce",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tm"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tm"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tm"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "tm"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smartstrike",
+      "name": "Estocorne",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "upperhand",
+      "name": "Prio-Parade",
+      "category": "tm"
+    },
+    {
+      "id": "vacuumwave",
+      "name": "Onde Vide",
+      "category": "tm"
+    },
+    {
+      "id": "voltswitch",
+      "name": "Change Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tutor"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "coaching",
+      "name": "Coaching",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tutor"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tutor"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "vacuumwave",
+      "name": "Onde Vide",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
-  "spawns": [
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "70",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#minecraft:is_hill",
-            "#cobblemon:is_highlands",
-            "#c:mountain_slope",
-            "#forge:is_slope",
-            "terralith:blooming_valley",
-            "terralith:forested_highlands",
-            "terralith:lavender_valley",
-            "terralith:lush_valley",
-            "terralith:moonlight_valley",
-            "terralith:sakura_valley",
-            "terralith:savanna_slopes",
-            "terralith:temperate_highlands",
-            "terralith:yosemite_lowlands",
-            "wythers:autumnal_crags",
-            "wythers:ayers_rock",
-            "wythers:icy_crags",
-            "wythers:old_growth_taiga_crags",
-            "wythers:taiga_crags",
-            "wythers:temperate_rainforest_crags",
-            "wythers:thermal_taiga_crags",
-            "wythers:windswept_jungle"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-cobalion.json",
-        "keyItem": "myths_and_legends:ironwill_sword"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "70",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#minecraft:is_mountain",
-            "#cobblemon:is_hills",
-            "#forge:is_mountain",
-            "terralith:stony_spires",
-            "terralith:volcanic_peaks",
-            "terralith:windswept_spires",
-            "terralith:yosemite_cliffs",
-            "wythers:tibesti_mountains"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-cobalion.json",
-        "keyItem": "myths_and_legends:ironwill_sword"
-      }
-    ]
-  ],
+  "preEvolution": null,
+  "spawns": [],
   "implemented": false,
   "images": {
     "normal": [
@@ -236,6 +698,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/cobalion.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/cobalion.json"
   ]
 }

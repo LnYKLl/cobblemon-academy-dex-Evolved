@@ -2,20 +2,41 @@
   "id": "anorith",
   "dexnum": 347,
   "name": "Anorith",
+  "nameFr": "Anorith",
+  "description": "On raconte qu'Anorith est l'un des ancêtres des Pokémon. Il nageait dans la mer originelle en faisant onduler les huit ailes placées sur les côtés de son corps.",
   "primaryType": "rock",
   "secondaryType": "bug",
+  "primaryTypeFr": "Roche",
+  "secondaryTypeFr": "Insecte",
+  "height": 7,
+  "weight": 125,
   "maleRatio": 0.875,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 0.9,
+    "height": 0.2,
+    "fixed": false
+  },
   "labels": [
     "gen3",
     "fossil"
   ],
   "abilities": [
-    "battlearmor",
-    "h:swiftswim"
+    {
+      "id": "battlearmor",
+      "name": "Armurbaston",
+      "hidden": false
+    },
+    {
+      "id": "swiftswim",
+      "name": "Glissade",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_3"
   ],
+  "eggCycles": 30,
   "baseStats": {
     "hp": 45,
     "attack": 95,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 71,
   "experienceGroup": "erratic",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,96 +64,499 @@
         "item": "cobblemon:quick_claw",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Vive Griffe"
       }
     ]
   },
   "moves": [
-    "1:scratch",
-    "1:harden",
-    "1:mudsport",
-    "1:furycutter",
-    "4:watergun",
-    "8:smackdown",
-    "12:metalclaw",
-    "16:ancientpower",
-    "20:bugbite",
-    "24:brine",
-    "28:slash",
-    "32:crushclaw",
-    "36:rockblast",
-    "41:protect",
-    "44:xscissor",
-    "egg:aquajet",
-    "egg:curse",
-    "egg:knockoff",
-    "egg:rapidspin",
-    "egg:sandattack",
-    "egg:waterpulse",
-    "tm:aerialace",
-    "tm:ancientpower",
-    "tm:bodyslam",
-    "tm:brickbreak",
-    "tm:brine",
-    "tm:bugbite",
-    "tm:crosspoison",
-    "tm:curse",
-    "tm:cut",
-    "tm:dig",
-    "tm:earthpower",
-    "tm:endure",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:furycutter",
-    "tm:headbutt",
-    "tm:honeclaws",
-    "tm:irondefense",
-    "tm:knockoff",
-    "tm:metalclaw",
-    "tm:meteorbeam",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:protect",
-    "tm:rest",
-    "tm:rockblast",
-    "tm:rockpolish",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:sandstorm",
-    "tm:screech",
-    "tm:sleeptalk",
-    "tm:smackdown",
-    "tm:stealthrock",
-    "tm:stringshot",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swordsdance",
-    "tm:terablast",
-    "tm:waterpulse",
-    "tm:xscissor",
-    "tutor:aerialace",
-    "tutor:ancientpower",
-    "tutor:bugbite",
-    "tutor:earthpower",
-    "tutor:falseswipe",
-    "tutor:furycutter",
-    "tutor:irondefense",
-    "tutor:knockoff",
-    "tutor:meteorbeam",
-    "tutor:mudslap",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:sleeptalk",
-    "tutor:stealthrock",
-    "tutor:stringshot",
-    "tutor:waterpulse",
-    "tutor:xscissor"
+    {
+      "id": "scratch",
+      "name": "Griffe",
+      "category": "1"
+    },
+    {
+      "id": "harden",
+      "name": "Armure",
+      "category": "1"
+    },
+    {
+      "id": "mudsport",
+      "name": "Lance-Boue",
+      "category": "1"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "1"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "4"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "8"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "12"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "16"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "20"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "24"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "28"
+    },
+    {
+      "id": "crushclaw",
+      "name": "Éclate Griffe",
+      "category": "32"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "36"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "41"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "44"
+    },
+    {
+      "id": "aquajet",
+      "name": "Aqua-Jet",
+      "category": "egg"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "egg"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "egg"
+    },
+    {
+      "id": "rapidspin",
+      "name": "Tour Rapide",
+      "category": "egg"
+    },
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "egg"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "crosspoison",
+      "name": "Poison Croix",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "tm"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "anorith_armaldo",
@@ -146,6 +572,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -155,19 +582,20 @@
         "rarity": "ultra-rare",
         "weight": 6.0,
         "levels": "11-36",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0347_anorith.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0347_anorith.json",
+        "spawnId": "anorith-1",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "anorith",
+        "type": "pokemon"
       }
     ],
     [
@@ -178,19 +606,20 @@
         "rarity": "ultra-rare",
         "weight": 6.0,
         "levels": "11-36",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0347_anorith.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0347_anorith.json",
+        "spawnId": "anorith-2",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "anorith",
+        "type": "pokemon"
       }
     ]
   ],
@@ -204,6 +633,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation3/anorith.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation3/anorith.json"
   ]
 }

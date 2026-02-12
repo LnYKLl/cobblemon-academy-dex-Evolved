@@ -2,20 +2,45 @@
   "id": "poochyena",
   "dexnum": 261,
   "name": "Poochyena",
+  "nameFr": "Medhyèna",
+  "description": "Medhyèna est omnivore. Il mange de tout. Ses crocs sont très gros, comparés à son corps. Ce Pokémon essaie d'intimider ses ennemis en hérissant les poils de sa queue.",
   "primaryType": "dark",
   "secondaryType": "",
+  "primaryTypeFr": "Ténèbres",
+  "secondaryTypeFr": "",
+  "height": 5,
+  "weight": 136,
   "maleRatio": 0.5,
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen3"
   ],
   "abilities": [
-    "runaway",
-    "quickfeet",
-    "h:rattled"
+    {
+      "id": "runaway",
+      "name": "Fuite",
+      "hidden": false
+    },
+    {
+      "id": "quickfeet",
+      "name": "Pied Véloce",
+      "hidden": false
+    },
+    {
+      "id": "rattled",
+      "name": "Phobique",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 35,
     "attack": 55,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 56,
   "experienceGroup": "medium_fast",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,121 +68,588 @@
         "item": "minecraft:bone",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:bone"
       },
       {
         "item": "minecraft:rotten_flesh",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:rotten_flesh"
       },
       {
         "item": "cobblemon:pecha_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Pêcha"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:odorsleuth",
-    "4:howl",
-    "7:sandattack",
-    "10:bite",
-    "13:leer",
-    "16:roar",
-    "19:swagger",
-    "22:assurance",
-    "25:scaryface",
-    "28:taunt",
-    "31:crunch",
-    "34:yawn",
-    "36:takedown",
-    "40:suckerpunch",
-    "44:playrough",
-    "egg:astonish",
-    "egg:covet",
-    "egg:mefirst",
-    "egg:poisonfang",
-    "tm:assurance",
-    "tm:beatup",
-    "tm:charm",
-    "tm:covet",
-    "tm:crunch",
-    "tm:darkpulse",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:embargo",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:firefang",
-    "tm:foulplay",
-    "tm:headbutt",
-    "tm:helpinghand",
-    "tm:hypervoice",
-    "tm:icefang",
-    "tm:incinerate",
-    "tm:irontail",
-    "tm:lashout",
-    "tm:mudslap",
-    "tm:nastyplot",
-    "tm:payback",
-    "tm:playrough",
-    "tm:protect",
-    "tm:psychicfangs",
-    "tm:raindance",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:roar",
-    "tm:rocksmash",
-    "tm:scaryface",
-    "tm:shadowball",
-    "tm:sleeptalk",
-    "tm:snarl",
-    "tm:snatch",
-    "tm:spite",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:sunnyday",
-    "tm:superfang",
-    "tm:swagger",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunderfang",
-    "tm:torment",
-    "tm:trailblaze",
-    "tm:uproar",
-    "tutor:covet",
-    "tutor:darkpulse",
-    "tutor:endeavor",
-    "tutor:firefang",
-    "tutor:foulplay",
-    "tutor:helpinghand",
-    "tutor:hypervoice",
-    "tutor:icefang",
-    "tutor:irontail",
-    "tutor:lashout",
-    "tutor:mudslap",
-    "tutor:playrough",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:shadowball",
-    "tutor:sleeptalk",
-    "tutor:snarl",
-    "tutor:snatch",
-    "tutor:spite",
-    "tutor:suckerpunch",
-    "tutor:superfang",
-    "tutor:thunderfang",
-    "tutor:uproar"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "odorsleuth",
+      "name": "Flair",
+      "category": "1"
+    },
+    {
+      "id": "howl",
+      "name": "Grondement",
+      "category": "4"
+    },
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "7"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "10"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "13"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "16"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "19"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "22"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "25"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "28"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "31"
+    },
+    {
+      "id": "yawn",
+      "name": "Bâillement",
+      "category": "34"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "36"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "40"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "44"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "egg"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "egg"
+    },
+    {
+      "id": "mefirst",
+      "name": "Moi d'Abord",
+      "category": "egg"
+    },
+    {
+      "id": "poisonfang",
+      "name": "Crochet Venin",
+      "category": "egg"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "beatup",
+      "name": "Baston",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "embargo",
+      "name": "Embargo",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychicfangs",
+      "name": "Psycho-Croc",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tm"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "healbell",
+      "name": "Glas de Soin",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "healbell",
+      "name": "Glas de Soin",
+      "category": "special"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "poochyena_mightyena",
@@ -173,6 +667,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -182,8 +677,8 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "1-22",
-        "contexts": [
-          "grounded"
+        "times": [
+          "night"
         ],
         "biomeTags": {
           "include": [
@@ -191,11 +686,15 @@
             "#cobblemon:is_savanna"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0261_poochyena.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0261_poochyena.json",
+        "spawnId": "poochyena-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "poochyena",
+        "type": "pokemon"
       }
     ],
     [
@@ -207,38 +706,20 @@
         "rarity": "common",
         "weight": 90.0,
         "levels": "1-22",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0261_poochyena.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0261_poochyena.json",
+        "spawnId": "poochyena-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 2.2,
-        "levels": "4-19",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_starlight_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/common_is_starlight_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "poochyena",
+        "type": "pokemon"
       }
     ]
   ],
@@ -252,6 +733,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation3/poochyena.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation3/poochyena.json"
   ]
 }

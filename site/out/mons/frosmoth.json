@@ -2,19 +2,40 @@
   "id": "frosmoth",
   "dexnum": 873,
   "name": "Frosmoth",
+  "nameFr": "Beldeneige",
+  "description": "La température de ses ailes est de -180 °C. Quand il vole, ses écailles gelées tombent sur le paysage comme des flocons de neige.",
   "primaryType": "ice",
   "secondaryType": "bug",
+  "primaryTypeFr": "Glace",
+  "secondaryTypeFr": "Insecte",
+  "height": 13,
+  "weight": 420,
   "maleRatio": 0.5,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 1,
+    "height": 1.75,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "shielddust",
-    "h:icescales"
+    {
+      "id": "shielddust",
+      "name": "Écran Poudre",
+      "hidden": false
+    },
+    {
+      "id": "icescales",
+      "name": "Écailles Glacées",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 70,
     "attack": 65,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 166,
   "experienceGroup": "medium_fast",
   "catchRate": 75,
+  "baseFriendship": 50,
   "drops": {
     "amount": 4,
     "entries": [
@@ -40,131 +63,499 @@
         "item": "minecraft:snowball",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:snowball"
       },
       {
         "item": "cobblemon:silver_powder",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Poudre Argentée"
       },
       {
         "item": "cobblemon:charti_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Charti"
       }
     ]
   },
   "moves": [
-    "1:icywind",
-    "1:powdersnow",
-    "1:strugglebug",
-    "1:helpinghand",
-    "1:attract",
-    "4:stunspore",
-    "8:infestation",
-    "12:mist",
-    "16:defog",
-    "21:featherdance",
-    "24:aurorabeam",
-    "28:snowscape",
-    "32:bugbuzz",
-    "36:auroraveil",
-    "40:blizzard",
-    "44:tailwind",
-    "48:wideguard",
-    "52:quiverdance",
-    "egg:bugbite",
-    "egg:fairywind",
-    "egg:mirrorcoat",
-    "tm:acrobatics",
-    "tm:airslash",
-    "tm:attract",
-    "tm:auroraveil",
-    "tm:avalanche",
-    "tm:blizzard",
-    "tm:bugbite",
-    "tm:bugbuzz",
-    "tm:calmmind",
-    "tm:dazzlinggleam",
-    "tm:defog",
-    "tm:endure",
-    "tm:facade",
-    "tm:featherdance",
-    "tm:gigadrain",
-    "tm:gigaimpact",
-    "tm:hail",
-    "tm:helpinghand",
-    "tm:hurricane",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icespinner",
-    "tm:iciclespear",
-    "tm:icywind",
-    "tm:imprison",
-    "tm:infestation",
-    "tm:leechlife",
-    "tm:lightscreen",
-    "tm:lunge",
-    "tm:playrough",
-    "tm:pounce",
-    "tm:protect",
-    "tm:reflect",
-    "tm:rest",
-    "tm:safeguard",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:snowscape",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:swift",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:tripleaxel",
-    "tm:uturn",
-    "tm:weatherball",
-    "tutor:bugbite",
-    "tutor:calmmind",
-    "tutor:dazzlinggleam",
-    "tutor:defog",
-    "tutor:gigadrain",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:leechlife",
-    "tutor:playrough",
-    "tutor:rest",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:tailwind",
-    "tutor:tripleaxel"
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "1"
+    },
+    {
+      "id": "powdersnow",
+      "name": "Poudreuse",
+      "category": "1"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "1"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "1"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "1"
+    },
+    {
+      "id": "stunspore",
+      "name": "Para-Spore",
+      "category": "4"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "8"
+    },
+    {
+      "id": "mist",
+      "name": "Brume",
+      "category": "12"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "16"
+    },
+    {
+      "id": "featherdance",
+      "name": "Danse Plumes",
+      "category": "21"
+    },
+    {
+      "id": "aurorabeam",
+      "name": "Onde Boréale",
+      "category": "24"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "28"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "32"
+    },
+    {
+      "id": "auroraveil",
+      "name": "Voile Aurore",
+      "category": "36"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "40"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "44"
+    },
+    {
+      "id": "wideguard",
+      "name": "Garde Large",
+      "category": "48"
+    },
+    {
+      "id": "quiverdance",
+      "name": "Papillodanse",
+      "category": "52"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "egg"
+    },
+    {
+      "id": "fairywind",
+      "name": "Vent Féérique",
+      "category": "egg"
+    },
+    {
+      "id": "mirrorcoat",
+      "name": "Voile Miroir",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "tm"
+    },
+    {
+      "id": "auroraveil",
+      "name": "Voile Aurore",
+      "category": "tm"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "featherdance",
+      "name": "Danse Plumes",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icespinner",
+      "name": "Cryo-Pirouette",
+      "category": "tm"
+    },
+    {
+      "id": "iciclespear",
+      "name": "Stalactite",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "tripleaxel",
+      "name": "Triple Axel",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "tripleaxel",
+      "name": "Triple Axel",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "snom",
   "spawns": [
     [
       {
         "presets": [
           "natural"
         ],
-        "rarity": "rare",
-        "weight": 2.7,
-        "levels": "18-41",
+        "rarity": "uncommon",
+        "weight": 2.4,
+        "levels": "15-38",
         "contexts": [
           "grounded"
         ],
+        "times": [
+          "night"
+        ],
         "biomeTags": {
           "include": [
-            "eternal_starlight:starlight_permafrost_forest"
+            "#cobblemon:is_tundra"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/rare_starlight_permafrost_forest.json"
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0873_frosmoth.json",
+        "spawnId": "frosmoth-1",
+        "pokemon": "frosmoth",
+        "type": "pokemon"
       }
     ],
     [
@@ -172,22 +563,28 @@
         "presets": [
           "natural"
         ],
-        "rarity": "common",
-        "weight": 1.0,
-        "levels": "15-36",
+        "rarity": "uncommon",
+        "weight": 2.4,
+        "levels": "15-38",
         "contexts": [
           "grounded"
         ],
+        "times": [
+          "night"
+        ],
         "biomeTags": {
           "include": [
-            "#cobblemon:is_freezing"
+            "#cobblemon:is_tundra"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0873_frosmoth.json"
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0873_frosmoth.json",
+        "spawnId": "ccc-frosmoth-1",
+        "pokemon": "frosmoth",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/frosmoth.png"
@@ -197,6 +594,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/frosmoth.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/frosmoth.json"
   ]
 }

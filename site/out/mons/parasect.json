@@ -2,21 +2,46 @@
   "id": "parasect",
   "dexnum": 47,
   "name": "Parasect",
+  "nameFr": "Parasect",
+  "description": "On sait que les Parasect vivent en groupe dans les grands arbres et se nourrissent des nutriments contenus dans le tronc et les racines. Lorsqu'un arbre infesté meurt, ils se précipitent vers le prochain.",
   "primaryType": "bug",
   "secondaryType": "grass",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "Plante",
+  "height": 10,
+  "weight": 295,
   "maleRatio": 0.5,
+  "baseScale": 0.8,
+  "hitbox": {
+    "height": 1.3,
+    "fixed": false,
+    "width": 1.2
+  },
   "labels": [
     "gen1"
   ],
   "abilities": [
-    "effectspore",
-    "dryskin",
-    "h:damp"
+    {
+      "id": "effectspore",
+      "name": "Pose Spore",
+      "hidden": false
+    },
+    {
+      "id": "dryskin",
+      "name": "Peau Sèche",
+      "hidden": false
+    },
+    {
+      "id": "damp",
+      "name": "Moiteur",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug",
     "grass"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 60,
     "attack": 95,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 142,
   "experienceGroup": "medium_fast",
   "catchRate": 75,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -42,117 +69,623 @@
         "item": "minecraft:red_mushroom",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:red_mushroom"
       },
       {
         "item": "cobblemon:coba_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Cobaba"
       }
     ]
   },
   "moves": [
-    "1:crosspoison",
-    "1:scratch",
-    "1:stunspore",
-    "1:poisonpowder",
-    "1:absorb",
-    "17:furycutter",
-    "22:spore",
-    "29:slash",
-    "37:growth",
-    "44:gigadrain",
-    "51:aromatherapy",
-    "59:ragepowder",
-    "66:xscissor",
-    "egg:counter",
-    "egg:fellstinger",
-    "egg:flail",
-    "egg:leechseed",
-    "egg:naturalgift",
-    "egg:pursuit",
-    "egg:rototiller",
-    "egg:sweetscent",
-    "egg:wideguard",
-    "tm:aerialace",
-    "tm:afteryou",
-    "tm:agility",
-    "tm:bodyslam",
-    "tm:brickbreak",
-    "tm:bugbite",
-    "tm:bulletseed",
-    "tm:crosspoison",
-    "tm:cut",
-    "tm:dig",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:flash",
-    "tm:furycutter",
-    "tm:gigadrain",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:grassyglide",
-    "tm:grassyterrain",
-    "tm:honeclaws",
-    "tm:hyperbeam",
-    "tm:knockoff",
-    "tm:leechlife",
-    "tm:lightscreen",
-    "tm:metalclaw",
-    "tm:naturalgift",
-    "tm:naturepower",
-    "tm:protect",
-    "tm:psybeam",
-    "tm:rest",
-    "tm:rocksmash",
-    "tm:screech",
-    "tm:seedbomb",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:solarbeam",
-    "tm:stringshot",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swordsdance",
-    "tm:synthesis",
-    "tm:terablast",
-    "tm:thief",
-    "tm:throatchop",
-    "tm:venoshock",
-    "tm:worryseed",
-    "tm:xscissor",
-    "tutor:aerialace",
-    "tutor:afteryou",
-    "tutor:bugbite",
-    "tutor:energyball",
-    "tutor:falseswipe",
-    "tutor:furycutter",
-    "tutor:gigadrain",
-    "tutor:gigaimpact",
-    "tutor:grassyglide",
-    "tutor:hyperbeam",
-    "tutor:knockoff",
-    "tutor:leechlife",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:seedbomb",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:stringshot",
-    "tutor:synthesis",
-    "tutor:throatchop",
-    "tutor:worryseed",
-    "tutor:xscissor"
+    {
+      "id": "crosspoison",
+      "name": "Poison Croix",
+      "category": "1"
+    },
+    {
+      "id": "scratch",
+      "name": "Griffe",
+      "category": "1"
+    },
+    {
+      "id": "stunspore",
+      "name": "Para-Spore",
+      "category": "1"
+    },
+    {
+      "id": "poisonpowder",
+      "name": "Poudre Toxik",
+      "category": "1"
+    },
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "1"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "17"
+    },
+    {
+      "id": "spore",
+      "name": "Spore",
+      "category": "22"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "29"
+    },
+    {
+      "id": "growth",
+      "name": "Croissance",
+      "category": "37"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "44"
+    },
+    {
+      "id": "aromatherapy",
+      "name": "Aromathérapie",
+      "category": "51"
+    },
+    {
+      "id": "ragepowder",
+      "name": "Poudre Fureur",
+      "category": "59"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "66"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "egg"
+    },
+    {
+      "id": "fellstinger",
+      "name": "Dard Mortel",
+      "category": "egg"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "egg"
+    },
+    {
+      "id": "leechseed",
+      "name": "Vampigraine",
+      "category": "egg"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "egg"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "egg"
+    },
+    {
+      "id": "rototiller",
+      "name": "Fertilisation",
+      "category": "egg"
+    },
+    {
+      "id": "sweetscent",
+      "name": "Doux Parfum",
+      "category": "egg"
+    },
+    {
+      "id": "wideguard",
+      "name": "Garde Large",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "crosspoison",
+      "name": "Poison Croix",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "tm"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tutor"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "furyswipes",
+      "name": "Combo-Griffe",
+      "category": "legacy"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "megadrain",
+      "name": "Méga-Sangsue",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "rage",
+      "name": "Frénésie",
+      "category": "legacy"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "skullbash",
+      "name": "Coud'Krâne",
+      "category": "legacy"
+    },
+    {
+      "id": "sleeppowder",
+      "name": "Poudre Dodo",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "refresh",
+      "name": "Régénération",
+      "category": "special"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "paras",
   "spawns": [
     [
       {
@@ -162,19 +695,27 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "24-41",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0047_parasect.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0047_parasect.json",
+        "spawnId": "parasect-1",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "parasect",
+        "excludeStructures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "excludeYLevel": {
+          "minY": -41,
+          "maxY": 9
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -185,15 +726,16 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "24-41",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_mushroom"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0047_parasect.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0047_parasect.json",
+        "spawnId": "parasect-2",
+        "spawnType": "grounded",
+        "pokemon": "parasect",
+        "type": "pokemon"
       }
     ],
     [
@@ -204,9 +746,6 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "24-41",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_fungus"
@@ -215,7 +754,11 @@
             "#cobblemon:nether/is_warped"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0047_parasect.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0047_parasect.json",
+        "spawnId": "parasect-3",
+        "spawnType": "grounded",
+        "pokemon": "parasect",
+        "type": "pokemon"
       }
     ],
     [
@@ -226,9 +769,6 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "24-41",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -237,7 +777,8 @@
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0047_parasect.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0047_parasect.json",
+        "spawnId": "parasect-4",
         "structures": [
           "cobblemon:shipwreck_coves/lush_shipwreck_cove"
         ],
@@ -248,26 +789,10 @@
         "yLevel": {
           "minY": -41,
           "maxY": 9
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 3.1,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/uncommon_dark_swamp.json"
+        "spawnType": "grounded",
+        "pokemon": "parasect",
+        "type": "pokemon"
       }
     ]
   ],
@@ -281,6 +806,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/parasect.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/parasect.json"
   ]
 }

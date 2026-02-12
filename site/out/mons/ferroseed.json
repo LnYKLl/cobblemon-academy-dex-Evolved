@@ -2,20 +2,41 @@
   "id": "ferroseed",
   "dexnum": 597,
   "name": "Ferroseed",
+  "nameFr": "Grindur",
+  "description": "Il s'accroche aux parois des grottes et en absorbe les minéraux. Il projette ses épines en cas de danger.",
   "primaryType": "grass",
   "secondaryType": "steel",
+  "primaryTypeFr": "Plante",
+  "secondaryTypeFr": "Acier",
+  "height": 6,
+  "weight": 188,
   "maleRatio": 0.5,
+  "baseScale": 0.75,
+  "hitbox": {
+    "width": 0.7,
+    "height": 1.1,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "ironbarbs",
-    "h:ironbarbs"
+    {
+      "id": "ironbarbs",
+      "name": "Épine de Fer",
+      "hidden": false
+    },
+    {
+      "id": "ironbarbs",
+      "name": "Épine de Fer",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "grass",
     "mineral"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 44,
     "attack": 50,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 61,
   "experienceGroup": "medium_fast",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,110 +64,498 @@
         "item": "minecraft:raw_iron",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:raw_iron"
       },
       {
         "item": "cobblemon:occa_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Chocco"
       },
       {
         "item": "cobblemon:sticky_barb",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Piquants"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:harden",
-    "5:metalclaw",
-    "10:pinmissile",
-    "15:ingrain",
-    "20:flashcannon",
-    "25:ironhead",
-    "30:mirrorshot",
-    "35:irondefense",
-    "41:curse",
-    "45:gyroball",
-    "50:explosion",
-    "egg:acidspray",
-    "egg:gravity",
-    "egg:knockoff",
-    "egg:leechseed",
-    "egg:toxic",
-    "tm:acidspray",
-    "tm:assurance",
-    "tm:bulletseed",
-    "tm:curse",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:energyball",
-    "tm:explosion",
-    "tm:facade",
-    "tm:flash",
-    "tm:flashcannon",
-    "tm:gigadrain",
-    "tm:gravity",
-    "tm:gyroball",
-    "tm:honeclaws",
-    "tm:irondefense",
-    "tm:ironhead",
-    "tm:knockoff",
-    "tm:magnetrise",
-    "tm:metalclaw",
-    "tm:naturepower",
-    "tm:payback",
-    "tm:pinmissile",
-    "tm:poisonjab",
-    "tm:protect",
-    "tm:rest",
-    "tm:revenge",
-    "tm:rockclimb",
-    "tm:rockpolish",
-    "tm:rocksmash",
-    "tm:rollout",
-    "tm:seedbomb",
-    "tm:selfdestruct",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:spikes",
-    "tm:stealthrock",
-    "tm:steelbeam",
-    "tm:steelroller",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:terablast",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:toxic",
-    "tm:worryseed",
-    "tutor:endeavor",
-    "tutor:energyball",
-    "tutor:flashcannon",
-    "tutor:gigadrain",
-    "tutor:gravity",
-    "tutor:irondefense",
-    "tutor:ironhead",
-    "tutor:knockoff",
-    "tutor:magnetrise",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:rollout",
-    "tutor:seedbomb",
-    "tutor:sleeptalk",
-    "tutor:spikes",
-    "tutor:stealthrock",
-    "tutor:steelbeam",
-    "tutor:steelroller",
-    "tutor:thunderbolt",
-    "tutor:worryseed"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "harden",
+      "name": "Armure",
+      "category": "1"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "5"
+    },
+    {
+      "id": "pinmissile",
+      "name": "Dard-Nuée",
+      "category": "10"
+    },
+    {
+      "id": "ingrain",
+      "name": "Racines",
+      "category": "15"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "20"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "25"
+    },
+    {
+      "id": "mirrorshot",
+      "name": "Miroi-Tir",
+      "category": "30"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "35"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "41"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "45"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "50"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "egg"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "egg"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "egg"
+    },
+    {
+      "id": "leechseed",
+      "name": "Vampigraine",
+      "category": "egg"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "egg"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "tm"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tm"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "pinmissile",
+      "name": "Dard-Nuée",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "rockclimb",
+      "name": "Escalade",
+      "category": "tm"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tm"
+    },
+    {
+      "id": "steelroller",
+      "name": "Métalliroue",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tutor"
+    },
+    {
+      "id": "steelroller",
+      "name": "Métalliroue",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "ferroseed_ferrothorn",
@@ -162,6 +573,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -171,19 +583,27 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "6-31",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0597_ferroseed.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0597_ferroseed.json",
+        "spawnId": "ferroseed-1",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "ferroseed",
+        "excludeStructures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "excludeYLevel": {
+          "minY": -41,
+          "maxY": 9
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -194,9 +614,6 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "6-31",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -205,7 +622,8 @@
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0597_ferroseed.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0597_ferroseed.json",
+        "spawnId": "ferroseed-2",
         "structures": [
           "cobblemon:shipwreck_coves/lush_shipwreck_cove"
         ],
@@ -216,26 +634,10 @@
         "yLevel": {
           "minY": -41,
           "maxY": 9
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 2.2,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:starlight_permafrost_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/uncommon_starlight_permafrost_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "ferroseed",
+        "type": "pokemon"
       }
     ]
   ],
@@ -249,6 +651,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/ferroseed.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/ferroseed.json"
   ]
 }

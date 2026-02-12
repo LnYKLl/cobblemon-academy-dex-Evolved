@@ -2,19 +2,40 @@
   "id": "wurmple",
   "dexnum": 265,
   "name": "Wurmple",
+  "nameFr": "Chenipotte",
+  "description": "Chenipotte est la proie de Hélédelle. Ce Pokémon essaie de résister en dirigeant les pointes de son dos vers le prédateur. Il affaiblit son ennemi en lui injectant du poison.",
   "primaryType": "bug",
   "secondaryType": "",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "",
+  "height": 3,
+  "weight": 36,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen3"
   ],
   "abilities": [
-    "shielddust",
-    "h:runaway"
+    {
+      "id": "shielddust",
+      "name": "Écran Poudre",
+      "hidden": false
+    },
+    {
+      "id": "runaway",
+      "name": "Fuite",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 45,
     "attack": 45,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 56,
   "experienceGroup": "medium_fast",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -40,33 +63,91 @@
         "item": "minecraft:string",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:string"
       },
       {
         "item": "cobblemon:pecha_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Pêcha"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:stringshot",
-    "5:poisonsting",
-    "15:bugbite",
-    "tm:bugbite",
-    "tm:electroweb",
-    "tm:skittersmack",
-    "tm:stringshot",
-    "tm:terablast",
-    "tutor:bugbite",
-    "tutor:electroweb",
-    "tutor:skittersmack",
-    "tutor:stringshot"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "1"
+    },
+    {
+      "id": "poisonsting",
+      "name": "Dard-Venin",
+      "category": "5"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "15"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tutor"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "wurmple_silcoon",
@@ -107,26 +188,8 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 2.4,
-        "levels": "4-18",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/common_scarlet_forest.json"
-      }
-    ],
     [
       {
         "presets": [
@@ -142,24 +205,25 @@
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest",
-            "#cobblemon:is_jungle",
-            "aether:skyroot_forest",
-            "aether:skyroot_woodland"
+            "#cobblemon:is_jungle"
           ],
           "exclude": [
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/wurmple.json",
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0265_wurmple.json",
+        "spawnId": "ccc-wurmple-1",
         "sky": {
           "canSeeSky": true,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "pokemon": "wurmple",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/wurmple.png"
@@ -169,6 +233,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation3/wurmple.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation3/wurmple.json"
   ]
 }

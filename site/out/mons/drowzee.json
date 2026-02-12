@@ -2,20 +2,45 @@
   "id": "drowzee",
   "dexnum": 96,
   "name": "Drowzee",
+  "nameFr": "Soporifik",
+  "description": "Lorsque les enfants ont le nez qui les démange en dormant, c'est sans doute parce que ce Pokémon se tient au dessus de leur oreiller, afin d'essayer de manger leurs rêves par leurs narines.",
   "primaryType": "psychic",
   "secondaryType": "",
+  "primaryTypeFr": "Psy",
+  "secondaryTypeFr": "",
+  "height": 10,
+  "weight": 324,
   "maleRatio": 0.5,
+  "baseScale": 0.85,
+  "hitbox": {
+    "width": 0.7,
+    "height": 1.1,
+    "fixed": false
+  },
   "labels": [
     "gen1"
   ],
   "abilities": [
-    "insomnia",
-    "forewarn",
-    "h:innerfocus"
+    {
+      "id": "insomnia",
+      "name": "Insomnia",
+      "hidden": false
+    },
+    {
+      "id": "forewarn",
+      "name": "Prédiction",
+      "hidden": false
+    },
+    {
+      "id": "innerfocus",
+      "name": "Attention",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "human_like"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 60,
     "attack": 48,
@@ -32,8 +57,10 @@
     "special_defence": 1,
     "speed": 0
   },
+  "baseExperienceYield": 66,
   "experienceGroup": "medium_fast",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,151 +68,819 @@
         "item": "cobblemon:chesto_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Maron"
       }
     ]
   },
   "moves": [
-    "1:pound",
-    "1:hypnosis",
-    "5:disable",
-    "9:confusion",
-    "13:headbutt",
-    "17:poisongas",
-    "21:meditate",
-    "25:psychup",
-    "29:wakeupslap",
-    "33:swagger",
-    "37:synchronoise",
-    "41:nastyplot",
-    "45:psyshock",
-    "49:futuresight",
-    "egg:assist",
-    "egg:barrier",
-    "egg:firepunch",
-    "egg:flatter",
-    "egg:guardswap",
-    "egg:icepunch",
-    "egg:powersplit",
-    "egg:psychocut",
-    "egg:roleplay",
-    "egg:secretpower",
-    "egg:thunderpunch",
-    "tm:allyswitch",
-    "tm:bodyslam",
-    "tm:brickbreak",
-    "tm:calmmind",
-    "tm:curse",
-    "tm:dazzlinggleam",
-    "tm:doubleedge",
-    "tm:drainingkiss",
-    "tm:drainpunch",
-    "tm:dreameater",
-    "tm:encore",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:expandingforce",
-    "tm:facade",
-    "tm:firepunch",
-    "tm:flash",
-    "tm:fling",
-    "tm:focusblast",
-    "tm:focuspunch",
-    "tm:foulplay",
-    "tm:futuresight",
-    "tm:grassknot",
-    "tm:guardswap",
-    "tm:haze",
-    "tm:headbutt",
-    "tm:helpinghand",
-    "tm:icepunch",
-    "tm:imprison",
-    "tm:knockoff",
-    "tm:lightscreen",
-    "tm:lowkick",
-    "tm:lowsweep",
-    "tm:magiccoat",
-    "tm:magicroom",
-    "tm:megakick",
-    "tm:megapunch",
-    "tm:metronome",
-    "tm:mindreader",
-    "tm:nastyplot",
-    "tm:nightshade",
-    "tm:poweruppunch",
-    "tm:protect",
-    "tm:psybeam",
-    "tm:psychic",
-    "tm:psychicnoise",
-    "tm:psychicterrain",
-    "tm:psychocut",
-    "tm:psychup",
-    "tm:psyshock",
-    "tm:raindance",
-    "tm:recycle",
-    "tm:reflect",
-    "tm:rest",
-    "tm:roleplay",
-    "tm:safeguard",
-    "tm:secretpower",
-    "tm:selfdestruct",
-    "tm:shadowball",
-    "tm:signalbeam",
-    "tm:skillswap",
-    "tm:sleeptalk",
-    "tm:snatch",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swagger",
-    "tm:swift",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:telekinesis",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunderpunch",
-    "tm:thunderwave",
-    "tm:torment",
-    "tm:toxic",
-    "tm:trailblaze",
-    "tm:triattack",
-    "tm:trick",
-    "tm:trickroom",
-    "tm:zenheadbutt",
-    "tutor:allyswitch",
-    "tutor:calmmind",
-    "tutor:dazzlinggleam",
-    "tutor:drainpunch",
-    "tutor:endeavor",
-    "tutor:expandingforce",
-    "tutor:firepunch",
-    "tutor:focuspunch",
-    "tutor:foulplay",
-    "tutor:helpinghand",
-    "tutor:icepunch",
-    "tutor:knockoff",
-    "tutor:lowkick",
-    "tutor:magiccoat",
-    "tutor:magicroom",
-    "tutor:psychic",
-    "tutor:psychocut",
-    "tutor:recycle",
-    "tutor:rest",
-    "tutor:roleplay",
-    "tutor:shadowball",
-    "tutor:signalbeam",
-    "tutor:skillswap",
-    "tutor:sleeptalk",
-    "tutor:snatch",
-    "tutor:swift",
-    "tutor:telekinesis",
-    "tutor:thunderpunch",
-    "tutor:trick",
-    "tutor:zenheadbutt"
+    {
+      "id": "pound",
+      "name": "Écras'Face",
+      "category": "1"
+    },
+    {
+      "id": "hypnosis",
+      "name": "Hypnose",
+      "category": "1"
+    },
+    {
+      "id": "disable",
+      "name": "Entrave",
+      "category": "5"
+    },
+    {
+      "id": "confusion",
+      "name": "Choc Mental",
+      "category": "9"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "13"
+    },
+    {
+      "id": "poisongas",
+      "name": "Gaz Toxik",
+      "category": "17"
+    },
+    {
+      "id": "meditate",
+      "name": "Yoga",
+      "category": "21"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "25"
+    },
+    {
+      "id": "wakeupslap",
+      "name": "Réveil Forcé",
+      "category": "29"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "33"
+    },
+    {
+      "id": "synchronoise",
+      "name": "Synchropeine",
+      "category": "37"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "41"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "45"
+    },
+    {
+      "id": "futuresight",
+      "name": "Prescience",
+      "category": "49"
+    },
+    {
+      "id": "assist",
+      "name": "Assistance",
+      "category": "egg"
+    },
+    {
+      "id": "barrier",
+      "name": "Bouclier",
+      "category": "egg"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "egg"
+    },
+    {
+      "id": "flatter",
+      "name": "Flatterie",
+      "category": "egg"
+    },
+    {
+      "id": "guardswap",
+      "name": "Permugarde",
+      "category": "egg"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "egg"
+    },
+    {
+      "id": "powersplit",
+      "name": "Partage Force",
+      "category": "egg"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "egg"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "egg"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "egg"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "egg"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "drainingkiss",
+      "name": "Vampibaiser",
+      "category": "tm"
+    },
+    {
+      "id": "drainpunch",
+      "name": "Vampi-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "expandingforce",
+      "name": "Vaste Pouvoir",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "focusblast",
+      "name": "Exploforce",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "futuresight",
+      "name": "Prescience",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "guardswap",
+      "name": "Permugarde",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "lowsweep",
+      "name": "Balayette",
+      "category": "tm"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tm"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tm"
+    },
+    {
+      "id": "megakick",
+      "name": "Ultimawashi",
+      "category": "tm"
+    },
+    {
+      "id": "megapunch",
+      "name": "Ultimapoing",
+      "category": "tm"
+    },
+    {
+      "id": "metronome",
+      "name": "Métronome",
+      "category": "tm"
+    },
+    {
+      "id": "mindreader",
+      "name": "Lire-Esprit",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "tm"
+    },
+    {
+      "id": "poweruppunch",
+      "name": "Poing Boost",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psychicnoise",
+      "name": "Dissonance Psy",
+      "category": "tm"
+    },
+    {
+      "id": "psychicterrain",
+      "name": "Champ Psychique",
+      "category": "tm"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "triattack",
+      "name": "Triplattaque",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "drainpunch",
+      "name": "Vampi-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "expandingforce",
+      "name": "Vaste Pouvoir",
+      "category": "tutor"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tutor"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "dynamicpunch",
+      "name": "Dynamo-Poing",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "nightmare",
+      "name": "Cauchemar",
+      "category": "legacy"
+    },
+    {
+      "id": "psywave",
+      "name": "Vague Psy",
+      "category": "legacy"
+    },
+    {
+      "id": "rage",
+      "name": "Frénésie",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "seismictoss",
+      "name": "Frappe Atlas",
+      "category": "legacy"
+    },
+    {
+      "id": "skullbash",
+      "name": "Coud'Krâne",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "submission",
+      "name": "Sacrifice",
+      "category": "legacy"
+    },
+    {
+      "id": "teleport",
+      "name": "Téléport",
+      "category": "legacy"
+    },
+    {
+      "id": "zapcannon",
+      "name": "Élecanon",
+      "category": "legacy"
+    },
+    {
+      "id": "bellydrum",
+      "name": "Cognobidon",
+      "category": "special"
+    },
+    {
+      "id": "wish",
+      "name": "Vœu",
+      "category": "special"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "drowzee_hypno",
@@ -201,6 +896,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -211,8 +907,8 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "8-33",
-        "contexts": [
-          "grounded"
+        "times": [
+          "night"
         ],
         "biomeTags": {
           "include": [
@@ -222,11 +918,15 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0096_drowzee.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0096_drowzee.json",
+        "spawnId": "drowzee-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "drowzee",
+        "type": "pokemon"
       }
     ],
     [
@@ -237,8 +937,8 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "8-33",
-        "contexts": [
-          "grounded"
+        "times": [
+          "night"
         ],
         "biomeTags": {
           "include": [
@@ -248,33 +948,18 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0096_drowzee.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0096_drowzee.json",
+        "spawnId": "drowzee-2",
         "structures": [
           "#minecraft:village"
         ],
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 1.7,
-        "levels": "4-19",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_starlight_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/common_is_starlight_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "drowzee",
+        "type": "pokemon"
       }
     ]
   ],
@@ -288,6 +973,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/drowzee.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/drowzee.json"
   ]
 }

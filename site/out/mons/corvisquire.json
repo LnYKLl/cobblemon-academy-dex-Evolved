@@ -2,20 +2,45 @@
   "id": "corvisquire",
   "dexnum": 822,
   "name": "Corvisquire",
+  "nameFr": "Bleuseille",
+  "description": "Il est capable d'utiliser des objets avec ses serres : il peut par exemple saisir et lancer des pierres ou même enrouler une corde autour d'un ennemi.",
   "primaryType": "flying",
   "secondaryType": "",
+  "primaryTypeFr": "Vol",
+  "secondaryTypeFr": "",
+  "height": 8,
+  "weight": 160,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 0.65,
+    "height": 1.1,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "keeneye",
-    "unnerve",
-    "h:bigpecks"
+    {
+      "id": "keeneye",
+      "name": "Regard Vif",
+      "hidden": false
+    },
+    {
+      "id": "unnerve",
+      "name": "Tension",
+      "hidden": false
+    },
+    {
+      "id": "bigpecks",
+      "name": "Cœur de Coq",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "flying"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 68,
     "attack": 67,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 2
   },
+  "baseExperienceYield": 128,
   "experienceGroup": "medium_slow",
   "catchRate": 120,
+  "baseFriendship": 50,
   "drops": {
     "amount": 5,
     "entries": [
@@ -41,103 +68,405 @@
         "item": "minecraft:feather",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:feather"
       },
       {
         "item": "minecraft:chicken",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:chicken"
       },
       {
         "item": "cobblemon:sharp_beak",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Bec Pointu"
       },
       {
         "item": "cobblemon:wacan_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Parma"
       }
     ]
   },
   "moves": [
-    "1:peck",
-    "1:leer",
-    "1:powertrip",
-    "1:honeclaws",
-    "12:furyattack",
-    "16:pluck",
-    "22:taunt",
-    "28:scaryface",
-    "34:drillpeck",
-    "40:swagger",
-    "46:bravebird",
-    "egg:defog",
-    "egg:rocksmash",
-    "egg:roost",
-    "egg:sandattack",
-    "egg:skyattack",
-    "egg:spite",
-    "egg:tailwind",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:assurance",
-    "tm:bravebird",
-    "tm:defog",
-    "tm:dualwingbeat",
-    "tm:endure",
-    "tm:facade",
-    "tm:faketears",
-    "tm:fly",
-    "tm:focusenergy",
-    "tm:honeclaws",
-    "tm:hurricane",
-    "tm:nastyplot",
-    "tm:payback",
-    "tm:pluck",
-    "tm:protect",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:revenge",
-    "tm:reversal",
-    "tm:rocksmash",
-    "tm:roost",
-    "tm:scaryface",
-    "tm:skyattack",
-    "tm:sleeptalk",
-    "tm:spite",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swagger",
-    "tm:swift",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:uturn",
-    "tm:workup",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:defog",
-    "tutor:dualwingbeat",
-    "tutor:focusenergy",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:roost",
-    "tutor:skyattack",
-    "tutor:sleeptalk",
-    "tutor:spite",
-    "tutor:swift",
-    "tutor:tailwind"
+    {
+      "id": "peck",
+      "name": "Picpic",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "powertrip",
+      "name": "Arrogance",
+      "category": "1"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "1"
+    },
+    {
+      "id": "furyattack",
+      "name": "Furie",
+      "category": "12"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "16"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "22"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "28"
+    },
+    {
+      "id": "drillpeck",
+      "name": "Bec Vrille",
+      "category": "34"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "40"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "46"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "egg"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "egg"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "egg"
+    },
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "egg"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "egg"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "egg"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "faketears",
+      "name": "Croco Larme",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "corvisquire_corviknight",
@@ -155,6 +484,7 @@
       ]
     }
   ],
+  "preEvolution": "rookidee",
   "spawns": [
     [
       {
@@ -165,8 +495,8 @@
         "rarity": "common",
         "weight": 0.9,
         "levels": "18-37",
-        "contexts": [
-          "grounded"
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
@@ -179,30 +509,15 @@
             "#cobblemon:is_arid"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0822_corvisquire.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0822_corvisquire.json",
+        "spawnId": "corvisquire-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 2.1,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_starlight_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/uncommon_is_starlight_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "corvisquire",
+        "type": "pokemon"
       }
     ]
   ],
@@ -216,6 +531,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/corvisquire.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/corvisquire.json"
   ]
 }

@@ -2,21 +2,46 @@
   "id": "dedenne",
   "dexnum": 702,
   "name": "Dedenne",
+  "nameFr": "Dedenne",
+  "description": "Il utilise sa queue pour pomper l'énergie des centrales électriques ou pour se brancher sur les prises des maisons. Ses moustaches envoient des décharges.",
   "primaryType": "electric",
   "secondaryType": "fairy",
+  "primaryTypeFr": "Électrik",
+  "secondaryTypeFr": "Fée",
+  "height": 2,
+  "weight": 22,
   "maleRatio": 0.5,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 0.6,
+    "height": 1.0,
+    "fixed": false
+  },
   "labels": [
     "gen6"
   ],
   "abilities": [
-    "cheekpouch",
-    "pickup",
-    "h:plus"
+    {
+      "id": "cheekpouch",
+      "name": "Bajoues",
+      "hidden": false
+    },
+    {
+      "id": "pickup",
+      "name": "Ramassage",
+      "hidden": false
+    },
+    {
+      "id": "plus",
+      "name": "Plus",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field",
     "fairy"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 67,
     "attack": 58,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 2
   },
+  "baseExperienceYield": 151,
   "experienceGroup": "medium_fast",
   "catchRate": 180,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -42,116 +69,576 @@
         "item": "cobblemon:cheri_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Ceriz"
       }
     ]
   },
   "moves": [
-    "1:tailwhip",
-    "1:nuzzle",
-    "5:tackle",
-    "10:charge",
-    "15:thundershock",
-    "20:charm",
-    "25:paraboliccharge",
-    "30:voltswitch",
-    "35:rest",
-    "35:snore",
-    "40:discharge",
-    "45:playrough",
-    "50:superfang",
-    "55:entrainment",
-    "60:thunder",
-    "egg:covet",
-    "egg:magnetrise",
-    "egg:naturalgift",
-    "egg:tearfullook",
-    "tm:agility",
-    "tm:allyswitch",
-    "tm:charge",
-    "tm:chargebeam",
-    "tm:charm",
-    "tm:covet",
-    "tm:cut",
-    "tm:dazzlinggleam",
-    "tm:dig",
-    "tm:drainingkiss",
-    "tm:eerieimpulse",
-    "tm:electricterrain",
-    "tm:electroball",
-    "tm:electroweb",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:flash",
-    "tm:fling",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:helpinghand",
-    "tm:hyperbeam",
-    "tm:irontail",
-    "tm:lastresort",
-    "tm:lightscreen",
-    "tm:magnetrise",
-    "tm:mistyterrain",
-    "tm:naturalgift",
-    "tm:playrough",
-    "tm:protect",
-    "tm:raindance",
-    "tm:recycle",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:risingvoltage",
-    "tm:seedbomb",
-    "tm:shockwave",
-    "tm:signalbeam",
-    "tm:sleeptalk",
-    "tm:snore",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superfang",
-    "tm:swift",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderpunch",
-    "tm:thunderwave",
-    "tm:trailblaze",
-    "tm:uturn",
-    "tm:voltswitch",
-    "tm:wildcharge",
-    "tutor:allyswitch",
-    "tutor:chargebeam",
-    "tutor:covet",
-    "tutor:dazzlinggleam",
-    "tutor:electroweb",
-    "tutor:endeavor",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:irontail",
-    "tutor:lastresort",
-    "tutor:magnetrise",
-    "tutor:playrough",
-    "tutor:recycle",
-    "tutor:rest",
-    "tutor:risingvoltage",
-    "tutor:seedbomb",
-    "tutor:shockwave",
-    "tutor:signalbeam",
-    "tutor:sleeptalk",
-    "tutor:snore",
-    "tutor:superfang",
-    "tutor:swift",
-    "tutor:thunderbolt",
-    "tutor:thunderpunch",
-    "tutor:wildcharge"
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "1"
+    },
+    {
+      "id": "nuzzle",
+      "name": "Frotte-Frimousse",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "5"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "10"
+    },
+    {
+      "id": "thundershock",
+      "name": "Éclair",
+      "category": "15"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "20"
+    },
+    {
+      "id": "paraboliccharge",
+      "name": "Parabocharge",
+      "category": "25"
+    },
+    {
+      "id": "voltswitch",
+      "name": "Change Éclair",
+      "category": "30"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "35"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "35"
+    },
+    {
+      "id": "discharge",
+      "name": "Coup d'Jus",
+      "category": "40"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "45"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "50"
+    },
+    {
+      "id": "entrainment",
+      "name": "Ten-Danse",
+      "category": "55"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "60"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "egg"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "egg"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "egg"
+    },
+    {
+      "id": "tearfullook",
+      "name": "Larme à l'Œil",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "drainingkiss",
+      "name": "Vampibaiser",
+      "category": "tm"
+    },
+    {
+      "id": "eerieimpulse",
+      "name": "Ondes Étranges",
+      "category": "tm"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "tm"
+    },
+    {
+      "id": "electroball",
+      "name": "Boule Élek",
+      "category": "tm"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tm"
+    },
+    {
+      "id": "mistyterrain",
+      "name": "Champ Brumeux",
+      "category": "tm"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "voltswitch",
+      "name": "Change Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tutor"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "tutor"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "legacy"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -159,97 +646,33 @@
           "natural"
         ],
         "rarity": "uncommon",
-        "weight": 1.8,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
+        "weight": 10.0,
+        "levels": "18-43",
         "biomeTags": {
           "include": [
-            "eternal_starlight:scarlet_forest"
+            "#cobblemon:is_savanna",
+            "#cobblemon:is_shrubland"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/uncommon_scarlet_forest.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 4.0,
-        "levels": "1-35",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_overworld"
-          ],
-          "exclude": [
-            "#cobblemon:is_arid",
-            "#cobblemon:is_freezing"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/dedenne.json",
-        "structures": [
-          "#minecraft:village"
-        ],
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0702_dedenne.json",
+        "spawnId": "dedenne-1",
         "sky": {
-          "canSeeSky": true
+          "minSkyLight": 8,
+          "maxSkyLight": 15
         },
-        "weather": {
-          "isRaining": false
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 5.0,
-        "levels": "4-29",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_arid"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/dedenne.json",
-        "sky": {
-          "canSeeSky": true
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 4.0,
-        "levels": "4-29",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_floral"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/dedenne.json",
-        "sky": {
-          "canSeeSky": true
+        "spawnType": "grounded",
+        "pokemon": "dedenne",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 5.0,
+          "condition": {
+            "isThundering": true
+          }
         }
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/dedenne.png"
@@ -259,6 +682,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation6/dedenne.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation6/dedenne.json"
   ]
 }

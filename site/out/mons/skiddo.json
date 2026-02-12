@@ -2,19 +2,40 @@
   "id": "skiddo",
   "dexnum": 672,
   "name": "Skiddo",
+  "nameFr": "Cabriolaine",
+  "description": "Tant qu'il a de l'eau et du soleil en abondance, ce Pokémon n'a pas besoin de nourriture. Les feuilles sur son dos produisent son énergie par photosynthèse.",
   "primaryType": "grass",
   "secondaryType": "",
+  "primaryTypeFr": "Plante",
+  "secondaryTypeFr": "",
+  "height": 9,
+  "weight": 310,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen6"
   ],
   "abilities": [
-    "sapsipper",
-    "h:grasspelt"
+    {
+      "id": "sapsipper",
+      "name": "Herbivore",
+      "hidden": false
+    },
+    {
+      "id": "grasspelt",
+      "name": "Toison Herbue",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 66,
     "attack": 65,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 70,
   "experienceGroup": "medium_fast",
   "catchRate": 200,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -40,127 +63,544 @@
         "item": "minecraft:mutton",
         "percentage": null,
         "quantityRange": "1-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:mutton"
       },
       {
         "item": "cobblemon:oran_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Oran"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:growth",
-    "7:vinewhip",
-    "9:tailwhip",
-    "12:leechseed",
-    "13:razorleaf",
-    "16:worryseed",
-    "20:synthesis",
-    "22:takedown",
-    "26:bulldoze",
-    "30:seedbomb",
-    "34:bulkup",
-    "38:doubleedge",
-    "42:hornleech",
-    "45:leafblade",
-    "egg:defensecurl",
-    "egg:grassyterrain",
-    "egg:milkdrink",
-    "egg:rollout",
-    "tm:bodyslam",
-    "tm:brickbreak",
-    "tm:bulkup",
-    "tm:bulldoze",
-    "tm:bulletseed",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:gigadrain",
-    "tm:grassknot",
-    "tm:grassyglide",
-    "tm:grassyterrain",
-    "tm:helpinghand",
-    "tm:irontail",
-    "tm:leafblade",
-    "tm:leafstorm",
-    "tm:magicalleaf",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:naturepower",
-    "tm:payback",
-    "tm:playrough",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:roar",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rollout",
-    "tm:seedbomb",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:stompingtantrum",
-    "tm:strength",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:surf",
-    "tm:synthesis",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:trailblaze",
-    "tm:wildcharge",
-    "tm:workup",
-    "tm:worryseed",
-    "tm:zenheadbutt",
-    "tutor:bulkup",
-    "tutor:bulldoze",
-    "tutor:endeavor",
-    "tutor:energyball",
-    "tutor:gigadrain",
-    "tutor:grassyglide",
-    "tutor:helpinghand",
-    "tutor:irontail",
-    "tutor:magicalleaf",
-    "tutor:mudslap",
-    "tutor:playrough",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:rollout",
-    "tutor:seedbomb",
-    "tutor:sleeptalk",
-    "tutor:stompingtantrum",
-    "tutor:synthesis",
-    "tutor:wildcharge",
-    "tutor:worryseed",
-    "tutor:zenheadbutt"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "growth",
+      "name": "Croissance",
+      "category": "1"
+    },
+    {
+      "id": "vinewhip",
+      "name": "Fouet Lianes",
+      "category": "7"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "9"
+    },
+    {
+      "id": "leechseed",
+      "name": "Vampigraine",
+      "category": "12"
+    },
+    {
+      "id": "razorleaf",
+      "name": "Tranch'Herbe",
+      "category": "13"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "16"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "20"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "22"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "26"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "30"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "34"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "38"
+    },
+    {
+      "id": "hornleech",
+      "name": "Encornebois",
+      "category": "42"
+    },
+    {
+      "id": "leafblade",
+      "name": "Lame Feuille",
+      "category": "45"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "egg"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "egg"
+    },
+    {
+      "id": "milkdrink",
+      "name": "Lait à Boire",
+      "category": "egg"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "egg"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "leafblade",
+      "name": "Lame Feuille",
+      "category": "tm"
+    },
+    {
+      "id": "leafstorm",
+      "name": "Tempête Verte",
+      "category": "tm"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
-      "id": "skiddo_gogoat",
-      "variant": "level_up",
-      "result": "gogoat",
       "consumeHeldItem": false,
+      "id": "skiddo_gogoat",
       "learnableMoves": [
         "aerialace"
       ],
       "requirements": [
         {
-          "variant": "level",
-          "minLevel": 32
+          "minLevel": 32,
+          "variant": "level"
         }
-      ]
+      ],
+      "result": "gogoat",
+      "variant": "level_up"
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -168,40 +608,35 @@
           "natural"
         ],
         "rarity": "common",
-        "weight": 3.2,
-        "levels": "4-18",
-        "contexts": [
-          "grounded"
-        ],
+        "weight": 9.0,
+        "levels": "10-35",
         "biomeTags": {
           "include": [
-            "eternal_starlight:starlight_permafrost_forest"
+            "#cobblemon:is_mountain"
+          ],
+          "exclude": [
+            "#cobblemon:is_volcanic"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/common_starlight_permafrost_forest.json"
-      }
-    ],
-    [
-      {
-        "rarity": "common",
-        "weight": 8.0,
-        "levels": "5-20",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_hills"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/skiddo.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0672_skiddo.json",
+        "spawnId": "skiddo-1",
         "sky": {
-          "canSeeSky": true
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "skiddo",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
         }
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/skiddo.png"
@@ -211,6 +646,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation6/skiddo.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation6/skiddo.json"
   ]
 }

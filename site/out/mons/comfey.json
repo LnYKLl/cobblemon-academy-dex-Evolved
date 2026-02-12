@@ -2,20 +2,45 @@
   "id": "comfey",
   "dexnum": 764,
   "name": "Comfey",
+  "nameFr": "Guérilande",
+  "description": "Il cueille des fleurs qu'il colle sur son corps grâce à ses fluides corporels. Le parfum qui émane de ses pétales a des vertus apaisantes.",
   "primaryType": "fairy",
   "secondaryType": "",
+  "primaryTypeFr": "Fée",
+  "secondaryTypeFr": "",
+  "height": 1,
+  "weight": 3,
   "maleRatio": 0.25,
+  "baseScale": 0.37,
+  "hitbox": {
+    "width": 1.5,
+    "height": 2.2,
+    "fixed": false
+  },
   "labels": [
     "gen7"
   ],
   "abilities": [
-    "flowerveil",
-    "triage",
-    "h:naturalcure"
+    {
+      "id": "flowerveil",
+      "name": "Flora-Voile",
+      "hidden": false
+    },
+    {
+      "id": "triage",
+      "name": "Prioguérison",
+      "hidden": false
+    },
+    {
+      "id": "naturalcure",
+      "name": "Médic Nature",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "grass"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 51,
     "attack": 52,
@@ -32,8 +57,10 @@
     "special_defence": 2,
     "speed": 0
   },
+  "baseExperienceYield": 170,
   "experienceGroup": "fast",
   "catchRate": 60,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,134 +68,643 @@
         "item": "cobblemon:misty_seed",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Graine Brume"
       },
       {
         "item": "cobblemon:kebia_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Kébia"
       }
     ]
   },
   "moves": [
-    "1:flowershield",
-    "1:growth",
-    "1:wrap",
-    "1:naturalgift",
-    "1:aromatherapy",
-    "3:vinewhip",
-    "6:helpinghand",
-    "9:drainingkiss",
-    "12:charm",
-    "15:magicalleaf",
-    "18:synthesis",
-    "21:leechseed",
-    "24:grassknot",
-    "27:sweetkiss",
-    "30:floralhealing",
-    "33:petalblizzard",
-    "36:bind",
-    "39:playrough",
-    "42:sweetscent",
-    "45:petaldance",
-    "48:grassyterrain",
-    "egg:afteryou",
-    "egg:leaftornado",
-    "egg:luckychant",
-    "egg:worryseed",
-    "tm:acrobatics",
-    "tm:afteryou",
-    "tm:alluringvoice",
-    "tm:allyswitch",
-    "tm:amnesia",
-    "tm:bind",
-    "tm:bulletseed",
-    "tm:calmmind",
-    "tm:charm",
-    "tm:covet",
-    "tm:dazzlinggleam",
-    "tm:defog",
-    "tm:disarmingvoice",
-    "tm:drainingkiss",
-    "tm:echoedvoice",
-    "tm:encore",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:fling",
-    "tm:gigadrain",
-    "tm:grassknot",
-    "tm:grassyglide",
-    "tm:grassyterrain",
-    "tm:healbell",
-    "tm:helpinghand",
-    "tm:hyperbeam",
-    "tm:knockoff",
-    "tm:lightscreen",
-    "tm:magicalleaf",
-    "tm:magiccoat",
-    "tm:naturalgift",
-    "tm:naturepower",
-    "tm:painsplit",
-    "tm:petalblizzard",
-    "tm:playrough",
-    "tm:pollenpuff",
-    "tm:protect",
-    "tm:psychup",
-    "tm:rest",
-    "tm:roleplay",
-    "tm:safeguard",
-    "tm:seedbomb",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:synthesis",
-    "tm:tailwind",
-    "tm:taunt",
-    "tm:telekinesis",
-    "tm:terablast",
-    "tm:thief",
-    "tm:trailblaze",
-    "tm:trick",
-    "tm:trickroom",
-    "tm:uturn",
-    "tm:worryseed",
-    "tutor:afteryou",
-    "tutor:allyswitch",
-    "tutor:bind",
-    "tutor:calmmind",
-    "tutor:covet",
-    "tutor:dazzlinggleam",
-    "tutor:defog",
-    "tutor:energyball",
-    "tutor:gigadrain",
-    "tutor:grassyglide",
-    "tutor:healbell",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:knockoff",
-    "tutor:magicalleaf",
-    "tutor:magiccoat",
-    "tutor:painsplit",
-    "tutor:playrough",
-    "tutor:rest",
-    "tutor:roleplay",
-    "tutor:seedbomb",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:synthesis",
-    "tutor:tailwind",
-    "tutor:telekinesis",
-    "tutor:trick",
-    "tutor:worryseed"
+    {
+      "id": "flowershield",
+      "name": "Garde Florale",
+      "category": "1"
+    },
+    {
+      "id": "growth",
+      "name": "Croissance",
+      "category": "1"
+    },
+    {
+      "id": "wrap",
+      "name": "Ligotage",
+      "category": "1"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "1"
+    },
+    {
+      "id": "aromatherapy",
+      "name": "Aromathérapie",
+      "category": "1"
+    },
+    {
+      "id": "vinewhip",
+      "name": "Fouet Lianes",
+      "category": "3"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "6"
+    },
+    {
+      "id": "drainingkiss",
+      "name": "Vampibaiser",
+      "category": "9"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "12"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "15"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "18"
+    },
+    {
+      "id": "leechseed",
+      "name": "Vampigraine",
+      "category": "21"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "24"
+    },
+    {
+      "id": "sweetkiss",
+      "name": "Doux Baiser",
+      "category": "27"
+    },
+    {
+      "id": "floralhealing",
+      "name": "Soin Floral",
+      "category": "30"
+    },
+    {
+      "id": "petalblizzard",
+      "name": "Tempête Florale",
+      "category": "33"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "36"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "39"
+    },
+    {
+      "id": "sweetscent",
+      "name": "Doux Parfum",
+      "category": "42"
+    },
+    {
+      "id": "petaldance",
+      "name": "Danse Fleurs",
+      "category": "45"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "48"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "egg"
+    },
+    {
+      "id": "leaftornado",
+      "name": "Phytomixeur",
+      "category": "egg"
+    },
+    {
+      "id": "luckychant",
+      "name": "Air Veinard",
+      "category": "egg"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "alluringvoice",
+      "name": "Voix Envoûtante",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "tm"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "disarmingvoice",
+      "name": "Voix Enjôleuse",
+      "category": "tm"
+    },
+    {
+      "id": "drainingkiss",
+      "name": "Vampibaiser",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "tm"
+    },
+    {
+      "id": "healbell",
+      "name": "Glas de Soin",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tm"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tm"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "petalblizzard",
+      "name": "Tempête Florale",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "pollenpuff",
+      "name": "Boule Pollen",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tutor"
+    },
+    {
+      "id": "healbell",
+      "name": "Glas de Soin",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "celebrate",
+      "name": "Célébration",
+      "category": "special"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -178,23 +714,24 @@
         "rarity": "uncommon",
         "weight": 10.0,
         "levels": "24-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_floral",
             "#cobblemon:is_tropical_island"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0764_comfey.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0764_comfey.json",
+        "spawnId": "comfey-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
         },
         "weather": {
           "isRaining": false
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "comfey",
+        "type": "pokemon"
       }
     ],
     [
@@ -205,93 +742,22 @@
         "rarity": "rare",
         "weight": 10.0,
         "levels": "24-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether",
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0764_comfey.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0764_comfey.json",
+        "spawnId": "comfey-2",
         "nearbyBlocks": {
           "selectors": [
             "#cobblemon:flowers"
           ],
           "resolved": [
-            "aether_redux:mixed_prismatic_petals",
-            "aether_redux:pink_prismatic_petals",
-            "aether_redux:teal_prismatic_petals",
             "cobblemon:pep_up_flower",
-            "deep_aether:aerlavender",
-            "deep_aether:enchanted_blossom",
-            "deep_aether:golden_flower",
-            "deep_aether:radiant_orchid",
-            "deep_aether:tall_aerlavender",
-            "etcetera:bouquet",
-            "minecraft:chorus_flower",
-            "mythicbotany:aquapanthus",
-            "mythicbotany:aquapanthus_floating",
-            "mythicbotany:exoblaze",
-            "mythicbotany:exoblaze_floating",
-            "mythicbotany:feysythia",
-            "mythicbotany:feysythia_floating",
-            "mythicbotany:hellebore",
-            "mythicbotany:hellebore_floating",
-            "mythicbotany:petrunia",
-            "mythicbotany:petrunia_floating",
-            "mythicbotany:raindeletia",
-            "mythicbotany:raindeletia_floating",
-            "mythicbotany:wither_aconite",
-            "mythicbotany:wither_aconite_floating",
-            "regions_unexplored:alpha_dandelion",
-            "regions_unexplored:alpha_rose",
-            "regions_unexplored:aster",
-            "regions_unexplored:black_snowbelle",
-            "regions_unexplored:bleeding_heart",
-            "regions_unexplored:blue_lupine",
-            "regions_unexplored:blue_magnolia_flowers",
-            "regions_unexplored:blue_snowbelle",
-            "regions_unexplored:brown_snowbelle",
-            "regions_unexplored:cyan_snowbelle",
-            "regions_unexplored:daisy",
-            "regions_unexplored:day_lily",
-            "regions_unexplored:dorcel",
-            "regions_unexplored:felicia_daisy",
-            "regions_unexplored:fireweed",
-            "regions_unexplored:gray_snowbelle",
-            "regions_unexplored:green_snowbelle",
-            "regions_unexplored:hibiscus",
-            "regions_unexplored:hyacinth_flowers",
-            "regions_unexplored:hyssop",
-            "regions_unexplored:light_blue_snowbelle",
-            "regions_unexplored:light_gray_snowbelle",
-            "regions_unexplored:lime_snowbelle",
-            "regions_unexplored:magenta_snowbelle",
-            "regions_unexplored:mallow",
-            "regions_unexplored:orange_coneflower",
-            "regions_unexplored:orange_snowbelle",
-            "regions_unexplored:pink_lupine",
-            "regions_unexplored:pink_magnolia_flowers",
-            "regions_unexplored:pink_snowbelle",
-            "regions_unexplored:poppy_bush",
-            "regions_unexplored:purple_coneflower",
-            "regions_unexplored:purple_lupine",
-            "regions_unexplored:purple_snowbelle",
-            "regions_unexplored:red_lupine",
-            "regions_unexplored:red_snowbelle",
-            "regions_unexplored:salmon_poppy_bush",
-            "regions_unexplored:tassel",
-            "regions_unexplored:tsubaki",
-            "regions_unexplored:waratah",
-            "regions_unexplored:white_magnolia_flowers",
-            "regions_unexplored:white_snowbelle",
-            "regions_unexplored:white_trillium",
-            "regions_unexplored:wilting_trillium",
-            "regions_unexplored:yellow_lupine",
-            "regions_unexplored:yellow_snowbelle",
-            "twilightforest:thorn_rose"
+            "cobblemon:saccharine_leaves",
+            "minecraft:chorus_flower"
           ]
         },
         "sky": {
@@ -300,7 +766,10 @@
         },
         "weather": {
           "isRaining": false
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "comfey",
+        "type": "pokemon"
       }
     ],
     [
@@ -308,56 +777,22 @@
         "rarity": "uncommon",
         "weight": 2.0,
         "levels": "24-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "the_bumblezone:floral_meadow"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0764_comfey.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0764_comfey.json",
+        "spawnId": "comfey-3",
         "weather": {
           "isRaining": false
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 9.9,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_starlight_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/rare_is_starlight_forest.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
+        "spawnType": "grounded",
+        "pokemon": "comfey",
+        "excludeStructures": [
+          "#the_bumblezone:sempiternal_sanctums"
         ],
-        "rarity": "common",
-        "weight": 7.7,
-        "levels": "10-24",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:torreya_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/torreya_forest/common_torreya_forest.json"
+        "type": "pokemon"
       }
     ]
   ],
@@ -371,6 +806,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/comfey.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/comfey.json"
   ]
 }

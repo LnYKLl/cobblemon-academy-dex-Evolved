@@ -2,20 +2,41 @@
   "id": "litten",
   "dexnum": 725,
   "name": "Litten",
+  "nameFr": "Flamiaou",
+  "description": "Il renouvelle son pelage deux fois par an. Quand arrive la période de sa mue, il met le feu à son ancienne fourrure.",
   "primaryType": "fire",
   "secondaryType": "",
+  "primaryTypeFr": "Feu",
+  "secondaryTypeFr": "",
+  "height": 4,
+  "weight": 43,
   "maleRatio": 0.875,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 0.7,
+    "height": 0.9,
+    "fixed": false
+  },
   "labels": [
     "gen7",
     "starter"
   ],
   "abilities": [
-    "blaze",
-    "h:intimidate"
+    {
+      "id": "blaze",
+      "name": "Brasier",
+      "hidden": false
+    },
+    {
+      "id": "intimidate",
+      "name": "Intimidation",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 45,
     "attack": 65,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 64,
   "experienceGroup": "medium_slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,94 +64,391 @@
         "item": "cobblemon:charcoal_stick",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Bâton de charbon"
       },
       {
         "item": "cobblemon:expert_belt",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Ceinture Pro"
       }
     ]
   },
   "moves": [
-    "1:scratch",
-    "1:growl",
-    "1:leer",
-    "3:ember",
-    "6:lick",
-    "9:roar",
-    "12:furyswipes",
-    "15:bite",
-    "18:doublekick",
-    "21:firefang",
-    "24:scaryface",
-    "27:swagger",
-    "30:flamethrower",
-    "33:thrash",
-    "36:flareblitz",
-    "egg:fakeout",
-    "egg:partingshot",
-    "egg:powertrip",
-    "tm:acrobatics",
-    "tm:bodyslam",
-    "tm:bulkup",
-    "tm:covet",
-    "tm:crunch",
-    "tm:doubleedge",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firefang",
-    "tm:firepledge",
-    "tm:firespin",
-    "tm:flamecharge",
-    "tm:flamethrower",
-    "tm:flareblitz",
-    "tm:heatwave",
-    "tm:helpinghand",
-    "tm:leechlife",
-    "tm:nastyplot",
-    "tm:outrage",
-    "tm:overheat",
-    "tm:payday",
-    "tm:protect",
-    "tm:rest",
-    "tm:revenge",
-    "tm:roar",
-    "tm:scaryface",
-    "tm:shadowclaw",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swagger",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:temperflare",
-    "tm:terablast",
-    "tm:torment",
-    "tm:trailblaze",
-    "tm:uturn",
-    "tm:willowisp",
-    "tm:workup",
-    "tutor:bulkup",
-    "tutor:covet",
-    "tutor:endeavor",
-    "tutor:firefang",
-    "tutor:firepledge",
-    "tutor:flamethrower",
-    "tutor:heatwave",
-    "tutor:helpinghand",
-    "tutor:leechlife",
-    "tutor:outrage",
-    "tutor:rest",
-    "tutor:shadowclaw",
-    "tutor:sleeptalk"
+    {
+      "id": "scratch",
+      "name": "Griffe",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "ember",
+      "name": "Flammèche",
+      "category": "3"
+    },
+    {
+      "id": "lick",
+      "name": "Léchouille",
+      "category": "6"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "9"
+    },
+    {
+      "id": "furyswipes",
+      "name": "Combo-Griffe",
+      "category": "12"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "15"
+    },
+    {
+      "id": "doublekick",
+      "name": "Double Pied",
+      "category": "18"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "21"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "24"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "27"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "30"
+    },
+    {
+      "id": "thrash",
+      "name": "Mania",
+      "category": "33"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "36"
+    },
+    {
+      "id": "fakeout",
+      "name": "Bluff",
+      "category": "egg"
+    },
+    {
+      "id": "partingshot",
+      "name": "Dernier Mot",
+      "category": "egg"
+    },
+    {
+      "id": "powertrip",
+      "name": "Arrogance",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tm"
+    },
+    {
+      "id": "firepledge",
+      "name": "Aire de Feu",
+      "category": "tm"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "payday",
+      "name": "Jackpot",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "temperflare",
+      "name": "Indignition",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "firepledge",
+      "name": "Aire de Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "litten_torracat",
@@ -144,6 +464,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -153,41 +474,23 @@
         "rarity": "ultra-rare",
         "weight": 6.0,
         "levels": "5-32",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_jungle"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0725_litten.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0725_litten.json",
+        "spawnId": "litten-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
         },
         "weather": {
           "isRaining": false
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 3.31,
-        "levels": "1-15",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/rare_dark_swamp.json"
+        "spawnType": "grounded",
+        "pokemon": "litten",
+        "type": "pokemon"
       }
     ]
   ],
@@ -201,7 +504,7 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/litten.json",
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/litten.json",
     "datapacks\\Academy\\data\\cobblemon\\species\\generation7\\litten.json"
   ]
 }

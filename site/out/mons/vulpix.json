@@ -2,20 +2,41 @@
   "id": "vulpix",
   "dexnum": 37,
   "name": "Vulpix",
+  "nameFr": "Goupix",
+  "description": "À l'intérieur du corps de Goupix se trouve une flamme qui ne s'éteint jamais. Pendant la journée, lorsque la température augmente, ce Pokémon crache des flammes pour éviter que son corps ne devienne trop chaud.",
   "primaryType": "fire",
   "secondaryType": "",
+  "primaryTypeFr": "Feu",
+  "secondaryTypeFr": "",
+  "height": 6,
+  "weight": 99,
   "maleRatio": 0.25,
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 0.7,
+    "height": 1.1,
+    "fixed": false
+  },
   "labels": [
     "gen1",
     "kantonian_form"
   ],
   "abilities": [
-    "flashfire",
-    "h:drought"
+    {
+      "id": "flashfire",
+      "name": "Torche",
+      "hidden": false
+    },
+    {
+      "id": "drought",
+      "name": "Sécheresse",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 38,
     "attack": 41,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 60,
   "experienceGroup": "medium_fast",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 5,
     "entries": [
@@ -41,142 +64,647 @@
         "item": "minecraft:sweet_berries",
         "percentage": null,
         "quantityRange": "1-3",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:sweet_berries"
       },
       {
         "item": "minecraft:charcoal",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:charcoal"
       },
       {
         "item": "cobblemon:rawst_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Fraive"
       }
     ]
   },
   "moves": [
-    "1:ember",
-    "1:tailwhip",
-    "4:disable",
-    "8:quickattack",
-    "12:spite",
-    "16:incinerate",
-    "20:confuseray",
-    "24:willowisp",
-    "28:flameburst",
-    "32:flamethrower",
-    "36:imprison",
-    "40:firespin",
-    "44:safeguard",
-    "48:inferno",
-    "52:grudge",
-    "egg:babydolleyes",
-    "egg:captivate",
-    "egg:disable",
-    "egg:extrasensory",
-    "egg:feintattack",
-    "egg:flail",
-    "egg:flamecharge",
-    "egg:healingwish",
-    "egg:howl",
-    "egg:hypnosis",
-    "egg:memento",
-    "egg:roar",
-    "egg:secretpower",
-    "tm:agility",
-    "tm:babydolleyes",
-    "tm:batonpass",
-    "tm:bodyslam",
-    "tm:burningjealousy",
-    "tm:captivate",
-    "tm:charm",
-    "tm:confuseray",
-    "tm:covet",
-    "tm:darkpulse",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:encore",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firespin",
-    "tm:flamecharge",
-    "tm:flamethrower",
-    "tm:flareblitz",
-    "tm:foulplay",
-    "tm:headbutt",
-    "tm:heatwave",
-    "tm:helpinghand",
-    "tm:hex",
-    "tm:imprison",
-    "tm:incinerate",
-    "tm:irontail",
-    "tm:mysticalfire",
-    "tm:nastyplot",
-    "tm:ominouswind",
-    "tm:overheat",
-    "tm:painsplit",
-    "tm:payback",
-    "tm:powerswap",
-    "tm:protect",
-    "tm:psychup",
-    "tm:rest",
-    "tm:roar",
-    "tm:roleplay",
-    "tm:safeguard",
-    "tm:secretpower",
-    "tm:sleeptalk",
-    "tm:snarl",
-    "tm:spite",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:tailslap",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:weatherball",
-    "tm:willowisp",
-    "tm:zenheadbutt",
-    "tutor:babydolleyes",
-    "tutor:burningjealousy",
-    "tutor:covet",
-    "tutor:darkpulse",
-    "tutor:energyball",
-    "tutor:flamethrower",
-    "tutor:foulplay",
-    "tutor:heatwave",
-    "tutor:helpinghand",
-    "tutor:irontail",
-    "tutor:mysticalfire",
-    "tutor:ominouswind",
-    "tutor:painsplit",
-    "tutor:rest",
-    "tutor:roleplay",
-    "tutor:sleeptalk",
-    "tutor:snarl",
-    "tutor:spite",
-    "tutor:swift",
-    "tutor:zenheadbutt"
+    {
+      "id": "ember",
+      "name": "Flammèche",
+      "category": "1"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "1"
+    },
+    {
+      "id": "disable",
+      "name": "Entrave",
+      "category": "4"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "8"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "12"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "16"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "20"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "24"
+    },
+    {
+      "id": "flameburst",
+      "name": "Rebondifeu",
+      "category": "28"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "32"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "36"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "40"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "44"
+    },
+    {
+      "id": "inferno",
+      "name": "Feu d'Enfer",
+      "category": "48"
+    },
+    {
+      "id": "grudge",
+      "name": "Rancune",
+      "category": "52"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "egg"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "egg"
+    },
+    {
+      "id": "disable",
+      "name": "Entrave",
+      "category": "egg"
+    },
+    {
+      "id": "extrasensory",
+      "name": "Extrasenseur",
+      "category": "egg"
+    },
+    {
+      "id": "feintattack",
+      "name": "Feinte",
+      "category": "egg"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "egg"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "egg"
+    },
+    {
+      "id": "healingwish",
+      "name": "Vœu Soin",
+      "category": "egg"
+    },
+    {
+      "id": "howl",
+      "name": "Grondement",
+      "category": "egg"
+    },
+    {
+      "id": "hypnosis",
+      "name": "Hypnose",
+      "category": "egg"
+    },
+    {
+      "id": "memento",
+      "name": "Souvenir",
+      "category": "egg"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "egg"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tm"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "mysticalfire",
+      "name": "Feu Ensorcelé",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "powerswap",
+      "name": "Permuforce",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailslap",
+      "name": "Plumo-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tutor"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "mysticalfire",
+      "name": "Feu Ensorcelé",
+      "category": "tutor"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "rage",
+      "name": "Frénésie",
+      "category": "legacy"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "skullbash",
+      "name": "Coud'Krâne",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [
     "Alola"
   ],
-  "types": [],
   "evolutions": [
     {
       "id": "vulpix_ninetales",
       "variant": "item_interact",
       "result": "ninetales",
-      "consumeHeldItem": true,
+      "consumeHeldItem": false,
       "learnableMoves": [],
       "requirements": [],
       "requiredContext": "cobblemon:fire_stone"
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -186,9 +714,6 @@
         "rarity": "uncommon",
         "weight": 5.52,
         "levels": "5-30",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest",
@@ -198,10 +723,20 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0037_vulpix.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0037_vulpix.json",
+        "spawnId": "vulpix-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "vulpix",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 2.5,
+          "condition": {
+            "timeRange": "twilight"
+          }
         }
       }
     ],
@@ -213,9 +748,6 @@
         "rarity": "common",
         "weight": 1.9,
         "levels": "5-30",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_forest"
@@ -224,26 +756,11 @@
             "#cobblemon:nether/is_frozen"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0037_vulpix.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 3.4,
-        "levels": "4-18",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/common_scarlet_forest.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0037_vulpix.json",
+        "spawnId": "vulpix-2",
+        "spawnType": "grounded",
+        "pokemon": "vulpix",
+        "type": "pokemon"
       }
     ]
   ],
@@ -257,6 +774,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/vulpix.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/vulpix.json"
   ]
 }

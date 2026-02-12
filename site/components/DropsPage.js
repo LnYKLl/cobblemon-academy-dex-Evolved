@@ -2,8 +2,10 @@ import {
   ref,
   computed,
   onMounted,
+  inject,
 } from "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js";
-import { spriteFrom } from "../utils/helpers.js"; // <- adjust path if your utils live elsewhere
+import { spriteFrom } from "../utils/helpers.js";
+import { translateItem, translatePokemonName, t, getCurrentLang } from "../utils/i18n.js";
 
 export default {
   name: "DropsPage",
@@ -11,18 +13,28 @@ export default {
     dropItems: { type: Array, default: () => [] }, // [{ item, mons:[{id,name,percentage,quantityRange,biomes,excludeBiomes}] }]
     sprites: { type: Object, default: () => ({ images: {} }) }, // NEW
     route: { type: Object, default: () => ({}) },
+    currentLang: { type: String, default: 'fr' },
   },
   setup(props) {
     const q = ref("");
     const page = ref(1);
     const pageSize = ref(25);
+    const i18n = inject("i18n", ref({}));
 
     const normalizeItemName = (id) => {
       if (!id) return "";
+      // Try translation first
+      const translated = translateItem(id);
+      if (translated !== id.split(':').pop().replace(/_/g, ' ')) {
+        return translated;
+      }
+      // Fallback to basic normalization
       const parts = id.split(":");
       const name = parts.length > 1 ? parts[1] : parts[0];
       return name.replace(/_/g, " ");
     };
+
+    const tName = (id) => translatePokemonName(id, i18n.value, props.currentLang);
 
     const needle = computed(() => q.value.trim().toLowerCase());
 
@@ -116,32 +128,35 @@ export default {
       highlight,
       sprite,
       normalizeItemName,
+      tName,
+      t,
+      getCurrentLang,
     };
   },
   template: `
     <section class="space-y-4">
       <!-- Controls -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-3 items-center">
-        <input v-model="q" type="search" placeholder="Search item or mon…"
-               class="rounded-xl border-slate-300 focus:border-indigo-500 focus:ring-indigo-500" />
-        <div class="text-sm text-slate-600 md:col-span-2 md:justify-self-end md:text-right">
-          Showing {{ paged.length }} of {{ totalPages * pageSize }} (page {{ page }} / {{ totalPages }})
+        <input v-model="q" type="search" :placeholder="t('search.item')"
+               class="search-input" />
+        <div class="text-sm text-[var(--text-muted)] md:col-span-2 md:justify-self-end md:text-right">
+          {{ paged.length }} résultats sur {{ totalPages * pageSize }} (page {{ page }} / {{ totalPages }})
         </div>
       </div>
 
       <!-- Pagination -->
       <div class="flex items-center gap-2 text-sm">
         <button @click="page = Math.max(1, page-1)" :disabled="page===1"
-                class="px-2 py-1 rounded-lg ring-1 ring-slate-300 disabled:opacity-40">Prev</button>
-        <select v-model.number="page" class="rounded-lg ring-1 ring-slate-300 px-2 py-1">
+                class="btn btn-secondary px-3 py-1 disabled:opacity-40">Préc.</button>
+        <select v-model.number="page" class="styled-select py-1">
           <option v-for="p in totalPages" :key="p" :value="p">{{ p }}</option>
         </select>
         <button @click="page = Math.min(totalPages, page+1)" :disabled="page===totalPages"
-                class="px-2 py-1 rounded-lg ring-1 ring-slate-300 disabled:opacity-40">Next</button>
+                class="btn btn-secondary px-3 py-1 disabled:opacity-40">Suiv.</button>
 
-        <div class="ml-auto flex items-center gap-2">
-          <span>Per page</span>
-          <select v-model.number="pageSize" class="rounded-lg ring-1 ring-slate-300 px-2 py-1">
+        <div class="ml-auto flex items-center gap-2 text-[var(--text-muted)]">
+          <span>Par page</span>
+          <select v-model.number="pageSize" class="styled-select py-1">
             <option :value="10">10</option>
             <option :value="25">25</option>
             <option :value="50">50</option>
@@ -152,66 +167,69 @@ export default {
 
       <!-- Items -->
       <ul class="space-y-4">
-        <li v-for="it in paged" :key="it.item" class="rounded-2xl ring-1 ring-slate-200 overflow-hidden">
-          <div class="px-4 py-3 border-b">
-            <h3 class="font-semibold">
+        <li v-for="it in paged" :key="it.item" class="glass-card rounded-2xl overflow-hidden">
+          <div class="px-4 py-3 border-b border-[var(--border)] bg-[var(--surface-hover)]">
+            <h3 class="font-semibold text-[var(--text)]">
                 <span v-html="highlight(normalizeItemName(it.item))"></span>
-                <span class="ml-2 text-slate-500 text-sm" v-html="'(' + it.item + ')'"></span>
+                <span class="ml-2 text-[var(--text-muted)] text-sm font-mono">{{ it.item }}</span>
             </h3>
            </div>
 
           <!-- Responsive table wrapper -->
           <div class="overflow-x-auto">
             <table class="min-w-full text-sm">
-              <thead class="">
-                <tr class="[&>th]:px-4 [&>th]:py-2 text-left">
-                  <th style="width: 36%">Mon</th> <!-- wider to fit sprite + names -->
-                  <th style="width: 12%">Rate</th>
-                  <th style="width: 14%">Range</th>
+              <thead>
+                <tr class="[&>th]:px-4 [&>th]:py-2 text-left text-[var(--text-muted)] border-b border-[var(--border)]">
+                  <th style="width: 36%">Pokémon</th>
+                  <th style="width: 12%">Taux</th>
+                  <th style="width: 14%">Quantité</th>
                   <th v-if="hasBiomeInfo(it)">Biomes</th>
-                  <th style="width: 12%">Link</th>
+                  <th style="width: 12%">Lien</th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-slate-100">
-                <tr v-for="m in (it.mons || [])" :key="m.id" class="[&>td]:px-4 [&>td]:py-2">
+              <tbody class="divide-y divide-[var(--border)]">
+                <tr v-for="m in (it.mons || [])" :key="m.id" class="[&>td]:px-4 [&>td]:py-2 hover:bg-[var(--surface-hover)] transition-colors">
                   <!-- Mon cell with sprite -->
                   <td class="flex items-center gap-3">
-                    <img v-if="sprite(m.id)" :src="sprite(m.id)" loading="lazy" class="h-8 w-8 shrink-0 rounded bg-slate-100 ring-1 ring-slate-200" alt="" />
+                    <div class="pokemon-sprite w-10 h-10 flex items-center justify-center shrink-0">
+                      <img v-if="sprite(m.id)" :src="sprite(m.id)" loading="lazy" class="h-8 w-8 object-contain" alt="" />
+                      <span v-else class="text-lg">❓</span>
+                    </div>
                     <div>
-                      <div class="font-medium" v-html="highlight(m.name || m.id)"></div>
-                      <div class="text-xs text-slate-500" v-if="m.id && m.name && m.name !== m.id">{{ m.id }}</div>
+                      <div class="font-medium text-[var(--text)]">{{ tName(m.id) }}</div>
+                      <div class="text-xs text-[var(--text-muted)]" v-if="m.id">{{ m.id }}</div>
                     </div>
                   </td>
 
-                  <td>
-                    <span v-if="m.percentage != null">{{ m.percentage }}%</span>
-                    <span v-else class="text-slate-400">—</span>
+                  <td class="text-[var(--text)]">
+                    <span v-if="m.percentage != null" class="chip chip-success">{{ m.percentage }}%</span>
+                    <span v-else class="text-[var(--text-muted)]">—</span>
                   </td>
 
-                  <td>
-                    <span v-if="m.quantityRange">{{ m.quantityRange }}</span>
-                    <span v-else class="text-slate-400">—</span>
+                  <td class="text-[var(--text)]">
+                    <span v-if="m.quantityRange" class="chip chip-neutral">{{ m.quantityRange }}</span>
+                    <span v-else class="text-[var(--text-muted)]">—</span>
                   </td>
 
-                  <td v-if="hasBiomeInfo(it)" class="text-slate-600">
-                    <div v-if="m.biomes && m.biomes.length" class="whitespace-pre-wrap">
-                      in {{ m.biomes.join(", ") }}
+                  <td v-if="hasBiomeInfo(it)" class="text-[var(--text-muted)]">
+                    <div v-if="m.biomes && m.biomes.length" class="whitespace-pre-wrap text-green-500">
+                      ✓ {{ m.biomes.join(", ") }}
                     </div>
-                    <div v-if="m.excludeBiomes && m.excludeBiomes.length" class="text-slate-500 whitespace-pre-wrap">
-                      not in {{ m.excludeBiomes.join(", ") }}
+                    <div v-if="m.excludeBiomes && m.excludeBiomes.length" class="text-red-500 whitespace-pre-wrap">
+                      ✗ {{ m.excludeBiomes.join(", ") }}
                     </div>
                   </td>
 
                   <td>
                     <button @click="goMon(m.id)"
-                      class="px-2 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 ring-1 ring-slate-300">
-                      Open
+                      class="btn btn-primary px-3 py-1 text-sm">
+                      Voir
                     </button>
                   </td>
                 </tr>
 
                 <tr v-if="(it.mons || []).length === 0">
-                  <td colspan="5" class="px-4 py-6 text-center text-slate-500">No matching mons</td>
+                  <td colspan="5" class="px-4 py-6 text-center text-[var(--text-muted)]">Aucun Pokémon trouvé</td>
                 </tr>
               </tbody>
             </table>

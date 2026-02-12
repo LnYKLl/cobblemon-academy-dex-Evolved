@@ -2,21 +2,46 @@
   "id": "trapinch",
   "dexnum": 328,
   "name": "Trapinch",
+  "nameFr": "Kraknoix",
+  "description": "Kraknoix est un chasseur patient. Dans le désert, il creuse un trou dont on ne peut pas s'échapper et attend que sa proie tombe dedans. Ce Pokémon peut se passer d'eau une semaine entière.",
   "primaryType": "ground",
   "secondaryType": "",
+  "primaryTypeFr": "Sol",
+  "secondaryTypeFr": "",
+  "height": 7,
+  "weight": 150,
   "maleRatio": 0.5,
+  "baseScale": 0.75,
+  "hitbox": {
+    "width": 0.8,
+    "height": 0.9,
+    "fixed": false
+  },
   "labels": [
     "gen3"
   ],
   "abilities": [
-    "hypercutter",
-    "arenatrap",
-    "h:sheerforce"
+    {
+      "id": "hypercutter",
+      "name": "Hyper Cutter",
+      "hidden": false
+    },
+    {
+      "id": "arenatrap",
+      "name": "Piège Sable",
+      "hidden": false
+    },
+    {
+      "id": "sheerforce",
+      "name": "Sans Limite",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug",
     "dragon"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 45,
     "attack": 100,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 58,
   "experienceGroup": "medium_slow",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -42,96 +69,481 @@
         "item": "cobblemon:soft_sand",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Sable Doux"
       },
       {
         "item": "cobblemon:yache_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Nanone"
       }
     ]
   },
   "moves": [
-    "1:sandattack",
-    "1:feintattack",
-    "1:bide",
-    "1:astonish",
-    "8:bite",
-    "12:mudslap",
-    "16:sandtomb",
-    "20:bulldoze",
-    "24:dig",
-    "28:crunch",
-    "32:sandstorm",
-    "36:earthpower",
-    "40:earthquake",
-    "44:superpower",
-    "48:fissure",
-    "egg:bugbite",
-    "egg:feint",
-    "egg:firstimpression",
-    "egg:flail",
-    "egg:furycutter",
-    "egg:gust",
-    "egg:quickattack",
-    "tm:bodyslam",
-    "tm:bugbite",
-    "tm:bulldoze",
-    "tm:crunch",
-    "tm:dig",
-    "tm:earthpower",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:facade",
-    "tm:focusenergy",
-    "tm:furycutter",
-    "tm:gigadrain",
-    "tm:headbutt",
-    "tm:hyperbeam",
-    "tm:laserfocus",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:protect",
-    "tm:rest",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:sandstorm",
-    "tm:sandtomb",
-    "tm:scorchingsands",
-    "tm:signalbeam",
-    "tm:sleeptalk",
-    "tm:stealthrock",
-    "tm:stoneedge",
-    "tm:strength",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superpower",
-    "tm:takedown",
-    "tm:terablast",
-    "tutor:bugbite",
-    "tutor:bulldoze",
-    "tutor:earthpower",
-    "tutor:focusenergy",
-    "tutor:furycutter",
-    "tutor:gigadrain",
-    "tutor:hyperbeam",
-    "tutor:laserfocus",
-    "tutor:mudslap",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:scorchingsands",
-    "tutor:signalbeam",
-    "tutor:sleeptalk",
-    "tutor:stealthrock",
-    "tutor:stoneedge",
-    "tutor:superpower"
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "1"
+    },
+    {
+      "id": "feintattack",
+      "name": "Feinte",
+      "category": "1"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "1"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "1"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "8"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "12"
+    },
+    {
+      "id": "sandtomb",
+      "name": "Tourbi-Sable",
+      "category": "16"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "20"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "24"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "28"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "32"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "36"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "40"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "44"
+    },
+    {
+      "id": "fissure",
+      "name": "Abîme",
+      "category": "48"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "egg"
+    },
+    {
+      "id": "feint",
+      "name": "Ruse",
+      "category": "egg"
+    },
+    {
+      "id": "firstimpression",
+      "name": "Escarmouche",
+      "category": "egg"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "egg"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "egg"
+    },
+    {
+      "id": "gust",
+      "name": "Tornade",
+      "category": "egg"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "egg"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "sandtomb",
+      "name": "Tourbi-Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "trapinch_vibrava",
@@ -149,6 +561,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -159,18 +572,25 @@
         "rarity": "rare",
         "weight": 7.5,
         "levels": "4-29",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_desert"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0328_trapinch.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0328_trapinch.json",
+        "spawnId": "trapinch-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "trapinch",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 1.5,
+          "condition": {
+            "isRaining": true
+          }
         }
       }
     ],
@@ -182,38 +602,20 @@
         "rarity": "uncommon",
         "weight": 10.0,
         "levels": "4-29",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_desert"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0328_trapinch.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0328_trapinch.json",
+        "spawnId": "trapinch-2",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 2.6,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/rare_crystallized_desert.json"
+        "spawnType": "grounded",
+        "pokemon": "trapinch",
+        "type": "pokemon"
       }
     ]
   ],
@@ -227,6 +629,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation3/trapinch.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation3/trapinch.json"
   ]
 }

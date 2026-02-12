@@ -2,20 +2,45 @@
   "id": "elgyem",
   "dexnum": 605,
   "name": "Elgyem",
+  "nameFr": "Lewsor",
+  "description": "On dit qu'il est apparu soudainement il y a 50 ans des confins d'un désert où un OVNI se serait écrasé.",
   "primaryType": "psychic",
   "secondaryType": "",
+  "primaryTypeFr": "Psy",
+  "secondaryTypeFr": "",
+  "height": 5,
+  "weight": 90,
   "maleRatio": 0.5,
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 0.6,
+    "height": 1.3,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "telepathy",
-    "synchronize",
-    "h:analytic"
+    {
+      "id": "telepathy",
+      "name": "Télépathe",
+      "hidden": false
+    },
+    {
+      "id": "synchronize",
+      "name": "Synchro",
+      "hidden": false
+    },
+    {
+      "id": "analytic",
+      "name": "Analyste",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "human_like"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 55,
     "attack": 55,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 67,
   "experienceGroup": "medium_fast",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 4,
     "entries": [
@@ -44,7 +71,8 @@
         "source": "species",
         "biomes": [
           "#cobblemon:is_end"
-        ]
+        ],
+        "itemName": "minecraft:ender_pearl"
       },
       {
         "item": "cobblemon:light_clay",
@@ -53,7 +81,8 @@
         "source": "species",
         "biomes": [
           "#cobblemon:is_end"
-        ]
+        ],
+        "itemName": "Lumargile"
       },
       {
         "item": "cobblemon:colbur_berry",
@@ -62,7 +91,8 @@
         "source": "species",
         "biomes": [
           "#cobblemon:is_end"
-        ]
+        ],
+        "itemName": "Baie Lampou"
       },
       {
         "item": "minecraft:chorus_fruit",
@@ -71,123 +101,609 @@
         "source": "spawn_pool_world",
         "biomes": [
           "#cobblemon:is_end"
-        ]
+        ],
+        "itemName": "minecraft:chorus_fruit"
       }
     ]
   },
   "moves": [
-    "1:confusion",
-    "1:growl",
-    "1:healblock",
-    "1:miracleeye",
-    "6:imprison",
-    "12:teleport",
-    "18:psybeam",
-    "24:guardsplit",
-    "24:powersplit",
-    "30:headbutt",
-    "36:zenheadbutt",
-    "43:recover",
-    "48:calmmind",
-    "54:wonderroom",
-    "60:psychic",
-    "egg:astonish",
-    "egg:barrier",
-    "egg:destinybond",
-    "egg:disable",
-    "egg:psychup",
-    "egg:simplebeam",
-    "egg:synchronoise",
-    "tm:afteryou",
-    "tm:agility",
-    "tm:allyswitch",
-    "tm:calmmind",
-    "tm:chargebeam",
-    "tm:cosmicpower",
-    "tm:darkpulse",
-    "tm:dreameater",
-    "tm:echoedvoice",
-    "tm:embargo",
-    "tm:endure",
-    "tm:energyball",
-    "tm:expandingforce",
-    "tm:facade",
-    "tm:flash",
-    "tm:gravity",
-    "tm:guardswap",
-    "tm:headbutt",
-    "tm:imprison",
-    "tm:lightscreen",
-    "tm:magiccoat",
-    "tm:meteorbeam",
-    "tm:nastyplot",
-    "tm:painsplit",
-    "tm:powerswap",
-    "tm:protect",
-    "tm:psybeam",
-    "tm:psychic",
-    "tm:psychup",
-    "tm:psyshock",
-    "tm:raindance",
-    "tm:recycle",
-    "tm:reflect",
-    "tm:rest",
-    "tm:rockslide",
-    "tm:rocktomb",
-    "tm:roleplay",
-    "tm:safeguard",
-    "tm:screech",
-    "tm:shadowball",
-    "tm:shockwave",
-    "tm:signalbeam",
-    "tm:skillswap",
-    "tm:sleeptalk",
-    "tm:snatch",
-    "tm:steelwing",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:telekinesis",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:trick",
-    "tm:trickroom",
-    "tm:uproar",
-    "tm:wonderroom",
-    "tm:zenheadbutt",
-    "tutor:afteryou",
-    "tutor:allyswitch",
-    "tutor:block",
-    "tutor:calmmind",
-    "tutor:chargebeam",
-    "tutor:darkpulse",
-    "tutor:energyball",
-    "tutor:expandingforce",
-    "tutor:gravity",
-    "tutor:magiccoat",
-    "tutor:meteorbeam",
-    "tutor:painsplit",
-    "tutor:psychic",
-    "tutor:recycle",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:roleplay",
-    "tutor:shadowball",
-    "tutor:shockwave",
-    "tutor:signalbeam",
-    "tutor:skillswap",
-    "tutor:sleeptalk",
-    "tutor:snatch",
-    "tutor:telekinesis",
-    "tutor:thunderbolt",
-    "tutor:trick",
-    "tutor:uproar",
-    "tutor:wonderroom",
-    "tutor:zenheadbutt"
+    {
+      "id": "confusion",
+      "name": "Choc Mental",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "healblock",
+      "name": "Anti-Soin",
+      "category": "1"
+    },
+    {
+      "id": "miracleeye",
+      "name": "Œil Miracle",
+      "category": "1"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "6"
+    },
+    {
+      "id": "teleport",
+      "name": "Téléport",
+      "category": "12"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "18"
+    },
+    {
+      "id": "guardsplit",
+      "name": "Partage Garde",
+      "category": "24"
+    },
+    {
+      "id": "powersplit",
+      "name": "Partage Force",
+      "category": "24"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "30"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "36"
+    },
+    {
+      "id": "recover",
+      "name": "Soin",
+      "category": "43"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "48"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "54"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "60"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "egg"
+    },
+    {
+      "id": "barrier",
+      "name": "Bouclier",
+      "category": "egg"
+    },
+    {
+      "id": "destinybond",
+      "name": "Lien du Destin",
+      "category": "egg"
+    },
+    {
+      "id": "disable",
+      "name": "Entrave",
+      "category": "egg"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "egg"
+    },
+    {
+      "id": "simplebeam",
+      "name": "Rayon Simple",
+      "category": "egg"
+    },
+    {
+      "id": "synchronoise",
+      "name": "Synchropeine",
+      "category": "egg"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "cosmicpower",
+      "name": "Force Cosmique",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "embargo",
+      "name": "Embargo",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "expandingforce",
+      "name": "Vaste Pouvoir",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "tm"
+    },
+    {
+      "id": "guardswap",
+      "name": "Permugarde",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tm"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "powerswap",
+      "name": "Permuforce",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tm"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "expandingforce",
+      "name": "Vaste Pouvoir",
+      "category": "tutor"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "tutor"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tutor"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "elgyem_beheeyem",
@@ -203,6 +719,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -212,15 +729,41 @@
         "rarity": "uncommon",
         "weight": 8.4,
         "levels": "9-34",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_end"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0605_elgyem.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0605_elgyem.json",
+        "spawnId": "elgyem-1",
+        "spawnType": "grounded",
+        "pokemon": "elgyem",
+        "type": "pokemon",
+        "drops": {
+          "amount": 4,
+          "entries": [
+            {
+              "item": "minecraft:ender_pearl",
+              "percentage": null,
+              "quantityRange": "0-1"
+            },
+            {
+              "item": "minecraft:chorus_fruit",
+              "percentage": null,
+              "quantityRange": "0-1"
+            },
+            {
+              "item": "cobblemon:light_clay",
+              "percentage": 2.5,
+              "quantityRange": null
+            },
+            {
+              "item": "cobblemon:colbur_berry",
+              "percentage": 2.5,
+              "quantityRange": null
+            }
+          ]
+        }
       }
     ],
     [
@@ -231,15 +774,16 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "9-34",
-        "contexts": [
-          "grounded"
+        "times": [
+          "night"
         ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0605_elgyem.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0605_elgyem.json",
+        "spawnId": "elgyem-2",
         "nearbyBlocks": {
           "selectors": [
             "minecraft:wheat"
@@ -248,7 +792,10 @@
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "elgyem",
+        "type": "pokemon"
       }
     ],
     [
@@ -256,34 +803,19 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "9-34",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "the_bumblezone:howling_constructs"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0605_elgyem.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0605_elgyem.json",
+        "spawnId": "elgyem-5",
+        "spawnType": "grounded",
+        "pokemon": "elgyem",
+        "excludeStructures": [
+          "#the_bumblezone:sempiternal_sanctums"
         ],
-        "rarity": "common",
-        "weight": 3.2,
-        "levels": "3-16",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/common_crystallized_desert.json"
+        "type": "pokemon"
       }
     ]
   ],
@@ -297,6 +829,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/elgyem.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/elgyem.json"
   ]
 }

@@ -2,19 +2,40 @@
   "id": "klefki",
   "dexnum": 707,
   "name": "Klefki",
+  "nameFr": "Trousselin",
+  "description": "Comme il ne se sépare jamais d'une clé qu'il trouve à son goût, les gens lui confient celle de leurs coffres, afin d'éviter de se faire voler.",
   "primaryType": "steel",
   "secondaryType": "fairy",
+  "primaryTypeFr": "Acier",
+  "secondaryTypeFr": "Fée",
+  "height": 2,
+  "weight": 30,
   "maleRatio": 0.5,
+  "baseScale": 0.35,
+  "hitbox": {
+    "width": 1.3,
+    "height": 1.9,
+    "fixed": false
+  },
   "labels": [
     "gen6"
   ],
   "abilities": [
-    "prankster",
-    "h:magician"
+    {
+      "id": "prankster",
+      "name": "Farceur",
+      "hidden": false
+    },
+    {
+      "id": "magician",
+      "name": "Magicien",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "mineral"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 57,
     "attack": 80,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 165,
   "experienceGroup": "fast",
   "catchRate": 75,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -40,104 +63,506 @@
         "item": "minecraft:name_tag",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:name_tag"
       }
     ]
   },
   "moves": [
-    "1:astonish",
-    "1:craftyshield",
-    "1:mirrorshot",
-    "1:healblock",
-    "4:tackle",
-    "8:fairywind",
-    "12:torment",
-    "16:fairylock",
-    "20:metalsound",
-    "24:drainingkiss",
-    "28:recycle",
-    "32:imprison",
-    "36:flashcannon",
-    "40:playrough",
-    "44:magicroom",
-    "48:foulplay",
-    "52:lastresort",
-    "egg:lockon",
-    "egg:magnetrise",
-    "egg:switcheroo",
-    "tm:calmmind",
-    "tm:covet",
-    "tm:cut",
-    "tm:dazzlinggleam",
-    "tm:defog",
-    "tm:drainingkiss",
-    "tm:endure",
-    "tm:facade",
-    "tm:flashcannon",
-    "tm:foulplay",
-    "tm:gigaimpact",
-    "tm:hyperbeam",
-    "tm:imprison",
-    "tm:irondefense",
-    "tm:lastresort",
-    "tm:lightscreen",
-    "tm:magiccoat",
-    "tm:magicroom",
-    "tm:magnetrise",
-    "tm:metalsound",
-    "tm:mistyterrain",
-    "tm:playrough",
-    "tm:protect",
-    "tm:psychic",
-    "tm:psychup",
-    "tm:psyshock",
-    "tm:raindance",
-    "tm:recycle",
-    "tm:reflect",
-    "tm:rest",
-    "tm:safeguard",
-    "tm:sandstorm",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:spikes",
-    "tm:steelbeam",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunderwave",
-    "tm:torment",
-    "tm:trickroom",
-    "tutor:block",
-    "tutor:calmmind",
-    "tutor:covet",
-    "tutor:dazzlinggleam",
-    "tutor:defog",
-    "tutor:flashcannon",
-    "tutor:foulplay",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:irondefense",
-    "tutor:lastresort",
-    "tutor:magiccoat",
-    "tutor:magicroom",
-    "tutor:magnetrise",
-    "tutor:playrough",
-    "tutor:psychic",
-    "tutor:recycle",
-    "tutor:rest",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:spikes",
-    "tutor:steelbeam",
-    "tutor:swift",
-    "tutor:trick"
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "1"
+    },
+    {
+      "id": "craftyshield",
+      "name": "Vigilance",
+      "category": "1"
+    },
+    {
+      "id": "mirrorshot",
+      "name": "Miroi-Tir",
+      "category": "1"
+    },
+    {
+      "id": "healblock",
+      "name": "Anti-Soin",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "4"
+    },
+    {
+      "id": "fairywind",
+      "name": "Vent Féérique",
+      "category": "8"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "12"
+    },
+    {
+      "id": "fairylock",
+      "name": "Verrou Enchanté",
+      "category": "16"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "20"
+    },
+    {
+      "id": "drainingkiss",
+      "name": "Vampibaiser",
+      "category": "24"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "28"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "32"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "36"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "40"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "44"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "48"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "52"
+    },
+    {
+      "id": "lockon",
+      "name": "Verrouillage",
+      "category": "egg"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "egg"
+    },
+    {
+      "id": "switcheroo",
+      "name": "Passe-Passe",
+      "category": "egg"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "drainingkiss",
+      "name": "Vampibaiser",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tm"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tm"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tm"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "tm"
+    },
+    {
+      "id": "mistyterrain",
+      "name": "Champ Brumeux",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tm"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tutor"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tutor"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -148,15 +573,16 @@
         "rarity": "uncommon",
         "weight": 6.0,
         "levels": "22-47",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0707_klefki.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0707_klefki.json",
+        "spawnId": "klefki-1",
+        "spawnType": "grounded",
+        "pokemon": "klefki",
+        "type": "pokemon"
       }
     ],
     [
@@ -167,18 +593,19 @@
         "rarity": "uncommon",
         "weight": 6.0,
         "levels": "22-47",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0707_klefki.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0707_klefki.json",
+        "spawnId": "klefki-2",
         "structures": [
           "#minecraft:village"
-        ]
+        ],
+        "spawnType": "grounded",
+        "pokemon": "klefki",
+        "type": "pokemon"
       }
     ],
     [
@@ -189,37 +616,19 @@
         "rarity": "common",
         "weight": 2.0,
         "levels": "22-47",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0707_klefki.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0707_klefki.json",
+        "spawnId": "klefki-3",
         "sky": {
           "canSeeSky": false
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 9.5,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_starlight_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/rare_is_starlight_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "klefki",
+        "type": "pokemon"
       }
     ]
   ],
@@ -233,6 +642,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation6/klefki.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation6/klefki.json"
   ]
 }

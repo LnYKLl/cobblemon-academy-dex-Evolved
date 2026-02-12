@@ -2,21 +2,42 @@
   "id": "zygarde",
   "dexnum": 718,
   "name": "Zygarde",
+  "nameFr": "Zygarde",
+  "description": "Il paraît qu'il vit au fond d'une grotte, d'où il surveillerait les personnes qui détruisent l'écosystème.",
   "primaryType": "dragon",
   "secondaryType": "ground",
+  "primaryTypeFr": "Dragon",
+  "secondaryTypeFr": "Sol",
+  "height": 50,
+  "weight": 3050,
   "maleRatio": -1,
+  "baseScale": 1.0,
+  "hitbox": {
+    "width": 1.5,
+    "height": 3.5,
+    "fixed": false
+  },
   "labels": [
     "gen6",
     "legendary",
     "restricted"
   ],
   "abilities": [
-    "aurabreak",
-    "h:aurabreak"
+    {
+      "id": "aurabreak",
+      "name": "Aura Inversée",
+      "hidden": false
+    },
+    {
+      "id": "aurabreak",
+      "name": "Aura Inversée",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 120,
   "baseStats": {
     "hp": 108,
     "attack": 100,
@@ -33,217 +54,583 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 300,
   "experienceGroup": "slow",
   "catchRate": 3,
+  "baseFriendship": 0,
   "drops": {
     "amount": 0,
     "entries": []
   },
   "moves": [
-    "1:bulldoze",
-    "1:dragonbreath",
-    "1:bite",
-    "1:bind",
-    "1:camouflage",
-    "1:thousandarrows",
-    "1:thousandwaves",
-    "1:coreenforcer",
-    "8:haze",
-    "16:dig",
-    "24:safeguard",
-    "32:crunch",
-    "40:dragonpulse",
-    "48:landswrath",
-    "56:glare",
-    "64:sandstorm",
-    "72:coil",
-    "80:earthquake",
-    "88:extremespeed",
-    "form_change:coreenforcer",
-    "form_change:dragondance",
-    "form_change:extremespeed",
-    "form_change:thousandarrows",
-    "form_change:thousandwaves",
-    "tm:bind",
-    "tm:block",
-    "tm:bodyslam",
-    "tm:breakingswipe",
-    "tm:brickbreak",
-    "tm:bulldoze",
-    "tm:crunch",
-    "tm:dig",
-    "tm:dracometeor",
-    "tm:dragondance",
-    "tm:dragonpulse",
-    "tm:dragontail",
-    "tm:earthpower",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:facade",
-    "tm:focusblast",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:haze",
-    "tm:highhorsepower",
-    "tm:hyperbeam",
-    "tm:hypervoice",
-    "tm:irontail",
-    "tm:outrage",
-    "tm:painsplit",
-    "tm:payback",
-    "tm:protect",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:reversal",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:safeguard",
-    "tm:sandstorm",
-    "tm:scaleshot",
-    "tm:scorchingsands",
-    "tm:shockwave",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:sludgewave",
-    "tm:spite",
-    "tm:stompingtantrum",
-    "tm:stoneedge",
-    "tm:strength",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superpower",
-    "tm:swift",
-    "tm:terablast",
-    "tm:zenheadbutt",
-    "tutor:bind",
-    "tutor:block",
-    "tutor:bulldoze",
-    "tutor:dracometeor",
-    "tutor:dragonpulse",
-    "tutor:earthpower",
-    "tutor:gigaimpact",
-    "tutor:highhorsepower",
-    "tutor:hyperbeam",
-    "tutor:hypervoice",
-    "tutor:irontail",
-    "tutor:outrage",
-    "tutor:painsplit",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:scaleshot",
-    "tutor:scorchingsands",
-    "tutor:shockwave",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:spite",
-    "tutor:stompingtantrum",
-    "tutor:stoneedge",
-    "tutor:superpower",
-    "tutor:swift",
-    "tutor:zenheadbutt"
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "1"
+    },
+    {
+      "id": "dragonbreath",
+      "name": "Draco-Souffle",
+      "category": "1"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "1"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "1"
+    },
+    {
+      "id": "camouflage",
+      "name": "Camouflage",
+      "category": "1"
+    },
+    {
+      "id": "thousandarrows",
+      "name": "Myria-Flèches",
+      "category": "1"
+    },
+    {
+      "id": "thousandwaves",
+      "name": "Myria-Vagues",
+      "category": "1"
+    },
+    {
+      "id": "coreenforcer",
+      "name": "Sanction Suprême",
+      "category": "1"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "8"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "16"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "24"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "32"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "40"
+    },
+    {
+      "id": "landswrath",
+      "name": "Force Chtonienne",
+      "category": "48"
+    },
+    {
+      "id": "glare",
+      "name": "Regard Médusant",
+      "category": "56"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "64"
+    },
+    {
+      "id": "coil",
+      "name": "Enroulement",
+      "category": "72"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "80"
+    },
+    {
+      "id": "extremespeed",
+      "name": "Vitesse Extrême",
+      "category": "88"
+    },
+    {
+      "id": "coreenforcer",
+      "name": "Sanction Suprême",
+      "category": "form_change"
+    },
+    {
+      "id": "dragondance",
+      "name": "Danse Draco",
+      "category": "form_change"
+    },
+    {
+      "id": "extremespeed",
+      "name": "Vitesse Extrême",
+      "category": "form_change"
+    },
+    {
+      "id": "thousandarrows",
+      "name": "Myria-Flèches",
+      "category": "form_change"
+    },
+    {
+      "id": "thousandwaves",
+      "name": "Myria-Vagues",
+      "category": "form_change"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "breakingswipe",
+      "name": "Abattage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tm"
+    },
+    {
+      "id": "dragondance",
+      "name": "Danse Draco",
+      "category": "tm"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tm"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "focusblast",
+      "name": "Exploforce",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tm"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tutor"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tutor"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [
-    "10%",
-    "10%-C",
-    "50%-C",
     "Complete"
   ],
-  "types": [],
   "evolutions": [],
-  "spawns": [
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "70",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "minecraft:birch_forest",
-            "minecraft:forest",
-            "minecraft:jungle",
-            "minecraft:mangrove_swamp",
-            "minecraft:swamp"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-zygarde100.json",
-        "keyItem": "myths_and_legends:zygarde_cube"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "70",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_forest",
-            "#cobblemon:is_cave",
-            "#cobblemon:is_swamp"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-zygarde100.json",
-        "keyItem": "myths_and_legends:zygarde_cube"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "70",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_forest",
-            "#cobblemon:is_cave",
-            "#cobblemon:is_swamp"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-zygarde100.json",
-        "keyItem": "myths_and_legends:zygarde_cell"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "70",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_forest",
-            "#cobblemon:is_cave",
-            "#cobblemon:is_swamp"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-zygarde100.json",
-        "keyItem": "myths_and_legends:zygarde_core"
-      }
-    ]
-  ],
-  "implemented": false,
+  "preEvolution": null,
+  "spawns": [],
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/zygarde.png"
@@ -253,8 +640,7 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation6/zygarde.json",
-    "Cobblemon_MegaShowdown-10.0.7-release-fabric.jar!/data/cobblemon/species/generation6/zygarde.json",
-    "datapacks\\CCC_MAL_1.6.4.1\\data\\cobblemon\\species\\zygarde.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation6/zygarde.json",
+    "datapacks\\CCC_2.0\\data\\cobblemon\\species\\generation6\\zygarde.json"
   ]
 }

@@ -2,20 +2,45 @@
   "id": "morelull",
   "dexnum": 755,
   "name": "Morelull",
+  "nameFr": "Spododo",
+  "description": "Il aime les endroits sombres et humides. La nuit, il fait rayonner les spores contenues dans ses chapeaux.",
   "primaryType": "grass",
   "secondaryType": "fairy",
+  "primaryTypeFr": "Plante",
+  "secondaryTypeFr": "Fée",
+  "height": 2,
+  "weight": 15,
   "maleRatio": 0.5,
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 0.5,
+    "height": 0.5,
+    "fixed": false
+  },
   "labels": [
     "gen7"
   ],
   "abilities": [
-    "illuminate",
-    "effectspore",
-    "h:raindish"
+    {
+      "id": "illuminate",
+      "name": "Lumiattirance",
+      "hidden": false
+    },
+    {
+      "id": "effectspore",
+      "name": "Pose Spore",
+      "hidden": false
+    },
+    {
+      "id": "raindish",
+      "name": "Cuvette",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "grass"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 40,
     "attack": 35,
@@ -32,95 +57,426 @@
     "special_defence": 1,
     "speed": 0
   },
+  "baseExperienceYield": 57,
   "experienceGroup": "medium_fast",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
-    "amount": 2,
+    "amount": 4,
     "entries": [
       {
         "item": "minecraft:brown_mushroom",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:brown_mushroom"
+      },
+      {
+        "item": "cobblemon:luminous_moss",
+        "percentage": 2.5,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Lichen Lumineux"
+      },
+      {
+        "item": "cobblemon:bright_powder",
+        "percentage": 2.5,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Poudre Claire"
       },
       {
         "item": "cobblemon:kebia_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Kébia"
       }
     ]
   },
   "moves": [
-    "1:absorb",
-    "1:astonish",
-    "4:confuseray",
-    "8:ingrain",
-    "12:megadrain",
-    "16:sleeppowder",
-    "20:moonlight",
-    "25:strengthsap",
-    "28:gigadrain",
-    "32:dazzlinggleam",
-    "36:spore",
-    "40:moonblast",
-    "44:dreameater",
-    "egg:growth",
-    "egg:leechseed",
-    "egg:poisonpowder",
-    "egg:spotlight",
-    "egg:stunspore",
-    "tm:afteryou",
-    "tm:amnesia",
-    "tm:confuseray",
-    "tm:dazzlinggleam",
-    "tm:drainingkiss",
-    "tm:dreameater",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:flash",
-    "tm:gigadrain",
-    "tm:grassknot",
-    "tm:lightscreen",
-    "tm:magiccoat",
-    "tm:magicroom",
-    "tm:naturepower",
-    "tm:pollenpuff",
-    "tm:protect",
-    "tm:recycle",
-    "tm:rest",
-    "tm:safeguard",
-    "tm:seedbomb",
-    "tm:signalbeam",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:solarbeam",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:synthesis",
-    "tm:terablast",
-    "tm:thunderwave",
-    "tm:wonderroom",
-    "tm:worryseed",
-    "tutor:afteryou",
-    "tutor:dazzlinggleam",
-    "tutor:energyball",
-    "tutor:gigadrain",
-    "tutor:magiccoat",
-    "tutor:magicroom",
-    "tutor:recycle",
-    "tutor:rest",
-    "tutor:seedbomb",
-    "tutor:signalbeam",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:synthesis",
-    "tutor:wonderroom",
-    "tutor:worryseed"
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "1"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "1"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "4"
+    },
+    {
+      "id": "ingrain",
+      "name": "Racines",
+      "category": "8"
+    },
+    {
+      "id": "megadrain",
+      "name": "Méga-Sangsue",
+      "category": "12"
+    },
+    {
+      "id": "sleeppowder",
+      "name": "Poudre Dodo",
+      "category": "16"
+    },
+    {
+      "id": "moonlight",
+      "name": "Rayon Lune",
+      "category": "20"
+    },
+    {
+      "id": "strengthsap",
+      "name": "Vole-Force",
+      "category": "25"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "28"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "32"
+    },
+    {
+      "id": "spore",
+      "name": "Spore",
+      "category": "36"
+    },
+    {
+      "id": "moonblast",
+      "name": "Pouvoir Lunaire",
+      "category": "40"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "44"
+    },
+    {
+      "id": "growth",
+      "name": "Croissance",
+      "category": "egg"
+    },
+    {
+      "id": "leechseed",
+      "name": "Vampigraine",
+      "category": "egg"
+    },
+    {
+      "id": "poisonpowder",
+      "name": "Poudre Toxik",
+      "category": "egg"
+    },
+    {
+      "id": "spotlight",
+      "name": "Projecteur",
+      "category": "egg"
+    },
+    {
+      "id": "stunspore",
+      "name": "Para-Spore",
+      "category": "egg"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "drainingkiss",
+      "name": "Vampibaiser",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tm"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "pollenpuff",
+      "name": "Boule Pollen",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tm"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tutor"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tutor"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "morelull_shiinotic",
@@ -136,6 +492,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -145,9 +502,6 @@
         "rarity": "common",
         "weight": 1.8,
         "levels": "4-29",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether",
@@ -156,7 +510,14 @@
             "#cobblemon:is_mushroom"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0755_morelull.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0755_morelull.json",
+        "spawnId": "morelull-1",
+        "light": {
+          "maxLight": 7
+        },
+        "spawnType": "grounded",
+        "pokemon": "morelull",
+        "type": "pokemon"
       }
     ],
     [
@@ -167,19 +528,27 @@
         "rarity": "common",
         "weight": 1.8,
         "levels": "4-29",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0755_morelull.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0755_morelull.json",
+        "spawnId": "morelull-2",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "morelull",
+        "excludeStructures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "excludeYLevel": {
+          "minY": -41,
+          "maxY": 9
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -190,15 +559,16 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "4-29",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_fungus"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0755_morelull.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0755_morelull.json",
+        "spawnId": "morelull-3",
+        "spawnType": "grounded",
+        "pokemon": "morelull",
+        "type": "pokemon"
       }
     ],
     [
@@ -209,9 +579,6 @@
         "rarity": "common",
         "weight": 1.8,
         "levels": "4-29",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -220,7 +587,8 @@
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0755_morelull.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0755_morelull.json",
+        "spawnId": "morelull-4",
         "structures": [
           "cobblemon:shipwreck_coves/lush_shipwreck_cove"
         ],
@@ -231,45 +599,10 @@
         "yLevel": {
           "minY": -41,
           "maxY": 9
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 1.1,
-        "levels": "4-19",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_starlight_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/common_is_starlight_forest.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 2.2,
-        "levels": "5-30",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:torreya_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/torreya_forest/common_torreya_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "morelull",
+        "type": "pokemon"
       }
     ]
   ],
@@ -283,6 +616,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/morelull.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/morelull.json"
   ]
 }

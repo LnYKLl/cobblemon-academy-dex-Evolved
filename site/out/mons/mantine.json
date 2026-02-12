@@ -2,20 +2,45 @@
   "id": "mantine",
   "dexnum": 226,
   "name": "Mantine",
+  "nameFr": "Démanta",
+  "description": "Les jours de beau temps, on peut voir des bancs de Démanta sauter au-dessus des vagues. Le Rémoraid qui l'accompagne ne dérange pas ce Pokémon.",
   "primaryType": "water",
   "secondaryType": "flying",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "Vol",
+  "height": 21,
+  "weight": 2200,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen2"
   ],
   "abilities": [
-    "swiftswim",
-    "waterabsorb",
-    "h:waterveil"
+    {
+      "id": "swiftswim",
+      "name": "Glissade",
+      "hidden": false
+    },
+    {
+      "id": "waterabsorb",
+      "name": "Absorbe-Eau",
+      "hidden": false
+    },
+    {
+      "id": "waterveil",
+      "name": "Ignifu-Voile",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_1"
   ],
+  "eggCycles": 25,
   "baseStats": {
     "hp": 85,
     "attack": 40,
@@ -32,8 +57,10 @@
     "special_defence": 2,
     "speed": 0
   },
+  "baseExperienceYield": 170,
   "experienceGroup": "slow",
   "catchRate": 25,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,139 +68,693 @@
         "item": "minecraft:cod",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:cod"
       },
       {
         "item": "cobblemon:wacan_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Parma"
       }
     ]
   },
   "moves": [
-    "1:psybeam",
-    "1:bulletseed",
-    "1:signalbeam",
-    "1:tackle",
-    "1:bubble",
-    "1:supersonic",
-    "1:wingattack",
-    "1:roost",
-    "1:watergun",
-    "12:waterpulse",
-    "16:wideguard",
-    "20:agility",
-    "24:bubblebeam",
-    "28:headbutt",
-    "32:airslash",
-    "36:aquaring",
-    "40:bounce",
-    "44:takedown",
-    "48:hydropump",
-    "egg:confuseray",
-    "egg:haze",
-    "egg:mirrorcoat",
-    "egg:mudsport",
-    "egg:slam",
-    "egg:splash",
-    "egg:tailwind",
-    "egg:twister",
-    "egg:watersport",
-    "egg:wideguard",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:amnesia",
-    "tm:aquatail",
-    "tm:assurance",
-    "tm:blizzard",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:bounce",
-    "tm:brine",
-    "tm:bulldoze",
-    "tm:bulletseed",
-    "tm:confuseray",
-    "tm:defog",
-    "tm:dive",
-    "tm:dualwingbeat",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:facade",
-    "tm:gigaimpact",
-    "tm:gunkshot",
-    "tm:hail",
-    "tm:haze",
-    "tm:headbutt",
-    "tm:helpinghand",
-    "tm:hurricane",
-    "tm:hydropump",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:ironhead",
-    "tm:liquidation",
-    "tm:mudslap",
-    "tm:powershift",
-    "tm:protect",
-    "tm:psybeam",
-    "tm:raindance",
-    "tm:rest",
-    "tm:rockblast",
-    "tm:rockslide",
-    "tm:rocktomb",
-    "tm:roost",
-    "tm:scald",
-    "tm:seedbomb",
-    "tm:signalbeam",
-    "tm:sleeptalk",
-    "tm:stringshot",
-    "tm:substitute",
-    "tm:surf",
-    "tm:swift",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:twister",
-    "tm:waterfall",
-    "tm:waterpulse",
-    "tm:whirlpool",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:aquatail",
-    "tutor:bounce",
-    "tutor:bulldoze",
-    "tutor:defog",
-    "tutor:dive",
-    "tutor:dualwingbeat",
-    "tutor:gigaimpact",
-    "tutor:gunkshot",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:ironhead",
-    "tutor:liquidation",
-    "tutor:mudslap",
-    "tutor:powershift",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:roost",
-    "tutor:seedbomb",
-    "tutor:signalbeam",
-    "tutor:sleeptalk",
-    "tutor:stringshot",
-    "tutor:swift",
-    "tutor:tailwind",
-    "tutor:twister",
-    "tutor:waterpulse"
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "1"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "1"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "bubble",
+      "name": "Écume",
+      "category": "1"
+    },
+    {
+      "id": "supersonic",
+      "name": "Ultrason",
+      "category": "1"
+    },
+    {
+      "id": "wingattack",
+      "name": "Cru-Ailes",
+      "category": "1"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "1"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "1"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "12"
+    },
+    {
+      "id": "wideguard",
+      "name": "Garde Large",
+      "category": "16"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "20"
+    },
+    {
+      "id": "bubblebeam",
+      "name": "Bulles d'O",
+      "category": "24"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "28"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "32"
+    },
+    {
+      "id": "aquaring",
+      "name": "Anneau Hydro",
+      "category": "36"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "40"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "44"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "48"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "egg"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "egg"
+    },
+    {
+      "id": "mirrorcoat",
+      "name": "Voile Miroir",
+      "category": "egg"
+    },
+    {
+      "id": "mudsport",
+      "name": "Lance-Boue",
+      "category": "egg"
+    },
+    {
+      "id": "slam",
+      "name": "Souplesse",
+      "category": "egg"
+    },
+    {
+      "id": "splash",
+      "name": "Trempette",
+      "category": "egg"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "egg"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "egg"
+    },
+    {
+      "id": "watersport",
+      "name": "Tourniquet",
+      "category": "egg"
+    },
+    {
+      "id": "wideguard",
+      "name": "Garde Large",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "powershift",
+      "name": "Échange Force",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "powershift",
+      "name": "Échange Force",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "mantyke",
   "spawns": [
     [
       {
@@ -183,22 +764,23 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "30-49",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lukewarm_ocean",
             "#cobblemon:is_warm_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0226_mantine.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0226_mantine.json",
+        "spawnId": "mantine-1",
         "sky": {
           "canSeeSky": true
         },
         "yLevel": {
           "minY": 48
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "mantine",
+        "type": "pokemon"
       }
     ],
     [
@@ -206,9 +788,6 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "30-49",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
@@ -218,10 +797,17 @@
             "#cobblemon:is_frozen_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0226_mantine.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0226_mantine.json",
+        "spawnId": "mantine-2",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "mantine",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -229,9 +815,6 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "30-49",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
@@ -241,9 +824,23 @@
             "#cobblemon:is_frozen_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0226_mantine.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0226_mantine.json",
+        "spawnId": "mantine-3",
         "sky": {
           "canSeeSky": true
+        },
+        "spawnType": "fishing",
+        "pokemon": "mantine",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 1,
+            "maxLureLevel": 2
+          }
         }
       }
     ],
@@ -255,16 +852,14 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "30-49",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lukewarm_ocean",
             "#cobblemon:is_warm_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0226_mantine.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0226_mantine.json",
+        "spawnId": "mantine-4",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
@@ -272,7 +867,10 @@
         },
         "yLevel": {
           "minY": 48
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "mantine",
+        "type": "pokemon"
       }
     ],
     [
@@ -280,9 +878,6 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "30-49",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
@@ -292,12 +887,19 @@
             "#cobblemon:is_frozen_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0226_mantine.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0226_mantine.json",
+        "spawnId": "mantine-5",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "mantine",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -305,9 +907,6 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "30-49",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
@@ -317,31 +916,26 @@
             "#cobblemon:is_frozen_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0226_mantine.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0226_mantine.json",
+        "spawnId": "mantine-6",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "water"
-        ],
-        "rarity": "uncommon",
-        "weight": 3.3,
-        "levels": "18-34",
-        "contexts": [
-          "submerged"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_safari_ocean"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_safari_ocean/uncommon_is_safari_ocean.json"
+        "spawnType": "fishing",
+        "pokemon": "mantine",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 1,
+            "maxLureLevel": 2
+          }
+        }
       }
     ]
   ],
@@ -355,6 +949,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation2/mantine.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation2/mantine.json"
   ]
 }

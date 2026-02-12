@@ -2,21 +2,46 @@
   "id": "arcanine_hisui",
   "dexnum": 59,
   "name": "Arcanine Hisui",
+  "nameFr": "Arcanine Hisui",
+  "description": "Il inflige des morsures grâce à ses canines enveloppées de flammes ardentes. Malgré sa grande taille, il est très agile : il semble danser autour de ses ennemis déconcertés.",
   "primaryType": "fire",
   "secondaryType": "rock",
+  "primaryTypeFr": "Feu",
+  "secondaryTypeFr": "Roche",
+  "height": 20,
+  "weight": 1680,
   "maleRatio": 0.75,
+  "baseScale": 1.1,
+  "hitbox": {
+    "height": 1.7,
+    "fixed": false,
+    "width": 1.2
+  },
   "labels": [
     "gen8a",
     "hisuian_form"
   ],
   "abilities": [
-    "intimidate",
-    "flashfire",
-    "h:rockhead"
+    {
+      "id": "intimidate",
+      "name": "Intimidation",
+      "hidden": false
+    },
+    {
+      "id": "flashfire",
+      "name": "Torche",
+      "hidden": false
+    },
+    {
+      "id": "rockhead",
+      "name": "Tête de Roc",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 95,
     "attack": 115,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 194,
   "experienceGroup": "slow",
   "catchRate": 75,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -42,149 +69,559 @@
         "item": "minecraft:bone",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:bone"
       },
       {
         "item": "cobblemon:rawst_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Fraive"
       }
     ]
   },
   "moves": [
-    "1:rockslide",
-    "1:firefang",
-    "1:extremespeed",
-    "1:flamewheel",
-    "1:flareblitz",
-    "1:howl",
-    "1:helpinghand",
-    "1:crunch",
-    "1:reversal",
-    "1:retaliate",
-    "1:takedown",
-    "1:agility",
-    "1:rockthrow",
-    "1:ember",
-    "1:roar",
-    "1:bite",
-    "1:leer",
-    "5:flamethrower",
-    "64:ragingfury",
-    "egg:covet",
-    "egg:doubleedge",
-    "egg:doublekick",
-    "egg:headsmash",
-    "egg:morningsun",
-    "egg:thrash",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:closecombat",
-    "tm:covet",
-    "tm:crunch",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:dragonpulse",
-    "tm:endure",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firefang",
-    "tm:firespin",
-    "tm:flamecharge",
-    "tm:flamethrower",
-    "tm:flareblitz",
-    "tm:gigaimpact",
-    "tm:heatcrash",
-    "tm:heatwave",
-    "tm:helpinghand",
-    "tm:hyperbeam",
-    "tm:hypervoice",
-    "tm:ironhead",
-    "tm:irontail",
-    "tm:outrage",
-    "tm:overheat",
-    "tm:powergem",
-    "tm:protect",
-    "tm:psychicfangs",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:reversal",
-    "tm:roar",
-    "tm:rockblast",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:sandstorm",
-    "tm:scaryface",
-    "tm:scorchingsands",
-    "tm:sleeptalk",
-    "tm:smackdown",
-    "tm:smartstrike",
-    "tm:snarl",
-    "tm:solarbeam",
-    "tm:stealthrock",
-    "tm:stoneedge",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:takedown",
-    "tm:temperflare",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunderfang",
-    "tm:wildcharge",
-    "tm:willowisp",
-    "tutor:aerialace",
-    "tutor:bulldoze",
-    "tutor:covet",
-    "tutor:dragonpulse",
-    "tutor:firefang",
-    "tutor:flamethrower",
-    "tutor:gigaimpact",
-    "tutor:heatwave",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:hypervoice",
-    "tutor:ironhead",
-    "tutor:irontail",
-    "tutor:outrage",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:scorchingsands",
-    "tutor:sleeptalk",
-    "tutor:snarl",
-    "tutor:stealthrock",
-    "tutor:stoneedge",
-    "tutor:thunderfang",
-    "tutor:wildcharge"
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "1"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "1"
+    },
+    {
+      "id": "extremespeed",
+      "name": "Vitesse Extrême",
+      "category": "1"
+    },
+    {
+      "id": "flamewheel",
+      "name": "Roue de Feu",
+      "category": "1"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "1"
+    },
+    {
+      "id": "howl",
+      "name": "Grondement",
+      "category": "1"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "1"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "1"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "1"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "1"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "1"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "1"
+    },
+    {
+      "id": "rockthrow",
+      "name": "Jet-Pierres",
+      "category": "1"
+    },
+    {
+      "id": "ember",
+      "name": "Flammèche",
+      "category": "1"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "1"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "5"
+    },
+    {
+      "id": "ragingfury",
+      "name": "Grand Courroux",
+      "category": "64"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "egg"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "egg"
+    },
+    {
+      "id": "doublekick",
+      "name": "Double Pied",
+      "category": "egg"
+    },
+    {
+      "id": "headsmash",
+      "name": "Fracass'Tête",
+      "category": "egg"
+    },
+    {
+      "id": "morningsun",
+      "name": "Aurore",
+      "category": "egg"
+    },
+    {
+      "id": "thrash",
+      "name": "Mania",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tm"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "heatcrash",
+      "name": "Tacle Feu",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychicfangs",
+      "name": "Psycho-Croc",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "tm"
+    },
+    {
+      "id": "smartstrike",
+      "name": "Estocorne",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "temperflare",
+      "name": "Indignition",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "growlithe hisuian",
   "spawns": [
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 2.4,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/rare_scarlet_forest.json"
-      }
-    ],
     [
       {
         "presets": [
@@ -201,10 +638,13 @@
             "#cobblemon:is_mountain"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/arcanine_hisuian.json",
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0059_arcanine_hisuian.json",
+        "spawnId": "arcanine-hisuian-1",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "pokemon": "arcanine hisuian",
+        "type": "pokemon"
       }
     ],
     [
@@ -223,10 +663,13 @@
             "#cobblemon:is_volcanic"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/arcanine_hisuian.json",
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0059_arcanine_hisuian.json",
+        "spawnId": "arcanine-hisuian-2",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "pokemon": "arcanine hisuian",
+        "type": "pokemon"
       }
     ],
     [
@@ -245,7 +688,82 @@
             "#minecraft:is_nether"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/arcanine_hisuian.json"
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0059_arcanine_hisuian.json",
+        "spawnId": "arcanine-hisuian-3",
+        "pokemon": "arcanine hisuian",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "uncommon",
+        "weight": 2,
+        "levels": "25-55",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_mountain"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0059_arcanine_hisuian.json",
+        "spawnId": "ccc-arcanine-hisuian-1",
+        "sky": {
+          "canSeeSky": true
+        },
+        "pokemon": "arcanine hisuian",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "uncommon",
+        "weight": 2.25,
+        "levels": "25-55",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_volcanic"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0059_arcanine_hisuian.json",
+        "spawnId": "ccc-arcanine-hisuian-2",
+        "sky": {
+          "canSeeSky": true
+        },
+        "pokemon": "arcanine hisuian",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "uncommon",
+        "weight": 2,
+        "levels": "25-55",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#minecraft:is_nether"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0059_arcanine_hisuian.json",
+        "spawnId": "ccc-arcanine-hisuian-3",
+        "pokemon": "arcanine hisuian",
+        "type": "pokemon"
       }
     ]
   ],
@@ -261,6 +779,6 @@
     ]
   },
   "speciesSources": [
-    "datapacks\\CCC_MAL_1.6.4.1\\data\\cobblemon\\species\\custom\\arcanine_hisuian.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/arcanine.json"
   ]
 }

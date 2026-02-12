@@ -2,20 +2,41 @@
   "id": "entei",
   "dexnum": 244,
   "name": "Entei",
+  "nameFr": "Entei",
+  "description": "Entei incarne la colère du magma. On pense que ce Pokémon est né suite à l'éruption d'un volcan. Il peut envoyer d'énormes jets de flammes qui calcinent tout ce qu'ils touchent.",
   "primaryType": "fire",
   "secondaryType": "",
+  "primaryTypeFr": "Feu",
+  "secondaryTypeFr": "",
+  "height": 21,
+  "weight": 1980,
   "maleRatio": -1,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 2,
+    "height": 2,
+    "fixed": false
+  },
   "labels": [
     "gen2",
     "legendary"
   ],
   "abilities": [
-    "pressure",
-    "h:innerfocus"
+    {
+      "id": "pressure",
+      "name": "Pression",
+      "hidden": false
+    },
+    {
+      "id": "innerfocus",
+      "name": "Attention",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 80,
   "baseStats": {
     "hp": 115,
     "attack": 115,
@@ -32,173 +53,616 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 290,
   "experienceGroup": "slow",
   "catchRate": 3,
+  "baseFriendship": 35,
   "drops": {
-    "amount": 2,
+    "amount": 5,
     "entries": [
       {
-        "item": "cobblemon:charcoal_stick",
+        "item": "cobblemon:rare_candy",
         "percentage": null,
-        "quantityRange": null,
-        "source": "species"
+        "quantityRange": "2-6",
+        "source": "species",
+        "itemName": "Super Bonbon"
       },
       {
-        "item": "cobblemon:sacred_ash",
-        "percentage": null,
+        "item": "cobblemon:fire_gem",
+        "percentage": 50.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Joyau Feu"
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "minecraft:nether_star"
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Pilule Talent"
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Patch Talent"
       }
     ]
   },
   "moves": [
-    "1:leer",
-    "1:ember",
-    "1:firespin",
-    "1:stomp",
-    "1:sacredfire",
-    "1:extremespeed",
-    "1:smokescreen",
-    "6:flamewheel",
-    "12:bite",
-    "18:calmmind",
-    "24:roar",
-    "30:firefang",
-    "36:scaryface",
-    "42:crunch",
-    "48:extrasensory",
-    "54:lavaplume",
-    "60:swagger",
-    "66:sunnyday",
-    "72:fireblast",
-    "78:eruption",
-    "tm:agility",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:calmmind",
-    "tm:crunch",
-    "tm:cut",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:endure",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firefang",
-    "tm:firespin",
-    "tm:flamecharge",
-    "tm:flamethrower",
-    "tm:flareblitz",
-    "tm:flash",
-    "tm:gigaimpact",
-    "tm:headbutt",
-    "tm:heatwave",
-    "tm:helpinghand",
-    "tm:hyperbeam",
-    "tm:incinerate",
-    "tm:ironhead",
-    "tm:irontail",
-    "tm:laserfocus",
-    "tm:overheat",
-    "tm:protect",
-    "tm:quash",
-    "tm:raindance",
-    "tm:rest",
-    "tm:reversal",
-    "tm:roar",
-    "tm:rockclimb",
-    "tm:rocksmash",
-    "tm:sandstorm",
-    "tm:scaryface",
-    "tm:scorchingsands",
-    "tm:shadowball",
-    "tm:sleeptalk",
-    "tm:snarl",
-    "tm:solarbeam",
-    "tm:stompingtantrum",
-    "tm:stoneedge",
-    "tm:strength",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swagger",
-    "tm:swift",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:trailblaze",
-    "tm:weatherball",
-    "tm:willowisp",
-    "tutor:bulldoze",
-    "tutor:calmmind",
-    "tutor:firefang",
-    "tutor:flamethrower",
-    "tutor:gigaimpact",
-    "tutor:heatwave",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:ironhead",
-    "tutor:irontail",
-    "tutor:laserfocus",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:scorchingsands",
-    "tutor:shadowball",
-    "tutor:sleeptalk",
-    "tutor:snarl",
-    "tutor:stompingtantrum",
-    "tutor:stoneedge",
-    "tutor:swift"
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "ember",
+      "name": "Flammèche",
+      "category": "1"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "1"
+    },
+    {
+      "id": "stomp",
+      "name": "Écrasement",
+      "category": "1"
+    },
+    {
+      "id": "sacredfire",
+      "name": "Feu Sacré",
+      "category": "1"
+    },
+    {
+      "id": "extremespeed",
+      "name": "Vitesse Extrême",
+      "category": "1"
+    },
+    {
+      "id": "smokescreen",
+      "name": "Brouillard",
+      "category": "1"
+    },
+    {
+      "id": "flamewheel",
+      "name": "Roue de Feu",
+      "category": "6"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "12"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "18"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "24"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "30"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "36"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "42"
+    },
+    {
+      "id": "extrasensory",
+      "name": "Extrasenseur",
+      "category": "48"
+    },
+    {
+      "id": "lavaplume",
+      "name": "Ébullilave",
+      "category": "54"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "60"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "66"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "72"
+    },
+    {
+      "id": "eruption",
+      "name": "Éruption",
+      "category": "78"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tm"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "quash",
+      "name": "À la Queue",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "rockclimb",
+      "name": "Escalade",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "detect",
+      "name": "Détection",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "legacy"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "crushclaw",
+      "name": "Éclate Griffe",
+      "category": "special"
+    },
+    {
+      "id": "howl",
+      "name": "Grondement",
+      "category": "special"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
-  "spawns": [
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "50-60",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "minecraft:badlands",
-            "minecraft:eroded_badlands",
-            "minecraft:nether_wastes",
-            "minecraft:savanna",
-            "minecraft:windswept_hills",
-            "minecraft:windswept_forest"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-entei.json",
-        "keyItem": "myths_and_legends:clear_bell_entei"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "50-60",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_volcanic",
-            "#cobblemon:is_thermal",
-            "#cobblemon:is_badlands"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-entei.json",
-        "keyItem": "myths_and_legends:clear_bell_entei"
-      }
-    ]
-  ],
+  "preEvolution": null,
+  "spawns": [],
   "implemented": false,
   "images": {
     "normal": [
@@ -211,6 +675,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation2/entei.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation2/entei.json"
   ]
 }

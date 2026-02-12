@@ -2,20 +2,45 @@
   "id": "toxtricity",
   "dexnum": 849,
   "name": "Toxtricity",
+  "nameFr": "Salarsen",
+  "description": "Lorsqu'il gratte l'excroissance sur son ventre pour produire de l'électricité, on peut entendre un son similaire à celui d'une guitare.",
   "primaryType": "electric",
   "secondaryType": "poison",
+  "primaryTypeFr": "Électrik",
+  "secondaryTypeFr": "Poison",
+  "height": 16,
+  "weight": 400,
   "maleRatio": 0.5,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 1,
+    "height": 2.9,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "punkrock",
-    "plus",
-    "h:technician"
+    {
+      "id": "punkrock",
+      "name": "Punk Rock",
+      "hidden": false
+    },
+    {
+      "id": "plus",
+      "name": "Plus",
+      "hidden": false
+    },
+    {
+      "id": "technician",
+      "name": "Technicien",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "human_like"
   ],
+  "eggCycles": 25,
   "baseStats": {
     "hp": 75,
     "attack": 98,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 176,
   "experienceGroup": "medium_slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,209 +68,658 @@
         "item": "cobblemon:shuca_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Jouca"
       }
     ]
   },
   "moves": [
-    "1:spark",
-    "1:belch",
-    "1:tearfullook",
-    "1:nuzzle",
-    "1:growl",
-    "1:flail",
-    "1:acid",
-    "1:thundershock",
-    "1:acidspray",
-    "1:leer",
-    "1:nobleroar",
-    "4:charge",
-    "8:shockwave",
-    "12:scaryface",
-    "16:taunt",
-    "24:screech",
-    "28:swagger",
-    "32:toxic",
-    "36:discharge",
-    "40:poisonjab",
-    "44:overdrive",
-    "48:boomburst",
-    "52:shiftgear",
-    "egg:endeavor",
-    "egg:metalsound",
-    "tm:acidspray",
-    "tm:brickbreak",
-    "tm:charge",
-    "tm:chargebeam",
-    "tm:charm",
-    "tm:drainpunch",
-    "tm:eerieimpulse",
-    "tm:electricterrain",
-    "tm:electroball",
-    "tm:electroweb",
-    "tm:encore",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:firepunch",
-    "tm:fling",
-    "tm:gigaimpact",
-    "tm:gunkshot",
-    "tm:helpinghand",
-    "tm:hex",
-    "tm:hyperbeam",
-    "tm:hypervoice",
-    "tm:megakick",
-    "tm:megapunch",
-    "tm:metalsound",
-    "tm:metronome",
-    "tm:payback",
-    "tm:poisonjab",
-    "tm:poisontail",
-    "tm:poweruppunch",
-    "tm:protect",
-    "tm:psychicnoise",
-    "tm:raindance",
-    "tm:rest",
-    "tm:risingvoltage",
-    "tm:scaryface",
-    "tm:screech",
-    "tm:shockwave",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:sludgewave",
-    "tm:snarl",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swagger",
-    "tm:swift",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:throatchop",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderfang",
-    "tm:thunderpunch",
-    "tm:thunderwave",
-    "tm:toxic",
-    "tm:toxicspikes",
-    "tm:trailblaze",
-    "tm:uproar",
-    "tm:venoshock",
-    "tm:voltswitch",
-    "tm:wildcharge",
-    "tutor:chargebeam",
-    "tutor:drainpunch",
-    "tutor:electroweb",
-    "tutor:endeavor",
-    "tutor:firepunch",
-    "tutor:gigaimpact",
-    "tutor:gunkshot",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:hypervoice",
-    "tutor:poisonjab",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:risingvoltage",
-    "tutor:shockwave",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:snarl",
-    "tutor:spikes",
-    "tutor:swift",
-    "tutor:throatchop",
-    "tutor:thunderbolt",
-    "tutor:thunderfang",
-    "tutor:thunderpunch",
-    "tutor:uproar",
-    "tutor:wildcharge"
+    {
+      "id": "spark",
+      "name": "Étincelle",
+      "category": "1"
+    },
+    {
+      "id": "belch",
+      "name": "Éructation",
+      "category": "1"
+    },
+    {
+      "id": "tearfullook",
+      "name": "Larme à l'Œil",
+      "category": "1"
+    },
+    {
+      "id": "nuzzle",
+      "name": "Frotte-Frimousse",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "1"
+    },
+    {
+      "id": "acid",
+      "name": "Acide",
+      "category": "1"
+    },
+    {
+      "id": "thundershock",
+      "name": "Éclair",
+      "category": "1"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "nobleroar",
+      "name": "Râle Mâle",
+      "category": "1"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "4"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "8"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "12"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "16"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "24"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "28"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "32"
+    },
+    {
+      "id": "discharge",
+      "name": "Coup d'Jus",
+      "category": "36"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "40"
+    },
+    {
+      "id": "overdrive",
+      "name": "Overdrive",
+      "category": "44"
+    },
+    {
+      "id": "boomburst",
+      "name": "Bang Sonique",
+      "category": "48"
+    },
+    {
+      "id": "shiftgear",
+      "name": "Change-Vitesse",
+      "category": "52"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "egg"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "egg"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "drainpunch",
+      "name": "Vampi-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "eerieimpulse",
+      "name": "Ondes Étranges",
+      "category": "tm"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "tm"
+    },
+    {
+      "id": "electroball",
+      "name": "Boule Élek",
+      "category": "tm"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "megakick",
+      "name": "Ultimawashi",
+      "category": "tm"
+    },
+    {
+      "id": "megapunch",
+      "name": "Ultimapoing",
+      "category": "tm"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "tm"
+    },
+    {
+      "id": "metronome",
+      "name": "Métronome",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "poisontail",
+      "name": "Queue-Poison",
+      "category": "tm"
+    },
+    {
+      "id": "poweruppunch",
+      "name": "Poing Boost",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychicnoise",
+      "name": "Dissonance Psy",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "voltswitch",
+      "name": "Change Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "drainpunch",
+      "name": "Vampi-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [
     "Low-Key",
     "Gmax",
     "Low-Key-Gmax"
   ],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "toxel",
   "spawns": [
-    [
-      {
-        "rarity": "rare",
-        "weight": 5,
-        "levels": "36-51",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_swamp"
-          ]
-        },
-        "source": "Cobblemon_MegaShowdown-10.0.7-release-fabric.jar!/data/cobblemon/spawn_pool_world/0849_toxtricity.json"
-      }
-    ],
     [
       {
         "presets": [
           "natural"
         ],
-        "rarity": "rare",
-        "weight": 0.8,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/rare_dark_swamp.json"
-      }
-    ],
-    [
-      {
         "rarity": "uncommon",
-        "weight": 1,
-        "levels": "15-40",
-        "contexts": [
-          "grounded"
-        ],
+        "weight": 0.32,
+        "levels": "30-50",
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/toxtricity.json",
-        "nearbyBlocks": {
-          "selectors": [
-            "cobblemon:pasture"
-          ]
-        }
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0849_toxtricity.json",
+        "spawnId": "toxtricity-1",
+        "sky": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7
+        },
+        "spawnType": "grounded",
+        "pokemon": "toxtricity",
+        "type": "pokemon"
       }
     ],
     [
       {
-        "rarity": "rare",
-        "weight": 9.5,
-        "levels": "36-51",
-        "contexts": [
-          "grounded"
+        "presets": [
+          "natural",
+          "urban"
         ],
+        "rarity": "common",
+        "weight": 0.2,
+        "levels": "30-50",
         "biomeTags": {
           "include": [
-            "#cobblemon:is_swamp"
+            "#cobblemon:is_overworld"
           ]
         },
-        "source": "datapacks/MegaShowdown/data/cobblemon/spawn_pool_world/0849_toxtricity.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0849_toxtricity.json",
+        "spawnId": "toxtricity-2",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "toxtricity",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 1.5,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/toxtricity.png"
@@ -253,6 +729,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/toxtricity.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/toxtricity.json"
   ]
 }

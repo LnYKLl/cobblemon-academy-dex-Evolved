@@ -2,20 +2,41 @@
   "id": "falinks",
   "dexnum": 870,
   "name": "Falinks",
+  "nameFr": "Hexadron",
+  "description": "C'est une entité unique composée d'un chef et de cinq cadets. Ces derniers obéissent sans sourciller à leur supérieur hiérarchique.",
   "primaryType": "fighting",
   "secondaryType": "",
+  "primaryTypeFr": "Combat",
+  "secondaryTypeFr": "",
+  "height": 30,
+  "weight": 620,
   "maleRatio": -1,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 2,
+    "height": 0.8,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "battlearmor",
-    "h:defiant"
+    {
+      "id": "battlearmor",
+      "name": "Armurbaston",
+      "hidden": false
+    },
+    {
+      "id": "defiant",
+      "name": "Acharné",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "fairy",
     "mineral"
   ],
+  "eggCycles": 25,
   "baseStats": {
     "hp": 65,
     "attack": 100,
@@ -32,8 +53,10 @@
     "special_defence": 1,
     "speed": 0
   },
+  "baseExperienceYield": 165,
   "experienceGroup": "medium_fast",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,108 +64,468 @@
         "item": "minecraft:golden_helmet",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:golden_helmet"
       },
       {
         "item": "cobblemon:nanab_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Nanab"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:protect",
-    "5:rocksmash",
-    "10:focusenergy",
-    "15:headbutt",
-    "20:bulkup",
-    "25:endure",
-    "30:reversal",
-    "35:firstimpression",
-    "40:noretreat",
-    "45:irondefense",
-    "50:closecombat",
-    "55:megahorn",
-    "60:counter",
-    "tm:agility",
-    "tm:assurance",
-    "tm:beatup",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:brickbreak",
-    "tm:bulkup",
-    "tm:closecombat",
-    "tm:coaching",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:focusblast",
-    "tm:focusenergy",
-    "tm:gigaimpact",
-    "tm:headbutt",
-    "tm:helpinghand",
-    "tm:highhorsepower",
-    "tm:hyperbeam",
-    "tm:irondefense",
-    "tm:ironhead",
-    "tm:knockoff",
-    "tm:lunge",
-    "tm:megahorn",
-    "tm:payback",
-    "tm:poisonjab",
-    "tm:protect",
-    "tm:psychup",
-    "tm:raindance",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:revenge",
-    "tm:reversal",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:screech",
-    "tm:sleeptalk",
-    "tm:smartstrike",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superpower",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:throatchop",
-    "tm:trailblaze",
-    "tm:upperhand",
-    "tm:uproar",
-    "tm:zenheadbutt",
-    "tutor:bulkup",
-    "tutor:coaching",
-    "tutor:endeavor",
-    "tutor:falseswipe",
-    "tutor:focusenergy",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:highhorsepower",
-    "tutor:hyperbeam",
-    "tutor:irondefense",
-    "tutor:ironhead",
-    "tutor:knockoff",
-    "tutor:megahorn",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:sleeptalk",
-    "tutor:superpower",
-    "tutor:throatchop",
-    "tutor:uproar",
-    "tutor:zenheadbutt"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "1"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "5"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "10"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "15"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "20"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "25"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "30"
+    },
+    {
+      "id": "firstimpression",
+      "name": "Escarmouche",
+      "category": "35"
+    },
+    {
+      "id": "noretreat",
+      "name": "Ultime Bastion",
+      "category": "40"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "45"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "50"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "55"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "60"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "beatup",
+      "name": "Baston",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tm"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "tm"
+    },
+    {
+      "id": "coaching",
+      "name": "Coaching",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "focusblast",
+      "name": "Exploforce",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "tm"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smartstrike",
+      "name": "Estocorne",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "upperhand",
+      "name": "Prio-Parade",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tutor"
+    },
+    {
+      "id": "coaching",
+      "name": "Coaching",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -152,18 +535,25 @@
         "rarity": "uncommon",
         "weight": 2.0,
         "levels": "22-47",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_badlands"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0870_falinks.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0870_falinks.json",
+        "spawnId": "falinks-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "falinks",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
         }
       }
     ],
@@ -176,34 +566,16 @@
         "rarity": "uncommon",
         "weight": 100.0,
         "levels": "22-47",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#minecraft:is_nether"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0870_falinks.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 6.2,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/rare_scarlet_forest.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0870_falinks.json",
+        "spawnId": "falinks-2",
+        "spawnType": "grounded",
+        "pokemon": "falinks",
+        "type": "pokemon"
       }
     ]
   ],
@@ -217,6 +589,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/falinks.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/falinks.json"
   ]
 }

@@ -2,19 +2,40 @@
   "id": "beautifly",
   "dexnum": 267,
   "name": "Beautifly",
+  "nameFr": "Charmillon",
+  "description": "Charmillon a une longue trompe en spirale, particulièrement pratique pour récupérer le pollen des fleurs. Ce Pokémon se laisse porter par les vents printaniers pendant qu'il butine.",
   "primaryType": "bug",
   "secondaryType": "flying",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "Vol",
+  "height": 10,
+  "weight": 284,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 0.5,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen3"
   ],
   "abilities": [
-    "swarm",
-    "h:rivalry"
+    {
+      "id": "swarm",
+      "name": "Essaim",
+      "hidden": false
+    },
+    {
+      "id": "rivalry",
+      "name": "Rivalité",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 60,
     "attack": 70,
@@ -31,130 +52,557 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 198,
   "experienceGroup": "medium_fast",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
-    "amount": 2,
+    "amount": 3,
     "entries": [
       {
         "item": "cobblemon:bright_powder",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Poudre Claire"
+      },
+      {
+        "item": "cobblemon:shed_shell",
+        "percentage": 5.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Carapace Mue"
       },
       {
         "item": "cobblemon:pecha_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Pêcha"
       }
     ]
   },
   "moves": [
-    "1:gust",
-    "1:stringshot",
-    "1:bugbite",
-    "1:tackle",
-    "1:harden",
-    "1:poisonsting",
-    "12:absorb",
-    "15:stunspore",
-    "17:morningsun",
-    "20:aircutter",
-    "22:megadrain",
-    "27:attract",
-    "30:whirlwind",
-    "32:gigadrain",
-    "35:bugbuzz",
-    "37:rage",
-    "40:quiverdance",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:attract",
-    "tm:bugbite",
-    "tm:bugbuzz",
-    "tm:defog",
-    "tm:dualwingbeat",
-    "tm:electroweb",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:flash",
-    "tm:gigadrain",
-    "tm:gigaimpact",
-    "tm:hyperbeam",
-    "tm:infestation",
-    "tm:irondefense",
-    "tm:laserfocus",
-    "tm:ominouswind",
-    "tm:protect",
-    "tm:psychic",
-    "tm:rest",
-    "tm:roost",
-    "tm:safeguard",
-    "tm:shadowball",
-    "tm:signalbeam",
-    "tm:silverwind",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:stringshot",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:tailwind",
-    "tm:terablast",
-    "tm:thief",
-    "tm:twister",
-    "tm:uturn",
-    "tm:venoshock",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:bugbite",
-    "tutor:defog",
-    "tutor:dualwingbeat",
-    "tutor:electroweb",
-    "tutor:energyball",
-    "tutor:gigadrain",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:irondefense",
-    "tutor:laserfocus",
-    "tutor:ominouswind",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:roost",
-    "tutor:shadowball",
-    "tutor:signalbeam",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:stringshot",
-    "tutor:tailwind",
-    "tutor:twister"
+    {
+      "id": "gust",
+      "name": "Tornade",
+      "category": "1"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "1"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "harden",
+      "name": "Armure",
+      "category": "1"
+    },
+    {
+      "id": "poisonsting",
+      "name": "Dard-Venin",
+      "category": "1"
+    },
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "12"
+    },
+    {
+      "id": "stunspore",
+      "name": "Para-Spore",
+      "category": "15"
+    },
+    {
+      "id": "morningsun",
+      "name": "Aurore",
+      "category": "17"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "20"
+    },
+    {
+      "id": "megadrain",
+      "name": "Méga-Sangsue",
+      "category": "22"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "27"
+    },
+    {
+      "id": "whirlwind",
+      "name": "Cyclone",
+      "category": "30"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "32"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "35"
+    },
+    {
+      "id": "rage",
+      "name": "Frénésie",
+      "category": "37"
+    },
+    {
+      "id": "quiverdance",
+      "name": "Papillodanse",
+      "category": "40"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tm"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "silverwind",
+      "name": "Vent Argenté",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tutor"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tutor"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "silcoon",
   "spawns": [
     [
       {
         "presets": [
-          "natural"
+          "natural",
+          "treetop"
         ],
-        "rarity": "rare",
-        "weight": 8.0,
-        "levels": "18-41",
+        "rarity": "common",
+        "weight": 1,
+        "levels": "10-35",
         "contexts": [
           "grounded"
         ],
         "biomeTags": {
           "include": [
-            "eternal_starlight:scarlet_forest"
+            "#cobblemon:is_forest",
+            "#cobblemon:is_jungle"
+          ],
+          "exclude": [
+            "#cobblemon:is_freezing"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/rare_scarlet_forest.json"
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0267_beautifly.json",
+        "spawnId": "beautifly-1",
+        "sky": {
+          "canSeeSky": true,
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "pokemon": "beautifly",
+        "type": "pokemon"
       }
     ],
     [
@@ -178,16 +626,19 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/beautifly.json",
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0267_beautifly.json",
+        "spawnId": "ccc-beautifly-1",
         "sky": {
           "canSeeSky": true,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "pokemon": "beautifly",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/beautifly.png"
@@ -197,6 +648,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation3/beautifly.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation3/beautifly.json"
   ]
 }

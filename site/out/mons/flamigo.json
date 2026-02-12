@@ -2,20 +2,45 @@
   "id": "flamigo",
   "dexnum": 973,
   "name": "Flamigo",
+  "nameFr": "Flamenroule",
+  "description": "On pense qu'il fait un nœud à la base de son cou afin d'empêcher l'énergie qu'il accumule dans son ventre de s'échapper par son bec.",
   "primaryType": "flying",
   "secondaryType": "fighting",
+  "primaryTypeFr": "Vol",
+  "secondaryTypeFr": "Combat",
+  "height": 16,
+  "weight": 370,
   "maleRatio": 0.5,
+  "baseScale": 0.75,
+  "hitbox": {
+    "width": 1,
+    "height": 2,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "scrappy",
-    "tangledfeet",
-    "h:costar"
+    {
+      "id": "scrappy",
+      "name": "Querelleur",
+      "hidden": false
+    },
+    {
+      "id": "tangledfeet",
+      "name": "Pieds Confus",
+      "hidden": false
+    },
+    {
+      "id": "costar",
+      "name": "Collab",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "flying"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 82,
     "attack": 115,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 175,
   "experienceGroup": "medium_slow",
   "catchRate": 100,
+  "baseFriendship": 50,
   "drops": {
     "amount": 5,
     "entries": [
@@ -41,114 +68,442 @@
         "item": "minecraft:feather",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:feather"
       },
       {
         "item": "minecraft:chicken",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:chicken"
       },
       {
         "item": "cobblemon:payapa_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Yapap"
       },
       {
         "item": "cobblemon:fairy_feather",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Plume Enchantée"
       }
     ]
   },
   "moves": [
-    "1:peck",
-    "1:copycat",
-    "5:doublekick",
-    "9:detect",
-    "12:wingattack",
-    "15:focusenergy",
-    "18:lowkick",
-    "21:feint",
-    "27:payback",
-    "31:roost",
-    "35:airslash",
-    "39:megakick",
-    "44:wideguard",
-    "48:throatchop",
-    "54:bravebird",
-    "egg:doubleteam",
-    "egg:quickguard",
-    "egg:skyattack",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:bravebird",
-    "tm:bulkup",
-    "tm:chillingwater",
-    "tm:closecombat",
-    "tm:doubleteam",
-    "tm:dualwingbeat",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:featherdance",
-    "tm:fling",
-    "tm:fly",
-    "tm:focusenergy",
-    "tm:gigaimpact",
-    "tm:hurricane",
-    "tm:hyperbeam",
-    "tm:liquidation",
-    "tm:lowkick",
-    "tm:lowsweep",
-    "tm:lunge",
-    "tm:megakick",
-    "tm:payback",
-    "tm:pounce",
-    "tm:protect",
-    "tm:psychup",
-    "tm:rest",
-    "tm:reversal",
-    "tm:roost",
-    "tm:skyattack",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:swordsdance",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:throatchop",
-    "tm:upperhand",
-    "tm:uturn",
-    "tm:waterpulse",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:bulkup",
-    "tutor:dualwingbeat",
-    "tutor:endeavor",
-    "tutor:focusenergy",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:liquidation",
-    "tutor:lowkick",
-    "tutor:rest",
-    "tutor:roost",
-    "tutor:skyattack",
-    "tutor:sleeptalk",
-    "tutor:tailwind",
-    "tutor:throatchop",
-    "tutor:waterpulse"
+    {
+      "id": "peck",
+      "name": "Picpic",
+      "category": "1"
+    },
+    {
+      "id": "copycat",
+      "name": "Photocopie",
+      "category": "1"
+    },
+    {
+      "id": "doublekick",
+      "name": "Double Pied",
+      "category": "5"
+    },
+    {
+      "id": "detect",
+      "name": "Détection",
+      "category": "9"
+    },
+    {
+      "id": "wingattack",
+      "name": "Cru-Ailes",
+      "category": "12"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "15"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "18"
+    },
+    {
+      "id": "feint",
+      "name": "Ruse",
+      "category": "21"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "27"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "31"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "35"
+    },
+    {
+      "id": "megakick",
+      "name": "Ultimawashi",
+      "category": "39"
+    },
+    {
+      "id": "wideguard",
+      "name": "Garde Large",
+      "category": "44"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "48"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "54"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "egg"
+    },
+    {
+      "id": "quickguard",
+      "name": "Prévention",
+      "category": "egg"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "tm"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "featherdance",
+      "name": "Danse Plumes",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "lowsweep",
+      "name": "Balayette",
+      "category": "tm"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "tm"
+    },
+    {
+      "id": "megakick",
+      "name": "Ultimawashi",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "upperhand",
+      "name": "Prio-Parade",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -158,9 +513,6 @@
         "rarity": "common",
         "weight": 6.0,
         "levels": "25-50",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_jungle",
@@ -169,18 +521,25 @@
             "#cobblemon:is_tropical_island"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0973_flamigo.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0973_flamigo.json",
+        "spawnId": "flamigo-1",
         "nearbyBlocks": {
           "selectors": [
-            "#minecraft:water"
-          ],
-          "resolved": [
-            "#minecraft:water"
+            "minecraft:water"
           ]
         },
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "flamigo",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
         }
       }
     ],
@@ -192,8 +551,8 @@
         "rarity": "uncommon",
         "weight": 6.0,
         "levels": "25-50",
-        "contexts": [
-          "surface"
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
@@ -203,11 +562,15 @@
             "#cobblemon:is_tropical_island"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0973_flamigo.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0973_flamigo.json",
+        "spawnId": "flamigo-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "surface",
+        "pokemon": "flamigo",
+        "type": "pokemon"
       }
     ],
     [
@@ -218,46 +581,25 @@
         "rarity": "uncommon",
         "weight": 6.0,
         "levels": "25-50",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0973_flamigo.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0973_flamigo.json",
+        "spawnId": "flamigo-4",
         "nearbyBlocks": {
           "selectors": [
-            "#minecraft:water"
-          ],
-          "resolved": [
-            "#minecraft:water"
+            "minecraft:water"
           ]
         },
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 5.6,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/rare_scarlet_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "flamigo",
+        "type": "pokemon"
       }
     ]
   ],
@@ -271,6 +613,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/flamigo.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/flamigo.json"
   ]
 }

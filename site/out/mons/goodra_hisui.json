@@ -2,22 +2,47 @@
   "id": "goodra_hisui",
   "dexnum": 706,
   "name": "Goodra Hisui",
+  "nameFr": "Goodra Hisui",
+  "description": "Il peut moduler la rigidité de sa carapace de métal à volonté. Il abhorre la solitude et enrage si un être qu'il affectionne profondément l'abandonne.",
   "primaryType": "steel",
   "secondaryType": "dragon",
+  "primaryTypeFr": "Acier",
+  "secondaryTypeFr": "Dragon",
+  "height": 17,
+  "weight": 3341,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 2.5,
+    "height": 3.6,
+    "fixed": false
+  },
   "labels": [
     "gen8a",
     "powerhouse",
     "hisuian_form"
   ],
   "abilities": [
-    "sapsipper",
-    "shellarmor",
-    "h:gooey"
+    {
+      "id": "sapsipper",
+      "name": "Herbivore",
+      "hidden": false
+    },
+    {
+      "id": "shellarmor",
+      "name": "Coque Armure",
+      "hidden": false
+    },
+    {
+      "id": "gooey",
+      "name": "Poisseux",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "dragon"
   ],
+  "eggCycles": 40,
   "baseStats": {
     "hp": 80,
     "attack": 100,
@@ -34,144 +59,588 @@
     "special_defence": 3,
     "speed": 0
   },
+  "baseExperienceYield": 300,
   "experienceGroup": "slow",
   "catchRate": 45,
+  "baseFriendship": 35,
   "drops": {
-    "amount": 7,
+    "amount": 8,
     "entries": [
       {
         "item": "minecraft:slime_ball",
         "percentage": null,
         "quantityRange": "0-3",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:slime_ball"
+      },
+      {
+        "item": "cobblemon:shed_shell",
+        "percentage": 10.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Carapace Mue"
       },
       {
         "item": "minecraft:iron_ingot",
         "percentage": null,
         "quantityRange": "0-3",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:iron_ingot"
       },
       {
         "item": "cobblemon:bluk_berry",
         "percentage": 10.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Remu"
       }
     ]
   },
   "moves": [
-    "1:bubble",
-    "1:irontail",
-    "1:shelter",
-    "1:acidspray",
-    "1:feint",
-    "1:tearfullook",
-    "1:dragonbreath",
-    "1:tackle",
-    "1:absorb",
-    "1:watergun",
-    "1:bide",
-    "1:acidarmor",
-    "15:protect",
-    "20:flail",
-    "25:waterpulse",
-    "30:raindance",
-    "35:dragonpulse",
-    "43:curse",
-    "49:ironhead",
-    "49:bodyslam",
-    "58:muddywater",
-    "67:heavyslam",
-    "egg:counter",
-    "egg:lifedew",
-    "tm:acidspray",
-    "tm:blizzard",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:breakingswipe",
-    "tm:bulldoze",
-    "tm:charm",
-    "tm:chillingwater",
-    "tm:curse",
-    "tm:dracometeor",
-    "tm:dragoncheer",
-    "tm:dragonclaw",
-    "tm:dragonpulse",
-    "tm:dragontail",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firepunch",
-    "tm:flamethrower",
-    "tm:flashcannon",
-    "tm:gigaimpact",
-    "tm:gyroball",
-    "tm:heavyslam",
-    "tm:hydropump",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icespinner",
-    "tm:ironhead",
-    "tm:irontail",
-    "tm:knockoff",
-    "tm:lashout",
-    "tm:muddywater",
-    "tm:mudshot",
-    "tm:outrage",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:sandstorm",
-    "tm:scaryface",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:sludgewave",
-    "tm:steelbeam",
-    "tm:stompingtantrum",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:surf",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderpunch",
-    "tm:waterpulse",
-    "tm:weatherball",
-    "tutor:bulldoze",
-    "tutor:dracometeor",
-    "tutor:dragonpulse",
-    "tutor:firepunch",
-    "tutor:flamethrower",
-    "tutor:flashcannon",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:ironhead",
-    "tutor:irontail",
-    "tutor:knockoff",
-    "tutor:lashout",
-    "tutor:outrage",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:steelbeam",
-    "tutor:stompingtantrum",
-    "tutor:thunderbolt",
-    "tutor:thunderpunch",
-    "tutor:waterpulse"
+    {
+      "id": "bubble",
+      "name": "Écume",
+      "category": "1"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "1"
+    },
+    {
+      "id": "shelter",
+      "name": "Mur Fumigène",
+      "category": "1"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "1"
+    },
+    {
+      "id": "feint",
+      "name": "Ruse",
+      "category": "1"
+    },
+    {
+      "id": "tearfullook",
+      "name": "Larme à l'Œil",
+      "category": "1"
+    },
+    {
+      "id": "dragonbreath",
+      "name": "Draco-Souffle",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "1"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "1"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "1"
+    },
+    {
+      "id": "acidarmor",
+      "name": "Acidarmure",
+      "category": "1"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "15"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "20"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "25"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "30"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "35"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "43"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "49"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "49"
+    },
+    {
+      "id": "muddywater",
+      "name": "Ocroupi",
+      "category": "58"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "67"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "egg"
+    },
+    {
+      "id": "lifedew",
+      "name": "Fontaine de Vie",
+      "category": "egg"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "breakingswipe",
+      "name": "Abattage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tm"
+    },
+    {
+      "id": "dragoncheer",
+      "name": "Cri Draconique",
+      "category": "tm"
+    },
+    {
+      "id": "dragonclaw",
+      "name": "Draco-Griffe",
+      "category": "tm"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tm"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "tm"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icespinner",
+      "name": "Cryo-Pirouette",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tm"
+    },
+    {
+      "id": "muddywater",
+      "name": "Ocroupi",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "tm"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "sliggoo hisuian",
   "spawns": [
     [
       {
@@ -181,20 +650,21 @@
         "rarity": "rare",
         "weight": 0.25,
         "levels": "50-60",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_dripstone",
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "spawnId": "goodra-hisuian-7",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "goodra hisuian",
+        "type": "pokemon"
       }
     ],
     [
@@ -205,9 +675,6 @@
         "rarity": "ultra-rare",
         "weight": 0.4,
         "levels": "50-60",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -217,19 +684,21 @@
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "spawnId": "goodra-hisuian-8",
         "nearbyBlocks": {
           "selectors": [
-            "#minecraft:water"
-          ],
-          "resolved": [
-            "#minecraft:water"
+            "minecraft:water"
           ]
         },
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "goodra hisuian",
+        "excludeSlimeChunk": true,
+        "type": "pokemon"
       }
     ],
     [
@@ -240,9 +709,6 @@
         "rarity": "rare",
         "weight": 0.25,
         "levels": "50-60",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -252,11 +718,16 @@
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "spawnId": "goodra-hisuian-9",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "goodra hisuian",
+        "isSlimeChunk": true,
+        "type": "pokemon"
       }
     ],
     [
@@ -267,20 +738,24 @@
         "rarity": "rare",
         "weight": 0.25,
         "levels": "50-60",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_dripstone",
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "spawnId": "goodra-hisuian-10",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "goodra hisuian",
+        "excludeLure": {
+          "minLureLevel": 2
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -291,19 +766,29 @@
         "rarity": "common",
         "weight": 0.02,
         "levels": "50-60",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_dripstone",
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "spawnId": "goodra-hisuian-11",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
+        },
+        "spawnType": "fishing",
+        "pokemon": "goodra hisuian",
+        "lure": {
+          "minLureLevel": 2
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 3.0,
+          "condition": {
+            "minLureLevel": 3
+          }
         }
       }
     ],
@@ -315,9 +800,6 @@
         "rarity": "ultra-rare",
         "weight": 0.4,
         "levels": "50-60",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -327,11 +809,19 @@
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "spawnId": "goodra-hisuian-12",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "goodra hisuian",
+        "excludeSlimeChunk": true,
+        "excludeLure": {
+          "minLureLevel": 2
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -342,9 +832,6 @@
         "rarity": "rare",
         "weight": 0.25,
         "levels": "50-60",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -354,11 +841,20 @@
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "spawnId": "goodra-hisuian-13",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "goodra hisuian",
+        "excludeSlimeChunk": true,
+        "lure": {
+          "minLureLevel": 2,
+          "maxLureLevel": 2
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -369,9 +865,6 @@
         "rarity": "common",
         "weight": 0.02,
         "levels": "50-60",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -381,11 +874,19 @@
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "spawnId": "goodra-hisuian-14",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "goodra hisuian",
+        "excludeSlimeChunk": true,
+        "lure": {
+          "minLureLevel": 3
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -396,9 +897,6 @@
         "rarity": "rare",
         "weight": 0.25,
         "levels": "50-60",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -408,11 +906,19 @@
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "spawnId": "goodra-hisuian-15",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "goodra hisuian",
+        "isSlimeChunk": true,
+        "excludeLure": {
+          "minLureLevel": 2
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -423,9 +929,6 @@
         "rarity": "common",
         "weight": 0.02,
         "levels": "50-60",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -435,10 +938,24 @@
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0706_goodra.json",
+        "spawnId": "goodra-hisuian-16",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
+        },
+        "spawnType": "fishing",
+        "pokemon": "goodra hisuian",
+        "isSlimeChunk": true,
+        "lure": {
+          "minLureLevel": 2
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 3.0,
+          "condition": {
+            "minLureLevel": 3
+          }
         }
       }
     ]
@@ -453,6 +970,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation6/goodra.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation6/goodra.json"
   ]
 }

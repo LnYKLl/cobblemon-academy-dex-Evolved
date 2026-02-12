@@ -2,21 +2,46 @@
   "id": "ponyta",
   "dexnum": 77,
   "name": "Ponyta",
+  "nameFr": "Ponyta",
+  "description": "À sa naissance, Ponyta est très faible. Il peut à peine tenir debout. Ce Pokémon se muscle en trébuchant et en tombant, lorsqu'il essaie de suivre ses parents.",
   "primaryType": "fire",
   "secondaryType": "",
+  "primaryTypeFr": "Feu",
+  "secondaryTypeFr": "",
+  "height": 10,
+  "weight": 300,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 0.8,
+    "height": 1.4,
+    "fixed": false
+  },
   "labels": [
     "gen1",
     "kantonian_form"
   ],
   "abilities": [
-    "runaway",
-    "flashfire",
-    "h:flamebody"
+    {
+      "id": "runaway",
+      "name": "Fuite",
+      "hidden": false
+    },
+    {
+      "id": "flashfire",
+      "name": "Torche",
+      "hidden": false
+    },
+    {
+      "id": "flamebody",
+      "name": "Corps Ardent",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 50,
     "attack": 85,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 82,
   "experienceGroup": "medium_fast",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -46,7 +73,8 @@
         "biomes": [
           "#cobblemon:nether/is_overgrowth",
           "#cobblemon:nether/is_wasteland"
-        ]
+        ],
+        "itemName": "minecraft:leather"
       },
       {
         "item": "minecraft:blaze_powder",
@@ -56,7 +84,8 @@
         "biomes": [
           "#cobblemon:nether/is_overgrowth",
           "#cobblemon:nether/is_wasteland"
-        ]
+        ],
+        "itemName": "minecraft:blaze_powder"
       },
       {
         "item": "cobblemon:shuca_berry",
@@ -66,86 +95,461 @@
         "biomes": [
           "#cobblemon:nether/is_overgrowth",
           "#cobblemon:nether/is_wasteland"
-        ]
+        ],
+        "itemName": "Baie Jouca"
       }
     ]
   },
   "moves": [
-    "1:growl",
-    "1:tackle",
-    "5:tailwhip",
-    "10:ember",
-    "15:flamecharge",
-    "20:agility",
-    "25:flamewheel",
-    "30:stomp",
-    "35:firespin",
-    "41:takedown",
-    "45:inferno",
-    "50:fireblast",
-    "55:flareblitz",
-    "egg:captivate",
-    "egg:doubleedge",
-    "egg:doublekick",
-    "egg:horndrill",
-    "egg:hypnosis",
-    "egg:morningsun",
-    "egg:thrash",
-    "tm:agility",
-    "tm:allyswitch",
-    "tm:bodyslam",
-    "tm:bounce",
-    "tm:captivate",
-    "tm:charm",
-    "tm:doubleedge",
-    "tm:echoedvoice",
-    "tm:endure",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firespin",
-    "tm:flamecharge",
-    "tm:flamethrower",
-    "tm:flareblitz",
-    "tm:headbutt",
-    "tm:heatwave",
-    "tm:highhorsepower",
-    "tm:incinerate",
-    "tm:irontail",
-    "tm:lowkick",
-    "tm:mysticalfire",
-    "tm:overheat",
-    "tm:playrough",
-    "tm:protect",
-    "tm:rest",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:solarblade",
-    "tm:strength",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:wildcharge",
-    "tm:willowisp",
-    "tutor:allyswitch",
-    "tutor:bounce",
-    "tutor:flamethrower",
-    "tutor:heatwave",
-    "tutor:highhorsepower",
-    "tutor:irontail",
-    "tutor:lowkick",
-    "tutor:mysticalfire",
-    "tutor:playrough",
-    "tutor:rest",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:wildcharge"
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "5"
+    },
+    {
+      "id": "ember",
+      "name": "Flammèche",
+      "category": "10"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "15"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "20"
+    },
+    {
+      "id": "flamewheel",
+      "name": "Roue de Feu",
+      "category": "25"
+    },
+    {
+      "id": "stomp",
+      "name": "Écrasement",
+      "category": "30"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "35"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "41"
+    },
+    {
+      "id": "inferno",
+      "name": "Feu d'Enfer",
+      "category": "45"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "50"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "55"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "egg"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "egg"
+    },
+    {
+      "id": "doublekick",
+      "name": "Double Pied",
+      "category": "egg"
+    },
+    {
+      "id": "horndrill",
+      "name": "Empal'Korne",
+      "category": "egg"
+    },
+    {
+      "id": "hypnosis",
+      "name": "Hypnose",
+      "category": "egg"
+    },
+    {
+      "id": "morningsun",
+      "name": "Aurore",
+      "category": "egg"
+    },
+    {
+      "id": "thrash",
+      "name": "Mania",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "mysticalfire",
+      "name": "Feu Ensorcelé",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "solarblade",
+      "name": "Lame Solaire",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "mysticalfire",
+      "name": "Feu Ensorcelé",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "legacy"
+    },
+    {
+      "id": "rage",
+      "name": "Frénésie",
+      "category": "legacy"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "skullbash",
+      "name": "Coud'Krâne",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [
     "Galar"
   ],
-  "types": [],
   "evolutions": [
     {
       "id": "ponyta_rapidash",
@@ -164,6 +568,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -173,21 +578,32 @@
         "rarity": "uncommon",
         "weight": 5.04,
         "levels": "16-41",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_grassland"
+          ],
+          "exclude": [
+            "#cobblemon:is_floral",
+            "#cobblemon:is_magical"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0077_ponyta.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0077_ponyta.json",
+        "spawnId": "ponyta-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
         },
         "weather": {
           "isRaining": false
+        },
+        "spawnType": "grounded",
+        "pokemon": "ponyta",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
         }
       }
     ],
@@ -199,35 +615,37 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "16-41",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_overgrowth",
             "#cobblemon:nether/is_wasteland"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0077_ponyta.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 4.2,
-        "levels": "4-18",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0077_ponyta.json",
+        "spawnId": "ponyta-2",
+        "spawnType": "grounded",
+        "pokemon": "ponyta",
+        "type": "pokemon",
+        "drops": {
+          "amount": 3,
+          "entries": [
+            {
+              "item": "minecraft:leather",
+              "percentage": null,
+              "quantityRange": "0-1"
+            },
+            {
+              "item": "minecraft:blaze_powder",
+              "percentage": 5.0,
+              "quantityRange": null
+            },
+            {
+              "item": "cobblemon:shuca_berry",
+              "percentage": 2.5,
+              "quantityRange": null
+            }
           ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/common_scarlet_forest.json"
+        }
       }
     ]
   ],
@@ -241,6 +659,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/ponyta.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/ponyta.json"
   ]
 }

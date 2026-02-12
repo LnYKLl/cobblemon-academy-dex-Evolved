@@ -2,19 +2,40 @@
   "id": "pansear",
   "dexnum": 513,
   "name": "Pansear",
+  "nameFr": "Flamajou",
+  "description": "Il vit dans les cratères des volcans. L'intérieur de la mèche qu'il a sur la tête peut atteindre 300 °C.",
   "primaryType": "fire",
   "secondaryType": "",
+  "primaryTypeFr": "Feu",
+  "secondaryTypeFr": "",
+  "height": 6,
+  "weight": 110,
   "maleRatio": 0.875,
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 1,
+    "height": 1.4,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "gluttony",
-    "h:blaze"
+    {
+      "id": "gluttony",
+      "name": "Gloutonnerie",
+      "hidden": false
+    },
+    {
+      "id": "blaze",
+      "name": "Brasier",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 50,
     "attack": 53,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 63,
   "experienceGroup": "medium_fast",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -40,131 +63,608 @@
         "item": "cobblemon:fire_stone",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Pierre Feu"
       },
       {
         "item": "cobblemon:charcoal_stick",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Bâton de charbon"
       },
       {
         "item": "cobblemon:passho_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Pocpoc"
       }
     ]
   },
   "moves": [
-    "1:scratch",
-    "1:playnice",
-    "4:leer",
-    "7:lick",
-    "10:incinerate",
-    "13:furyswipes",
-    "16:yawn",
-    "19:bite",
-    "22:flameburst",
-    "25:amnesia",
-    "28:fling",
-    "31:acrobatics",
-    "34:fireblast",
-    "37:recycle",
-    "40:naturalgift",
-    "43:crunch",
-    "egg:astonish",
-    "egg:belch",
-    "egg:covet",
-    "egg:disarmingvoice",
-    "egg:firepunch",
-    "egg:firespin",
-    "egg:flareblitz",
-    "egg:heatwave",
-    "egg:lowkick",
-    "egg:nastyplot",
-    "egg:roleplay",
-    "egg:sleeptalk",
-    "egg:tickle",
-    "tm:acrobatics",
-    "tm:amnesia",
-    "tm:burningjealousy",
-    "tm:covet",
-    "tm:crunch",
-    "tm:cut",
-    "tm:dig",
-    "tm:disarmingvoice",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firepledge",
-    "tm:firepunch",
-    "tm:firespin",
-    "tm:flamecharge",
-    "tm:flamethrower",
-    "tm:flareblitz",
-    "tm:fling",
-    "tm:focuspunch",
-    "tm:gastroacid",
-    "tm:grassknot",
-    "tm:gunkshot",
-    "tm:heatwave",
-    "tm:helpinghand",
-    "tm:honeclaws",
-    "tm:incinerate",
-    "tm:irontail",
-    "tm:knockoff",
-    "tm:lowkick",
-    "tm:lowsweep",
-    "tm:nastyplot",
-    "tm:naturalgift",
-    "tm:overheat",
-    "tm:payback",
-    "tm:protect",
-    "tm:recycle",
-    "tm:rest",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:roleplay",
-    "tm:shadowclaw",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:torment",
-    "tm:uproar",
-    "tm:willowisp",
-    "tm:workup",
-    "tutor:burningjealousy",
-    "tutor:covet",
-    "tutor:endeavor",
-    "tutor:firepledge",
-    "tutor:firepunch",
-    "tutor:flamethrower",
-    "tutor:focuspunch",
-    "tutor:gastroacid",
-    "tutor:gunkshot",
-    "tutor:heatwave",
-    "tutor:helpinghand",
-    "tutor:irontail",
-    "tutor:knockoff",
-    "tutor:lowkick",
-    "tutor:recycle",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:roleplay",
-    "tutor:shadowclaw",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:uproar"
+    {
+      "id": "scratch",
+      "name": "Griffe",
+      "category": "1"
+    },
+    {
+      "id": "playnice",
+      "name": "Camaraderie",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "4"
+    },
+    {
+      "id": "lick",
+      "name": "Léchouille",
+      "category": "7"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "10"
+    },
+    {
+      "id": "furyswipes",
+      "name": "Combo-Griffe",
+      "category": "13"
+    },
+    {
+      "id": "yawn",
+      "name": "Bâillement",
+      "category": "16"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "19"
+    },
+    {
+      "id": "flameburst",
+      "name": "Rebondifeu",
+      "category": "22"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "25"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "28"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "31"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "34"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "37"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "40"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "43"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "egg"
+    },
+    {
+      "id": "belch",
+      "name": "Éructation",
+      "category": "egg"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "egg"
+    },
+    {
+      "id": "disarmingvoice",
+      "name": "Voix Enjôleuse",
+      "category": "egg"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "egg"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "egg"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "egg"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "egg"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "egg"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "egg"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "egg"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "egg"
+    },
+    {
+      "id": "tickle",
+      "name": "Chatouille",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "tm"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "disarmingvoice",
+      "name": "Voix Enjôleuse",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firepledge",
+      "name": "Aire de Feu",
+      "category": "tm"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tm"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "lowsweep",
+      "name": "Balayette",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "firepledge",
+      "name": "Aire de Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "pansear_simisear",
@@ -176,50 +676,75 @@
       "requiredContext": "cobblemon:fire_stone"
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
         "presets": [
-          "natural"
+          "natural",
+          "treetop",
+          "wild"
         ],
         "rarity": "uncommon",
-        "weight": 2.6,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
+        "weight": 8.4,
+        "levels": "7-32",
         "biomeTags": {
           "include": [
-            "eternal_starlight:scarlet_forest"
+            "#cobblemon:is_jungle",
+            "#cobblemon:is_tropical_island"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/uncommon_scarlet_forest.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0513_pansear.json",
+        "spawnId": "pansear-1",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "pansear",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
       }
     ],
     [
       {
         "presets": [
-          "natural"
+          "natural",
+          "treetop",
+          "wild"
         ],
         "rarity": "uncommon",
-        "weight": 9.0,
-        "levels": "15-55",
-        "contexts": [
-          "grounded"
-        ],
+        "weight": 1.68,
+        "levels": "7-32",
         "biomeTags": {
           "include": [
-            "#cobblemon:is_jungle"
+            "#cobblemon:is_volcanic"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0513_pansear.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0513_pansear.json",
+        "spawnId": "pansear-2",
         "sky": {
-          "canSeeSky": true
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "pansear",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
         }
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/pansear.png"
@@ -229,7 +754,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/pansear.json",
-    "datapacks\\CCC_MAL_1.6.4.1\\data\\cobblemon\\species\\generation5\\pansear.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/pansear.json"
   ]
 }

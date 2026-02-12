@@ -2,20 +2,45 @@
   "id": "nosepass",
   "dexnum": 299,
   "name": "Nosepass",
+  "nameFr": "Tarinor",
+  "description": "On raconte que Tarinor reste complètement immobile, avec son nez magnétique orienté vers le nord. Cependant, des études minutieuses ont démontré que ce Pokémon se déplace de 1 centimètre par an.",
   "primaryType": "rock",
   "secondaryType": "",
+  "primaryTypeFr": "Roche",
+  "secondaryTypeFr": "",
+  "height": 10,
+  "weight": 970,
   "maleRatio": 0.5,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.9,
+    "height": 1.35,
+    "fixed": false
+  },
   "labels": [
     "gen3"
   ],
   "abilities": [
-    "sturdy",
-    "magnetpull",
-    "h:sandforce"
+    {
+      "id": "sturdy",
+      "name": "Fermeté",
+      "hidden": false
+    },
+    {
+      "id": "magnetpull",
+      "name": "Magnépiège",
+      "hidden": false
+    },
+    {
+      "id": "sandforce",
+      "name": "Force Sable",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "mineral"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 30,
     "attack": 45,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 75,
   "experienceGroup": "medium_fast",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 4,
     "entries": [
@@ -41,146 +68,666 @@
         "item": "minecraft:flint",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:flint"
       },
       {
         "item": "cobblemon:hard_stone",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Pierre Dure"
       },
       {
         "item": "cobblemon:magnet",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Aimant"
       },
       {
         "item": "cobblemon:chople_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Pomroz"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "4:harden",
-    "7:block",
-    "10:rockthrow",
-    "13:thunderwave",
-    "16:rest",
-    "19:spark",
-    "22:rockslide",
-    "25:powergem",
-    "28:rockblast",
-    "31:discharge",
-    "34:sandstorm",
-    "37:earthpower",
-    "40:stoneedge",
-    "43:zapcannon",
-    "43:lockon",
-    "egg:doubleedge",
-    "egg:headsmash",
-    "egg:magnitude",
-    "egg:rollout",
-    "egg:wideguard",
-    "tm:ancientpower",
-    "tm:block",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:curse",
-    "tm:dazzlinggleam",
-    "tm:doubleedge",
-    "tm:earthpower",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:explosion",
-    "tm:facade",
-    "tm:firepunch",
-    "tm:flashcannon",
-    "tm:gravity",
-    "tm:headbutt",
-    "tm:heavyslam",
-    "tm:helpinghand",
-    "tm:highhorsepower",
-    "tm:icepunch",
-    "tm:irondefense",
-    "tm:magiccoat",
-    "tm:magnetrise",
-    "tm:meteorbeam",
-    "tm:painsplit",
-    "tm:powergem",
-    "tm:powershift",
-    "tm:protect",
-    "tm:rest",
-    "tm:rockblast",
-    "tm:rockpolish",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:rollout",
-    "tm:sandstorm",
-    "tm:sandtomb",
-    "tm:selfdestruct",
-    "tm:shockwave",
-    "tm:sleeptalk",
-    "tm:smackdown",
-    "tm:stealthrock",
-    "tm:steelbeam",
-    "tm:stompingtantrum",
-    "tm:stoneedge",
-    "tm:strength",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderpunch",
-    "tm:thunderwave",
-    "tm:torment",
-    "tm:voltswitch",
-    "tutor:ancientpower",
-    "tutor:block",
-    "tutor:bulldoze",
-    "tutor:dazzlinggleam",
-    "tutor:earthpower",
-    "tutor:firepunch",
-    "tutor:flashcannon",
-    "tutor:gravity",
-    "tutor:helpinghand",
-    "tutor:highhorsepower",
-    "tutor:icepunch",
-    "tutor:irondefense",
-    "tutor:magiccoat",
-    "tutor:magnetrise",
-    "tutor:meteorbeam",
-    "tutor:painsplit",
-    "tutor:powershift",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:rollout",
-    "tutor:shockwave",
-    "tutor:sleeptalk",
-    "tutor:stealthrock",
-    "tutor:steelbeam",
-    "tutor:stompingtantrum",
-    "tutor:stoneedge",
-    "tutor:thunderbolt",
-    "tutor:thunderpunch"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "harden",
+      "name": "Armure",
+      "category": "4"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "7"
+    },
+    {
+      "id": "rockthrow",
+      "name": "Jet-Pierres",
+      "category": "10"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "13"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "16"
+    },
+    {
+      "id": "spark",
+      "name": "Étincelle",
+      "category": "19"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "22"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "25"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "28"
+    },
+    {
+      "id": "discharge",
+      "name": "Coup d'Jus",
+      "category": "31"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "34"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "37"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "40"
+    },
+    {
+      "id": "zapcannon",
+      "name": "Élecanon",
+      "category": "43"
+    },
+    {
+      "id": "lockon",
+      "name": "Verrouillage",
+      "category": "43"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "egg"
+    },
+    {
+      "id": "headsmash",
+      "name": "Fracass'Tête",
+      "category": "egg"
+    },
+    {
+      "id": "magnitude",
+      "name": "Ampleur",
+      "category": "egg"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "egg"
+    },
+    {
+      "id": "wideguard",
+      "name": "Garde Large",
+      "category": "egg"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tm"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tm"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tm"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "tm"
+    },
+    {
+      "id": "powershift",
+      "name": "Échange Force",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "sandtomb",
+      "name": "Tourbi-Sable",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "voltswitch",
+      "name": "Change Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tutor"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tutor"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "powershift",
+      "name": "Échange Force",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "dynamicpunch",
+      "name": "Dynamo-Poing",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "nosepass_probopass",
       "variant": "item_interact",
       "result": "probopass",
-      "consumeHeldItem": true,
+      "consumeHeldItem": false,
       "learnableMoves": [
         "triattack"
       ],
@@ -188,6 +735,7 @@
       "requiredContext": "cobblemon:thunder_stone"
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -197,9 +745,6 @@
         "rarity": "uncommon",
         "weight": 5.52,
         "levels": "13-38",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -208,11 +753,15 @@
             "#cobblemon:is_deep_dark"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0299_nosepass.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0299_nosepass.json",
+        "spawnId": "nosepass-1",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "nosepass",
+        "type": "pokemon"
       }
     ],
     [
@@ -236,29 +785,13 @@
           ]
         },
         "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0299_nosepass.json",
+        "spawnId": "nosepass-1",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 3.5,
-        "levels": "3-21",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/common_crystallized_desert.json"
+        "pokemon": "nosepass",
+        "type": "pokemon"
       }
     ]
   ],
@@ -272,6 +805,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation3/nosepass.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation3/nosepass.json"
   ]
 }

@@ -2,20 +2,45 @@
   "id": "maschiff",
   "dexnum": 942,
   "name": "Maschiff",
+  "nameFr": "Grondogue",
+  "description": "Il affiche toujours un air renfrogné pour qu'on le prenne au sérieux, mais même les enfants en pleurs éclatent de rire lorsqu'ils voient sa tête.",
   "primaryType": "dark",
   "secondaryType": "",
+  "primaryTypeFr": "Ténèbres",
+  "secondaryTypeFr": "",
+  "height": 5,
+  "weight": 160,
   "maleRatio": 0.5,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 1,
+    "height": 0.8,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "intimidate",
-    "runaway",
-    "h:stakeout"
+    {
+      "id": "intimidate",
+      "name": "Intimidation",
+      "hidden": false
+    },
+    {
+      "id": "runaway",
+      "name": "Fuite",
+      "hidden": false
+    },
+    {
+      "id": "stakeout",
+      "name": "Filature",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 60,
     "attack": 78,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 68,
   "experienceGroup": "medium_slow",
   "catchRate": 150,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,94 +68,363 @@
         "item": "minecraft:bone",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:bone"
       },
       {
         "item": "minecraft:rotten_flesh",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:rotten_flesh"
       },
       {
         "item": "cobblemon:tanga_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Panga"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:leer",
-    "1:scaryface",
-    "4:lick",
-    "7:snarl",
-    "10:honeclaws",
-    "14:bite",
-    "18:roar",
-    "22:headbutt",
-    "26:payback",
-    "31:crunch",
-    "35:swagger",
-    "39:reversal",
-    "43:jawlock",
-    "49:doubleedge",
-    "egg:destinybond",
-    "egg:endeavor",
-    "egg:playrough",
-    "egg:retaliate",
-    "tm:bodyslam",
-    "tm:charm",
-    "tm:crunch",
-    "tm:darkpulse",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:faketears",
-    "tm:firefang",
-    "tm:headbutt",
-    "tm:helpinghand",
-    "tm:honeclaws",
-    "tm:icefang",
-    "tm:lashout",
-    "tm:payback",
-    "tm:playrough",
-    "tm:protect",
-    "tm:psychicfangs",
-    "tm:raindance",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:reversal",
-    "tm:roar",
-    "tm:scaryface",
-    "tm:sleeptalk",
-    "tm:snarl",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swagger",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunderfang",
-    "tm:trailblaze",
-    "tutor:darkpulse",
-    "tutor:endeavor",
-    "tutor:firefang",
-    "tutor:helpinghand",
-    "tutor:icefang",
-    "tutor:lashout",
-    "tutor:playrough",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:sleeptalk",
-    "tutor:snarl",
-    "tutor:thunderfang"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "1"
+    },
+    {
+      "id": "lick",
+      "name": "Léchouille",
+      "category": "4"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "7"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "10"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "14"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "18"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "22"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "26"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "31"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "35"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "39"
+    },
+    {
+      "id": "jawlock",
+      "name": "Croque Fort",
+      "category": "43"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "49"
+    },
+    {
+      "id": "destinybond",
+      "name": "Lien du Destin",
+      "category": "egg"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "egg"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "egg"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "egg"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "faketears",
+      "name": "Croco Larme",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tm"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychicfangs",
+      "name": "Psycho-Croc",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tutor"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "maschiff_mabosstiff",
@@ -146,6 +442,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -156,19 +453,20 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "9-34",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0942_maschiff.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0942_maschiff.json",
+        "spawnId": "maschiff-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "maschiff",
+        "type": "pokemon"
       }
     ],
     [
@@ -179,22 +477,23 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "9-34",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0942_maschiff.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0942_maschiff.json",
+        "spawnId": "maschiff-2",
         "structures": [
           "#minecraft:village"
         ],
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "maschiff",
+        "type": "pokemon"
       }
     ],
     [
@@ -206,19 +505,20 @@
         "rarity": "common",
         "weight": 90.0,
         "levels": "9-34",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0942_maschiff.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0942_maschiff.json",
+        "spawnId": "maschiff-3",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "maschiff",
+        "type": "pokemon"
       }
     ],
     [
@@ -230,38 +530,20 @@
         "rarity": "common",
         "weight": 90.0,
         "levels": "9-34",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0942_maschiff.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0942_maschiff.json",
+        "spawnId": "maschiff-4",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 2.6,
-        "levels": "4-19",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/common_dark_swamp.json"
+        "spawnType": "grounded",
+        "pokemon": "maschiff",
+        "type": "pokemon"
       }
     ]
   ],
@@ -275,6 +557,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/maschiff.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/maschiff.json"
   ]
 }

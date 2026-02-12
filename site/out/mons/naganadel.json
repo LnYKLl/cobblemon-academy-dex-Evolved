@@ -2,20 +2,41 @@
   "id": "naganadel",
   "dexnum": 804,
   "name": "Naganadel",
+  "nameFr": "Mandrillon",
+  "description": "Cette Ultra-Chimère utilise son aiguillon pour sécréter un venin toxique, luisant et gluant.",
   "primaryType": "poison",
   "secondaryType": "dragon",
+  "primaryTypeFr": "Poison",
+  "secondaryTypeFr": "Dragon",
+  "height": 36,
+  "weight": 1500,
   "maleRatio": -1,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1.2,
+    "height": 4,
+    "fixed": false
+  },
   "labels": [
     "gen7",
     "ultra_beast"
   ],
   "abilities": [
-    "beastboost",
-    "h:beastboost"
+    {
+      "id": "beastboost",
+      "name": "Boost Chimère",
+      "hidden": false
+    },
+    {
+      "id": "beastboost",
+      "name": "Boost Chimère",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 120,
   "baseStats": {
     "hp": 73,
     "attack": 73,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 270,
   "experienceGroup": "slow",
   "catchRate": 45,
+  "baseFriendship": 0,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,133 +64,641 @@
         "item": "minecraft:echo_shard",
         "percentage": null,
         "quantityRange": "1-3",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:echo_shard"
       }
     ]
   },
   "moves": [
-    "1:aircutter",
-    "1:dragonpulse",
-    "1:peck",
-    "1:growl",
-    "1:helpinghand",
-    "1:acid",
-    "1:airslash",
-    "7:furyattack",
-    "14:fellstinger",
-    "21:charm",
-    "28:venoshock",
-    "35:venomdrench",
-    "42:nastyplot",
-    "49:poisonjab",
-    "56:gastroacid",
-    "63:toxic",
-    "70:dragonrush",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:allyswitch",
-    "tm:assurance",
-    "tm:breakingswipe",
-    "tm:charm",
-    "tm:crosspoison",
-    "tm:darkpulse",
-    "tm:dracometeor",
-    "tm:dragonclaw",
-    "tm:dragondance",
-    "tm:dragonpulse",
-    "tm:dragontail",
-    "tm:dualwingbeat",
-    "tm:echoedvoice",
-    "tm:endure",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:flamethrower",
-    "tm:fly",
-    "tm:gastroacid",
-    "tm:gigaimpact",
-    "tm:gunkshot",
-    "tm:heatwave",
-    "tm:helpinghand",
-    "tm:hex",
-    "tm:hyperbeam",
-    "tm:irontail",
-    "tm:laserfocus",
-    "tm:leechlife",
-    "tm:nastyplot",
-    "tm:outrage",
-    "tm:pinmissile",
-    "tm:poisonjab",
-    "tm:protect",
-    "tm:rest",
-    "tm:scaleshot",
-    "tm:shadowclaw",
-    "tm:shockwave",
-    "tm:signalbeam",
-    "tm:skyattack",
-    "tm:skydrop",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:sludgewave",
-    "tm:smartstrike",
-    "tm:snarl",
-    "tm:snatch",
-    "tm:spikes",
-    "tm:substitute",
-    "tm:swift",
-    "tm:tailwind",
-    "tm:terablast",
-    "tm:thief",
-    "tm:throatchop",
-    "tm:thunderbolt",
-    "tm:toxic",
-    "tm:toxicspikes",
-    "tm:uproar",
-    "tm:uturn",
-    "tm:venomdrench",
-    "tm:venoshock",
-    "tm:xscissor",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:allyswitch",
-    "tutor:darkpulse",
-    "tutor:dracometeor",
-    "tutor:dragonpulse",
-    "tutor:dualwingbeat",
-    "tutor:flamethrower",
-    "tutor:gastroacid",
-    "tutor:gigaimpact",
-    "tutor:gunkshot",
-    "tutor:heatwave",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:irontail",
-    "tutor:laserfocus",
-    "tutor:leechlife",
-    "tutor:outrage",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:scaleshot",
-    "tutor:shadowclaw",
-    "tutor:shockwave",
-    "tutor:signalbeam",
-    "tutor:skyattack",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:snarl",
-    "tutor:snatch",
-    "tutor:spikes",
-    "tutor:swift",
-    "tutor:tailwind",
-    "tutor:throatchop",
-    "tutor:thunderbolt",
-    "tutor:uproar",
-    "tutor:xscissor"
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "1"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "1"
+    },
+    {
+      "id": "peck",
+      "name": "Picpic",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "1"
+    },
+    {
+      "id": "acid",
+      "name": "Acide",
+      "category": "1"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "1"
+    },
+    {
+      "id": "furyattack",
+      "name": "Furie",
+      "category": "7"
+    },
+    {
+      "id": "fellstinger",
+      "name": "Dard Mortel",
+      "category": "14"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "21"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "28"
+    },
+    {
+      "id": "venomdrench",
+      "name": "Piège de Venin",
+      "category": "35"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "42"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "49"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "56"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "63"
+    },
+    {
+      "id": "dragonrush",
+      "name": "Draco-Charge",
+      "category": "70"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "breakingswipe",
+      "name": "Abattage",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "crosspoison",
+      "name": "Poison Croix",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tm"
+    },
+    {
+      "id": "dragonclaw",
+      "name": "Draco-Griffe",
+      "category": "tm"
+    },
+    {
+      "id": "dragondance",
+      "name": "Danse Draco",
+      "category": "tm"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tm"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tm"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "pinmissile",
+      "name": "Dard-Nuée",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tm"
+    },
+    {
+      "id": "skydrop",
+      "name": "Chute Libre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "tm"
+    },
+    {
+      "id": "smartstrike",
+      "name": "Estocorne",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tm"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "venomdrench",
+      "name": "Piège de Venin",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tutor"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tutor"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "poipole",
   "spawns": [],
   "implemented": true,
   "images": {
@@ -179,6 +710,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/naganadel.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/naganadel.json"
   ]
 }

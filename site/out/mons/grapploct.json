@@ -2,20 +2,41 @@
   "id": "grapploct",
   "dexnum": 853,
   "name": "Grapploct",
+  "nameFr": "Krakos",
+  "description": "Son corps est un amas de muscles. La puissance des prises d'étranglement qu'il exécute avec ses tentacules est saisissante.",
   "primaryType": "fighting",
   "secondaryType": "",
+  "primaryTypeFr": "Combat",
+  "secondaryTypeFr": "",
+  "height": 16,
+  "weight": 390,
   "maleRatio": 0.5,
+  "baseScale": 1.0,
+  "hitbox": {
+    "width": 0.62,
+    "height": 1.52,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "limber",
-    "h:technician"
+    {
+      "id": "limber",
+      "name": "Échauffement",
+      "hidden": false
+    },
+    {
+      "id": "technician",
+      "name": "Technicien",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_1",
     "human_like"
   ],
+  "eggCycles": 25,
   "baseStats": {
     "hp": 80,
     "attack": 118,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 168,
   "experienceGroup": "medium_slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 5,
     "entries": [
@@ -41,148 +64,721 @@
         "item": "minecraft:ink_sac",
         "percentage": null,
         "quantityRange": "2-4",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:ink_sac"
       },
       {
         "item": "cobblemon:pinap_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Nanana"
       }
     ]
   },
   "moves": [
-    "1:octolock",
-    "1:octazooka",
-    "1:rocksmash",
-    "1:leer",
-    "1:feint",
-    "1:bind",
-    "15:detect",
-    "20:brickbreak",
-    "25:bulkup",
-    "30:submission",
-    "35:taunt",
-    "40:reversal",
-    "45:superpower",
-    "50:topsyturvy",
-    "egg:circlethrow",
-    "egg:painsplit",
-    "egg:poweruppunch",
-    "egg:seismictoss",
-    "egg:soak",
-    "egg:suckerpunch",
-    "tm:bind",
-    "tm:bodyslam",
-    "tm:brickbreak",
-    "tm:brine",
-    "tm:brutalswing",
-    "tm:bulkup",
-    "tm:closecombat",
-    "tm:coaching",
-    "tm:dig",
-    "tm:dive",
-    "tm:drainpunch",
-    "tm:endure",
-    "tm:facade",
-    "tm:focusblast",
-    "tm:gigaimpact",
-    "tm:hydropump",
-    "tm:hyperbeam",
-    "tm:icepunch",
-    "tm:liquidation",
-    "tm:megapunch",
-    "tm:muddywater",
-    "tm:mudshot",
-    "tm:painsplit",
-    "tm:payback",
-    "tm:poweruppunch",
-    "tm:protect",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:revenge",
-    "tm:reversal",
-    "tm:rocksmash",
-    "tm:scaryface",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:stompingtantrum",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:superpower",
-    "tm:surf",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:waterfall",
-    "tm:whirlpool",
-    "tm:workup",
-    "tutor:bind",
-    "tutor:bulkup",
-    "tutor:coaching",
-    "tutor:dive",
-    "tutor:drainpunch",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:icepunch",
-    "tutor:liquidation",
-    "tutor:painsplit",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:stompingtantrum",
-    "tutor:suckerpunch",
-    "tutor:superpower"
+    {
+      "id": "octolock",
+      "name": "Octoprise",
+      "category": "1"
+    },
+    {
+      "id": "octazooka",
+      "name": "Octazooka",
+      "category": "1"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "feint",
+      "name": "Ruse",
+      "category": "1"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "1"
+    },
+    {
+      "id": "detect",
+      "name": "Détection",
+      "category": "15"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "20"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "25"
+    },
+    {
+      "id": "submission",
+      "name": "Sacrifice",
+      "category": "30"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "35"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "40"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "45"
+    },
+    {
+      "id": "topsyturvy",
+      "name": "Renversement",
+      "category": "50"
+    },
+    {
+      "id": "circlethrow",
+      "name": "Projection",
+      "category": "egg"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "egg"
+    },
+    {
+      "id": "poweruppunch",
+      "name": "Poing Boost",
+      "category": "egg"
+    },
+    {
+      "id": "seismictoss",
+      "name": "Frappe Atlas",
+      "category": "egg"
+    },
+    {
+      "id": "soak",
+      "name": "Détrempage",
+      "category": "egg"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "egg"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "tm"
+    },
+    {
+      "id": "brutalswing",
+      "name": "Centrifugifle",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tm"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "tm"
+    },
+    {
+      "id": "coaching",
+      "name": "Coaching",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tm"
+    },
+    {
+      "id": "drainpunch",
+      "name": "Vampi-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "focusblast",
+      "name": "Exploforce",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "megapunch",
+      "name": "Ultimapoing",
+      "category": "tm"
+    },
+    {
+      "id": "muddywater",
+      "name": "Ocroupi",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "poweruppunch",
+      "name": "Poing Boost",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tutor"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tutor"
+    },
+    {
+      "id": "coaching",
+      "name": "Coaching",
+      "category": "tutor"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tutor"
+    },
+    {
+      "id": "drainpunch",
+      "name": "Vampi-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "clobbopus",
   "spawns": [
     [
       {
-        "rarity": "common",
-        "weight": 2.5,
-        "levels": "13-34",
-        "contexts": [
-          "grounded"
-        ],
+        "rarity": "uncommon",
+        "weight": 0.96,
+        "levels": "35-48",
         "biomeTags": {
           "include": [
             "#cobblemon:is_coast",
-            "#cobblemon:is_island"
+            "#cobblemon:is_ocean",
+            "#cobblemon:is_tropical_island"
+          ],
+          "exclude": [
+            "#cobblemon:is_freezing"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/grapploct.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0853_grapploct.json",
+        "spawnId": "grapploct-6",
         "sky": {
           "canSeeSky": true
+        },
+        "spawnType": "fishing",
+        "pokemon": "grapploct",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "rarity": "common",
+        "weight": 0.2,
+        "levels": "35-48",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_coast",
+            "#cobblemon:is_ocean",
+            "#cobblemon:is_tropical_island"
+          ],
+          "exclude": [
+            "#cobblemon:is_freezing"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0853_grapploct.json",
+        "spawnId": "grapploct-7",
+        "sky": {
+          "canSeeSky": true
+        },
+        "spawnType": "fishing",
+        "pokemon": "grapploct",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 3.0,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      }
+    ],
+    [
+      {
+        "rarity": "uncommon",
+        "weight": 0.96,
+        "levels": "35-48",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_coast",
+            "#cobblemon:is_ocean",
+            "#cobblemon:is_tropical_island"
+          ],
+          "exclude": [
+            "#cobblemon:is_freezing"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0853_grapploct.json",
+        "spawnId": "grapploct-8",
+        "sky": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "fishing",
+        "pokemon": "grapploct",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "rarity": "common",
+        "weight": 0.2,
+        "levels": "35-48",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_coast",
+            "#cobblemon:is_ocean",
+            "#cobblemon:is_tropical_island"
+          ],
+          "exclude": [
+            "#cobblemon:is_freezing"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0853_grapploct.json",
+        "spawnId": "grapploct-9",
+        "sky": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "fishing",
+        "pokemon": "grapploct",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 3.0,
+          "condition": {
+            "minLureLevel": 3
+          }
         }
       }
     ],
     [
       {
         "presets": [
-          "water_surface"
+          "natural",
+          "wild"
         ],
-        "rarity": "common",
-        "weight": 0.2,
-        "levels": "13-34",
-        "contexts": [
-          "surface"
-        ],
+        "rarity": "uncommon",
+        "weight": 0.32,
+        "levels": "35-48",
         "biomeTags": {
           "include": [
-            "#cobblemon:is_river",
-            "#cobblemon:is_freshwater"
+            "#cobblemon:is_coast"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/grapploct.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0853_grapploct.json",
+        "spawnId": "grapploct-1",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "grapploct",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "water"
+        ],
+        "rarity": "uncommon",
+        "weight": 0.96,
+        "levels": "35-48",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_ocean"
+          ],
+          "exclude": [
+            "#cobblemon:is_frozen_ocean"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0853_grapploct.json",
+        "spawnId": "grapploct-2",
         "sky": {
           "canSeeSky": true
+        },
+        "spawnType": "seafloor",
+        "pokemon": "grapploct",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "water"
+        ],
+        "rarity": "uncommon",
+        "weight": 0.96,
+        "levels": "35-48",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_overworld"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0853_grapploct.json",
+        "spawnId": "grapploct-3",
+        "structures": [
+          "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
+        ],
+        "sky": {
+          "canSeeSky": false
+        },
+        "yLevel": {
+          "minY": -60,
+          "maxY": 13
+        },
+        "spawnType": "seafloor",
+        "pokemon": "grapploct",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "rarity": "uncommon",
+        "weight": 0.96,
+        "levels": "35-48",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_overworld"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0853_grapploct.json",
+        "spawnId": "grapploct-4",
+        "structures": [
+          "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
+        ],
+        "sky": {
+          "canSeeSky": false
+        },
+        "yLevel": {
+          "minY": -60,
+          "maxY": 13
+        },
+        "spawnType": "fishing",
+        "pokemon": "grapploct",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "rarity": "common",
+        "weight": 0.2,
+        "levels": "35-48",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_overworld"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0853_grapploct.json",
+        "spawnId": "grapploct-5",
+        "structures": [
+          "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
+        ],
+        "sky": {
+          "canSeeSky": false
+        },
+        "yLevel": {
+          "minY": -60,
+          "maxY": 13
+        },
+        "spawnType": "fishing",
+        "pokemon": "grapploct",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 3.0,
+          "condition": {
+            "minLureLevel": 3
+          }
         }
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/grapploct.png"
@@ -192,7 +788,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/grapploct.json",
-    "datapacks\\CCC_MAL_1.6.4.1\\data\\cobblemon\\species\\generation8\\grapploct.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/grapploct.json"
   ]
 }

@@ -2,19 +2,40 @@
   "id": "tynamo",
   "dexnum": 602,
   "name": "Tynamo",
+  "nameFr": "Anchwatt",
+  "description": "Tout seul, il ne dégage pas beaucoup d'électricité. Mais un banc d'Anchwatt produit des décharges surpuissantes.",
   "primaryType": "electric",
   "secondaryType": "",
+  "primaryTypeFr": "Électrik",
+  "secondaryTypeFr": "",
+  "height": 2,
+  "weight": 3,
   "maleRatio": 0.5,
+  "baseScale": 0.55,
+  "hitbox": {
+    "width": 0.6,
+    "height": 0.75,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "levitate",
-    "h:levitate"
+    {
+      "id": "levitate",
+      "name": "Lévitation",
+      "hidden": false
+    },
+    {
+      "id": "levitate",
+      "name": "Lévitation",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "amorphous"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 35,
     "attack": 55,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 55,
   "experienceGroup": "slow",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -40,29 +63,89 @@
         "item": "minecraft:slime_ball",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:slime_ball"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:thunderwave",
-    "1:spark",
-    "1:chargebeam",
-    "tm:charge",
-    "tm:chargebeam",
-    "tm:knockoff",
-    "tm:magnetrise",
-    "tm:risingvoltage",
-    "tm:terablast",
-    "tm:thunderwave",
-    "tutor:chargebeam",
-    "tutor:knockoff",
-    "tutor:magnetrise",
-    "tutor:risingvoltage"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "1"
+    },
+    {
+      "id": "spark",
+      "name": "Étincelle",
+      "category": "1"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "1"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tm"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tutor"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "tynamo_eelektrik",
@@ -80,49 +163,132 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
-        "presets": [
-          "water"
-        ],
         "rarity": "common",
-        "weight": 1.5,
-        "levels": "4-19",
-        "contexts": [
-          "submerged"
-        ],
+        "weight": 1.8,
+        "levels": "3-28",
         "biomeTags": {
           "include": [
-            "#eternal_starlight:is_safari_ocean"
+            "#cobblemon:is_ocean"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_safari_ocean/common_is_safari_ocean.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0602_tynamo.json",
+        "spawnId": "tynamo-4",
+        "sky": {
+          "canSeeSky": true
+        },
+        "spawnType": "fishing",
+        "pokemon": "tynamo",
+        "type": "pokemon",
+        "weightMultiplier": [
+          {
+            "multiplier": 3.0,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5.0,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ]
       }
     ],
     [
       {
-        "presets": [
-          "water"
-        ],
-        "rarity": "rare",
+        "rarity": "common",
         "weight": 9.0,
-        "levels": "8-36",
-        "contexts": [
-          "submerged"
-        ],
+        "levels": "3-28",
         "biomeTags": {
           "include": [
-            "#cobblemon:is_cave"
+            "#cobblemon:is_overworld"
           ],
           "exclude": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/tynamo.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0602_tynamo.json",
+        "spawnId": "tynamo-5",
         "sky": {
-          "canSeeSky": false
+          "minSkyLight": 0,
+          "maxSkyLight": 7
+        },
+        "spawnType": "fishing",
+        "pokemon": "tynamo",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
         }
+      }
+    ],
+    [
+      {
+        "rarity": "common",
+        "weight": 1.8,
+        "levels": "3-28",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_ocean"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0602_tynamo.json",
+        "spawnId": "tynamo-6",
+        "sky": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "fishing",
+        "pokemon": "tynamo",
+        "type": "pokemon",
+        "weightMultiplier": [
+          {
+            "multiplier": 3.0,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5.0,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "presets": [
+          "water"
+        ],
+        "rarity": "common",
+        "weight": 1.8,
+        "levels": "3-28",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_ocean"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0602_tynamo.json",
+        "spawnId": "tynamo-1",
+        "yLevel": {
+          "maxY": 48
+        },
+        "spawnType": "submerged",
+        "pokemon": "tynamo",
+        "type": "pokemon"
       }
     ],
     [
@@ -131,65 +297,69 @@
           "water"
         ],
         "rarity": "uncommon",
-        "weight": 5.0,
-        "levels": "8-36",
-        "contexts": [
-          "submerged"
-        ],
+        "weight": 5.04,
+        "levels": "3-28",
         "biomeTags": {
           "include": [
-            "#cobblemon:is_lush"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/tynamo.json",
-        "sky": {
-          "canSeeSky": false
-        }
-      }
-    ],
-    [
-      {
-        "rarity": "uncommon",
-        "weight": 5.2,
-        "levels": "8-36",
-        "contexts": [
-          "fishing"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_cave"
+            "#cobblemon:is_overworld"
           ],
           "exclude": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/tynamo.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0602_tynamo.json",
+        "spawnId": "tynamo-2",
         "sky": {
-          "canSeeSky": false
-        }
+          "minSkyLight": 0,
+          "maxSkyLight": 7
+        },
+        "yLevel": {
+          "maxY": 48
+        },
+        "spawnType": "submerged",
+        "pokemon": "tynamo",
+        "excludeStructures": [
+          "#cobblemon:shipwreck_cove"
+        ],
+        "excludeYLevel": {
+          "minY": -60,
+          "maxY": 13
+        },
+        "type": "pokemon"
       }
     ],
     [
       {
-        "rarity": "common",
-        "weight": 7.2,
-        "levels": "8-36",
-        "contexts": [
-          "submerged"
+        "presets": [
+          "water"
         ],
+        "rarity": "common",
+        "weight": 5.4,
+        "levels": "3-28",
         "biomeTags": {
           "include": [
-            "#cobblemon:is_lush"
+            "#cobblemon:is_overworld"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/tynamo.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0602_tynamo.json",
+        "spawnId": "tynamo-3",
+        "structures": [
+          "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
+        ],
         "sky": {
           "canSeeSky": false
-        }
+        },
+        "yLevel": {
+          "minY": -60,
+          "maxY": 13
+        },
+        "spawnType": "submerged",
+        "pokemon": "tynamo",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/tynamo.png"
@@ -199,6 +369,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/tynamo.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/tynamo.json"
   ]
 }

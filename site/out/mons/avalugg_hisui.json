@@ -2,22 +2,47 @@
   "id": "avalugg_hisui",
   "dexnum": 713,
   "name": "Avalugg Hisui",
+  "nameFr": "Avalugg Hisui",
+  "description": "L'armure de glace qui enveloppe sa mâchoire inférieure peut briser des rocs plus durs que l'acier. Il se meut vélocement en fendant la neige épaisse des chemins de montagne.",
   "primaryType": "ice",
   "secondaryType": "rock",
+  "primaryTypeFr": "Glace",
+  "secondaryTypeFr": "Roche",
+  "height": 14,
+  "weight": 2624,
   "maleRatio": 0.5,
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 4,
+    "height": 3,
+    "fixed": false
+  },
   "labels": [
     "gen8a",
     "hisuian_form"
   ],
   "abilities": [
-    "strongjaw",
-    "icebody",
-    "h:sturdy"
+    {
+      "id": "strongjaw",
+      "name": "Prognathe",
+      "hidden": false
+    },
+    {
+      "id": "icebody",
+      "name": "Corps Gel",
+      "hidden": false
+    },
+    {
+      "id": "sturdy",
+      "name": "Fermeté",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "monster",
     "mineral"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 95,
     "attack": 127,
@@ -34,8 +59,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 180,
   "experienceGroup": "medium_fast",
   "catchRate": 55,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -43,132 +70,549 @@
         "item": "cobblemon:never_melt_ice",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Glace Éternelle"
       },
       {
         "item": "cobblemon:babiri_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Babiri"
       }
     ]
   },
   "moves": [
-    "1:rockslide",
-    "1:powdersnow",
-    "1:rapidspin",
-    "1:wideguard",
-    "1:harden",
-    "1:tackle",
-    "9:curse",
-    "12:icywind",
-    "15:protect",
-    "18:avalanche",
-    "21:bite",
-    "24:icefang",
-    "27:irondefense",
-    "30:recover",
-    "33:crunch",
-    "36:takedown",
-    "41:blizzard",
-    "46:doubleedge",
-    "51:stoneedge",
-    "61:mountaingale",
-    "egg:auroraveil",
-    "egg:barrier",
-    "egg:mirrorcoat",
-    "egg:mist",
-    "egg:sharpen",
-    "tm:auroraveil",
-    "tm:avalanche",
-    "tm:blizzard",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:chillingwater",
-    "tm:crunch",
-    "tm:curse",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:facade",
-    "tm:gigaimpact",
-    "tm:gyroball",
-    "tm:hardpress",
-    "tm:heavyslam",
-    "tm:highhorsepower",
-    "tm:hyperbeam",
-    "tm:iceball",
-    "tm:icebeam",
-    "tm:icefang",
-    "tm:icespinner",
-    "tm:iciclespear",
-    "tm:icywind",
-    "tm:irondefense",
-    "tm:ironhead",
-    "tm:meteorbeam",
-    "tm:powershift",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:rockblast",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:sandstorm",
-    "tm:scaryface",
-    "tm:sleeptalk",
-    "tm:snowscape",
-    "tm:stealthrock",
-    "tm:stompingtantrum",
-    "tm:stoneedge",
-    "tm:substitute",
-    "tm:takedown",
-    "tm:terablast",
-    "tutor:bulldoze",
-    "tutor:gigaimpact",
-    "tutor:highhorsepower",
-    "tutor:hyperbeam",
-    "tutor:iceball",
-    "tutor:icebeam",
-    "tutor:icefang",
-    "tutor:icywind",
-    "tutor:irondefense",
-    "tutor:ironhead",
-    "tutor:meteorbeam",
-    "tutor:powershift",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:sleeptalk",
-    "tutor:stealthrock",
-    "tutor:stompingtantrum",
-    "tutor:stoneedge"
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "1"
+    },
+    {
+      "id": "powdersnow",
+      "name": "Poudreuse",
+      "category": "1"
+    },
+    {
+      "id": "rapidspin",
+      "name": "Tour Rapide",
+      "category": "1"
+    },
+    {
+      "id": "wideguard",
+      "name": "Garde Large",
+      "category": "1"
+    },
+    {
+      "id": "harden",
+      "name": "Armure",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "9"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "12"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "15"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "18"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "21"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "24"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "27"
+    },
+    {
+      "id": "recover",
+      "name": "Soin",
+      "category": "30"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "33"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "36"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "41"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "46"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "51"
+    },
+    {
+      "id": "mountaingale",
+      "name": "Bise Glaciaire",
+      "category": "61"
+    },
+    {
+      "id": "auroraveil",
+      "name": "Voile Aurore",
+      "category": "egg"
+    },
+    {
+      "id": "barrier",
+      "name": "Bouclier",
+      "category": "egg"
+    },
+    {
+      "id": "mirrorcoat",
+      "name": "Voile Miroir",
+      "category": "egg"
+    },
+    {
+      "id": "mist",
+      "name": "Brume",
+      "category": "egg"
+    },
+    {
+      "id": "sharpen",
+      "name": "Affûtage",
+      "category": "egg"
+    },
+    {
+      "id": "auroraveil",
+      "name": "Voile Aurore",
+      "category": "tm"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "tm"
+    },
+    {
+      "id": "hardpress",
+      "name": "Pression Extrême",
+      "category": "tm"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "tm"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "iceball",
+      "name": "Ball'Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tm"
+    },
+    {
+      "id": "icespinner",
+      "name": "Cryo-Pirouette",
+      "category": "tm"
+    },
+    {
+      "id": "iciclespear",
+      "name": "Stalactite",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tm"
+    },
+    {
+      "id": "powershift",
+      "name": "Échange Force",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "iceball",
+      "name": "Ball'Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "powershift",
+      "name": "Échange Force",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "bergmite",
   "spawns": [
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 1.4,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:starlight_permafrost_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/rare_starlight_permafrost_forest.json"
-      }
-    ],
     [
       {
         "presets": [
@@ -182,11 +626,18 @@
         ],
         "biomeTags": {
           "include": [
+            "minecraft:jagged_peaks",
             "minecraft:frozen_peaks",
-            "minecraft:snowy_slopes"
+            "minecraft:snowy_slopes",
+            "terralith:emerald_peaks",
+            "terralith:scarlet_mountains",
+            "wythers:snowy_peaks"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/avalugg.json"
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0713_avalugg_hisuian.json",
+        "spawnId": "avalugg-hisuian-1",
+        "pokemon": "avalugg hisuian",
+        "type": "pokemon"
       }
     ],
     [
@@ -205,7 +656,59 @@
             "#cobblemon:is_snowy_forest"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/avalugg.json"
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0713_avalugg_hisuian.json",
+        "spawnId": "avalugg-hisuian-2",
+        "pokemon": "avalugg hisuian",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "uncommon",
+        "weight": 8.0,
+        "levels": "30-60",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "minecraft:jagged_peaks",
+            "minecraft:frozen_peaks",
+            "minecraft:snowy_slopes",
+            "terralith:emerald_peaks",
+            "terralith:scarlet_mountains",
+            "wythers:snowy_peaks"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0713_avalugg_hisuian.json",
+        "spawnId": "ccc-avalugg-hisuian-1",
+        "pokemon": "avalugg hisuian",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "rare",
+        "weight": 8.0,
+        "levels": "30-60",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_snowy_forest"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0713_avalugg_hisuian.json",
+        "spawnId": "ccc-avalugg-hisuian-2",
+        "pokemon": "avalugg hisuian",
+        "type": "pokemon"
       }
     ]
   ],
@@ -219,6 +722,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation6/avalugg.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation6/avalugg.json"
   ]
 }

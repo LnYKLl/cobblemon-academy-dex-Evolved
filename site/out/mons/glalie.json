@@ -2,21 +2,46 @@
   "id": "glalie",
   "dexnum": 362,
   "name": "Glalie",
+  "nameFr": "Oniglali",
+  "description": "Oniglali a le pouvoir de contrôler la glace à volonté. Par exemple, il peut geler sa proie sur place. Une fois la proie immobilisée, ce Pokémon la mange sans se presser.",
   "primaryType": "ice",
   "secondaryType": "",
+  "primaryTypeFr": "Glace",
+  "secondaryTypeFr": "",
+  "height": 15,
+  "weight": 2565,
   "maleRatio": 0.5,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 1.8,
+    "height": 1.9,
+    "fixed": false
+  },
   "labels": [
     "gen3"
   ],
   "abilities": [
-    "innerfocus",
-    "icebody",
-    "h:moody"
+    {
+      "id": "innerfocus",
+      "name": "Attention",
+      "hidden": false
+    },
+    {
+      "id": "icebody",
+      "name": "Corps Gel",
+      "hidden": false
+    },
+    {
+      "id": "moody",
+      "name": "Lunatique",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "fairy",
     "mineral"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 80,
     "attack": 80,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 168,
   "experienceGroup": "medium_fast",
   "catchRate": 75,
+  "baseFriendship": 50,
   "drops": {
     "amount": 5,
     "entries": [
@@ -42,193 +69,661 @@
         "item": "minecraft:snowball",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:snowball"
       },
       {
         "item": "cobblemon:dawn_stone",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Pierre Aube"
       },
       {
         "item": "cobblemon:never_melt_ice",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Glace Éternelle"
       },
       {
         "item": "cobblemon:babiri_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Babiri"
       }
     ]
   },
   "moves": [
-    "1:powdersnow",
-    "1:leer",
-    "1:doubleteam",
-    "1:headbutt",
-    "1:sheercold",
-    "1:freezedry",
-    "1:iceball",
-    "1:astonish",
-    "15:iceshard",
-    "20:protect",
-    "25:icywind",
-    "30:frostbreath",
-    "35:bite",
-    "40:icefang",
-    "47:snowscape",
-    "54:weatherball",
-    "61:crunch",
-    "68:blizzard",
-    "egg:bide",
-    "egg:block",
-    "egg:disable",
-    "egg:iciclecrash",
-    "egg:rollout",
-    "egg:switcheroo",
-    "tm:avalanche",
-    "tm:blizzard",
-    "tm:block",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:chillingwater",
-    "tm:crunch",
-    "tm:darkpulse",
-    "tm:doubleteam",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:explosion",
-    "tm:facade",
-    "tm:faketears",
-    "tm:flash",
-    "tm:foulplay",
-    "tm:frostbreath",
-    "tm:gigaimpact",
-    "tm:gyroball",
-    "tm:hail",
-    "tm:headbutt",
-    "tm:helpinghand",
-    "tm:hex",
-    "tm:hyperbeam",
-    "tm:iceball",
-    "tm:icebeam",
-    "tm:icefang",
-    "tm:icespinner",
-    "tm:iciclespear",
-    "tm:icywind",
-    "tm:ironhead",
-    "tm:laserfocus",
-    "tm:lightscreen",
-    "tm:payback",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:rollout",
-    "tm:safeguard",
-    "tm:scaryface",
-    "tm:selfdestruct",
-    "tm:shadowball",
-    "tm:signalbeam",
-    "tm:sleeptalk",
-    "tm:snowscape",
-    "tm:spikes",
-    "tm:spite",
-    "tm:steelroller",
-    "tm:substitute",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:torment",
-    "tm:trailblaze",
-    "tm:waterpulse",
-    "tm:weatherball",
-    "tutor:block",
-    "tutor:bulldoze",
-    "tutor:darkpulse",
-    "tutor:foulplay",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:iceball",
-    "tutor:icebeam",
-    "tutor:icefang",
-    "tutor:icywind",
-    "tutor:ironhead",
-    "tutor:laserfocus",
-    "tutor:rest",
-    "tutor:rollout",
-    "tutor:shadowball",
-    "tutor:signalbeam",
-    "tutor:sleeptalk",
-    "tutor:spikes",
-    "tutor:spite",
-    "tutor:steelroller",
-    "tutor:waterpulse"
+    {
+      "id": "powdersnow",
+      "name": "Poudreuse",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "1"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "1"
+    },
+    {
+      "id": "sheercold",
+      "name": "Glaciation",
+      "category": "1"
+    },
+    {
+      "id": "freezedry",
+      "name": "Lyophilisation",
+      "category": "1"
+    },
+    {
+      "id": "iceball",
+      "name": "Ball'Glace",
+      "category": "1"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "1"
+    },
+    {
+      "id": "iceshard",
+      "name": "Éclats Glace",
+      "category": "15"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "20"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "25"
+    },
+    {
+      "id": "frostbreath",
+      "name": "Souffle Glacé",
+      "category": "30"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "35"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "40"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "47"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "54"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "61"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "68"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "egg"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "egg"
+    },
+    {
+      "id": "disable",
+      "name": "Entrave",
+      "category": "egg"
+    },
+    {
+      "id": "iciclecrash",
+      "name": "Chute Glace",
+      "category": "egg"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "egg"
+    },
+    {
+      "id": "switcheroo",
+      "name": "Passe-Passe",
+      "category": "egg"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "faketears",
+      "name": "Croco Larme",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "frostbreath",
+      "name": "Souffle Glacé",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "iceball",
+      "name": "Ball'Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tm"
+    },
+    {
+      "id": "icespinner",
+      "name": "Cryo-Pirouette",
+      "category": "tm"
+    },
+    {
+      "id": "iciclespear",
+      "name": "Stalactite",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "tm"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "steelroller",
+      "name": "Métalliroue",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "iceball",
+      "name": "Ball'Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "steelroller",
+      "name": "Métalliroue",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "sing",
+      "name": "Berceuse",
+      "category": "special"
+    }
   ],
   "forms": [
     "Mega"
   ],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "snorunt",
   "spawns": [
     [
       {
         "presets": [
-          "natural"
+          "natural",
+          "wild"
         ],
         "rarity": "uncommon",
-        "weight": 7.0,
-        "levels": "42-55",
-        "contexts": [
-          "grounded"
-        ],
+        "weight": 0.32,
+        "levels": "42-48",
         "biomeTags": {
           "include": [
-            "#cobblemon:is_snowy"
+            "#cobblemon:is_glacial"
           ]
         },
-        "source": "Cobblemon_MegaShowdown-10.0.7-release-fabric.jar!/data/cobblemon/spawn_pool_world/0362_glalie.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 8.6,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:starlight_permafrost_forest"
-          ]
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0362_glalie.json",
+        "spawnId": "glalie-1",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/rare_starlight_permafrost_forest.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 2.0,
-        "levels": "40-50",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_freezing"
-          ]
+        "weather": {
+          "isRaining": false
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/glalie.json"
+        "spawnType": "grounded",
+        "pokemon": "glalie",
+        "type": "pokemon"
       }
     ],
     [
@@ -237,21 +732,47 @@
           "natural"
         ],
         "rarity": "uncommon",
-        "weight": 7.0,
-        "levels": "42-55",
-        "contexts": [
-          "grounded"
-        ],
+        "weight": 1.2,
+        "levels": "42-48",
         "biomeTags": {
           "include": [
-            "#cobblemon:is_snowy"
+            "#cobblemon:is_snowy",
+            "#cobblemon:is_tundra"
           ]
         },
-        "source": "datapacks/MegaShowdown/data/cobblemon/spawn_pool_world/0362_glalie.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0362_glalie.json",
+        "spawnId": "glalie-2",
+        "sky": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7
+        },
+        "spawnType": "grounded",
+        "pokemon": "glalie",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "uncommon",
+        "weight": 1.2,
+        "levels": "42-48",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:nether/is_frozen"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0362_glalie.json",
+        "spawnId": "glalie-3",
+        "spawnType": "grounded",
+        "pokemon": "glalie",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/glalie.png"
@@ -261,6 +782,7 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation3/glalie.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation3/glalie.json",
+    "datapacks\\Journey Mounts\\data\\cobblemon\\species\\generation3\\glalie.json"
   ]
 }

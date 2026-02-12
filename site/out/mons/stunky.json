@@ -2,20 +2,45 @@
   "id": "stunky",
   "dexnum": 434,
   "name": "Stunky",
+  "nameFr": "Moufouette",
+  "description": "Il se protège en expulsant un fluide nocif par son derrière. La puanteur dure 24 heures.",
   "primaryType": "poison",
   "secondaryType": "dark",
+  "primaryTypeFr": "Poison",
+  "secondaryTypeFr": "Ténèbres",
+  "height": 4,
+  "weight": 192,
   "maleRatio": 0.5,
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 0.7,
+    "height": 0.7,
+    "fixed": false
+  },
   "labels": [
     "gen4"
   ],
   "abilities": [
-    "stench",
-    "aftermath",
-    "h:keeneye"
+    {
+      "id": "stench",
+      "name": "Puanteur",
+      "hidden": false
+    },
+    {
+      "id": "aftermath",
+      "name": "Boom Final",
+      "hidden": false
+    },
+    {
+      "id": "keeneye",
+      "name": "Regard Vif",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 63,
     "attack": 63,
@@ -32,138 +57,674 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 66,
   "experienceGroup": "medium_fast",
   "catchRate": 225,
+  "baseFriendship": 50,
   "drops": {
-    "amount": 1,
+    "amount": 3,
     "entries": [
       {
         "item": "cobblemon:pecha_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Pêcha"
+      },
+      {
+        "item": "minecraft:ink_sac",
+        "percentage": 33,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "minecraft:ink_sac"
+      },
+      {
+        "item": "minecraft:slime_ball",
+        "percentage": 33,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "minecraft:slime_ball"
       }
     ]
   },
   "moves": [
-    "1:scratch",
-    "1:poisongas",
-    "3:feint",
-    "6:smokescreen",
-    "9:acidspray",
-    "12:furyswipes",
-    "15:focusenergy",
-    "18:bite",
-    "21:venoshock",
-    "24:screech",
-    "27:toxic",
-    "30:suckerpunch",
-    "33:memento",
-    "36:nightslash",
-    "39:belch",
-    "42:explosion",
-    "egg:astonish",
-    "egg:doubleedge",
-    "egg:flameburst",
-    "egg:haze",
-    "egg:leer",
-    "egg:punishment",
-    "egg:pursuit",
-    "egg:slash",
-    "egg:smog",
-    "tm:acidspray",
-    "tm:assurance",
-    "tm:bodyslam",
-    "tm:corrosivegas",
-    "tm:crunch",
-    "tm:cut",
-    "tm:darkpulse",
-    "tm:defog",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:endure",
-    "tm:explosion",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:flamethrower",
-    "tm:focusenergy",
-    "tm:foulplay",
-    "tm:furycutter",
-    "tm:gunkshot",
-    "tm:haze",
-    "tm:headbutt",
-    "tm:helpinghand",
-    "tm:hex",
-    "tm:honeclaws",
-    "tm:incinerate",
-    "tm:irontail",
-    "tm:knockoff",
-    "tm:lashout",
-    "tm:nastyplot",
-    "tm:payback",
-    "tm:playrough",
-    "tm:poisonjab",
-    "tm:poisontail",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:roar",
-    "tm:rocksmash",
-    "tm:scaryface",
-    "tm:screech",
-    "tm:shadowball",
-    "tm:shadowclaw",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:sludgewave",
-    "tm:snarl",
-    "tm:snatch",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:tailslap",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:temperflare",
-    "tm:terablast",
-    "tm:thief",
-    "tm:throatchop",
-    "tm:torment",
-    "tm:toxic",
-    "tm:toxicspikes",
-    "tm:trailblaze",
-    "tm:venomdrench",
-    "tm:venoshock",
-    "tutor:corrosivegas",
-    "tutor:darkpulse",
-    "tutor:defog",
-    "tutor:flamethrower",
-    "tutor:focusenergy",
-    "tutor:foulplay",
-    "tutor:furycutter",
-    "tutor:gunkshot",
-    "tutor:helpinghand",
-    "tutor:irontail",
-    "tutor:knockoff",
-    "tutor:lashout",
-    "tutor:playrough",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:shadowball",
-    "tutor:shadowclaw",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:snarl",
-    "tutor:snatch",
-    "tutor:spikes",
-    "tutor:suckerpunch",
-    "tutor:swift",
-    "tutor:throatchop"
+    {
+      "id": "scratch",
+      "name": "Griffe",
+      "category": "1"
+    },
+    {
+      "id": "poisongas",
+      "name": "Gaz Toxik",
+      "category": "1"
+    },
+    {
+      "id": "feint",
+      "name": "Ruse",
+      "category": "3"
+    },
+    {
+      "id": "smokescreen",
+      "name": "Brouillard",
+      "category": "6"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "9"
+    },
+    {
+      "id": "furyswipes",
+      "name": "Combo-Griffe",
+      "category": "12"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "15"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "18"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "21"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "24"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "27"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "30"
+    },
+    {
+      "id": "memento",
+      "name": "Souvenir",
+      "category": "33"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "36"
+    },
+    {
+      "id": "belch",
+      "name": "Éructation",
+      "category": "39"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "42"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "egg"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "egg"
+    },
+    {
+      "id": "flameburst",
+      "name": "Rebondifeu",
+      "category": "egg"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "egg"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "egg"
+    },
+    {
+      "id": "punishment",
+      "name": "Punition",
+      "category": "egg"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "egg"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "egg"
+    },
+    {
+      "id": "smog",
+      "name": "Purédpois",
+      "category": "egg"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "corrosivegas",
+      "name": "Gaz Corrosif",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "poisontail",
+      "name": "Queue-Poison",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailslap",
+      "name": "Plumo-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "temperflare",
+      "name": "Indignition",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "venomdrench",
+      "name": "Piège de Venin",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "corrosivegas",
+      "name": "Gaz Corrosif",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "stunky_skuntank",
@@ -181,6 +742,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -188,17 +750,29 @@
           "natural"
         ],
         "rarity": "common",
-        "weight": 3.5,
-        "levels": "4-19",
+        "weight": 8.0,
+        "levels": "1-35",
         "contexts": [
           "grounded"
         ],
         "biomeTags": {
           "include": [
-            "eternal_starlight:dark_swamp"
+            "#cobblemon:is_swamp"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/common_dark_swamp.json"
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0434_stunky.json",
+        "spawnId": "stunky-1",
+        "sky": {
+          "canSeeSky": true
+        },
+        "pokemon": "stunky",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 1.5,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
       }
     ],
     [
@@ -217,14 +791,23 @@
             "#cobblemon:is_swamp"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/stunky.json",
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0434_stunky.json",
+        "spawnId": "ccc-stunky-1",
         "sky": {
           "canSeeSky": true
+        },
+        "pokemon": "stunky",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 1.5,
+          "condition": {
+            "timeRange": "night"
+          }
         }
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/stunky.png"
@@ -234,6 +817,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation4/stunky.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation4/stunky.json"
   ]
 }

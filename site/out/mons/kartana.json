@@ -2,20 +2,41 @@
   "id": "kartana",
   "dexnum": 798,
   "name": "Kartana",
+  "nameFr": "Katagami",
+  "description": "Le corps de cette Ultra-Chimère semble fin comme du papier, mais il est aussi tranchant qu'un sabre affûté.",
   "primaryType": "grass",
   "secondaryType": "steel",
+  "primaryTypeFr": "Plante",
+  "secondaryTypeFr": "Acier",
+  "height": 3,
+  "weight": 1,
   "maleRatio": -1,
+  "baseScale": 0.3,
+  "hitbox": {
+    "width": 1,
+    "height": 1.9,
+    "fixed": false
+  },
   "labels": [
     "gen7",
     "ultra_beast"
   ],
   "abilities": [
-    "beastboost",
-    "h:beastboost"
+    {
+      "id": "beastboost",
+      "name": "Boost Chimère",
+      "hidden": false
+    },
+    {
+      "id": "beastboost",
+      "name": "Boost Chimère",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 120,
   "baseStats": {
     "hp": 59,
     "attack": 181,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
   "catchRate": 45,
+  "baseFriendship": 0,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,85 +64,454 @@
         "item": "minecraft:echo_shard",
         "percentage": null,
         "quantityRange": "1-3",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:echo_shard"
       }
     ]
   },
   "moves": [
-    "1:vacuumwave",
-    "1:furycutter",
-    "5:razorleaf",
-    "10:falseswipe",
-    "15:cut",
-    "20:aircutter",
-    "25:aerialace",
-    "30:detect",
-    "35:nightslash",
-    "40:synthesis",
-    "45:laserfocus",
-    "50:defog",
-    "55:leafblade",
-    "60:sacredsword",
-    "65:swordsdance",
-    "70:guillotine",
-    "tm:aerialace",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:brickbreak",
-    "tm:calmmind",
-    "tm:cut",
-    "tm:defog",
-    "tm:endure",
-    "tm:falseswipe",
-    "tm:furycutter",
-    "tm:gigadrain",
-    "tm:gigaimpact",
-    "tm:irondefense",
-    "tm:knockoff",
-    "tm:laserfocus",
-    "tm:lastresort",
-    "tm:leafblade",
-    "tm:protect",
-    "tm:psychocut",
-    "tm:rest",
-    "tm:screech",
-    "tm:sleeptalk",
-    "tm:smartstrike",
-    "tm:solarblade",
-    "tm:steelbeam",
-    "tm:substitute",
-    "tm:swordsdance",
-    "tm:synthesis",
-    "tm:tailwind",
-    "tm:terablast",
-    "tm:vacuumwave",
-    "tm:xscissor",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:calmmind",
-    "tutor:defog",
-    "tutor:falseswipe",
-    "tutor:furycutter",
-    "tutor:gigadrain",
-    "tutor:gigaimpact",
-    "tutor:irondefense",
-    "tutor:knockoff",
-    "tutor:laserfocus",
-    "tutor:lastresort",
-    "tutor:psychocut",
-    "tutor:rest",
-    "tutor:sleeptalk",
-    "tutor:steelbeam",
-    "tutor:synthesis",
-    "tutor:tailwind",
-    "tutor:vacuumwave",
-    "tutor:xscissor"
+    {
+      "id": "vacuumwave",
+      "name": "Onde Vide",
+      "category": "1"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "1"
+    },
+    {
+      "id": "razorleaf",
+      "name": "Tranch'Herbe",
+      "category": "5"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "10"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "15"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "20"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "25"
+    },
+    {
+      "id": "detect",
+      "name": "Détection",
+      "category": "30"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "35"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "40"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "45"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "50"
+    },
+    {
+      "id": "leafblade",
+      "name": "Lame Feuille",
+      "category": "55"
+    },
+    {
+      "id": "sacredsword",
+      "name": "Lame Sainte",
+      "category": "60"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "65"
+    },
+    {
+      "id": "guillotine",
+      "name": "Guillotine",
+      "category": "70"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tm"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tm"
+    },
+    {
+      "id": "leafblade",
+      "name": "Lame Feuille",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smartstrike",
+      "name": "Estocorne",
+      "category": "tm"
+    },
+    {
+      "id": "solarblade",
+      "name": "Lame Solaire",
+      "category": "tm"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "vacuumwave",
+      "name": "Onde Vide",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tutor"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tutor"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tutor"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "vacuumwave",
+      "name": "Onde Vide",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
-  "spawns": [],
-  "implemented": false,
+  "preEvolution": null,
+  "spawns": [
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "ultra-rare",
+        "weight": 0.2,
+        "levels": "70-100",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_bamboo"
+          ]
+        },
+        "source": "datapacks/CCC_1.9.2/data/ultra_beasts_spawns/spawn_pool_world/0798_kartana.json",
+        "spawnId": "kartana-1",
+        "sky": {
+          "canSeeSky": true
+        },
+        "pokemon": "kartana",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "ultra-rare",
+        "weight": 0.2,
+        "levels": "70-100",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_bamboo"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/ub_spawns_ccc/spawn_pool_world/0798_kartana.json",
+        "spawnId": "kartana-1",
+        "sky": {
+          "canSeeSky": true
+        },
+        "pokemon": "kartana",
+        "type": "pokemon"
+      }
+    ]
+  ],
+  "implemented": "true",
   "images": {
     "normal": [
       "out/sprites/cobblemon/kartana.png"
@@ -129,6 +521,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/kartana.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/kartana.json"
   ]
 }

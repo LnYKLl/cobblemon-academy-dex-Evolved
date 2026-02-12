@@ -2,19 +2,40 @@
   "id": "boltund",
   "dexnum": 836,
   "name": "Boltund",
+  "nameFr": "Fulgudog",
+  "description": "Il produit de l'électricité puis la transfère dans ses pattes pour mieux courir. Ainsi, il peut foncer pendant trois jours et trois nuits.",
   "primaryType": "electric",
   "secondaryType": "",
+  "primaryTypeFr": "Électrik",
+  "secondaryTypeFr": "",
+  "height": 10,
+  "weight": 340,
   "maleRatio": 0.5,
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 0.7,
+    "height": 1.65,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "strongjaw",
-    "h:competitive"
+    {
+      "id": "strongjaw",
+      "name": "Prognathe",
+      "hidden": false
+    },
+    {
+      "id": "competitive",
+      "name": "Battant",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 69,
     "attack": 90,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 2
   },
+  "baseExperienceYield": 172,
   "experienceGroup": "fast",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -40,94 +63,398 @@
         "item": "minecraft:bone",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:bone"
       },
       {
         "item": "cobblemon:wepear_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Repoi"
       }
     ]
   },
   "moves": [
-    "1:electrify",
-    "1:tackle",
-    "1:tailwhip",
-    "1:nuzzle",
-    "1:bite",
-    "15:roar",
-    "20:spark",
-    "28:charm",
-    "34:crunch",
-    "41:charge",
-    "48:wildcharge",
-    "55:playrough",
-    "62:electricterrain",
-    "egg:discharge",
-    "egg:doubleedge",
-    "egg:flamecharge",
-    "egg:howl",
-    "egg:sandattack",
-    "tm:agility",
-    "tm:bulkup",
-    "tm:charge",
-    "tm:charm",
-    "tm:crunch",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:eerieimpulse",
-    "tm:electricterrain",
-    "tm:electroball",
-    "tm:endure",
-    "tm:facade",
-    "tm:firefang",
-    "tm:flamecharge",
-    "tm:focusenergy",
-    "tm:gigaimpact",
-    "tm:helpinghand",
-    "tm:hyperbeam",
-    "tm:hypervoice",
-    "tm:playrough",
-    "tm:protect",
-    "tm:psychicfangs",
-    "tm:rest",
-    "tm:risingvoltage",
-    "tm:roar",
-    "tm:sleeptalk",
-    "tm:snarl",
-    "tm:substitute",
-    "tm:swift",
-    "tm:terablast",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderfang",
-    "tm:thunderwave",
-    "tm:uproar",
-    "tm:voltswitch",
-    "tm:wildcharge",
-    "tutor:bulkup",
-    "tutor:firefang",
-    "tutor:focusenergy",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:hypervoice",
-    "tutor:playrough",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:risingvoltage",
-    "tutor:sleeptalk",
-    "tutor:snarl",
-    "tutor:swift",
-    "tutor:thunderbolt",
-    "tutor:thunderfang",
-    "tutor:uproar",
-    "tutor:wildcharge"
+    {
+      "id": "electrify",
+      "name": "Électrisation",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "1"
+    },
+    {
+      "id": "nuzzle",
+      "name": "Frotte-Frimousse",
+      "category": "1"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "1"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "15"
+    },
+    {
+      "id": "spark",
+      "name": "Étincelle",
+      "category": "20"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "28"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "34"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "41"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "48"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "55"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "62"
+    },
+    {
+      "id": "discharge",
+      "name": "Coup d'Jus",
+      "category": "egg"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "egg"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "egg"
+    },
+    {
+      "id": "howl",
+      "name": "Grondement",
+      "category": "egg"
+    },
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tm"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "eerieimpulse",
+      "name": "Ondes Étranges",
+      "category": "tm"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "tm"
+    },
+    {
+      "id": "electroball",
+      "name": "Boule Élek",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tm"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychicfangs",
+      "name": "Psycho-Croc",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "voltswitch",
+      "name": "Change Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tutor"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "yamper",
   "spawns": [
     [
       {
@@ -138,9 +465,6 @@
         "rarity": "common",
         "weight": 0.6,
         "levels": "25-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -149,10 +473,20 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0836_boltund.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0836_boltund.json",
+        "spawnId": "boltund-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "boltund",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 5.0,
+          "condition": {
+            "isThundering": true
+          }
         }
       }
     ],
@@ -164,9 +498,6 @@
         "rarity": "common",
         "weight": 0.6,
         "levels": "25-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -175,33 +506,24 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0836_boltund.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0836_boltund.json",
+        "spawnId": "boltund-2",
         "structures": [
           "#minecraft:village"
         ],
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 2.5,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_starlight_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/uncommon_is_starlight_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "boltund",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 5.0,
+          "condition": {
+            "isThundering": true
+          }
+        }
       }
     ]
   ],
@@ -215,6 +537,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/boltund.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/boltund.json"
   ]
 }

@@ -2,21 +2,46 @@
   "id": "geodude_alola",
   "dexnum": 74,
   "name": "Geodude Alola",
+  "nameFr": "Geodude Alola",
+  "description": "Il se mesure à ses congénères à grands coups de tête. La limaille se colle sur la tête de celui dont la force magnétique est la plus grande.",
   "primaryType": "rock",
   "secondaryType": "electric",
+  "primaryTypeFr": "Roche",
+  "secondaryTypeFr": "Électrik",
+  "height": 4,
+  "weight": 203,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 0.9,
+    "height": 0.5,
+    "fixed": false
+  },
   "labels": [
     "gen7",
     "alolan_form"
   ],
   "abilities": [
-    "magnetpull",
-    "sturdy",
-    "h:galvanize"
+    {
+      "id": "magnetpull",
+      "name": "Magnépiège",
+      "hidden": false
+    },
+    {
+      "id": "sturdy",
+      "name": "Fermeté",
+      "hidden": false
+    },
+    {
+      "id": "galvanize",
+      "name": "Peau Électrique",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "mineral"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 40,
     "attack": 80,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 60,
   "experienceGroup": "medium_slow",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 4,
     "entries": [
@@ -42,139 +69,640 @@
         "item": "minecraft:raw_copper",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:raw_copper"
       },
       {
         "item": "cobblemon:cell_battery",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Pile"
       },
       {
         "item": "cobblemon:magnet",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Aimant"
       },
       {
         "item": "cobblemon:shuca_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Jouca"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:defensecurl",
-    "4:charge",
-    "6:rockpolish",
-    "10:rollout",
-    "12:spark",
-    "16:rockthrow",
-    "18:smackdown",
-    "22:thunderpunch",
-    "24:selfdestruct",
-    "28:stealthrock",
-    "30:rockblast",
-    "34:discharge",
-    "36:explosion",
-    "40:doubleedge",
-    "42:stoneedge",
-    "egg:autotomize",
-    "egg:block",
-    "egg:counter",
-    "egg:curse",
-    "egg:endure",
-    "egg:flail",
-    "egg:screech",
-    "egg:wideguard",
-    "egg:zapcannon",
-    "tm:block",
-    "tm:bodyslam",
-    "tm:brickbreak",
-    "tm:brutalswing",
-    "tm:bulldoze",
-    "tm:charge",
-    "tm:chargebeam",
-    "tm:curse",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:earthpower",
-    "tm:earthquake",
-    "tm:electroweb",
-    "tm:endure",
-    "tm:explosion",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firepunch",
-    "tm:flamethrower",
-    "tm:fling",
-    "tm:focuspunch",
-    "tm:gyroball",
-    "tm:highhorsepower",
-    "tm:irondefense",
-    "tm:magnetrise",
-    "tm:megapunch",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:naturepower",
-    "tm:protect",
-    "tm:rest",
-    "tm:risingvoltage",
-    "tm:rockblast",
-    "tm:rockclimb",
-    "tm:rockpolish",
-    "tm:rockslide",
-    "tm:rocktomb",
-    "tm:rollout",
-    "tm:sandstorm",
-    "tm:screech",
-    "tm:selfdestruct",
-    "tm:sleeptalk",
-    "tm:smackdown",
-    "tm:stealthrock",
-    "tm:steelroller",
-    "tm:stoneedge",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:supercellslam",
-    "tm:superpower",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderpunch",
-    "tm:thunderwave",
-    "tm:voltswitch",
-    "tm:wildcharge",
-    "tutor:block",
-    "tutor:bulldoze",
-    "tutor:chargebeam",
-    "tutor:earthpower",
-    "tutor:electroweb",
-    "tutor:firepunch",
-    "tutor:flamethrower",
-    "tutor:focuspunch",
-    "tutor:highhorsepower",
-    "tutor:irondefense",
-    "tutor:magnetrise",
-    "tutor:mudslap",
-    "tutor:rest",
-    "tutor:risingvoltage",
-    "tutor:rockslide",
-    "tutor:rollout",
-    "tutor:sleeptalk",
-    "tutor:stealthrock",
-    "tutor:steelroller",
-    "tutor:stoneedge",
-    "tutor:superpower",
-    "tutor:thunderbolt",
-    "tutor:thunderpunch",
-    "tutor:wildcharge"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "1"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "4"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "6"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "10"
+    },
+    {
+      "id": "spark",
+      "name": "Étincelle",
+      "category": "12"
+    },
+    {
+      "id": "rockthrow",
+      "name": "Jet-Pierres",
+      "category": "16"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "18"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "22"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "24"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "28"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "30"
+    },
+    {
+      "id": "discharge",
+      "name": "Coup d'Jus",
+      "category": "34"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "36"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "40"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "42"
+    },
+    {
+      "id": "autotomize",
+      "name": "Allègement",
+      "category": "egg"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "egg"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "egg"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "egg"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "egg"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "egg"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "egg"
+    },
+    {
+      "id": "wideguard",
+      "name": "Garde Large",
+      "category": "egg"
+    },
+    {
+      "id": "zapcannon",
+      "name": "Élecanon",
+      "category": "egg"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "brutalswing",
+      "name": "Centrifugifle",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "tm"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tm"
+    },
+    {
+      "id": "megapunch",
+      "name": "Ultimapoing",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockclimb",
+      "name": "Escalade",
+      "category": "tm"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "steelroller",
+      "name": "Métalliroue",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "supercellslam",
+      "name": "Volt Assaut",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "voltswitch",
+      "name": "Change Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tutor"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "steelroller",
+      "name": "Métalliroue",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "seismictoss",
+      "name": "Frappe Atlas",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "thundershock",
+      "name": "Éclair",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "geodude_graveleralola",
@@ -190,6 +718,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -199,15 +728,13 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "5-30",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0074_geodude.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0074_geodude.json",
+        "spawnId": "geodude-alolan-3",
         "nearbyBlocks": {
           "selectors": [
             "#minecraft:iron_ores"
@@ -215,7 +742,10 @@
           "resolved": [
             "#minecraft:iron_ores"
           ]
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "geodude alolan",
+        "type": "pokemon"
       }
     ],
     [
@@ -235,6 +765,7 @@
           ]
         },
         "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0074_geodude.json",
+        "spawnId": "geodude-alolan-3",
         "nearbyBlocks": {
           "selectors": [
             "#minecraft:iron_ores"
@@ -242,26 +773,9 @@
           "resolved": [
             "#minecraft:iron_ores"
           ]
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 1.7,
-        "levels": "3-21",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/common_crystallized_desert.json"
+        "pokemon": "geodude alolan",
+        "type": "pokemon"
       }
     ]
   ],
@@ -275,6 +789,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/geodude.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/geodude.json"
   ]
 }

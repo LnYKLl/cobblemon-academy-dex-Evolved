@@ -2,19 +2,40 @@
   "id": "larvesta",
   "dexnum": 636,
   "name": "Larvesta",
+  "nameFr": "Pyronille",
+  "description": "Il vit au pied des volcans. Il repousse ceux qui l'attaquent avec les flammes qui jaillissent de ses cinq cornes.",
   "primaryType": "bug",
   "secondaryType": "fire",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "Feu",
+  "height": 11,
+  "weight": 288,
   "maleRatio": 0.5,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 1.2,
+    "height": 0.85,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "flamebody",
-    "h:swarm"
+    {
+      "id": "flamebody",
+      "name": "Corps Ardent",
+      "hidden": false
+    },
+    {
+      "id": "swarm",
+      "name": "Essaim",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 40,
   "baseStats": {
     "hp": 55,
     "attack": 85,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 72,
   "experienceGroup": "slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 4,
     "entries": [
@@ -44,7 +67,8 @@
         "biomes": [
           "#cobblemon:nether/is_crimson",
           "#cobblemon:nether/is_forest"
-        ]
+        ],
+        "itemName": "minecraft:string"
       },
       {
         "item": "minecraft:blaze_powder",
@@ -54,7 +78,8 @@
         "biomes": [
           "#cobblemon:nether/is_crimson",
           "#cobblemon:nether/is_forest"
-        ]
+        ],
+        "itemName": "minecraft:blaze_powder"
       },
       {
         "item": "cobblemon:silver_powder",
@@ -64,7 +89,8 @@
         "biomes": [
           "#cobblemon:nether/is_crimson",
           "#cobblemon:nether/is_forest"
-        ]
+        ],
+        "itemName": "Poudre Argentée"
       },
       {
         "item": "cobblemon:charti_berry",
@@ -74,91 +100,454 @@
         "biomes": [
           "#cobblemon:nether/is_crimson",
           "#cobblemon:nether/is_forest"
-        ]
+        ],
+        "itemName": "Baie Charti"
       }
     ]
   },
   "moves": [
-    "1:ember",
-    "1:stringshot",
-    "1:absorb",
-    "6:flamecharge",
-    "12:strugglebug",
-    "18:flamewheel",
-    "24:bugbite",
-    "30:screech",
-    "36:leechlife",
-    "42:bugbuzz",
-    "48:takedown",
-    "54:amnesia",
-    "60:doubleedge",
-    "66:flareblitz",
-    "egg:absorb",
-    "egg:foresight",
-    "egg:harden",
-    "egg:morningsun",
-    "egg:thrash",
-    "tm:acrobatics",
-    "tm:amnesia",
-    "tm:bodyslam",
-    "tm:bugbite",
-    "tm:bugbuzz",
-    "tm:calmmind",
-    "tm:doubleedge",
-    "tm:endure",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firespin",
-    "tm:flamecharge",
-    "tm:flamethrower",
-    "tm:flareblitz",
-    "tm:gigadrain",
-    "tm:heatwave",
-    "tm:incinerate",
-    "tm:leechlife",
-    "tm:lightscreen",
-    "tm:lunge",
-    "tm:magnetrise",
-    "tm:overheat",
-    "tm:pounce",
-    "tm:protect",
-    "tm:psychic",
-    "tm:rest",
-    "tm:safeguard",
-    "tm:screech",
-    "tm:signalbeam",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:stringshot",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:trailblaze",
-    "tm:uturn",
-    "tm:wildcharge",
-    "tm:willowisp",
-    "tm:zenheadbutt",
-    "tutor:bugbite",
-    "tutor:calmmind",
-    "tutor:flamethrower",
-    "tutor:gigadrain",
-    "tutor:heatwave",
-    "tutor:leechlife",
-    "tutor:magnetrise",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:signalbeam",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:stringshot",
-    "tutor:wildcharge",
-    "tutor:zenheadbutt"
+    {
+      "id": "ember",
+      "name": "Flammèche",
+      "category": "1"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "1"
+    },
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "1"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "6"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "12"
+    },
+    {
+      "id": "flamewheel",
+      "name": "Roue de Feu",
+      "category": "18"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "24"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "30"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "36"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "42"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "48"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "54"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "60"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "66"
+    },
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "egg"
+    },
+    {
+      "id": "foresight",
+      "name": "Clairvoyance",
+      "category": "egg"
+    },
+    {
+      "id": "harden",
+      "name": "Armure",
+      "category": "egg"
+    },
+    {
+      "id": "morningsun",
+      "name": "Aurore",
+      "category": "egg"
+    },
+    {
+      "id": "thrash",
+      "name": "Mania",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "tm"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tutor"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "larvesta_volcarona",
@@ -176,6 +565,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -186,21 +576,22 @@
         "rarity": "uncommon",
         "weight": 84.0,
         "levels": "11-36",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_desert"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0636_larvesta.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0636_larvesta.json",
+        "spawnId": "larvesta-1",
         "sky": {
           "canSeeSky": false
         },
         "yLevel": {
           "minY": 48
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "larvesta",
+        "type": "pokemon"
       }
     ],
     [
@@ -212,21 +603,22 @@
         "rarity": "uncommon",
         "weight": 84.0,
         "levels": "11-36",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_jungle"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0636_larvesta.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0636_larvesta.json",
+        "spawnId": "larvesta-2",
         "sky": {
           "canSeeSky": false
         },
         "yLevel": {
           "minY": 48
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "larvesta",
+        "type": "pokemon"
       }
     ],
     [
@@ -238,16 +630,42 @@
         "rarity": "uncommon",
         "weight": 8.4,
         "levels": "11-36",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_crimson",
             "#cobblemon:nether/is_forest"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0636_larvesta.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0636_larvesta.json",
+        "spawnId": "larvesta-3",
+        "spawnType": "grounded",
+        "pokemon": "larvesta",
+        "type": "pokemon",
+        "drops": {
+          "amount": 4,
+          "entries": [
+            {
+              "item": "minecraft:string",
+              "percentage": null,
+              "quantityRange": "0-1"
+            },
+            {
+              "item": "minecraft:blaze_powder",
+              "percentage": 5.0,
+              "quantityRange": null
+            },
+            {
+              "item": "cobblemon:silver_powder",
+              "percentage": 2.5,
+              "quantityRange": null
+            },
+            {
+              "item": "cobblemon:charti_berry",
+              "percentage": 2.5,
+              "quantityRange": null
+            }
+          ]
+        }
       }
     ],
     [
@@ -255,41 +673,23 @@
         "rarity": "uncommon",
         "weight": 9.0,
         "levels": "11-36",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0636_larvesta.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0636_larvesta.json",
+        "spawnId": "larvesta-4",
         "structures": [
           "#aether:dungeons"
         ],
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 1.4,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/rare_crystallized_desert.json"
+        "spawnType": "grounded",
+        "pokemon": "larvesta",
+        "type": "pokemon"
       }
     ]
   ],
@@ -303,6 +703,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/larvesta.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/larvesta.json"
   ]
 }

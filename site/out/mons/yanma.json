@@ -2,20 +2,45 @@
   "id": "yanma",
   "dexnum": 193,
   "name": "Yanma",
+  "nameFr": "Yanma",
+  "description": "Yanma a un champ de vision de 360 degrés sans avoir besoin de bouger les yeux. Il vole incroyablement bien et peut faire des figures acrobatiques. Ce Pokémon descend en piqué sur ses proies.",
   "primaryType": "bug",
   "secondaryType": "flying",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "Vol",
+  "height": 12,
+  "weight": 380,
   "maleRatio": 0.5,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.99,
+    "height": 0.75,
+    "fixed": false
+  },
   "labels": [
     "gen2"
   ],
   "abilities": [
-    "speedboost",
-    "compoundeyes",
-    "h:frisk"
+    {
+      "id": "speedboost",
+      "name": "Turbo",
+      "hidden": false
+    },
+    {
+      "id": "compoundeyes",
+      "name": "Œil Composé",
+      "hidden": false
+    },
+    {
+      "id": "frisk",
+      "name": "Fouille",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 65,
     "attack": 65,
@@ -32,113 +57,547 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 78,
   "experienceGroup": "medium_fast",
   "catchRate": 75,
+  "baseFriendship": 50,
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
+      {
+        "item": "cobblemon:wide_lens",
+        "percentage": 2.5,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Loupe"
+      },
       {
         "item": "cobblemon:charti_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Charti"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:foresight",
-    "1:sonicboom",
-    "6:quickattack",
-    "11:doubleteam",
-    "14:aircutter",
-    "17:detect",
-    "22:supersonic",
-    "27:uproar",
-    "30:pursuit",
-    "33:ancientpower",
-    "38:hypnosis",
-    "43:wingattack",
-    "46:screech",
-    "49:uturn",
-    "54:airslash",
-    "57:bugbuzz",
-    "egg:doubleedge",
-    "egg:feint",
-    "egg:feintattack",
-    "egg:pursuit",
-    "egg:secretpower",
-    "egg:whirlwind",
-    "tm:aerialace",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:ancientpower",
-    "tm:bugbite",
-    "tm:bugbuzz",
-    "tm:defog",
-    "tm:doubleedge",
-    "tm:doubleteam",
-    "tm:dreameater",
-    "tm:endure",
-    "tm:facade",
-    "tm:flash",
-    "tm:gigadrain",
-    "tm:gust",
-    "tm:headbutt",
-    "tm:leechlife",
-    "tm:lunge",
-    "tm:ominouswind",
-    "tm:pounce",
-    "tm:protect",
-    "tm:psychic",
-    "tm:psychicnoise",
-    "tm:psychup",
-    "tm:rest",
-    "tm:reversal",
-    "tm:roost",
-    "tm:screech",
-    "tm:secretpower",
-    "tm:shadowball",
-    "tm:signalbeam",
-    "tm:silverwind",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:steelwing",
-    "tm:stringshot",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:swordsdance",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:uproar",
-    "tm:uturn",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:ancientpower",
-    "tutor:bugbite",
-    "tutor:defog",
-    "tutor:gigadrain",
-    "tutor:leechlife",
-    "tutor:ominouswind",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:roost",
-    "tutor:shadowball",
-    "tutor:signalbeam",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:stringshot",
-    "tutor:swift",
-    "tutor:tailwind",
-    "tutor:uproar"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "foresight",
+      "name": "Clairvoyance",
+      "category": "1"
+    },
+    {
+      "id": "sonicboom",
+      "name": "Sonic Boom",
+      "category": "1"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "6"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "11"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "14"
+    },
+    {
+      "id": "detect",
+      "name": "Détection",
+      "category": "17"
+    },
+    {
+      "id": "supersonic",
+      "name": "Ultrason",
+      "category": "22"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "27"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "30"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "33"
+    },
+    {
+      "id": "hypnosis",
+      "name": "Hypnose",
+      "category": "38"
+    },
+    {
+      "id": "wingattack",
+      "name": "Cru-Ailes",
+      "category": "43"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "46"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "49"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "54"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "57"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "egg"
+    },
+    {
+      "id": "feint",
+      "name": "Ruse",
+      "category": "egg"
+    },
+    {
+      "id": "feintattack",
+      "name": "Feinte",
+      "category": "egg"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "egg"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "egg"
+    },
+    {
+      "id": "whirlwind",
+      "name": "Cyclone",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "gust",
+      "name": "Tornade",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tm"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "tm"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psychicnoise",
+      "name": "Dissonance Psy",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "silverwind",
+      "name": "Vent Argenté",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "tm"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tutor"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "yanma_yanmega",
@@ -154,6 +613,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -163,8 +623,8 @@
         "rarity": "uncommon",
         "weight": 5.04,
         "levels": "14-39",
-        "contexts": [
-          "surface"
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
@@ -174,14 +634,18 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0193_yanma.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0193_yanma.json",
+        "spawnId": "yanma-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
         },
         "weather": {
           "isRaining": false
-        }
+        },
+        "spawnType": "surface",
+        "pokemon": "yanma",
+        "type": "pokemon"
       }
     ],
     [
@@ -192,19 +656,27 @@
         "rarity": "uncommon",
         "weight": 1.68,
         "levels": "14-39",
-        "contexts": [
-          "surface"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0193_yanma.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0193_yanma.json",
+        "spawnId": "yanma-2",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "surface",
+        "pokemon": "yanma",
+        "excludeStructures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "excludeYLevel": {
+          "minY": -41,
+          "maxY": 9
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -215,15 +687,19 @@
         "rarity": "uncommon",
         "weight": 1.68,
         "levels": "14-39",
-        "contexts": [
-          "surface"
-        ],
         "biomeTags": {
           "include": [
             "#the_bumblezone:the_bumblezone"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0193_yanma.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0193_yanma.json",
+        "spawnId": "yanma-3",
+        "spawnType": "surface",
+        "pokemon": "yanma",
+        "excludeStructures": [
+          "#the_bumblezone:sempiternal_sanctums"
+        ],
+        "type": "pokemon"
       }
     ],
     [
@@ -234,9 +710,6 @@
         "rarity": "uncommon",
         "weight": 1.68,
         "levels": "14-39",
-        "contexts": [
-          "surface"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -245,7 +718,8 @@
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0193_yanma.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0193_yanma.json",
+        "spawnId": "yanma-4",
         "structures": [
           "cobblemon:shipwreck_coves/lush_shipwreck_cove"
         ],
@@ -256,7 +730,10 @@
         "yLevel": {
           "minY": -41,
           "maxY": 9
-        }
+        },
+        "spawnType": "surface",
+        "pokemon": "yanma",
+        "type": "pokemon"
       }
     ],
     [
@@ -267,38 +744,20 @@
         "rarity": "uncommon",
         "weight": 5.04,
         "levels": "14-39",
-        "contexts": [
-          "surface"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0193_yanma.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0193_yanma.json",
+        "spawnId": "yanma-5",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 3.3,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/uncommon_dark_swamp.json"
+        "spawnType": "surface",
+        "pokemon": "yanma",
+        "type": "pokemon"
       }
     ]
   ],
@@ -312,6 +771,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation2/yanma.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation2/yanma.json"
   ]
 }

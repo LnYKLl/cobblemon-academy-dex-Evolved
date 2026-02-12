@@ -2,22 +2,47 @@
   "id": "kabutops",
   "dexnum": 141,
   "name": "Kabutops",
+  "nameFr": "Kabutops",
+  "description": "Jadis, Kabutops plongeait dans les profondeurs pour trouver ses proies. Apparemment, ce Pokémon vivant sur terre est l'évolution d'une créature marine, comme le prouvent les changements dans ses branchies.",
   "primaryType": "rock",
   "secondaryType": "water",
+  "primaryTypeFr": "Roche",
+  "secondaryTypeFr": "Eau",
+  "height": 13,
+  "weight": 405,
   "maleRatio": 0.875,
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 1.2,
+    "height": 1.72,
+    "fixed": false
+  },
   "labels": [
     "gen1",
     "fossil"
   ],
   "abilities": [
-    "swiftswim",
-    "battlearmor",
-    "h:weakarmor"
+    {
+      "id": "swiftswim",
+      "name": "Glissade",
+      "hidden": false
+    },
+    {
+      "id": "battlearmor",
+      "name": "Armurbaston",
+      "hidden": false
+    },
+    {
+      "id": "weakarmor",
+      "name": "Armurouillée",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_1",
     "water_3"
   ],
+  "eggCycles": 30,
   "baseStats": {
     "hp": 60,
     "attack": 115,
@@ -34,8 +59,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 173,
   "experienceGroup": "medium_fast",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -43,146 +70,778 @@
         "item": "cobblemon:razor_claw",
         "percentage": 10.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Griffe Rasoir"
       },
       {
         "item": "minecraft:bone_meal",
         "percentage": 10.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:bone_meal"
       }
     ]
   },
   "moves": [
-    "1:feint",
-    "1:scratch",
-    "1:harden",
-    "1:absorb",
-    "1:sandattack",
-    "1:megadrain",
-    "1:slash",
-    "1:wringout",
-    "1:nightslash",
-    "15:aquajet",
-    "20:leer",
-    "25:mudshot",
-    "30:ancientpower",
-    "35:brine",
-    "43:protect",
-    "49:leechlife",
-    "56:liquidation",
-    "63:metalsound",
-    "70:stoneedge",
-    "egg:aurorabeam",
-    "egg:bubblebeam",
-    "egg:confuseray",
-    "egg:flail",
-    "egg:foresight",
-    "egg:knockoff",
-    "egg:megadrain",
-    "egg:rapidspin",
-    "egg:takedown",
-    "tm:aerialace",
-    "tm:ancientpower",
-    "tm:aquatail",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:brickbreak",
-    "tm:brine",
-    "tm:confuseray",
-    "tm:crosspoison",
-    "tm:cut",
-    "tm:dig",
-    "tm:dive",
-    "tm:earthpower",
-    "tm:endure",
-    "tm:facade",
-    "tm:flipturn",
-    "tm:furycutter",
-    "tm:gigadrain",
-    "tm:gigaimpact",
-    "tm:hail",
-    "tm:headbutt",
-    "tm:honeclaws",
-    "tm:hydropump",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:irondefense",
-    "tm:knockoff",
-    "tm:leechlife",
-    "tm:liquidation",
-    "tm:lowkick",
-    "tm:megakick",
-    "tm:metalsound",
-    "tm:meteorbeam",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:naturepower",
-    "tm:protect",
-    "tm:psychocut",
-    "tm:raindance",
-    "tm:razorshell",
-    "tm:rest",
-    "tm:rockblast",
-    "tm:rockclimb",
-    "tm:rockpolish",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:rollout",
-    "tm:sandstorm",
-    "tm:scald",
-    "tm:screech",
-    "tm:sleeptalk",
-    "tm:smackdown",
-    "tm:stealthrock",
-    "tm:stoneedge",
-    "tm:substitute",
-    "tm:superpower",
-    "tm:surf",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:waterfall",
-    "tm:waterpulse",
-    "tm:whirlpool",
-    "tm:xscissor",
-    "tutor:aerialace",
-    "tutor:ancientpower",
-    "tutor:aquatail",
-    "tutor:dive",
-    "tutor:earthpower",
-    "tutor:flipturn",
-    "tutor:furycutter",
-    "tutor:gigadrain",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:irondefense",
-    "tutor:knockoff",
-    "tutor:leechlife",
-    "tutor:liquidation",
-    "tutor:lowkick",
-    "tutor:meteorbeam",
-    "tutor:mudslap",
-    "tutor:psychocut",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:rollout",
-    "tutor:sleeptalk",
-    "tutor:stealthrock",
-    "tutor:stoneedge",
-    "tutor:superpower",
-    "tutor:waterpulse",
-    "tutor:xscissor"
+    {
+      "id": "feint",
+      "name": "Ruse",
+      "category": "1"
+    },
+    {
+      "id": "scratch",
+      "name": "Griffe",
+      "category": "1"
+    },
+    {
+      "id": "harden",
+      "name": "Armure",
+      "category": "1"
+    },
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "1"
+    },
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "1"
+    },
+    {
+      "id": "megadrain",
+      "name": "Méga-Sangsue",
+      "category": "1"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "1"
+    },
+    {
+      "id": "wringout",
+      "name": "Essorage",
+      "category": "1"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "1"
+    },
+    {
+      "id": "aquajet",
+      "name": "Aqua-Jet",
+      "category": "15"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "20"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "25"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "30"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "35"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "43"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "49"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "56"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "63"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "70"
+    },
+    {
+      "id": "aurorabeam",
+      "name": "Onde Boréale",
+      "category": "egg"
+    },
+    {
+      "id": "bubblebeam",
+      "name": "Bulles d'O",
+      "category": "egg"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "egg"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "egg"
+    },
+    {
+      "id": "foresight",
+      "name": "Clairvoyance",
+      "category": "egg"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "egg"
+    },
+    {
+      "id": "megadrain",
+      "name": "Méga-Sangsue",
+      "category": "egg"
+    },
+    {
+      "id": "rapidspin",
+      "name": "Tour Rapide",
+      "category": "egg"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "crosspoison",
+      "name": "Poison Croix",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flipturn",
+      "name": "Eau Revoir",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "megakick",
+      "name": "Ultimawashi",
+      "category": "tm"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "tm"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "razorshell",
+      "name": "Coqui-Lame",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockclimb",
+      "name": "Escalade",
+      "category": "tm"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "flipturn",
+      "name": "Eau Revoir",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "rage",
+      "name": "Frénésie",
+      "category": "legacy"
+    },
+    {
+      "id": "razorwind",
+      "name": "Coupe-Vent",
+      "category": "legacy"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "rockthrow",
+      "name": "Jet-Pierres",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "seismictoss",
+      "name": "Frappe Atlas",
+      "category": "legacy"
+    },
+    {
+      "id": "skullbash",
+      "name": "Coud'Krâne",
+      "category": "legacy"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "submission",
+      "name": "Sacrifice",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "kabuto",
   "spawns": [
     [
       {
@@ -192,19 +851,20 @@
         "rarity": "ultra-rare",
         "weight": 4.0,
         "levels": "40-50",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0141_kabutops.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0141_kabutops.json",
+        "spawnId": "kabutops-1",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "kabutops",
+        "type": "pokemon"
       }
     ],
     [
@@ -215,19 +875,20 @@
         "rarity": "ultra-rare",
         "weight": 4.0,
         "levels": "40-50",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0141_kabutops.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0141_kabutops.json",
+        "spawnId": "kabutops-2",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "kabutops",
+        "type": "pokemon"
       }
     ]
   ],
@@ -241,6 +902,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/kabutops.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/kabutops.json"
   ]
 }

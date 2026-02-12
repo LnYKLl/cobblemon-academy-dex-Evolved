@@ -2,19 +2,40 @@
   "id": "swellow",
   "dexnum": 277,
   "name": "Swellow",
+  "nameFr": "Hélédelle",
+  "description": "Hélédelle fait attention à bien entretenir ses ailes brillantes. Lorsque deux Hélédelle se rencontrent, ils se nettoient mutuellement les ailes avec attention.",
   "primaryType": "normal",
   "secondaryType": "flying",
+  "primaryTypeFr": "Normal",
+  "secondaryTypeFr": "Vol",
+  "height": 7,
+  "weight": 198,
   "maleRatio": 0.5,
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 0.7,
+    "height": 1.2,
+    "fixed": false
+  },
   "labels": [
     "gen3"
   ],
   "abilities": [
-    "guts",
-    "h:scrappy"
+    {
+      "id": "guts",
+      "name": "Cran",
+      "hidden": false
+    },
+    {
+      "id": "scrappy",
+      "name": "Querelleur",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "flying"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 60,
     "attack": 85,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 2
   },
+  "baseExperienceYield": 159,
   "experienceGroup": "medium_slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 5,
     "entries": [
@@ -40,112 +63,517 @@
         "item": "minecraft:feather",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:feather"
       },
       {
         "item": "minecraft:chicken",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:chicken"
       },
       {
         "item": "cobblemon:sharp_beak",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Bec Pointu"
       },
       {
         "item": "cobblemon:charti_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Charti"
       }
     ]
   },
   "moves": [
-    "1:pluck",
-    "1:peck",
-    "1:growl",
-    "1:focusenergy",
-    "1:quickattack",
-    "1:airslash",
-    "1:bravebird",
-    "13:wingattack",
-    "17:doubleteam",
-    "21:aerialace",
-    "27:quickguard",
-    "33:agility",
-    "45:endeavor",
-    "57:reversal",
-    "egg:boomburst",
-    "egg:mirrormove",
-    "egg:pursuit",
-    "egg:rage",
-    "egg:refresh",
-    "egg:supersonic",
-    "egg:whirlwind",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:assurance",
-    "tm:batonpass",
-    "tm:bravebird",
-    "tm:defog",
-    "tm:doubleteam",
-    "tm:dualwingbeat",
-    "tm:echoedvoice",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:fly",
-    "tm:focusenergy",
-    "tm:gigaimpact",
-    "tm:heatwave",
-    "tm:hurricane",
-    "tm:hyperbeam",
-    "tm:laserfocus",
-    "tm:mudslap",
-    "tm:ominouswind",
-    "tm:pluck",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:reversal",
-    "tm:roost",
-    "tm:skyattack",
-    "tm:sleeptalk",
-    "tm:steelwing",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:tailwind",
-    "tm:terablast",
-    "tm:thief",
-    "tm:twister",
-    "tm:uturn",
-    "tm:workup",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:defog",
-    "tutor:dualwingbeat",
-    "tutor:endeavor",
-    "tutor:focusenergy",
-    "tutor:gigaimpact",
-    "tutor:heatwave",
-    "tutor:hyperbeam",
-    "tutor:laserfocus",
-    "tutor:mudslap",
-    "tutor:ominouswind",
-    "tutor:rest",
-    "tutor:roost",
-    "tutor:skyattack",
-    "tutor:sleeptalk",
-    "tutor:tailwind",
-    "tutor:twister"
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "1"
+    },
+    {
+      "id": "peck",
+      "name": "Picpic",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "1"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "1"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "1"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "1"
+    },
+    {
+      "id": "wingattack",
+      "name": "Cru-Ailes",
+      "category": "13"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "17"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "21"
+    },
+    {
+      "id": "quickguard",
+      "name": "Prévention",
+      "category": "27"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "33"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "45"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "57"
+    },
+    {
+      "id": "boomburst",
+      "name": "Bang Sonique",
+      "category": "egg"
+    },
+    {
+      "id": "mirrormove",
+      "name": "Mimique",
+      "category": "egg"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "egg"
+    },
+    {
+      "id": "rage",
+      "name": "Frénésie",
+      "category": "egg"
+    },
+    {
+      "id": "refresh",
+      "name": "Régénération",
+      "category": "egg"
+    },
+    {
+      "id": "supersonic",
+      "name": "Ultrason",
+      "category": "egg"
+    },
+    {
+      "id": "whirlwind",
+      "name": "Cyclone",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tm"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "featherdance",
+      "name": "Danse Plumes",
+      "category": "special"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "taillow",
   "spawns": [
     [
       {
@@ -156,8 +584,8 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "22-46",
-        "contexts": [
-          "grounded"
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
@@ -168,11 +596,15 @@
             "#cobblemon:is_spooky"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0277_swellow.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0277_swellow.json",
+        "spawnId": "swellow-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "swellow",
+        "type": "pokemon"
       }
     ],
     [
@@ -184,38 +616,20 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "22-46",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0277_swellow.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0277_swellow.json",
+        "spawnId": "swellow-3",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 3.6,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/uncommon_scarlet_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "swellow",
+        "type": "pokemon"
       }
     ]
   ],
@@ -229,6 +643,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation3/swellow.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation3/swellow.json"
   ]
 }

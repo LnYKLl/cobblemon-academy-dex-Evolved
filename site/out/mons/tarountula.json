@@ -2,19 +2,40 @@
   "id": "tarountula",
   "dexnum": 917,
   "name": "Tarountula",
+  "nameFr": "Tissenboule",
+  "description": "La boule de fil qui entoure son corps est assez élastique pour repousser les faux d'Insécateur, son ennemi juré.",
   "primaryType": "bug",
   "secondaryType": "",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "",
+  "height": 3,
+  "weight": 40,
   "maleRatio": 0.5,
+  "baseScale": 0.33,
+  "hitbox": {
+    "width": 0.95,
+    "height": 1.5,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "insomnia",
-    "h:stakeout"
+    {
+      "id": "insomnia",
+      "name": "Insomnia",
+      "hidden": false
+    },
+    {
+      "id": "stakeout",
+      "name": "Filature",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 35,
     "attack": 41,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 42,
   "experienceGroup": "erratic",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -40,69 +63,381 @@
         "item": "minecraft:string",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:string"
       },
       {
         "item": "minecraft:spider_eye",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:spider_eye"
       }
     ]
   },
   "moves": [
-    "1:stringshot",
-    "1:tackle",
-    "5:strugglebug",
-    "8:assurance",
-    "11:feint",
-    "14:bugbite",
-    "18:block",
-    "22:counter",
-    "25:headbutt",
-    "29:stickyweb",
-    "33:gastroacid",
-    "36:circlethrow",
-    "40:throatchop",
-    "44:skittersmack",
-    "egg:firstimpression",
-    "egg:lunge",
-    "egg:memento",
-    "egg:suckerpunch",
-    "tm:bodyslam",
-    "tm:bugbite",
-    "tm:bugbuzz",
-    "tm:bulletseed",
-    "tm:endure",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:gigadrain",
-    "tm:grassknot",
-    "tm:knockoff",
-    "tm:leechlife",
-    "tm:lunge",
-    "tm:poisonjab",
-    "tm:pounce",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:shadowclaw",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:spikes",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:throatchop",
-    "tm:toxicspikes",
-    "tm:trailblaze",
-    "tm:xscissor"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "1"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "5"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "8"
+    },
+    {
+      "id": "feint",
+      "name": "Ruse",
+      "category": "11"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "14"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "18"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "22"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "25"
+    },
+    {
+      "id": "stickyweb",
+      "name": "Toile Gluante",
+      "category": "29"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "33"
+    },
+    {
+      "id": "circlethrow",
+      "name": "Projection",
+      "category": "36"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "40"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "44"
+    },
+    {
+      "id": "firstimpression",
+      "name": "Escarmouche",
+      "category": "egg"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "egg"
+    },
+    {
+      "id": "memento",
+      "name": "Souvenir",
+      "category": "egg"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "egg"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tm"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tm"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tutor"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tutor"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "tarountula_spidops",
@@ -120,6 +455,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -127,62 +463,37 @@
           "natural"
         ],
         "rarity": "common",
-        "weight": 2.2,
-        "levels": "4-18",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/common_scarlet_forest.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 11.0,
-        "levels": "5-23",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "minecraft:bamboo_jungle"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0917_tarountula.json",
-        "sky": {
-          "canSeeSky": true
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
         "weight": 9.0,
-        "levels": "8-26",
-        "contexts": [
-          "grounded"
-        ],
+        "levels": "1-21",
         "biomeTags": {
           "include": [
-            "minecraft:bamboo_jungle"
+            "#cobblemon:is_forest",
+            "#cobblemon:is_spooky",
+            "#cobblemon:is_swamp"
+          ],
+          "exclude": [
+            "#cobblemon:is_freezing"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0917_tarountula.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0917_tarountula.json",
+        "spawnId": "tarountula-1",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "tarountula",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "day"
+          }
+        }
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/tarountula.png"
@@ -192,7 +503,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/tarountula.json",
-    "datapacks\\CCC_MAL_1.6.4.1\\data\\cobblemon\\species\\generation9\\tarountula.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/tarountula.json"
   ]
 }

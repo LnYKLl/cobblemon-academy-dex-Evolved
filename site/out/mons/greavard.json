@@ -2,19 +2,40 @@
   "id": "greavard",
   "dexnum": 971,
   "name": "Greavard",
+  "nameFr": "Toutombe",
+  "description": "On pense qu'il est la réincarnation d'un Pokémon chien errant qui a perdu la vie sans jamais avoir eu d'interaction avec les êtres humains.",
   "primaryType": "ghost",
   "secondaryType": "",
+  "primaryTypeFr": "Spectre",
+  "secondaryTypeFr": "",
+  "height": 6,
+  "weight": 350,
   "maleRatio": 0.5,
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "pickup",
-    "h:fluffy"
+    {
+      "id": "pickup",
+      "name": "Ramassage",
+      "hidden": false
+    },
+    {
+      "id": "fluffy",
+      "name": "Boule de Poils",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 50,
     "attack": 61,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 58,
   "experienceGroup": "medium_slow",
   "catchRate": 120,
+  "baseFriendship": 50,
   "drops": {
     "amount": 5,
     "entries": [
@@ -40,114 +63,440 @@
         "item": "minecraft:bone",
         "percentage": null,
         "quantityRange": "1-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:bone"
       },
       {
         "item": "minecraft:rotten_flesh",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:rotten_flesh"
       },
       {
         "item": "minecraft:candle",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:candle"
       },
       {
         "item": "cobblemon:kasib_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Sédra"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:growl",
-    "3:lick",
-    "6:tailwhip",
-    "6:bite",
-    "9:roar",
-    "12:headbutt",
-    "16:dig",
-    "24:rest",
-    "28:crunch",
-    "32:playrough",
-    "37:helpinghand",
-    "41:phantomforce",
-    "46:charm",
-    "52:doubleedge",
-    "egg:allyswitch",
-    "egg:destinybond",
-    "egg:disable",
-    "egg:howl",
-    "egg:memento",
-    "egg:shadowsneak",
-    "egg:yawn",
-    "tm:allyswitch",
-    "tm:bulldoze",
-    "tm:charm",
-    "tm:confuseray",
-    "tm:crunch",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:firefang",
-    "tm:headbutt",
-    "tm:helpinghand",
-    "tm:hex",
-    "tm:icefang",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:nightshade",
-    "tm:painsplit",
-    "tm:phantomforce",
-    "tm:playrough",
-    "tm:poltergeist",
-    "tm:protect",
-    "tm:psychicfangs",
-    "tm:raindance",
-    "tm:rest",
-    "tm:roar",
-    "tm:sandstorm",
-    "tm:scaryface",
-    "tm:shadowball",
-    "tm:sleeptalk",
-    "tm:snarl",
-    "tm:stompingtantrum",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunderfang",
-    "tm:trick",
-    "tm:uproar",
-    "tutor:allyswitch",
-    "tutor:bulldoze",
-    "tutor:endeavor",
-    "tutor:firefang",
-    "tutor:helpinghand",
-    "tutor:icefang",
-    "tutor:mudslap",
-    "tutor:painsplit",
-    "tutor:playrough",
-    "tutor:poltergeist",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:shadowball",
-    "tutor:sleeptalk",
-    "tutor:snarl",
-    "tutor:stompingtantrum",
-    "tutor:thunderfang",
-    "tutor:trick",
-    "tutor:uproar"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "lick",
+      "name": "Léchouille",
+      "category": "3"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "6"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "6"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "9"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "12"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "16"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "24"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "28"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "32"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "37"
+    },
+    {
+      "id": "phantomforce",
+      "name": "Hantise",
+      "category": "41"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "46"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "52"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "egg"
+    },
+    {
+      "id": "destinybond",
+      "name": "Lien du Destin",
+      "category": "egg"
+    },
+    {
+      "id": "disable",
+      "name": "Entrave",
+      "category": "egg"
+    },
+    {
+      "id": "howl",
+      "name": "Grondement",
+      "category": "egg"
+    },
+    {
+      "id": "memento",
+      "name": "Souvenir",
+      "category": "egg"
+    },
+    {
+      "id": "shadowsneak",
+      "name": "Ombre Portée",
+      "category": "egg"
+    },
+    {
+      "id": "yawn",
+      "name": "Bâillement",
+      "category": "egg"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "phantomforce",
+      "name": "Hantise",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychicfangs",
+      "name": "Psycho-Croc",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "greavard_houndstone",
@@ -169,24 +518,38 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
         "presets": [
           "natural"
         ],
-        "rarity": "common",
-        "weight": 0.7,
-        "levels": "4-18",
+        "rarity": "rare",
+        "weight": 10,
+        "levels": "3-33",
         "contexts": [
           "grounded"
         ],
+        "times": [
+          "night"
+        ],
         "biomeTags": {
           "include": [
-            "eternal_starlight:starlight_permafrost_forest"
+            "minecraft:soul_sand_valley",
+            "minecraft:basalt_deltas",
+            "terralith:haunted_forest",
+            "terralith:haunted_mire",
+            "regions_unexplored:haunted_forest"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/common_starlight_permafrost_forest.json"
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0971_greavard.json",
+        "spawnId": "greavard-1",
+        "sky": {
+          "canSeeSky": true
+        },
+        "pokemon": "greavard",
+        "type": "pokemon"
       }
     ],
     [
@@ -200,19 +563,27 @@
         "contexts": [
           "grounded"
         ],
+        "times": [
+          "night"
+        ],
         "biomeTags": {
           "include": [
-            "minecraft:dark_forest"
+            "minecraft:soul_sand_valley",
+            "minecraft:basalt_deltas",
+            "regions_unexplored:haunted_forest"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/greavard.json",
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0971_greavard.json",
+        "spawnId": "ccc-greavard-1",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "pokemon": "greavard",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/greavard.png"
@@ -222,6 +593,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/greavard.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/greavard.json"
   ]
 }

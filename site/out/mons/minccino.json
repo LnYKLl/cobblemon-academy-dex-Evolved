@@ -2,20 +2,45 @@
   "id": "minccino",
   "dexnum": 572,
   "name": "Minccino",
+  "nameFr": "Chinchidou",
+  "description": "Un Pokémon qui aime la propreté. Chez lui, il enlève sans cesse la poussière en utilisant sa queue comme un plumeau.",
   "primaryType": "normal",
   "secondaryType": "",
+  "primaryTypeFr": "Normal",
+  "secondaryTypeFr": "",
+  "height": 4,
+  "weight": 58,
   "maleRatio": 0.25,
+  "baseScale": 0.4,
+  "hitbox": {
+    "width": 0.5,
+    "height": 1.0,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "cutecharm",
-    "technician",
-    "h:skilllink"
+    {
+      "id": "cutecharm",
+      "name": "Joli Sourire",
+      "hidden": false
+    },
+    {
+      "id": "technician",
+      "name": "Technicien",
+      "hidden": false
+    },
+    {
+      "id": "skilllink",
+      "name": "Multi-Coups",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 55,
     "attack": 50,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 60,
   "experienceGroup": "fast",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,125 +68,577 @@
         "item": "cobblemon:silk_scarf",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Mouchoir Soie"
       },
       {
         "item": "cobblemon:chesto_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Maron"
       }
     ]
   },
   "moves": [
-    "1:pound",
-    "1:growl",
-    "1:doubleslap",
-    "1:babydolleyes",
-    "4:helpinghand",
-    "8:echoedvoice",
-    "12:sing",
-    "16:charm",
-    "20:swift",
-    "24:encore",
-    "28:afteryou",
-    "32:tailslap",
-    "36:tickle",
-    "40:slam",
-    "44:hypervoice",
-    "48:lastresort",
-    "egg:aquatail",
-    "egg:captivate",
-    "egg:flail",
-    "egg:knockoff",
-    "egg:tailwhip",
-    "egg:tidyup",
-    "egg:wakeupslap",
-    "tm:afteryou",
-    "tm:alluringvoice",
-    "tm:aquatail",
-    "tm:babydolleyes",
-    "tm:batonpass",
-    "tm:bulletseed",
-    "tm:calmmind",
-    "tm:captivate",
-    "tm:charm",
-    "tm:chillingwater",
-    "tm:covet",
-    "tm:dazzlinggleam",
-    "tm:dig",
-    "tm:echoedvoice",
-    "tm:encore",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:faketears",
-    "tm:fling",
-    "tm:grassknot",
-    "tm:gunkshot",
-    "tm:helpinghand",
-    "tm:hypervoice",
-    "tm:irontail",
-    "tm:knockoff",
-    "tm:lastresort",
-    "tm:mudslap",
-    "tm:playrough",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:safeguard",
-    "tm:seedbomb",
-    "tm:shockwave",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superfang",
-    "tm:swift",
-    "tm:tailslap",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:trailblaze",
-    "tm:tripleaxel",
-    "tm:uproar",
-    "tm:uturn",
-    "tm:workup",
-    "tutor:afteryou",
-    "tutor:aquatail",
-    "tutor:babydolleyes",
-    "tutor:calmmind",
-    "tutor:covet",
-    "tutor:dazzlinggleam",
-    "tutor:endeavor",
-    "tutor:gunkshot",
-    "tutor:helpinghand",
-    "tutor:hypervoice",
-    "tutor:irontail",
-    "tutor:knockoff",
-    "tutor:lastresort",
-    "tutor:mudslap",
-    "tutor:playrough",
-    "tutor:rest",
-    "tutor:seedbomb",
-    "tutor:shockwave",
-    "tutor:sleeptalk",
-    "tutor:superfang",
-    "tutor:swift",
-    "tutor:thunderbolt",
-    "tutor:tripleaxel",
-    "tutor:uproar"
+    {
+      "id": "pound",
+      "name": "Écras'Face",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "doubleslap",
+      "name": "Torgnoles",
+      "category": "1"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "1"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "4"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "8"
+    },
+    {
+      "id": "sing",
+      "name": "Berceuse",
+      "category": "12"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "16"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "20"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "24"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "28"
+    },
+    {
+      "id": "tailslap",
+      "name": "Plumo-Queue",
+      "category": "32"
+    },
+    {
+      "id": "tickle",
+      "name": "Chatouille",
+      "category": "36"
+    },
+    {
+      "id": "slam",
+      "name": "Souplesse",
+      "category": "40"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "44"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "48"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "egg"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "egg"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "egg"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "egg"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "egg"
+    },
+    {
+      "id": "tidyup",
+      "name": "Grand Nettoyage",
+      "category": "egg"
+    },
+    {
+      "id": "wakeupslap",
+      "name": "Réveil Forcé",
+      "category": "egg"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "alluringvoice",
+      "name": "Voix Envoûtante",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "faketears",
+      "name": "Croco Larme",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailslap",
+      "name": "Plumo-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "tripleaxel",
+      "name": "Triple Axel",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "tripleaxel",
+      "name": "Triple Axel",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "minccino_cinccino",
       "variant": "item_interact",
       "result": "cinccino",
-      "consumeHeldItem": true,
+      "consumeHeldItem": false,
       "learnableMoves": [
         "tailslap"
       ],
@@ -167,24 +646,59 @@
       "requiredContext": "cobblemon:shiny_stone"
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
         "presets": [
           "natural"
         ],
-        "rarity": "uncommon",
-        "weight": 5.2,
-        "levels": "3-21",
-        "contexts": [
-          "grounded"
-        ],
+        "rarity": "common",
+        "weight": 1.9,
+        "levels": "5-30",
         "biomeTags": {
           "include": [
-            "#eternal_starlight:is_starlight_forest"
+            "#cobblemon:is_magical"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/rare_is_starlight_forest.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0572_minccino.json",
+        "spawnId": "minccino-1",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "minccino",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural",
+          "urban"
+        ],
+        "rarity": "common",
+        "weight": 5.7,
+        "levels": "5-30",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_overworld"
+          ],
+          "exclude": [
+            "#cobblemon:is_sandy",
+            "#cobblemon:is_tundra"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0572_minccino.json",
+        "spawnId": "minccino-2",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "minccino",
+        "type": "pokemon"
       }
     ],
     [
@@ -193,40 +707,56 @@
           "natural"
         ],
         "rarity": "common",
-        "weight": 3.7,
-        "levels": "4-18",
-        "contexts": [
-          "grounded"
-        ],
+        "weight": 5.7,
+        "levels": "5-30",
         "biomeTags": {
           "include": [
-            "eternal_starlight:starlight_permafrost_forest"
+            "#cobblemon:is_overworld"
+          ],
+          "exclude": [
+            "#cobblemon:is_sandy",
+            "#cobblemon:is_tundra"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/common_starlight_permafrost_forest.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0572_minccino.json",
+        "spawnId": "minccino-3",
+        "structures": [
+          "#minecraft:village"
+        ],
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "minccino",
+        "type": "pokemon"
       }
     ],
     [
       {
-        "rarity": "rare",
-        "weight": 7.1,
-        "levels": "15-20",
-        "contexts": [
-          "grounded"
+        "presets": [
+          "mansion"
         ],
+        "rarity": "common",
+        "weight": 9.5,
+        "levels": "5-30",
         "biomeTags": {
           "include": [
-            "minecraft:birch_forest"
+            "#cobblemon:is_overworld"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/minccino.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0572_minccino.json",
+        "spawnId": "minccino-4",
         "sky": {
-          "canSeeSky": true
-        }
+          "canSeeSky": false
+        },
+        "spawnType": "grounded",
+        "pokemon": "minccino",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/minccino.png"
@@ -236,6 +766,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/minccino.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/minccino.json"
   ]
 }

@@ -2,19 +2,40 @@
   "id": "fletchling",
   "dexnum": 661,
   "name": "Fletchling",
+  "nameFr": "Passerouge",
+  "description": "Peu farouche, il communique avec ses congénères par un doux gazouillis et par des signaux de queue.",
   "primaryType": "normal",
   "secondaryType": "flying",
+  "primaryTypeFr": "Normal",
+  "secondaryTypeFr": "Vol",
+  "height": 3,
+  "weight": 17,
   "maleRatio": 0.5,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 0.45,
+    "height": 0.7,
+    "fixed": false
+  },
   "labels": [
     "gen6"
   ],
   "abilities": [
-    "bigpecks",
-    "h:galewings"
+    {
+      "id": "bigpecks",
+      "name": "Cœur de Coq",
+      "hidden": false
+    },
+    {
+      "id": "galewings",
+      "name": "Ailes Bourrasque",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "flying"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 45,
     "attack": 50,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 56,
   "experienceGroup": "medium_slow",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -40,92 +63,418 @@
         "item": "minecraft:feather",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:feather"
       },
       {
         "item": "minecraft:chicken",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:chicken"
       },
       {
         "item": "cobblemon:rawst_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Fraive"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:growl",
-    "1:peck",
-    "5:quickattack",
-    "10:ember",
-    "15:flail",
-    "20:acrobatics",
-    "25:razorwind",
-    "30:aerialace",
-    "35:tailwind",
-    "40:steelwing",
-    "45:roost",
-    "50:fly",
-    "egg:defog",
-    "egg:flamecharge",
-    "egg:mefirst",
-    "egg:naturalgift",
-    "egg:quickguard",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:bravebird",
-    "tm:defog",
-    "tm:doubleedge",
-    "tm:dualwingbeat",
-    "tm:endure",
-    "tm:facade",
-    "tm:featherdance",
-    "tm:flamecharge",
-    "tm:flareblitz",
-    "tm:fly",
-    "tm:heatwave",
-    "tm:hurricane",
-    "tm:naturalgift",
-    "tm:overheat",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:roost",
-    "tm:sleeptalk",
-    "tm:snatch",
-    "tm:steelwing",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:swordsdance",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:uturn",
-    "tm:workup",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:defog",
-    "tutor:dualwingbeat",
-    "tutor:heatwave",
-    "tutor:rest",
-    "tutor:roost",
-    "tutor:sleeptalk",
-    "tutor:snatch",
-    "tutor:swift",
-    "tutor:tailwind"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "peck",
+      "name": "Picpic",
+      "category": "1"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "5"
+    },
+    {
+      "id": "ember",
+      "name": "Flammèche",
+      "category": "10"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "15"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "20"
+    },
+    {
+      "id": "razorwind",
+      "name": "Coupe-Vent",
+      "category": "25"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "30"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "35"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "40"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "45"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "50"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "egg"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "egg"
+    },
+    {
+      "id": "mefirst",
+      "name": "Moi d'Abord",
+      "category": "egg"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "egg"
+    },
+    {
+      "id": "quickguard",
+      "name": "Prévention",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "featherdance",
+      "name": "Danse Plumes",
+      "category": "tm"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "tm"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "tm"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tm"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "fletchling_fletchinder",
@@ -144,6 +493,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -154,8 +504,8 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "3-28",
-        "contexts": [
-          "grounded"
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
@@ -164,11 +514,15 @@
             "#cobblemon:is_taiga"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0661_fletchling.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0661_fletchling.json",
+        "spawnId": "fletchling-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "fletchling",
+        "type": "pokemon"
       }
     ],
     [
@@ -180,9 +534,6 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "3-28",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_forest",
@@ -192,7 +543,11 @@
             "#cobblemon:nether/is_warped"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0661_fletchling.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0661_fletchling.json",
+        "spawnId": "fletchling-3",
+        "spawnType": "grounded",
+        "pokemon": "fletchling",
+        "type": "pokemon"
       }
     ],
     [
@@ -204,39 +559,21 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "3-28",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "aether:skyroot_forest",
             "aether:skyroot_woodland"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0661_fletchling.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0661_fletchling.json",
+        "spawnId": "fletchling-4",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 4.1,
-        "levels": "4-18",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/common_scarlet_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "fletchling",
+        "type": "pokemon"
       }
     ]
   ],
@@ -250,6 +587,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation6/fletchling.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation6/fletchling.json"
   ]
 }

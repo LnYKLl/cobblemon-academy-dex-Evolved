@@ -2,21 +2,46 @@
   "id": "weezing_galar",
   "dexnum": 110,
   "name": "Weezing Galar",
+  "nameFr": "Weezing Galar",
+  "description": "Il aspire les particules polluantes dans l'air et excrète de l'air purifié.",
   "primaryType": "poison",
   "secondaryType": "fairy",
+  "primaryTypeFr": "Poison",
+  "secondaryTypeFr": "Fée",
+  "height": 30,
+  "weight": 160,
   "maleRatio": 0.5,
+  "baseScale": 1.2,
+  "hitbox": {
+    "width": 1.3,
+    "height": 1.4,
+    "fixed": false
+  },
   "labels": [
     "gen8",
     "galarian_form"
   ],
   "abilities": [
-    "levitate",
-    "neutralizinggas",
-    "h:mistysurge"
+    {
+      "id": "levitate",
+      "name": "Lévitation",
+      "hidden": false
+    },
+    {
+      "id": "neutralizinggas",
+      "name": "Gaz Inhibiteur",
+      "hidden": false
+    },
+    {
+      "id": "mistysurge",
+      "name": "Créa-Brume",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "amorphous"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 65,
     "attack": 90,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 172,
   "experienceGroup": "medium_fast",
   "catchRate": 60,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -42,149 +69,694 @@
         "item": "cobblemon:black_sludge",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Boue Noire"
       },
       {
         "item": "cobblemon:payapa_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Yapap"
       },
       {
         "item": "cobblemon:smoke_ball",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Boule Fumée"
       }
     ]
   },
   "moves": [
-    "1:doublehit",
-    "1:strangesteam",
-    "1:defog",
-    "1:heatwave",
-    "1:smog",
-    "1:smokescreen",
-    "1:haze",
-    "1:poisongas",
-    "1:tackle",
-    "1:aromaticmist",
-    "12:clearsmog",
-    "16:assurance",
-    "20:sludge",
-    "24:fairywind",
-    "28:selfdestruct",
-    "32:sludgebomb",
-    "38:toxic",
-    "44:belch",
-    "50:explosion",
-    "56:memento",
-    "62:destinybond",
-    "68:mistyterrain",
-    "egg:aromatherapy",
-    "egg:curse",
-    "egg:grudge",
-    "egg:painsplit",
-    "egg:psywave",
-    "egg:spite",
-    "egg:spitup",
-    "egg:stockpile",
-    "egg:swallow",
-    "tm:acidspray",
-    "tm:assurance",
-    "tm:bodyslam",
-    "tm:brutalswing",
-    "tm:corrosivegas",
-    "tm:curse",
-    "tm:darkpulse",
-    "tm:dazzlinggleam",
-    "tm:defog",
-    "tm:doubleedge",
-    "tm:endure",
-    "tm:explosion",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:flamethrower",
-    "tm:gigaimpact",
-    "tm:gunkshot",
-    "tm:gyroball",
-    "tm:haze",
-    "tm:heatwave",
-    "tm:hyperbeam",
-    "tm:mistyexplosion",
-    "tm:mistyterrain",
-    "tm:overheat",
-    "tm:painsplit",
-    "tm:payback",
-    "tm:playrough",
-    "tm:protect",
-    "tm:psybeam",
-    "tm:raindance",
-    "tm:rest",
-    "tm:scaryface",
-    "tm:screech",
-    "tm:selfdestruct",
-    "tm:shadowball",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:sludgewave",
-    "tm:spite",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:toxic",
-    "tm:toxicspikes",
-    "tm:venomdrench",
-    "tm:venoshock",
-    "tm:willowisp",
-    "tm:wonderroom",
-    "tutor:corrosivegas",
-    "tutor:darkpulse",
-    "tutor:dazzlinggleam",
-    "tutor:defog",
-    "tutor:flamethrower",
-    "tutor:gigaimpact",
-    "tutor:gunkshot",
-    "tutor:heatwave",
-    "tutor:hyperbeam",
-    "tutor:mistyexplosion",
-    "tutor:painsplit",
-    "tutor:playrough",
-    "tutor:rest",
-    "tutor:shadowball",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:spikes",
-    "tutor:spite",
-    "tutor:thunderbolt",
-    "tutor:wonderroom"
+    {
+      "id": "aromatherapy",
+      "name": "Aromathérapie",
+      "category": "1"
+    },
+    {
+      "id": "doublehit",
+      "name": "Coup Double",
+      "category": "1"
+    },
+    {
+      "id": "strangesteam",
+      "name": "Vapeur Féérique",
+      "category": "1"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "1"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "1"
+    },
+    {
+      "id": "smog",
+      "name": "Purédpois",
+      "category": "1"
+    },
+    {
+      "id": "smokescreen",
+      "name": "Brouillard",
+      "category": "1"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "1"
+    },
+    {
+      "id": "poisongas",
+      "name": "Gaz Toxik",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "aromaticmist",
+      "name": "Brume Capiteuse",
+      "category": "1"
+    },
+    {
+      "id": "clearsmog",
+      "name": "Bain de Smog",
+      "category": "12"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "16"
+    },
+    {
+      "id": "sludge",
+      "name": "Détritus",
+      "category": "20"
+    },
+    {
+      "id": "fairywind",
+      "name": "Vent Féérique",
+      "category": "24"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "28"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "32"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "38"
+    },
+    {
+      "id": "belch",
+      "name": "Éructation",
+      "category": "44"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "50"
+    },
+    {
+      "id": "memento",
+      "name": "Souvenir",
+      "category": "56"
+    },
+    {
+      "id": "destinybond",
+      "name": "Lien du Destin",
+      "category": "62"
+    },
+    {
+      "id": "mistyterrain",
+      "name": "Champ Brumeux",
+      "category": "68"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "egg"
+    },
+    {
+      "id": "grudge",
+      "name": "Rancune",
+      "category": "egg"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "egg"
+    },
+    {
+      "id": "psywave",
+      "name": "Vague Psy",
+      "category": "egg"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "egg"
+    },
+    {
+      "id": "spitup",
+      "name": "Relâche",
+      "category": "egg"
+    },
+    {
+      "id": "stockpile",
+      "name": "Stockage",
+      "category": "egg"
+    },
+    {
+      "id": "swallow",
+      "name": "Avale",
+      "category": "egg"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brutalswing",
+      "name": "Centrifugifle",
+      "category": "tm"
+    },
+    {
+      "id": "corrosivegas",
+      "name": "Gaz Corrosif",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "mistyexplosion",
+      "name": "Explo-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "mistyterrain",
+      "name": "Champ Brumeux",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "venomdrench",
+      "name": "Piège de Venin",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tm"
+    },
+    {
+      "id": "corrosivegas",
+      "name": "Gaz Corrosif",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "mistyexplosion",
+      "name": "Explo-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "rage",
+      "name": "Frénésie",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "legacy"
+    },
+    {
+      "id": "zapcannon",
+      "name": "Élecanon",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "koffing",
   "spawns": [
     [
       {
         "presets": [
           "natural"
         ],
-        "rarity": "rare",
-        "weight": 7.5,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
+        "rarity": "common",
+        "weight": 0.2,
+        "levels": "35-49",
         "biomeTags": {
           "include": [
-            "eternal_starlight:starlight_permafrost_forest"
+            "#cobblemon:is_magical"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/rare_starlight_permafrost_forest.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0110_weezing.json",
+        "spawnId": "weezing-galarian-4",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "weezing galarian",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 1.5,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "common",
+        "weight": 0.2,
+        "levels": "35-49",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_spooky"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0110_weezing.json",
+        "spawnId": "weezing-galarian-5",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "weezing galarian",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 1.5,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
       }
     ],
     [
@@ -206,9 +778,52 @@
             "#minecraft:woodland_mansion"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/weezing.json",
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0110_weezing_galarian.json",
+        "spawnId": "weezing-galarian-1",
         "sky": {
           "canSeeSky": true
+        },
+        "pokemon": "weezing galarian",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 5.0,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      }
+    ],
+    [
+      {
+        "presets": [
+          "illager_structures"
+        ],
+        "rarity": "common",
+        "weight": 0.1,
+        "levels": "35-50",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_overworld"
+          ],
+          "exclude": [
+            "#minecraft:woodland_mansion"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0110_weezing_galarian.json",
+        "spawnId": "ccc-weezing-galarian-1",
+        "sky": {
+          "canSeeSky": true
+        },
+        "pokemon": "weezing galarian",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 5.0,
+          "condition": {
+            "timeRange": "night"
+          }
         }
       }
     ]
@@ -223,6 +838,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/weezing.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/weezing.json"
   ]
 }

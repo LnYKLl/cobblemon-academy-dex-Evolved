@@ -2,19 +2,40 @@
   "id": "volcarona",
   "dexnum": 637,
   "name": "Volcarona",
+  "nameFr": "Pyrax",
+  "description": "On dit que quand le ciel s'est obscurci à cause des cendres d'un volcan, le feu d'un Pyrax aurait remplacé le soleil.",
   "primaryType": "bug",
   "secondaryType": "fire",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "Feu",
+  "height": 16,
+  "weight": 460,
   "maleRatio": 0.5,
+  "baseScale": 0.9,
+  "hitbox": {
+    "height": 2.4,
+    "fixed": false,
+    "width": 1.3
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "flamebody",
-    "h:swarm"
+    {
+      "id": "flamebody",
+      "name": "Corps Ardent",
+      "hidden": false
+    },
+    {
+      "id": "swarm",
+      "name": "Essaim",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 40,
   "baseStats": {
     "hp": 85,
     "attack": 60,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 275,
   "experienceGroup": "slow",
   "catchRate": 15,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -44,7 +67,8 @@
         "biomes": [
           "#cobblemon:nether/is_crimson",
           "#cobblemon:nether/is_forest"
-        ]
+        ],
+        "itemName": "minecraft:blaze_powder"
       },
       {
         "item": "cobblemon:silver_powder",
@@ -54,7 +78,8 @@
         "biomes": [
           "#cobblemon:nether/is_crimson",
           "#cobblemon:nether/is_forest"
-        ]
+        ],
+        "itemName": "Poudre Argentée"
       },
       {
         "item": "cobblemon:charti_berry",
@@ -64,125 +89,626 @@
         "biomes": [
           "#cobblemon:nether/is_crimson",
           "#cobblemon:nether/is_forest"
-        ]
+        ],
+        "itemName": "Baie Charti"
       }
     ]
   },
   "moves": [
-    "1:ember",
-    "1:stringshot",
-    "1:gust",
-    "1:firespin",
-    "1:whirlwind",
-    "1:quiverdance",
-    "1:fierydance",
-    "1:flamecharge",
-    "1:strugglebug",
-    "1:flareblitz",
-    "1:thrash",
-    "1:absorb",
-    "1:takedown",
-    "1:doubleedge",
-    "18:flamewheel",
-    "24:bugbite",
-    "30:screech",
-    "36:leechlife",
-    "42:bugbuzz",
-    "48:heatwave",
-    "54:amnesia",
-    "62:hurricane",
-    "70:fireblast",
-    "78:ragepowder",
-    "egg:absorb",
-    "egg:foresight",
-    "egg:harden",
-    "egg:morningsun",
-    "egg:thrash",
-    "tm:acrobatics",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:amnesia",
-    "tm:bodyslam",
-    "tm:bugbite",
-    "tm:bugbuzz",
-    "tm:calmmind",
-    "tm:defog",
-    "tm:doubleedge",
-    "tm:dualwingbeat",
-    "tm:endure",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firespin",
-    "tm:flamecharge",
-    "tm:flamethrower",
-    "tm:flareblitz",
-    "tm:fly",
-    "tm:gigadrain",
-    "tm:gigaimpact",
-    "tm:heatwave",
-    "tm:hurricane",
-    "tm:hyperbeam",
-    "tm:incinerate",
-    "tm:leechlife",
-    "tm:lightscreen",
-    "tm:lunge",
-    "tm:magnetrise",
-    "tm:mysticalfire",
-    "tm:overheat",
-    "tm:poisonjab",
-    "tm:pounce",
-    "tm:protect",
-    "tm:psychic",
-    "tm:raindance",
-    "tm:rest",
-    "tm:roost",
-    "tm:safeguard",
-    "tm:screech",
-    "tm:signalbeam",
-    "tm:silverwind",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:stringshot",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:trailblaze",
-    "tm:uturn",
-    "tm:wildcharge",
-    "tm:willowisp",
-    "tm:zenheadbutt",
-    "tutor:aircutter",
-    "tutor:bugbite",
-    "tutor:calmmind",
-    "tutor:defog",
-    "tutor:dualwingbeat",
-    "tutor:flamethrower",
-    "tutor:gigadrain",
-    "tutor:gigaimpact",
-    "tutor:heatwave",
-    "tutor:hyperbeam",
-    "tutor:leechlife",
-    "tutor:magnetrise",
-    "tutor:mysticalfire",
-    "tutor:poisonjab",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:roost",
-    "tutor:signalbeam",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:stringshot",
-    "tutor:tailwind",
-    "tutor:wildcharge",
-    "tutor:zenheadbutt"
+    {
+      "id": "ember",
+      "name": "Flammèche",
+      "category": "1"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "1"
+    },
+    {
+      "id": "gust",
+      "name": "Tornade",
+      "category": "1"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "1"
+    },
+    {
+      "id": "whirlwind",
+      "name": "Cyclone",
+      "category": "1"
+    },
+    {
+      "id": "quiverdance",
+      "name": "Papillodanse",
+      "category": "1"
+    },
+    {
+      "id": "fierydance",
+      "name": "Danse du Feu",
+      "category": "1"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "1"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "1"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "1"
+    },
+    {
+      "id": "thrash",
+      "name": "Mania",
+      "category": "1"
+    },
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "1"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "1"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "1"
+    },
+    {
+      "id": "flamewheel",
+      "name": "Roue de Feu",
+      "category": "18"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "24"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "30"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "36"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "42"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "48"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "54"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "62"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "70"
+    },
+    {
+      "id": "ragepowder",
+      "name": "Poudre Fureur",
+      "category": "78"
+    },
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "egg"
+    },
+    {
+      "id": "foresight",
+      "name": "Clairvoyance",
+      "category": "egg"
+    },
+    {
+      "id": "harden",
+      "name": "Armure",
+      "category": "egg"
+    },
+    {
+      "id": "morningsun",
+      "name": "Aurore",
+      "category": "egg"
+    },
+    {
+      "id": "thrash",
+      "name": "Mania",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "tm"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tm"
+    },
+    {
+      "id": "mysticalfire",
+      "name": "Feu Ensorcelé",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "silverwind",
+      "name": "Vent Argenté",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tutor"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tutor"
+    },
+    {
+      "id": "mysticalfire",
+      "name": "Feu Ensorcelé",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "legacy"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "larvesta",
   "spawns": [
     [
       {
@@ -193,21 +719,22 @@
         "rarity": "uncommon",
         "weight": 16.0,
         "levels": "59-64",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_desert"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0637_volcarona.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0637_volcarona.json",
+        "spawnId": "volcarona-1",
         "sky": {
           "canSeeSky": false
         },
         "yLevel": {
           "minY": 48
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "volcarona",
+        "type": "pokemon"
       }
     ],
     [
@@ -219,21 +746,22 @@
         "rarity": "uncommon",
         "weight": 16.0,
         "levels": "59-64",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_jungle"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0637_volcarona.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0637_volcarona.json",
+        "spawnId": "volcarona-2",
         "sky": {
           "canSeeSky": false
         },
         "yLevel": {
           "minY": 48
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "volcarona",
+        "type": "pokemon"
       }
     ],
     [
@@ -245,16 +773,37 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "59-64",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_crimson",
             "#cobblemon:nether/is_forest"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0637_volcarona.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0637_volcarona.json",
+        "spawnId": "volcarona-3",
+        "spawnType": "grounded",
+        "pokemon": "volcarona",
+        "type": "pokemon",
+        "drops": {
+          "amount": 3,
+          "entries": [
+            {
+              "item": "minecraft:blaze_powder",
+              "percentage": 10.0,
+              "quantityRange": null
+            },
+            {
+              "item": "cobblemon:silver_powder",
+              "percentage": 5.0,
+              "quantityRange": null
+            },
+            {
+              "item": "cobblemon:charti_berry",
+              "percentage": 5.0,
+              "quantityRange": null
+            }
+          ]
+        }
       }
     ],
     [
@@ -262,41 +811,23 @@
         "rarity": "uncommon",
         "weight": 1.0,
         "levels": "59-64",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0637_volcarona.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0637_volcarona.json",
+        "spawnId": "volcarona-4",
         "structures": [
           "#aether:dungeons"
         ],
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "ultra-rare",
-        "weight": 6.8,
-        "levels": "11-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/ultra-rare_crystallized_desert.json"
+        "spawnType": "grounded",
+        "pokemon": "volcarona",
+        "type": "pokemon"
       }
     ]
   ],
@@ -310,6 +841,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/volcarona.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/volcarona.json"
   ]
 }

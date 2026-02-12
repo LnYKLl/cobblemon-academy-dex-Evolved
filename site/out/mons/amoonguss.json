@@ -2,19 +2,40 @@
   "id": "amoonguss",
   "dexnum": 591,
   "name": "Amoonguss",
+  "nameFr": "Gaulet",
+  "description": "Il danse en faisant tournoyer les coupoles en forme de Poké Ball de ses bras pour attirer ses proies.",
   "primaryType": "grass",
   "secondaryType": "poison",
+  "primaryTypeFr": "Plante",
+  "secondaryTypeFr": "Poison",
+  "height": 6,
+  "weight": 105,
   "maleRatio": 0.5,
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 1.2,
+    "height": 1.35,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "effectspore",
-    "h:regenerator"
+    {
+      "id": "effectspore",
+      "name": "Pose Spore",
+      "hidden": false
+    },
+    {
+      "id": "regenerator",
+      "name": "Régé-Force",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "grass"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 114,
     "attack": 85,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 162,
   "experienceGroup": "medium_fast",
   "catchRate": 75,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -40,95 +63,443 @@
         "item": "minecraft:red_mushroom",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:red_mushroom"
       },
       {
         "item": "cobblemon:cheri_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Ceriz"
       }
     ]
   },
   "moves": [
-    "1:absorb",
-    "1:growth",
-    "1:astonish",
-    "1:bide",
-    "1:feintattack",
-    "1:stunspore",
-    "12:megadrain",
-    "16:synthesis",
-    "20:clearsmog",
-    "24:sweetscent",
-    "28:gigadrain",
-    "32:ingrain",
-    "36:toxic",
-    "42:ragepowder",
-    "48:solarbeam",
-    "54:spore",
-    "egg:clearsmog",
-    "egg:defensecurl",
-    "egg:poisonpowder",
-    "egg:rollout",
-    "egg:worryseed",
-    "tm:afteryou",
-    "tm:bodyslam",
-    "tm:bulletseed",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:flash",
-    "tm:foulplay",
-    "tm:gastroacid",
-    "tm:gigadrain",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:grassyterrain",
-    "tm:hex",
-    "tm:hyperbeam",
-    "tm:leafstorm",
-    "tm:magicalleaf",
-    "tm:naturepower",
-    "tm:payback",
-    "tm:pollenpuff",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:rollout",
-    "tm:scaryface",
-    "tm:seedbomb",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:solarbeam",
-    "tm:stompingtantrum",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:synthesis",
-    "tm:terablast",
-    "tm:toxic",
-    "tm:venoshock",
-    "tm:worryseed",
-    "tutor:afteryou",
-    "tutor:energyball",
-    "tutor:foulplay",
-    "tutor:gastroacid",
-    "tutor:gigadrain",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:magicalleaf",
-    "tutor:rest",
-    "tutor:rollout",
-    "tutor:seedbomb",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:stompingtantrum",
-    "tutor:synthesis",
-    "tutor:worryseed"
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "1"
+    },
+    {
+      "id": "growth",
+      "name": "Croissance",
+      "category": "1"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "1"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "1"
+    },
+    {
+      "id": "feintattack",
+      "name": "Feinte",
+      "category": "1"
+    },
+    {
+      "id": "stunspore",
+      "name": "Para-Spore",
+      "category": "1"
+    },
+    {
+      "id": "megadrain",
+      "name": "Méga-Sangsue",
+      "category": "12"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "16"
+    },
+    {
+      "id": "clearsmog",
+      "name": "Bain de Smog",
+      "category": "20"
+    },
+    {
+      "id": "sweetscent",
+      "name": "Doux Parfum",
+      "category": "24"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "28"
+    },
+    {
+      "id": "ingrain",
+      "name": "Racines",
+      "category": "32"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "36"
+    },
+    {
+      "id": "ragepowder",
+      "name": "Poudre Fureur",
+      "category": "42"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "48"
+    },
+    {
+      "id": "spore",
+      "name": "Spore",
+      "category": "54"
+    },
+    {
+      "id": "clearsmog",
+      "name": "Bain de Smog",
+      "category": "egg"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "egg"
+    },
+    {
+      "id": "poisonpowder",
+      "name": "Poudre Toxik",
+      "category": "egg"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "egg"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "egg"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "leafstorm",
+      "name": "Tempête Verte",
+      "category": "tm"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "pollenpuff",
+      "name": "Boule Pollen",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tutor"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "foongus",
   "spawns": [
     [
       {
@@ -138,19 +509,20 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "39-46",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_mushroom"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0591_amoonguss.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0591_amoonguss.json",
+        "spawnId": "amoonguss-1",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "amoonguss",
+        "type": "pokemon"
       }
     ],
     [
@@ -161,38 +533,26 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "39-46",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_mushroom"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0591_amoonguss.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0591_amoonguss.json",
+        "spawnId": "amoonguss-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 7.3,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/rare_dark_swamp.json"
+        "spawnType": "grounded",
+        "pokemon": "amoonguss",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "day"
+          }
+        }
       }
     ]
   ],
@@ -206,6 +566,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/amoonguss.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/amoonguss.json"
   ]
 }

@@ -2,20 +2,41 @@
   "id": "gabite",
   "dexnum": 444,
   "name": "Gabite",
+  "nameFr": "Carmache",
+  "description": "Carmache accumule les pierres précieuses qu'il déterre quand il entreprend d'agrandir son nid.",
   "primaryType": "dragon",
   "secondaryType": "ground",
+  "primaryTypeFr": "Dragon",
+  "secondaryTypeFr": "Sol",
+  "height": 14,
+  "weight": 560,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1.5,
+    "fixed": false
+  },
   "labels": [
     "gen4"
   ],
   "abilities": [
-    "sandveil",
-    "h:roughskin"
+    {
+      "id": "sandveil",
+      "name": "Voile Sable",
+      "hidden": false
+    },
+    {
+      "id": "roughskin",
+      "name": "Peau Dure",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "monster",
     "dragon"
   ],
+  "eggCycles": 40,
   "baseStats": {
     "hp": 68,
     "attack": 90,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 144,
   "experienceGroup": "slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,124 +64,611 @@
         "item": "cobblemon:dragon_fang",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Croc de Dragon"
       },
       {
         "item": "cobblemon:haban_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Fraigo"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:sandattack",
-    "1:dragonrage",
-    "1:sandtomb",
-    "1:dualchop",
-    "1:dragonbreath",
-    "18:bulldoze",
-    "27:bite",
-    "34:slash",
-    "42:dragonclaw",
-    "50:dig",
-    "58:sandstorm",
-    "66:takedown",
-    "74:dragonrush",
-    "egg:doubleedge",
-    "egg:metalclaw",
-    "egg:thrash",
-    "egg:twister",
-    "tm:aerialace",
-    "tm:bodyslam",
-    "tm:breakingswipe",
-    "tm:bulldoze",
-    "tm:crunch",
-    "tm:cut",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:dracometeor",
-    "tm:dragoncheer",
-    "tm:dragonclaw",
-    "tm:dragonpulse",
-    "tm:dragontail",
-    "tm:dualchop",
-    "tm:earthpower",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:fireblast",
-    "tm:firefang",
-    "tm:flamethrower",
-    "tm:furycutter",
-    "tm:headbutt",
-    "tm:helpinghand",
-    "tm:honeclaws",
-    "tm:incinerate",
-    "tm:ironhead",
-    "tm:irontail",
-    "tm:laserfocus",
-    "tm:metalclaw",
-    "tm:mudshot",
-    "tm:outrage",
-    "tm:powergem",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:rockclimb",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:sandstorm",
-    "tm:sandtomb",
-    "tm:scaleshot",
-    "tm:scaryface",
-    "tm:scorchingsands",
-    "tm:shadowclaw",
-    "tm:sleeptalk",
-    "tm:stealthrock",
-    "tm:stoneedge",
-    "tm:strength",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thunderfang",
-    "tm:twister",
-    "tutor:aerialace",
-    "tutor:bulldoze",
-    "tutor:dracometeor",
-    "tutor:dragonpulse",
-    "tutor:dualchop",
-    "tutor:earthpower",
-    "tutor:falseswipe",
-    "tutor:firefang",
-    "tutor:flamethrower",
-    "tutor:furycutter",
-    "tutor:helpinghand",
-    "tutor:ironhead",
-    "tutor:irontail",
-    "tutor:laserfocus",
-    "tutor:outrage",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:scaleshot",
-    "tutor:scorchingsands",
-    "tutor:shadowclaw",
-    "tutor:sleeptalk",
-    "tutor:stealthrock",
-    "tutor:stoneedge",
-    "tutor:swift",
-    "tutor:thunderfang",
-    "tutor:twister"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "1"
+    },
+    {
+      "id": "dragonrage",
+      "name": "Draco-Rage",
+      "category": "1"
+    },
+    {
+      "id": "sandtomb",
+      "name": "Tourbi-Sable",
+      "category": "1"
+    },
+    {
+      "id": "dualchop",
+      "name": "Double Baffe",
+      "category": "1"
+    },
+    {
+      "id": "dragonbreath",
+      "name": "Draco-Souffle",
+      "category": "1"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "18"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "27"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "34"
+    },
+    {
+      "id": "dragonclaw",
+      "name": "Draco-Griffe",
+      "category": "42"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "50"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "58"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "66"
+    },
+    {
+      "id": "dragonrush",
+      "name": "Draco-Charge",
+      "category": "74"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "egg"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "egg"
+    },
+    {
+      "id": "thrash",
+      "name": "Mania",
+      "category": "egg"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "breakingswipe",
+      "name": "Abattage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tm"
+    },
+    {
+      "id": "dragoncheer",
+      "name": "Cri Draconique",
+      "category": "tm"
+    },
+    {
+      "id": "dragonclaw",
+      "name": "Draco-Griffe",
+      "category": "tm"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tm"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "dualchop",
+      "name": "Double Baffe",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tm"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockclimb",
+      "name": "Escalade",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "sandtomb",
+      "name": "Tourbi-Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "dualchop",
+      "name": "Double Baffe",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tutor"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "gabite_garchomp",
@@ -176,30 +686,31 @@
       ]
     }
   ],
+  "preEvolution": "gible",
   "spawns": [
     [
       {
         "presets": [
-          "natural",
-          "wild"
+          "natural"
         ],
         "rarity": "rare",
         "weight": 2.25,
         "levels": "24-47",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_badlands",
             "#cobblemon:is_mountain"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0444_gabite.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0444_gabite.json",
+        "spawnId": "gabite-1",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "gabite",
+        "type": "pokemon"
       }
     ],
     [
@@ -211,20 +722,21 @@
         "rarity": "ultra-rare",
         "weight": 3.6,
         "levels": "24-47",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_badlands",
             "#cobblemon:is_mountain"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0444_gabite.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0444_gabite.json",
+        "spawnId": "gabite-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "gabite",
+        "type": "pokemon"
       }
     ],
     [
@@ -235,9 +747,6 @@
         "rarity": "ultra-rare",
         "weight": 3.6,
         "levels": "24-47",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -245,14 +754,22 @@
           "exclude": [
             "#cobblemon:is_badlands",
             "#cobblemon:is_deep_dark",
-            "#cobblemon:is_mountain"
+            "#cobblemon:is_mountain",
+            "#cobblemon:is_thermal"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0444_gabite.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0444_gabite.json",
+        "spawnId": "gabite-3",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "gabite",
+        "excludeNearbyBlocks": [
+          "minecraft:magma_block"
+        ],
+        "type": "pokemon"
       }
     ],
     [
@@ -263,19 +780,79 @@
         "rarity": "rare",
         "weight": 2.25,
         "levels": "24-47",
-        "contexts": [
-          "grounded"
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_overworld"
+          ],
+          "exclude": [
+            "#cobblemon:is_badlands",
+            "#cobblemon:is_deep_dark",
+            "#cobblemon:is_mountain",
+            "#cobblemon:is_thermal"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0444_gabite.json",
+        "spawnId": "gabite-4",
+        "nearbyBlocks": {
+          "selectors": [
+            "minecraft:magma_block"
+          ]
+        },
+        "sky": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7
+        },
+        "spawnType": "grounded",
+        "pokemon": "gabite",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
         ],
+        "rarity": "rare",
+        "weight": 2.25,
+        "levels": "24-47",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_thermal"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0444_gabite.json",
+        "spawnId": "gabite-5",
+        "sky": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7
+        },
+        "spawnType": "grounded",
+        "pokemon": "gabite",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "rare",
+        "weight": 2.25,
+        "levels": "24-47",
         "biomeTags": {
           "include": [
             "#aether:is_aether"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0444_gabite.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0444_gabite.json",
+        "spawnId": "gabite-6",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "gabite",
+        "type": "pokemon"
       }
     ],
     [
@@ -297,10 +874,13 @@
           ]
         },
         "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0444_gabite.json",
+        "spawnId": "gabite-1",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "pokemon": "gabite",
+        "type": "pokemon"
       }
     ],
     [
@@ -322,10 +902,13 @@
           ]
         },
         "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0444_gabite.json",
+        "spawnId": "gabite-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "pokemon": "gabite",
+        "type": "pokemon"
       }
     ],
     [
@@ -351,10 +934,13 @@
           ]
         },
         "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0444_gabite.json",
+        "spawnId": "gabite-3",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "pokemon": "gabite",
+        "type": "pokemon"
       }
     ],
     [
@@ -374,10 +960,13 @@
           ]
         },
         "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0444_gabite.json",
+        "spawnId": "gabite-4",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "pokemon": "gabite",
+        "type": "pokemon"
       }
     ]
   ],
@@ -391,6 +980,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation4/gabite.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation4/gabite.json"
   ]
 }

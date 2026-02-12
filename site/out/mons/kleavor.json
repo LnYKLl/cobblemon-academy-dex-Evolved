@@ -2,20 +2,45 @@
   "id": "kleavor",
   "dexnum": 900,
   "name": "Kleavor",
+  "nameFr": "Hachécateur",
+  "description": "Il a évolué grâce à un minerai très rare que l'on trouve dans les zones volcaniques, et certaines parties de son corps se sont changées en pierre.",
   "primaryType": "bug",
   "secondaryType": "rock",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "Roche",
+  "height": 18,
+  "weight": 890,
   "maleRatio": 0.5,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 1.2,
+    "height": 2,
+    "fixed": false
+  },
   "labels": [
     "gen8a"
   ],
   "abilities": [
-    "swarm",
-    "sheerforce",
-    "h:sharpness"
+    {
+      "id": "swarm",
+      "name": "Essaim",
+      "hidden": false
+    },
+    {
+      "id": "sheerforce",
+      "name": "Sans Limite",
+      "hidden": false
+    },
+    {
+      "id": "sharpness",
+      "name": "Incisif",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 70,
     "attack": 135,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 175,
   "experienceGroup": "medium_fast",
   "catchRate": 15,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,123 +68,533 @@
         "item": "minecraft:stone_axe",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:stone_axe"
       },
       {
         "item": "cobblemon:wepear_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Repoi"
       }
     ]
   },
   "moves": [
-    "1:stoneaxe",
-    "1:leer",
-    "1:quickattack",
-    "1:pursuit",
-    "1:wingattack",
-    "4:furycutter",
-    "8:falseswipe",
-    "12:smackdown",
-    "16:doubleteam",
-    "20:doublehit",
-    "24:slash",
-    "28:focusenergy",
-    "32:agility",
-    "36:rockslide",
-    "40:xscissor",
-    "44:swordsdance",
-    "egg:counter",
-    "egg:defog",
-    "egg:feint",
-    "egg:nightslash",
-    "egg:quickguard",
-    "egg:razorwind",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:batonpass",
-    "tm:brickbreak",
-    "tm:bugbite",
-    "tm:bugbuzz",
-    "tm:closecombat",
-    "tm:defog",
-    "tm:doubleedge",
-    "tm:doubleteam",
-    "tm:dualwingbeat",
-    "tm:endure",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:focusenergy",
-    "tm:furycutter",
-    "tm:gigaimpact",
-    "tm:helpinghand",
-    "tm:hyperbeam",
-    "tm:lightscreen",
-    "tm:lunge",
-    "tm:ominouswind",
-    "tm:pounce",
-    "tm:protect",
-    "tm:psychocut",
-    "tm:raindance",
-    "tm:rest",
-    "tm:reversal",
-    "tm:rockblast",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:sandstorm",
-    "tm:scaryface",
-    "tm:silverwind",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:smackdown",
-    "tm:stealthrock",
-    "tm:stoneedge",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:swordsdance",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:trailblaze",
-    "tm:uturn",
-    "tm:vacuumwave",
-    "tm:xscissor",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:bugbite",
-    "tutor:defog",
-    "tutor:dualwingbeat",
-    "tutor:falseswipe",
-    "tutor:focusenergy",
-    "tutor:furycutter",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:ominouswind",
-    "tutor:psychocut",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:stealthrock",
-    "tutor:stoneedge",
-    "tutor:swift",
-    "tutor:tailwind",
-    "tutor:vacuumwave",
-    "tutor:xscissor"
+    {
+      "id": "stoneaxe",
+      "name": "Hache de Pierre",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "1"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "1"
+    },
+    {
+      "id": "wingattack",
+      "name": "Cru-Ailes",
+      "category": "1"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "4"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "8"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "12"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "16"
+    },
+    {
+      "id": "doublehit",
+      "name": "Coup Double",
+      "category": "20"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "24"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "28"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "32"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "36"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "40"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "44"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "egg"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "egg"
+    },
+    {
+      "id": "feint",
+      "name": "Ruse",
+      "category": "egg"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "egg"
+    },
+    {
+      "id": "quickguard",
+      "name": "Prévention",
+      "category": "egg"
+    },
+    {
+      "id": "razorwind",
+      "name": "Coupe-Vent",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "tm"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "tm"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "silverwind",
+      "name": "Vent Argenté",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "vacuumwave",
+      "name": "Onde Vide",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tutor"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "vacuumwave",
+      "name": "Onde Vide",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "scyther",
   "spawns": [
     [
       {
@@ -168,8 +605,8 @@
         "rarity": "rare",
         "weight": 0.25,
         "levels": "45-50",
-        "contexts": [
-          "grounded"
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
@@ -181,11 +618,15 @@
             "#cobblemon:is_spooky"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0900_kleavor.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0900_kleavor.json",
+        "spawnId": "kleavor-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "kleavor",
+        "type": "pokemon"
       }
     ],
     [
@@ -196,39 +637,21 @@
         "rarity": "rare",
         "weight": 0.25,
         "levels": "45-50",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "aether:skyroot_forest",
             "aether:skyroot_woodland"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0900_kleavor.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0900_kleavor.json",
+        "spawnId": "kleavor-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "ultra-rare",
-        "weight": 9.6,
-        "levels": "11-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/ultra-rare_crystallized_desert.json"
+        "spawnType": "grounded",
+        "pokemon": "kleavor",
+        "type": "pokemon"
       }
     ]
   ],
@@ -242,7 +665,7 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8a/kleavor.json",
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8a/kleavor.json",
     "datapacks\\Academy\\data\\cobblemon\\species\\generation8a\\kleavor.json"
   ]
 }

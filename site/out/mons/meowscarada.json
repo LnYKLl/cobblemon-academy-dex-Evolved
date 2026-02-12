@@ -2,20 +2,41 @@
   "id": "meowscarada",
   "dexnum": 908,
   "name": "Meowscarada",
+  "nameFr": "Miascarade",
+  "description": "Il se sert de la réverbération de la lumière sur la fourrure de sa cape pour camoufler sa tige, ce qui donne l'illusion que sa fleur flotte dans les airs.",
   "primaryType": "grass",
   "secondaryType": "dark",
+  "primaryTypeFr": "Plante",
+  "secondaryTypeFr": "Ténèbres",
+  "height": 15,
+  "weight": 312,
   "maleRatio": 0.875,
+  "baseScale": 0.67,
+  "hitbox": {
+    "width": 1,
+    "height": 3,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "overgrow",
-    "h:protean"
+    {
+      "id": "overgrow",
+      "name": "Engrais",
+      "hidden": false
+    },
+    {
+      "id": "protean",
+      "name": "Protéen",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field",
     "grass"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 76,
     "attack": 110,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 3
   },
+  "baseExperienceYield": 265,
   "experienceGroup": "medium_slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,138 +64,631 @@
         "item": "cobblemon:miracle_seed",
         "percentage": 25.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Graine Miracle"
       }
     ]
   },
   "moves": [
-    "1:flowertrick",
-    "1:leafage",
-    "1:scratch",
-    "1:tailwhip",
-    "1:doubleteam",
-    "1:trick",
-    "7:bite",
-    "10:honeclaws",
-    "13:magicalleaf",
-    "15:quickattack",
-    "20:seedbomb",
-    "24:uturn",
-    "29:worryseed",
-    "33:slash",
-    "38:nightslash",
-    "42:energyball",
-    "47:playrough",
-    "52:knockoff",
-    "58:grassyterrain",
-    "64:leafstorm",
-    "egg:allyswitch",
-    "egg:copycat",
-    "egg:leechseed",
-    "egg:petalblizzard",
-    "egg:suckerpunch",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:allyswitch",
-    "tm:aurasphere",
-    "tm:brickbreak",
-    "tm:bulletseed",
-    "tm:charm",
-    "tm:chillingwater",
-    "tm:darkpulse",
-    "tm:disarmingvoice",
-    "tm:doubleteam",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:faketears",
-    "tm:fling",
-    "tm:foulplay",
-    "tm:frenzyplant",
-    "tm:gigadrain",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:grasspledge",
-    "tm:grassyglide",
-    "tm:grassyterrain",
-    "tm:helpinghand",
-    "tm:honeclaws",
-    "tm:hyperbeam",
-    "tm:knockoff",
-    "tm:lashout",
-    "tm:leafstorm",
-    "tm:lowkick",
-    "tm:lowsweep",
-    "tm:magicalleaf",
-    "tm:mudslap",
-    "tm:nastyplot",
-    "tm:petalblizzard",
-    "tm:playrough",
-    "tm:pollenpuff",
-    "tm:powergem",
-    "tm:protect",
-    "tm:psychup",
-    "tm:rest",
-    "tm:seedbomb",
-    "tm:shadowball",
-    "tm:shadowclaw",
-    "tm:skillswap",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:spikes",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:swift",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:throatchop",
-    "tm:thunderpunch",
-    "tm:toxicspikes",
-    "tm:trailblaze",
-    "tm:trick",
-    "tm:trickroom",
-    "tm:tripleaxel",
-    "tm:uturn",
-    "tm:worryseed",
-    "tutor:aerialace",
-    "tutor:allyswitch",
-    "tutor:darkpulse",
-    "tutor:energyball",
-    "tutor:foulplay",
-    "tutor:frenzyplant",
-    "tutor:gigadrain",
-    "tutor:gigaimpact",
-    "tutor:grasspledge",
-    "tutor:grassyglide",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:knockoff",
-    "tutor:lashout",
-    "tutor:lowkick",
-    "tutor:magicalleaf",
-    "tutor:mudslap",
-    "tutor:playrough",
-    "tutor:rest",
-    "tutor:seedbomb",
-    "tutor:shadowball",
-    "tutor:shadowclaw",
-    "tutor:skillswap",
-    "tutor:sleeptalk",
-    "tutor:spikes",
-    "tutor:suckerpunch",
-    "tutor:swift",
-    "tutor:throatchop",
-    "tutor:thunderpunch",
-    "tutor:trick",
-    "tutor:tripleaxel",
-    "tutor:worryseed"
+    {
+      "id": "flowertrick",
+      "name": "Magie Florale",
+      "category": "1"
+    },
+    {
+      "id": "leafage",
+      "name": "Feuillage",
+      "category": "1"
+    },
+    {
+      "id": "scratch",
+      "name": "Griffe",
+      "category": "1"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "1"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "1"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "1"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "7"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "10"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "13"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "15"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "20"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "24"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "29"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "33"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "38"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "42"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "47"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "52"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "58"
+    },
+    {
+      "id": "leafstorm",
+      "name": "Tempête Verte",
+      "category": "64"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "egg"
+    },
+    {
+      "id": "copycat",
+      "name": "Photocopie",
+      "category": "egg"
+    },
+    {
+      "id": "leechseed",
+      "name": "Vampigraine",
+      "category": "egg"
+    },
+    {
+      "id": "petalblizzard",
+      "name": "Tempête Florale",
+      "category": "egg"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "aurasphere",
+      "name": "Aurasphère",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "disarmingvoice",
+      "name": "Voix Enjôleuse",
+      "category": "tm"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "faketears",
+      "name": "Croco Larme",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "frenzyplant",
+      "name": "Végé-Attaque",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grasspledge",
+      "name": "Aire d'Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tm"
+    },
+    {
+      "id": "leafstorm",
+      "name": "Tempête Verte",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "lowsweep",
+      "name": "Balayette",
+      "category": "tm"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "petalblizzard",
+      "name": "Tempête Florale",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "pollenpuff",
+      "name": "Boule Pollen",
+      "category": "tm"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "tripleaxel",
+      "name": "Triple Axel",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "frenzyplant",
+      "name": "Végé-Attaque",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "grasspledge",
+      "name": "Aire d'Herbe",
+      "category": "tutor"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "tripleaxel",
+      "name": "Triple Axel",
+      "category": "tutor"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "floragato",
   "spawns": [
     [
       {
@@ -182,39 +698,21 @@
         "rarity": "ultra-rare",
         "weight": 0.4,
         "levels": "36-53",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_floral",
             "#cobblemon:is_magical"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0908_meowscarada.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0908_meowscarada.json",
+        "spawnId": "meowscarada-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 0.31,
-        "levels": "36-51",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:starlight_dense_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_dense_forest/rare_starlight_dense_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "meowscarada",
+        "type": "pokemon"
       }
     ]
   ],
@@ -228,6 +726,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/meowscarada.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/meowscarada.json"
   ]
 }

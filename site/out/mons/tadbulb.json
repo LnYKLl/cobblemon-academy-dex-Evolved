@@ -2,20 +2,45 @@
   "id": "tadbulb",
   "dexnum": 938,
   "name": "Tadbulb",
+  "nameFr": "Têtampoule",
+  "description": "Ce Pokémon produit de l'électricité en agitant sa queue. Lorsqu'il perçoit un danger, sa tête clignote pour avertir ses congénères.",
   "primaryType": "electric",
   "secondaryType": "",
+  "primaryTypeFr": "Électrik",
+  "secondaryTypeFr": "",
+  "height": 3,
+  "weight": 4,
   "maleRatio": 0.5,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 0.5,
+    "height": 1.0,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "owntempo",
-    "static",
-    "h:damp"
+    {
+      "id": "owntempo",
+      "name": "Tempo Perso",
+      "hidden": false
+    },
+    {
+      "id": "static",
+      "name": "Statik",
+      "hidden": false
+    },
+    {
+      "id": "damp",
+      "name": "Moiteur",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_1"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 61,
     "attack": 31,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 54,
   "experienceGroup": "medium_fast",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,89 +68,323 @@
         "item": "minecraft:ochre_froglight",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:ochre_froglight"
       },
       {
         "item": "cobblemon:wepear_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Repoi"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:mudslap",
-    "7:thundershock",
-    "11:watergun",
-    "17:charge",
-    "21:spark",
-    "24:mudshot",
-    "25:flail",
-    "32:discharge",
-    "36:weatherball",
-    "40:electricterrain",
-    "45:suckerpunch",
-    "50:zapcannon",
-    "egg:muddywater",
-    "egg:paraboliccharge",
-    "egg:soak",
-    "tm:acidspray",
-    "tm:charge",
-    "tm:chargebeam",
-    "tm:chillingwater",
-    "tm:confuseray",
-    "tm:eerieimpulse",
-    "tm:electricterrain",
-    "tm:electroball",
-    "tm:electroweb",
-    "tm:endure",
-    "tm:hypervoice",
-    "tm:lightscreen",
-    "tm:muddywater",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:protect",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:swift",
-    "tm:terablast",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:voltswitch",
-    "tm:waterpulse",
-    "tm:weatherball",
-    "tm:wildcharge",
-    "tutor:chargebeam",
-    "tutor:electroweb",
-    "tutor:hypervoice",
-    "tutor:mudslap",
-    "tutor:rest",
-    "tutor:sleeptalk",
-    "tutor:suckerpunch",
-    "tutor:swift",
-    "tutor:thunderbolt",
-    "tutor:waterpulse",
-    "tutor:wildcharge"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "1"
+    },
+    {
+      "id": "thundershock",
+      "name": "Éclair",
+      "category": "7"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "11"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "17"
+    },
+    {
+      "id": "spark",
+      "name": "Étincelle",
+      "category": "21"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "24"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "25"
+    },
+    {
+      "id": "discharge",
+      "name": "Coup d'Jus",
+      "category": "32"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "36"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "40"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "45"
+    },
+    {
+      "id": "zapcannon",
+      "name": "Élecanon",
+      "category": "50"
+    },
+    {
+      "id": "muddywater",
+      "name": "Ocroupi",
+      "category": "egg"
+    },
+    {
+      "id": "paraboliccharge",
+      "name": "Parabocharge",
+      "category": "egg"
+    },
+    {
+      "id": "soak",
+      "name": "Détrempage",
+      "category": "egg"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "tm"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "eerieimpulse",
+      "name": "Ondes Étranges",
+      "category": "tm"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "tm"
+    },
+    {
+      "id": "electroball",
+      "name": "Boule Élek",
+      "category": "tm"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "muddywater",
+      "name": "Ocroupi",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "voltswitch",
+      "name": "Change Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "tadbulb_bellibolt",
       "variant": "item_interact",
       "result": "bellibolt",
-      "consumeHeldItem": true,
+      "consumeHeldItem": false,
       "learnableMoves": [],
       "requirements": [],
       "requiredContext": "cobblemon:thunder_stone"
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -131,40 +392,35 @@
           "natural"
         ],
         "rarity": "common",
-        "weight": 2.3,
-        "levels": "4-19",
-        "contexts": [
-          "grounded"
-        ],
+        "weight": 5.7,
+        "levels": "2-27",
         "biomeTags": {
           "include": [
-            "eternal_starlight:dark_swamp"
+            "#cobblemon:is_freshwater"
+          ],
+          "exclude": [
+            "#cobblemon:is_freezing"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/common_dark_swamp.json"
-      }
-    ],
-    [
-      {
-        "rarity": "common",
-        "weight": 3.8,
-        "levels": "15-32",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "minecraft:mangrove_swamp"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/tadbulb.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0938_tadbulb.json",
+        "spawnId": "tadbulb-1",
         "sky": {
-          "canSeeSky": true
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "tadbulb",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 5.0,
+          "condition": {
+            "isThundering": true
+          }
         }
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/tadbulb.png"
@@ -174,6 +430,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/tadbulb.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/tadbulb.json"
   ]
 }

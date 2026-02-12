@@ -2,20 +2,41 @@
   "id": "dratini",
   "dexnum": 147,
   "name": "Dratini",
+  "nameFr": "Minidraco",
+  "description": "Minidraco mue constamment, renouvelant sans arrêt sa peau. En effet, l'énergie vitale de son corps augmente régulièrement et sa mue lui permet d'éviter d'atteindre des niveaux incontrôlables.",
   "primaryType": "dragon",
   "secondaryType": "",
+  "primaryTypeFr": "Dragon",
+  "secondaryTypeFr": "",
+  "height": 18,
+  "weight": 33,
   "maleRatio": 0.5,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 1,
+    "height": 1.8,
+    "fixed": false
+  },
   "labels": [
     "gen1"
   ],
   "abilities": [
-    "shedskin",
-    "h:marvelscale"
+    {
+      "id": "shedskin",
+      "name": "Mue",
+      "hidden": false
+    },
+    {
+      "id": "marvelscale",
+      "name": "Écaille Spéciale",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_1",
     "dragon"
   ],
+  "eggCycles": 40,
   "baseStats": {
     "hp": 41,
     "attack": 64,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 60,
   "experienceGroup": "slow",
   "catchRate": 45,
+  "baseFriendship": 35,
   "drops": {
     "amount": 4,
     "entries": [
@@ -41,124 +64,620 @@
         "item": "minecraft:dragon_breath",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:dragon_breath"
       },
       {
         "item": "cobblemon:dragon_fang",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Croc de Dragon"
       },
       {
         "item": "cobblemon:dragon_scale",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Écaille Draco"
       },
       {
         "item": "cobblemon:yache_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Nanone"
       }
     ]
   },
   "moves": [
-    "1:wrap",
-    "1:leer",
-    "5:twister",
-    "10:thunderwave",
-    "15:dragonrage",
-    "20:agility",
-    "25:slam",
-    "31:aquatail",
-    "35:dragonrush",
-    "40:safeguard",
-    "45:raindance",
-    "50:dragondance",
-    "55:outrage",
-    "60:hyperbeam",
-    "egg:aquajet",
-    "egg:dragonbreath",
-    "egg:extremespeed",
-    "egg:mist",
-    "egg:supersonic",
-    "egg:waterpulse",
-    "tm:agility",
-    "tm:aquatail",
-    "tm:bind",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:breakingswipe",
-    "tm:brutalswing",
-    "tm:chillingwater",
-    "tm:dracometeor",
-    "tm:dragoncheer",
-    "tm:dragondance",
-    "tm:dragonpulse",
-    "tm:dragontail",
-    "tm:endure",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firespin",
-    "tm:flamethrower",
-    "tm:gigaimpact",
-    "tm:hail",
-    "tm:haze",
-    "tm:headbutt",
-    "tm:helpinghand",
-    "tm:hydropump",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:incinerate",
-    "tm:ironhead",
-    "tm:irontail",
-    "tm:lightscreen",
-    "tm:outrage",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:safeguard",
-    "tm:scaleshot",
-    "tm:shockwave",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:surf",
-    "tm:swift",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:twister",
-    "tm:waterfall",
-    "tm:waterpulse",
-    "tutor:aquatail",
-    "tutor:bind",
-    "tutor:dracometeor",
-    "tutor:dragonpulse",
-    "tutor:flamethrower",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:ironhead",
-    "tutor:irontail",
-    "tutor:outrage",
-    "tutor:rest",
-    "tutor:scaleshot",
-    "tutor:shockwave",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:thunderbolt",
-    "tutor:twister",
-    "tutor:waterpulse"
+    {
+      "id": "wrap",
+      "name": "Ligotage",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "5"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "10"
+    },
+    {
+      "id": "dragonrage",
+      "name": "Draco-Rage",
+      "category": "15"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "20"
+    },
+    {
+      "id": "slam",
+      "name": "Souplesse",
+      "category": "25"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "31"
+    },
+    {
+      "id": "dragonrush",
+      "name": "Draco-Charge",
+      "category": "35"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "40"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "45"
+    },
+    {
+      "id": "dragondance",
+      "name": "Danse Draco",
+      "category": "50"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "55"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "60"
+    },
+    {
+      "id": "aquajet",
+      "name": "Aqua-Jet",
+      "category": "egg"
+    },
+    {
+      "id": "dragonbreath",
+      "name": "Draco-Souffle",
+      "category": "egg"
+    },
+    {
+      "id": "extremespeed",
+      "name": "Vitesse Extrême",
+      "category": "egg"
+    },
+    {
+      "id": "mist",
+      "name": "Brume",
+      "category": "egg"
+    },
+    {
+      "id": "supersonic",
+      "name": "Ultrason",
+      "category": "egg"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "breakingswipe",
+      "name": "Abattage",
+      "category": "tm"
+    },
+    {
+      "id": "brutalswing",
+      "name": "Centrifugifle",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tm"
+    },
+    {
+      "id": "dragoncheer",
+      "name": "Cri Draconique",
+      "category": "tm"
+    },
+    {
+      "id": "dragondance",
+      "name": "Danse Draco",
+      "category": "tm"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tm"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tutor"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "legacy"
+    },
+    {
+      "id": "bubblebeam",
+      "name": "Bulles d'O",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "detect",
+      "name": "Détection",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "rage",
+      "name": "Frénésie",
+      "category": "legacy"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "skullbash",
+      "name": "Coud'Krâne",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "legacy"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "legacy"
+    },
+    {
+      "id": "zapcannon",
+      "name": "Élecanon",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "dratini_dragonair",
@@ -174,6 +693,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -183,22 +703,26 @@
         "rarity": "rare",
         "weight": 7.5,
         "levels": "5-30",
-        "contexts": [
-          "surface"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
+          ],
+          "exclude": [
+            "#cobblemon:is_deep_dark"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0147_dratini.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0147_dratini.json",
+        "spawnId": "dratini-1",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
         },
         "yLevel": {
           "maxY": 32
-        }
+        },
+        "spawnType": "surface",
+        "pokemon": "dratini",
+        "type": "pokemon"
       }
     ],
     [
@@ -209,22 +733,26 @@
         "rarity": "rare",
         "weight": 7.5,
         "levels": "5-30",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
+          ],
+          "exclude": [
+            "#cobblemon:is_deep_dark"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0147_dratini.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0147_dratini.json",
+        "spawnId": "dratini-2",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
         },
         "yLevel": {
           "maxY": 32
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "dratini",
+        "type": "pokemon"
       }
     ],
     [
@@ -236,18 +764,19 @@
         "rarity": "uncommon",
         "weight": 84.0,
         "levels": "5-30",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0147_dratini.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0147_dratini.json",
+        "spawnId": "dratini-3",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "dratini",
+        "type": "pokemon"
       }
     ],
     [
@@ -255,23 +784,27 @@
         "rarity": "rare",
         "weight": 1.5,
         "levels": "5-30",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether",
             "#cobblemon:is_overworld"
+          ],
+          "exclude": [
+            "#cobblemon:is_deep_dark"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0147_dratini.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0147_dratini.json",
+        "spawnId": "dratini-4",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
         },
         "yLevel": {
           "maxY": 32
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "dratini",
+        "type": "pokemon"
       }
     ],
     [
@@ -279,9 +812,6 @@
         "rarity": "ultra-rare",
         "weight": 6.0,
         "levels": "5-30",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether",
@@ -292,10 +822,14 @@
             "#cobblemon:is_frozen_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0147_dratini.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0147_dratini.json",
+        "spawnId": "dratini-5",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "dratini",
+        "type": "pokemon"
       }
     ],
     [
@@ -307,20 +841,21 @@
         "rarity": "uncommon",
         "weight": 84.0,
         "levels": "5-30",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0147_dratini.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0147_dratini.json",
+        "spawnId": "dratini-6",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "dratini",
+        "type": "pokemon"
       }
     ],
     [
@@ -328,9 +863,6 @@
         "rarity": "ultra-rare",
         "weight": 6.0,
         "levels": "5-30",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether",
@@ -341,12 +873,16 @@
             "#cobblemon:is_frozen_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0147_dratini.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0147_dratini.json",
+        "spawnId": "dratini-7",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "dratini",
+        "type": "pokemon"
       }
     ]
   ],
@@ -360,6 +896,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/dratini.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/dratini.json"
   ]
 }

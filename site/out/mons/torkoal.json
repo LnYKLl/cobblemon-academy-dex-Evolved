@@ -2,20 +2,45 @@
   "id": "torkoal",
   "dexnum": 324,
   "name": "Torkoal",
+  "nameFr": "Chartor",
+  "description": "Chartor génère de l'énergie en brûlant du charbon. Il s'affaiblit lorsque le feu s'éteint. Lorsqu'il se prépare au combat, ce Pokémon brûle plus de charbon.",
   "primaryType": "fire",
   "secondaryType": "",
+  "primaryTypeFr": "Feu",
+  "secondaryTypeFr": "",
+  "height": 5,
+  "weight": 804,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen3"
   ],
   "abilities": [
-    "whitesmoke",
-    "drought",
-    "h:shellarmor"
+    {
+      "id": "whitesmoke",
+      "name": "Écran Fumée",
+      "hidden": false
+    },
+    {
+      "id": "drought",
+      "name": "Sécheresse",
+      "hidden": false
+    },
+    {
+      "id": "shellarmor",
+      "name": "Coque Armure",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 70,
     "attack": 85,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 165,
   "experienceGroup": "medium_fast",
   "catchRate": 90,
+  "baseFriendship": 50,
   "drops": {
     "amount": 5,
     "entries": [
@@ -41,141 +68,652 @@
         "item": "minecraft:coal",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:coal"
       },
       {
         "item": "cobblemon:charcoal_stick",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Bâton de charbon"
       },
       {
         "item": "cobblemon:smoke_ball",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Boule Fumée"
       },
       {
         "item": "cobblemon:charti_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Charti"
       }
     ]
   },
   "moves": [
-    "1:ember",
-    "1:smog",
-    "1:flail",
-    "4:withdraw",
-    "8:rapidspin",
-    "12:smokescreen",
-    "16:clearsmog",
-    "20:flamewheel",
-    "24:protect",
-    "28:lavaplume",
-    "32:bodyslam",
-    "36:irondefense",
-    "40:flamethrower",
-    "44:curse",
-    "48:heatwave",
-    "52:amnesia",
-    "56:inferno",
-    "60:shellsmash",
-    "64:eruption",
-    "egg:ancientpower",
-    "egg:clearsmog",
-    "egg:eruption",
-    "egg:fissure",
-    "egg:flail",
-    "egg:flameburst",
-    "egg:skullbash",
-    "egg:yawn",
-    "tm:afteryou",
-    "tm:amnesia",
-    "tm:ancientpower",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:burningjealousy",
-    "tm:curse",
-    "tm:doubleedge",
-    "tm:earthpower",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:explosion",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firespin",
-    "tm:flamecharge",
-    "tm:flamethrower",
-    "tm:flareblitz",
-    "tm:gigaimpact",
-    "tm:gyroball",
-    "tm:headbutt",
-    "tm:heatcrash",
-    "tm:heatwave",
-    "tm:heavyslam",
-    "tm:helpinghand",
-    "tm:hyperbeam",
-    "tm:incinerate",
-    "tm:irondefense",
-    "tm:irontail",
-    "tm:naturepower",
-    "tm:overheat",
-    "tm:protect",
-    "tm:rest",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:rollout",
-    "tm:sandstorm",
-    "tm:scorchingsands",
-    "tm:selfdestruct",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:solarbeam",
-    "tm:stealthrock",
-    "tm:stompingtantrum",
-    "tm:stoneedge",
-    "tm:strength",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superpower",
-    "tm:takedown",
-    "tm:temperflare",
-    "tm:terablast",
-    "tm:weatherball",
-    "tm:willowisp",
-    "tm:zenheadbutt",
-    "tutor:afteryou",
-    "tutor:ancientpower",
-    "tutor:bulldoze",
-    "tutor:burningjealousy",
-    "tutor:earthpower",
-    "tutor:flamethrower",
-    "tutor:gigaimpact",
-    "tutor:heatwave",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:irondefense",
-    "tutor:irontail",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:rollout",
-    "tutor:scorchingsands",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:stealthrock",
-    "tutor:stompingtantrum",
-    "tutor:stoneedge",
-    "tutor:superpower",
-    "tutor:zenheadbutt"
+    {
+      "id": "ember",
+      "name": "Flammèche",
+      "category": "1"
+    },
+    {
+      "id": "smog",
+      "name": "Purédpois",
+      "category": "1"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "1"
+    },
+    {
+      "id": "withdraw",
+      "name": "Repli",
+      "category": "4"
+    },
+    {
+      "id": "rapidspin",
+      "name": "Tour Rapide",
+      "category": "8"
+    },
+    {
+      "id": "smokescreen",
+      "name": "Brouillard",
+      "category": "12"
+    },
+    {
+      "id": "clearsmog",
+      "name": "Bain de Smog",
+      "category": "16"
+    },
+    {
+      "id": "flamewheel",
+      "name": "Roue de Feu",
+      "category": "20"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "24"
+    },
+    {
+      "id": "lavaplume",
+      "name": "Ébullilave",
+      "category": "28"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "32"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "36"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "40"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "44"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "48"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "52"
+    },
+    {
+      "id": "inferno",
+      "name": "Feu d'Enfer",
+      "category": "56"
+    },
+    {
+      "id": "shellsmash",
+      "name": "Exuviation",
+      "category": "60"
+    },
+    {
+      "id": "eruption",
+      "name": "Éruption",
+      "category": "64"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "egg"
+    },
+    {
+      "id": "clearsmog",
+      "name": "Bain de Smog",
+      "category": "egg"
+    },
+    {
+      "id": "eruption",
+      "name": "Éruption",
+      "category": "egg"
+    },
+    {
+      "id": "fissure",
+      "name": "Abîme",
+      "category": "egg"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "egg"
+    },
+    {
+      "id": "flameburst",
+      "name": "Rebondifeu",
+      "category": "egg"
+    },
+    {
+      "id": "skullbash",
+      "name": "Coud'Krâne",
+      "category": "egg"
+    },
+    {
+      "id": "yawn",
+      "name": "Bâillement",
+      "category": "egg"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "heatcrash",
+      "name": "Tacle Feu",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "temperflare",
+      "name": "Indignition",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -185,16 +723,14 @@
         "rarity": "common",
         "weight": 10.0,
         "levels": "22-47",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_mountain",
             "#cobblemon:is_thermal"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0324_torkoal.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0324_torkoal.json",
+        "spawnId": "torkoal-1",
         "nearbyBlocks": {
           "selectors": [
             "#minecraft:coal_ores"
@@ -202,7 +738,10 @@
           "resolved": [
             "#minecraft:coal_ores"
           ]
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "torkoal",
+        "type": "pokemon"
       }
     ],
     [
@@ -213,9 +752,6 @@
         "rarity": "uncommon",
         "weight": 10.0,
         "levels": "22-47",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -226,7 +762,8 @@
             "#cobblemon:is_thermal"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0324_torkoal.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0324_torkoal.json",
+        "spawnId": "torkoal-2",
         "nearbyBlocks": {
           "selectors": [
             "#minecraft:coal_ores"
@@ -238,7 +775,10 @@
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "torkoal",
+        "type": "pokemon"
       }
     ],
     [
@@ -249,34 +789,16 @@
         "rarity": "common",
         "weight": 2.0,
         "levels": "22-47",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_basalt"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0324_torkoal.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 5.8,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/rare_crystallized_desert.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0324_torkoal.json",
+        "spawnId": "torkoal-3",
+        "spawnType": "grounded",
+        "pokemon": "torkoal",
+        "type": "pokemon"
       }
     ]
   ],
@@ -290,6 +812,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation3/torkoal.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation3/torkoal.json"
   ]
 }

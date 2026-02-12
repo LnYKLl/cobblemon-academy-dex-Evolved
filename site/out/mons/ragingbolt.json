@@ -2,20 +2,41 @@
   "id": "ragingbolt",
   "dexnum": 1021,
   "name": "Raging Bolt",
+  "nameFr": "Ire-Foudre",
+  "description": "Il rappelle un ancêtre de Raikou qui a brièvement fait parler de lui quand il a été mentionné dans une revue sur les phénomènes paranormaux.",
   "primaryType": "electric",
   "secondaryType": "dragon",
+  "primaryTypeFr": "Électrik",
+  "secondaryTypeFr": "Dragon",
+  "height": 52,
+  "weight": 4800,
   "maleRatio": -1,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1.8,
+    "height": 3,
+    "fixed": false
+  },
   "labels": [
     "gen9",
     "paradox"
   ],
   "abilities": [
-    "protosynthesis",
-    "h:protosynthesis"
+    {
+      "id": "protosynthesis",
+      "name": "Paléosynthèse",
+      "hidden": false
+    },
+    {
+      "id": "protosynthesis",
+      "name": "Paléosynthèse",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 50,
   "baseStats": {
     "hp": 125,
     "attack": 73,
@@ -32,104 +53,454 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 295,
   "experienceGroup": "slow",
   "catchRate": 10,
+  "baseFriendship": 0,
   "drops": {
     "amount": 0,
     "entries": []
   },
   "moves": [
-    "1:twister",
-    "1:sunnyday",
-    "1:shockwave",
-    "1:stomp",
-    "1:ancientpower",
-    "7:charge",
-    "14:dragonbreath",
-    "21:electricterrain",
-    "28:discharge",
-    "35:dragontail",
-    "42:calmmind",
-    "49:thunderclap",
-    "56:dragonhammer",
-    "63:risingvoltage",
-    "70:dragonpulse",
-    "77:zapcannon",
-    "84:bodypress",
-    "91:thunder",
-    "tm:ancientpower",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:breakingswipe",
-    "tm:calmmind",
-    "tm:charge",
-    "tm:chargebeam",
-    "tm:crunch",
-    "tm:doubleedge",
-    "tm:dracometeor",
-    "tm:dragoncheer",
-    "tm:dragonpulse",
-    "tm:dragontail",
-    "tm:earthquake",
-    "tm:eerieimpulse",
-    "tm:electricterrain",
-    "tm:electroball",
-    "tm:electroweb",
-    "tm:endure",
-    "tm:facade",
-    "tm:gigaimpact",
-    "tm:heavyslam",
-    "tm:hyperbeam",
-    "tm:hypervoice",
-    "tm:outrage",
-    "tm:protect",
-    "tm:rest",
-    "tm:risingvoltage",
-    "tm:roar",
-    "tm:scaryface",
-    "tm:shockwave",
-    "tm:sleeptalk",
-    "tm:snarl",
-    "tm:solarbeam",
-    "tm:stompingtantrum",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:supercellslam",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderfang",
-    "tm:thunderwave",
-    "tm:twister",
-    "tm:voltswitch",
-    "tm:weatherball",
-    "tm:wildcharge",
-    "tutor:ancientpower",
-    "tutor:calmmind",
-    "tutor:chargebeam",
-    "tutor:dracometeor",
-    "tutor:dragonpulse",
-    "tutor:electroweb",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:hypervoice",
-    "tutor:outrage",
-    "tutor:rest",
-    "tutor:risingvoltage",
-    "tutor:shockwave",
-    "tutor:sleeptalk",
-    "tutor:snarl",
-    "tutor:stompingtantrum",
-    "tutor:thunderbolt",
-    "tutor:thunderfang",
-    "tutor:twister",
-    "tutor:wildcharge"
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "1"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "1"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "1"
+    },
+    {
+      "id": "stomp",
+      "name": "Écrasement",
+      "category": "1"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "1"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "7"
+    },
+    {
+      "id": "dragonbreath",
+      "name": "Draco-Souffle",
+      "category": "14"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "21"
+    },
+    {
+      "id": "discharge",
+      "name": "Coup d'Jus",
+      "category": "28"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "35"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "42"
+    },
+    {
+      "id": "thunderclap",
+      "name": "Vif Éclair",
+      "category": "49"
+    },
+    {
+      "id": "dragonhammer",
+      "name": "Draco-Marteau",
+      "category": "56"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "63"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "70"
+    },
+    {
+      "id": "zapcannon",
+      "name": "Élecanon",
+      "category": "77"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "84"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "91"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "breakingswipe",
+      "name": "Abattage",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tm"
+    },
+    {
+      "id": "dragoncheer",
+      "name": "Cri Draconique",
+      "category": "tm"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tm"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "eerieimpulse",
+      "name": "Ondes Étranges",
+      "category": "tm"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "tm"
+    },
+    {
+      "id": "electroball",
+      "name": "Boule Élek",
+      "category": "tm"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "supercellslam",
+      "name": "Volt Assaut",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tm"
+    },
+    {
+      "id": "voltswitch",
+      "name": "Change Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -137,26 +508,7 @@
           "natural"
         ],
         "rarity": "ultra-rare",
-        "weight": 1.42,
-        "levels": "31-53",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:torreya_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/torreya_forest/ultra-rare_torreya_forest.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "ultra-rare",
-        "weight": 1.0,
+        "weight": 0.2,
         "levels": "70-80",
         "contexts": [
           "grounded"
@@ -166,11 +518,36 @@
             "#cobblemon:is_plains"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/paradox_spawns/spawn_pool_world/ragingbolt.json"
+        "source": "datapacks/CCC_1.9.2/data/paradox_spawns/spawn_pool_world/1021_ragingbolt.json",
+        "spawnId": "ragingbolt-1",
+        "pokemon": "ragingbolt",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "ultra-rare",
+        "weight": 0.3,
+        "levels": "70-80",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_plains"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/paradox_spawns_ccc/spawn_pool_world/1021_ragingbolt.json",
+        "spawnId": "ragingbolt-1",
+        "pokemon": "ragingbolt",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/ragingbolt.png"
@@ -180,6 +557,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/ragingbolt.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/ragingbolt.json"
   ]
 }

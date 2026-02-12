@@ -2,21 +2,46 @@
   "id": "tauros_paldea",
   "dexnum": 128,
   "name": "Tauros Paldea-Aqua",
+  "nameFr": "Tauros Paldea-Aqua",
+  "description": "",
   "primaryType": "fighting",
   "secondaryType": "water",
+  "primaryTypeFr": "Combat",
+  "secondaryTypeFr": "Eau",
+  "height": 14,
+  "weight": 1100,
   "maleRatio": 1,
+  "baseScale": 1.3,
+  "hitbox": {
+    "height": 1.4,
+    "fixed": false,
+    "width": 1.3
+  },
   "labels": [
     "gen9",
     "paldean_form"
   ],
   "abilities": [
-    "intimidate",
-    "angerpoint",
-    "h:cudchew"
+    {
+      "id": "intimidate",
+      "name": "Intimidation",
+      "hidden": false
+    },
+    {
+      "id": "angerpoint",
+      "name": "Colérique",
+      "hidden": false
+    },
+    {
+      "id": "cudchew",
+      "name": "Ruminant",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 75,
     "attack": 110,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 172,
   "experienceGroup": "slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 5,
     "entries": [
@@ -42,121 +69,465 @@
         "item": "minecraft:leather",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:leather"
       },
       {
         "item": "minecraft:beef",
         "percentage": null,
         "quantityRange": "1-3",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:beef"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:tailwhip",
-    "5:workup",
-    "10:doublekick",
-    "15:aquajet",
-    "20:headbutt",
-    "25:scaryface",
-    "30:zenheadbutt",
-    "35:ragingbull",
-    "40:rest",
-    "45:swagger",
-    "50:thrash",
-    "55:wavecrash",
-    "60:closecombat",
-    "egg:curse",
-    "egg:endeavor",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:bulkup",
-    "tm:bulldoze",
-    "tm:chillingwater",
-    "tm:closecombat",
-    "tm:curse",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:drillrun",
-    "tm:earthquake",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:gigaimpact",
-    "tm:headbutt",
-    "tm:highhorsepower",
-    "tm:hydropump",
-    "tm:hyperbeam",
-    "tm:ironhead",
-    "tm:lashout",
-    "tm:liquidation",
-    "tm:outrage",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:reversal",
-    "tm:rockslide",
-    "tm:rocktomb",
-    "tm:sandstorm",
-    "tm:scaryface",
-    "tm:sleeptalk",
-    "tm:smartstrike",
-    "tm:stompingtantrum",
-    "tm:stoneedge",
-    "tm:substitute",
-    "tm:surf",
-    "tm:swagger",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:trailblaze",
-    "tm:waterpulse",
-    "tm:whirlpool",
-    "tm:wildcharge",
-    "tm:workup",
-    "tm:zenheadbutt",
-    "tutor:bulkup",
-    "tutor:bulldoze",
-    "tutor:drillrun",
-    "tutor:endeavor",
-    "tutor:gigaimpact",
-    "tutor:highhorsepower",
-    "tutor:hyperbeam",
-    "tutor:ironhead",
-    "tutor:lashout",
-    "tutor:liquidation",
-    "tutor:outrage",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:sleeptalk",
-    "tutor:stompingtantrum",
-    "tutor:stoneedge",
-    "tutor:waterpulse",
-    "tutor:wildcharge",
-    "tutor:zenheadbutt"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "1"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "5"
+    },
+    {
+      "id": "doublekick",
+      "name": "Double Pied",
+      "category": "10"
+    },
+    {
+      "id": "aquajet",
+      "name": "Aqua-Jet",
+      "category": "15"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "20"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "25"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "30"
+    },
+    {
+      "id": "ragingbull",
+      "name": "Taurogne",
+      "category": "35"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "40"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "45"
+    },
+    {
+      "id": "thrash",
+      "name": "Mania",
+      "category": "50"
+    },
+    {
+      "id": "wavecrash",
+      "name": "Aquatacle",
+      "category": "55"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "60"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "egg"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "egg"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smartstrike",
+      "name": "Estocorne",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
         "presets": [
           "natural"
         ],
-        "rarity": "uncommon",
-        "weight": 2.6,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
+        "rarity": "common",
+        "weight": 2.0,
+        "levels": "24-49",
         "biomeTags": {
           "include": [
-            "eternal_starlight:scarlet_forest"
+            "#cobblemon:is_grassland"
+          ],
+          "exclude": [
+            "#cobblemon:is_hills"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/uncommon_scarlet_forest.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0128_tauros.json",
+        "spawnId": "tauros-1",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "tauros",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
       }
     ]
   ],
@@ -170,6 +541,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/tauros.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/tauros.json"
   ]
 }

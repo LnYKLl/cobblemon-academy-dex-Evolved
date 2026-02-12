@@ -2,20 +2,45 @@
   "id": "naclstack",
   "dexnum": 933,
   "name": "Naclstack",
+  "nameFr": "Amassel",
+  "description": "Il projette du sel pour en recouvrir ses proies. Celles-ci subissent alors un processus de salaison et se déshydratent.",
   "primaryType": "rock",
   "secondaryType": "",
+  "primaryTypeFr": "Roche",
+  "secondaryTypeFr": "",
+  "height": 6,
+  "weight": 1050,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 0.8,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "purifyingsalt",
-    "sturdy",
-    "h:clearbody"
+    {
+      "id": "purifyingsalt",
+      "name": "Sel Purificateur",
+      "hidden": false
+    },
+    {
+      "id": "sturdy",
+      "name": "Fermeté",
+      "hidden": false
+    },
+    {
+      "id": "clearbody",
+      "name": "Corps Sain",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "mineral"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 60,
     "attack": 60,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 124,
   "experienceGroup": "medium_slow",
   "catchRate": 120,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,94 +68,391 @@
         "item": "minecraft:calcite",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:calcite"
       },
       {
         "item": "cobblemon:passho_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Pocpoc"
       }
     ]
   },
   "moves": [
-    "1:saltcure",
-    "1:tackle",
-    "1:harden",
-    "5:rockthrow",
-    "7:mudshot",
-    "10:smackdown",
-    "13:rockpolish",
-    "16:headbutt",
-    "20:irondefense",
-    "30:recover",
-    "34:rockslide",
-    "38:stealthrock",
-    "41:heavyslam",
-    "45:earthquake",
-    "51:stoneedge",
-    "egg:ancientpower",
-    "egg:curse",
-    "egg:fissure",
-    "egg:powergem",
-    "tm:ancientpower",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:curse",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:earthpower",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:facade",
-    "tm:flashcannon",
-    "tm:gigaimpact",
-    "tm:headbutt",
-    "tm:heavyslam",
-    "tm:helpinghand",
-    "tm:hyperbeam",
-    "tm:irondefense",
-    "tm:ironhead",
-    "tm:meteorbeam",
-    "tm:mudshot",
-    "tm:powergem",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:rockpolish",
-    "tm:rockslide",
-    "tm:sandstorm",
-    "tm:sleeptalk",
-    "tm:smackdown",
-    "tm:stealthrock",
-    "tm:stompingtantrum",
-    "tm:stoneedge",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:zenheadbutt",
-    "tutor:ancientpower",
-    "tutor:bulldoze",
-    "tutor:earthpower",
-    "tutor:flashcannon",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:irondefense",
-    "tutor:ironhead",
-    "tutor:meteorbeam",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:sleeptalk",
-    "tutor:stealthrock",
-    "tutor:stompingtantrum",
-    "tutor:stoneedge",
-    "tutor:zenheadbutt"
+    {
+      "id": "saltcure",
+      "name": "Salaison",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "harden",
+      "name": "Armure",
+      "category": "1"
+    },
+    {
+      "id": "rockthrow",
+      "name": "Jet-Pierres",
+      "category": "5"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "7"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "10"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "13"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "16"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "20"
+    },
+    {
+      "id": "recover",
+      "name": "Soin",
+      "category": "30"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "34"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "38"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "41"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "45"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "51"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "egg"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "egg"
+    },
+    {
+      "id": "fissure",
+      "name": "Abîme",
+      "category": "egg"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "egg"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "naclstack_garganacl",
@@ -146,6 +470,7 @@
       ]
     }
   ],
+  "preEvolution": "nacli",
   "spawns": [
     [
       {
@@ -156,19 +481,20 @@
         "rarity": "common",
         "weight": 0.54,
         "levels": "24-36",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_badlands"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0933_naclstack.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0933_naclstack.json",
+        "spawnId": "naclstack-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "naclstack",
+        "type": "pokemon"
       }
     ],
     [
@@ -176,34 +502,16 @@
         "rarity": "common",
         "weight": 0.9,
         "levels": "24-36",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_quartz"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0933_naclstack.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 1.0,
-        "levels": "19-34",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/uncommon_crystallized_desert.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0933_naclstack.json",
+        "spawnId": "naclstack-3",
+        "spawnType": "grounded",
+        "pokemon": "naclstack",
+        "type": "pokemon"
       }
     ]
   ],
@@ -217,6 +525,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/naclstack.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/naclstack.json"
   ]
 }

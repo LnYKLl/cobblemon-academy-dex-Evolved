@@ -2,21 +2,46 @@
   "id": "clodsire",
   "dexnum": 980,
   "name": "Clodsire",
+  "nameFr": "Terraiste",
+  "description": "Quand on l'attaque, il riposte en faisant sortir de grosses épines de son tronc, une dangereuse technique qui montre qu'il est prêt à tout risquer.",
   "primaryType": "poison",
   "secondaryType": "ground",
+  "primaryTypeFr": "Poison",
+  "secondaryTypeFr": "Sol",
+  "height": 18,
+  "weight": 2230,
   "maleRatio": 0.5,
+  "baseScale": 1.15,
+  "hitbox": {
+    "width": 1.4,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "poisonpoint",
-    "waterabsorb",
-    "h:unaware"
+    {
+      "id": "poisonpoint",
+      "name": "Point Poison",
+      "hidden": false
+    },
+    {
+      "id": "waterabsorb",
+      "name": "Absorbe-Eau",
+      "hidden": false
+    },
+    {
+      "id": "unaware",
+      "name": "Inconscient",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_1",
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 130,
     "attack": 75,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 151,
   "experienceGroup": "medium_fast",
   "catchRate": 90,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -42,128 +69,558 @@
         "item": "minecraft:clay_ball",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:clay_ball"
       },
       {
         "item": "cobblemon:pecha_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Pêcha"
       }
     ]
   },
   "moves": [
-    "1:amnesia",
-    "1:tailwhip",
-    "1:poisonsting",
-    "1:tackle",
-    "4:toxicspikes",
-    "8:mudshot",
-    "12:poisontail",
-    "16:slam",
-    "21:yawn",
-    "24:poisonjab",
-    "30:sludgewave",
-    "36:megahorn",
-    "40:toxic",
-    "48:earthquake",
-    "egg:acidspray",
-    "egg:afteryou",
-    "egg:ancientpower",
-    "egg:counter",
-    "egg:curse",
-    "egg:doublekick",
-    "egg:haze",
-    "egg:mist",
-    "egg:recover",
-    "egg:spitup",
-    "egg:stockpile",
-    "egg:swallow",
-    "tm:acidspray",
-    "tm:afteryou",
-    "tm:amnesia",
-    "tm:ancientpower",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:chillingwater",
-    "tm:curse",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:earthpower",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:facade",
-    "tm:gigaimpact",
-    "tm:gunkshot",
-    "tm:haze",
-    "tm:heavyslam",
-    "tm:helpinghand",
-    "tm:highhorsepower",
-    "tm:hydropump",
-    "tm:hyperbeam",
-    "tm:ironhead",
-    "tm:liquidation",
-    "tm:lowkick",
-    "tm:megahorn",
-    "tm:muddywater",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:poisonjab",
-    "tm:poisontail",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:rockslide",
-    "tm:rocktomb",
-    "tm:sandstorm",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:sludgewave",
-    "tm:spikes",
-    "tm:stealthrock",
-    "tm:stompingtantrum",
-    "tm:stoneedge",
-    "tm:substitute",
-    "tm:surf",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:toxic",
-    "tm:toxicspikes",
-    "tm:trailblaze",
-    "tm:venoshock",
-    "tm:waterfall",
-    "tm:waterpulse",
-    "tm:zenheadbutt",
-    "tutor:afteryou",
-    "tutor:ancientpower",
-    "tutor:bulldoze",
-    "tutor:earthpower",
-    "tutor:gigaimpact",
-    "tutor:gunkshot",
-    "tutor:helpinghand",
-    "tutor:highhorsepower",
-    "tutor:hyperbeam",
-    "tutor:ironhead",
-    "tutor:liquidation",
-    "tutor:lowkick",
-    "tutor:megahorn",
-    "tutor:mudslap",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:spikes",
-    "tutor:stealthrock",
-    "tutor:stompingtantrum",
-    "tutor:stoneedge",
-    "tutor:waterpulse",
-    "tutor:zenheadbutt"
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "1"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "1"
+    },
+    {
+      "id": "poisonsting",
+      "name": "Dard-Venin",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "4"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "8"
+    },
+    {
+      "id": "poisontail",
+      "name": "Queue-Poison",
+      "category": "12"
+    },
+    {
+      "id": "slam",
+      "name": "Souplesse",
+      "category": "16"
+    },
+    {
+      "id": "yawn",
+      "name": "Bâillement",
+      "category": "21"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "24"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "30"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "36"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "40"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "48"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "egg"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "egg"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "egg"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "egg"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "egg"
+    },
+    {
+      "id": "doublekick",
+      "name": "Double Pied",
+      "category": "egg"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "egg"
+    },
+    {
+      "id": "mist",
+      "name": "Brume",
+      "category": "egg"
+    },
+    {
+      "id": "recover",
+      "name": "Soin",
+      "category": "egg"
+    },
+    {
+      "id": "spitup",
+      "name": "Relâche",
+      "category": "egg"
+    },
+    {
+      "id": "stockpile",
+      "name": "Stockage",
+      "category": "egg"
+    },
+    {
+      "id": "swallow",
+      "name": "Avale",
+      "category": "egg"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tm"
+    },
+    {
+      "id": "muddywater",
+      "name": "Ocroupi",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "poisontail",
+      "name": "Queue-Poison",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "tm"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "wooper form=paldean",
   "spawns": [
     [
       {
@@ -173,19 +630,20 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "20-43",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:has_block/mud"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "spawnId": "clodsire-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "clodsire",
+        "type": "pokemon"
       }
     ],
     [
@@ -196,18 +654,19 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "20-43",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:has_block/mud"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "spawnId": "clodsire-2",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "clodsire",
+        "type": "pokemon"
       }
     ],
     [
@@ -218,18 +677,19 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "20-43",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_savanna"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "spawnId": "clodsire-3",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "clodsire",
+        "type": "pokemon"
       }
     ],
     [
@@ -240,27 +700,25 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "20-43",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_savanna"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "spawnId": "clodsire-4",
         "nearbyBlocks": {
           "selectors": [
-            "#minecraft:water"
-          ],
-          "resolved": [
-            "#minecraft:water"
+            "minecraft:water"
           ]
         },
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "clodsire",
+        "type": "pokemon"
       }
     ],
     [
@@ -268,18 +726,19 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "20-43",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:has_block/mud"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "spawnId": "clodsire-5",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "clodsire",
+        "type": "pokemon"
       }
     ],
     [
@@ -287,18 +746,22 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "20-43",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_arid"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "spawnId": "clodsire-6",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "clodsire",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -306,17 +769,28 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "20-43",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_arid"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "spawnId": "clodsire-7",
         "sky": {
           "canSeeSky": true
+        },
+        "spawnType": "fishing",
+        "pokemon": "clodsire",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 1,
+            "maxLureLevel": 2
+          }
         }
       }
     ],
@@ -328,20 +802,21 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "20-43",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:has_block/mud"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "spawnId": "clodsire-8",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "clodsire",
+        "type": "pokemon"
       }
     ],
     [
@@ -352,20 +827,21 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "20-43",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_savanna"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "spawnId": "clodsire-9",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "clodsire",
+        "type": "pokemon"
       }
     ],
     [
@@ -373,20 +849,21 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "20-43",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:has_block/mud"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "spawnId": "clodsire-10",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "clodsire",
+        "type": "pokemon"
       }
     ],
     [
@@ -394,20 +871,24 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "20-43",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_arid"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "spawnId": "clodsire-11",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "clodsire",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -415,39 +896,31 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "20-43",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_arid"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0980_clodsire.json",
+        "spawnId": "clodsire-12",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 9.3,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/rare_dark_swamp.json"
+        "spawnType": "fishing",
+        "pokemon": "clodsire",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 1,
+            "maxLureLevel": 2
+          }
+        }
       }
     ]
   ],
@@ -461,6 +934,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/clodsire.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/clodsire.json"
   ]
 }

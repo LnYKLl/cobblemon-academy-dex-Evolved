@@ -2,20 +2,41 @@
   "id": "tapukoko",
   "dexnum": 785,
   "name": "Tapu Koko",
+  "nameFr": "Tokorico",
+  "description": "Il est le gardien de Mele-Mele et le maître de la foudre. D'un naturel curieux, il apparaît devant les humains de temps à autre.",
   "primaryType": "electric",
   "secondaryType": "fairy",
+  "primaryTypeFr": "Électrik",
+  "secondaryTypeFr": "Fée",
+  "height": 18,
+  "weight": 205,
   "maleRatio": -1,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1.1,
+    "height": 2.3,
+    "fixed": false
+  },
   "labels": [
     "gen7",
     "legendary"
   ],
   "abilities": [
-    "electricsurge",
-    "h:telepathy"
+    {
+      "id": "electricsurge",
+      "name": "Créa-Élec",
+      "hidden": false
+    },
+    {
+      "id": "telepathy",
+      "name": "Télépathe",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 70,
     "attack": 115,
@@ -32,187 +53,545 @@
     "special_defence": 0,
     "speed": 3
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
   "catchRate": 3,
+  "baseFriendship": 50,
   "drops": {
     "amount": 0,
     "entries": []
   },
   "moves": [
-    "1:quickattack",
-    "1:thundershock",
-    "1:mirrormove",
-    "5:withdraw",
-    "10:fairywind",
-    "15:falseswipe",
-    "20:spark",
-    "25:shockwave",
-    "30:charge",
-    "35:agility",
-    "40:screech",
-    "45:discharge",
-    "50:meanlook",
-    "55:naturesmadness",
-    "60:wildcharge",
-    "65:bravebird",
-    "70:powerswap",
-    "75:electricterrain",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:assurance",
-    "tm:bravebird",
-    "tm:calmmind",
-    "tm:charge",
-    "tm:dazzlinggleam",
-    "tm:defog",
-    "tm:echoedvoice",
-    "tm:eerieimpulse",
-    "tm:electricterrain",
-    "tm:electroball",
-    "tm:electroweb",
-    "tm:endure",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:fly",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:hyperbeam",
-    "tm:hypervoice",
-    "tm:irondefense",
-    "tm:ironhead",
-    "tm:lightscreen",
-    "tm:naturepower",
-    "tm:powerswap",
-    "tm:protect",
-    "tm:psychup",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:roar",
-    "tm:roost",
-    "tm:safeguard",
-    "tm:screech",
-    "tm:shockwave",
-    "tm:skyattack",
-    "tm:skydrop",
-    "tm:sleeptalk",
-    "tm:steelwing",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:swift",
-    "tm:taunt",
-    "tm:telekinesis",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderpunch",
-    "tm:thunderwave",
-    "tm:torment",
-    "tm:uturn",
-    "tm:voltswitch",
-    "tm:wildcharge",
-    "tm:workup",
-    "tutor:aerialace",
-    "tutor:calmmind",
-    "tutor:dazzlinggleam",
-    "tutor:defog",
-    "tutor:electroweb",
-    "tutor:falseswipe",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:hypervoice",
-    "tutor:irondefense",
-    "tutor:ironhead",
-    "tutor:rest",
-    "tutor:roost",
-    "tutor:shockwave",
-    "tutor:skyattack",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:telekinesis",
-    "tutor:thunderbolt",
-    "tutor:thunderpunch",
-    "tutor:wildcharge"
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "1"
+    },
+    {
+      "id": "thundershock",
+      "name": "Éclair",
+      "category": "1"
+    },
+    {
+      "id": "mirrormove",
+      "name": "Mimique",
+      "category": "1"
+    },
+    {
+      "id": "withdraw",
+      "name": "Repli",
+      "category": "5"
+    },
+    {
+      "id": "fairywind",
+      "name": "Vent Féérique",
+      "category": "10"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "15"
+    },
+    {
+      "id": "spark",
+      "name": "Étincelle",
+      "category": "20"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "25"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "30"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "35"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "40"
+    },
+    {
+      "id": "discharge",
+      "name": "Coup d'Jus",
+      "category": "45"
+    },
+    {
+      "id": "meanlook",
+      "name": "Regard Noir",
+      "category": "50"
+    },
+    {
+      "id": "naturesmadness",
+      "name": "Ire de la Nature",
+      "category": "55"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "60"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "65"
+    },
+    {
+      "id": "powerswap",
+      "name": "Permuforce",
+      "category": "70"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "75"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "eerieimpulse",
+      "name": "Ondes Étranges",
+      "category": "tm"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "tm"
+    },
+    {
+      "id": "electroball",
+      "name": "Boule Élek",
+      "category": "tm"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "powerswap",
+      "name": "Permuforce",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tm"
+    },
+    {
+      "id": "skydrop",
+      "name": "Chute Libre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "voltswitch",
+      "name": "Change Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
-  "spawns": [
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "60",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#minecraft:is_jungle",
-            "terralith:cave/underground_jungle",
-            "wythers:dripleaf_swamp",
-            "wythers:eucalyptus_deanei_forest",
-            "wythers:highland_tropical_rainforest",
-            "wythers:humid_tropical_grassland",
-            "wythers:jungle_canyon",
-            "wythers:subtropical_forest",
-            "wythers:subtropical_forest_edge",
-            "wythers:subtropical_grassland",
-            "wythers:tropical_forest",
-            "wythers:tropical_forest_canyon",
-            "wythers:tropical_grassland",
-            "wythers:tropical_island",
-            "wythers:tropical_rainforest"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-tapukoko.json",
-        "keyItem": "myths_and_legends:koko_totem"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "60",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "minecraft:stony_shore",
-            "#cobblemon:is_beach",
-            "#c:stony_shores",
-            "terralith:basalt_cliffs",
-            "terralith:granite_cliffs",
-            "terralith:white_cliffs",
-            "wythers:calcite_coast",
-            "wythers:coastal_mangroves",
-            "wythers:cold_island",
-            "wythers:cold_stony_shore",
-            "wythers:deepslate_shore",
-            "wythers:frigid_island",
-            "wythers:frozen_island",
-            "wythers:gravelly_beach",
-            "wythers:icy_shore",
-            "wythers:mediterranean_island",
-            "wythers:temperate_island",
-            "wythers:tropical_island",
-            "wythers:warm_stony_shore"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-tapukoko.json",
-        "keyItem": "myths_and_legends:koko_totem"
-      }
-    ]
-  ],
+  "preEvolution": null,
+  "spawns": [],
   "implemented": false,
   "images": {
     "normal": [
@@ -225,6 +604,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/tapukoko.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/tapukoko.json"
   ]
 }

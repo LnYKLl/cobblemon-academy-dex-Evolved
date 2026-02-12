@@ -2,21 +2,46 @@
   "id": "skorupi",
   "dexnum": 451,
   "name": "Skorupi",
+  "nameFr": "Rapion",
+  "description": "Il attend, en embuscade dans le sable, et empoisonne ses proies avec les pinces de sa queue.",
   "primaryType": "poison",
   "secondaryType": "bug",
+  "primaryTypeFr": "Poison",
+  "secondaryTypeFr": "Insecte",
+  "height": 8,
+  "weight": 120,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen4"
   ],
   "abilities": [
-    "battlearmor",
-    "sniper",
-    "h:keeneye"
+    {
+      "id": "battlearmor",
+      "name": "Armurbaston",
+      "hidden": false
+    },
+    {
+      "id": "sniper",
+      "name": "Sniper",
+      "hidden": false
+    },
+    {
+      "id": "keeneye",
+      "name": "Regard Vif",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug",
     "water_3"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 40,
     "attack": 50,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 66,
   "experienceGroup": "slow",
   "catchRate": 120,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -42,116 +69,556 @@
         "item": "cobblemon:poison_barb",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Pic Venin"
       },
       {
         "item": "cobblemon:bluk_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Remu"
       }
     ]
   },
   "moves": [
-    "1:poisonsting",
-    "1:leer",
-    "3:honeclaws",
-    "6:fellstinger",
-    "9:poisonfang",
-    "12:bite",
-    "15:toxicspikes",
-    "18:bugbite",
-    "21:venoshock",
-    "24:knockoff",
-    "27:scaryface",
-    "30:pinmissile",
-    "33:toxic",
-    "36:nightslash",
-    "39:crosspoison",
-    "42:xscissor",
-    "45:acupressure",
-    "48:crunch",
-    "egg:confuseray",
-    "egg:feintattack",
-    "egg:pursuit",
-    "egg:sandattack",
-    "egg:slash",
-    "egg:twineedle",
-    "egg:whirlwind",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:aquatail",
-    "tm:assurance",
-    "tm:brickbreak",
-    "tm:bugbite",
-    "tm:bugbuzz",
-    "tm:confuseray",
-    "tm:crosspoison",
-    "tm:crunch",
-    "tm:cut",
-    "tm:darkpulse",
-    "tm:dig",
-    "tm:endure",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:flash",
-    "tm:fling",
-    "tm:furycutter",
-    "tm:headbutt",
-    "tm:honeclaws",
-    "tm:infestation",
-    "tm:irontail",
-    "tm:knockoff",
-    "tm:mudslap",
-    "tm:payback",
-    "tm:pinmissile",
-    "tm:poisonjab",
-    "tm:poisontail",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:scaryface",
-    "tm:screech",
-    "tm:shadowball",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:strength",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swordsdance",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:torment",
-    "tm:toxic",
-    "tm:toxicspikes",
-    "tm:venoshock",
-    "tm:xscissor",
-    "tutor:aerialace",
-    "tutor:aquatail",
-    "tutor:bugbite",
-    "tutor:darkpulse",
-    "tutor:falseswipe",
-    "tutor:furycutter",
-    "tutor:irontail",
-    "tutor:knockoff",
-    "tutor:mudslap",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:shadowball",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:spikes",
-    "tutor:xscissor"
+    {
+      "id": "poisonsting",
+      "name": "Dard-Venin",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "3"
+    },
+    {
+      "id": "fellstinger",
+      "name": "Dard Mortel",
+      "category": "6"
+    },
+    {
+      "id": "poisonfang",
+      "name": "Crochet Venin",
+      "category": "9"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "12"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "15"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "18"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "21"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "24"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "27"
+    },
+    {
+      "id": "pinmissile",
+      "name": "Dard-Nuée",
+      "category": "30"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "33"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "36"
+    },
+    {
+      "id": "crosspoison",
+      "name": "Poison Croix",
+      "category": "39"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "42"
+    },
+    {
+      "id": "acupressure",
+      "name": "Acupression",
+      "category": "45"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "48"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "egg"
+    },
+    {
+      "id": "feintattack",
+      "name": "Feinte",
+      "category": "egg"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "egg"
+    },
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "egg"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "egg"
+    },
+    {
+      "id": "twineedle",
+      "name": "Double Dard",
+      "category": "egg"
+    },
+    {
+      "id": "whirlwind",
+      "name": "Cyclone",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "crosspoison",
+      "name": "Poison Croix",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "pinmissile",
+      "name": "Dard-Nuée",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "poisontail",
+      "name": "Queue-Poison",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "skorupi_drapion",
@@ -167,68 +634,42 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
         "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 3.1,
-        "levels": "5-18",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/common_crystallized_desert.json"
-      }
-    ],
-    [
-      {
-        "presets": [
           "natural",
           "wild"
         ],
         "rarity": "common",
-        "weight": 7.6,
-        "levels": "20-27",
-        "contexts": [
-          "grounded"
-        ],
+        "weight": 1.8,
+        "levels": "8-33",
         "biomeTags": {
           "include": [
-            "#cobblemon:is_swamp"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0451_skorupi.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural",
-          "wild"
-        ],
-        "rarity": "common",
-        "weight": 7.6,
-        "levels": "20-27",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
+            "#cobblemon:is_badlands",
             "#cobblemon:is_desert"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0451_skorupi.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0451_skorupi.json",
+        "spawnId": "skorupi-1",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "skorupi",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 1.5,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon_reanimodel/skorupi.png",
@@ -240,6 +681,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation4/skorupi.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation4/skorupi.json"
   ]
 }

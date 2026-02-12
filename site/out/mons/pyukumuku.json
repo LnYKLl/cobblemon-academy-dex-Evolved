@@ -2,19 +2,40 @@
   "id": "pyukumuku",
   "dexnum": 771,
   "name": "Pyukumuku",
+  "nameFr": "Concombaffe",
+  "description": "Tout son corps est recouvert d'un mucus gluant. Veillez à ne pas glisser dessus : il en profiterait pour vous mettre une grosse claque !",
   "primaryType": "water",
   "secondaryType": "",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "",
+  "height": 3,
+  "weight": 12,
   "maleRatio": 0.5,
+  "baseScale": 0.75,
+  "hitbox": {
+    "width": 0.75,
+    "height": 0.6,
+    "fixed": false
+  },
   "labels": [
     "gen7"
   ],
   "abilities": [
-    "innardsout",
-    "h:unaware"
+    {
+      "id": "innardsout",
+      "name": "Expuls'Organes",
+      "hidden": false
+    },
+    {
+      "id": "unaware",
+      "name": "Inconscient",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_1"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 55,
     "attack": 60,
@@ -31,8 +52,10 @@
     "special_defence": 2,
     "speed": 0
   },
+  "baseExperienceYield": 144,
   "experienceGroup": "fast",
   "catchRate": 60,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -40,70 +63,306 @@
         "item": "minecraft:slime_ball",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:slime_ball"
       }
     ]
   },
   "moves": [
-    "1:batonpass",
-    "1:watersport",
-    "1:mudsport",
-    "1:harden",
-    "1:bide",
-    "5:helpinghand",
-    "10:taunt",
-    "15:safeguard",
-    "20:counter",
-    "25:purify",
-    "30:curse",
-    "35:gastroacid",
-    "40:painsplit",
-    "45:recover",
-    "50:soak",
-    "55:toxic",
-    "60:memento",
-    "egg:bestow",
-    "egg:mirrorcoat",
-    "egg:spite",
-    "egg:swagger",
-    "egg:tickle",
-    "tm:batonpass",
-    "tm:block",
-    "tm:curse",
-    "tm:endure",
-    "tm:gastroacid",
-    "tm:hail",
-    "tm:helpinghand",
-    "tm:lightscreen",
-    "tm:painsplit",
-    "tm:protect",
-    "tm:psychup",
-    "tm:quash",
-    "tm:raindance",
-    "tm:recycle",
-    "tm:reflect",
-    "tm:rest",
-    "tm:safeguard",
-    "tm:screech",
-    "tm:sleeptalk",
-    "tm:spite",
-    "tm:substitute",
-    "tm:swagger",
-    "tm:taunt",
-    "tm:toxic",
-    "tm:venomdrench",
-    "tutor:block",
-    "tutor:gastroacid",
-    "tutor:helpinghand",
-    "tutor:painsplit",
-    "tutor:recycle",
-    "tutor:rest",
-    "tutor:sleeptalk",
-    "tutor:spite"
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "1"
+    },
+    {
+      "id": "watersport",
+      "name": "Tourniquet",
+      "category": "1"
+    },
+    {
+      "id": "mudsport",
+      "name": "Lance-Boue",
+      "category": "1"
+    },
+    {
+      "id": "harden",
+      "name": "Armure",
+      "category": "1"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "1"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "5"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "10"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "15"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "20"
+    },
+    {
+      "id": "purify",
+      "name": "Purification",
+      "category": "25"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "30"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "35"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "40"
+    },
+    {
+      "id": "recover",
+      "name": "Soin",
+      "category": "45"
+    },
+    {
+      "id": "soak",
+      "name": "Détrempage",
+      "category": "50"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "55"
+    },
+    {
+      "id": "memento",
+      "name": "Souvenir",
+      "category": "60"
+    },
+    {
+      "id": "bestow",
+      "name": "Passe-Cadeau",
+      "category": "egg"
+    },
+    {
+      "id": "mirrorcoat",
+      "name": "Voile Miroir",
+      "category": "egg"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "egg"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "egg"
+    },
+    {
+      "id": "tickle",
+      "name": "Chatouille",
+      "category": "egg"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "quash",
+      "name": "À la Queue",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "venomdrench",
+      "name": "Piège de Venin",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tutor"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -113,19 +372,20 @@
         "rarity": "uncommon",
         "weight": 6.0,
         "levels": "16-41",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_beach"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0771_pyukumuku.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0771_pyukumuku.json",
+        "spawnId": "pyukumuku-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "pyukumuku",
+        "type": "pokemon"
       }
     ],
     [
@@ -136,9 +396,6 @@
         "rarity": "common",
         "weight": 2.0,
         "levels": "16-41",
-        "contexts": [
-          "seafloor"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
@@ -148,13 +405,17 @@
             "#cobblemon:is_warm_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0771_pyukumuku.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0771_pyukumuku.json",
+        "spawnId": "pyukumuku-2",
         "sky": {
           "canSeeSky": true
         },
         "yLevel": {
           "minY": 48
-        }
+        },
+        "spawnType": "seafloor",
+        "pokemon": "pyukumuku",
+        "type": "pokemon"
       }
     ],
     [
@@ -165,18 +426,19 @@
         "rarity": "common",
         "weight": 10.0,
         "levels": "16-41",
-        "contexts": [
-          "seafloor"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_warm_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0771_pyukumuku.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0771_pyukumuku.json",
+        "spawnId": "pyukumuku-3",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "seafloor",
+        "pokemon": "pyukumuku",
+        "type": "pokemon"
       }
     ],
     [
@@ -184,9 +446,6 @@
         "rarity": "common",
         "weight": 2.0,
         "levels": "16-41",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_beach",
@@ -197,10 +456,29 @@
             "#cobblemon:is_warm_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0771_pyukumuku.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0771_pyukumuku.json",
+        "spawnId": "pyukumuku-4",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "pyukumuku",
+        "type": "pokemon",
+        "weightMultiplier": [
+          {
+            "multiplier": 3.0,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5.0,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ]
       }
     ],
     [
@@ -208,18 +486,19 @@
         "rarity": "common",
         "weight": 10.0,
         "levels": "16-41",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_warm_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0771_pyukumuku.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0771_pyukumuku.json",
+        "spawnId": "pyukumuku-5",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "pyukumuku",
+        "type": "pokemon"
       }
     ],
     [
@@ -227,9 +506,6 @@
         "rarity": "common",
         "weight": 2.0,
         "levels": "16-41",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_beach",
@@ -240,12 +516,31 @@
             "#cobblemon:is_warm_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0771_pyukumuku.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0771_pyukumuku.json",
+        "spawnId": "pyukumuku-6",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "pyukumuku",
+        "type": "pokemon",
+        "weightMultiplier": [
+          {
+            "multiplier": 3.0,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5.0,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ]
       }
     ],
     [
@@ -253,39 +548,21 @@
         "rarity": "common",
         "weight": 10.0,
         "levels": "16-41",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_warm_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0771_pyukumuku.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0771_pyukumuku.json",
+        "spawnId": "pyukumuku-7",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "water"
-        ],
-        "rarity": "uncommon",
-        "weight": 1.3,
-        "levels": "18-34",
-        "contexts": [
-          "submerged"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_safari_ocean"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_safari_ocean/uncommon_is_safari_ocean.json"
+        "spawnType": "fishing",
+        "pokemon": "pyukumuku",
+        "type": "pokemon"
       }
     ]
   ],
@@ -299,6 +576,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/pyukumuku.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/pyukumuku.json"
   ]
 }

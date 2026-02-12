@@ -2,19 +2,40 @@
   "id": "rellor",
   "dexnum": 953,
   "name": "Rellor",
+  "nameFr": "Léboulérou",
+  "description": "Il confectionne une boule de boue en mélangeant de la terre, du sable et de l'énergie de type Psy. À ses yeux, elle importe plus que sa propre vie.",
   "primaryType": "bug",
   "secondaryType": "",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "",
+  "height": 2,
+  "weight": 10,
   "maleRatio": 0.5,
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 1.15,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "compoundeyes",
-    "h:shedskin"
+    {
+      "id": "compoundeyes",
+      "name": "Œil Composé",
+      "hidden": false
+    },
+    {
+      "id": "shedskin",
+      "name": "Mue",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 41,
     "attack": 50,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 54,
   "experienceGroup": "fast",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -40,67 +63,279 @@
         "item": "minecraft:mud",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:mud"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:defensecurl",
-    "4:sandattack",
-    "7:strugglebug",
-    "11:rollout",
-    "15:mudshot",
-    "20:bugbite",
-    "24:takedown",
-    "29:dig",
-    "35:lunge",
-    "egg:cosmicpower",
-    "egg:memento",
-    "egg:recover",
-    "egg:weatherball",
-    "tm:bugbite",
-    "tm:bugbuzz",
-    "tm:cosmicpower",
-    "tm:dig",
-    "tm:endure",
-    "tm:facade",
-    "tm:fling",
-    "tm:gunkshot",
-    "tm:irondefense",
-    "tm:leechlife",
-    "tm:lunge",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:pounce",
-    "tm:protect",
-    "tm:rest",
-    "tm:rocktomb",
-    "tm:rollout",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:weatherball",
-    "tm:xscissor",
-    "tutor:bugbite",
-    "tutor:gunkshot",
-    "tutor:irondefense",
-    "tutor:leechlife",
-    "tutor:mudslap",
-    "tutor:rest",
-    "tutor:rollout",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:xscissor"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "1"
+    },
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "4"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "7"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "11"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "15"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "20"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "24"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "29"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "35"
+    },
+    {
+      "id": "cosmicpower",
+      "name": "Force Cosmique",
+      "category": "egg"
+    },
+    {
+      "id": "memento",
+      "name": "Souvenir",
+      "category": "egg"
+    },
+    {
+      "id": "recover",
+      "name": "Soin",
+      "category": "egg"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "egg"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "tm"
+    },
+    {
+      "id": "cosmicpower",
+      "name": "Force Cosmique",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tm"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "rellor_rabsca",
@@ -118,47 +353,31 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
         "presets": [
-          "natural"
+          "natural",
+          "wild"
         ],
         "rarity": "common",
-        "weight": 1.8,
-        "levels": "4-18",
-        "contexts": [
-          "grounded"
-        ],
+        "weight": 1.9,
+        "levels": "2-27",
         "biomeTags": {
           "include": [
-            "eternal_starlight:crystallized_desert"
+            "#cobblemon:is_arid"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/common_crystallized_desert.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 0.9,
-        "levels": "5-50",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_jungle"
-          ]
-        },
-        "source": "datapacks/MysticMons_v3.2.1/data/cobblemon/spawn_pool_world/0953_rellor.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0953_rellor.json",
+        "spawnId": "rellor-1",
+        "spawnType": "grounded",
+        "pokemon": "rellor",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/rellor.png"
@@ -168,6 +387,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/rellor.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/rellor.json"
   ]
 }

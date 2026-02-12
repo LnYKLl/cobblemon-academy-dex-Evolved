@@ -2,20 +2,45 @@
   "id": "karrablast",
   "dexnum": 588,
   "name": "Karrablast",
+  "nameFr": "Carabing",
+  "description": "Pour une raison inconnue, ce Pokémon évolue s'il subit une décharge électrique pendant qu'il attaque un Escargaume.",
   "primaryType": "bug",
   "secondaryType": "",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "",
+  "height": 5,
+  "weight": 59,
   "maleRatio": 0.5,
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "swarm",
-    "shedskin",
-    "h:noguard"
+    {
+      "id": "swarm",
+      "name": "Essaim",
+      "hidden": false
+    },
+    {
+      "id": "shedskin",
+      "name": "Mue",
+      "hidden": false
+    },
+    {
+      "id": "noguard",
+      "name": "Annule Garde",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 50,
     "attack": 75,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 63,
   "experienceGroup": "medium_fast",
   "catchRate": 200,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,84 +68,419 @@
         "item": "cobblemon:occa_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Chocco"
       }
     ]
   },
   "moves": [
-    "1:peck",
-    "1:leer",
-    "4:furycutter",
-    "8:endure",
-    "12:falseswipe",
-    "16:furyattack",
-    "20:headbutt",
-    "24:flail",
-    "28:scaryface",
-    "32:slash",
-    "36:swordsdance",
-    "40:takedown",
-    "44:bugbuzz",
-    "48:doubleedge",
-    "egg:bugbite",
-    "egg:counter",
-    "egg:feintattack",
-    "egg:hornattack",
-    "egg:knockoff",
-    "egg:nightslash",
-    "egg:pursuit",
-    "egg:slash",
-    "tm:acidspray",
-    "tm:aerialace",
-    "tm:bugbite",
-    "tm:bugbuzz",
-    "tm:cut",
-    "tm:doubleedge",
-    "tm:drillrun",
-    "tm:encore",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:furycutter",
-    "tm:gigadrain",
-    "tm:headbutt",
-    "tm:infestation",
-    "tm:irondefense",
-    "tm:knockoff",
-    "tm:megahorn",
-    "tm:poisonjab",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:scaryface",
-    "tm:screech",
-    "tm:signalbeam",
-    "tm:sleeptalk",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:xscissor",
-    "tutor:aerialace",
-    "tutor:bugbite",
-    "tutor:drillrun",
-    "tutor:energyball",
-    "tutor:falseswipe",
-    "tutor:furycutter",
-    "tutor:gigadrain",
-    "tutor:irondefense",
-    "tutor:knockoff",
-    "tutor:megahorn",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:signalbeam",
-    "tutor:sleeptalk",
-    "tutor:xscissor"
+    {
+      "id": "peck",
+      "name": "Picpic",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "4"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "8"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "12"
+    },
+    {
+      "id": "furyattack",
+      "name": "Furie",
+      "category": "16"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "20"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "24"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "28"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "32"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "36"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "40"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "44"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "48"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "egg"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "egg"
+    },
+    {
+      "id": "feintattack",
+      "name": "Feinte",
+      "category": "egg"
+    },
+    {
+      "id": "hornattack",
+      "name": "Koud'Korne",
+      "category": "egg"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "egg"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "egg"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "egg"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "egg"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "karrablast_escavalier",
@@ -133,12 +495,13 @@
       "id": "karrablast_escavalier_item",
       "variant": "item_interact",
       "result": "escavalier",
-      "consumeHeldItem": true,
+      "consumeHeldItem": false,
       "learnableMoves": [],
       "requirements": [],
       "requiredContext": "cobblemon:shell_helmet"
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -148,38 +511,20 @@
         "rarity": "common",
         "weight": 5.7,
         "levels": "7-32",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_swamp"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0588_karrablast.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0588_karrablast.json",
+        "spawnId": "karrablast-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 2.8,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/uncommon_scarlet_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "karrablast",
+        "type": "pokemon"
       }
     ]
   ],
@@ -193,6 +538,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/karrablast.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/karrablast.json"
   ]
 }

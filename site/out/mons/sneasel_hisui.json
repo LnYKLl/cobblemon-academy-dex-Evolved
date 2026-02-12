@@ -2,21 +2,46 @@
   "id": "sneasel_hisui",
   "dexnum": 215,
   "name": "Sneasel Hisui",
+  "nameFr": "Sneasel Hisui",
+  "description": "La forme de ses griffes puissantes lui procure un avantage pour escalader les précipices escarpés. Le poison qui flue de leur extrémité agit sur les nerfs des proies capturées par Farfuret.",
   "primaryType": "fighting",
   "secondaryType": "poison",
+  "primaryTypeFr": "Combat",
+  "secondaryTypeFr": "Poison",
+  "height": 9,
+  "weight": 270,
   "maleRatio": 0.5,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.6,
+    "height": 1.25,
+    "fixed": false
+  },
   "labels": [
     "gen8a",
     "hisuian_form"
   ],
   "abilities": [
-    "innerfocus",
-    "keeneye",
-    "h:pickpocket"
+    {
+      "id": "innerfocus",
+      "name": "Attention",
+      "hidden": false
+    },
+    {
+      "id": "keeneye",
+      "name": "Regard Vif",
+      "hidden": false
+    },
+    {
+      "id": "pickpocket",
+      "name": "Pickpocket",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 55,
     "attack": 95,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 86,
   "experienceGroup": "medium_slow",
   "catchRate": 60,
+  "baseFriendship": 35,
   "drops": {
     "amount": 3,
     "entries": [
@@ -42,126 +69,523 @@
         "item": "cobblemon:razor_claw",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Griffe Rasoir"
       },
       {
         "item": "cobblemon:poison_barb",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Pic Venin"
       },
       {
         "item": "cobblemon:payapa_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Yapap"
       }
     ]
   },
   "moves": [
-    "1:rocksmash",
-    "1:scratch",
-    "1:leer",
-    "6:taunt",
-    "12:quickattack",
-    "18:metalclaw",
-    "24:poisonjab",
-    "30:brickbreak",
-    "36:honeclaws",
-    "42:slash",
-    "48:agility",
-    "54:screech",
-    "60:closecombat",
-    "egg:counter",
-    "egg:doublehit",
-    "egg:fakeout",
-    "egg:feint",
-    "egg:nightslash",
-    "egg:quickguard",
-    "egg:switcheroo",
-    "tm:acidspray",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:brickbreak",
-    "tm:bulkup",
-    "tm:calmmind",
-    "tm:closecombat",
-    "tm:coaching",
-    "tm:dig",
-    "tm:endure",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:fling",
-    "tm:focusblast",
-    "tm:focusenergy",
-    "tm:focuspunch",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:gunkshot",
-    "tm:honeclaws",
-    "tm:irontail",
-    "tm:lashout",
-    "tm:lowkick",
-    "tm:lowsweep",
-    "tm:metalclaw",
-    "tm:nastyplot",
-    "tm:poisonjab",
-    "tm:poisontail",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:reversal",
-    "tm:rocksmash",
-    "tm:screech",
-    "tm:shadowball",
-    "tm:shadowclaw",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:sludgewave",
-    "tm:spite",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:throatchop",
-    "tm:toxic",
-    "tm:toxicspikes",
-    "tm:trailblaze",
-    "tm:vacuumwave",
-    "tm:venoshock",
-    "tm:xscissor",
-    "tutor:aerialace",
-    "tutor:bulkup",
-    "tutor:calmmind",
-    "tutor:coaching",
-    "tutor:falseswipe",
-    "tutor:focusenergy",
-    "tutor:focuspunch",
-    "tutor:gigaimpact",
-    "tutor:gunkshot",
-    "tutor:irontail",
-    "tutor:lashout",
-    "tutor:lowkick",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:shadowball",
-    "tutor:shadowclaw",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:spikes",
-    "tutor:spite",
-    "tutor:swift",
-    "tutor:throatchop",
-    "tutor:vacuumwave",
-    "tutor:xscissor"
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "1"
+    },
+    {
+      "id": "scratch",
+      "name": "Griffe",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "6"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "12"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "18"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "24"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "30"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "36"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "42"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "48"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "54"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "60"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "egg"
+    },
+    {
+      "id": "doublehit",
+      "name": "Coup Double",
+      "category": "egg"
+    },
+    {
+      "id": "fakeout",
+      "name": "Bluff",
+      "category": "egg"
+    },
+    {
+      "id": "feint",
+      "name": "Ruse",
+      "category": "egg"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "egg"
+    },
+    {
+      "id": "quickguard",
+      "name": "Prévention",
+      "category": "egg"
+    },
+    {
+      "id": "switcheroo",
+      "name": "Passe-Passe",
+      "category": "egg"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "tm"
+    },
+    {
+      "id": "coaching",
+      "name": "Coaching",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "focusblast",
+      "name": "Exploforce",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "lowsweep",
+      "name": "Balayette",
+      "category": "tm"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "poisontail",
+      "name": "Queue-Poison",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "vacuumwave",
+      "name": "Onde Vide",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "coaching",
+      "name": "Coaching",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "vacuumwave",
+      "name": "Onde Vide",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "sneasel_sneasler",
@@ -184,6 +608,7 @@
       "permanent": true
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -194,42 +619,31 @@
         "rarity": "uncommon",
         "weight": 9.2,
         "levels": "18-43",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_mountain"
           ],
           "exclude": [
             "#cobblemon:is_arid",
-            "#cobblemon:is_taiga"
+            "#cobblemon:is_taiga",
+            "#cobblemon:is_volcanic"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0215_sneasel.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0215_sneasel.json",
+        "spawnId": "sneasel-hisuian-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 1.1,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/uncommon_dark_swamp.json"
+        "spawnType": "grounded",
+        "pokemon": "sneasel hisuian",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
       }
     ]
   ],
@@ -243,6 +657,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation2/sneasel.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation2/sneasel.json"
   ]
 }

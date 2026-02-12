@@ -2,20 +2,45 @@
   "id": "ariados",
   "dexnum": 168,
   "name": "Ariados",
+  "nameFr": "Migalos",
+  "description": "À l'extrémité des pattes de Migalos, on trouve de petits crochets qui lui permettent de cavaler sur les surfaces verticales et au plafond. Ce Pokémon peut piéger ses ennemis dans sa solide toile de soie.",
   "primaryType": "bug",
   "secondaryType": "poison",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "Poison",
+  "height": 11,
+  "weight": 335,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "height": 1,
+    "fixed": false,
+    "width": 1
+  },
   "labels": [
     "gen2"
   ],
   "abilities": [
-    "swarm",
-    "insomnia",
-    "h:sniper"
+    {
+      "id": "swarm",
+      "name": "Essaim",
+      "hidden": false
+    },
+    {
+      "id": "insomnia",
+      "name": "Insomnia",
+      "hidden": false
+    },
+    {
+      "id": "sniper",
+      "name": "Sniper",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 70,
     "attack": 90,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 140,
   "experienceGroup": "fast",
   "catchRate": 90,
+  "baseFriendship": 50,
   "drops": {
     "amount": 7,
     "entries": [
@@ -41,145 +68,687 @@
         "item": "minecraft:string",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:string"
       },
       {
         "item": "minecraft:spider_eye",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:spider_eye"
       },
       {
         "item": "minecraft:rotten_flesh",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:rotten_flesh"
       },
       {
         "item": "cobblemon:poison_barb",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Pic Venin"
       }
     ]
   },
   "moves": [
-    "1:bugbite",
-    "1:poisonsting",
-    "1:stringshot",
-    "1:constrict",
-    "1:spiderweb",
-    "1:venomdrench",
-    "1:fellstinger",
-    "1:swordsdance",
-    "1:focusenergy",
-    "1:absorb",
-    "8:infestation",
-    "12:scaryface",
-    "15:nightshade",
-    "19:shadowsneak",
-    "23:furyswipes",
-    "28:suckerpunch",
-    "31:agility",
-    "35:pinmissile",
-    "41:psychic",
-    "46:poisonjab",
-    "50:crosspoison",
-    "54:stickyweb",
-    "59:toxicthread",
-    "egg:disable",
-    "egg:lunge",
-    "egg:megahorn",
-    "egg:nightslash",
-    "egg:pursuit",
-    "egg:ragepowder",
-    "egg:sonicboom",
-    "egg:twineedle",
-    "tm:acidspray",
-    "tm:agility",
-    "tm:assurance",
-    "tm:batonpass",
-    "tm:bounce",
-    "tm:bugbite",
-    "tm:bugbuzz",
-    "tm:crosspoison",
-    "tm:dig",
-    "tm:electroweb",
-    "tm:endure",
-    "tm:facade",
-    "tm:flash",
-    "tm:focusenergy",
-    "tm:foulplay",
-    "tm:gigadrain",
-    "tm:gigaimpact",
-    "tm:hex",
-    "tm:honeclaws",
-    "tm:hyperbeam",
-    "tm:infestation",
-    "tm:knockoff",
-    "tm:leechlife",
-    "tm:lunge",
-    "tm:megahorn",
-    "tm:nightshade",
-    "tm:pinmissile",
-    "tm:poisonjab",
-    "tm:pounce",
-    "tm:protect",
-    "tm:psychic",
-    "tm:rest",
-    "tm:scaryface",
-    "tm:screech",
-    "tm:signalbeam",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:sludgewave",
-    "tm:smartstrike",
-    "tm:solarbeam",
-    "tm:spite",
-    "tm:stringshot",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:sunnyday",
-    "tm:swordsdance",
-    "tm:terablast",
-    "tm:thief",
-    "tm:throatchop",
-    "tm:toxic",
-    "tm:toxicspikes",
-    "tm:trailblaze",
-    "tm:venomdrench",
-    "tm:venoshock",
-    "tm:xscissor",
-    "tutor:bounce",
-    "tutor:bugbite",
-    "tutor:electroweb",
-    "tutor:focusenergy",
-    "tutor:foulplay",
-    "tutor:gigadrain",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:knockoff",
-    "tutor:leechlife",
-    "tutor:megahorn",
-    "tutor:poisonjab",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:signalbeam",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:spikes",
-    "tutor:spite",
-    "tutor:stringshot",
-    "tutor:suckerpunch",
-    "tutor:throatchop",
-    "tutor:xscissor"
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "1"
+    },
+    {
+      "id": "poisonsting",
+      "name": "Dard-Venin",
+      "category": "1"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "1"
+    },
+    {
+      "id": "constrict",
+      "name": "Constriction",
+      "category": "1"
+    },
+    {
+      "id": "spiderweb",
+      "name": "Toile",
+      "category": "1"
+    },
+    {
+      "id": "venomdrench",
+      "name": "Piège de Venin",
+      "category": "1"
+    },
+    {
+      "id": "fellstinger",
+      "name": "Dard Mortel",
+      "category": "1"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "1"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "1"
+    },
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "1"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "8"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "12"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "15"
+    },
+    {
+      "id": "shadowsneak",
+      "name": "Ombre Portée",
+      "category": "19"
+    },
+    {
+      "id": "furyswipes",
+      "name": "Combo-Griffe",
+      "category": "23"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "28"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "31"
+    },
+    {
+      "id": "pinmissile",
+      "name": "Dard-Nuée",
+      "category": "35"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "41"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "46"
+    },
+    {
+      "id": "crosspoison",
+      "name": "Poison Croix",
+      "category": "50"
+    },
+    {
+      "id": "stickyweb",
+      "name": "Toile Gluante",
+      "category": "54"
+    },
+    {
+      "id": "toxicthread",
+      "name": "Fil Toxique",
+      "category": "59"
+    },
+    {
+      "id": "disable",
+      "name": "Entrave",
+      "category": "egg"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "egg"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "egg"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "egg"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "egg"
+    },
+    {
+      "id": "ragepowder",
+      "name": "Poudre Fureur",
+      "category": "egg"
+    },
+    {
+      "id": "sonicboom",
+      "name": "Sonic Boom",
+      "category": "egg"
+    },
+    {
+      "id": "twineedle",
+      "name": "Double Dard",
+      "category": "egg"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "tm"
+    },
+    {
+      "id": "crosspoison",
+      "name": "Poison Croix",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tm"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "tm"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tm"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "tm"
+    },
+    {
+      "id": "pinmissile",
+      "name": "Dard-Nuée",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "tm"
+    },
+    {
+      "id": "smartstrike",
+      "name": "Estocorne",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "venomdrench",
+      "name": "Piège de Venin",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tutor"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "refresh",
+      "name": "Régénération",
+      "category": "special"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "spinarak",
   "spawns": [
     [
       {
@@ -190,8 +759,8 @@
         "rarity": "common",
         "weight": 0.6,
         "levels": "22-40",
-        "contexts": [
-          "grounded"
+        "times": [
+          "night"
         ],
         "biomeTags": {
           "include": [
@@ -203,14 +772,18 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0168_ariados.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0168_ariados.json",
+        "spawnId": "ariados-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
         },
         "weather": {
           "isRaining": false
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "ariados",
+        "type": "pokemon"
       }
     ],
     [
@@ -221,9 +794,6 @@
         "rarity": "common",
         "weight": 0.2,
         "levels": "22-40",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -232,11 +802,15 @@
             "#cobblemon:is_deep_dark"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0168_ariados.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0168_ariados.json",
+        "spawnId": "ariados-2",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "ariados",
+        "type": "pokemon"
       }
     ],
     [
@@ -247,9 +821,6 @@
         "rarity": "common",
         "weight": 0.6,
         "levels": "22-40",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -258,10 +829,14 @@
             "#cobblemon:is_deep_dark"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0168_ariados.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0168_ariados.json",
+        "spawnId": "ariados-3",
         "sky": {
           "canSeeSky": false
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "ariados",
+        "type": "pokemon"
       }
     ],
     [
@@ -272,15 +847,13 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "22-40",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0168_ariados.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0168_ariados.json",
+        "spawnId": "ariados-5",
         "nearbyBlocks": {
           "selectors": [
             "minecraft:cobweb"
@@ -288,7 +861,10 @@
         },
         "sky": {
           "canSeeSky": false
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "ariados",
+        "type": "pokemon"
       }
     ],
     [
@@ -302,6 +878,9 @@
         "levels": "22-40",
         "contexts": [
           "grounded"
+        ],
+        "times": [
+          "night"
         ],
         "biomeTags": {
           "include": [
@@ -314,13 +893,16 @@
           ]
         },
         "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0168_ariados.json",
+        "spawnId": "ariados-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
         },
         "weather": {
           "isRaining": false
-        }
+        },
+        "pokemon": "ariados",
+        "type": "pokemon"
       }
     ],
     [
@@ -344,10 +926,13 @@
           ]
         },
         "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0168_ariados.json",
+        "spawnId": "ariados-2",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "pokemon": "ariados",
+        "type": "pokemon"
       }
     ],
     [
@@ -370,9 +955,12 @@
           ]
         },
         "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0168_ariados.json",
+        "spawnId": "ariados-3",
         "sky": {
           "canSeeSky": false
-        }
+        },
+        "pokemon": "ariados",
+        "type": "pokemon"
       }
     ],
     [
@@ -392,6 +980,7 @@
           ]
         },
         "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0168_ariados.json",
+        "spawnId": "ariados-5",
         "nearbyBlocks": {
           "selectors": [
             "minecraft:cobweb"
@@ -399,26 +988,9 @@
         },
         "sky": {
           "canSeeSky": false
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 3.1,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_starlight_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/uncommon_is_starlight_forest.json"
+        "pokemon": "ariados",
+        "type": "pokemon"
       }
     ]
   ],
@@ -432,6 +1004,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation2/ariados.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation2/ariados.json"
   ]
 }

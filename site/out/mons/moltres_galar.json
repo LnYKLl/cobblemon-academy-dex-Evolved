@@ -2,21 +2,42 @@
   "id": "moltres_galar",
   "dexnum": 146,
   "name": "Moltres Galar",
+  "nameFr": "Moltres Galar",
+  "description": "Son aura maléfique semblable à un brasier peut consumer intégralement l'âme de quiconque en est la cible.",
   "primaryType": "dark",
   "secondaryType": "flying",
+  "primaryTypeFr": "Ténèbres",
+  "secondaryTypeFr": "Vol",
+  "height": 20,
+  "weight": 660,
   "maleRatio": -1,
+  "baseScale": 0.85,
+  "hitbox": {
+    "width": 2,
+    "height": 3,
+    "fixed": false
+  },
   "labels": [
     "gen8",
     "legendary",
     "galarian_form"
   ],
   "abilities": [
-    "berserk",
-    "h:berserk"
+    {
+      "id": "berserk",
+      "name": "Dracolère",
+      "hidden": false
+    },
+    {
+      "id": "berserk",
+      "name": "Dracolère",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 120,
   "baseStats": {
     "hp": 90,
     "attack": 85,
@@ -33,8 +54,10 @@
     "special_defence": 3,
     "speed": 0
   },
+  "baseExperienceYield": 290,
   "experienceGroup": "slow",
   "catchRate": 3,
+  "baseFriendship": 35,
   "drops": {
     "amount": 6,
     "entries": [
@@ -42,157 +65,462 @@
         "item": "minecraft:feather",
         "percentage": null,
         "quantityRange": "2-4",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:feather"
       },
       {
-        "item": "minecraft:cooked_chicken",
+        "item": "minecraft:chicken",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:chicken"
       },
       {
         "item": "cobblemon:sharp_beak",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Bec Pointu"
       }
     ]
   },
   "moves": [
-    "1:gust",
-    "1:leer",
-    "5:payback",
-    "10:safeguard",
-    "15:wingattack",
-    "20:agility",
-    "25:ancientpower",
-    "30:suckerpunch",
-    "35:airslash",
-    "40:afteryou",
-    "45:fierywrath",
-    "50:nastyplot",
-    "55:hurricane",
-    "60:endure",
-    "65:memento",
-    "70:skyattack",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:afteryou",
-    "tm:agility",
-    "tm:airslash",
-    "tm:ancientpower",
-    "tm:assurance",
-    "tm:bravebird",
-    "tm:darkpulse",
-    "tm:dualwingbeat",
-    "tm:endure",
-    "tm:facade",
-    "tm:fly",
-    "tm:foulplay",
-    "tm:gigaimpact",
-    "tm:helpinghand",
-    "tm:hex",
-    "tm:hurricane",
-    "tm:hyperbeam",
-    "tm:hypervoice",
-    "tm:imprison",
-    "tm:lashout",
-    "tm:nastyplot",
-    "tm:painsplit",
-    "tm:payback",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:safeguard",
-    "tm:sandstorm",
-    "tm:scaryface",
-    "tm:shadowball",
-    "tm:skyattack",
-    "tm:sleeptalk",
-    "tm:snarl",
-    "tm:spite",
-    "tm:steelwing",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:uturn",
-    "tutor:aerialace",
-    "tutor:afteryou",
-    "tutor:ancientpower",
-    "tutor:darkpulse",
-    "tutor:dualwingbeat",
-    "tutor:foulplay",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:hypervoice",
-    "tutor:lashout",
-    "tutor:painsplit",
-    "tutor:rest",
-    "tutor:shadowball",
-    "tutor:skyattack",
-    "tutor:sleeptalk",
-    "tutor:snarl",
-    "tutor:spite",
-    "tutor:suckerpunch",
-    "tutor:swift",
-    "tutor:tailwind"
+    {
+      "id": "gust",
+      "name": "Tornade",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "5"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "10"
+    },
+    {
+      "id": "wingattack",
+      "name": "Cru-Ailes",
+      "category": "15"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "20"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "25"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "30"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "35"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "40"
+    },
+    {
+      "id": "fierywrath",
+      "name": "Fureur Ardente",
+      "category": "45"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "50"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "55"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "60"
+    },
+    {
+      "id": "memento",
+      "name": "Souvenir",
+      "category": "65"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "70"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
-  "spawns": [
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "50-60",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "minecraft:badlands",
-            "minecraft:windswept_hills"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-moltres.json",
-        "keyItem": "myths_and_legends:tidal_bell_moltres"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "50-60",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_volcanic",
-            "#cobblemon:is_thermal",
-            "#cobblemon:is_sky"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-moltres.json",
-        "keyItem": "myths_and_legends:tidal_bell_moltres"
-      }
-    ]
-  ],
-  "implemented": true,
+  "preEvolution": null,
+  "spawns": [],
+  "implemented": false,
   "images": {
     "normal": [
       "out/sprites/genomons/moltres_galarian.png",
@@ -204,6 +532,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/moltres.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/moltres.json"
   ]
 }

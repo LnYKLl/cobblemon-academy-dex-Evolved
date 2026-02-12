@@ -2,20 +2,45 @@
   "id": "shuckle",
   "dexnum": 213,
   "name": "Shuckle",
+  "nameFr": "Caratroc",
+  "description": "Caratroc se cache tranquillement sous les rochers, abritant son corps dans sa carapace solide, pendant qu'il mange les Baies qu'il a mises de côté. Les Baies se mélangent à ses fluides corporels pour produire du jus.",
   "primaryType": "bug",
   "secondaryType": "rock",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "Roche",
+  "height": 6,
+  "weight": 205,
   "maleRatio": 0.5,
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen2"
   ],
   "abilities": [
-    "sturdy",
-    "gluttony",
-    "h:contrary"
+    {
+      "id": "sturdy",
+      "name": "Fermeté",
+      "hidden": false
+    },
+    {
+      "id": "gluttony",
+      "name": "Gloutonnerie",
+      "hidden": false
+    },
+    {
+      "id": "contrary",
+      "name": "Contestation",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 20,
     "attack": 10,
@@ -32,128 +57,624 @@
     "special_defence": 1,
     "speed": 0
   },
+  "baseExperienceYield": 177,
   "experienceGroup": "medium_slow",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
       {
         "item": "cobblemon:berry_juice",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Jus de Baie"
+      },
+      {
+        "item": "cobblemon:luminous_moss",
+        "percentage": 5.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Lichen Lumineux"
       }
     ]
   },
   "moves": [
-    "1:withdraw",
-    "1:constrict",
-    "1:bide",
-    "1:wrap",
-    "5:rollout",
-    "10:strugglebug",
-    "15:rockthrow",
-    "20:safeguard",
-    "25:rest",
-    "30:bugbite",
-    "35:powersplit",
-    "35:guardsplit",
-    "40:rockslide",
-    "45:gastroacid",
-    "50:stickyweb",
-    "55:powertrick",
-    "60:stoneedge",
-    "65:shellsmash",
-    "egg:acid",
-    "egg:acupressure",
-    "egg:covet",
-    "egg:defensecurl",
-    "egg:finalgambit",
-    "egg:infestation",
-    "egg:knockoff",
-    "egg:sweetscent",
-    "egg:toxic",
-    "tm:afteryou",
-    "tm:ancientpower",
-    "tm:bind",
-    "tm:bodyslam",
-    "tm:bugbite",
-    "tm:bulldoze",
-    "tm:covet",
-    "tm:dig",
-    "tm:earthpower",
-    "tm:earthquake",
-    "tm:encore",
-    "tm:endure",
-    "tm:facade",
-    "tm:flash",
-    "tm:gastroacid",
-    "tm:gyroball",
-    "tm:headbutt",
-    "tm:helpinghand",
-    "tm:infestation",
-    "tm:irondefense",
-    "tm:knockoff",
-    "tm:meteorbeam",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:protect",
-    "tm:rest",
-    "tm:reversal",
-    "tm:rockblast",
-    "tm:rockpolish",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:rollout",
-    "tm:safeguard",
-    "tm:sandstorm",
-    "tm:sandtomb",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:sludgewave",
-    "tm:smackdown",
-    "tm:stealthrock",
-    "tm:steelroller",
-    "tm:stoneedge",
-    "tm:strength",
-    "tm:stringshot",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:terablast",
-    "tm:toxic",
-    "tm:venoshock",
-    "tutor:afteryou",
-    "tutor:ancientpower",
-    "tutor:bind",
-    "tutor:bugbite",
-    "tutor:bulldoze",
-    "tutor:covet",
-    "tutor:earthpower",
-    "tutor:gastroacid",
-    "tutor:helpinghand",
-    "tutor:irondefense",
-    "tutor:knockoff",
-    "tutor:meteorbeam",
-    "tutor:mudslap",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:rollout",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:stealthrock",
-    "tutor:steelroller",
-    "tutor:stoneedge",
-    "tutor:stringshot",
-    "tutor:trick"
+    {
+      "id": "withdraw",
+      "name": "Repli",
+      "category": "1"
+    },
+    {
+      "id": "constrict",
+      "name": "Constriction",
+      "category": "1"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "1"
+    },
+    {
+      "id": "wrap",
+      "name": "Ligotage",
+      "category": "1"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "5"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "10"
+    },
+    {
+      "id": "rockthrow",
+      "name": "Jet-Pierres",
+      "category": "15"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "20"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "25"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "30"
+    },
+    {
+      "id": "powersplit",
+      "name": "Partage Force",
+      "category": "35"
+    },
+    {
+      "id": "guardsplit",
+      "name": "Partage Garde",
+      "category": "35"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "40"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "45"
+    },
+    {
+      "id": "stickyweb",
+      "name": "Toile Gluante",
+      "category": "50"
+    },
+    {
+      "id": "powertrick",
+      "name": "Astuce Force",
+      "category": "55"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "60"
+    },
+    {
+      "id": "shellsmash",
+      "name": "Exuviation",
+      "category": "65"
+    },
+    {
+      "id": "acid",
+      "name": "Acide",
+      "category": "egg"
+    },
+    {
+      "id": "acupressure",
+      "name": "Acupression",
+      "category": "egg"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "egg"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "egg"
+    },
+    {
+      "id": "finalgambit",
+      "name": "Tout ou Rien",
+      "category": "egg"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "egg"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "egg"
+    },
+    {
+      "id": "sweetscent",
+      "name": "Doux Parfum",
+      "category": "egg"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "egg"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "tm"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "sandtomb",
+      "name": "Tourbi-Sable",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "tm"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "steelroller",
+      "name": "Métalliroue",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tutor"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "steelroller",
+      "name": "Métalliroue",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -163,19 +684,27 @@
         "rarity": "uncommon",
         "weight": 10.0,
         "levels": "16-51",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0213_shuckle.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0213_shuckle.json",
+        "spawnId": "shuckle-1",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "shuckle",
+        "excludeStructures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "excludeYLevel": {
+          "minY": -41,
+          "maxY": 9
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -183,19 +712,30 @@
         "rarity": "uncommon",
         "weight": 6.0,
         "levels": "16-51",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0213_shuckle.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0213_shuckle.json",
+        "spawnId": "shuckle-2",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "shuckle",
+        "excludeStructures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "excludeYLevel": {
+          "minY": -41,
+          "maxY": 9
+        },
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -203,18 +743,35 @@
         "rarity": "common",
         "weight": 2.0,
         "levels": "16-51",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0213_shuckle.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0213_shuckle.json",
+        "spawnId": "shuckle-3",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
+        },
+        "spawnType": "fishing",
+        "pokemon": "shuckle",
+        "excludeStructures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "excludeYLevel": {
+          "minY": -41,
+          "maxY": 9
+        },
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 3.0,
+          "condition": {
+            "minLureLevel": 3
+          }
         }
       }
     ],
@@ -226,9 +783,6 @@
         "rarity": "uncommon",
         "weight": 10.0,
         "levels": "16-51",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -237,7 +791,8 @@
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0213_shuckle.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0213_shuckle.json",
+        "spawnId": "shuckle-4",
         "structures": [
           "cobblemon:shipwreck_coves/lush_shipwreck_cove"
         ],
@@ -248,7 +803,10 @@
         "yLevel": {
           "minY": -41,
           "maxY": 9
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "shuckle",
+        "type": "pokemon"
       }
     ],
     [
@@ -256,9 +814,6 @@
         "rarity": "uncommon",
         "weight": 6.0,
         "levels": "16-51",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -267,7 +822,8 @@
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0213_shuckle.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0213_shuckle.json",
+        "spawnId": "shuckle-5",
         "structures": [
           "cobblemon:shipwreck_coves/lush_shipwreck_cove"
         ],
@@ -278,7 +834,13 @@
         "yLevel": {
           "minY": -41,
           "maxY": 9
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "shuckle",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -286,9 +848,6 @@
         "rarity": "common",
         "weight": 2.0,
         "levels": "16-51",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -297,7 +856,8 @@
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0213_shuckle.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0213_shuckle.json",
+        "spawnId": "shuckle-6",
         "structures": [
           "cobblemon:shipwreck_coves/lush_shipwreck_cove"
         ],
@@ -308,26 +868,19 @@
         "yLevel": {
           "minY": -41,
           "maxY": 9
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 5.8,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/rare_scarlet_forest.json"
+        "spawnType": "fishing",
+        "pokemon": "shuckle",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 3.0,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
       }
     ]
   ],
@@ -341,6 +894,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation2/shuckle.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation2/shuckle.json"
   ]
 }

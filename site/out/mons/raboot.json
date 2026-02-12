@@ -2,20 +2,41 @@
   "id": "raboot",
   "dexnum": 814,
   "name": "Raboot",
+  "nameFr": "Lapyro",
+  "description": "Son pelage épais lui permet de mieux résister au froid et d'augmenter la température de ses capacités Feu.",
   "primaryType": "fire",
   "secondaryType": "",
+  "primaryTypeFr": "Feu",
+  "secondaryTypeFr": "",
+  "height": 6,
+  "weight": 90,
   "maleRatio": 0.875,
+  "baseScale": 0.65,
+  "hitbox": {
+    "width": 0.5,
+    "height": 1.6,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "blaze",
-    "h:libero"
+    {
+      "id": "blaze",
+      "name": "Brasier",
+      "hidden": false
+    },
+    {
+      "id": "libero",
+      "name": "Libéro",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field",
     "human_like"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 65,
     "attack": 86,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 2
   },
+  "baseExperienceYield": 147,
   "experienceGroup": "medium_slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 5,
     "entries": [
@@ -41,112 +64,450 @@
         "item": "minecraft:rabbit_hide",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:rabbit_hide"
       },
       {
         "item": "minecraft:rabbit",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:rabbit"
       },
       {
         "item": "minecraft:rabbit_foot",
         "percentage": 10.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:rabbit_foot"
       },
       {
         "item": "cobblemon:charcoal_stick",
         "percentage": 10.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Bâton de charbon"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:growl",
-    "1:ember",
-    "1:quickattack",
-    "12:doublekick",
-    "19:flamecharge",
-    "24:agility",
-    "30:headbutt",
-    "36:counter",
-    "42:bounce",
-    "48:doubleedge",
-    "egg:highjumpkick",
-    "egg:sandattack",
-    "egg:suckerpunch",
-    "egg:superfang",
-    "tm:acrobatics",
-    "tm:agility",
-    "tm:allyswitch",
-    "tm:assurance",
-    "tm:batonpass",
-    "tm:blazekick",
-    "tm:bounce",
-    "tm:bulkup",
-    "tm:burningjealousy",
-    "tm:doubleedge",
-    "tm:electroball",
-    "tm:endure",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firefang",
-    "tm:firepledge",
-    "tm:firespin",
-    "tm:flamecharge",
-    "tm:flamethrower",
-    "tm:flareblitz",
-    "tm:focusenergy",
-    "tm:gunkshot",
-    "tm:headbutt",
-    "tm:heatwave",
-    "tm:helpinghand",
-    "tm:lowkick",
-    "tm:lowsweep",
-    "tm:megakick",
-    "tm:mudshot",
-    "tm:overheat",
-    "tm:protect",
-    "tm:rest",
-    "tm:reversal",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:sunnyday",
-    "tm:superfang",
-    "tm:swift",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:temperflare",
-    "tm:terablast",
-    "tm:trailblaze",
-    "tm:uturn",
-    "tm:weatherball",
-    "tm:workup",
-    "tutor:allyswitch",
-    "tutor:bounce",
-    "tutor:bulkup",
-    "tutor:burningjealousy",
-    "tutor:firefang",
-    "tutor:firepledge",
-    "tutor:flamethrower",
-    "tutor:focusenergy",
-    "tutor:gunkshot",
-    "tutor:heatwave",
-    "tutor:helpinghand",
-    "tutor:lowkick",
-    "tutor:rest",
-    "tutor:sleeptalk",
-    "tutor:suckerpunch",
-    "tutor:superfang",
-    "tutor:swift"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "ember",
+      "name": "Flammèche",
+      "category": "1"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "1"
+    },
+    {
+      "id": "doublekick",
+      "name": "Double Pied",
+      "category": "12"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "19"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "24"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "30"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "36"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "42"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "48"
+    },
+    {
+      "id": "highjumpkick",
+      "name": "Pied Voltige",
+      "category": "egg"
+    },
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "egg"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "egg"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "blazekick",
+      "name": "Pied Brûleur",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tm"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "electroball",
+      "name": "Boule Élek",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tm"
+    },
+    {
+      "id": "firepledge",
+      "name": "Aire de Feu",
+      "category": "tm"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "lowsweep",
+      "name": "Balayette",
+      "category": "tm"
+    },
+    {
+      "id": "megakick",
+      "name": "Ultimawashi",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "temperflare",
+      "name": "Indignition",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tutor"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tutor"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "firepledge",
+      "name": "Aire de Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "raboot_cinderace",
@@ -164,6 +525,7 @@
       ]
     }
   ],
+  "preEvolution": "scorbunny",
   "spawns": [
     [
       {
@@ -173,9 +535,6 @@
         "rarity": "ultra-rare",
         "weight": 3.6,
         "levels": "16-42",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_grassland",
@@ -184,30 +543,15 @@
             "#cobblemon:is_tundra"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0814_raboot.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0814_raboot.json",
+        "spawnId": "raboot-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 1.31,
-        "levels": "16-35",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/rare_crystallized_desert.json"
+        "spawnType": "grounded",
+        "pokemon": "raboot",
+        "type": "pokemon"
       }
     ]
   ],
@@ -221,6 +565,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/raboot.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/raboot.json"
   ]
 }

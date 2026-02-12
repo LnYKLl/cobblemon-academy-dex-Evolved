@@ -2,21 +2,46 @@
   "id": "pelipper",
   "dexnum": 279,
   "name": "Pelipper",
+  "nameFr": "Bekipan",
+  "description": "Bekipan récupère sa nourriture en vol, en rasant l'écume des vagues. Ce Pokémon trempe son énorme bec dans l'eau, puis avale tout en une bouchée.",
   "primaryType": "water",
   "secondaryType": "flying",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "Vol",
+  "height": 12,
+  "weight": 280,
   "maleRatio": 0.5,
+  "baseScale": 1.2,
+  "hitbox": {
+    "width": 0.8,
+    "height": 1.2,
+    "fixed": false
+  },
   "labels": [
     "gen3"
   ],
   "abilities": [
-    "keeneye",
-    "drizzle",
-    "h:raindish"
+    {
+      "id": "keeneye",
+      "name": "Regard Vif",
+      "hidden": false
+    },
+    {
+      "id": "drizzle",
+      "name": "Crachin",
+      "hidden": false
+    },
+    {
+      "id": "raindish",
+      "name": "Cuvette",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_1",
     "flying"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 60,
     "attack": 50,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 154,
   "experienceGroup": "medium_fast",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 4,
     "entries": [
@@ -42,137 +69,670 @@
         "item": "minecraft:feather",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:feather"
       },
       {
         "item": "minecraft:chicken",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:chicken"
       },
       {
         "item": "cobblemon:wacan_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Parma"
       }
     ]
   },
   "moves": [
-    "1:growl",
-    "1:watergun",
-    "1:watersport",
-    "1:supersonic",
-    "1:protect",
-    "1:tailwind",
-    "1:soak",
-    "1:quickattack",
-    "1:agility",
-    "1:airslash",
-    "1:pursuit",
-    "15:wingattack",
-    "20:waterpulse",
-    "28:stockpile",
-    "28:swallow",
-    "28:spitup",
-    "34:fling",
-    "41:mist",
-    "48:roost",
-    "55:hurricane",
-    "62:hydropump",
-    "egg:aerialace",
-    "egg:aircutter",
-    "egg:aquaring",
-    "egg:gust",
-    "egg:knockoff",
-    "egg:soak",
-    "egg:twister",
-    "egg:watersport",
-    "egg:wideguard",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:bravebird",
-    "tm:brine",
-    "tm:chillingwater",
-    "tm:defog",
-    "tm:dualwingbeat",
-    "tm:echoedvoice",
-    "tm:endure",
-    "tm:facade",
-    "tm:featherdance",
-    "tm:fling",
-    "tm:fly",
-    "tm:gigaimpact",
-    "tm:gunkshot",
-    "tm:hail",
-    "tm:helpinghand",
-    "tm:hurricane",
-    "tm:hydropump",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:knockoff",
-    "tm:liquidation",
-    "tm:muddywater",
-    "tm:ominouswind",
-    "tm:payback",
-    "tm:pluck",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:roost",
-    "tm:seedbomb",
-    "tm:shockwave",
-    "tm:skyattack",
-    "tm:skydrop",
-    "tm:sleeptalk",
-    "tm:snowscape",
-    "tm:steelwing",
-    "tm:substitute",
-    "tm:surf",
-    "tm:swift",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:twister",
-    "tm:uturn",
-    "tm:waterfall",
-    "tm:waterpulse",
-    "tm:weatherball",
-    "tm:whirlpool",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:defog",
-    "tutor:dualwingbeat",
-    "tutor:gigaimpact",
-    "tutor:gunkshot",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:knockoff",
-    "tutor:liquidation",
-    "tutor:ominouswind",
-    "tutor:rest",
-    "tutor:roost",
-    "tutor:seedbomb",
-    "tutor:shockwave",
-    "tutor:skyattack",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:tailwind",
-    "tutor:twister",
-    "tutor:waterpulse"
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "1"
+    },
+    {
+      "id": "watersport",
+      "name": "Tourniquet",
+      "category": "1"
+    },
+    {
+      "id": "supersonic",
+      "name": "Ultrason",
+      "category": "1"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "1"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "1"
+    },
+    {
+      "id": "soak",
+      "name": "Détrempage",
+      "category": "1"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "1"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "1"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "1"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "1"
+    },
+    {
+      "id": "wingattack",
+      "name": "Cru-Ailes",
+      "category": "15"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "20"
+    },
+    {
+      "id": "stockpile",
+      "name": "Stockage",
+      "category": "28"
+    },
+    {
+      "id": "swallow",
+      "name": "Avale",
+      "category": "28"
+    },
+    {
+      "id": "spitup",
+      "name": "Relâche",
+      "category": "28"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "34"
+    },
+    {
+      "id": "mist",
+      "name": "Brume",
+      "category": "41"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "48"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "55"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "62"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "egg"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "egg"
+    },
+    {
+      "id": "aquaring",
+      "name": "Anneau Hydro",
+      "category": "egg"
+    },
+    {
+      "id": "gust",
+      "name": "Tornade",
+      "category": "egg"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "egg"
+    },
+    {
+      "id": "soak",
+      "name": "Détrempage",
+      "category": "egg"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "egg"
+    },
+    {
+      "id": "watersport",
+      "name": "Tourniquet",
+      "category": "egg"
+    },
+    {
+      "id": "wideguard",
+      "name": "Garde Large",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "tm"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "featherdance",
+      "name": "Danse Plumes",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "muddywater",
+      "name": "Ocroupi",
+      "category": "tm"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tm"
+    },
+    {
+      "id": "skydrop",
+      "name": "Chute Libre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "tm"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "wingull",
   "spawns": [
     [
       {
@@ -183,8 +743,8 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "25-44",
-        "contexts": [
-          "grounded"
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
@@ -192,35 +752,47 @@
             "#cobblemon:is_ocean",
             "#cobblemon:is_sky",
             "#cobblemon:is_tropical_island"
-          ],
-          "exclude": [
-            "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0279_pelipper.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0279_pelipper.json",
+        "spawnId": "pelipper-1",
         "sky": {
+          "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "pelipper",
+        "type": "pokemon"
       }
     ],
     [
       {
         "presets": [
-          "water"
+          "treetop"
         ],
-        "rarity": "uncommon",
-        "weight": 2.1,
-        "levels": "18-34",
-        "contexts": [
-          "submerged"
+        "rarity": "common",
+        "weight": 1.0,
+        "levels": "25-44",
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
-            "#eternal_starlight:is_safari_ocean"
+            "#cobblemon:is_coast",
+            "#cobblemon:is_ocean",
+            "#cobblemon:is_sky",
+            "#cobblemon:is_tropical_island"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_safari_ocean/uncommon_is_safari_ocean.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0279_pelipper.json",
+        "spawnId": "pelipper-2",
+        "sky": {
+          "canSeeSky": true
+        },
+        "spawnType": "grounded",
+        "pokemon": "pelipper",
+        "type": "pokemon"
       }
     ]
   ],
@@ -234,6 +806,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation3/pelipper.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation3/pelipper.json"
   ]
 }

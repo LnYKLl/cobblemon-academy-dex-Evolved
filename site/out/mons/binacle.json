@@ -2,20 +2,45 @@
   "id": "binacle",
   "dexnum": 688,
   "name": "Binacle",
+  "nameFr": "Opermine",
+  "description": "Ils prennent de l'élan avec tout leur corps et soulèvent ainsi leur pierre pour se déplacer. Ils mangent les algues échouées sur le rivage.",
   "primaryType": "rock",
   "secondaryType": "water",
+  "primaryTypeFr": "Roche",
+  "secondaryTypeFr": "Eau",
+  "height": 5,
+  "weight": 310,
   "maleRatio": 0.5,
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 1.3,
+    "height": 1.2,
+    "fixed": false
+  },
   "labels": [
     "gen6"
   ],
   "abilities": [
-    "toughclaws",
-    "sniper",
-    "h:pickpocket"
+    {
+      "id": "toughclaws",
+      "name": "Griffe Dure",
+      "hidden": false
+    },
+    {
+      "id": "sniper",
+      "name": "Sniper",
+      "hidden": false
+    },
+    {
+      "id": "pickpocket",
+      "name": "Pickpocket",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_3"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 42,
     "attack": 52,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 61,
   "experienceGroup": "medium_fast",
   "catchRate": 120,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,121 +68,604 @@
         "item": "cobblemon:rindo_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Ratam"
       }
     ]
   },
   "moves": [
-    "1:scratch",
-    "1:sandattack",
-    "1:mudslap",
-    "4:withdraw",
-    "8:watergun",
-    "12:furycutter",
-    "16:furyswipes",
-    "20:clamp",
-    "24:rockpolish",
-    "28:slash",
-    "32:honeclaws",
-    "36:razorshell",
-    "40:shellsmash",
-    "44:crosschop",
-    "egg:nightslash",
-    "egg:sandattack",
-    "egg:switcheroo",
-    "egg:tickle",
-    "egg:watersport",
-    "tm:aerialace",
-    "tm:ancientpower",
-    "tm:assurance",
-    "tm:beatup",
-    "tm:blizzard",
-    "tm:brickbreak",
-    "tm:bulldoze",
-    "tm:cut",
-    "tm:dig",
-    "tm:dualchop",
-    "tm:earthquake",
-    "tm:embargo",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:fling",
-    "tm:furycutter",
-    "tm:grassknot",
-    "tm:helpinghand",
-    "tm:honeclaws",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:infestation",
-    "tm:irondefense",
-    "tm:liquidation",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:naturepower",
-    "tm:payback",
-    "tm:poisonjab",
-    "tm:poweruppunch",
-    "tm:protect",
-    "tm:raindance",
-    "tm:razorshell",
-    "tm:rest",
-    "tm:rockblast",
-    "tm:rockpolish",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:safeguard",
-    "tm:sandstorm",
-    "tm:scald",
-    "tm:screech",
-    "tm:shadowclaw",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:sludgewave",
-    "tm:smackdown",
-    "tm:stealthrock",
-    "tm:stoneedge",
-    "tm:strength",
-    "tm:substitute",
-    "tm:surf",
-    "tm:swordsdance",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:torment",
-    "tm:uproar",
-    "tm:waterpulse",
-    "tm:xscissor",
-    "tutor:aerialace",
-    "tutor:ancientpower",
-    "tutor:bulldoze",
-    "tutor:dualchop",
-    "tutor:endeavor",
-    "tutor:falseswipe",
-    "tutor:furycutter",
-    "tutor:helpinghand",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:irondefense",
-    "tutor:liquidation",
-    "tutor:mudslap",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:shadowclaw",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:stealthrock",
-    "tutor:stoneedge",
-    "tutor:uproar",
-    "tutor:waterpulse",
-    "tutor:xscissor"
+    {
+      "id": "scratch",
+      "name": "Griffe",
+      "category": "1"
+    },
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "1"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "1"
+    },
+    {
+      "id": "withdraw",
+      "name": "Repli",
+      "category": "4"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "8"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "12"
+    },
+    {
+      "id": "furyswipes",
+      "name": "Combo-Griffe",
+      "category": "16"
+    },
+    {
+      "id": "clamp",
+      "name": "Claquoir",
+      "category": "20"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "24"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "28"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "32"
+    },
+    {
+      "id": "razorshell",
+      "name": "Coqui-Lame",
+      "category": "36"
+    },
+    {
+      "id": "shellsmash",
+      "name": "Exuviation",
+      "category": "40"
+    },
+    {
+      "id": "crosschop",
+      "name": "Coup Croix",
+      "category": "44"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "egg"
+    },
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "egg"
+    },
+    {
+      "id": "switcheroo",
+      "name": "Passe-Passe",
+      "category": "egg"
+    },
+    {
+      "id": "tickle",
+      "name": "Chatouille",
+      "category": "egg"
+    },
+    {
+      "id": "watersport",
+      "name": "Tourniquet",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "beatup",
+      "name": "Baston",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "dualchop",
+      "name": "Double Baffe",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "embargo",
+      "name": "Embargo",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "poweruppunch",
+      "name": "Poing Boost",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "razorshell",
+      "name": "Coqui-Lame",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "tm"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "dualchop",
+      "name": "Double Baffe",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "binacle_barbaracle",
@@ -171,22 +681,27 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
         "rarity": "uncommon",
         "weight": 5.04,
         "levels": "6-31",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_coast",
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0688_binacle.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0688_binacle.json",
+        "spawnId": "binacle-3",
+        "spawnType": "fishing",
+        "pokemon": "binacle",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -194,16 +709,26 @@
         "rarity": "common",
         "weight": 1.8,
         "levels": "6-31",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_coast",
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0688_binacle.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0688_binacle.json",
+        "spawnId": "binacle-4",
+        "spawnType": "fishing",
+        "pokemon": "binacle",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 3.0,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
       }
     ],
     [
@@ -211,15 +736,16 @@
         "rarity": "common",
         "weight": 1.8,
         "levels": "6-31",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_coast"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0688_binacle.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0688_binacle.json",
+        "spawnId": "binacle-1",
+        "spawnType": "grounded",
+        "pokemon": "binacle",
+        "type": "pokemon"
       }
     ],
     [
@@ -230,54 +756,16 @@
         "rarity": "uncommon",
         "weight": 8.4,
         "levels": "6-31",
-        "contexts": [
-          "seafloor"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0688_binacle.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "water"
-        ],
-        "rarity": "uncommon",
-        "weight": 0.8,
-        "levels": "18-34",
-        "contexts": [
-          "submerged"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_safari_ocean"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_safari_ocean/uncommon_is_safari_ocean.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural",
-          "wild"
-        ],
-        "rarity": "common",
-        "weight": 7.6,
-        "levels": "20-27",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_beach"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0688_binacle.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0688_binacle.json",
+        "spawnId": "binacle-2",
+        "spawnType": "seafloor",
+        "pokemon": "binacle",
+        "type": "pokemon"
       }
     ]
   ],
@@ -293,6 +781,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation6/binacle.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation6/binacle.json"
   ]
 }

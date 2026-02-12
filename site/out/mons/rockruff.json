@@ -2,20 +2,45 @@
   "id": "rockruff",
   "dexnum": 744,
   "name": "Rockruff",
+  "nameFr": "Rocabot",
+  "description": "Il frotte les cailloux pointus de son cou contre son Dresseur en signe d'affection. C'est adorable, mais douloureux.",
   "primaryType": "rock",
   "secondaryType": "",
+  "primaryTypeFr": "Roche",
+  "secondaryTypeFr": "",
+  "height": 5,
+  "weight": 92,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen7"
   ],
   "abilities": [
-    "keeneye",
-    "vitalspirit",
-    "h:steadfast"
+    {
+      "id": "keeneye",
+      "name": "Regard Vif",
+      "hidden": false
+    },
+    {
+      "id": "vitalspirit",
+      "name": "Esprit Vital",
+      "hidden": false
+    },
+    {
+      "id": "steadfast",
+      "name": "Impassible",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 45,
     "attack": 65,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 56,
   "experienceGroup": "medium_fast",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 4,
     "entries": [
@@ -41,165 +68,535 @@
         "item": "minecraft:bone",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:bone"
       },
       {
         "item": "minecraft:rotten_flesh",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:rotten_flesh"
       },
       {
         "item": "cobblemon:hard_stone",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Pierre Dure"
       },
       {
         "item": "cobblemon:babiri_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Babiri"
       }
     ]
   },
   "moves": [
-    "1:leer",
-    "1:tackle",
-    "4:sandattack",
-    "8:doubleteam",
-    "12:rockthrow",
-    "16:howl",
-    "18:odorsleuth",
-    "20:bite",
-    "24:rocktomb",
-    "28:roar",
-    "32:rockslide",
-    "36:crunch",
-    "40:scaryface",
-    "44:stealthrock",
-    "45:rockclimb",
-    "48:stoneedge",
-    "egg:crushclaw",
-    "egg:endeavor",
-    "egg:firefang",
-    "egg:lastresort",
-    "egg:suckerpunch",
-    "egg:thrash",
-    "egg:thunderfang",
-    "tm:attract",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:charm",
-    "tm:confide",
-    "tm:crunch",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:doubleteam",
-    "tm:earthpower",
-    "tm:echoedvoice",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:firefang",
-    "tm:frustration",
-    "tm:helpinghand",
-    "tm:hiddenpower",
-    "tm:hypervoice",
-    "tm:irondefense",
-    "tm:ironhead",
-    "tm:irontail",
-    "tm:mudslap",
-    "tm:playrough",
-    "tm:protect",
-    "tm:psychicfangs",
-    "tm:rest",
-    "tm:return",
-    "tm:roar",
-    "tm:rockpolish",
-    "tm:rockslide",
-    "tm:rocktomb",
-    "tm:round",
-    "tm:sandstorm",
-    "tm:scaryface",
-    "tm:sleeptalk",
-    "tm:snarl",
-    "tm:snore",
-    "tm:stealthrock",
-    "tm:stompingtantrum",
-    "tm:stoneedge",
-    "tm:substitute",
-    "tm:swagger",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thunderfang",
-    "tm:toxic",
-    "tm:trailblaze",
-    "tm:zenheadbutt",
-    "tutor:covet",
-    "tutor:earthpower",
-    "tutor:endeavor",
-    "tutor:hypervoice",
-    "tutor:irondefense",
-    "tutor:ironhead",
-    "tutor:irontail",
-    "tutor:lastresort",
-    "tutor:snore",
-    "tutor:stealthrock",
-    "tutor:stompingtantrum",
-    "tutor:zenheadbutt"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "4"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "8"
+    },
+    {
+      "id": "rockthrow",
+      "name": "Jet-Pierres",
+      "category": "12"
+    },
+    {
+      "id": "howl",
+      "name": "Grondement",
+      "category": "16"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "20"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "24"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "28"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "32"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "36"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "40"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "44"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "48"
+    },
+    {
+      "id": "crushclaw",
+      "name": "Éclate Griffe",
+      "category": "egg"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "egg"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "egg"
+    },
+    {
+      "id": "odorsleuth",
+      "name": "Flair",
+      "category": "egg"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "egg"
+    },
+    {
+      "id": "thrash",
+      "name": "Mania",
+      "category": "egg"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychicfangs",
+      "name": "Psycho-Croc",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "rockclimb",
+      "name": "Escalade",
+      "category": "tm"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [
-    "Own Tempo"
+    "Dusk"
   ],
-  "types": [],
   "evolutions": [
     {
-      "id": "rockruff_lycanroc",
+      "id": "rockruff_lycanrocdusk2",
       "variant": "level_up",
-      "result": "lycanroc time_evolution=midday",
+      "result": "lycanroc wolf_form=dusk",
       "consumeHeldItem": false,
       "learnableMoves": [
-        "suckerpunch"
-      ],
-      "requirements": [
-        {
-          "variant": "level",
-          "minLevel": 25
-        },
-        {
-          "variant": "time_range",
-          "range": "day"
-        }
-      ]
-    },
-    {
-      "id": "rockruff_lycanroc_midnight",
-      "variant": "level_up",
-      "result": "lycanroc time_evolution=midnight",
-      "consumeHeldItem": false,
-      "learnableMoves": [
-        "counter"
-      ],
-      "requirements": [
-        {
-          "variant": "level",
-          "minLevel": 25
-        },
-        {
-          "variant": "time_range",
-          "range": "night"
-        }
-      ]
-    },
-    {
-      "id": "rockruff_lycanroc_dusk",
-      "variant": "level_up",
-      "result": "lycanroc time_evolution=dusk",
-      "consumeHeldItem": false,
-      "learnableMoves": [
+        "thrash",
         "crushclaw"
       ],
       "requirements": [
@@ -214,6 +611,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -228,132 +626,13 @@
             "#cobblemon:is_hills"
           ]
         },
-        "source": "Cobblemon_MegaShowdown-10.0.7-release-fabric.jar!/data/cobblemon/spawn_pool_world/0744_rockruff.json",
-        "sky": {
-          "canSeeSky": true
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 3.1,
-        "levels": "14-27",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/uncommon_crystallized_desert.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural",
-          "urban"
-        ],
-        "rarity": "common",
-        "weight": 4.3,
-        "levels": "5-20",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_overworld"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0774_rockruff.json",
-        "sky": {
-          "canSeeSky": true,
-          "minSkyLight": 8,
-          "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 4.3,
-        "levels": "5-20",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_overworld"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0774_rockruff.json",
-        "structures": [
-          "#minecraft:village"
-        ],
-        "sky": {
-          "canSeeSky": true,
-          "minSkyLight": 8,
-          "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural",
-          "wild"
-        ],
-        "rarity": "uncommon",
-        "weight": 1.8,
-        "levels": "10-25",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_hills",
-            "#cobblemon:is_mountain",
-            "#cobblemon:is_desert"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0774_rockruff.json",
-        "sky": {
-          "canSeeSky": true
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural",
-          "wild"
-        ],
-        "rarity": "uncommon",
-        "weight": 3.2,
-        "levels": "15-30",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_dripstone"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0774_rockruff.json",
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0744_rockruff.json",
+        "spawnId": "rockruff-1",
         "sky": {
           "canSeeSky": true
         },
-        "yLevel": {
-          "minY": 32
-        }
+        "pokemon": "rockruff",
+        "type": "pokemon"
       }
     ],
     [
@@ -369,14 +648,17 @@
             "#cobblemon:is_hills"
           ]
         },
-        "source": "datapacks/MegaShowdown/data/cobblemon/spawn_pool_world/0744_rockruff.json",
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0744_rockruff.json",
+        "spawnId": "ccc-rockruff-1",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "pokemon": "rockruff",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/rockruff.png"
@@ -386,7 +668,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/rockruff.json",
-    "datapacks\\CCC_MAL_1.6.4.1\\data\\cobblemon\\species\\rockruff.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/rockruff.json"
   ]
 }

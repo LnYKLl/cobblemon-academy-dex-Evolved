@@ -2,21 +2,42 @@
   "id": "zapdos",
   "dexnum": 145,
   "name": "Zapdos",
+  "nameFr": "Électhor",
+  "description": "Électhor est un Pokémon oiseau légendaire capable de contrôler l'électricité. Il vit généralement dans les nuages orageux. Ce Pokémon gagne en puissance lorsqu'il est frappé par la foudre.",
   "primaryType": "electric",
   "secondaryType": "flying",
+  "primaryTypeFr": "Électrik",
+  "secondaryTypeFr": "Vol",
+  "height": 16,
+  "weight": 526,
   "maleRatio": -1,
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 2,
+    "height": 2,
+    "fixed": false
+  },
   "labels": [
     "gen1",
     "legendary",
     "kantonian_form"
   ],
   "abilities": [
-    "pressure",
-    "h:static"
+    {
+      "id": "pressure",
+      "name": "Pression",
+      "hidden": false
+    },
+    {
+      "id": "static",
+      "name": "Statik",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 80,
   "baseStats": {
     "hp": 90,
     "attack": 90,
@@ -33,179 +54,664 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 290,
   "experienceGroup": "slow",
   "catchRate": 3,
+  "baseFriendship": 35,
   "drops": {
-    "amount": 6,
+    "amount": 5,
     "entries": [
       {
-        "item": "minecraft:feather",
+        "item": "cobblemon:rare_candy",
         "percentage": null,
-        "quantityRange": "2-4",
-        "source": "species"
+        "quantityRange": "2-6",
+        "source": "species",
+        "itemName": "Super Bonbon"
       },
       {
-        "item": "minecraft:chicken",
-        "percentage": null,
+        "item": "cobblemon:electric_gem",
+        "percentage": 50.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Joyau Électrik"
       },
       {
-        "item": "cobblemon:magnet",
-        "percentage": null,
+        "item": "minecraft:nether_star",
+        "percentage": 8.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:nether_star"
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Pilule Talent"
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Patch Talent"
       }
     ]
   },
   "moves": [
-    "1:peck",
-    "1:thunderwave",
-    "5:thundershock",
-    "10:lightscreen",
-    "15:pluck",
-    "20:agility",
-    "25:ancientpower",
-    "30:charge",
-    "35:drillpeck",
-    "40:roost",
-    "45:discharge",
-    "50:raindance",
-    "55:thunder",
-    "60:detect",
-    "65:magneticflux",
-    "70:zapcannon",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:aircutter",
-    "tm:ancientpower",
-    "tm:batonpass",
-    "tm:bravebird",
-    "tm:charge",
-    "tm:defog",
-    "tm:dualwingbeat",
-    "tm:eerieimpulse",
-    "tm:electricterrain",
-    "tm:electroball",
-    "tm:endure",
-    "tm:facade",
-    "tm:flash",
-    "tm:fly",
-    "tm:gigaimpact",
-    "tm:hail",
-    "tm:heatwave",
-    "tm:helpinghand",
-    "tm:hurricane",
-    "tm:hyperbeam",
-    "tm:laserfocus",
-    "tm:lightscreen",
-    "tm:metalsound",
-    "tm:ominouswind",
-    "tm:pluck",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:risingvoltage",
-    "tm:rocksmash",
-    "tm:roost",
-    "tm:sandstorm",
-    "tm:shockwave",
-    "tm:signalbeam",
-    "tm:skyattack",
-    "tm:skydrop",
-    "tm:sleeptalk",
-    "tm:steelwing",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:supercellslam",
-    "tm:swift",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:twister",
-    "tm:uturn",
-    "tm:voltswitch",
-    "tm:weatherball",
-    "tm:wildcharge",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:ancientpower",
-    "tutor:defog",
-    "tutor:dualwingbeat",
-    "tutor:gigaimpact",
-    "tutor:heatwave",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:laserfocus",
-    "tutor:ominouswind",
-    "tutor:rest",
-    "tutor:risingvoltage",
-    "tutor:rocksmash",
-    "tutor:roost",
-    "tutor:shockwave",
-    "tutor:signalbeam",
-    "tutor:skyattack",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:tailwind",
-    "tutor:thunderbolt",
-    "tutor:twister",
-    "tutor:wildcharge"
+    {
+      "id": "peck",
+      "name": "Picpic",
+      "category": "1"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "1"
+    },
+    {
+      "id": "thundershock",
+      "name": "Éclair",
+      "category": "5"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "10"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "15"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "20"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "25"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "30"
+    },
+    {
+      "id": "drillpeck",
+      "name": "Bec Vrille",
+      "category": "35"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "40"
+    },
+    {
+      "id": "discharge",
+      "name": "Coup d'Jus",
+      "category": "45"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "50"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "55"
+    },
+    {
+      "id": "detect",
+      "name": "Détection",
+      "category": "60"
+    },
+    {
+      "id": "magneticflux",
+      "name": "Magné-Contrôle",
+      "category": "65"
+    },
+    {
+      "id": "zapcannon",
+      "name": "Élecanon",
+      "category": "70"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "tm"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "eerieimpulse",
+      "name": "Ondes Étranges",
+      "category": "tm"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "tm"
+    },
+    {
+      "id": "electroball",
+      "name": "Boule Élek",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "tm"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tm"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tm"
+    },
+    {
+      "id": "skydrop",
+      "name": "Chute Libre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "supercellslam",
+      "name": "Volt Assaut",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "voltswitch",
+      "name": "Change Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tutor"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "legacy"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "rage",
+      "name": "Frénésie",
+      "category": "legacy"
+    },
+    {
+      "id": "razorwind",
+      "name": "Coupe-Vent",
+      "category": "legacy"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "whirlwind",
+      "name": "Cyclone",
+      "category": "legacy"
+    },
+    {
+      "id": "extrasensory",
+      "name": "Extrasenseur",
+      "category": "special"
+    }
   ],
   "forms": [
     "Galar"
   ],
-  "types": [],
   "evolutions": [],
-  "spawns": [
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "50-60",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "minecraft:plains",
-            "minecraft:savanna"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-zapdos.json",
-        "keyItem": "myths_and_legends:tidal_bell_zapdos"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "50-60",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_sky",
-            "#cobblemon:is_mountain"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-zapdos.json",
-        "keyItem": "myths_and_legends:tidal_bell_zapdos"
-      }
-    ]
-  ],
-  "implemented": true,
+  "preEvolution": null,
+  "spawns": [],
+  "implemented": false,
   "images": {
     "normal": [
       "out/sprites/genomons/zapdos.png",
@@ -217,6 +723,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/zapdos.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/zapdos.json"
   ]
 }

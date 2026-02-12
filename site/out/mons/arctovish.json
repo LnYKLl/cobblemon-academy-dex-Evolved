@@ -2,20 +2,45 @@
   "id": "arctovish",
   "dexnum": 883,
   "name": "Arctovish",
+  "nameFr": "Hydragla",
+  "description": "Il gèle les alentours pour capturer ses proies, mais comme sa bouche est sur le dessus de sa tête, il a beaucoup de mal à les manger.",
   "primaryType": "water",
   "secondaryType": "ice",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "Glace",
+  "height": 20,
+  "weight": 1750,
   "maleRatio": -1,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 1.8,
+    "height": 3,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "waterabsorb",
-    "icebody",
-    "h:slushrush"
+    {
+      "id": "waterabsorb",
+      "name": "Absorbe-Eau",
+      "hidden": false
+    },
+    {
+      "id": "icebody",
+      "name": "Corps Gel",
+      "hidden": false
+    },
+    {
+      "id": "slushrush",
+      "name": "Chasse-Neige",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 35,
   "baseStats": {
     "hp": 90,
     "attack": 90,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 177,
   "experienceGroup": "slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,90 +68,373 @@
         "item": "minecraft:bone",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:bone"
       },
       {
         "item": "minecraft:cod",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:cod"
       }
     ]
   },
   "moves": [
-    "1:powdersnow",
-    "1:watergun",
-    "7:protect",
-    "14:icywind",
-    "21:ancientpower",
-    "28:bite",
-    "35:auroraveil",
-    "42:freezedry",
-    "49:superfang",
-    "56:crunch",
-    "63:fishiousrend",
-    "70:iciclecrash",
-    "77:blizzard",
-    "tm:ancientpower",
-    "tm:auroraveil",
-    "tm:avalanche",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:brine",
-    "tm:crunch",
-    "tm:dive",
-    "tm:endure",
-    "tm:facade",
-    "tm:gigaimpact",
-    "tm:hail",
-    "tm:hydropump",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icefang",
-    "tm:iciclespear",
-    "tm:icywind",
-    "tm:irondefense",
-    "tm:ironhead",
-    "tm:liquidation",
-    "tm:meteorbeam",
-    "tm:protect",
-    "tm:psychicfangs",
-    "tm:raindance",
-    "tm:rest",
-    "tm:rockblast",
-    "tm:rockslide",
-    "tm:rocktomb",
-    "tm:sleeptalk",
-    "tm:stoneedge",
-    "tm:substitute",
-    "tm:superfang",
-    "tm:surf",
-    "tm:terablast",
-    "tm:waterfall",
-    "tm:whirlpool",
-    "tm:zenheadbutt",
-    "tutor:ancientpower",
-    "tutor:dive",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icefang",
-    "tutor:icywind",
-    "tutor:irondefense",
-    "tutor:ironhead",
-    "tutor:liquidation",
-    "tutor:meteorbeam",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:sleeptalk",
-    "tutor:stoneedge",
-    "tutor:superfang",
-    "tutor:zenheadbutt"
+    {
+      "id": "powdersnow",
+      "name": "Poudreuse",
+      "category": "1"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "1"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "7"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "14"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "21"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "28"
+    },
+    {
+      "id": "auroraveil",
+      "name": "Voile Aurore",
+      "category": "35"
+    },
+    {
+      "id": "freezedry",
+      "name": "Lyophilisation",
+      "category": "42"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "49"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "56"
+    },
+    {
+      "id": "fishiousrend",
+      "name": "Branchicrok",
+      "category": "63"
+    },
+    {
+      "id": "iciclecrash",
+      "name": "Chute Glace",
+      "category": "70"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "77"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "auroraveil",
+      "name": "Voile Aurore",
+      "category": "tm"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tm"
+    },
+    {
+      "id": "iciclespear",
+      "name": "Stalactite",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychicfangs",
+      "name": "Psycho-Croc",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [],
   "implemented": true,
   "images": {
@@ -136,6 +446,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/arctovish.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/arctovish.json"
   ]
 }

@@ -2,21 +2,46 @@
   "id": "volbeat",
   "dexnum": 313,
   "name": "Volbeat",
+  "nameFr": "Muciole",
+  "description": "À la tombée de la nuit, la queue de Muciole émet de la lumière. Il communique avec les autres en ajustant l'intensité et le clignotement de sa lumière. Ce Pokémon est attiré par le doux parfum de Lumivole.",
   "primaryType": "bug",
   "secondaryType": "",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "",
+  "height": 7,
+  "weight": 177,
   "maleRatio": 1,
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 0.7,
+    "height": 1.1,
+    "fixed": false
+  },
   "labels": [
     "gen3"
   ],
   "abilities": [
-    "illuminate",
-    "swarm",
-    "h:prankster"
+    {
+      "id": "illuminate",
+      "name": "Lumiattirance",
+      "hidden": false
+    },
+    {
+      "id": "swarm",
+      "name": "Essaim",
+      "hidden": false
+    },
+    {
+      "id": "prankster",
+      "name": "Farceur",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug",
     "human_like"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 65,
     "attack": 73,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 151,
   "experienceGroup": "erratic",
   "catchRate": 150,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -42,135 +69,673 @@
         "item": "cobblemon:bright_powder",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Poudre Claire"
       },
       {
         "item": "cobblemon:razz_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Framby"
       }
     ]
   },
   "moves": [
-    "1:flash",
-    "1:tackle",
-    "5:doubleteam",
-    "8:confuseray",
-    "12:quickattack",
-    "15:strugglebug",
-    "19:moonlight",
-    "22:tailglow",
-    "26:protect",
-    "29:zenheadbutt",
-    "33:helpinghand",
-    "36:bugbuzz",
-    "40:playrough",
-    "43:doubleedge",
-    "47:infestation",
-    "egg:counter",
-    "egg:dizzypunch",
-    "egg:roost",
-    "egg:seismictoss",
-    "egg:swagger",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:batonpass",
-    "tm:bodyslam",
-    "tm:brickbreak",
-    "tm:bugbite",
-    "tm:bugbuzz",
-    "tm:chargebeam",
-    "tm:chillingwater",
-    "tm:confuseray",
-    "tm:dazzlinggleam",
-    "tm:doubleedge",
-    "tm:doubleteam",
-    "tm:encore",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:flash",
-    "tm:fling",
-    "tm:focuspunch",
-    "tm:gigadrain",
-    "tm:helpinghand",
-    "tm:icepunch",
-    "tm:infestation",
-    "tm:lightscreen",
-    "tm:lunge",
-    "tm:megakick",
-    "tm:megapunch",
-    "tm:metronome",
-    "tm:mudslap",
-    "tm:ominouswind",
-    "tm:playnice",
-    "tm:playrough",
-    "tm:pounce",
-    "tm:poweruppunch",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:roost",
-    "tm:shadowball",
-    "tm:shockwave",
-    "tm:signalbeam",
-    "tm:silverwind",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:stringshot",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swagger",
-    "tm:swift",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunder",
-    "tm:thunderpunch",
-    "tm:thunderwave",
-    "tm:trailblaze",
-    "tm:trick",
-    "tm:uturn",
-    "tm:waterpulse",
-    "tm:zenheadbutt",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:bugbite",
-    "tutor:chargebeam",
-    "tutor:dazzlinggleam",
-    "tutor:endeavor",
-    "tutor:focuspunch",
-    "tutor:gigadrain",
-    "tutor:helpinghand",
-    "tutor:icepunch",
-    "tutor:mudslap",
-    "tutor:ominouswind",
-    "tutor:playrough",
-    "tutor:rest",
-    "tutor:roost",
-    "tutor:shadowball",
-    "tutor:shockwave",
-    "tutor:signalbeam",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:stringshot",
-    "tutor:swift",
-    "tutor:tailwind",
-    "tutor:thunderpunch",
-    "tutor:trick",
-    "tutor:waterpulse",
-    "tutor:zenheadbutt"
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "5"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "8"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "12"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "15"
+    },
+    {
+      "id": "moonlight",
+      "name": "Rayon Lune",
+      "category": "19"
+    },
+    {
+      "id": "tailglow",
+      "name": "Lumi-Queue",
+      "category": "22"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "26"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "29"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "33"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "36"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "40"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "43"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "47"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "egg"
+    },
+    {
+      "id": "dizzypunch",
+      "name": "Uppercut",
+      "category": "egg"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "egg"
+    },
+    {
+      "id": "seismictoss",
+      "name": "Frappe Atlas",
+      "category": "egg"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "tm"
+    },
+    {
+      "id": "megakick",
+      "name": "Ultimawashi",
+      "category": "tm"
+    },
+    {
+      "id": "megapunch",
+      "name": "Ultimapoing",
+      "category": "tm"
+    },
+    {
+      "id": "metronome",
+      "name": "Métronome",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tm"
+    },
+    {
+      "id": "playnice",
+      "name": "Camaraderie",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "poweruppunch",
+      "name": "Poing Boost",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "silverwind",
+      "name": "Vent Argenté",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "legacy"
+    },
+    {
+      "id": "dynamicpunch",
+      "name": "Dynamo-Poing",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -181,8 +746,8 @@
         "rarity": "common",
         "weight": 5.0,
         "levels": "18-43",
-        "contexts": [
-          "grounded"
+        "times": [
+          "night"
         ],
         "biomeTags": {
           "include": [
@@ -192,14 +757,18 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0313_volbeat.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0313_volbeat.json",
+        "spawnId": "volbeat-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
         },
         "weather": {
           "isRaining": false
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "volbeat",
+        "type": "pokemon"
       }
     ],
     [
@@ -210,8 +779,8 @@
         "rarity": "uncommon",
         "weight": 5.0,
         "levels": "18-43",
-        "contexts": [
-          "surface"
+        "times": [
+          "night"
         ],
         "biomeTags": {
           "include": [
@@ -221,14 +790,18 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0313_volbeat.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0313_volbeat.json",
+        "spawnId": "volbeat-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
         },
         "weather": {
           "isRaining": false
-        }
+        },
+        "spawnType": "surface",
+        "pokemon": "volbeat",
+        "type": "pokemon"
       }
     ],
     [
@@ -236,15 +809,19 @@
         "rarity": "common",
         "weight": 3.0,
         "levels": "18-43",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "the_bumblezone:floral_meadow"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0313_volbeat.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0313_volbeat.json",
+        "spawnId": "volbeat-3",
+        "spawnType": "grounded",
+        "pokemon": "volbeat",
+        "excludeStructures": [
+          "#the_bumblezone:sempiternal_sanctums"
+        ],
+        "type": "pokemon"
       }
     ],
     [
@@ -255,34 +832,19 @@
         "rarity": "uncommon",
         "weight": 3.0,
         "levels": "18-43",
-        "contexts": [
-          "surface"
-        ],
         "biomeTags": {
           "include": [
             "#the_bumblezone:the_bumblezone"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0313_volbeat.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0313_volbeat.json",
+        "spawnId": "volbeat-4",
+        "spawnType": "surface",
+        "pokemon": "volbeat",
+        "excludeStructures": [
+          "#the_bumblezone:sempiternal_sanctums"
         ],
-        "rarity": "common",
-        "weight": 2.3,
-        "levels": "4-19",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/common_dark_swamp.json"
+        "type": "pokemon"
       }
     ]
   ],
@@ -296,6 +858,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation3/volbeat.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation3/volbeat.json"
   ]
 }

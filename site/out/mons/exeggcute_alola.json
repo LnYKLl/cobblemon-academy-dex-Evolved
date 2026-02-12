@@ -2,21 +2,42 @@
   "id": "exeggcute_alola",
   "dexnum": 102,
   "name": "Exeggcute Alola-Bias",
+  "nameFr": "Exeggcute Alola-Bias",
+  "description": "",
   "primaryType": "grass",
   "secondaryType": "psychic",
+  "primaryTypeFr": "Plante",
+  "secondaryTypeFr": "Psy",
+  "height": 4,
+  "weight": 25,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1.1,
+    "height": 0.5,
+    "fixed": false
+  },
   "labels": [
     "gen7",
     "customized_official",
     "alolan_form"
   ],
   "abilities": [
-    "chlorophyll",
-    "h:harvest"
+    {
+      "id": "chlorophyll",
+      "name": "Chlorophylle",
+      "hidden": false
+    },
+    {
+      "id": "harvest",
+      "name": "Récolte",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "grass"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 60,
     "attack": 40,
@@ -33,142 +54,651 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 65,
   "experienceGroup": "slow",
   "catchRate": 90,
+  "baseFriendship": 50,
   "drops": {
-    "amount": 5,
+    "amount": 6,
     "entries": [
       {
         "item": "minecraft:egg",
         "percentage": null,
         "quantityRange": "0-3",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:egg"
       },
       {
         "item": "cobblemon:oval_stone",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Pierre Ovale"
+      },
+      {
+        "item": "cobblemon:psychic_seed",
+        "percentage": 2.5,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Graine Psychique"
       },
       {
         "item": "cobblemon:tanga_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Panga"
       }
     ]
   },
   "moves": [
-    "1:barrage",
-    "1:hypnosis",
-    "1:absorb",
-    "5:reflect",
-    "10:leechseed",
-    "15:megadrain",
-    "20:confusion",
-    "25:synthesis",
-    "30:bulletseed",
-    "35:gigadrain",
-    "40:extrasensory",
-    "45:uproar",
-    "50:bestow",
-    "55:solarbeam",
-    "egg:ancientpower",
-    "egg:block",
-    "egg:curse",
-    "egg:ingrain",
-    "egg:luckychant",
-    "egg:moonlight",
-    "egg:naturalgift",
-    "egg:poisonpowder",
-    "egg:sleeppowder",
-    "egg:stunspore",
-    "tm:ancientpower",
-    "tm:block",
-    "tm:bulletseed",
-    "tm:curse",
-    "tm:dreameater",
-    "tm:endure",
-    "tm:energyball",
-    "tm:explosion",
-    "tm:facade",
-    "tm:flash",
-    "tm:gigadrain",
-    "tm:grassknot",
-    "tm:grassyglide",
-    "tm:grassyterrain",
-    "tm:helpinghand",
-    "tm:imprison",
-    "tm:infestation",
-    "tm:leafstorm",
-    "tm:lightscreen",
-    "tm:naturalgift",
-    "tm:naturepower",
-    "tm:powerswap",
-    "tm:protect",
-    "tm:psybeam",
-    "tm:psychic",
-    "tm:psychicnoise",
-    "tm:psychup",
-    "tm:psyshock",
-    "tm:reflect",
-    "tm:rest",
-    "tm:rollout",
-    "tm:seedbomb",
-    "tm:selfdestruct",
-    "tm:skillswap",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:solarbeam",
-    "tm:storedpower",
-    "tm:strength",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swordsdance",
-    "tm:synthesis",
-    "tm:telekinesis",
-    "tm:terablast",
-    "tm:thief",
-    "tm:trick",
-    "tm:uproar",
-    "tm:worryseed",
-    "tm:zenheadbutt",
-    "tutor:ancientpower",
-    "tutor:block",
-    "tutor:energyball",
-    "tutor:gigadrain",
-    "tutor:grassyglide",
-    "tutor:helpinghand",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:rollout",
-    "tutor:seedbomb",
-    "tutor:skillswap",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:synthesis",
-    "tutor:telekinesis",
-    "tutor:trick",
-    "tutor:uproar",
-    "tutor:worryseed",
-    "tutor:zenheadbutt"
+    {
+      "id": "barrage",
+      "name": "Pilonnage",
+      "category": "1"
+    },
+    {
+      "id": "hypnosis",
+      "name": "Hypnose",
+      "category": "1"
+    },
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "1"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "5"
+    },
+    {
+      "id": "leechseed",
+      "name": "Vampigraine",
+      "category": "10"
+    },
+    {
+      "id": "megadrain",
+      "name": "Méga-Sangsue",
+      "category": "15"
+    },
+    {
+      "id": "confusion",
+      "name": "Choc Mental",
+      "category": "20"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "25"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "30"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "35"
+    },
+    {
+      "id": "extrasensory",
+      "name": "Extrasenseur",
+      "category": "40"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "45"
+    },
+    {
+      "id": "bestow",
+      "name": "Passe-Cadeau",
+      "category": "50"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "55"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "egg"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "egg"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "egg"
+    },
+    {
+      "id": "ingrain",
+      "name": "Racines",
+      "category": "egg"
+    },
+    {
+      "id": "luckychant",
+      "name": "Air Veinard",
+      "category": "egg"
+    },
+    {
+      "id": "moonlight",
+      "name": "Rayon Lune",
+      "category": "egg"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "egg"
+    },
+    {
+      "id": "poisonpowder",
+      "name": "Poudre Toxik",
+      "category": "egg"
+    },
+    {
+      "id": "sleeppowder",
+      "name": "Poudre Dodo",
+      "category": "egg"
+    },
+    {
+      "id": "stunspore",
+      "name": "Para-Spore",
+      "category": "egg"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "leafstorm",
+      "name": "Tempête Verte",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "powerswap",
+      "name": "Permuforce",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psychicnoise",
+      "name": "Dissonance Psy",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tm"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tutor"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "eggbomb",
+      "name": "Bombe Œuf",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "legacy"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "nightmare",
+      "name": "Cauchemar",
+      "category": "legacy"
+    },
+    {
+      "id": "psywave",
+      "name": "Vague Psy",
+      "category": "legacy"
+    },
+    {
+      "id": "rage",
+      "name": "Frénésie",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "legacy"
+    },
+    {
+      "id": "teleport",
+      "name": "Téléport",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "legacy"
+    },
+    {
+      "id": "sweetscent",
+      "name": "Doux Parfum",
+      "category": "special"
+    },
+    {
+      "id": "wish",
+      "name": "Vœu",
+      "category": "special"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "exeggcute_exeggutor",
       "variant": "item_interact",
       "result": "exeggutor",
-      "consumeHeldItem": true,
+      "consumeHeldItem": false,
       "learnableMoves": [
         "stomp"
       ],
       "requirements": [
-        {
-          "variant": "biome",
-          "biomeAnticondition": "#cobblemon:evolution/regional/exeggcute_alolabiome"
-        },
         {
           "variant": "biome",
           "biomeCondition": "#cobblemon:evolution/regional/exeggcute_kantobiome"
@@ -180,19 +710,14 @@
       "id": "exeggcute_exeggutoralola",
       "variant": "item_interact",
       "result": "exeggutor alolan",
-      "consumeHeldItem": true,
+      "consumeHeldItem": false,
       "learnableMoves": [
         "dragonhammer"
-      ],
-      "requirements": [
-        {
-          "variant": "biome",
-          "biomeAnticondition": "#cobblemon:evolution/regional/exeggcute_kantobiome"
-        }
       ],
       "requiredContext": "cobblemon:leaf_stone"
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -202,39 +727,21 @@
         "rarity": "common",
         "weight": 1.9,
         "levels": "8-33",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_jungle",
             "#cobblemon:is_savanna"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0102_exeggcute.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0102_exeggcute.json",
+        "spawnId": "exeggcute-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 1.0,
-        "levels": "4-18",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/common_scarlet_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "exeggcute",
+        "type": "pokemon"
       }
     ]
   ],
@@ -248,6 +755,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/exeggcute.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/exeggcute.json"
   ]
 }

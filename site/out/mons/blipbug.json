@@ -2,20 +2,45 @@
   "id": "blipbug",
   "dexnum": 824,
   "name": "Blipbug",
+  "nameFr": "Larvadar",
+  "description": "Comme il passe tout son temps à recueillir des informations, son intelligence est très développée, mais sa force physique laisse à désirer.",
   "primaryType": "bug",
   "secondaryType": "",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "",
+  "height": 4,
+  "weight": 80,
   "maleRatio": 0.5,
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 0.75,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "swarm",
-    "compoundeyes",
-    "h:telepathy"
+    {
+      "id": "swarm",
+      "name": "Essaim",
+      "hidden": false
+    },
+    {
+      "id": "compoundeyes",
+      "name": "Œil Composé",
+      "hidden": false
+    },
+    {
+      "id": "telepathy",
+      "name": "Télépathe",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 25,
     "attack": 20,
@@ -32,31 +57,72 @@
     "special_defence": 1,
     "speed": 0
   },
+  "baseExperienceYield": 36,
   "experienceGroup": "medium_fast",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
+      {
+        "item": "cobblemon:psychic_seed",
+        "percentage": 2.5,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Graine Psychique"
+      },
       {
         "item": "cobblemon:razz_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Framby"
       }
     ]
   },
   "moves": [
-    "1:strugglebug",
-    "egg:infestation",
-    "egg:recover",
-    "egg:stickyweb",
-    "egg:supersonic",
-    "tm:infestation",
-    "tm:strugglebug",
-    "tm:terablast"
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "1"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "egg"
+    },
+    {
+      "id": "recover",
+      "name": "Soin",
+      "category": "egg"
+    },
+    {
+      "id": "stickyweb",
+      "name": "Toile Gluante",
+      "category": "egg"
+    },
+    {
+      "id": "supersonic",
+      "name": "Ultrason",
+      "category": "egg"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "blipbug_dottler",
@@ -76,24 +142,62 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
         "presets": [
-          "natural"
+          "natural",
+          "treetop"
         ],
         "rarity": "common",
-        "weight": 2.0,
-        "levels": "4-18",
+        "weight": 7.0,
+        "levels": "2-19",
         "contexts": [
           "grounded"
         ],
         "biomeTags": {
           "include": [
-            "eternal_starlight:scarlet_forest"
+            "#cobblemon:is_forest"
+          ],
+          "exclude": [
+            "#cobblemon:is_spooky"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/common_scarlet_forest.json"
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0824_blipbug.json",
+        "spawnId": "blipbug-1",
+        "sky": {
+          "canSeeSky": true
+        },
+        "pokemon": "blipbug",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural",
+          "foliage",
+          "treetop"
+        ],
+        "rarity": "common",
+        "weight": 7.0,
+        "levels": "2-19",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_plains"
+          ]
+        },
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0824_blipbug.json",
+        "spawnId": "blipbug-2",
+        "sky": {
+          "canSeeSky": true
+        },
+        "pokemon": "blipbug",
+        "type": "pokemon"
       }
     ],
     [
@@ -116,10 +220,13 @@
             "#cobblemon:is_spooky"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/blipbug.json",
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0824_blipbug.json",
+        "spawnId": "ccc-blipbug-1",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "pokemon": "blipbug",
+        "type": "pokemon"
       }
     ],
     [
@@ -140,14 +247,17 @@
             "#cobblemon:is_plains"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/blipbug.json",
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0824_blipbug.json",
+        "spawnId": "ccc-blipbug-2",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "pokemon": "blipbug",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/blipbug.png"
@@ -157,6 +267,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/blipbug.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/blipbug.json"
   ]
 }

@@ -2,21 +2,46 @@
   "id": "lotad",
   "dexnum": 270,
   "name": "Lotad",
+  "nameFr": "Nénupiot",
+  "description": "On raconte que jadis, Nénupiot vivait sur terre. Mais on pense que ce Pokémon est retourné dans l'eau car la feuille sur sa tête était devenue trop grande et trop lourde. Maintenant, il vit en flottant à la surface de l'eau.",
   "primaryType": "water",
   "secondaryType": "grass",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "Plante",
+  "height": 5,
+  "weight": 26,
   "maleRatio": 0.5,
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 0.9,
+    "height": 0.6,
+    "fixed": false
+  },
   "labels": [
     "gen3"
   ],
   "abilities": [
-    "swiftswim",
-    "raindish",
-    "h:owntempo"
+    {
+      "id": "swiftswim",
+      "name": "Glissade",
+      "hidden": false
+    },
+    {
+      "id": "raindish",
+      "name": "Cuvette",
+      "hidden": false
+    },
+    {
+      "id": "owntempo",
+      "name": "Tempo Perso",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_1",
     "grass"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 40,
     "attack": 30,
@@ -33,8 +58,10 @@
     "special_defence": 1,
     "speed": 0
   },
+  "baseExperienceYield": 44,
   "experienceGroup": "medium_slow",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -42,103 +69,483 @@
         "item": "minecraft:lily_pad",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:lily_pad"
       },
       {
         "item": "cobblemon:mental_herb",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Herbe Mental"
       },
       {
         "item": "cobblemon:kebia_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Kébia"
       }
     ]
   },
   "moves": [
-    "1:astonish",
-    "1:growl",
-    "1:bubble",
-    "1:naturalgift",
-    "3:absorb",
-    "6:watergun",
-    "9:mist",
-    "12:megadrain",
-    "16:flail",
-    "20:bubblebeam",
-    "24:leechseed",
-    "28:gigadrain",
-    "33:raindance",
-    "38:zenheadbutt",
-    "43:energyball",
-    "egg:counter",
-    "egg:razorleaf",
-    "egg:sweetscent",
-    "egg:synthesis",
-    "egg:teeterdance",
-    "egg:tickle",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:bulletseed",
-    "tm:chillingwater",
-    "tm:disarmingvoice",
-    "tm:doubleedge",
-    "tm:echoedvoice",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:flash",
-    "tm:gigadrain",
-    "tm:grassknot",
-    "tm:grassyglide",
-    "tm:grassyterrain",
-    "tm:hail",
-    "tm:headbutt",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:magicalleaf",
-    "tm:muddywater",
-    "tm:naturalgift",
-    "tm:naturepower",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:seedbomb",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:surf",
-    "tm:swordsdance",
-    "tm:synthesis",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:trailblaze",
-    "tm:uproar",
-    "tm:waterpulse",
-    "tm:weatherball",
-    "tm:whirlpool",
-    "tm:zenheadbutt",
-    "tutor:energyball",
-    "tutor:gigadrain",
-    "tutor:grassyglide",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:magicalleaf",
-    "tutor:rest",
-    "tutor:seedbomb",
-    "tutor:sleeptalk",
-    "tutor:synthesis",
-    "tutor:uproar",
-    "tutor:waterpulse",
-    "tutor:zenheadbutt"
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "bubble",
+      "name": "Écume",
+      "category": "1"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "1"
+    },
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "3"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "6"
+    },
+    {
+      "id": "mist",
+      "name": "Brume",
+      "category": "9"
+    },
+    {
+      "id": "megadrain",
+      "name": "Méga-Sangsue",
+      "category": "12"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "16"
+    },
+    {
+      "id": "bubblebeam",
+      "name": "Bulles d'O",
+      "category": "20"
+    },
+    {
+      "id": "leechseed",
+      "name": "Vampigraine",
+      "category": "24"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "28"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "33"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "38"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "43"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "egg"
+    },
+    {
+      "id": "razorleaf",
+      "name": "Tranch'Herbe",
+      "category": "egg"
+    },
+    {
+      "id": "sweetscent",
+      "name": "Doux Parfum",
+      "category": "egg"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "egg"
+    },
+    {
+      "id": "teeterdance",
+      "name": "Danse Folle",
+      "category": "egg"
+    },
+    {
+      "id": "tickle",
+      "name": "Chatouille",
+      "category": "egg"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "disarmingvoice",
+      "name": "Voix Enjôleuse",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tm"
+    },
+    {
+      "id": "muddywater",
+      "name": "Ocroupi",
+      "category": "tm"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "lotad_lombre",
@@ -154,6 +561,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -163,21 +571,28 @@
         "rarity": "common",
         "weight": 1.8,
         "levels": "1-22",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_swamp"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0270_lotad.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0270_lotad.json",
+        "spawnId": "lotad-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
         },
         "weather": {
           "isRaining": true
+        },
+        "spawnType": "grounded",
+        "pokemon": "lotad",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 1.5,
+          "condition": {
+            "timeRange": "night"
+          }
         }
       }
     ],
@@ -189,19 +604,20 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "1-22",
-        "contexts": [
-          "surface"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_swamp"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0270_lotad.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0270_lotad.json",
+        "spawnId": "lotad-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "surface",
+        "pokemon": "lotad",
+        "type": "pokemon"
       }
     ],
     [
@@ -209,9 +625,6 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "1-22",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest",
@@ -219,12 +632,23 @@
             "#cobblemon:is_swamp"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0270_lotad.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0270_lotad.json",
+        "spawnId": "lotad-3",
         "sky": {
           "canSeeSky": true
         },
         "weather": {
           "isRaining": true
+        },
+        "spawnType": "fishing",
+        "pokemon": "lotad",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
         }
       }
     ],
@@ -233,9 +657,6 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "1-22",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest",
@@ -243,7 +664,8 @@
             "#cobblemon:is_swamp"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0270_lotad.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0270_lotad.json",
+        "spawnId": "lotad-4",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
@@ -251,26 +673,17 @@
         },
         "weather": {
           "isRaining": true
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 1.1,
-        "levels": "4-19",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/common_dark_swamp.json"
+        "spawnType": "fishing",
+        "pokemon": "lotad",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
+        }
       }
     ]
   ],
@@ -284,6 +697,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation3/lotad.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation3/lotad.json"
   ]
 }

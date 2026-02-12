@@ -2,19 +2,40 @@
   "id": "frogadier",
   "dexnum": 657,
   "name": "Frogadier",
+  "nameFr": "Croâporal",
+  "description": "Son agilité est incomparable. Il peut gravir une tour de 600 mètres de haut en moins d'une minute.",
   "primaryType": "water",
   "secondaryType": "",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "",
+  "height": 6,
+  "weight": 109,
   "maleRatio": 0.875,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 0.9,
+    "height": 2,
+    "fixed": false
+  },
   "labels": [
     "gen6"
   ],
   "abilities": [
-    "torrent",
-    "h:protean"
+    {
+      "id": "torrent",
+      "name": "Torrent",
+      "hidden": false
+    },
+    {
+      "id": "protean",
+      "name": "Protéen",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_1"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 54,
     "attack": 63,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 2
   },
+  "baseExperienceYield": 142,
   "experienceGroup": "medium_slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -40,123 +63,596 @@
         "item": "minecraft:pearlescent_froglight",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:pearlescent_froglight"
       },
       {
         "item": "cobblemon:mystic_water",
         "percentage": 10.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Eau Mystique"
       }
     ]
   },
   "moves": [
-    "1:pound",
-    "1:growl",
-    "1:bubble",
-    "1:watergun",
-    "8:quickattack",
-    "10:lick",
-    "14:waterpulse",
-    "19:smokescreen",
-    "23:round",
-    "28:fling",
-    "33:smackdown",
-    "40:substitute",
-    "45:bounce",
-    "50:doubleteam",
-    "56:hydropump",
-    "egg:bestow",
-    "egg:camouflage",
-    "egg:counter",
-    "egg:mindreader",
-    "egg:mudsport",
-    "egg:retaliate",
-    "egg:spikes",
-    "egg:switcheroo",
-    "egg:toxicspikes",
-    "egg:watersport",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:blizzard",
-    "tm:bounce",
-    "tm:chillingwater",
-    "tm:cut",
-    "tm:dig",
-    "tm:dive",
-    "tm:doubleteam",
-    "tm:echoedvoice",
-    "tm:endure",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:fling",
-    "tm:grassknot",
-    "tm:gunkshot",
-    "tm:helpinghand",
-    "tm:hydropump",
-    "tm:icebeam",
-    "tm:icepunch",
-    "tm:icywind",
-    "tm:liquidation",
-    "tm:lowkick",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:poweruppunch",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:roleplay",
-    "tm:round",
-    "tm:sleeptalk",
-    "tm:smackdown",
-    "tm:snatch",
-    "tm:snowscape",
-    "tm:spikes",
-    "tm:strength",
-    "tm:substitute",
-    "tm:surf",
-    "tm:swift",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:toxicspikes",
-    "tm:trailblaze",
-    "tm:uturn",
-    "tm:waterfall",
-    "tm:waterpledge",
-    "tm:waterpulse",
-    "tm:workup",
-    "tutor:aerialace",
-    "tutor:bounce",
-    "tutor:dive",
-    "tutor:falseswipe",
-    "tutor:gunkshot",
-    "tutor:helpinghand",
-    "tutor:icebeam",
-    "tutor:icepunch",
-    "tutor:icywind",
-    "tutor:liquidation",
-    "tutor:lowkick",
-    "tutor:mudslap",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:roleplay",
-    "tutor:sleeptalk",
-    "tutor:snatch",
-    "tutor:spikes",
-    "tutor:swift",
-    "tutor:waterpledge",
-    "tutor:waterpulse"
+    {
+      "id": "pound",
+      "name": "Écras'Face",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "bubble",
+      "name": "Écume",
+      "category": "1"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "1"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "8"
+    },
+    {
+      "id": "lick",
+      "name": "Léchouille",
+      "category": "10"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "14"
+    },
+    {
+      "id": "smokescreen",
+      "name": "Brouillard",
+      "category": "19"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "23"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "28"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "33"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "40"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "45"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "50"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "56"
+    },
+    {
+      "id": "bestow",
+      "name": "Passe-Cadeau",
+      "category": "egg"
+    },
+    {
+      "id": "camouflage",
+      "name": "Camouflage",
+      "category": "egg"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "egg"
+    },
+    {
+      "id": "mindreader",
+      "name": "Lire-Esprit",
+      "category": "egg"
+    },
+    {
+      "id": "mudsport",
+      "name": "Lance-Boue",
+      "category": "egg"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "egg"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "egg"
+    },
+    {
+      "id": "switcheroo",
+      "name": "Passe-Passe",
+      "category": "egg"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "egg"
+    },
+    {
+      "id": "watersport",
+      "name": "Tourniquet",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tm"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "poweruppunch",
+      "name": "Poing Boost",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tm"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "tm"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tm"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "tm"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "waterpledge",
+      "name": "Aire d'Eau",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tutor"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpledge",
+      "name": "Aire d'Eau",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "frogadier_greninja",
@@ -174,6 +670,7 @@
       ]
     }
   ],
+  "preEvolution": "froakie",
   "spawns": [
     [
       {
@@ -183,9 +680,6 @@
         "rarity": "ultra-rare",
         "weight": 3.6,
         "levels": "16-41",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_freshwater"
@@ -194,11 +688,15 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0657_frogadier.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0657_frogadier.json",
+        "spawnId": "frogadier-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "frogadier",
+        "type": "pokemon"
       }
     ],
     [
@@ -209,9 +707,6 @@
         "rarity": "ultra-rare",
         "weight": 3.6,
         "levels": "16-41",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_freshwater"
@@ -220,11 +715,15 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0657_frogadier.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0657_frogadier.json",
+        "spawnId": "frogadier-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "frogadier",
+        "type": "pokemon"
       }
     ],
     [
@@ -235,28 +734,26 @@
         "rarity": "ultra-rare",
         "weight": 3.6,
         "levels": "16-41",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_bamboo",
             "#cobblemon:is_jungle"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0657_frogadier.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0657_frogadier.json",
+        "spawnId": "frogadier-3",
         "nearbyBlocks": {
           "selectors": [
-            "#minecraft:water"
-          ],
-          "resolved": [
-            "#minecraft:water"
+            "minecraft:water"
           ]
         },
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "frogadier",
+        "type": "pokemon"
       }
     ],
     [
@@ -267,20 +764,21 @@
         "rarity": "ultra-rare",
         "weight": 3.6,
         "levels": "16-41",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_bamboo",
             "#cobblemon:is_jungle"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0657_frogadier.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0657_frogadier.json",
+        "spawnId": "frogadier-4",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "frogadier",
+        "type": "pokemon"
       }
     ],
     [
@@ -288,9 +786,6 @@
         "rarity": "ultra-rare",
         "weight": 3.6,
         "levels": "16-41",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_bamboo",
@@ -301,11 +796,15 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0657_frogadier.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0657_frogadier.json",
+        "spawnId": "frogadier-5",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "frogadier",
+        "type": "pokemon"
       }
     ]
   ],
@@ -319,6 +818,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation6/frogadier.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation6/frogadier.json"
   ]
 }

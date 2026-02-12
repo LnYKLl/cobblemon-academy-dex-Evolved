@@ -2,19 +2,40 @@
   "id": "wishiwashi",
   "dexnum": 746,
   "name": "Wishiwashi",
+  "nameFr": "Froussardine",
+  "description": "Il fait briller ses pupilles pour rameuter ses congénères lorsque la situation tourne mal. Le signal est visible à 40 kilomètres de distance.",
   "primaryType": "water",
   "secondaryType": "",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "",
+  "height": 2,
+  "weight": 3,
   "maleRatio": 0.5,
+  "baseScale": 0.4,
+  "hitbox": {
+    "width": 0.6,
+    "height": 0.6,
+    "fixed": false
+  },
   "labels": [
     "gen7"
   ],
   "abilities": [
-    "schooling",
-    "h:schooling"
+    {
+      "id": "schooling",
+      "name": "Banc",
+      "hidden": false
+    },
+    {
+      "id": "schooling",
+      "name": "Banc",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_2"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 45,
     "attack": 20,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 61,
   "experienceGroup": "fast",
   "catchRate": 60,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -40,92 +63,420 @@
         "item": "minecraft:cod",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:cod"
       },
       {
         "item": "minecraft:bone_meal",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:bone_meal"
       }
     ]
   },
   "moves": [
-    "1:watergun",
-    "1:growl",
-    "1:feintattack",
-    "4:helpinghand",
-    "8:beatup",
-    "12:brine",
-    "16:tearfullook",
-    "20:dive",
-    "24:soak",
-    "28:uproar",
-    "32:aquatail",
-    "36:aquaring",
-    "40:endeavor",
-    "44:hydropump",
-    "48:doubleedge",
-    "egg:mist",
-    "egg:takedown",
-    "egg:waterpulse",
-    "egg:watersport",
-    "tm:aquatail",
-    "tm:beatup",
-    "tm:brine",
-    "tm:bulldoze",
-    "tm:covet",
-    "tm:dive",
-    "tm:doubleedge",
-    "tm:earthquake",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:flipturn",
-    "tm:hail",
-    "tm:helpinghand",
-    "tm:hydropump",
-    "tm:icebeam",
-    "tm:irontail",
-    "tm:liquidation",
-    "tm:muddywater",
-    "tm:mudshot",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:scald",
-    "tm:scaleshot",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:surf",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:uproar",
-    "tm:uturn",
-    "tm:waterfall",
-    "tm:waterpulse",
-    "tm:whirlpool",
-    "tutor:aquatail",
-    "tutor:bulldoze",
-    "tutor:covet",
-    "tutor:dive",
-    "tutor:endeavor",
-    "tutor:flipturn",
-    "tutor:helpinghand",
-    "tutor:icebeam",
-    "tutor:irontail",
-    "tutor:liquidation",
-    "tutor:rest",
-    "tutor:scaleshot",
-    "tutor:sleeptalk",
-    "tutor:uproar",
-    "tutor:waterpulse"
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "feintattack",
+      "name": "Feinte",
+      "category": "1"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "4"
+    },
+    {
+      "id": "beatup",
+      "name": "Baston",
+      "category": "8"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "12"
+    },
+    {
+      "id": "tearfullook",
+      "name": "Larme à l'Œil",
+      "category": "16"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "20"
+    },
+    {
+      "id": "soak",
+      "name": "Détrempage",
+      "category": "24"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "28"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "32"
+    },
+    {
+      "id": "aquaring",
+      "name": "Anneau Hydro",
+      "category": "36"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "40"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "44"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "48"
+    },
+    {
+      "id": "mist",
+      "name": "Brume",
+      "category": "egg"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "egg"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "egg"
+    },
+    {
+      "id": "watersport",
+      "name": "Tourniquet",
+      "category": "egg"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "beatup",
+      "name": "Baston",
+      "category": "tm"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flipturn",
+      "name": "Eau Revoir",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "muddywater",
+      "name": "Ocroupi",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "tm"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "flipturn",
+      "name": "Eau Revoir",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [
     "School"
   ],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -135,18 +486,19 @@
         "rarity": "common",
         "weight": 10.0,
         "levels": "1-18",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0746_wishiwashi.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0746_wishiwashi.json",
+        "spawnId": "wishiwashi-1",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "wishiwashi",
+        "type": "pokemon"
       }
     ],
     [
@@ -154,19 +506,20 @@
         "rarity": "common",
         "weight": 10.0,
         "levels": "1-18",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_coast",
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0746_wishiwashi.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0746_wishiwashi.json",
+        "spawnId": "wishiwashi-2",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "wishiwashi",
+        "type": "pokemon"
       }
     ],
     [
@@ -177,20 +530,21 @@
         "rarity": "common",
         "weight": 10.0,
         "levels": "1-18",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0746_wishiwashi.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0746_wishiwashi.json",
+        "spawnId": "wishiwashi-3",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "wishiwashi",
+        "type": "pokemon"
       }
     ],
     [
@@ -198,46 +552,28 @@
         "rarity": "common",
         "weight": 10.0,
         "levels": "1-18",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_coast",
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0746_wishiwashi.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0746_wishiwashi.json",
+        "spawnId": "wishiwashi-4",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "water"
-        ],
-        "rarity": "uncommon",
-        "weight": 1.9,
-        "levels": "18-34",
-        "contexts": [
-          "submerged"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_safari_ocean"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_safari_ocean/uncommon_is_safari_ocean.json"
+        "spawnType": "fishing",
+        "pokemon": "wishiwashi",
+        "type": "pokemon"
       }
     ]
   ],
   "implemented": true,
   "images": {},
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/wishiwashi.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/wishiwashi.json"
   ]
 }

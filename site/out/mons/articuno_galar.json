@@ -2,21 +2,42 @@
   "id": "articuno_galar",
   "dexnum": 144,
   "name": "Articuno Galar",
+  "nameFr": "Articuno Galar",
+  "description": "Les lames en forme de plumes qu'il crée grâce à ses pouvoirs psychiques peuvent trancher une épaisse plaque de fer comme si c'était du papier.",
   "primaryType": "psychic",
   "secondaryType": "flying",
+  "primaryTypeFr": "Psy",
+  "secondaryTypeFr": "Vol",
+  "height": 17,
+  "weight": 509,
   "maleRatio": -1,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 1.5,
+    "height": 2.5,
+    "fixed": false
+  },
   "labels": [
     "gen8",
     "legendary",
     "galarian_form"
   ],
   "abilities": [
-    "competitive",
-    "h:competitive"
+    {
+      "id": "competitive",
+      "name": "Battant",
+      "hidden": false
+    },
+    {
+      "id": "competitive",
+      "name": "Battant",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 120,
   "baseStats": {
     "hp": 90,
     "attack": 85,
@@ -33,8 +54,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 290,
   "experienceGroup": "slow",
   "catchRate": 3,
+  "baseFriendship": 35,
   "drops": {
     "amount": 6,
     "entries": [
@@ -42,165 +65,467 @@
         "item": "minecraft:feather",
         "percentage": null,
         "quantityRange": "2-4",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:feather"
       },
       {
         "item": "minecraft:chicken",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:chicken"
       },
       {
         "item": "cobblemon:twisted_spoon",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Cuillère Tordue"
       }
     ]
   },
   "moves": [
-    "1:gust",
-    "1:psychoshift",
-    "1:mindreader",
-    "5:confusion",
-    "10:reflect",
-    "15:hypnosis",
-    "20:agility",
-    "25:ancientpower",
-    "30:tailwind",
-    "35:psychocut",
-    "40:recover",
-    "45:freezingglare",
-    "50:dreameater",
-    "55:hurricane",
-    "60:doubleteam",
-    "65:futuresight",
-    "70:trickroom",
-    "tm:agility",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:allyswitch",
-    "tm:ancientpower",
-    "tm:bravebird",
-    "tm:calmmind",
-    "tm:doubleteam",
-    "tm:dreameater",
-    "tm:dualwingbeat",
-    "tm:endure",
-    "tm:expandingforce",
-    "tm:facade",
-    "tm:fly",
-    "tm:futuresight",
-    "tm:gigaimpact",
-    "tm:guardswap",
-    "tm:helpinghand",
-    "tm:hurricane",
-    "tm:hyperbeam",
-    "tm:hypervoice",
-    "tm:imprison",
-    "tm:lightscreen",
-    "tm:powerswap",
-    "tm:protect",
-    "tm:psybeam",
-    "tm:psychic",
-    "tm:psychicnoise",
-    "tm:psychocut",
-    "tm:psyshock",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:scaryface",
-    "tm:shadowball",
-    "tm:skillswap",
-    "tm:sleeptalk",
-    "tm:snowscape",
-    "tm:steelwing",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:trick",
-    "tm:trickroom",
-    "tm:uturn",
-    "tutor:aircutter",
-    "tutor:allyswitch",
-    "tutor:ancientpower",
-    "tutor:calmmind",
-    "tutor:dualwingbeat",
-    "tutor:expandingforce",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:hypervoice",
-    "tutor:psychic",
-    "tutor:psychocut",
-    "tutor:rest",
-    "tutor:shadowball",
-    "tutor:skillswap",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:tailwind",
-    "tutor:trick"
+    {
+      "id": "gust",
+      "name": "Tornade",
+      "category": "1"
+    },
+    {
+      "id": "psychoshift",
+      "name": "Échange Psy",
+      "category": "1"
+    },
+    {
+      "id": "mindreader",
+      "name": "Lire-Esprit",
+      "category": "1"
+    },
+    {
+      "id": "confusion",
+      "name": "Choc Mental",
+      "category": "5"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "10"
+    },
+    {
+      "id": "hypnosis",
+      "name": "Hypnose",
+      "category": "15"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "20"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "25"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "30"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "35"
+    },
+    {
+      "id": "recover",
+      "name": "Soin",
+      "category": "40"
+    },
+    {
+      "id": "freezingglare",
+      "name": "Regard Glaçant",
+      "category": "45"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "50"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "55"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "60"
+    },
+    {
+      "id": "futuresight",
+      "name": "Prescience",
+      "category": "65"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "70"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "expandingforce",
+      "name": "Vaste Pouvoir",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "futuresight",
+      "name": "Prescience",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "guardswap",
+      "name": "Permugarde",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "powerswap",
+      "name": "Permuforce",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psychicnoise",
+      "name": "Dissonance Psy",
+      "category": "tm"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tm"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "tm"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "expandingforce",
+      "name": "Vaste Pouvoir",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
-  "spawns": [
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "50-60",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "minecraft:frozen_ocean",
-            "minecraft:frozen_peaks",
-            "minecraft:frozen_river",
-            "minecraft:snowy_beach",
-            "minecraft:snowy_plains",
-            "minecraft:snowy_slopes",
-            "minecraft:snowy_taiga"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-articuno.json",
-        "keyItem": "myths_and_legends:tidal_bell_articuno"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "50-60",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_cold",
-            "#cobblemon:is_freezing",
-            "#cobblemon:is_snowy_forest",
-            "#cobblemon:is_glacial",
-            "#cobblemon:is_frozen_ocean"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-articuno.json",
-        "keyItem": "myths_and_legends:tidal_bell_articuno"
-      }
-    ]
-  ],
-  "implemented": true,
+  "preEvolution": null,
+  "spawns": [],
+  "implemented": false,
   "images": {
     "normal": [
       "out/sprites/genomons/articuno_galarian.png",
@@ -212,6 +537,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/articuno.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/articuno.json"
   ]
 }

@@ -2,20 +2,45 @@
   "id": "dottler",
   "dexnum": 825,
   "name": "Dottler",
+  "nameFr": "Coléodôme",
+  "description": "Il ne bouge presque pas, mais il est bien vivant. On dit qu'il aurait découvert ses pouvoirs psychiques à force de jeûner dans sa coquille.",
   "primaryType": "bug",
   "secondaryType": "psychic",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "Psy",
+  "height": 4,
+  "weight": 195,
   "maleRatio": 0.5,
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "swarm",
-    "compoundeyes",
-    "h:telepathy"
+    {
+      "id": "swarm",
+      "name": "Essaim",
+      "hidden": false
+    },
+    {
+      "id": "compoundeyes",
+      "name": "Œil Composé",
+      "hidden": false
+    },
+    {
+      "id": "telepathy",
+      "name": "Télépathe",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 50,
     "attack": 35,
@@ -32,85 +57,357 @@
     "special_defence": 2,
     "speed": 0
   },
+  "baseExperienceYield": 117,
   "experienceGroup": "medium_fast",
   "catchRate": 120,
+  "baseFriendship": 50,
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
+      {
+        "item": "cobblemon:psychic_seed",
+        "percentage": 5.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Graine Psychique"
+      },
       {
         "item": "cobblemon:razz_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Framby"
       }
     ]
   },
   "moves": [
-    "1:reflect",
-    "1:lightscreen",
-    "1:confusion",
-    "1:strugglebug",
-    "egg:infestation",
-    "egg:recover",
-    "egg:stickyweb",
-    "egg:supersonic",
-    "tm:allyswitch",
-    "tm:bodypress",
-    "tm:bugbuzz",
-    "tm:calmmind",
-    "tm:endure",
-    "tm:energyball",
-    "tm:expandingforce",
-    "tm:facade",
-    "tm:futuresight",
-    "tm:guardswap",
-    "tm:helpinghand",
-    "tm:imprison",
-    "tm:infestation",
-    "tm:irondefense",
-    "tm:leechlife",
-    "tm:lightscreen",
-    "tm:magicroom",
-    "tm:payback",
-    "tm:powerswap",
-    "tm:protect",
-    "tm:psychic",
-    "tm:psychicterrain",
-    "tm:psyshock",
-    "tm:reflect",
-    "tm:rest",
-    "tm:safeguard",
-    "tm:shadowball",
-    "tm:skillswap",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:storedpower",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:terablast",
-    "tm:trick",
-    "tm:trickroom",
-    "tm:wonderroom",
-    "tm:zenheadbutt",
-    "tutor:allyswitch",
-    "tutor:calmmind",
-    "tutor:energyball",
-    "tutor:expandingforce",
-    "tutor:helpinghand",
-    "tutor:irondefense",
-    "tutor:leechlife",
-    "tutor:magicroom",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:shadowball",
-    "tutor:skillswap",
-    "tutor:sleeptalk",
-    "tutor:trick",
-    "tutor:wonderroom",
-    "tutor:zenheadbutt"
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "1"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "1"
+    },
+    {
+      "id": "confusion",
+      "name": "Choc Mental",
+      "category": "1"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "1"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "egg"
+    },
+    {
+      "id": "recover",
+      "name": "Soin",
+      "category": "egg"
+    },
+    {
+      "id": "stickyweb",
+      "name": "Toile Gluante",
+      "category": "egg"
+    },
+    {
+      "id": "supersonic",
+      "name": "Ultrason",
+      "category": "egg"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "expandingforce",
+      "name": "Vaste Pouvoir",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "futuresight",
+      "name": "Prescience",
+      "category": "tm"
+    },
+    {
+      "id": "guardswap",
+      "name": "Permugarde",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "powerswap",
+      "name": "Permuforce",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psychicterrain",
+      "name": "Champ Psychique",
+      "category": "tm"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "expandingforce",
+      "name": "Vaste Pouvoir",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tutor"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "dottler_orbeetle",
@@ -126,24 +423,62 @@
       ]
     }
   ],
+  "preEvolution": "blipbug",
   "spawns": [
     [
       {
         "presets": [
-          "natural"
+          "natural",
+          "treetop"
         ],
         "rarity": "uncommon",
-        "weight": 1.2,
-        "levels": "18-34",
+        "weight": 2.0,
+        "levels": "9-20",
         "contexts": [
           "grounded"
         ],
         "biomeTags": {
           "include": [
-            "eternal_starlight:scarlet_forest"
+            "#cobblemon:is_forest"
+          ],
+          "exclude": [
+            "#cobblemon:is_spooky"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/uncommon_scarlet_forest.json"
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0825_dottler.json",
+        "spawnId": "dottler-1",
+        "sky": {
+          "canSeeSky": true
+        },
+        "pokemon": "dottler",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural",
+          "foliage",
+          "treetop"
+        ],
+        "rarity": "uncommon",
+        "weight": 2.0,
+        "levels": "9-20",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_plains"
+          ]
+        },
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0825_dottler.json",
+        "spawnId": "dottler-2",
+        "sky": {
+          "canSeeSky": true
+        },
+        "pokemon": "dottler",
+        "type": "pokemon"
       }
     ],
     [
@@ -166,10 +501,13 @@
             "#cobblemon:is_spooky"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/dottler.json",
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0825_dottler.json",
+        "spawnId": "ccc-dottler-1",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "pokemon": "dottler",
+        "type": "pokemon"
       }
     ],
     [
@@ -190,14 +528,17 @@
             "#cobblemon:is_plains"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/dottler.json",
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0825_dottler.json",
+        "spawnId": "ccc-dottler-2",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "pokemon": "dottler",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/dottler.png"
@@ -207,6 +548,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/dottler.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/dottler.json"
   ]
 }

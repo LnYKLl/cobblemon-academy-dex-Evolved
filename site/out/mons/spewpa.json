@@ -2,19 +2,40 @@
   "id": "spewpa",
   "dexnum": 665,
   "name": "Spewpa",
+  "nameFr": "Pérégrain",
+  "description": "Même les becs acérés des Pokémon oiseaux ne parviennent pas à meurtrir son corps très dur. Il se défend en crachant de la poudre.",
   "primaryType": "bug",
   "secondaryType": "",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "",
+  "height": 3,
+  "weight": 84,
   "maleRatio": 0.5,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.5,
+    "height": 0.7,
+    "fixed": false
+  },
   "labels": [
     "gen6"
   ],
   "abilities": [
-    "shedskin",
-    "h:friendguard"
+    {
+      "id": "shedskin",
+      "name": "Mue",
+      "hidden": false
+    },
+    {
+      "id": "friendguard",
+      "name": "Garde-Ami",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 45,
     "attack": 22,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 75,
   "experienceGroup": "medium_fast",
   "catchRate": 120,
+  "baseFriendship": 50,
   "drops": {
     "amount": 4,
     "entries": [
@@ -40,41 +63,108 @@
         "item": "minecraft:string",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:string"
       },
       {
         "item": "cobblemon:bright_powder",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Poudre Claire"
       },
       {
         "item": "cobblemon:cheri_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Ceriz"
       }
     ]
   },
   "moves": [
-    "1:harden",
-    "1:protect",
-    "1:stunspore",
-    "1:tackle",
-    "egg:poisonpowder",
-    "egg:ragepowder",
-    "egg:stunspore",
-    "tm:bugbite",
-    "tm:irondefense",
-    "tm:pounce",
-    "tm:protect",
-    "tm:strugglebug",
-    "tm:terablast",
-    "tutor:bugbite",
-    "tutor:irondefense"
+    {
+      "id": "harden",
+      "name": "Armure",
+      "category": "1"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "1"
+    },
+    {
+      "id": "stunspore",
+      "name": "Para-Spore",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "poisonpowder",
+      "name": "Poudre Toxik",
+      "category": "egg"
+    },
+    {
+      "id": "ragepowder",
+      "name": "Poudre Fureur",
+      "category": "egg"
+    },
+    {
+      "id": "stunspore",
+      "name": "Para-Spore",
+      "category": "egg"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "spewpa_vivillonarchipelago",
@@ -222,7 +312,7 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:evolution/vivillon/high-plains"
+          "biomeCondition": "#cobblemon:evolution/vivillon/high_plains"
         },
         {
           "variant": "structure",
@@ -245,11 +335,11 @@
         },
         {
           "variant": "biome",
-          "biomeCondition": "#cobblemon:evolution/vivillon/icy-snow"
+          "biomeCondition": "#cobblemon:evolution/vivillon/icy_snow"
         },
         {
           "variant": "biome",
-          "biomeAnticondition": "#cobblemon:evolution/vivillon/icy-snow_anti"
+          "biomeAnticondition": "#cobblemon:evolution/vivillon/icy_snow_anti"
         },
         {
           "variant": "structure",
@@ -637,11 +727,12 @@
         },
         {
           "variant": "advancement",
-          "advancement": "cobblemon:catch_all_vivillon"
+          "requiredAdvancement": "cobblemon:catch_all_vivillon"
         }
       ]
     }
   ],
+  "preEvolution": "scatterbug",
   "spawns": [
     [
       {
@@ -652,9 +743,6 @@
         "rarity": "common",
         "weight": 3.0,
         "levels": "9-21",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether",
@@ -663,11 +751,15 @@
             "#cobblemon:is_savanna"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0665_spewpa.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0665_spewpa.json",
+        "spawnId": "spewpa-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "spewpa",
+        "type": "pokemon"
       }
     ],
     [
@@ -675,34 +767,19 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "9-21",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "the_bumblezone:floral_meadow"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0665_spewpa.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0665_spewpa.json",
+        "spawnId": "spewpa-2",
+        "spawnType": "grounded",
+        "pokemon": "spewpa",
+        "excludeStructures": [
+          "#the_bumblezone:sempiternal_sanctums"
         ],
-        "rarity": "common",
-        "weight": 1.8,
-        "levels": "4-18",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/common_scarlet_forest.json"
+        "type": "pokemon"
       }
     ]
   ],
@@ -716,6 +793,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation6/spewpa.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation6/spewpa.json"
   ]
 }

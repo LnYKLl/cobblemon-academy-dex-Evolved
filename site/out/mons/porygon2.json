@@ -2,20 +2,45 @@
   "id": "porygon2",
   "dexnum": 233,
   "name": "Porygon2",
+  "nameFr": "Porygon2",
+  "description": "Porygon2 fut créé par des humains grâce aux progrès de la science. Ce Pokémon a été doté d'une intelligence artificielle qui lui permet d'apprendre de nouveaux mouvements et des émotions par lui-même.",
   "primaryType": "normal",
   "secondaryType": "",
+  "primaryTypeFr": "Normal",
+  "secondaryTypeFr": "",
+  "height": 6,
+  "weight": 325,
   "maleRatio": -1,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.9,
+    "height": 1.4,
+    "fixed": false
+  },
   "labels": [
     "gen2"
   ],
   "abilities": [
-    "trace",
-    "download",
-    "h:analytic"
+    {
+      "id": "trace",
+      "name": "Calque",
+      "hidden": false
+    },
+    {
+      "id": "download",
+      "name": "Télécharge",
+      "hidden": false
+    },
+    {
+      "id": "analytic",
+      "name": "Analyste",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "mineral"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 85,
     "attack": 80,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 180,
   "experienceGroup": "medium_fast",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,109 +68,619 @@
         "item": "cobblemon:upgrade",
         "percentage": 25.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Améliorator"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:conversion",
-    "1:defensecurl",
-    "1:magnetrise",
-    "1:recycle",
-    "1:magiccoat",
-    "1:sharpen",
-    "15:thundershock",
-    "20:psybeam",
-    "25:conversion2",
-    "30:agility",
-    "35:recover",
-    "40:discharge",
-    "45:triattack",
-    "50:lockon",
-    "55:zapcannon",
-    "60:hyperbeam",
-    "tm:agility",
-    "tm:allyswitch",
-    "tm:blizzard",
-    "tm:charge",
-    "tm:chargebeam",
-    "tm:doubleedge",
-    "tm:dreameater",
-    "tm:eerieimpulse",
-    "tm:electroweb",
-    "tm:endure",
-    "tm:facade",
-    "tm:flash",
-    "tm:foulplay",
-    "tm:gigaimpact",
-    "tm:gravity",
-    "tm:guardswap",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:irontail",
-    "tm:lastresort",
-    "tm:magiccoat",
-    "tm:magnetrise",
-    "tm:powerswap",
-    "tm:protect",
-    "tm:psybeam",
-    "tm:psychic",
-    "tm:psyshock",
-    "tm:raindance",
-    "tm:recycle",
-    "tm:rest",
-    "tm:shadowball",
-    "tm:shockwave",
-    "tm:signalbeam",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:speedswap",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:takedown",
-    "tm:telekinesis",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:triattack",
-    "tm:trick",
-    "tm:trickroom",
-    "tm:wonderroom",
-    "tm:zenheadbutt",
-    "tutor:allyswitch",
-    "tutor:chargebeam",
-    "tutor:electroweb",
-    "tutor:foulplay",
-    "tutor:gigaimpact",
-    "tutor:gravity",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:irontail",
-    "tutor:lastresort",
-    "tutor:magiccoat",
-    "tutor:magnetrise",
-    "tutor:psychic",
-    "tutor:recycle",
-    "tutor:rest",
-    "tutor:shadowball",
-    "tutor:shockwave",
-    "tutor:signalbeam",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:telekinesis",
-    "tutor:thunderbolt",
-    "tutor:trick",
-    "tutor:wonderroom",
-    "tutor:zenheadbutt"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "conversion",
+      "name": "Conversion",
+      "category": "1"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "1"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "1"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "1"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "1"
+    },
+    {
+      "id": "sharpen",
+      "name": "Affûtage",
+      "category": "1"
+    },
+    {
+      "id": "thundershock",
+      "name": "Éclair",
+      "category": "15"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "20"
+    },
+    {
+      "id": "conversion2",
+      "name": "Conversion 2",
+      "category": "25"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "30"
+    },
+    {
+      "id": "recover",
+      "name": "Soin",
+      "category": "35"
+    },
+    {
+      "id": "discharge",
+      "name": "Coup d'Jus",
+      "category": "40"
+    },
+    {
+      "id": "triattack",
+      "name": "Triplattaque",
+      "category": "45"
+    },
+    {
+      "id": "lockon",
+      "name": "Verrouillage",
+      "category": "50"
+    },
+    {
+      "id": "zapcannon",
+      "name": "Élecanon",
+      "category": "55"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "60"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "eerieimpulse",
+      "name": "Ondes Étranges",
+      "category": "tm"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "tm"
+    },
+    {
+      "id": "guardswap",
+      "name": "Permugarde",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tm"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tm"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tm"
+    },
+    {
+      "id": "powerswap",
+      "name": "Permuforce",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "speedswap",
+      "name": "Permuvitesse",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "triattack",
+      "name": "Triplattaque",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tutor"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "legacy"
+    },
+    {
+      "id": "barrier",
+      "name": "Bouclier",
+      "category": "legacy"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "nightmare",
+      "name": "Cauchemar",
+      "category": "legacy"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "legacy"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "legacy"
+    },
+    {
+      "id": "psywave",
+      "name": "Vague Psy",
+      "category": "legacy"
+    },
+    {
+      "id": "rage",
+      "name": "Frénésie",
+      "category": "legacy"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "skullbash",
+      "name": "Coud'Krâne",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "teleport",
+      "name": "Téléport",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "porygon2_porygonz",
@@ -159,45 +696,28 @@
       ]
     }
   ],
+  "preEvolution": "porygon",
   "spawns": [
     [
       {
         "rarity": "uncommon",
         "weight": 0.72,
         "levels": "35-52",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0233_porygon2.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0233_porygon2.json",
+        "spawnId": "porygon2-1",
         "nearbyBlocks": {
           "selectors": [
             "cobblemon:pc"
           ]
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 1.7,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/rare_crystallized_desert.json"
+        "spawnType": "grounded",
+        "pokemon": "porygon2",
+        "type": "pokemon"
       }
     ]
   ],
@@ -211,6 +731,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation2/porygon2.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation2/porygon2.json"
   ]
 }

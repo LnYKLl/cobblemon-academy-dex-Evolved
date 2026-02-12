@@ -2,20 +2,45 @@
   "id": "eevee",
   "dexnum": 133,
   "name": "Eevee",
+  "nameFr": "Évoli",
+  "description": "Évoli a une structure génétique instable qui se transforme en fonction de l'environnement dans lequel il vit. Ce Pokémon peut évoluer grâce aux radiations de diverses pierres.",
   "primaryType": "normal",
   "secondaryType": "",
+  "primaryTypeFr": "Normal",
+  "secondaryTypeFr": "",
+  "height": 3,
+  "weight": 65,
   "maleRatio": 0.875,
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 0.9,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen1"
   ],
   "abilities": [
-    "runaway",
-    "adaptability",
-    "h:anticipation"
+    {
+      "id": "runaway",
+      "name": "Fuite",
+      "hidden": false
+    },
+    {
+      "id": "adaptability",
+      "name": "Adaptabilité",
+      "hidden": false
+    },
+    {
+      "id": "anticipation",
+      "name": "Anticipation",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 35,
   "baseStats": {
     "hp": 55,
     "attack": 55,
@@ -32,8 +57,10 @@
     "special_defence": 1,
     "speed": 0
   },
+  "baseExperienceYield": 65,
   "experienceGroup": "medium_fast",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,106 +68,443 @@
         "item": "cobblemon:silk_scarf",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Mouchoir Soie"
       },
       {
         "item": "cobblemon:eviolite",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Évoluroc"
       }
     ]
   },
   "moves": [
-    "1:tailwhip",
-    "1:tackle",
-    "1:helpinghand",
-    "1:growl",
-    "1:covet",
-    "5:sandattack",
-    "10:quickattack",
-    "15:babydolleyes",
-    "20:refresh",
-    "25:bite",
-    "30:copycat",
-    "35:batonpass",
-    "40:takedown",
-    "45:trumpcard",
-    "50:doubleedge",
-    "55:lastresort",
-    "egg:captivate",
-    "egg:curse",
-    "egg:detect",
-    "egg:doublekick",
-    "egg:flail",
-    "egg:mudslap",
-    "egg:naturalgift",
-    "egg:synchronoise",
-    "egg:tickle",
-    "egg:wish",
-    "egg:yawn",
-    "tm:alluringvoice",
-    "tm:babydolleyes",
-    "tm:batonpass",
-    "tm:bodyslam",
-    "tm:calmmind",
-    "tm:captivate",
-    "tm:charm",
-    "tm:covet",
-    "tm:curse",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:echoedvoice",
-    "tm:endure",
-    "tm:facade",
-    "tm:faketears",
-    "tm:focusenergy",
-    "tm:headbutt",
-    "tm:healbell",
-    "tm:helpinghand",
-    "tm:hypervoice",
-    "tm:irontail",
-    "tm:laserfocus",
-    "tm:lastresort",
-    "tm:mudslap",
-    "tm:naturalgift",
-    "tm:payday",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:roar",
-    "tm:shadowball",
-    "tm:sleeptalk",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:trailblaze",
-    "tm:weatherball",
-    "tm:workup",
-    "tutor:babydolleyes",
-    "tutor:calmmind",
-    "tutor:covet",
-    "tutor:focusenergy",
-    "tutor:healbell",
-    "tutor:helpinghand",
-    "tutor:hypervoice",
-    "tutor:irontail",
-    "tutor:laserfocus",
-    "tutor:lastresort",
-    "tutor:mudslap",
-    "tutor:rest",
-    "tutor:shadowball",
-    "tutor:sleeptalk",
-    "tutor:swift"
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "1"
+    },
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "5"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "10"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "15"
+    },
+    {
+      "id": "refresh",
+      "name": "Régénération",
+      "category": "20"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "25"
+    },
+    {
+      "id": "copycat",
+      "name": "Photocopie",
+      "category": "30"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "35"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "40"
+    },
+    {
+      "id": "trumpcard",
+      "name": "Atout",
+      "category": "45"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "50"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "55"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "egg"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "egg"
+    },
+    {
+      "id": "detect",
+      "name": "Détection",
+      "category": "egg"
+    },
+    {
+      "id": "doublekick",
+      "name": "Double Pied",
+      "category": "egg"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "egg"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "egg"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "egg"
+    },
+    {
+      "id": "synchronoise",
+      "name": "Synchropeine",
+      "category": "egg"
+    },
+    {
+      "id": "tickle",
+      "name": "Chatouille",
+      "category": "egg"
+    },
+    {
+      "id": "wish",
+      "name": "Vœu",
+      "category": "egg"
+    },
+    {
+      "id": "yawn",
+      "name": "Bâillement",
+      "category": "egg"
+    },
+    {
+      "id": "alluringvoice",
+      "name": "Voix Envoûtante",
+      "category": "tm"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "faketears",
+      "name": "Croco Larme",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "healbell",
+      "name": "Glas de Soin",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tm"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "tm"
+    },
+    {
+      "id": "payday",
+      "name": "Jackpot",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "healbell",
+      "name": "Glas de Soin",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tutor"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    }
   ],
   "forms": [
     "Gmax"
   ],
-  "types": [],
   "evolutions": [
     {
       "id": "eevee_jolteon",
@@ -257,6 +621,7 @@
       "requiredContext": "cobblemon:ice_stone"
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -266,9 +631,6 @@
         "rarity": "ultra-rare",
         "weight": 4.8,
         "levels": "5-33",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -278,11 +640,15 @@
             "#cobblemon:is_temperate"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0133_eevee.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0133_eevee.json",
+        "spawnId": "eevee-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "eevee",
+        "type": "pokemon"
       }
     ],
     [
@@ -293,20 +659,21 @@
         "rarity": "rare",
         "weight": 10.0,
         "levels": "5-33",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether",
             "#cobblemon:is_temperate"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0133_eevee.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0133_eevee.json",
+        "spawnId": "eevee-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "eevee",
+        "type": "pokemon"
       }
     ],
     [
@@ -318,19 +685,20 @@
         "rarity": "uncommon",
         "weight": 1.84,
         "levels": "5-33",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0133_eevee.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0133_eevee.json",
+        "spawnId": "eevee-3",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "eevee",
+        "type": "pokemon"
       }
     ],
     [
@@ -341,22 +709,23 @@
         "rarity": "uncommon",
         "weight": 1.84,
         "levels": "5-33",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0133_eevee.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0133_eevee.json",
+        "spawnId": "eevee-4",
         "structures": [
           "#minecraft:village"
         ],
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "eevee",
+        "type": "pokemon"
       }
     ],
     [
@@ -367,18 +736,19 @@
         "rarity": "uncommon",
         "weight": 9.2,
         "levels": "5-33",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0133_eevee.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0133_eevee.json",
+        "spawnId": "eevee-5",
         "sky": {
           "canSeeSky": false
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "eevee",
+        "type": "pokemon"
       }
     ],
     [
@@ -402,10 +772,13 @@
           ]
         },
         "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0133_eevee.json",
+        "spawnId": "eevee-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "pokemon": "eevee",
+        "type": "pokemon"
       }
     ],
     [
@@ -426,10 +799,13 @@
           ]
         },
         "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0133_eevee.json",
+        "spawnId": "eevee-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "pokemon": "eevee",
+        "type": "pokemon"
       }
     ],
     [
@@ -450,10 +826,13 @@
           ]
         },
         "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0133_eevee.json",
+        "spawnId": "eevee-3",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "pokemon": "eevee",
+        "type": "pokemon"
       }
     ],
     [
@@ -473,13 +852,16 @@
           ]
         },
         "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0133_eevee.json",
+        "spawnId": "eevee-4",
         "structures": [
           "#minecraft:village"
         ],
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "pokemon": "eevee",
+        "type": "pokemon"
       }
     ],
     [
@@ -499,28 +881,12 @@
           ]
         },
         "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0133_eevee.json",
+        "spawnId": "eevee-5",
         "sky": {
           "canSeeSky": false
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 3.1,
-        "levels": "15-32",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:starlight_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_forest/rare_starlight_forest.json"
+        "pokemon": "eevee",
+        "type": "pokemon"
       }
     ]
   ],
@@ -534,7 +900,7 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/eevee.json",
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/eevee.json",
     "datapacks\\Academy\\data\\cobblemon\\species\\generation1\\eevee.json"
   ]
 }

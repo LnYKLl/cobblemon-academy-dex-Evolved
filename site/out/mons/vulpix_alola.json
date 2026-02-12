@@ -2,20 +2,41 @@
   "id": "vulpix_alola",
   "dexnum": 37,
   "name": "Vulpix Alola",
+  "nameFr": "Vulpix Alola",
+  "description": "Ses congénères et lui forment des meutes pour s'entraider. Il congèle ses proies avec son souffle à -50 °C, avant de les dévorer.",
   "primaryType": "ice",
   "secondaryType": "",
+  "primaryTypeFr": "Glace",
+  "secondaryTypeFr": "",
+  "height": 6,
+  "weight": 99,
   "maleRatio": 0.25,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 0.7,
+    "height": 1.1,
+    "fixed": false
+  },
   "labels": [
     "gen7",
     "alolan_form"
   ],
   "abilities": [
-    "snowcloak",
-    "h:snowwarning"
+    {
+      "id": "snowcloak",
+      "name": "Rideau Neige",
+      "hidden": false
+    },
+    {
+      "id": "snowwarning",
+      "name": "Alerte Neige",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 38,
     "attack": 41,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 60,
   "experienceGroup": "medium_fast",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 5,
     "entries": [
@@ -41,135 +64,624 @@
         "item": "minecraft:sweet_berries",
         "percentage": null,
         "quantityRange": "1-3",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:sweet_berries"
       },
       {
         "item": "minecraft:snowball",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:snowball"
       },
       {
         "item": "cobblemon:babiri_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Babiri"
       }
     ]
   },
   "moves": [
-    "1:powdersnow",
-    "1:tailwhip",
-    "4:disable",
-    "8:iceshard",
-    "12:spite",
-    "16:icywind",
-    "20:confuseray",
-    "24:aurorabeam",
-    "28:extrasensory",
-    "32:icebeam",
-    "36:imprison",
-    "40:mist",
-    "44:auroraveil",
-    "48:freezedry",
-    "52:grudge",
-    "egg:babydolleyes",
-    "egg:captivate",
-    "egg:disable",
-    "egg:extrasensory",
-    "egg:feintattack",
-    "egg:flail",
-    "egg:freezedry",
-    "egg:howl",
-    "egg:hypnosis",
-    "egg:moonblast",
-    "egg:roar",
-    "egg:secretpower",
-    "egg:sheercold",
-    "tm:agility",
-    "tm:auroraveil",
-    "tm:babydolleyes",
-    "tm:batonpass",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:captivate",
-    "tm:charm",
-    "tm:chillingwater",
-    "tm:confuseray",
-    "tm:covet",
-    "tm:darkpulse",
-    "tm:dazzlinggleam",
-    "tm:dig",
-    "tm:disarmingvoice",
-    "tm:doubleedge",
-    "tm:drainingkiss",
-    "tm:encore",
-    "tm:endure",
-    "tm:facade",
-    "tm:faketears",
-    "tm:foulplay",
-    "tm:frostbreath",
-    "tm:hail",
-    "tm:healbell",
-    "tm:helpinghand",
-    "tm:hex",
-    "tm:icebeam",
-    "tm:iciclespear",
-    "tm:icywind",
-    "tm:imprison",
-    "tm:irontail",
-    "tm:mistyterrain",
-    "tm:nastyplot",
-    "tm:painsplit",
-    "tm:payback",
-    "tm:playrough",
-    "tm:powerswap",
-    "tm:protect",
-    "tm:psychup",
-    "tm:raindance",
-    "tm:rest",
-    "tm:roar",
-    "tm:roleplay",
-    "tm:safeguard",
-    "tm:secretpower",
-    "tm:sleeptalk",
-    "tm:snowscape",
-    "tm:spite",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:swift",
-    "tm:tailslap",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:weatherball",
-    "tm:zenheadbutt",
-    "tutor:babydolleyes",
-    "tutor:covet",
-    "tutor:darkpulse",
-    "tutor:dazzlinggleam",
-    "tutor:foulplay",
-    "tutor:healbell",
-    "tutor:helpinghand",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:irontail",
-    "tutor:painsplit",
-    "tutor:playrough",
-    "tutor:rest",
-    "tutor:roleplay",
-    "tutor:sleeptalk",
-    "tutor:spite",
-    "tutor:swift",
-    "tutor:zenheadbutt"
+    {
+      "id": "powdersnow",
+      "name": "Poudreuse",
+      "category": "1"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "1"
+    },
+    {
+      "id": "disable",
+      "name": "Entrave",
+      "category": "4"
+    },
+    {
+      "id": "iceshard",
+      "name": "Éclats Glace",
+      "category": "8"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "12"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "16"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "20"
+    },
+    {
+      "id": "aurorabeam",
+      "name": "Onde Boréale",
+      "category": "24"
+    },
+    {
+      "id": "extrasensory",
+      "name": "Extrasenseur",
+      "category": "28"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "32"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "36"
+    },
+    {
+      "id": "mist",
+      "name": "Brume",
+      "category": "40"
+    },
+    {
+      "id": "auroraveil",
+      "name": "Voile Aurore",
+      "category": "44"
+    },
+    {
+      "id": "freezedry",
+      "name": "Lyophilisation",
+      "category": "48"
+    },
+    {
+      "id": "grudge",
+      "name": "Rancune",
+      "category": "52"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "egg"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "egg"
+    },
+    {
+      "id": "disable",
+      "name": "Entrave",
+      "category": "egg"
+    },
+    {
+      "id": "extrasensory",
+      "name": "Extrasenseur",
+      "category": "egg"
+    },
+    {
+      "id": "feintattack",
+      "name": "Feinte",
+      "category": "egg"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "egg"
+    },
+    {
+      "id": "freezedry",
+      "name": "Lyophilisation",
+      "category": "egg"
+    },
+    {
+      "id": "howl",
+      "name": "Grondement",
+      "category": "egg"
+    },
+    {
+      "id": "hypnosis",
+      "name": "Hypnose",
+      "category": "egg"
+    },
+    {
+      "id": "moonblast",
+      "name": "Pouvoir Lunaire",
+      "category": "egg"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "egg"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "egg"
+    },
+    {
+      "id": "sheercold",
+      "name": "Glaciation",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "auroraveil",
+      "name": "Voile Aurore",
+      "category": "tm"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "disarmingvoice",
+      "name": "Voix Enjôleuse",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "drainingkiss",
+      "name": "Vampibaiser",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "faketears",
+      "name": "Croco Larme",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "frostbreath",
+      "name": "Souffle Glacé",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "healbell",
+      "name": "Glas de Soin",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "iciclespear",
+      "name": "Stalactite",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "mistyterrain",
+      "name": "Champ Brumeux",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "powerswap",
+      "name": "Permuforce",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailslap",
+      "name": "Plumo-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "healbell",
+      "name": "Glas de Soin",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "legacy"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "celebrate",
+      "name": "Célébration",
+      "category": "special"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "vulpix_ninetalesalola",
       "variant": "item_interact",
       "result": "ninetales alolan",
-      "consumeHeldItem": true,
+      "consumeHeldItem": false,
       "learnableMoves": [
         "dazzlinggleam"
       ],
@@ -177,6 +689,7 @@
       "requiredContext": "cobblemon:ice_stone"
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -186,19 +699,26 @@
         "rarity": "uncommon",
         "weight": 5.52,
         "levels": "5-30",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_snowy_forest",
             "#cobblemon:is_snowy_taiga"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0037_vulpix.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0037_vulpix.json",
+        "spawnId": "vulpix-alolan-3",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "vulpix alolan",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 2.5,
+          "condition": {
+            "timeRange": "twilight"
+          }
         }
       }
     ],
@@ -210,34 +730,16 @@
         "rarity": "common",
         "weight": 1.9,
         "levels": "5-30",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_frozen"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0037_vulpix.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 3.3,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:starlight_permafrost_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/uncommon_starlight_permafrost_forest.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0037_vulpix.json",
+        "spawnId": "vulpix-alolan-4",
+        "spawnType": "grounded",
+        "pokemon": "vulpix alolan",
+        "type": "pokemon"
       }
     ]
   ],
@@ -251,6 +753,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/vulpix.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/vulpix.json"
   ]
 }

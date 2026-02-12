@@ -2,20 +2,41 @@
   "id": "mareep",
   "dexnum": 179,
   "name": "Mareep",
+  "nameFr": "Wattouat",
+  "description": "L'épaisse fourrure cotonneuse de Wattouat se charge d'électricité statique lorsqu'on la frotte. Plus elle est chargée, plus l'ampoule au bout de sa queue est lumineuse.",
   "primaryType": "electric",
   "secondaryType": "",
+  "primaryTypeFr": "Électrik",
+  "secondaryTypeFr": "",
+  "height": 6,
+  "weight": 78,
   "maleRatio": 0.5,
+  "baseScale": 1.1,
+  "hitbox": {
+    "width": 0.75,
+    "height": 0.9,
+    "fixed": false
+  },
   "labels": [
     "gen2"
   ],
   "abilities": [
-    "static",
-    "h:plus"
+    {
+      "id": "static",
+      "name": "Statik",
+      "hidden": false
+    },
+    {
+      "id": "plus",
+      "name": "Plus",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "monster",
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 55,
     "attack": 40,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 56,
   "experienceGroup": "medium_slow",
   "catchRate": 235,
+  "baseFriendship": 50,
   "drops": {
     "amount": 5,
     "entries": [
@@ -41,110 +64,543 @@
         "item": "minecraft:mutton",
         "percentage": null,
         "quantityRange": "1-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:mutton"
       },
       {
         "item": "minecraft:white_wool",
         "percentage": null,
         "quantityRange": "1-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:white_wool"
       },
       {
         "item": "cobblemon:cheri_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Ceriz"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:growl",
-    "4:thunderwave",
-    "8:thundershock",
-    "11:cottonspore",
-    "15:charge",
-    "18:takedown",
-    "22:electroball",
-    "25:confuseray",
-    "29:powergem",
-    "32:discharge",
-    "36:cottonguard",
-    "39:dazzlinggleam",
-    "43:lightscreen",
-    "46:thunder",
-    "egg:afteryou",
-    "egg:agility",
-    "egg:eerieimpulse",
-    "egg:electricterrain",
-    "egg:electroweb",
-    "egg:flatter",
-    "egg:odorsleuth",
-    "egg:sandattack",
-    "tm:afteryou",
-    "tm:agility",
-    "tm:bodyslam",
-    "tm:charge",
-    "tm:chargebeam",
-    "tm:confuseray",
-    "tm:dazzlinggleam",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:echoedvoice",
-    "tm:eerieimpulse",
-    "tm:electricterrain",
-    "tm:electroball",
-    "tm:electroweb",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:flash",
-    "tm:headbutt",
-    "tm:healbell",
-    "tm:helpinghand",
-    "tm:irontail",
-    "tm:lightscreen",
-    "tm:magnetrise",
-    "tm:powergem",
-    "tm:protect",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:risingvoltage",
-    "tm:safeguard",
-    "tm:screech",
-    "tm:shockwave",
-    "tm:signalbeam",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:trailblaze",
-    "tm:voltswitch",
-    "tm:wildcharge",
-    "tutor:afteryou",
-    "tutor:chargebeam",
-    "tutor:dazzlinggleam",
-    "tutor:electroweb",
-    "tutor:endeavor",
-    "tutor:healbell",
-    "tutor:helpinghand",
-    "tutor:irontail",
-    "tutor:magnetrise",
-    "tutor:rest",
-    "tutor:risingvoltage",
-    "tutor:shockwave",
-    "tutor:signalbeam",
-    "tutor:sleeptalk",
-    "tutor:thunderbolt",
-    "tutor:wildcharge"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "4"
+    },
+    {
+      "id": "thundershock",
+      "name": "Éclair",
+      "category": "8"
+    },
+    {
+      "id": "cottonspore",
+      "name": "Spore Coton",
+      "category": "11"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "15"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "18"
+    },
+    {
+      "id": "electroball",
+      "name": "Boule Élek",
+      "category": "22"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "25"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "29"
+    },
+    {
+      "id": "discharge",
+      "name": "Coup d'Jus",
+      "category": "32"
+    },
+    {
+      "id": "cottonguard",
+      "name": "Cotogarde",
+      "category": "36"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "39"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "43"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "46"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "egg"
+    },
+    {
+      "id": "eerieimpulse",
+      "name": "Ondes Étranges",
+      "category": "egg"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "egg"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "egg"
+    },
+    {
+      "id": "flatter",
+      "name": "Flatterie",
+      "category": "egg"
+    },
+    {
+      "id": "odorsleuth",
+      "name": "Flair",
+      "category": "egg"
+    },
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "egg"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "eerieimpulse",
+      "name": "Ondes Étranges",
+      "category": "tm"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "tm"
+    },
+    {
+      "id": "electroball",
+      "name": "Boule Élek",
+      "category": "tm"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "healbell",
+      "name": "Glas de Soin",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tm"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "voltswitch",
+      "name": "Change Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "healbell",
+      "name": "Glas de Soin",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "zapcannon",
+      "name": "Élecanon",
+      "category": "legacy"
+    },
+    {
+      "id": "holdback",
+      "name": "Retenue",
+      "category": "special"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "mareep_flaaffy",
@@ -160,6 +616,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -169,39 +626,35 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "3-28",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_highlands",
             "#cobblemon:is_plains"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0179_mareep.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0179_mareep.json",
+        "spawnId": "mareep-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 3.1,
-        "levels": "4-19",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_starlight_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/common_is_starlight_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "mareep",
+        "type": "pokemon",
+        "weightMultiplier": [
+          {
+            "multiplier": 0.25,
+            "condition": {
+              "timeRange": "night"
+            }
+          },
+          {
+            "multiplier": 5.0,
+            "condition": {
+              "isThundering": true
+            }
+          }
+        ]
       }
     ]
   ],
@@ -215,6 +668,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation2/mareep.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation2/mareep.json"
   ]
 }

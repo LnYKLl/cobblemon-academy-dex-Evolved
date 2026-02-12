@@ -16,33 +16,49 @@ export const flatSpawns = (sp) =>
   asList(sp.spawns).flatMap((a) => (Array.isArray(a) ? a : [a]));
 
 export const splitMove = (m) => {
+  // Support new object format: { id, name, category }
+  if (typeof m === 'object' && m !== null) {
+    const cat = String(m.category || '').toLowerCase();
+    const id = m.id || '';
+    const nameFr = m.name || m.id || 'Unknown';
+    const isLevel = /^\d+$/.test(cat);
+    if (isLevel) {
+      return { kind: 'level', id, nameFr, level: parseInt(cat, 10) };
+    }
+    if (cat === 'egg' || cat === 'tm' || cat === 'tutor') {
+      return { kind: cat, id, nameFr };
+    }
+    return { kind: 'other', id, nameFr };
+  }
+  
+  // Legacy string format: "1:thundershock" or "egg:charm"
   const s = String(m).trim();
   const [head, tail = ""] = s.split(":", 2);
   const h = head.trim();
+  const id = tail.trim() || s;
   const isAllDigits =
     h.length > 0 && [...h].every((ch) => ch >= "0" && ch <= "9");
   if (isAllDigits)
-    return { kind: "level", name: `${parseInt(h, 10)} ${tail.trim()}` };
+    return { kind: "level", id, nameFr: id, level: parseInt(h, 10) };
   const k = h.toLowerCase();
   if (k === "egg" || k === "tm" || k === "tutor")
-    return { kind: k, name: tail.trim() };
-  if (!s.includes(":")) return { kind: "other", name: s };
-  return { kind: "other", name: tail.trim() || s };
+    return { kind: k, id, nameFr: id };
+  if (!s.includes(":")) return { kind: "other", id: s, nameFr: s };
+  return { kind: "other", id, nameFr: id };
 };
 
-export const groupMoves = (list) => {
+export const groupMoves = (list, lang = 'fr') => {
   const out = { level: [], egg: [], tm: [], tutor: [], other: [] };
   for (const m of list || []) {
-    const { kind, name } = splitMove(m);
-    if (out[kind]) out[kind].push(name);
-    else out.other.push(name || String(m));
+    const parsed = splitMove(m);
+    const entry = parsed.level !== undefined 
+      ? { id: parsed.id, nameFr: parsed.nameFr, level: parsed.level }
+      : { id: parsed.id, nameFr: parsed.nameFr };
+    if (out[parsed.kind]) out[parsed.kind].push(entry);
+    else out.other.push(entry);
   }
-  out.level.sort((a, b) => {
-    const la = parseInt(String(a), 10),
-      lb = parseInt(String(b), 10);
-    if (!isNaN(la) && !isNaN(lb) && la !== lb) return la - lb;
-    return String(a).localeCompare(String(b));
-  });
+  // Sort level moves by level number
+  out.level.sort((a, b) => (a.level || 0) - (b.level || 0));
   return out;
 };
 

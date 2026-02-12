@@ -2,19 +2,40 @@
   "id": "ceruledge",
   "dexnum": 937,
   "name": "Ceruledge",
+  "nameFr": "Malvalame",
+  "description": "Les flammes de ses épées sont animées par la rancœur d'une âme guerrière qui a péri avant de pouvoir accomplir son but.",
   "primaryType": "fire",
   "secondaryType": "ghost",
+  "primaryTypeFr": "Feu",
+  "secondaryTypeFr": "Spectre",
+  "height": 16,
+  "weight": 620,
   "maleRatio": 0.5,
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 1.1,
+    "height": 2.7,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "flashfire",
-    "h:weakarmor"
+    {
+      "id": "flashfire",
+      "name": "Torche",
+      "hidden": false
+    },
+    {
+      "id": "weakarmor",
+      "name": "Armurouillée",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "human_like"
   ],
+  "eggCycles": 35,
   "baseStats": {
     "hp": 75,
     "attack": 125,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 263,
   "experienceGroup": "slow",
   "catchRate": 25,
+  "baseFriendship": 20,
   "drops": {
     "amount": 5,
     "entries": [
@@ -40,7 +63,8 @@
         "item": "minecraft:charcoal",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:charcoal"
       },
       {
         "item": "cobblemon:charcoal_stick",
@@ -49,7 +73,8 @@
         "source": "species",
         "biomes": [
           "#minecraft:is_nether"
-        ]
+        ],
+        "itemName": "Bâton de charbon"
       },
       {
         "item": "cobblemon:malicious_armor",
@@ -58,7 +83,8 @@
         "source": "species",
         "biomes": [
           "#minecraft:is_nether"
-        ]
+        ],
+        "itemName": "Armure de la Rancune"
       },
       {
         "item": "cobblemon:rawst_berry",
@@ -67,7 +93,8 @@
         "source": "species",
         "biomes": [
           "#minecraft:is_nether"
-        ]
+        ],
+        "itemName": "Baie Fraive"
       },
       {
         "item": "minecraft:blaze_rod",
@@ -76,106 +103,476 @@
         "source": "spawn_pool_world",
         "biomes": [
           "#minecraft:is_nether"
-        ]
+        ],
+        "itemName": "minecraft:blaze_rod"
       }
     ]
   },
   "moves": [
-    "1:shadowclaw",
-    "1:leer",
-    "1:ember",
-    "1:astonish",
-    "1:nightslash",
-    "1:shadowsneak",
-    "1:quickguard",
-    "1:solarblade",
-    "8:clearsmog",
-    "12:firespin",
-    "16:willowisp",
-    "20:nightshade",
-    "24:flamecharge",
-    "28:incinerate",
-    "32:lavaplume",
-    "37:swordsdance",
-    "42:allyswitch",
-    "48:bitterblade",
-    "56:psychocut",
-    "62:flareblitz",
-    "egg:destinybond",
-    "egg:disable",
-    "egg:spite",
-    "tm:allyswitch",
-    "tm:brickbreak",
-    "tm:bulkup",
-    "tm:closecombat",
-    "tm:confuseray",
-    "tm:curse",
-    "tm:dragonclaw",
-    "tm:endure",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:fireblast",
-    "tm:firespin",
-    "tm:flamecharge",
-    "tm:flamethrower",
-    "tm:flareblitz",
-    "tm:fling",
-    "tm:heatwave",
-    "tm:helpinghand",
-    "tm:hex",
-    "tm:incinerate",
-    "tm:irondefense",
-    "tm:ironhead",
-    "tm:lightscreen",
-    "tm:nightshade",
-    "tm:overheat",
-    "tm:phantomforce",
-    "tm:poisonjab",
-    "tm:poltergeist",
-    "tm:protect",
-    "tm:psychocut",
-    "tm:psychup",
-    "tm:reflect",
-    "tm:rest",
-    "tm:shadowball",
-    "tm:shadowclaw",
-    "tm:sleeptalk",
-    "tm:solarblade",
-    "tm:spite",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:throatchop",
-    "tm:vacuumwave",
-    "tm:willowisp",
-    "tm:xscissor",
-    "tutor:allyswitch",
-    "tutor:bulkup",
-    "tutor:falseswipe",
-    "tutor:flamethrower",
-    "tutor:heatwave",
-    "tutor:helpinghand",
-    "tutor:irondefense",
-    "tutor:ironhead",
-    "tutor:poisonjab",
-    "tutor:poltergeist",
-    "tutor:psychocut",
-    "tutor:rest",
-    "tutor:shadowball",
-    "tutor:shadowclaw",
-    "tutor:sleeptalk",
-    "tutor:spite",
-    "tutor:throatchop",
-    "tutor:vacuumwave",
-    "tutor:xscissor"
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "ember",
+      "name": "Flammèche",
+      "category": "1"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "1"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "1"
+    },
+    {
+      "id": "shadowsneak",
+      "name": "Ombre Portée",
+      "category": "1"
+    },
+    {
+      "id": "quickguard",
+      "name": "Prévention",
+      "category": "1"
+    },
+    {
+      "id": "solarblade",
+      "name": "Lame Solaire",
+      "category": "1"
+    },
+    {
+      "id": "clearsmog",
+      "name": "Bain de Smog",
+      "category": "8"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "12"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "16"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "20"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "24"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "28"
+    },
+    {
+      "id": "lavaplume",
+      "name": "Ébullilave",
+      "category": "32"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "37"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "42"
+    },
+    {
+      "id": "bitterblade",
+      "name": "Lame en Peine",
+      "category": "48"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "56"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "62"
+    },
+    {
+      "id": "destinybond",
+      "name": "Lien du Destin",
+      "category": "egg"
+    },
+    {
+      "id": "disable",
+      "name": "Entrave",
+      "category": "egg"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "egg"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tm"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dragonclaw",
+      "name": "Draco-Griffe",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "phantomforce",
+      "name": "Hantise",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarblade",
+      "name": "Lame Solaire",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "vacuumwave",
+      "name": "Onde Vide",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tutor"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "vacuumwave",
+      "name": "Onde Vide",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "celebrate",
+      "name": "Célébration",
+      "category": "special"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "charcadet",
   "spawns": [
     [
       {
@@ -186,15 +583,41 @@
         "rarity": "uncommon",
         "weight": 4.0,
         "levels": "21-53",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#minecraft:is_nether"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0937_ceruledge.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0937_ceruledge.json",
+        "spawnId": "ceruledge-1",
+        "spawnType": "grounded",
+        "pokemon": "ceruledge",
+        "type": "pokemon",
+        "drops": {
+          "amount": 5,
+          "entries": [
+            {
+              "item": "minecraft:blaze_rod",
+              "percentage": null,
+              "quantityRange": "0-2"
+            },
+            {
+              "item": "cobblemon:charcoal_stick",
+              "percentage": 5.0,
+              "quantityRange": null
+            },
+            {
+              "item": "cobblemon:malicious_armor",
+              "percentage": 5.0,
+              "quantityRange": null
+            },
+            {
+              "item": "cobblemon:rawst_berry",
+              "percentage": 5.0,
+              "quantityRange": null
+            }
+          ]
+        }
       }
     ],
     [
@@ -205,15 +628,16 @@
         "rarity": "uncommon",
         "weight": 0.8,
         "levels": "21-53",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0937_ceruledge.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0937_ceruledge.json",
+        "spawnId": "ceruledge-2",
+        "spawnType": "grounded",
+        "pokemon": "ceruledge",
+        "type": "pokemon"
       }
     ],
     [
@@ -221,47 +645,29 @@
         "rarity": "uncommon",
         "weight": 0.4,
         "levels": "21-53",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0937_ceruledge.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0937_ceruledge.json",
+        "spawnId": "ceruledge-3",
         "structures": [
           "#aether:dungeons"
         ],
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "ultra-rare",
-        "weight": 7.2,
-        "levels": "31-48",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_starlight_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/ultra-rare_is_starlight_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "ceruledge",
+        "type": "pokemon"
       }
     ]
   ],
   "implemented": true,
   "images": {},
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/ceruledge.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/ceruledge.json"
   ]
 }

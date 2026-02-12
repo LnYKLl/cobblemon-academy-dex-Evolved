@@ -2,21 +2,46 @@
   "id": "voltorb_hisui",
   "dexnum": 100,
   "name": "Voltorb Hisui",
+  "nameFr": "Voltorb Hisui",
+  "description": "Ce Pokémon mystérieux ressemble étrangement à une Poké Ball. Lorsqu'il est agité, il relâche le courant électrique emmagasiné dans son abdomen et laisse échapper des éclats de rire.",
   "primaryType": "electric",
   "secondaryType": "grass",
+  "primaryTypeFr": "Électrik",
+  "secondaryTypeFr": "Plante",
+  "height": 5,
+  "weight": 130,
   "maleRatio": -1,
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 0.7,
+    "height": 0.7,
+    "fixed": false
+  },
   "labels": [
     "gen8a",
     "hisuian_form"
   ],
   "abilities": [
-    "soundproof",
-    "static",
-    "h:aftermath"
+    {
+      "id": "soundproof",
+      "name": "Anti-Bruit",
+      "hidden": false
+    },
+    {
+      "id": "static",
+      "name": "Statik",
+      "hidden": false
+    },
+    {
+      "id": "aftermath",
+      "name": "Boom Final",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "mineral"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 40,
     "attack": 30,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 66,
   "experienceGroup": "medium_fast",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -42,111 +69,429 @@
         "item": "minecraft:gunpowder",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:gunpowder"
       },
       {
         "item": "cobblemon:red_apricorn",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "Noigrume Rouge"
       },
       {
         "item": "cobblemon:cheri_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Ceriz"
       }
     ]
   },
   "moves": [
-    "1:charge",
-    "1:tackle",
-    "4:thundershock",
-    "6:stunspore",
-    "9:bulletseed",
-    "11:rollout",
-    "13:screech",
-    "16:chargebeam",
-    "20:swift",
-    "22:electroball",
-    "26:selfdestruct",
-    "29:energyball",
-    "34:seedbomb",
-    "34:discharge",
-    "41:explosion",
-    "46:gyroball",
-    "50:grassyterrain",
-    "egg:leechseed",
-    "egg:recycle",
-    "egg:worryseed",
-    "tm:agility",
-    "tm:bulletseed",
-    "tm:charge",
-    "tm:chargebeam",
-    "tm:doubleedge",
-    "tm:electricterrain",
-    "tm:electroball",
-    "tm:electroweb",
-    "tm:endure",
-    "tm:energyball",
-    "tm:explosion",
-    "tm:facade",
-    "tm:foulplay",
-    "tm:gigadrain",
-    "tm:grassknot",
-    "tm:grassyglide",
-    "tm:grassyterrain",
-    "tm:gyroball",
-    "tm:iceball",
-    "tm:leafstorm",
-    "tm:protect",
-    "tm:raindance",
-    "tm:recycle",
-    "tm:reflect",
-    "tm:rest",
-    "tm:rollout",
-    "tm:screech",
-    "tm:seedbomb",
-    "tm:selfdestruct",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:substitute",
-    "tm:swift",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:voltswitch",
-    "tm:wildcharge",
-    "tm:worryseed",
-    "tutor:chargebeam",
-    "tutor:electroweb",
-    "tutor:energyball",
-    "tutor:foulplay",
-    "tutor:gigadrain",
-    "tutor:grassyglide",
-    "tutor:iceball",
-    "tutor:recycle",
-    "tutor:rest",
-    "tutor:rollout",
-    "tutor:seedbomb",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:thunderbolt",
-    "tutor:wildcharge",
-    "tutor:worryseed"
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "thundershock",
+      "name": "Éclair",
+      "category": "4"
+    },
+    {
+      "id": "stunspore",
+      "name": "Para-Spore",
+      "category": "6"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "9"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "11"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "13"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "16"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "20"
+    },
+    {
+      "id": "electroball",
+      "name": "Boule Élek",
+      "category": "22"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "26"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "29"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "34"
+    },
+    {
+      "id": "discharge",
+      "name": "Coup d'Jus",
+      "category": "34"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "41"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "46"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "50"
+    },
+    {
+      "id": "leechseed",
+      "name": "Vampigraine",
+      "category": "egg"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "egg"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "tm"
+    },
+    {
+      "id": "electroball",
+      "name": "Boule Élek",
+      "category": "tm"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "tm"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "tm"
+    },
+    {
+      "id": "iceball",
+      "name": "Ball'Glace",
+      "category": "tm"
+    },
+    {
+      "id": "leafstorm",
+      "name": "Tempête Verte",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "voltswitch",
+      "name": "Change Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tutor"
+    },
+    {
+      "id": "iceball",
+      "name": "Ball'Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "voltorb_electrodehisui",
       "variant": "item_interact",
       "result": "electrode hisuian",
-      "consumeHeldItem": true,
+      "consumeHeldItem": false,
       "learnableMoves": [
         "chloroblast"
       ],
@@ -154,6 +499,7 @@
       "requiredContext": "cobblemon:leaf_stone"
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -163,15 +509,13 @@
         "rarity": "uncommon",
         "weight": 92.0,
         "levels": "8-33",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0100_voltorb.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0100_voltorb.json",
+        "spawnId": "voltorb-hisuian-4",
         "nearbyBlocks": {
           "selectors": [
             "#cobblemon:apricorns"
@@ -189,26 +533,16 @@
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 3.2,
-        "levels": "4-18",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/common_scarlet_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "voltorb hisuian",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 5.0,
+          "condition": {
+            "isThundering": true
+          }
+        }
       }
     ]
   ],
@@ -222,6 +556,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/voltorb.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/voltorb.json"
   ]
 }

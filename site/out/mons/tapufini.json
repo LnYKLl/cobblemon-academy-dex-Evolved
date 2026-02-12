@@ -2,20 +2,41 @@
   "id": "tapufini",
   "dexnum": 788,
   "name": "Tapu Fini",
+  "nameFr": "Tokopisco",
+  "description": "Il ne faut pas se laisser berner par son statut de divinité protectrice : il lui arrive de mettre en pièces ceux qui osent s'approcher de trop près.",
   "primaryType": "water",
   "secondaryType": "fairy",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "Fée",
+  "height": 13,
+  "weight": 212,
   "maleRatio": -1,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 2.3,
+    "fixed": false
+  },
   "labels": [
     "gen7",
     "legendary"
   ],
   "abilities": [
-    "mistysurge",
-    "h:telepathy"
+    {
+      "id": "mistysurge",
+      "name": "Créa-Brume",
+      "hidden": false
+    },
+    {
+      "id": "telepathy",
+      "name": "Télépathe",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 70,
     "attack": 75,
@@ -32,186 +53,536 @@
     "special_defence": 3,
     "speed": 0
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
   "catchRate": 3,
+  "baseFriendship": 50,
   "drops": {
     "amount": 0,
     "entries": []
   },
   "moves": [
-    "1:watergun",
-    "1:refresh",
-    "1:disarmingvoice",
-    "5:withdraw",
-    "10:haze",
-    "10:mist",
-    "15:aquaring",
-    "20:waterpulse",
-    "25:brine",
-    "30:defog",
-    "35:healpulse",
-    "40:surf",
-    "45:muddywater",
-    "50:meanlook",
-    "55:naturesmadness",
-    "60:moonblast",
-    "65:hydropump",
-    "70:soak",
-    "75:mistyterrain",
-    "tm:blizzard",
-    "tm:brine",
-    "tm:calmmind",
-    "tm:dazzlinggleam",
-    "tm:defog",
-    "tm:disarmingvoice",
-    "tm:dive",
-    "tm:drainingkiss",
-    "tm:echoedvoice",
-    "tm:endure",
-    "tm:facade",
-    "tm:fling",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:gravity",
-    "tm:guardswap",
-    "tm:haze",
-    "tm:hydropump",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icepunch",
-    "tm:icywind",
-    "tm:irondefense",
-    "tm:knockoff",
-    "tm:lightscreen",
-    "tm:magiccoat",
-    "tm:magicroom",
-    "tm:mistyterrain",
-    "tm:muddywater",
-    "tm:naturepower",
-    "tm:playrough",
-    "tm:protect",
-    "tm:psychup",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:safeguard",
-    "tm:scald",
-    "tm:shadowball",
-    "tm:sleeptalk",
-    "tm:smartstrike",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:surf",
-    "tm:taunt",
-    "tm:telekinesis",
-    "tm:terablast",
-    "tm:torment",
-    "tm:trick",
-    "tm:waterfall",
-    "tm:waterpulse",
-    "tm:whirlpool",
-    "tm:wonderroom",
-    "tutor:calmmind",
-    "tutor:dazzlinggleam",
-    "tutor:defog",
-    "tutor:dive",
-    "tutor:gigaimpact",
-    "tutor:gravity",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icepunch",
-    "tutor:icywind",
-    "tutor:irondefense",
-    "tutor:knockoff",
-    "tutor:magiccoat",
-    "tutor:magicroom",
-    "tutor:playrough",
-    "tutor:rest",
-    "tutor:shadowball",
-    "tutor:sleeptalk",
-    "tutor:telekinesis",
-    "tutor:trick",
-    "tutor:waterpulse",
-    "tutor:wonderroom"
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "1"
+    },
+    {
+      "id": "refresh",
+      "name": "Régénération",
+      "category": "1"
+    },
+    {
+      "id": "disarmingvoice",
+      "name": "Voix Enjôleuse",
+      "category": "1"
+    },
+    {
+      "id": "withdraw",
+      "name": "Repli",
+      "category": "5"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "10"
+    },
+    {
+      "id": "mist",
+      "name": "Brume",
+      "category": "10"
+    },
+    {
+      "id": "aquaring",
+      "name": "Anneau Hydro",
+      "category": "15"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "20"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "25"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "30"
+    },
+    {
+      "id": "healpulse",
+      "name": "Vibra Soin",
+      "category": "35"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "40"
+    },
+    {
+      "id": "muddywater",
+      "name": "Ocroupi",
+      "category": "45"
+    },
+    {
+      "id": "meanlook",
+      "name": "Regard Noir",
+      "category": "50"
+    },
+    {
+      "id": "naturesmadness",
+      "name": "Ire de la Nature",
+      "category": "55"
+    },
+    {
+      "id": "moonblast",
+      "name": "Pouvoir Lunaire",
+      "category": "60"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "65"
+    },
+    {
+      "id": "soak",
+      "name": "Détrempage",
+      "category": "70"
+    },
+    {
+      "id": "mistyterrain",
+      "name": "Champ Brumeux",
+      "category": "75"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "disarmingvoice",
+      "name": "Voix Enjôleuse",
+      "category": "tm"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tm"
+    },
+    {
+      "id": "drainingkiss",
+      "name": "Vampibaiser",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "tm"
+    },
+    {
+      "id": "guardswap",
+      "name": "Permugarde",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tm"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tm"
+    },
+    {
+      "id": "mistyterrain",
+      "name": "Champ Brumeux",
+      "category": "tm"
+    },
+    {
+      "id": "muddywater",
+      "name": "Ocroupi",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smartstrike",
+      "name": "Estocorne",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tutor"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
-  "spawns": [
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "60",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#minecraft:is_jungle",
-            "terralith:cave/underground_jungle",
-            "wythers:dripleaf_swamp",
-            "wythers:eucalyptus_deanei_forest",
-            "wythers:highland_tropical_rainforest",
-            "wythers:humid_tropical_grassland",
-            "wythers:jungle_canyon",
-            "wythers:subtropical_forest",
-            "wythers:subtropical_forest_edge",
-            "wythers:subtropical_grassland",
-            "wythers:tropical_forest",
-            "wythers:tropical_forest_canyon",
-            "wythers:tropical_grassland",
-            "wythers:tropical_island",
-            "wythers:tropical_rainforest"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-tapufini.json",
-        "keyItem": "myths_and_legends:fini_totem"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "60",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "minecraft:stony_shore",
-            "#cobblemon:is_beach",
-            "#c:stony_shores",
-            "terralith:basalt_cliffs",
-            "terralith:granite_cliffs",
-            "terralith:white_cliffs",
-            "wythers:calcite_coast",
-            "wythers:coastal_mangroves",
-            "wythers:cold_island",
-            "wythers:cold_stony_shore",
-            "wythers:deepslate_shore",
-            "wythers:frigid_island",
-            "wythers:frozen_island",
-            "wythers:gravelly_beach",
-            "wythers:icy_shore",
-            "wythers:mediterranean_island",
-            "wythers:temperate_island",
-            "wythers:tropical_island",
-            "wythers:warm_stony_shore"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-tapufini.json",
-        "keyItem": "myths_and_legends:fini_totem"
-      }
-    ]
-  ],
-  "implemented": false,
+  "preEvolution": null,
+  "spawns": [],
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/tapu_fini.png"
@@ -221,6 +592,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/tapufini.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/tapufini.json"
   ]
 }

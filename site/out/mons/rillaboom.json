@@ -2,20 +2,41 @@
   "id": "rillaboom",
   "dexnum": 812,
   "name": "Rillaboom",
+  "nameFr": "Gorythmic",
+  "description": "Il contrôle le pouvoir de sa souche singulière en tapant en rythme dessus. Il se bat en manipulant des racines.",
   "primaryType": "grass",
   "secondaryType": "",
+  "primaryTypeFr": "Plante",
+  "secondaryTypeFr": "",
+  "height": 21,
+  "weight": 900,
   "maleRatio": 0.875,
+  "baseScale": 0.95,
+  "hitbox": {
+    "width": 1.6,
+    "height": 2.3,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "overgrow",
-    "h:grassysurge"
+    {
+      "id": "overgrow",
+      "name": "Engrais",
+      "hidden": false
+    },
+    {
+      "id": "grassysurge",
+      "name": "Créa-Herbe",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field",
     "grass"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 100,
     "attack": 125,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 265,
   "experienceGroup": "medium_slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,141 +64,630 @@
         "item": "minecraft:stick",
         "percentage": null,
         "quantityRange": "1-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:stick"
       },
       {
         "item": "cobblemon:miracle_seed",
         "percentage": 25.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Graine Miracle"
       }
     ]
   },
   "moves": [
-    "1:drumbeating",
-    "1:doublehit",
-    "1:grassyterrain",
-    "1:nobleroar",
-    "1:scratch",
-    "1:growl",
-    "1:branchpoke",
-    "1:taunt",
-    "12:razorleaf",
-    "19:screech",
-    "24:knockoff",
-    "30:slam",
-    "38:uproar",
-    "46:woodhammer",
-    "54:endeavor",
-    "62:boomburst",
-    "egg:fakeout",
-    "egg:growth",
-    "egg:hammerarm",
-    "egg:leechseed",
-    "egg:strength",
-    "egg:worryseed",
-    "tm:acrobatics",
-    "tm:assurance",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:brickbreak",
-    "tm:brutalswing",
-    "tm:bulkup",
-    "tm:bulldoze",
-    "tm:bulletseed",
-    "tm:darkestlariat",
-    "tm:doubleedge",
-    "tm:drainpunch",
-    "tm:earthpower",
-    "tm:earthquake",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:fling",
-    "tm:focusblast",
-    "tm:focusenergy",
-    "tm:focuspunch",
-    "tm:frenzyplant",
-    "tm:gigadrain",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:grasspledge",
-    "tm:grassyglide",
-    "tm:grassyterrain",
-    "tm:highhorsepower",
-    "tm:hyperbeam",
-    "tm:hypervoice",
-    "tm:knockoff",
-    "tm:leafstorm",
-    "tm:lowkick",
-    "tm:lowsweep",
-    "tm:magicalleaf",
-    "tm:megakick",
-    "tm:megapunch",
-    "tm:mudshot",
-    "tm:naturepower",
-    "tm:protect",
-    "tm:rest",
-    "tm:scaryface",
-    "tm:screech",
-    "tm:seedbomb",
-    "tm:sleeptalk",
-    "tm:snarl",
-    "tm:solarbeam",
-    "tm:solarblade",
-    "tm:stompingtantrum",
-    "tm:strength",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superpower",
-    "tm:swift",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:trailblaze",
-    "tm:uproar",
-    "tm:uturn",
-    "tm:workup",
-    "tm:worryseed",
-    "tutor:bulkup",
-    "tutor:bulldoze",
-    "tutor:drainpunch",
-    "tutor:earthpower",
-    "tutor:endeavor",
-    "tutor:energyball",
-    "tutor:falseswipe",
-    "tutor:focusenergy",
-    "tutor:focuspunch",
-    "tutor:frenzyplant",
-    "tutor:gigadrain",
-    "tutor:gigaimpact",
-    "tutor:grasspledge",
-    "tutor:grassyglide",
-    "tutor:highhorsepower",
-    "tutor:hyperbeam",
-    "tutor:hypervoice",
-    "tutor:knockoff",
-    "tutor:lowkick",
-    "tutor:magicalleaf",
-    "tutor:rest",
-    "tutor:seedbomb",
-    "tutor:sleeptalk",
-    "tutor:snarl",
-    "tutor:stompingtantrum",
-    "tutor:superpower",
-    "tutor:swift",
-    "tutor:uproar",
-    "tutor:worryseed"
+    {
+      "id": "drumbeating",
+      "name": "Tambour Battant",
+      "category": "1"
+    },
+    {
+      "id": "doublehit",
+      "name": "Coup Double",
+      "category": "1"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "1"
+    },
+    {
+      "id": "nobleroar",
+      "name": "Râle Mâle",
+      "category": "1"
+    },
+    {
+      "id": "scratch",
+      "name": "Griffe",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "branchpoke",
+      "name": "Tapotige",
+      "category": "1"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "1"
+    },
+    {
+      "id": "razorleaf",
+      "name": "Tranch'Herbe",
+      "category": "12"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "19"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "24"
+    },
+    {
+      "id": "slam",
+      "name": "Souplesse",
+      "category": "30"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "38"
+    },
+    {
+      "id": "woodhammer",
+      "name": "Martobois",
+      "category": "46"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "54"
+    },
+    {
+      "id": "boomburst",
+      "name": "Bang Sonique",
+      "category": "62"
+    },
+    {
+      "id": "fakeout",
+      "name": "Bluff",
+      "category": "egg"
+    },
+    {
+      "id": "growth",
+      "name": "Croissance",
+      "category": "egg"
+    },
+    {
+      "id": "hammerarm",
+      "name": "Marto-Poing",
+      "category": "egg"
+    },
+    {
+      "id": "leechseed",
+      "name": "Vampigraine",
+      "category": "egg"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "egg"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "brutalswing",
+      "name": "Centrifugifle",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "darkestlariat",
+      "name": "Dark Lariat",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "drainpunch",
+      "name": "Vampi-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "focusblast",
+      "name": "Exploforce",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "frenzyplant",
+      "name": "Végé-Attaque",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grasspledge",
+      "name": "Aire d'Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "tm"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "leafstorm",
+      "name": "Tempête Verte",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "lowsweep",
+      "name": "Balayette",
+      "category": "tm"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tm"
+    },
+    {
+      "id": "megakick",
+      "name": "Ultimawashi",
+      "category": "tm"
+    },
+    {
+      "id": "megapunch",
+      "name": "Ultimapoing",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "solarblade",
+      "name": "Lame Solaire",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "drainpunch",
+      "name": "Vampi-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "frenzyplant",
+      "name": "Végé-Attaque",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "grasspledge",
+      "name": "Aire d'Herbe",
+      "category": "tutor"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tutor"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [
     "Gmax"
   ],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "thwackey",
   "spawns": [
     [
       {
@@ -186,39 +698,21 @@
         "rarity": "ultra-rare",
         "weight": 0.4,
         "levels": "35-53",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_jungle",
             "#cobblemon:is_tropical_island"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0812_rillaboom.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0812_rillaboom.json",
+        "spawnId": "rillaboom-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 0.31,
-        "levels": "36-51",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:starlight_dense_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_dense_forest/rare_starlight_dense_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "rillaboom",
+        "type": "pokemon"
       }
     ]
   ],
@@ -232,6 +726,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/rillaboom.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/rillaboom.json"
   ]
 }

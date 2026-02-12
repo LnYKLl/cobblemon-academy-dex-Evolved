@@ -2,21 +2,46 @@
   "id": "mienfoo",
   "dexnum": 619,
   "name": "Mienfoo",
+  "nameFr": "Kungfouine",
+  "description": "Il se flatte d'être très rapide. Pour compenser la faiblesse de ses coups, il en assène un très grand nombre.",
   "primaryType": "fighting",
   "secondaryType": "",
+  "primaryTypeFr": "Combat",
+  "secondaryTypeFr": "",
+  "height": 9,
+  "weight": 200,
   "maleRatio": 0.5,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 1.1,
+    "height": 1.5,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "innerfocus",
-    "regenerator",
-    "h:reckless"
+    {
+      "id": "innerfocus",
+      "name": "Attention",
+      "hidden": false
+    },
+    {
+      "id": "regenerator",
+      "name": "Régé-Force",
+      "hidden": false
+    },
+    {
+      "id": "reckless",
+      "name": "Téméraire",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field",
     "human_like"
   ],
+  "eggCycles": 25,
   "baseStats": {
     "hp": 45,
     "attack": 85,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 70,
   "experienceGroup": "medium_slow",
   "catchRate": 180,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -42,119 +69,581 @@
         "item": "cobblemon:payapa_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Yapap"
       },
       {
         "item": "cobblemon:expert_belt",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Ceinture Pro"
       }
     ]
   },
   "moves": [
-    "1:pound",
-    "1:meditate",
-    "1:detect",
-    "5:fakeout",
-    "10:reversal",
-    "15:furyswipes",
-    "20:quickguard",
-    "25:forcepalm",
-    "30:uturn",
-    "35:drainpunch",
-    "40:honeclaws",
-    "45:aurasphere",
-    "51:bounce",
-    "55:calmmind",
-    "60:highjumpkick",
-    "egg:doubleslap",
-    "egg:feint",
-    "egg:focuspunch",
-    "egg:jumpkick",
-    "egg:knockoff",
-    "egg:mefirst",
-    "egg:smellingsalts",
-    "egg:vitalthrow",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:allyswitch",
-    "tm:aurasphere",
-    "tm:batonpass",
-    "tm:bounce",
-    "tm:brickbreak",
-    "tm:bulkup",
-    "tm:calmmind",
-    "tm:closecombat",
-    "tm:coaching",
-    "tm:dig",
-    "tm:drainpunch",
-    "tm:dualchop",
-    "tm:endure",
-    "tm:facade",
-    "tm:fling",
-    "tm:focusblast",
-    "tm:focusenergy",
-    "tm:focuspunch",
-    "tm:grassknot",
-    "tm:helpinghand",
-    "tm:honeclaws",
-    "tm:knockoff",
-    "tm:lowkick",
-    "tm:lowsweep",
-    "tm:megakick",
-    "tm:megapunch",
-    "tm:payback",
-    "tm:poisonjab",
-    "tm:poweruppunch",
-    "tm:protect",
-    "tm:psychup",
-    "tm:raindance",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:revenge",
-    "tm:reversal",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:roleplay",
-    "tm:sleeptalk",
-    "tm:stoneedge",
-    "tm:strength",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:trailblaze",
-    "tm:upperhand",
-    "tm:uturn",
-    "tm:workup",
-    "tutor:aerialace",
-    "tutor:allyswitch",
-    "tutor:bounce",
-    "tutor:bulkup",
-    "tutor:calmmind",
-    "tutor:coaching",
-    "tutor:drainpunch",
-    "tutor:dualchop",
-    "tutor:focusenergy",
-    "tutor:focuspunch",
-    "tutor:helpinghand",
-    "tutor:knockoff",
-    "tutor:lowkick",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:roleplay",
-    "tutor:sleeptalk",
-    "tutor:stoneedge",
-    "tutor:swift"
+    {
+      "id": "pound",
+      "name": "Écras'Face",
+      "category": "1"
+    },
+    {
+      "id": "meditate",
+      "name": "Yoga",
+      "category": "1"
+    },
+    {
+      "id": "detect",
+      "name": "Détection",
+      "category": "1"
+    },
+    {
+      "id": "fakeout",
+      "name": "Bluff",
+      "category": "5"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "10"
+    },
+    {
+      "id": "furyswipes",
+      "name": "Combo-Griffe",
+      "category": "15"
+    },
+    {
+      "id": "quickguard",
+      "name": "Prévention",
+      "category": "20"
+    },
+    {
+      "id": "forcepalm",
+      "name": "Forte-Paume",
+      "category": "25"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "30"
+    },
+    {
+      "id": "drainpunch",
+      "name": "Vampi-Poing",
+      "category": "35"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "40"
+    },
+    {
+      "id": "aurasphere",
+      "name": "Aurasphère",
+      "category": "45"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "51"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "55"
+    },
+    {
+      "id": "highjumpkick",
+      "name": "Pied Voltige",
+      "category": "60"
+    },
+    {
+      "id": "doubleslap",
+      "name": "Torgnoles",
+      "category": "egg"
+    },
+    {
+      "id": "feint",
+      "name": "Ruse",
+      "category": "egg"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "egg"
+    },
+    {
+      "id": "jumpkick",
+      "name": "Pied Sauté",
+      "category": "egg"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "egg"
+    },
+    {
+      "id": "mefirst",
+      "name": "Moi d'Abord",
+      "category": "egg"
+    },
+    {
+      "id": "smellingsalts",
+      "name": "Stimulant",
+      "category": "egg"
+    },
+    {
+      "id": "vitalthrow",
+      "name": "Corps Perdu",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "aurasphere",
+      "name": "Aurasphère",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "tm"
+    },
+    {
+      "id": "coaching",
+      "name": "Coaching",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "drainpunch",
+      "name": "Vampi-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "dualchop",
+      "name": "Double Baffe",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "focusblast",
+      "name": "Exploforce",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "lowsweep",
+      "name": "Balayette",
+      "category": "tm"
+    },
+    {
+      "id": "megakick",
+      "name": "Ultimawashi",
+      "category": "tm"
+    },
+    {
+      "id": "megapunch",
+      "name": "Ultimapoing",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "poweruppunch",
+      "name": "Poing Boost",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "upperhand",
+      "name": "Prio-Parade",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "coaching",
+      "name": "Coaching",
+      "category": "tutor"
+    },
+    {
+      "id": "drainpunch",
+      "name": "Vampi-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "dualchop",
+      "name": "Double Baffe",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "mienfoo_mienshao",
@@ -170,8 +659,44 @@
       ]
     }
   ],
-  "spawns": [],
-  "implemented": false,
+  "preEvolution": null,
+  "spawns": [
+    [
+      {
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "rarity": "uncommon",
+        "weight": 8.4,
+        "levels": "10-35",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_mountain"
+          ],
+          "exclude": [
+            "#cobblemon:is_hills"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0619_mienfoo.json",
+        "spawnId": "mienfoo-1",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "mienfoo",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
+      }
+    ]
+  ],
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/mienfoo.png"
@@ -181,6 +706,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/mienfoo.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/mienfoo.json"
   ]
 }

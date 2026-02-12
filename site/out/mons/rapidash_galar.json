@@ -2,21 +2,46 @@
   "id": "rapidash_galar",
   "dexnum": 78,
   "name": "Rapidash Galar",
+  "nameFr": "Rapidash Galar",
+  "description": "Sa corne lui permet d'utiliser la capacité Coupe Psycho de façon dévastatrice, et même de percer des plaques d'acier renforcé.",
   "primaryType": "psychic",
   "secondaryType": "fairy",
+  "primaryTypeFr": "Psy",
+  "secondaryTypeFr": "Fée",
+  "height": 17,
+  "weight": 800,
   "maleRatio": 0.5,
+  "baseScale": 1.2,
+  "hitbox": {
+    "width": 0.9,
+    "height": 2,
+    "fixed": false
+  },
   "labels": [
     "gen8",
     "galarian_form"
   ],
   "abilities": [
-    "runaway",
-    "pastelveil",
-    "h:anticipation"
+    {
+      "id": "runaway",
+      "name": "Fuite",
+      "hidden": false
+    },
+    {
+      "id": "pastelveil",
+      "name": "Voile Pastel",
+      "hidden": false
+    },
+    {
+      "id": "anticipation",
+      "name": "Anticipation",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 65,
     "attack": 100,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 2
   },
+  "baseExperienceYield": 175,
   "experienceGroup": "medium_fast",
   "catchRate": 60,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -42,113 +69,493 @@
         "item": "minecraft:leather",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:leather"
       },
       {
         "item": "cobblemon:razz_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Framby"
       }
     ]
   },
   "moves": [
-    "1:psychocut",
-    "1:megahorn",
-    "1:tackle",
-    "1:quickattack",
-    "1:growl",
-    "1:tailwhip",
-    "1:confusion",
-    "15:fairywind",
-    "20:agility",
-    "25:psybeam",
-    "30:stomp",
-    "35:healpulse",
-    "43:takedown",
-    "49:dazzlinggleam",
-    "56:psychic",
-    "63:healingwish",
-    "egg:doubleedge",
-    "egg:doublekick",
-    "egg:horndrill",
-    "egg:hypnosis",
-    "egg:morningsun",
-    "egg:thrash",
-    "tm:agility",
-    "tm:allyswitch",
-    "tm:batonpass",
-    "tm:bodyslam",
-    "tm:bounce",
-    "tm:calmmind",
-    "tm:charm",
-    "tm:dazzlinggleam",
-    "tm:doubleedge",
-    "tm:drillrun",
-    "tm:endure",
-    "tm:expandingforce",
-    "tm:facade",
-    "tm:futuresight",
-    "tm:gigaimpact",
-    "tm:highhorsepower",
-    "tm:hyperbeam",
-    "tm:imprison",
-    "tm:irontail",
-    "tm:lowkick",
-    "tm:magicroom",
-    "tm:megahorn",
-    "tm:mistyterrain",
-    "tm:mysticalfire",
-    "tm:payday",
-    "tm:playrough",
-    "tm:protect",
-    "tm:psybeam",
-    "tm:psychic",
-    "tm:psychicterrain",
-    "tm:psychocut",
-    "tm:rest",
-    "tm:sleeptalk",
-    "tm:smartstrike",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:swift",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:throatchop",
-    "tm:trickroom",
-    "tm:wildcharge",
-    "tm:wonderroom",
-    "tm:zenheadbutt",
-    "tutor:allyswitch",
-    "tutor:bounce",
-    "tutor:calmmind",
-    "tutor:dazzlinggleam",
-    "tutor:drillrun",
-    "tutor:expandingforce",
-    "tutor:gigaimpact",
-    "tutor:highhorsepower",
-    "tutor:hyperbeam",
-    "tutor:irontail",
-    "tutor:lowkick",
-    "tutor:magicroom",
-    "tutor:megahorn",
-    "tutor:mysticalfire",
-    "tutor:playrough",
-    "tutor:psychic",
-    "tutor:psychocut",
-    "tutor:rest",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:throatchop",
-    "tutor:trick",
-    "tutor:wildcharge",
-    "tutor:wonderroom",
-    "tutor:zenheadbutt"
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "1"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "1"
+    },
+    {
+      "id": "confusion",
+      "name": "Choc Mental",
+      "category": "1"
+    },
+    {
+      "id": "fairywind",
+      "name": "Vent Féérique",
+      "category": "15"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "20"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "25"
+    },
+    {
+      "id": "stomp",
+      "name": "Écrasement",
+      "category": "30"
+    },
+    {
+      "id": "healpulse",
+      "name": "Vibra Soin",
+      "category": "35"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "43"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "49"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "56"
+    },
+    {
+      "id": "healingwish",
+      "name": "Vœu Soin",
+      "category": "63"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "egg"
+    },
+    {
+      "id": "doublekick",
+      "name": "Double Pied",
+      "category": "egg"
+    },
+    {
+      "id": "horndrill",
+      "name": "Empal'Korne",
+      "category": "egg"
+    },
+    {
+      "id": "hypnosis",
+      "name": "Hypnose",
+      "category": "egg"
+    },
+    {
+      "id": "morningsun",
+      "name": "Aurore",
+      "category": "egg"
+    },
+    {
+      "id": "thrash",
+      "name": "Mania",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "expandingforce",
+      "name": "Vaste Pouvoir",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "futuresight",
+      "name": "Prescience",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tm"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tm"
+    },
+    {
+      "id": "mistyterrain",
+      "name": "Champ Brumeux",
+      "category": "tm"
+    },
+    {
+      "id": "mysticalfire",
+      "name": "Feu Ensorcelé",
+      "category": "tm"
+    },
+    {
+      "id": "payday",
+      "name": "Jackpot",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psychicterrain",
+      "name": "Champ Psychique",
+      "category": "tm"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smartstrike",
+      "name": "Estocorne",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tutor"
+    },
+    {
+      "id": "expandingforce",
+      "name": "Vaste Pouvoir",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tutor"
+    },
+    {
+      "id": "mysticalfire",
+      "name": "Feu Ensorcelé",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "ponyta galarian",
   "spawns": [
     [
       {
@@ -159,19 +566,26 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "40-50",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_floral",
             "#cobblemon:is_magical"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0078_rapidash.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0078_rapidash.json",
+        "spawnId": "rapidash-galarian-3",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "rapidash galarian",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
         }
       }
     ],
@@ -183,57 +597,20 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "40-50",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0078_rapidash.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0078_rapidash.json",
+        "spawnId": "rapidash-galarian-4",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 8.2,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_starlight_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/rare_is_starlight_forest.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 2.7,
-        "levels": "22-50",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:torreya_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/torreya_forest/uncommon_torreya_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "rapidash galarian",
+        "type": "pokemon"
       }
     ]
   ],
@@ -249,6 +626,7 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/rapidash.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/rapidash.json",
+    "datapacks\\Journey Mounts\\data\\cobblemon\\species\\generation1\\rapidash.json"
   ]
 }

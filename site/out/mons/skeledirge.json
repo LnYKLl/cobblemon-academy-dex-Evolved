@@ -2,19 +2,40 @@
   "id": "skeledirge",
   "dexnum": 911,
   "name": "Skeledirge",
+  "nameFr": "Flâmigator",
+  "description": "Quand il chante, son oiseau de feu change de forme. Cet oiseau serait né lorsqu'une âme a pris possession de sa boule de feu.",
   "primaryType": "fire",
   "secondaryType": "ghost",
+  "primaryTypeFr": "Feu",
+  "secondaryTypeFr": "Spectre",
+  "height": 16,
+  "weight": 3265,
   "maleRatio": 0.875,
+  "baseScale": 0.75,
+  "hitbox": {
+    "width": 2.4,
+    "height": 1.8,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "blaze",
-    "h:unaware"
+    {
+      "id": "blaze",
+      "name": "Brasier",
+      "hidden": false
+    },
+    {
+      "id": "unaware",
+      "name": "Inconscient",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 104,
     "attack": 75,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 265,
   "experienceGroup": "medium_slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -40,116 +63,521 @@
         "item": "cobblemon:charcoal_stick",
         "percentage": 25.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Bâton de charbon"
       }
     ]
   },
   "moves": [
-    "1:torchsong",
-    "1:ember",
-    "1:tackle",
-    "1:leer",
-    "1:sing",
-    "1:yawn",
-    "7:lick",
-    "10:round",
-    "12:scaryface",
-    "15:bite",
-    "17:incinerate",
-    "24:snarl",
-    "28:roar",
-    "32:flamethrower",
-    "38:shadowball",
-    "42:hypervoice",
-    "47:willowisp",
-    "47:hex",
-    "58:fireblast",
-    "64:overheat",
-    "egg:belch",
-    "egg:curse",
-    "egg:encore",
-    "egg:slackoff",
-    "tm:alluringvoice",
-    "tm:blastburn",
-    "tm:bodyslam",
-    "tm:crunch",
-    "tm:curse",
-    "tm:dig",
-    "tm:disarmingvoice",
-    "tm:earthpower",
-    "tm:earthquake",
-    "tm:encore",
-    "tm:endure",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firefang",
-    "tm:firepledge",
-    "tm:firespin",
-    "tm:flamecharge",
-    "tm:flamethrower",
-    "tm:flareblitz",
-    "tm:gigaimpact",
-    "tm:heatcrash",
-    "tm:heatwave",
-    "tm:helpinghand",
-    "tm:hex",
-    "tm:hyperbeam",
-    "tm:hypervoice",
-    "tm:imprison",
-    "tm:incinerate",
-    "tm:mudslap",
-    "tm:nightshade",
-    "tm:outrage",
-    "tm:overheat",
-    "tm:poltergeist",
-    "tm:protect",
-    "tm:rest",
-    "tm:roar",
-    "tm:round",
-    "tm:scaryface",
-    "tm:scorchingsands",
-    "tm:seedbomb",
-    "tm:shadowball",
-    "tm:shadowclaw",
-    "tm:sleeptalk",
-    "tm:snarl",
-    "tm:solarbeam",
-    "tm:stompingtantrum",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:takedown",
-    "tm:temperflare",
-    "tm:terablast",
-    "tm:thunderfang",
-    "tm:willowisp",
-    "tm:zenheadbutt",
-    "tutor:blastburn",
-    "tutor:earthpower",
-    "tutor:firefang",
-    "tutor:firepledge",
-    "tutor:flamethrower",
-    "tutor:gigaimpact",
-    "tutor:heatwave",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:hypervoice",
-    "tutor:mudslap",
-    "tutor:outrage",
-    "tutor:poltergeist",
-    "tutor:rest",
-    "tutor:scorchingsands",
-    "tutor:seedbomb",
-    "tutor:shadowball",
-    "tutor:shadowclaw",
-    "tutor:sleeptalk",
-    "tutor:snarl",
-    "tutor:stompingtantrum",
-    "tutor:thunderfang",
-    "tutor:zenheadbutt"
+    {
+      "id": "torchsong",
+      "name": "Chant Flamboyant",
+      "category": "1"
+    },
+    {
+      "id": "ember",
+      "name": "Flammèche",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "sing",
+      "name": "Berceuse",
+      "category": "1"
+    },
+    {
+      "id": "yawn",
+      "name": "Bâillement",
+      "category": "1"
+    },
+    {
+      "id": "lick",
+      "name": "Léchouille",
+      "category": "7"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "10"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "12"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "15"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "17"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "24"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "28"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "32"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "38"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "42"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "47"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "47"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "58"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "64"
+    },
+    {
+      "id": "belch",
+      "name": "Éructation",
+      "category": "egg"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "egg"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "egg"
+    },
+    {
+      "id": "slackoff",
+      "name": "Paresse",
+      "category": "egg"
+    },
+    {
+      "id": "alluringvoice",
+      "name": "Voix Envoûtante",
+      "category": "tm"
+    },
+    {
+      "id": "blastburn",
+      "name": "Rafale Feu",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "disarmingvoice",
+      "name": "Voix Enjôleuse",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tm"
+    },
+    {
+      "id": "firepledge",
+      "name": "Aire de Feu",
+      "category": "tm"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "heatcrash",
+      "name": "Tacle Feu",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "temperflare",
+      "name": "Indignition",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "blastburn",
+      "name": "Rafale Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "firepledge",
+      "name": "Aire de Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "crocalor",
   "spawns": [
     [
       {
@@ -159,19 +587,20 @@
         "rarity": "ultra-rare",
         "weight": 0.4,
         "levels": "36-53",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_badlands"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0911_skeledirge.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0911_skeledirge.json",
+        "spawnId": "skeledirge-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "skeledirge",
+        "type": "pokemon"
       }
     ],
     [
@@ -182,34 +611,16 @@
         "rarity": "ultra-rare",
         "weight": 0.4,
         "levels": "36-53",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_wasteland"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0911_skeledirge.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 0.31,
-        "levels": "36-51",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/rare_scarlet_forest.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0911_skeledirge.json",
+        "spawnId": "skeledirge-2",
+        "spawnType": "grounded",
+        "pokemon": "skeledirge",
+        "type": "pokemon"
       }
     ]
   ],
@@ -223,6 +634,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/skeledirge.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/skeledirge.json"
   ]
 }

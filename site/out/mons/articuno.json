@@ -2,21 +2,42 @@
   "id": "articuno",
   "dexnum": 144,
   "name": "Articuno",
+  "nameFr": "Artikodin",
+  "description": "Artikodin est un Pokémon oiseau légendaire qui peut contrôler la glace. Le battement de ses ailes gèle l'air tout autour de lui. C'est pourquoi on dit que lorsque ce Pokémon vole, il va neiger.",
   "primaryType": "ice",
   "secondaryType": "flying",
+  "primaryTypeFr": "Glace",
+  "secondaryTypeFr": "Vol",
+  "height": 17,
+  "weight": 554,
   "maleRatio": -1,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 1.5,
+    "height": 2.5,
+    "fixed": false
+  },
   "labels": [
     "gen1",
     "legendary",
     "kantonian_form"
   ],
   "abilities": [
-    "pressure",
-    "h:snowcloak"
+    {
+      "id": "pressure",
+      "name": "Pression",
+      "hidden": false
+    },
+    {
+      "id": "snowcloak",
+      "name": "Rideau Neige",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 80,
   "baseStats": {
     "hp": 90,
     "attack": 85,
@@ -33,186 +54,674 @@
     "special_defence": 3,
     "speed": 0
   },
+  "baseExperienceYield": 290,
   "experienceGroup": "slow",
   "catchRate": 3,
+  "baseFriendship": 35,
   "drops": {
-    "amount": 6,
+    "amount": 5,
     "entries": [
       {
-        "item": "minecraft:feather",
+        "item": "cobblemon:rare_candy",
         "percentage": null,
-        "quantityRange": "2-4",
-        "source": "species"
+        "quantityRange": "2-6",
+        "source": "species",
+        "itemName": "Super Bonbon"
       },
       {
-        "item": "minecraft:chicken",
-        "percentage": null,
+        "item": "cobblemon:ice_gem",
+        "percentage": 50.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Joyau Glace"
       },
       {
-        "item": "cobblemon:never_melt_ice",
-        "percentage": null,
+        "item": "minecraft:nether_star",
+        "percentage": 8.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:nether_star"
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Pilule Talent"
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Patch Talent"
       }
     ]
   },
   "moves": [
-    "1:gust",
-    "1:mist",
-    "5:powdersnow",
-    "10:reflect",
-    "15:iceshard",
-    "20:agility",
-    "25:ancientpower",
-    "30:tailwind",
-    "35:freezedry",
-    "40:roost",
-    "45:icebeam",
-    "50:snowscape",
-    "55:hurricane",
-    "60:mindreader",
-    "65:blizzard",
-    "70:sheercold",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:ancientpower",
-    "tm:auroraveil",
-    "tm:avalanche",
-    "tm:blizzard",
-    "tm:bravebird",
-    "tm:defog",
-    "tm:doubleedge",
-    "tm:dualwingbeat",
-    "tm:endure",
-    "tm:facade",
-    "tm:featherdance",
-    "tm:fly",
-    "tm:frostbreath",
-    "tm:gigaimpact",
-    "tm:hail",
-    "tm:haze",
-    "tm:helpinghand",
-    "tm:hurricane",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icespinner",
-    "tm:iciclespear",
-    "tm:icywind",
-    "tm:laserfocus",
-    "tm:lightscreen",
-    "tm:ominouswind",
-    "tm:pluck",
-    "tm:protect",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:roar",
-    "tm:rocksmash",
-    "tm:roost",
-    "tm:sandstorm",
-    "tm:signalbeam",
-    "tm:skyattack",
-    "tm:skydrop",
-    "tm:sleeptalk",
-    "tm:snowscape",
-    "tm:steelwing",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:tripleaxel",
-    "tm:twister",
-    "tm:uturn",
-    "tm:waterpulse",
-    "tm:weatherball",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:ancientpower",
-    "tutor:defog",
-    "tutor:dualwingbeat",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:laserfocus",
-    "tutor:ominouswind",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:roost",
-    "tutor:signalbeam",
-    "tutor:skyattack",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:tailwind",
-    "tutor:tripleaxel",
-    "tutor:twister",
-    "tutor:waterpulse"
+    {
+      "id": "gust",
+      "name": "Tornade",
+      "category": "1"
+    },
+    {
+      "id": "mist",
+      "name": "Brume",
+      "category": "1"
+    },
+    {
+      "id": "powdersnow",
+      "name": "Poudreuse",
+      "category": "5"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "10"
+    },
+    {
+      "id": "iceshard",
+      "name": "Éclats Glace",
+      "category": "15"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "20"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "25"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "30"
+    },
+    {
+      "id": "freezedry",
+      "name": "Lyophilisation",
+      "category": "35"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "40"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "45"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "50"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "55"
+    },
+    {
+      "id": "mindreader",
+      "name": "Lire-Esprit",
+      "category": "60"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "65"
+    },
+    {
+      "id": "sheercold",
+      "name": "Glaciation",
+      "category": "70"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "auroraveil",
+      "name": "Voile Aurore",
+      "category": "tm"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "featherdance",
+      "name": "Danse Plumes",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "frostbreath",
+      "name": "Souffle Glacé",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icespinner",
+      "name": "Cryo-Pirouette",
+      "category": "tm"
+    },
+    {
+      "id": "iciclespear",
+      "name": "Stalactite",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tm"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tm"
+    },
+    {
+      "id": "skydrop",
+      "name": "Chute Libre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "tm"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "tripleaxel",
+      "name": "Triple Axel",
+      "category": "tm"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "healbell",
+      "name": "Glas de Soin",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tutor"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "tripleaxel",
+      "name": "Triple Axel",
+      "category": "tutor"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "legacy"
+    },
+    {
+      "id": "bubblebeam",
+      "name": "Bulles d'O",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "detect",
+      "name": "Détection",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "mirrorcoat",
+      "name": "Voile Miroir",
+      "category": "legacy"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "peck",
+      "name": "Picpic",
+      "category": "legacy"
+    },
+    {
+      "id": "rage",
+      "name": "Frénésie",
+      "category": "legacy"
+    },
+    {
+      "id": "razorwind",
+      "name": "Coupe-Vent",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "legacy"
+    },
+    {
+      "id": "whirlwind",
+      "name": "Cyclone",
+      "category": "legacy"
+    },
+    {
+      "id": "extrasensory",
+      "name": "Extrasenseur",
+      "category": "special"
+    },
+    {
+      "id": "healbell",
+      "name": "Glas de Soin",
+      "category": "special"
+    }
   ],
   "forms": [
     "Galar"
   ],
-  "types": [],
   "evolutions": [],
-  "spawns": [
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "50-60",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "minecraft:frozen_ocean",
-            "minecraft:frozen_peaks",
-            "minecraft:frozen_river",
-            "minecraft:snowy_beach",
-            "minecraft:snowy_plains",
-            "minecraft:snowy_slopes",
-            "minecraft:snowy_taiga"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-articuno.json",
-        "keyItem": "myths_and_legends:tidal_bell_articuno"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "50-60",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_cold",
-            "#cobblemon:is_freezing",
-            "#cobblemon:is_snowy_forest",
-            "#cobblemon:is_glacial",
-            "#cobblemon:is_frozen_ocean"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-articuno.json",
-        "keyItem": "myths_and_legends:tidal_bell_articuno"
-      }
-    ]
-  ],
-  "implemented": true,
+  "preEvolution": null,
+  "spawns": [],
+  "implemented": false,
   "images": {
     "normal": [
       "out/sprites/genomons/articuno.png",
@@ -224,6 +733,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/articuno.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/articuno.json"
   ]
 }

@@ -2,20 +2,45 @@
   "id": "arctozolt",
   "dexnum": 881,
   "name": "Arctozolt",
+  "nameFr": "Galvagla",
+  "description": "Quand la partie supérieure de son corps, couverte de glace, frissonne, il produit de l'électricité. Il éprouve de grandes difficultés à marcher.",
   "primaryType": "electric",
   "secondaryType": "ice",
+  "primaryTypeFr": "Électrik",
+  "secondaryTypeFr": "Glace",
+  "height": 23,
+  "weight": 1500,
   "maleRatio": -1,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 2,
+    "height": 3.7,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "voltabsorb",
-    "static",
-    "h:slushrush"
+    {
+      "id": "voltabsorb",
+      "name": "Absorbe-Volt",
+      "hidden": false
+    },
+    {
+      "id": "static",
+      "name": "Statik",
+      "hidden": false
+    },
+    {
+      "id": "slushrush",
+      "name": "Chasse-Neige",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 35,
   "baseStats": {
     "hp": 90,
     "attack": 100,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 177,
   "experienceGroup": "slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 4,
     "entries": [
@@ -41,101 +68,433 @@
         "item": "minecraft:bone",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:bone"
       },
       {
         "item": "minecraft:feather",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:feather"
       }
     ]
   },
   "moves": [
-    "1:powdersnow",
-    "1:thundershock",
-    "7:charge",
-    "14:echoedvoice",
-    "21:ancientpower",
-    "28:pluck",
-    "35:avalanche",
-    "42:freezedry",
-    "49:slam",
-    "56:discharge",
-    "63:boltbeak",
-    "70:iciclecrash",
-    "77:blizzard",
-    "tm:ancientpower",
-    "tm:avalanche",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:charge",
-    "tm:echoedvoice",
-    "tm:electroball",
-    "tm:endure",
-    "tm:facade",
-    "tm:gigaimpact",
-    "tm:hail",
-    "tm:hydropump",
-    "tm:hyperbeam",
-    "tm:hypervoice",
-    "tm:icebeam",
-    "tm:icefang",
-    "tm:iciclespear",
-    "tm:icywind",
-    "tm:irontail",
-    "tm:lowkick",
-    "tm:megakick",
-    "tm:megapunch",
-    "tm:meteorbeam",
-    "tm:payback",
-    "tm:pluck",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:risingvoltage",
-    "tm:rockblast",
-    "tm:rockslide",
-    "tm:rocktomb",
-    "tm:sleeptalk",
-    "tm:stompingtantrum",
-    "tm:stoneedge",
-    "tm:substitute",
-    "tm:surf",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderfang",
-    "tm:thunderpunch",
-    "tm:thunderwave",
-    "tm:wildcharge",
-    "tutor:ancientpower",
-    "tutor:bulldoze",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:hypervoice",
-    "tutor:icebeam",
-    "tutor:icefang",
-    "tutor:icywind",
-    "tutor:irontail",
-    "tutor:lowkick",
-    "tutor:meteorbeam",
-    "tutor:rest",
-    "tutor:risingvoltage",
-    "tutor:rockslide",
-    "tutor:sleeptalk",
-    "tutor:stompingtantrum",
-    "tutor:stoneedge",
-    "tutor:thunderbolt",
-    "tutor:thunderfang",
-    "tutor:thunderpunch",
-    "tutor:wildcharge"
+    {
+      "id": "powdersnow",
+      "name": "Poudreuse",
+      "category": "1"
+    },
+    {
+      "id": "thundershock",
+      "name": "Éclair",
+      "category": "1"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "7"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "14"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "21"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "28"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "35"
+    },
+    {
+      "id": "freezedry",
+      "name": "Lyophilisation",
+      "category": "42"
+    },
+    {
+      "id": "slam",
+      "name": "Souplesse",
+      "category": "49"
+    },
+    {
+      "id": "discharge",
+      "name": "Coup d'Jus",
+      "category": "56"
+    },
+    {
+      "id": "boltbeak",
+      "name": "Prise de Bec",
+      "category": "63"
+    },
+    {
+      "id": "iciclecrash",
+      "name": "Chute Glace",
+      "category": "70"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "77"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "electroball",
+      "name": "Boule Élek",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tm"
+    },
+    {
+      "id": "iciclespear",
+      "name": "Stalactite",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "megakick",
+      "name": "Ultimawashi",
+      "category": "tm"
+    },
+    {
+      "id": "megapunch",
+      "name": "Ultimapoing",
+      "category": "tm"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [],
   "implemented": true,
   "images": {
@@ -147,6 +506,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/arctozolt.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/arctozolt.json"
   ]
 }

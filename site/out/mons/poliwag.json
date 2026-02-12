@@ -2,20 +2,45 @@
   "id": "poliwag",
   "dexnum": 60,
   "name": "Poliwag",
+  "nameFr": "Ptitard",
+  "description": "Ptitard a une peau très fine. On peut même voir les entrailles en spirale de ce Pokémon à travers sa peau. Malgré sa finesse, cette peau est aussi très élastique. Même les crocs les plus acérés rebondissent dessus.",
   "primaryType": "water",
   "secondaryType": "",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "",
+  "height": 6,
+  "weight": 124,
   "maleRatio": 0.5,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.6,
+    "height": 0.8,
+    "fixed": false
+  },
   "labels": [
     "gen1"
   ],
   "abilities": [
-    "waterabsorb",
-    "damp",
-    "h:swiftswim"
+    {
+      "id": "waterabsorb",
+      "name": "Absorbe-Eau",
+      "hidden": false
+    },
+    {
+      "id": "damp",
+      "name": "Moiteur",
+      "hidden": false
+    },
+    {
+      "id": "swiftswim",
+      "name": "Glissade",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_1"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 40,
     "attack": 50,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 60,
   "experienceGroup": "medium_slow",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,103 +68,546 @@
         "item": "cobblemon:kings_rock",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Roche Royale"
       },
       {
         "item": "cobblemon:chesto_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Maron"
       }
     ]
   },
   "moves": [
-    "1:watersport",
-    "1:bubble",
-    "1:hypnosis",
-    "1:watergun",
-    "6:pound",
-    "12:mudshot",
-    "18:bubblebeam",
-    "24:raindance",
-    "30:bodyslam",
-    "36:earthpower",
-    "42:hydropump",
-    "48:bellydrum",
-    "54:doubleedge",
-    "egg:doubleslap",
-    "egg:endeavor",
-    "egg:mindreader",
-    "egg:mist",
-    "egg:mudbomb",
-    "egg:muddywater",
-    "egg:refresh",
-    "egg:splash",
-    "egg:wakeupslap",
-    "egg:waterpulse",
-    "egg:watersport",
-    "tm:amnesia",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:chillingwater",
-    "tm:dig",
-    "tm:dive",
-    "tm:doubleedge",
-    "tm:earthpower",
-    "tm:encore",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:focuspunch",
-    "tm:hail",
-    "tm:haze",
-    "tm:headbutt",
-    "tm:helpinghand",
-    "tm:hydropump",
-    "tm:iceball",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:liquidation",
-    "tm:lowkick",
-    "tm:muddywater",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:protect",
-    "tm:psychic",
-    "tm:raindance",
-    "tm:rest",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:surf",
-    "tm:swift",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:waterfall",
-    "tm:waterpulse",
-    "tm:weatherball",
-    "tm:whirlpool",
-    "tutor:bulldoze",
-    "tutor:dive",
-    "tutor:earthpower",
-    "tutor:endeavor",
-    "tutor:focuspunch",
-    "tutor:helpinghand",
-    "tutor:iceball",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:liquidation",
-    "tutor:lowkick",
-    "tutor:mudslap",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:waterpulse"
+    {
+      "id": "watersport",
+      "name": "Tourniquet",
+      "category": "1"
+    },
+    {
+      "id": "bubble",
+      "name": "Écume",
+      "category": "1"
+    },
+    {
+      "id": "hypnosis",
+      "name": "Hypnose",
+      "category": "1"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "1"
+    },
+    {
+      "id": "pound",
+      "name": "Écras'Face",
+      "category": "6"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "12"
+    },
+    {
+      "id": "bubblebeam",
+      "name": "Bulles d'O",
+      "category": "18"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "24"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "30"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "36"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "42"
+    },
+    {
+      "id": "bellydrum",
+      "name": "Cognobidon",
+      "category": "48"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "54"
+    },
+    {
+      "id": "doubleslap",
+      "name": "Torgnoles",
+      "category": "egg"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "egg"
+    },
+    {
+      "id": "mindreader",
+      "name": "Lire-Esprit",
+      "category": "egg"
+    },
+    {
+      "id": "mist",
+      "name": "Brume",
+      "category": "egg"
+    },
+    {
+      "id": "mudbomb",
+      "name": "Boue-Bombe",
+      "category": "egg"
+    },
+    {
+      "id": "muddywater",
+      "name": "Ocroupi",
+      "category": "egg"
+    },
+    {
+      "id": "refresh",
+      "name": "Régénération",
+      "category": "egg"
+    },
+    {
+      "id": "splash",
+      "name": "Trempette",
+      "category": "egg"
+    },
+    {
+      "id": "wakeupslap",
+      "name": "Réveil Forcé",
+      "category": "egg"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "egg"
+    },
+    {
+      "id": "watersport",
+      "name": "Tourniquet",
+      "category": "egg"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "iceball",
+      "name": "Ball'Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "muddywater",
+      "name": "Ocroupi",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "iceball",
+      "name": "Ball'Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "psywave",
+      "name": "Vague Psy",
+      "category": "legacy"
+    },
+    {
+      "id": "rage",
+      "name": "Frénésie",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "skullbash",
+      "name": "Coud'Krâne",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "sweetkiss",
+      "name": "Doux Baiser",
+      "category": "special"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "poliwag_poliwhirl",
@@ -153,6 +623,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -162,22 +633,23 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "5-30",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_swamp"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "spawnId": "poliwag-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
         },
         "weather": {
           "isRaining": true
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "poliwag",
+        "type": "pokemon"
       }
     ],
     [
@@ -188,15 +660,13 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "5-30",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_swamp"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "spawnId": "poliwag-2",
         "nearbyBlocks": {
           "selectors": [
             "minecraft:lily_pad"
@@ -204,7 +674,10 @@
         },
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "poliwag",
+        "type": "pokemon"
       }
     ],
     [
@@ -215,9 +688,6 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "5-30",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_freshwater",
@@ -232,13 +702,11 @@
             "#cobblemon:is_swamp"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "spawnId": "poliwag-3",
         "nearbyBlocks": {
           "selectors": [
-            "#minecraft:water"
-          ],
-          "resolved": [
-            "#minecraft:water"
+            "minecraft:water"
           ]
         },
         "sky": {
@@ -247,7 +715,10 @@
         },
         "weather": {
           "isRaining": true
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "poliwag",
+        "type": "pokemon"
       }
     ],
     [
@@ -258,9 +729,6 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "5-30",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_freshwater",
@@ -275,10 +743,14 @@
             "#cobblemon:is_swamp"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "spawnId": "poliwag-4",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "poliwag",
+        "type": "pokemon"
       }
     ],
     [
@@ -289,19 +761,27 @@
         "rarity": "common",
         "weight": 1.8,
         "levels": "5-30",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "spawnId": "poliwag-5",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "poliwag",
+        "excludeStructures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "excludeYLevel": {
+          "minY": -41,
+          "maxY": 9
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -312,19 +792,27 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "5-30",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "spawnId": "poliwag-6",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "poliwag",
+        "excludeStructures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "excludeYLevel": {
+          "minY": -41,
+          "maxY": 9
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -332,9 +820,6 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "5-30",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_freshwater",
@@ -348,10 +833,14 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "spawnId": "poliwag-7",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "poliwag",
+        "type": "pokemon"
       }
     ],
     [
@@ -359,18 +848,33 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "5-30",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "spawnId": "poliwag-8",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
+        },
+        "spawnType": "fishing",
+        "pokemon": "poliwag",
+        "excludeStructures": [
+          "cobblemon:shipwreck_coves/lush_shipwreck_cove"
+        ],
+        "excludeYLevel": {
+          "minY": -41,
+          "maxY": 9
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
         }
       }
     ],
@@ -382,15 +886,13 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "5-30",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_swamp"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "spawnId": "poliwag-9",
         "nearbyBlocks": {
           "selectors": [
             "minecraft:lily_pad"
@@ -400,7 +902,10 @@
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "poliwag",
+        "type": "pokemon"
       }
     ],
     [
@@ -411,9 +916,6 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "5-30",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_freshwater",
@@ -428,12 +930,16 @@
             "#cobblemon:is_swamp"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "spawnId": "poliwag-10",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "poliwag",
+        "type": "pokemon"
       }
     ],
     [
@@ -441,9 +947,6 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "5-30",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_freshwater",
@@ -457,12 +960,16 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "spawnId": "poliwag-11",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "poliwag",
+        "type": "pokemon"
       }
     ],
     [
@@ -473,9 +980,6 @@
         "rarity": "common",
         "weight": 1.8,
         "levels": "5-30",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -484,7 +988,8 @@
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "spawnId": "poliwag-12",
         "structures": [
           "cobblemon:shipwreck_coves/lush_shipwreck_cove"
         ],
@@ -495,7 +1000,10 @@
         "yLevel": {
           "minY": -41,
           "maxY": 9
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "poliwag",
+        "type": "pokemon"
       }
     ],
     [
@@ -506,9 +1014,6 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "5-30",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -517,7 +1022,8 @@
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "spawnId": "poliwag-13",
         "structures": [
           "cobblemon:shipwreck_coves/lush_shipwreck_cove"
         ],
@@ -528,7 +1034,10 @@
         "yLevel": {
           "minY": -41,
           "maxY": 9
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "poliwag",
+        "type": "pokemon"
       }
     ],
     [
@@ -536,9 +1045,6 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "5-30",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -547,7 +1053,8 @@
             "#cobblemon:is_lush"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0060_poliwag.json",
+        "spawnId": "poliwag-14",
         "structures": [
           "cobblemon:shipwreck_coves/lush_shipwreck_cove"
         ],
@@ -558,26 +1065,17 @@
         "yLevel": {
           "minY": -41,
           "maxY": 9
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 1.1,
-        "levels": "4-19",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/common_dark_swamp.json"
+        "spawnType": "fishing",
+        "pokemon": "poliwag",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
+        }
       }
     ]
   ],
@@ -591,6 +1089,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/poliwag.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/poliwag.json"
   ]
 }

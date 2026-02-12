@@ -2,20 +2,41 @@
   "id": "sinistea_antique",
   "dexnum": 854,
   "name": "Sinistea Antique",
+  "nameFr": "Sinistea Antique",
+  "description": "La spirale sur son corps est son point faible. Si on la touille, elle perd sa forme, ce qui lui donne des vertiges.",
   "primaryType": "ghost",
   "secondaryType": "",
+  "primaryTypeFr": "Spectre",
+  "secondaryTypeFr": "",
+  "height": 1,
+  "weight": 2,
   "maleRatio": -1,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 0.5,
+    "height": 0.5,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "weakarmor",
-    "h:cursedbody"
+    {
+      "id": "weakarmor",
+      "name": "Armurouillée",
+      "hidden": false
+    },
+    {
+      "id": "cursedbody",
+      "name": "Corps Maudit",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "mineral",
     "amorphous"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 40,
     "attack": 45,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 62,
   "experienceGroup": "medium_fast",
   "catchRate": 120,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,85 +64,355 @@
         "item": "cobblemon:spell_tag",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Rune Sort"
       }
     ]
   },
   "moves": [
-    "1:astonish",
-    "1:withdraw",
-    "1:aromatherapy",
-    "6:aromaticmist",
-    "12:megadrain",
-    "24:suckerpunch",
-    "30:sweetscent",
-    "36:gigadrain",
-    "42:nastyplot",
-    "48:shadowball",
-    "54:memento",
-    "60:shellsmash",
-    "egg:allyswitch",
-    "tm:allyswitch",
-    "tm:batonpass",
-    "tm:calmmind",
-    "tm:confuseray",
-    "tm:curse",
-    "tm:darkpulse",
-    "tm:endure",
-    "tm:facade",
-    "tm:foulplay",
-    "tm:gigadrain",
-    "tm:hex",
-    "tm:imprison",
-    "tm:magicalleaf",
-    "tm:metronome",
-    "tm:nastyplot",
-    "tm:nightshade",
-    "tm:payback",
-    "tm:phantomforce",
-    "tm:poltergeist",
-    "tm:protect",
-    "tm:psybeam",
-    "tm:psychic",
-    "tm:psyshock",
-    "tm:rest",
-    "tm:shadowball",
-    "tm:skillswap",
-    "tm:sleeptalk",
-    "tm:spite",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:terablast",
-    "tm:trick",
-    "tm:trickroom",
-    "tm:willowisp",
-    "tm:wonderroom",
-    "tutor:allyswitch",
-    "tutor:calmmind",
-    "tutor:darkpulse",
-    "tutor:foulplay",
-    "tutor:gigadrain",
-    "tutor:magicalleaf",
-    "tutor:poltergeist",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:shadowball",
-    "tutor:skillswap",
-    "tutor:sleeptalk",
-    "tutor:spite",
-    "tutor:suckerpunch",
-    "tutor:trick",
-    "tutor:wonderroom"
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "1"
+    },
+    {
+      "id": "withdraw",
+      "name": "Repli",
+      "category": "1"
+    },
+    {
+      "id": "aromatherapy",
+      "name": "Aromathérapie",
+      "category": "1"
+    },
+    {
+      "id": "aromaticmist",
+      "name": "Brume Capiteuse",
+      "category": "6"
+    },
+    {
+      "id": "megadrain",
+      "name": "Méga-Sangsue",
+      "category": "12"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "24"
+    },
+    {
+      "id": "sweetscent",
+      "name": "Doux Parfum",
+      "category": "30"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "36"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "42"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "48"
+    },
+    {
+      "id": "memento",
+      "name": "Souvenir",
+      "category": "54"
+    },
+    {
+      "id": "shellsmash",
+      "name": "Exuviation",
+      "category": "60"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "egg"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tm"
+    },
+    {
+      "id": "metronome",
+      "name": "Métronome",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "phantomforce",
+      "name": "Hantise",
+      "category": "tm"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tutor"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "sinistea_polteageistantique",
       "variant": "item_interact",
       "result": "polteageist tea_authenticity=antique",
-      "consumeHeldItem": true,
+      "consumeHeldItem": false,
       "learnableMoves": [
         "teatime"
       ],
@@ -127,44 +420,9 @@
       "requiredContext": "cobblemon:chipped_pot"
     }
   ],
-  "spawns": [
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 9.1,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/rare_dark_swamp.json"
-      }
-    ],
-    [
-      {
-        "rarity": "uncommon",
-        "weight": 10.0,
-        "levels": "10-25",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_spooky"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0854_sinistea.json"
-      }
-    ]
-  ],
-  "implemented": false,
+  "preEvolution": null,
+  "spawns": [],
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/sinistea.png"
@@ -174,6 +432,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/sinistea.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/sinistea.json"
   ]
 }

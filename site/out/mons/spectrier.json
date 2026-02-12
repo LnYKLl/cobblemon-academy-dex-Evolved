@@ -2,19 +2,41 @@
   "id": "spectrier",
   "dexnum": 897,
   "name": "Spectrier",
+  "nameFr": "Spectreval",
+  "description": "Il se sert de tous ses sens pour se repérer, sauf celui de la vue. Un coup de ses sabots suffirait à séparer l'âme du corps de sa cible.",
   "primaryType": "ghost",
   "secondaryType": "",
+  "primaryTypeFr": "Spectre",
+  "secondaryTypeFr": "",
+  "height": 20,
+  "weight": 445,
   "maleRatio": -1,
+  "baseScale": 0.85,
+  "hitbox": {
+    "width": 2.2,
+    "height": 3.3,
+    "fixed": false
+  },
   "labels": [
     "gen8",
     "legendary"
   ],
   "abilities": [
-    "grimneigh"
+    {
+      "id": "grimneigh",
+      "name": "Sombre Ruade",
+      "hidden": false
+    },
+    {
+      "id": "grimneigh",
+      "name": "Sombre Ruade",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 120,
   "baseStats": {
     "hp": 100,
     "attack": 65,
@@ -31,115 +53,432 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 290,
   "experienceGroup": "slow",
   "catchRate": 3,
+  "baseFriendship": 35,
   "drops": {
-    "amount": 0,
-    "entries": []
-  },
-  "moves": [
-    "1:tackle",
-    "1:tailwhip",
-    "6:doublekick",
-    "12:hex",
-    "18:stomp",
-    "24:confuseray",
-    "30:haze",
-    "36:shadowball",
-    "42:takedown",
-    "48:agility",
-    "54:thrash",
-    "60:disable",
-    "66:doubleedge",
-    "72:nastyplot",
-    "tm:agility",
-    "tm:assurance",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:calmmind",
-    "tm:confuseray",
-    "tm:crunch",
-    "tm:darkpulse",
-    "tm:drainingkiss",
-    "tm:endure",
-    "tm:facade",
-    "tm:foulplay",
-    "tm:gigaimpact",
-    "tm:hex",
-    "tm:hyperbeam",
-    "tm:mudshot",
-    "tm:nastyplot",
-    "tm:nightshade",
-    "tm:payback",
-    "tm:phantomforce",
-    "tm:protect",
-    "tm:psychic",
-    "tm:psychocut",
-    "tm:rest",
-    "tm:round",
-    "tm:scaryface",
-    "tm:shadowball",
-    "tm:sleeptalk",
-    "tm:snarl",
-    "tm:snore",
-    "tm:stompingtantrum",
-    "tm:substitute",
-    "tm:swift",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:uproar",
-    "tm:willowisp",
-    "tutor:disable",
-    "tutor:doubleedge",
-    "tutor:lashout",
-    "tutor:nastyplot",
-    "tutor:thrash"
-  ],
-  "forms": [],
-  "types": [],
-  "evolutions": [],
-  "spawns": [
-    [
+    "amount": 5,
+    "entries": [
       {
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "70",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_forest",
-            "#cobblemon:is_dark_forest",
-            "#cobblemon:is_plains"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-spectrier.json",
-        "keyItem": "myths_and_legends:shaderoot_carrot"
-      }
-    ],
-    [
+        "item": "cobblemon:rare_candy",
+        "percentage": null,
+        "quantityRange": "2-6",
+        "source": "species",
+        "itemName": "Super Bonbon"
+      },
       {
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "70",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_forest",
-            "#cobblemon:is_spooky",
-            "#cobblemon:is_plains"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-spectrier.json",
-        "keyItem": "myths_and_legends:shaderoot_carrot"
+        "item": "cobblemon:ghost_gem",
+        "percentage": 50.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Joyau Spectre"
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "minecraft:nether_star"
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Pilule Talent"
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Patch Talent"
       }
     ]
+  },
+  "moves": [
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "1"
+    },
+    {
+      "id": "doublekick",
+      "name": "Double Pied",
+      "category": "6"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "12"
+    },
+    {
+      "id": "stomp",
+      "name": "Écrasement",
+      "category": "18"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "24"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "30"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "36"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "42"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "48"
+    },
+    {
+      "id": "thrash",
+      "name": "Mania",
+      "category": "54"
+    },
+    {
+      "id": "disable",
+      "name": "Entrave",
+      "category": "60"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "66"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "72"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "drainingkiss",
+      "name": "Vampibaiser",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "phantomforce",
+      "name": "Hantise",
+      "category": "tm"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "legacy"
+    }
   ],
-  "implemented": true,
+  "forms": [],
+  "evolutions": [],
+  "preEvolution": null,
+  "spawns": [],
+  "implemented": false,
   "images": {
     "normal": [
       "out/sprites/genomons/spectrier.png",
@@ -151,7 +490,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/spectrier.json",
-    "datapacks\\CCC_MAL_1.6.4.1\\data\\cobblemon\\species\\generation8\\spectrier.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/spectrier.json"
   ]
 }

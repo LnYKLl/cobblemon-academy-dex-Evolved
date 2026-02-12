@@ -2,19 +2,40 @@
   "id": "glimmora",
   "dexnum": 970,
   "name": "Glimmora",
+  "nameFr": "Floréclat",
+  "description": "Lorsqu'il détecte un danger, il ouvre ses pétales cristallins et son corps conique tire un rayon laser.",
   "primaryType": "rock",
   "secondaryType": "poison",
+  "primaryTypeFr": "Roche",
+  "secondaryTypeFr": "Poison",
+  "height": 15,
+  "weight": 450,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1.2,
+    "height": 1.6,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "toxicdebris",
-    "h:corrosion"
+    {
+      "id": "toxicdebris",
+      "name": "Dépôt Toxique",
+      "hidden": false
+    },
+    {
+      "id": "corrosion",
+      "name": "Corrosion",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "mineral"
   ],
+  "eggCycles": 30,
   "baseStats": {
     "hp": 83,
     "attack": 55,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 184,
   "experienceGroup": "medium_slow",
   "catchRate": 25,
+  "baseFriendship": 50,
   "drops": {
     "amount": 4,
     "entries": [
@@ -40,107 +63,430 @@
         "item": "minecraft:amethyst_shard",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:amethyst_shard"
       },
       {
         "item": "cobblemon:shuca_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Jouca"
       },
       {
         "item": "cobblemon:float_stone",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Pierrallégée"
       }
     ]
   },
   "moves": [
-    "1:mortalspin",
-    "1:smackdown",
-    "1:spikyshield",
-    "1:toxicspikes",
-    "1:rockthrow",
-    "1:harden",
-    "7:acidspray",
-    "11:ancientpower",
-    "15:rockpolish",
-    "18:stealthrock",
-    "22:venoshock",
-    "26:sandstorm",
-    "29:selfdestruct",
-    "33:rockslide",
-    "39:powergem",
-    "44:acidarmor",
-    "50:sludgewave",
-    "egg:explosion",
-    "egg:memento",
-    "egg:toxic",
-    "tm:acidspray",
-    "tm:ancientpower",
-    "tm:confuseray",
-    "tm:dazzlinggleam",
-    "tm:earthpower",
-    "tm:endure",
-    "tm:energyball",
-    "tm:explosion",
-    "tm:facade",
-    "tm:flashcannon",
-    "tm:gigaimpact",
-    "tm:gunkshot",
-    "tm:hyperbeam",
-    "tm:irondefense",
-    "tm:lightscreen",
-    "tm:meteorbeam",
-    "tm:mudshot",
-    "tm:powergem",
-    "tm:protect",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:rockblast",
-    "tm:rockpolish",
-    "tm:rockslide",
-    "tm:rocktomb",
-    "tm:sandstorm",
-    "tm:sandtomb",
-    "tm:selfdestruct",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:sludgewave",
-    "tm:smackdown",
-    "tm:solarbeam",
-    "tm:spikes",
-    "tm:stealthrock",
-    "tm:stoneedge",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:terablast",
-    "tm:toxic",
-    "tm:toxicspikes",
-    "tm:venoshock",
-    "tutor:ancientpower",
-    "tutor:dazzlinggleam",
-    "tutor:earthpower",
-    "tutor:energyball",
-    "tutor:flashcannon",
-    "tutor:gigaimpact",
-    "tutor:gunkshot",
-    "tutor:hyperbeam",
-    "tutor:irondefense",
-    "tutor:meteorbeam",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:spikes",
-    "tutor:stealthrock",
-    "tutor:stoneedge"
+    {
+      "id": "mortalspin",
+      "name": "Toupie Éclat",
+      "category": "1"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "1"
+    },
+    {
+      "id": "spikyshield",
+      "name": "Pico-Défense",
+      "category": "1"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "1"
+    },
+    {
+      "id": "rockthrow",
+      "name": "Jet-Pierres",
+      "category": "1"
+    },
+    {
+      "id": "harden",
+      "name": "Armure",
+      "category": "1"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "7"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "11"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "15"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "18"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "22"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "26"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "29"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "33"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "39"
+    },
+    {
+      "id": "acidarmor",
+      "name": "Acidarmure",
+      "category": "44"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "50"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "egg"
+    },
+    {
+      "id": "memento",
+      "name": "Souvenir",
+      "category": "egg"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "egg"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "sandtomb",
+      "name": "Tourbi-Sable",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "tm"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "glimmet",
   "spawns": [
     [
       {
@@ -150,15 +496,13 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "35-53",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0970_glimmora.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0970_glimmora.json",
+        "spawnId": "glimmora-1",
         "nearbyBlocks": {
           "selectors": [
             "#cobblemon:gemstones"
@@ -183,7 +527,10 @@
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "glimmora",
+        "type": "pokemon"
       }
     ],
     [
@@ -191,15 +538,16 @@
         "rarity": "common",
         "weight": 0.2,
         "levels": "35-53",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_quartz"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0970_glimmora.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0970_glimmora.json",
+        "spawnId": "glimmora-2",
+        "spawnType": "grounded",
+        "pokemon": "glimmora",
+        "type": "pokemon"
       }
     ],
     [
@@ -207,35 +555,17 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "35-53",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "the_bumblezone:crystal_canyon",
             "biomesoplenty:crystalline_chasm"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0970_glimmora.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 0.8,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/rare_crystallized_desert.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0970_glimmora.json",
+        "spawnId": "glimmora-3",
+        "spawnType": "grounded",
+        "pokemon": "glimmora",
+        "type": "pokemon"
       }
     ]
   ],
@@ -249,6 +579,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/glimmora.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/glimmora.json"
   ]
 }

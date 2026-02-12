@@ -2,20 +2,45 @@
   "id": "overqwil",
   "dexnum": 904,
   "name": "Overqwil",
+  "nameFr": "Qwilpik",
+  "description": "Même quand il dort, ses épines empoisonnées réagissent par réflexe à tout ce qui bouge et transpercent quiconque s'approche de trop près.",
   "primaryType": "dark",
   "secondaryType": "poison",
+  "primaryTypeFr": "Ténèbres",
+  "secondaryTypeFr": "Poison",
+  "height": 25,
+  "weight": 605,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1.2,
+    "height": 2,
+    "fixed": false
+  },
   "labels": [
     "gen8a"
   ],
   "abilities": [
-    "poisonpoint",
-    "swiftswim",
-    "h:intimidate"
+    {
+      "id": "poisonpoint",
+      "name": "Point Poison",
+      "hidden": false
+    },
+    {
+      "id": "swiftswim",
+      "name": "Glissade",
+      "hidden": false
+    },
+    {
+      "id": "intimidate",
+      "name": "Intimidation",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_2"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 85,
     "attack": 115,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 179,
   "experienceGroup": "medium_fast",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 4,
     "entries": [
@@ -41,132 +68,555 @@
         "item": "minecraft:pufferfish",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:pufferfish"
       },
       {
         "item": "minecraft:prismarine_shard",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:prismarine_shard"
       },
       {
         "item": "cobblemon:poison_barb",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Pic Venin"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:poisonsting",
-    "4:harden",
-    "8:bite",
-    "12:fellstinger",
-    "16:minimize",
-    "20:spikes",
-    "24:brine",
-    "28:barbbarrage",
-    "32:pinmissile",
-    "36:toxicspikes",
-    "40:stockpile",
-    "40:spitup",
-    "44:toxic",
-    "48:crunch",
-    "52:acupressure",
-    "56:destinybond",
-    "egg:acidspray",
-    "egg:aquajet",
-    "egg:aquatail",
-    "egg:astonish",
-    "egg:bubblebeam",
-    "egg:flail",
-    "egg:haze",
-    "egg:selfdestruct",
-    "egg:supersonic",
-    "egg:waterpulse",
-    "tm:acidspray",
-    "tm:agility",
-    "tm:aquatail",
-    "tm:blizzard",
-    "tm:brine",
-    "tm:chillingwater",
-    "tm:crunch",
-    "tm:curse",
-    "tm:darkpulse",
-    "tm:doubleedge",
-    "tm:endure",
-    "tm:facade",
-    "tm:gigaimpact",
-    "tm:gunkshot",
-    "tm:gyroball",
-    "tm:haze",
-    "tm:hex",
-    "tm:hydropump",
-    "tm:hyperbeam",
-    "tm:iceball",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:lashout",
-    "tm:liquidation",
-    "tm:mudshot",
-    "tm:painsplit",
-    "tm:pinmissile",
-    "tm:poisonjab",
-    "tm:poisontail",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:reversal",
-    "tm:scaleshot",
-    "tm:scaryface",
-    "tm:selfdestruct",
-    "tm:shadowball",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:sludgewave",
-    "tm:smartstrike",
-    "tm:spikes",
-    "tm:spite",
-    "tm:substitute",
-    "tm:surf",
-    "tm:swift",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:throatchop",
-    "tm:toxic",
-    "tm:toxicspikes",
-    "tm:venoshock",
-    "tm:waterfall",
-    "tm:waterpulse",
-    "tutor:aquatail",
-    "tutor:darkpulse",
-    "tutor:gigaimpact",
-    "tutor:gunkshot",
-    "tutor:hyperbeam",
-    "tutor:iceball",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:lashout",
-    "tutor:liquidation",
-    "tutor:painsplit",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:scaleshot",
-    "tutor:shadowball",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:spikes",
-    "tutor:spite",
-    "tutor:swift",
-    "tutor:throatchop",
-    "tutor:waterpulse"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "poisonsting",
+      "name": "Dard-Venin",
+      "category": "1"
+    },
+    {
+      "id": "harden",
+      "name": "Armure",
+      "category": "4"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "8"
+    },
+    {
+      "id": "fellstinger",
+      "name": "Dard Mortel",
+      "category": "12"
+    },
+    {
+      "id": "minimize",
+      "name": "Lilliput",
+      "category": "16"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "20"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "24"
+    },
+    {
+      "id": "barbbarrage",
+      "name": "Multitoxik",
+      "category": "28"
+    },
+    {
+      "id": "pinmissile",
+      "name": "Dard-Nuée",
+      "category": "32"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "36"
+    },
+    {
+      "id": "stockpile",
+      "name": "Stockage",
+      "category": "40"
+    },
+    {
+      "id": "spitup",
+      "name": "Relâche",
+      "category": "40"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "44"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "48"
+    },
+    {
+      "id": "acupressure",
+      "name": "Acupression",
+      "category": "52"
+    },
+    {
+      "id": "destinybond",
+      "name": "Lien du Destin",
+      "category": "56"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "egg"
+    },
+    {
+      "id": "aquajet",
+      "name": "Aqua-Jet",
+      "category": "egg"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "egg"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "egg"
+    },
+    {
+      "id": "bubblebeam",
+      "name": "Bulles d'O",
+      "category": "egg"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "egg"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "egg"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "egg"
+    },
+    {
+      "id": "supersonic",
+      "name": "Ultrason",
+      "category": "egg"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "egg"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "iceball",
+      "name": "Ball'Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "pinmissile",
+      "name": "Dard-Nuée",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "poisontail",
+      "name": "Queue-Poison",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "tm"
+    },
+    {
+      "id": "smartstrike",
+      "name": "Estocorne",
+      "category": "tm"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "iceball",
+      "name": "Ball'Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "qwilfish hisuian",
   "spawns": [
     [
       {
@@ -176,18 +626,22 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "39-51",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_cold_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "spawnId": "overqwil-1",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "overqwil",
+        "excludeStructures": [
+          "minecraft:monument"
+        ],
+        "type": "pokemon"
       }
     ],
     [
@@ -199,19 +653,20 @@
         "rarity": "common",
         "weight": 6.0,
         "levels": "39-51",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_cold_ocean",
             "#cobblemon:is_frozen_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "spawnId": "overqwil-2",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "overqwil",
+        "type": "pokemon"
       }
     ],
     [
@@ -219,18 +674,25 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "39-51",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_cold_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "spawnId": "overqwil-3",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "overqwil",
+        "excludeStructures": [
+          "minecraft:monument"
+        ],
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -238,17 +700,31 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "39-51",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_cold_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "spawnId": "overqwil-4",
         "sky": {
           "canSeeSky": true
+        },
+        "spawnType": "fishing",
+        "pokemon": "overqwil",
+        "excludeStructures": [
+          "minecraft:monument"
+        ],
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 1,
+            "maxLureLevel": 2
+          }
         }
       }
     ],
@@ -257,21 +733,29 @@
         "rarity": "common",
         "weight": 6.0,
         "levels": "39-51",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_cold_ocean",
             "#cobblemon:is_frozen_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "spawnId": "overqwil-5",
         "structures": [
           "minecraft:monument"
         ],
         "sky": {
           "canSeeSky": true
+        },
+        "spawnType": "fishing",
+        "pokemon": "overqwil",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
         }
       }
     ],
@@ -283,20 +767,24 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "39-51",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_cold_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "spawnId": "overqwil-6",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "overqwil",
+        "excludeStructures": [
+          "minecraft:monument"
+        ],
+        "type": "pokemon"
       }
     ],
     [
@@ -308,21 +796,22 @@
         "rarity": "common",
         "weight": 6.0,
         "levels": "39-51",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_cold_ocean",
             "#cobblemon:is_frozen_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "spawnId": "overqwil-7",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "overqwil",
+        "type": "pokemon"
       }
     ],
     [
@@ -330,20 +819,27 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "39-51",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_cold_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "spawnId": "overqwil-8",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "overqwil",
+        "excludeStructures": [
+          "minecraft:monument"
+        ],
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -351,19 +847,33 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "39-51",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_cold_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "spawnId": "overqwil-9",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "fishing",
+        "pokemon": "overqwil",
+        "excludeStructures": [
+          "minecraft:monument"
+        ],
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 1,
+            "maxLureLevel": 2
+          }
         }
       }
     ],
@@ -372,16 +882,14 @@
         "rarity": "common",
         "weight": 6.0,
         "levels": "39-51",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_cold_ocean",
             "#cobblemon:is_frozen_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "spawnId": "overqwil-10",
         "structures": [
           "minecraft:monument"
         ],
@@ -389,6 +897,16 @@
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "fishing",
+        "pokemon": "overqwil",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
         }
       }
     ],
@@ -400,15 +918,13 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "39-51",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_cold"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "spawnId": "overqwil-11",
         "structures": [
           "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
         ],
@@ -418,7 +934,10 @@
         "yLevel": {
           "minY": -60,
           "maxY": 13
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "overqwil",
+        "type": "pokemon"
       }
     ],
     [
@@ -426,15 +945,13 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "39-51",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_cold"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "spawnId": "overqwil-12",
         "structures": [
           "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
         ],
@@ -444,7 +961,13 @@
         "yLevel": {
           "minY": -60,
           "maxY": 13
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "overqwil",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -452,15 +975,13 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "39-51",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_cold"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0904_overqwil.json",
+        "spawnId": "overqwil-13",
         "structures": [
           "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
         ],
@@ -470,26 +991,20 @@
         "yLevel": {
           "minY": -60,
           "maxY": 13
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 3.2,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/rare_dark_swamp.json"
+        "spawnType": "fishing",
+        "pokemon": "overqwil",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 1,
+            "maxLureLevel": 2
+          }
+        }
       }
     ]
   ],
@@ -503,7 +1018,7 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8a/overqwil.json",
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8a/overqwil.json",
     "datapacks\\Academy\\data\\cobblemon\\species\\generation8a\\overqwil.json"
   ]
 }

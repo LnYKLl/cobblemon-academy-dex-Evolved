@@ -2,21 +2,46 @@
   "id": "noibat",
   "dexnum": 714,
   "name": "Noibat",
+  "nameFr": "Sonistrelle",
+  "description": "Les ultrasons à 200 000 Hz qu'il émet suffiraient à rendre groggy le plus chevronné des lutteurs.",
   "primaryType": "flying",
   "secondaryType": "dragon",
+  "primaryTypeFr": "Vol",
+  "secondaryTypeFr": "Dragon",
+  "height": 5,
+  "weight": 80,
   "maleRatio": 0.5,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 1,
+    "height": 1.5,
+    "fixed": false
+  },
   "labels": [
     "gen6"
   ],
   "abilities": [
-    "frisk",
-    "infiltrator",
-    "h:telepathy"
+    {
+      "id": "frisk",
+      "name": "Fouille",
+      "hidden": false
+    },
+    {
+      "id": "infiltrator",
+      "name": "Infiltration",
+      "hidden": false
+    },
+    {
+      "id": "telepathy",
+      "name": "Télépathe",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "flying",
     "dragon"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 40,
     "attack": 30,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 49,
   "experienceGroup": "medium_fast",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -42,117 +69,556 @@
         "item": "minecraft:phantom_membrane",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:phantom_membrane"
       },
       {
         "item": "cobblemon:yache_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Nanone"
       }
     ]
   },
   "moves": [
-    "1:absorb",
-    "1:tackle",
-    "4:gust",
-    "5:leechlife",
-    "8:supersonic",
-    "12:doubleteam",
-    "16:wingattack",
-    "18:agility",
-    "20:bite",
-    "24:aircutter",
-    "28:whirlwind",
-    "31:razorwind",
-    "32:superfang",
-    "36:airslash",
-    "40:screech",
-    "44:roost",
-    "49:tailwind",
-    "52:hurricane",
-    "egg:defog",
-    "egg:dragonrush",
-    "egg:outrage",
-    "egg:snatch",
-    "egg:switcheroo",
-    "egg:tailwind",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:attract",
-    "tm:brickbreak",
-    "tm:confide",
-    "tm:cut",
-    "tm:darkpulse",
-    "tm:doubleteam",
-    "tm:dracometeor",
-    "tm:dragonclaw",
-    "tm:dragonpulse",
-    "tm:dreameater",
-    "tm:dualwingbeat",
-    "tm:echoedvoice",
-    "tm:endure",
-    "tm:facade",
-    "tm:fly",
-    "tm:frustration",
-    "tm:heatwave",
-    "tm:hiddenpower",
-    "tm:hurricane",
-    "tm:hypervoice",
-    "tm:irontail",
-    "tm:leechlife",
-    "tm:outrage",
-    "tm:protect",
-    "tm:psychic",
-    "tm:rest",
-    "tm:return",
-    "tm:roost",
-    "tm:round",
-    "tm:screech",
-    "tm:secretpower",
-    "tm:shadowball",
-    "tm:shadowclaw",
-    "tm:sleeptalk",
-    "tm:snore",
-    "tm:solarbeam",
-    "tm:steelwing",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superfang",
-    "tm:swagger",
-    "tm:swift",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:torment",
-    "tm:toxic",
-    "tm:uproar",
-    "tm:uturn",
-    "tm:wildcharge",
-    "tm:xscissor",
-    "tutor:defog",
-    "tutor:dracometeor",
-    "tutor:dragonpulse",
-    "tutor:dualwingbeat",
-    "tutor:heatwave",
-    "tutor:hypervoice",
-    "tutor:irontail",
-    "tutor:outrage",
-    "tutor:skyattack",
-    "tutor:snatch",
-    "tutor:snore",
-    "tutor:superfang",
-    "tutor:tailwind",
-    "tutor:uproar",
-    "tutor:waterpulse"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "1"
+    },
+    {
+      "id": "gust",
+      "name": "Tornade",
+      "category": "4"
+    },
+    {
+      "id": "supersonic",
+      "name": "Ultrason",
+      "category": "8"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "12"
+    },
+    {
+      "id": "wingattack",
+      "name": "Cru-Ailes",
+      "category": "16"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "20"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "24"
+    },
+    {
+      "id": "whirlwind",
+      "name": "Cyclone",
+      "category": "28"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "32"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "36"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "40"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "44"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "49"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "52"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "egg"
+    },
+    {
+      "id": "dragonrush",
+      "name": "Draco-Charge",
+      "category": "egg"
+    },
+    {
+      "id": "razorwind",
+      "name": "Coupe-Vent",
+      "category": "egg"
+    },
+    {
+      "id": "switcheroo",
+      "name": "Passe-Passe",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "tm"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tm"
+    },
+    {
+      "id": "dragonclaw",
+      "name": "Draco-Griffe",
+      "category": "tm"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tutor"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "noibat_noivern",
@@ -170,194 +636,59 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
         "presets": [
           "natural"
         ],
+        "rarity": "uncommon",
+        "weight": 8.4,
+        "levels": "1-25",
+        "biomeTags": {
+          "include": [
+            "#aether:is_aether",
+            "#cobblemon:is_deep_dark"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0714_noibat.json",
+        "spawnId": "noibat-1",
+        "sky": {
+          "minSkyLight": 0,
+          "maxSkyLight": 7
+        },
+        "spawnType": "grounded",
+        "pokemon": "noibat",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
         "rarity": "rare",
-        "weight": 4.4,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_starlight_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/rare_is_starlight_forest.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 5,
-        "levels": "10-25",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_spooky"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/noibat.json",
-        "sky": {
-          "minSkyLight": 8,
-          "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 11,
-        "levels": "10-25",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_spooky"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/noibat.json",
-        "sky": {
-          "minSkyLight": 8,
-          "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 5,
-        "levels": "10-25",
-        "contexts": [
-          "grounded"
-        ],
+        "weight": 7.5,
+        "levels": "1-25",
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ],
           "exclude": [
-            "#cobblemon:is_deep_dark",
-            "#cobblemon:is_dripstone",
-            "terralith:cave/underground_jungle"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/noibat.json",
-        "sky": {
-          "minSkyLight": 0,
-          "maxSkyLight": 5
-        },
-        "yLevel": {
-          "maxY": 32
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 9.0,
-        "levels": "15-30",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_dripstone",
-            "terralith:cave/underground_jungle"
-          ],
-          "exclude": [
             "#cobblemon:is_deep_dark"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/noibat.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0714_noibat.json",
+        "spawnId": "noibat-2",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 9.0,
-        "levels": "20-35",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_deep_dark"
-          ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/noibat.json",
-        "sky": {
-          "minSkyLight": 0,
-          "maxSkyLight": 7
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 7.0,
-        "levels": "20-43",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "betterend:chorus_forest"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/noibat.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 4.0,
-        "levels": "20-43",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "betterend:foggy_mushroomland",
-            "betterend:umbrella_jungle"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/noibat.json"
+        "spawnType": "grounded",
+        "pokemon": "noibat",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/noibat.png"
@@ -367,7 +698,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation6/noibat.json",
-    "datapacks\\CCC_MAL_1.6.4.1\\data\\cobblemon\\species\\generation6\\noibat.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation6/noibat.json"
   ]
 }

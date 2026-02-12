@@ -2,20 +2,45 @@
   "id": "lumineon",
   "dexnum": 457,
   "name": "Lumineon",
+  "nameFr": "Luminéon",
+  "description": "Pour éviter de se faire voir par ses ennemis, il rampe au fond de l'eau grâce aux nageoires sur son torse.",
   "primaryType": "water",
   "secondaryType": "",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "",
+  "height": 12,
+  "weight": 240,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen4"
   ],
   "abilities": [
-    "swiftswim",
-    "stormdrain",
-    "h:waterveil"
+    {
+      "id": "swiftswim",
+      "name": "Glissade",
+      "hidden": false
+    },
+    {
+      "id": "stormdrain",
+      "name": "Lavabo",
+      "hidden": false
+    },
+    {
+      "id": "waterveil",
+      "name": "Ignifu-Voile",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_2"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 69,
     "attack": 69,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 2
   },
+  "baseExperienceYield": 161,
   "experienceGroup": "erratic",
   "catchRate": 75,
+  "baseFriendship": 50,
   "drops": {
     "amount": 4,
     "entries": [
@@ -41,133 +68,592 @@
         "item": "minecraft:cod",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:cod"
       },
       {
         "item": "minecraft:bone_meal",
         "percentage": 10.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:bone_meal"
       },
       {
         "item": "cobblemon:rindo_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Ratam"
       },
       {
         "item": "cobblemon:prism_scale",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Bel'écaille"
       }
     ]
   },
   "moves": [
-    "1:pound",
-    "1:watergun",
-    "1:gust",
-    "1:soak",
-    "1:captivate",
-    "1:bubble",
-    "13:raindance",
-    "22:waterpulse",
-    "26:attract",
-    "29:safeguard",
-    "35:aquaring",
-    "42:whirlpool",
-    "48:uturn",
-    "53:bounce",
-    "59:tailwind",
-    "egg:agility",
-    "egg:aquatail",
-    "egg:attract",
-    "egg:aurorabeam",
-    "egg:charm",
-    "egg:confuseray",
-    "egg:flail",
-    "egg:psybeam",
-    "egg:splash",
-    "egg:sweetkiss",
-    "egg:tickle",
-    "tm:acrobatics",
-    "tm:agility",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:alluringvoice",
-    "tm:aquatail",
-    "tm:attract",
-    "tm:babydolleyes",
-    "tm:blizzard",
-    "tm:bounce",
-    "tm:brine",
-    "tm:captivate",
-    "tm:charm",
-    "tm:chillingwater",
-    "tm:confuseray",
-    "tm:dazzlinggleam",
-    "tm:defog",
-    "tm:dive",
-    "tm:encore",
-    "tm:endure",
-    "tm:facade",
-    "tm:flash",
-    "tm:flipturn",
-    "tm:gigaimpact",
-    "tm:hail",
-    "tm:helpinghand",
-    "tm:hydropump",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:ominouswind",
-    "tm:payback",
-    "tm:protect",
-    "tm:psybeam",
-    "tm:psychup",
-    "tm:raindance",
-    "tm:rest",
-    "tm:safeguard",
-    "tm:signalbeam",
-    "tm:silverwind",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:surf",
-    "tm:swift",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:twister",
-    "tm:uturn",
-    "tm:waterfall",
-    "tm:waterpulse",
-    "tm:whirlpool",
-    "tutor:aircutter",
-    "tutor:aquatail",
-    "tutor:babydolleyes",
-    "tutor:bounce",
-    "tutor:dazzlinggleam",
-    "tutor:defog",
-    "tutor:dive",
-    "tutor:flipturn",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:ominouswind",
-    "tutor:rest",
-    "tutor:signalbeam",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:tailwind",
-    "tutor:twister",
-    "tutor:waterpulse"
+    {
+      "id": "pound",
+      "name": "Écras'Face",
+      "category": "1"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "1"
+    },
+    {
+      "id": "gust",
+      "name": "Tornade",
+      "category": "1"
+    },
+    {
+      "id": "soak",
+      "name": "Détrempage",
+      "category": "1"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "1"
+    },
+    {
+      "id": "bubble",
+      "name": "Écume",
+      "category": "1"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "13"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "22"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "26"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "29"
+    },
+    {
+      "id": "aquaring",
+      "name": "Anneau Hydro",
+      "category": "35"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "42"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "48"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "53"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "59"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "egg"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "egg"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "egg"
+    },
+    {
+      "id": "aurorabeam",
+      "name": "Onde Boréale",
+      "category": "egg"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "egg"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "egg"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "egg"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "egg"
+    },
+    {
+      "id": "splash",
+      "name": "Trempette",
+      "category": "egg"
+    },
+    {
+      "id": "sweetkiss",
+      "name": "Doux Baiser",
+      "category": "egg"
+    },
+    {
+      "id": "tickle",
+      "name": "Chatouille",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "alluringvoice",
+      "name": "Voix Envoûtante",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "tm"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "tm"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "flipturn",
+      "name": "Eau Revoir",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "silverwind",
+      "name": "Vent Argenté",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tutor"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tutor"
+    },
+    {
+      "id": "flipturn",
+      "name": "Eau Revoir",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "twister",
+      "name": "Ouragan",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "finneon",
   "spawns": [
     [
       {
@@ -177,21 +663,22 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "31-46",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_deep_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0457_lumineon.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0457_lumineon.json",
+        "spawnId": "lumineon-1",
         "sky": {
           "canSeeSky": true
         },
         "yLevel": {
           "maxY": 48
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "lumineon",
+        "type": "pokemon"
       }
     ],
     [
@@ -199,18 +686,19 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "31-46",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0457_lumineon.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0457_lumineon.json",
+        "spawnId": "lumineon-2",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "lumineon",
+        "type": "pokemon"
       }
     ],
     [
@@ -221,15 +709,13 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "31-46",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_deep_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0457_lumineon.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0457_lumineon.json",
+        "spawnId": "lumineon-3",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
@@ -237,7 +723,10 @@
         },
         "yLevel": {
           "maxY": 48
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "lumineon",
+        "type": "pokemon"
       }
     ],
     [
@@ -245,20 +734,21 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "31-46",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0457_lumineon.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0457_lumineon.json",
+        "spawnId": "lumineon-4",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "lumineon",
+        "type": "pokemon"
       }
     ],
     [
@@ -269,15 +759,13 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "31-46",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0457_lumineon.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0457_lumineon.json",
+        "spawnId": "lumineon-5",
         "structures": [
           "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
         ],
@@ -287,7 +775,10 @@
         "yLevel": {
           "minY": -60,
           "maxY": 13
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "lumineon",
+        "type": "pokemon"
       }
     ],
     [
@@ -295,15 +786,13 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "31-46",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0457_lumineon.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0457_lumineon.json",
+        "spawnId": "lumineon-6",
         "structures": [
           "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
         ],
@@ -313,26 +802,10 @@
         "yLevel": {
           "minY": -60,
           "maxY": 13
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "water"
-        ],
-        "rarity": "uncommon",
-        "weight": 2.1,
-        "levels": "18-34",
-        "contexts": [
-          "submerged"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_safari_ocean"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_safari_ocean/uncommon_is_safari_ocean.json"
+        "spawnType": "fishing",
+        "pokemon": "lumineon",
+        "type": "pokemon"
       }
     ]
   ],
@@ -346,6 +819,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation4/lumineon.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation4/lumineon.json"
   ]
 }

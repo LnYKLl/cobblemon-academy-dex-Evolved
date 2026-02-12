@@ -2,20 +2,41 @@
   "id": "quaxwell",
   "dexnum": 913,
   "name": "Quaxwell",
+  "nameFr": "Canarbello",
+  "description": "Ils courent dans les hauts-fonds pour renforcer les muscles de leurs pattes et rivalisent entre eux pour voir qui a le coup de pied le plus élégant.",
   "primaryType": "water",
   "secondaryType": "",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "",
+  "height": 12,
+  "weight": 215,
   "maleRatio": 0.875,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 0.8,
+    "height": 2,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "torrent",
-    "h:moxie"
+    {
+      "id": "torrent",
+      "name": "Torrent",
+      "hidden": false
+    },
+    {
+      "id": "moxie",
+      "name": "Impudence",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "flying",
     "water_1"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 70,
     "attack": 85,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 144,
   "experienceGroup": "medium_slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,85 +64,369 @@
         "item": "cobblemon:mystic_water",
         "percentage": 10.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Eau Mystique"
       }
     ]
   },
   "moves": [
-    "1:pound",
-    "1:growl",
-    "1:watergun",
-    "1:doublehit",
-    "7:workup",
-    "10:wingattack",
-    "13:aquajet",
-    "17:waterpulse",
-    "19:lowsweep",
-    "23:aquacutter",
-    "27:airslash",
-    "32:focusenergy",
-    "38:acrobatics",
-    "43:liquidation",
-    "48:featherdance",
-    "egg:detect",
-    "egg:lastresort",
-    "egg:rapidspin",
-    "egg:roost",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:batonpass",
-    "tm:bravebird",
-    "tm:chillingwater",
-    "tm:disarmingvoice",
-    "tm:encore",
-    "tm:endure",
-    "tm:facade",
-    "tm:featherdance",
-    "tm:flipturn",
-    "tm:focusenergy",
-    "tm:helpinghand",
-    "tm:hydropump",
-    "tm:lastresort",
-    "tm:liquidation",
-    "tm:lowkick",
-    "tm:lowsweep",
-    "tm:mistyterrain",
-    "tm:protect",
-    "tm:psychup",
-    "tm:raindance",
-    "tm:rest",
-    "tm:roost",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:surf",
-    "tm:swift",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:tripleaxel",
-    "tm:waterpledge",
-    "tm:waterpulse",
-    "tm:whirlpool",
-    "tm:workup",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:flipturn",
-    "tutor:focusenergy",
-    "tutor:helpinghand",
-    "tutor:lastresort",
-    "tutor:liquidation",
-    "tutor:lowkick",
-    "tutor:rest",
-    "tutor:roost",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:tripleaxel",
-    "tutor:waterpledge",
-    "tutor:waterpulse"
+    {
+      "id": "pound",
+      "name": "Écras'Face",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "1"
+    },
+    {
+      "id": "doublehit",
+      "name": "Coup Double",
+      "category": "1"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "7"
+    },
+    {
+      "id": "wingattack",
+      "name": "Cru-Ailes",
+      "category": "10"
+    },
+    {
+      "id": "aquajet",
+      "name": "Aqua-Jet",
+      "category": "13"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "17"
+    },
+    {
+      "id": "lowsweep",
+      "name": "Balayette",
+      "category": "19"
+    },
+    {
+      "id": "aquacutter",
+      "name": "Tranch'Aqua",
+      "category": "23"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "27"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "32"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "38"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "43"
+    },
+    {
+      "id": "featherdance",
+      "name": "Danse Plumes",
+      "category": "48"
+    },
+    {
+      "id": "detect",
+      "name": "Détection",
+      "category": "egg"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "egg"
+    },
+    {
+      "id": "rapidspin",
+      "name": "Tour Rapide",
+      "category": "egg"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "disarmingvoice",
+      "name": "Voix Enjôleuse",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "featherdance",
+      "name": "Danse Plumes",
+      "category": "tm"
+    },
+    {
+      "id": "flipturn",
+      "name": "Eau Revoir",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "lowsweep",
+      "name": "Balayette",
+      "category": "tm"
+    },
+    {
+      "id": "mistyterrain",
+      "name": "Champ Brumeux",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "tripleaxel",
+      "name": "Triple Axel",
+      "category": "tm"
+    },
+    {
+      "id": "waterpledge",
+      "name": "Aire d'Eau",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "flipturn",
+      "name": "Eau Revoir",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tripleaxel",
+      "name": "Triple Axel",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpledge",
+      "name": "Aire d'Eau",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "quaxwell_quaquaval",
@@ -137,6 +444,7 @@
       ]
     }
   ],
+  "preEvolution": "quaxly",
   "spawns": [
     [
       {
@@ -146,9 +454,6 @@
         "rarity": "ultra-rare",
         "weight": 3.6,
         "levels": "16-41",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest",
@@ -159,19 +464,20 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0913_quaxwell.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0913_quaxwell.json",
+        "spawnId": "quaxwell-1",
         "nearbyBlocks": {
           "selectors": [
-            "#minecraft:water"
-          ],
-          "resolved": [
-            "#minecraft:water"
+            "minecraft:water"
           ]
         },
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "quaxwell",
+        "type": "pokemon"
       }
     ],
     [
@@ -179,9 +485,6 @@
         "rarity": "ultra-rare",
         "weight": 3.6,
         "levels": "16-41",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest",
@@ -192,11 +495,15 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0913_quaxwell.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0913_quaxwell.json",
+        "spawnId": "quaxwell-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "quaxwell",
+        "type": "pokemon"
       }
     ],
     [
@@ -204,9 +511,6 @@
         "rarity": "ultra-rare",
         "weight": 3.6,
         "levels": "16-41",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest",
@@ -218,11 +522,15 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0913_quaxwell.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0913_quaxwell.json",
+        "spawnId": "quaxwell-3",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "quaxwell",
+        "type": "pokemon"
       }
     ]
   ],
@@ -236,6 +544,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/quaxwell.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/quaxwell.json"
   ]
 }

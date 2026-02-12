@@ -2,19 +2,40 @@
   "id": "ursaluna_bloodmoon",
   "dexnum": 901,
   "name": "Ursaluna Bloodmoon",
+  "nameFr": "Ursaluna Bloodmoon",
+  "description": "Il a traversé la mer pour rejoindre un nouveau territoire. Le fait d'avoir réussi à y survivre a altéré son apparence et ses compétences.",
   "primaryType": "ground",
   "secondaryType": "normal",
+  "primaryTypeFr": "Sol",
+  "secondaryTypeFr": "Normal",
+  "height": 27,
+  "weight": 3330,
   "maleRatio": 1,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1.8,
+    "height": 2,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "mindseye",
-    "h:mindseye"
+    {
+      "id": "mindseye",
+      "name": "Œil Révélateur",
+      "hidden": false
+    },
+    {
+      "id": "mindseye",
+      "name": "Œil Révélateur",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 113,
     "attack": 70,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 278,
   "experienceGroup": "medium_fast",
   "catchRate": 5,
+  "baseFriendship": 50,
   "drops": {
     "amount": 8,
     "entries": [
@@ -40,143 +63,587 @@
         "item": "minecraft:sweet_berries",
         "percentage": null,
         "quantityRange": "3-5",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:sweet_berries"
       },
       {
         "item": "minecraft:honey_bottle",
         "percentage": 10.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:honey_bottle"
       },
       {
         "item": "cobblemon:peat_block",
         "percentage": 10.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Bloc de Tourbe"
       },
       {
         "item": "cobblemon:oran_berry",
         "percentage": 10.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Oran"
       }
     ]
   },
   "moves": [
-    "1:scratch",
-    "1:leer",
-    "1:lick",
-    "1:headlongrush",
-    "1:moonlight",
-    "8:furyswipes",
-    "13:payback",
-    "17:harden",
-    "22:slash",
-    "25:playnice",
-    "35:scaryface",
-    "41:rest",
-    "41:snore",
-    "48:earthpower",
-    "56:moonblast",
-    "64:hammerarm",
-    "70:bloodmoon",
-    "tm:avalanche",
-    "tm:bellydrum",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:brickbreak",
-    "tm:bulldoze",
-    "tm:calmmind",
-    "tm:closecombat",
-    "tm:counter",
-    "tm:crosschop",
-    "tm:crunch",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:earthpower",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:facade",
-    "tm:faketears",
-    "tm:firepunch",
-    "tm:fling",
-    "tm:focusblast",
-    "tm:focuspunch",
-    "tm:furycutter",
-    "tm:gigaimpact",
-    "tm:gunkshot",
-    "tm:hardpress",
-    "tm:heavyslam",
-    "tm:helpinghand",
-    "tm:highhorsepower",
-    "tm:hyperbeam",
-    "tm:hypervoice",
-    "tm:icepunch",
-    "tm:lowkick",
-    "tm:metalclaw",
-    "tm:mudshot",
-    "tm:nightslash",
-    "tm:payback",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:roar",
-    "tm:rockslide",
-    "tm:rocktomb",
-    "tm:scaryface",
-    "tm:seedbomb",
-    "tm:seismictoss",
-    "tm:shadowclaw",
-    "tm:sleeptalk",
-    "tm:smackdown",
-    "tm:snarl",
-    "tm:snore",
-    "tm:stompingtantrum",
-    "tm:stoneedge",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunderpunch",
-    "tm:trailblaze",
-    "tm:uproar",
-    "tm:vacuumwave",
-    "tm:yawn",
-    "tutor:bulldoze",
-    "tutor:calmmind",
-    "tutor:earthpower",
-    "tutor:firepunch",
-    "tutor:focuspunch",
-    "tutor:furycutter",
-    "tutor:gigaimpact",
-    "tutor:gunkshot",
-    "tutor:helpinghand",
-    "tutor:highhorsepower",
-    "tutor:hyperbeam",
-    "tutor:hypervoice",
-    "tutor:icepunch",
-    "tutor:lowkick",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:seedbomb",
-    "tutor:shadowclaw",
-    "tutor:sleeptalk",
-    "tutor:snarl",
-    "tutor:snore",
-    "tutor:stompingtantrum",
-    "tutor:stoneedge",
-    "tutor:swift",
-    "tutor:thunderpunch",
-    "tutor:uproar",
-    "tutor:vacuumwave"
+    {
+      "id": "scratch",
+      "name": "Griffe",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "lick",
+      "name": "Léchouille",
+      "category": "1"
+    },
+    {
+      "id": "headlongrush",
+      "name": "Assaut Frontal",
+      "category": "1"
+    },
+    {
+      "id": "moonlight",
+      "name": "Rayon Lune",
+      "category": "1"
+    },
+    {
+      "id": "furyswipes",
+      "name": "Combo-Griffe",
+      "category": "8"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "13"
+    },
+    {
+      "id": "harden",
+      "name": "Armure",
+      "category": "17"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "22"
+    },
+    {
+      "id": "playnice",
+      "name": "Camaraderie",
+      "category": "25"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "35"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "41"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "41"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "48"
+    },
+    {
+      "id": "moonblast",
+      "name": "Pouvoir Lunaire",
+      "category": "56"
+    },
+    {
+      "id": "hammerarm",
+      "name": "Marto-Poing",
+      "category": "64"
+    },
+    {
+      "id": "bloodmoon",
+      "name": "Lune Rouge",
+      "category": "70"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "tm"
+    },
+    {
+      "id": "bellydrum",
+      "name": "Cognobidon",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "tm"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "tm"
+    },
+    {
+      "id": "crosschop",
+      "name": "Coup Croix",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "faketears",
+      "name": "Croco Larme",
+      "category": "tm"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "focusblast",
+      "name": "Exploforce",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "hardpress",
+      "name": "Pression Extrême",
+      "category": "tm"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "seismictoss",
+      "name": "Frappe Atlas",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "vacuumwave",
+      "name": "Onde Vide",
+      "category": "tm"
+    },
+    {
+      "id": "yawn",
+      "name": "Bâillement",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "firepunch",
+      "name": "Poing Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "icepunch",
+      "name": "Poing Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "vacuumwave",
+      "name": "Onde Vide",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "ursaring",
   "spawns": [
     [
       {
@@ -195,7 +662,35 @@
             "#minecraft:dark_forest"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/genomons/spawn_pool_world/0901_ursaluna_bloodmoon.json"
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0901_ursaluna_bloodmoon.json",
+        "spawnId": "ursaluna-3",
+        "moonPhase": 1,
+        "pokemon": "ursaluna bloodmoon",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "rarity": "ultra-rare",
+        "weight": 0.1,
+        "levels": "70",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#minecraft:dark_forest"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0901_ursaluna_bloodmoon.json",
+        "spawnId": "ccc-ursaluna-3",
+        "moonPhase": 1,
+        "pokemon": "ursaluna bloodmoon",
+        "type": "pokemon"
       }
     ]
   ],
@@ -211,8 +706,7 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8a/ursaluna.json",
-    "Cobblemon_MegaShowdown-10.0.7-release-fabric.jar!/data/cobblemon/species/generation8a/ursaluna.json",
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8a/ursaluna.json",
     "datapacks\\Academy\\data\\cobblemon\\species\\generation8a\\ursaluna.json"
   ]
 }

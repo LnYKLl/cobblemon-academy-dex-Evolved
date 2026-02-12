@@ -2,21 +2,46 @@
   "id": "wailmer",
   "dexnum": 320,
   "name": "Wailmer",
+  "nameFr": "Wailmer",
+  "description": "Wailmer peut stocker de l'eau dans son corps pour se transformer en balle et rebondir sur le sol. Plus ce Pokémon se remplit d'eau, plus il peut rebondir haut.",
   "primaryType": "water",
   "secondaryType": "",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "",
+  "height": 20,
+  "weight": 1300,
   "maleRatio": 0.5,
+  "baseScale": 1.8,
+  "hitbox": {
+    "height": 1,
+    "fixed": false,
+    "width": 1
+  },
   "labels": [
     "gen3"
   ],
   "abilities": [
-    "waterveil",
-    "oblivious",
-    "h:pressure"
+    {
+      "id": "waterveil",
+      "name": "Ignifu-Voile",
+      "hidden": false
+    },
+    {
+      "id": "oblivious",
+      "name": "Benêt",
+      "hidden": false
+    },
+    {
+      "id": "pressure",
+      "name": "Pression",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field",
     "water_2"
   ],
+  "eggCycles": 40,
   "baseStats": {
     "hp": 130,
     "attack": 70,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 80,
   "experienceGroup": "fluctuating",
   "catchRate": 125,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -42,121 +69,527 @@
         "item": "minecraft:bone_block",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:bone_block"
       },
       {
         "item": "cobblemon:chesto_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Maron"
       }
     ]
   },
   "moves": [
-    "1:splash",
-    "3:growl",
-    "6:astonish",
-    "12:watergun",
-    "15:mist",
-    "18:waterpulse",
-    "21:heavyslam",
-    "24:brine",
-    "27:whirlpool",
-    "30:dive",
-    "33:bounce",
-    "36:bodyslam",
-    "39:rest",
-    "42:amnesia",
-    "45:hydropump",
-    "48:waterspout",
-    "egg:aquaring",
-    "egg:clearsmog",
-    "egg:curse",
-    "egg:defensecurl",
-    "egg:doubleedge",
-    "egg:fissure",
-    "egg:rollout",
-    "egg:snore",
-    "egg:soak",
-    "egg:swagger",
-    "egg:thrash",
-    "egg:tickle",
-    "tm:amnesia",
-    "tm:avalanche",
-    "tm:blizzard",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:bounce",
-    "tm:brine",
-    "tm:bulldoze",
-    "tm:curse",
-    "tm:dive",
-    "tm:doubleedge",
-    "tm:earthquake",
-    "tm:echoedvoice",
-    "tm:endure",
-    "tm:facade",
-    "tm:hail",
-    "tm:headbutt",
-    "tm:heavyslam",
-    "tm:hydropump",
-    "tm:hypervoice",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:roar",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:rollout",
-    "tm:scald",
-    "tm:selfdestruct",
-    "tm:sleeptalk",
-    "tm:snore",
-    "tm:steelroller",
-    "tm:strength",
-    "tm:substitute",
-    "tm:surf",
-    "tm:swagger",
-    "tm:terablast",
-    "tm:waterfall",
-    "tm:waterpulse",
-    "tm:weatherball",
-    "tm:whirlpool",
-    "tm:zenheadbutt",
-    "tutor:bounce",
-    "tutor:bulldoze",
-    "tutor:dive",
-    "tutor:hypervoice",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:rollout",
-    "tutor:sleeptalk",
-    "tutor:snore",
-    "tutor:steelroller",
-    "tutor:waterpulse",
-    "tutor:zenheadbutt"
+    {
+      "id": "splash",
+      "name": "Trempette",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "3"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "6"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "12"
+    },
+    {
+      "id": "mist",
+      "name": "Brume",
+      "category": "15"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "18"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "21"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "24"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "27"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "30"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "33"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "36"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "39"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "42"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "45"
+    },
+    {
+      "id": "waterspout",
+      "name": "Giclédo",
+      "category": "48"
+    },
+    {
+      "id": "aquaring",
+      "name": "Anneau Hydro",
+      "category": "egg"
+    },
+    {
+      "id": "clearsmog",
+      "name": "Bain de Smog",
+      "category": "egg"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "egg"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "egg"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "egg"
+    },
+    {
+      "id": "fissure",
+      "name": "Abîme",
+      "category": "egg"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "egg"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "egg"
+    },
+    {
+      "id": "soak",
+      "name": "Détrempage",
+      "category": "egg"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "egg"
+    },
+    {
+      "id": "thrash",
+      "name": "Mania",
+      "category": "egg"
+    },
+    {
+      "id": "tickle",
+      "name": "Chatouille",
+      "category": "egg"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "tm"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "heavyslam",
+      "name": "Tacle Lourd",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "tm"
+    },
+    {
+      "id": "steelroller",
+      "name": "Métalliroue",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "tutor"
+    },
+    {
+      "id": "steelroller",
+      "name": "Métalliroue",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
-      "id": "wailmer_wailord",
-      "variant": "level_up",
-      "result": "wailord",
       "consumeHeldItem": false,
+      "id": "wailmer_wailord",
       "learnableMoves": [],
       "requirements": [
         {
-          "variant": "level",
-          "minLevel": 40
+          "minLevel": 40,
+          "variant": "level"
         }
-      ]
+      ],
+      "result": "wailord",
+      "variant": "level_up"
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -166,18 +599,19 @@
         "rarity": "uncommon",
         "weight": 1.68,
         "levels": "15-40",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_deep_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0320_wailmer.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0320_wailmer.json",
+        "spawnId": "wailmer-1",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "wailmer",
+        "type": "pokemon"
       }
     ],
     [
@@ -185,18 +619,22 @@
         "rarity": "uncommon",
         "weight": 1.68,
         "levels": "15-40",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0320_wailmer.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0320_wailmer.json",
+        "spawnId": "wailmer-2",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "wailmer",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -204,17 +642,27 @@
         "rarity": "common",
         "weight": 1.68,
         "levels": "15-40",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0320_wailmer.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0320_wailmer.json",
+        "spawnId": "wailmer-3",
         "sky": {
           "canSeeSky": true
+        },
+        "spawnType": "fishing",
+        "pokemon": "wailmer",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 3.0,
+          "condition": {
+            "minLureLevel": 3
+          }
         }
       }
     ],
@@ -226,20 +674,21 @@
         "rarity": "uncommon",
         "weight": 1.68,
         "levels": "15-40",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_deep_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0320_wailmer.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0320_wailmer.json",
+        "spawnId": "wailmer-4",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "wailmer",
+        "type": "pokemon"
       }
     ],
     [
@@ -247,20 +696,24 @@
         "rarity": "uncommon",
         "weight": 1.68,
         "levels": "15-40",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0320_wailmer.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0320_wailmer.json",
+        "spawnId": "wailmer-5",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "wailmer",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
       }
     ],
     [
@@ -268,58 +721,30 @@
         "rarity": "common",
         "weight": 1.68,
         "levels": "15-40",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0320_wailmer.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0320_wailmer.json",
+        "spawnId": "wailmer-6",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "fishing",
+        "pokemon": "wailmer",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 3.0,
+          "condition": {
+            "minLureLevel": 3
+          }
         }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "water"
-        ],
-        "rarity": "uncommon",
-        "weight": 2.0,
-        "levels": "18-34",
-        "contexts": [
-          "submerged"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_safari_ocean"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_safari_ocean/uncommon_is_safari_ocean.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "water"
-        ],
-        "rarity": "uncommon",
-        "weight": 8.2,
-        "levels": "15-40",
-        "contexts": [
-          "surface"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:starlit_sea"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlit_sea/uncommon_starlit_sea.json"
       }
     ]
   ],
@@ -333,6 +758,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation3/wailmer.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation3/wailmer.json"
   ]
 }

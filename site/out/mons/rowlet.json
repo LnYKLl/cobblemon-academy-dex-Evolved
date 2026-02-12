@@ -2,21 +2,42 @@
   "id": "rowlet",
   "dexnum": 722,
   "name": "Rowlet",
+  "nameFr": "Brindibou",
+  "description": "Il se sent à l'aise dans les endroits sombres et étroits. Il se sert parfois de la poche ou du sac de son Dresseur comme d'un nid.",
   "primaryType": "grass",
   "secondaryType": "flying",
+  "primaryTypeFr": "Plante",
+  "secondaryTypeFr": "Vol",
+  "height": 3,
+  "weight": 15,
   "maleRatio": 0.875,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 0.95,
+    "height": 0.8,
+    "fixed": false
+  },
   "labels": [
     "gen7",
     "starter",
     "alolan_form"
   ],
   "abilities": [
-    "overgrow",
-    "h:longreach"
+    {
+      "id": "overgrow",
+      "name": "Engrais",
+      "hidden": false
+    },
+    {
+      "id": "longreach",
+      "name": "Longue Portée",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "flying"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 68,
     "attack": 55,
@@ -33,8 +54,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 64,
   "experienceGroup": "medium_slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -42,125 +65,515 @@
         "item": "minecraft:feather",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:feather"
       },
       {
         "item": "minecraft:chicken",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:chicken"
       },
       {
         "item": "cobblemon:miracle_seed",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Graine Miracle"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:growl",
-    "3:leafage",
-    "6:astonish",
-    "9:peck",
-    "12:shadowsneak",
-    "15:razorleaf",
-    "18:foresight",
-    "21:pluck",
-    "24:nastyplot",
-    "27:suckerpunch",
-    "30:leafblade",
-    "33:featherdance",
-    "36:bravebird",
-    "egg:confuseray",
-    "egg:defog",
-    "egg:doubleteam",
-    "egg:furyattack",
-    "egg:knockoff",
-    "egg:roost",
-    "tm:aerialace",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:bravebird",
-    "tm:bulletseed",
-    "tm:confuseray",
-    "tm:covet",
-    "tm:defog",
-    "tm:doubleteam",
-    "tm:dualwingbeat",
-    "tm:echoedvoice",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:featherdance",
-    "tm:gigadrain",
-    "tm:grassknot",
-    "tm:grasspledge",
-    "tm:grassyglide",
-    "tm:grassyterrain",
-    "tm:haze",
-    "tm:helpinghand",
-    "tm:knockoff",
-    "tm:leafblade",
-    "tm:leafstorm",
-    "tm:lightscreen",
-    "tm:magicalleaf",
-    "tm:nastyplot",
-    "tm:naturepower",
-    "tm:nightshade",
-    "tm:pluck",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:roost",
-    "tm:safeguard",
-    "tm:seedbomb",
-    "tm:shadowclaw",
-    "tm:skyattack",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:steelwing",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:swordsdance",
-    "tm:synthesis",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:trailblaze",
-    "tm:workup",
-    "tm:worryseed",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:covet",
-    "tutor:defog",
-    "tutor:dualwingbeat",
-    "tutor:energyball",
-    "tutor:falseswipe",
-    "tutor:gigadrain",
-    "tutor:grasspledge",
-    "tutor:grassyglide",
-    "tutor:helpinghand",
-    "tutor:knockoff",
-    "tutor:magicalleaf",
-    "tutor:rest",
-    "tutor:roost",
-    "tutor:seedbomb",
-    "tutor:shadowclaw",
-    "tutor:skyattack",
-    "tutor:sleeptalk",
-    "tutor:suckerpunch",
-    "tutor:swift",
-    "tutor:synthesis",
-    "tutor:worryseed"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "leafage",
+      "name": "Feuillage",
+      "category": "3"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "6"
+    },
+    {
+      "id": "peck",
+      "name": "Picpic",
+      "category": "9"
+    },
+    {
+      "id": "shadowsneak",
+      "name": "Ombre Portée",
+      "category": "12"
+    },
+    {
+      "id": "razorleaf",
+      "name": "Tranch'Herbe",
+      "category": "15"
+    },
+    {
+      "id": "foresight",
+      "name": "Clairvoyance",
+      "category": "18"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "21"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "24"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "27"
+    },
+    {
+      "id": "leafblade",
+      "name": "Lame Feuille",
+      "category": "30"
+    },
+    {
+      "id": "featherdance",
+      "name": "Danse Plumes",
+      "category": "33"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "36"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "egg"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "egg"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "egg"
+    },
+    {
+      "id": "furyattack",
+      "name": "Furie",
+      "category": "egg"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "egg"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "featherdance",
+      "name": "Danse Plumes",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grasspledge",
+      "name": "Aire d'Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "leafblade",
+      "name": "Lame Feuille",
+      "category": "tm"
+    },
+    {
+      "id": "leafstorm",
+      "name": "Tempête Verte",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "tm"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "grasspledge",
+      "name": "Aire d'Herbe",
+      "category": "tutor"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "synthesis",
+      "name": "Synthèse",
+      "category": "tutor"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tutor"
+    }
   ],
   "forms": [
     "Hisui-Bias"
   ],
-  "types": [],
   "evolutions": [
     {
       "id": "rowlet_dartrix",
@@ -176,6 +589,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -186,9 +600,6 @@
         "rarity": "ultra-rare",
         "weight": 6.0,
         "levels": "5-32",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest",
@@ -200,30 +611,15 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0722_rowlet.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0722_rowlet.json",
+        "spawnId": "rowlet-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 3.31,
-        "levels": "1-15",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:starlight_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_forest/rare_starlight_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "rowlet",
+        "type": "pokemon"
       }
     ]
   ],
@@ -237,8 +633,7 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/rowlet.json",
-    "datapacks\\Academy\\data\\cobblemon\\species\\generation7\\rowlet.json",
-    "datapacks\\CCC_MAL_1.6.4.1\\data\\cobblemon\\species\\generation7\\rowlet.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/rowlet.json",
+    "datapacks\\Academy\\data\\cobblemon\\species\\generation7\\rowlet.json"
   ]
 }

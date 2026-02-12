@@ -2,21 +2,46 @@
   "id": "ribombee",
   "dexnum": 743,
   "name": "Ribombee",
+  "nameFr": "Rubombelle",
+  "description": "Il peut prévoir le temps qu'il va faire grâce à l'humidité et à la direction du vent. Il ne pointe le bout de ses ailes que par beau temps.",
   "primaryType": "bug",
   "secondaryType": "fairy",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "Fée",
+  "height": 2,
+  "weight": 5,
   "maleRatio": 0.5,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 0.85,
+    "height": 1.5,
+    "fixed": false
+  },
   "labels": [
     "gen7"
   ],
   "abilities": [
-    "honeygather",
-    "shielddust",
-    "h:sweetveil"
+    {
+      "id": "honeygather",
+      "name": "Cherche Miel",
+      "hidden": false
+    },
+    {
+      "id": "shielddust",
+      "name": "Écran Poudre",
+      "hidden": false
+    },
+    {
+      "id": "sweetveil",
+      "name": "Gluco-Voile",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug",
     "fairy"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 60,
     "attack": 55,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 2
   },
+  "baseExperienceYield": 162,
   "experienceGroup": "medium_fast",
   "catchRate": 75,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -42,133 +69,633 @@
         "item": "minecraft:honey_bottle",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:honey_bottle"
       },
       {
         "item": "cobblemon:cheri_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Ceriz"
       }
     ]
   },
   "moves": [
-    "1:pollenpuff",
-    "1:absorb",
-    "1:fairywind",
-    "1:stunspore",
-    "1:sweetscent",
-    "1:aromatherapy",
-    "18:drainingkiss",
-    "24:strugglebug",
-    "32:covet",
-    "40:switcheroo",
-    "48:dazzlinggleam",
-    "56:bugbuzz",
-    "64:quiverdance",
-    "egg:aromaticmist",
-    "egg:bestow",
-    "egg:moonblast",
-    "egg:powder",
-    "egg:stickyweb",
-    "tm:acrobatics",
-    "tm:afteryou",
-    "tm:agility",
-    "tm:alluringvoice",
-    "tm:allyswitch",
-    "tm:batonpass",
-    "tm:bugbite",
-    "tm:bugbuzz",
-    "tm:calmmind",
-    "tm:charm",
-    "tm:covet",
-    "tm:dazzlinggleam",
-    "tm:defog",
-    "tm:drainingkiss",
-    "tm:dreameater",
-    "tm:dualwingbeat",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:faketears",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:helpinghand",
-    "tm:hyperbeam",
-    "tm:imprison",
-    "tm:infestation",
-    "tm:lastresort",
-    "tm:leechlife",
-    "tm:lightscreen",
-    "tm:lunge",
-    "tm:magicalleaf",
-    "tm:magicroom",
-    "tm:naturepower",
-    "tm:playrough",
-    "tm:pollenpuff",
-    "tm:pounce",
-    "tm:protect",
-    "tm:psychic",
-    "tm:psychicnoise",
-    "tm:psychup",
-    "tm:reflect",
-    "tm:rest",
-    "tm:roost",
-    "tm:safeguard",
-    "tm:signalbeam",
-    "tm:silverwind",
-    "tm:skillswap",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:speedswap",
-    "tm:storedpower",
-    "tm:strugglebug",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:telekinesis",
-    "tm:terablast",
-    "tm:thief",
-    "tm:trailblaze",
-    "tm:trick",
-    "tm:uturn",
-    "tm:wonderroom",
-    "tutor:afteryou",
-    "tutor:allyswitch",
-    "tutor:bugbite",
-    "tutor:calmmind",
-    "tutor:covet",
-    "tutor:dazzlinggleam",
-    "tutor:defog",
-    "tutor:dualwingbeat",
-    "tutor:energyball",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:lastresort",
-    "tutor:leechlife",
-    "tutor:magicalleaf",
-    "tutor:magicroom",
-    "tutor:playrough",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:roost",
-    "tutor:signalbeam",
-    "tutor:skillswap",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:tailwind",
-    "tutor:telekinesis",
-    "tutor:trick",
-    "tutor:wonderroom"
+    {
+      "id": "pollenpuff",
+      "name": "Boule Pollen",
+      "category": "1"
+    },
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "1"
+    },
+    {
+      "id": "fairywind",
+      "name": "Vent Féérique",
+      "category": "1"
+    },
+    {
+      "id": "stunspore",
+      "name": "Para-Spore",
+      "category": "1"
+    },
+    {
+      "id": "sweetscent",
+      "name": "Doux Parfum",
+      "category": "1"
+    },
+    {
+      "id": "aromatherapy",
+      "name": "Aromathérapie",
+      "category": "1"
+    },
+    {
+      "id": "drainingkiss",
+      "name": "Vampibaiser",
+      "category": "18"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "24"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "32"
+    },
+    {
+      "id": "switcheroo",
+      "name": "Passe-Passe",
+      "category": "40"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "48"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "56"
+    },
+    {
+      "id": "quiverdance",
+      "name": "Papillodanse",
+      "category": "64"
+    },
+    {
+      "id": "aromaticmist",
+      "name": "Brume Capiteuse",
+      "category": "egg"
+    },
+    {
+      "id": "bestow",
+      "name": "Passe-Cadeau",
+      "category": "egg"
+    },
+    {
+      "id": "moonblast",
+      "name": "Pouvoir Lunaire",
+      "category": "egg"
+    },
+    {
+      "id": "powder",
+      "name": "Nuée de Poudre",
+      "category": "egg"
+    },
+    {
+      "id": "stickyweb",
+      "name": "Toile Gluante",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "alluringvoice",
+      "name": "Voix Envoûtante",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "drainingkiss",
+      "name": "Vampibaiser",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "faketears",
+      "name": "Croco Larme",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tm"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "tm"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tm"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "pollenpuff",
+      "name": "Boule Pollen",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psychicnoise",
+      "name": "Dissonance Psy",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "silverwind",
+      "name": "Vent Argenté",
+      "category": "tm"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "speedswap",
+      "name": "Permuvitesse",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "strugglebug",
+      "name": "Survinsecte",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tutor"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tutor"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tutor"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "legacy"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "cutiefly",
   "spawns": [
     [
       {
@@ -178,22 +705,29 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "25-46",
-        "contexts": [
-          "grounded"
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_floral"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0743_ribombee.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0743_ribombee.json",
+        "spawnId": "ribombee-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
         },
         "weather": {
           "isRaining": false
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "ribombee",
+        "excludeNearbyBlocks": [
+          "#cobblemon:saccharine_trees"
+        ],
+        "type": "pokemon"
       }
     ],
     [
@@ -204,95 +738,33 @@
         "rarity": "common",
         "weight": 0.2,
         "levels": "25-46",
-        "contexts": [
-          "grounded"
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
+            "#aether:is_aether",
             "#cobblemon:is_overworld"
           ],
           "exclude": [
             "#cobblemon:is_floral"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0743_ribombee.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0743_ribombee.json",
+        "spawnId": "ribombee-2",
         "nearbyBlocks": {
           "selectors": [
-            "#cobblemon:flowers"
+            "#cobblemon:flowers",
+            "#cobblemon:saccharine_trees"
           ],
           "resolved": [
-            "aether_redux:mixed_prismatic_petals",
-            "aether_redux:pink_prismatic_petals",
-            "aether_redux:teal_prismatic_petals",
             "cobblemon:pep_up_flower",
-            "deep_aether:aerlavender",
-            "deep_aether:enchanted_blossom",
-            "deep_aether:golden_flower",
-            "deep_aether:radiant_orchid",
-            "deep_aether:tall_aerlavender",
-            "etcetera:bouquet",
-            "minecraft:chorus_flower",
-            "mythicbotany:aquapanthus",
-            "mythicbotany:aquapanthus_floating",
-            "mythicbotany:exoblaze",
-            "mythicbotany:exoblaze_floating",
-            "mythicbotany:feysythia",
-            "mythicbotany:feysythia_floating",
-            "mythicbotany:hellebore",
-            "mythicbotany:hellebore_floating",
-            "mythicbotany:petrunia",
-            "mythicbotany:petrunia_floating",
-            "mythicbotany:raindeletia",
-            "mythicbotany:raindeletia_floating",
-            "mythicbotany:wither_aconite",
-            "mythicbotany:wither_aconite_floating",
-            "regions_unexplored:alpha_dandelion",
-            "regions_unexplored:alpha_rose",
-            "regions_unexplored:aster",
-            "regions_unexplored:black_snowbelle",
-            "regions_unexplored:bleeding_heart",
-            "regions_unexplored:blue_lupine",
-            "regions_unexplored:blue_magnolia_flowers",
-            "regions_unexplored:blue_snowbelle",
-            "regions_unexplored:brown_snowbelle",
-            "regions_unexplored:cyan_snowbelle",
-            "regions_unexplored:daisy",
-            "regions_unexplored:day_lily",
-            "regions_unexplored:dorcel",
-            "regions_unexplored:felicia_daisy",
-            "regions_unexplored:fireweed",
-            "regions_unexplored:gray_snowbelle",
-            "regions_unexplored:green_snowbelle",
-            "regions_unexplored:hibiscus",
-            "regions_unexplored:hyacinth_flowers",
-            "regions_unexplored:hyssop",
-            "regions_unexplored:light_blue_snowbelle",
-            "regions_unexplored:light_gray_snowbelle",
-            "regions_unexplored:lime_snowbelle",
-            "regions_unexplored:magenta_snowbelle",
-            "regions_unexplored:mallow",
-            "regions_unexplored:orange_coneflower",
-            "regions_unexplored:orange_snowbelle",
-            "regions_unexplored:pink_lupine",
-            "regions_unexplored:pink_magnolia_flowers",
-            "regions_unexplored:pink_snowbelle",
-            "regions_unexplored:poppy_bush",
-            "regions_unexplored:purple_coneflower",
-            "regions_unexplored:purple_lupine",
-            "regions_unexplored:purple_snowbelle",
-            "regions_unexplored:red_lupine",
-            "regions_unexplored:red_snowbelle",
-            "regions_unexplored:salmon_poppy_bush",
-            "regions_unexplored:tassel",
-            "regions_unexplored:tsubaki",
-            "regions_unexplored:waratah",
-            "regions_unexplored:white_magnolia_flowers",
-            "regions_unexplored:white_snowbelle",
-            "regions_unexplored:white_trillium",
-            "regions_unexplored:wilting_trillium",
-            "regions_unexplored:yellow_lupine",
-            "regions_unexplored:yellow_snowbelle",
-            "twilightforest:thorn_rose"
+            "cobblemon:saccharine_leaves",
+            "cobblemon:saccharine_log",
+            "cobblemon:saccharine_wood",
+            "cobblemon:stripped_saccharine_log",
+            "cobblemon:stripped_saccharine_wood",
+            "minecraft:chorus_flower"
           ]
         },
         "sky": {
@@ -301,109 +773,10 @@
         },
         "weather": {
           "isRaining": false
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 0.2,
-        "levels": "25-46",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#aether:is_aether"
-          ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0743_ribombee.json",
-        "nearbyBlocks": {
-          "selectors": [
-            "#cobblemon:flowers"
-          ],
-          "resolved": [
-            "aether_redux:mixed_prismatic_petals",
-            "aether_redux:pink_prismatic_petals",
-            "aether_redux:teal_prismatic_petals",
-            "cobblemon:pep_up_flower",
-            "deep_aether:aerlavender",
-            "deep_aether:enchanted_blossom",
-            "deep_aether:golden_flower",
-            "deep_aether:radiant_orchid",
-            "deep_aether:tall_aerlavender",
-            "etcetera:bouquet",
-            "minecraft:chorus_flower",
-            "mythicbotany:aquapanthus",
-            "mythicbotany:aquapanthus_floating",
-            "mythicbotany:exoblaze",
-            "mythicbotany:exoblaze_floating",
-            "mythicbotany:feysythia",
-            "mythicbotany:feysythia_floating",
-            "mythicbotany:hellebore",
-            "mythicbotany:hellebore_floating",
-            "mythicbotany:petrunia",
-            "mythicbotany:petrunia_floating",
-            "mythicbotany:raindeletia",
-            "mythicbotany:raindeletia_floating",
-            "mythicbotany:wither_aconite",
-            "mythicbotany:wither_aconite_floating",
-            "regions_unexplored:alpha_dandelion",
-            "regions_unexplored:alpha_rose",
-            "regions_unexplored:aster",
-            "regions_unexplored:black_snowbelle",
-            "regions_unexplored:bleeding_heart",
-            "regions_unexplored:blue_lupine",
-            "regions_unexplored:blue_magnolia_flowers",
-            "regions_unexplored:blue_snowbelle",
-            "regions_unexplored:brown_snowbelle",
-            "regions_unexplored:cyan_snowbelle",
-            "regions_unexplored:daisy",
-            "regions_unexplored:day_lily",
-            "regions_unexplored:dorcel",
-            "regions_unexplored:felicia_daisy",
-            "regions_unexplored:fireweed",
-            "regions_unexplored:gray_snowbelle",
-            "regions_unexplored:green_snowbelle",
-            "regions_unexplored:hibiscus",
-            "regions_unexplored:hyacinth_flowers",
-            "regions_unexplored:hyssop",
-            "regions_unexplored:light_blue_snowbelle",
-            "regions_unexplored:light_gray_snowbelle",
-            "regions_unexplored:lime_snowbelle",
-            "regions_unexplored:magenta_snowbelle",
-            "regions_unexplored:mallow",
-            "regions_unexplored:orange_coneflower",
-            "regions_unexplored:orange_snowbelle",
-            "regions_unexplored:pink_lupine",
-            "regions_unexplored:pink_magnolia_flowers",
-            "regions_unexplored:pink_snowbelle",
-            "regions_unexplored:poppy_bush",
-            "regions_unexplored:purple_coneflower",
-            "regions_unexplored:purple_lupine",
-            "regions_unexplored:purple_snowbelle",
-            "regions_unexplored:red_lupine",
-            "regions_unexplored:red_snowbelle",
-            "regions_unexplored:salmon_poppy_bush",
-            "regions_unexplored:tassel",
-            "regions_unexplored:tsubaki",
-            "regions_unexplored:waratah",
-            "regions_unexplored:white_magnolia_flowers",
-            "regions_unexplored:white_snowbelle",
-            "regions_unexplored:white_trillium",
-            "regions_unexplored:wilting_trillium",
-            "regions_unexplored:yellow_lupine",
-            "regions_unexplored:yellow_snowbelle",
-            "twilightforest:thorn_rose"
-          ]
-        },
-        "sky": {
-          "minSkyLight": 8,
-          "maxSkyLight": 15
-        }
+        "spawnType": "grounded",
+        "pokemon": "ribombee",
+        "type": "pokemon"
       }
     ],
     [
@@ -411,35 +784,20 @@
         "rarity": "common",
         "weight": 18.0,
         "levels": "25-46",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "the_bumblezone:floral_meadow",
             "the_bumblezone:pollinated_fields"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0743_ribombee.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0743_ribombee.json",
+        "spawnId": "ribombee-3",
+        "spawnType": "grounded",
+        "pokemon": "ribombee",
+        "excludeStructures": [
+          "#the_bumblezone:sempiternal_sanctums"
         ],
-        "rarity": "rare",
-        "weight": 7.2,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/rare_scarlet_forest.json"
+        "type": "pokemon"
       }
     ]
   ],
@@ -453,6 +811,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/ribombee.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/ribombee.json"
   ]
 }

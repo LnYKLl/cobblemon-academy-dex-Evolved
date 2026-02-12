@@ -2,19 +2,41 @@
   "id": "chiyu",
   "dexnum": 1004,
   "name": "Chi-Yu",
+  "nameFr": "Yuyu",
+  "description": "Ce Pokémon manipule des flammes à 3000 °C. Il nage tranquillement dans une mer de magma qu'il a créée en faisant fondre de la roche et du gravier.",
   "primaryType": "dark",
   "secondaryType": "fire",
+  "primaryTypeFr": "Ténèbres",
+  "secondaryTypeFr": "Feu",
+  "height": 4,
+  "weight": 49,
   "maleRatio": -1,
+  "baseScale": 1.0,
+  "hitbox": {
+    "width": 0.6,
+    "height": 0.8,
+    "fixed": false
+  },
   "labels": [
     "gen9",
     "legendary"
   ],
   "abilities": [
-    "beadsofruin"
+    {
+      "id": "beadsofruin",
+      "name": "Perles du Fléau",
+      "hidden": false
+    },
+    {
+      "id": "beadsofruin",
+      "name": "Perles du Fléau",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 50,
   "baseStats": {
     "hp": 55,
     "attack": 80,
@@ -31,94 +53,411 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
   "catchRate": 6,
+  "baseFriendship": 0,
   "drops": {
-    "amount": 0,
-    "entries": []
-  },
-  "moves": [
-    "1:ember",
-    "1:meanlook",
-    "1:spite",
-    "5:flamewheel",
-    "10:payback",
-    "15:willowisp",
-    "20:flamecharge",
-    "25:incinerate",
-    "30:confuseray",
-    "35:nastyplot",
-    "40:darkpulse",
-    "45:lavaplume",
-    "50:ruination",
-    "55:bounce",
-    "60:swagger",
-    "65:inferno",
-    "70:memento",
-    "75:overheat",
-    "tm:burningjealousy",
-    "tm:confuseray",
-    "tm:crunch",
-    "tm:darkpulse",
-    "tm:endure",
-    "tm:facade",
-    "tm:fireblast",
-    "tm:firespin",
-    "tm:flamecharge",
-    "tm:flamethrower",
-    "tm:flareblitz",
-    "tm:gigaimpact",
-    "tm:heatwave",
-    "tm:hex",
-    "tm:hyperbeam",
-    "tm:lashout",
-    "tm:lightscreen",
-    "tm:nastyplot",
-    "tm:overheat",
-    "tm:protect",
-    "tm:psychic",
-    "tm:reflect",
-    "tm:rest",
-    "tm:scaryface",
-    "tm:sleeptalk",
-    "tm:snarl",
-    "tm:spite",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:temperflare",
-    "tm:terablast",
-    "tm:willowisp",
-    "tm:zenheadbutt"
-  ],
-  "forms": [],
-  "types": [],
-  "evolutions": [],
-  "spawns": [
-    [
+    "amount": 5,
+    "entries": [
       {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "50-60",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "minecraft:soul_sand_valley",
-            "regions_unexplored:infernal_holt",
-            "#cobblemon:is_volcanic"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/legendaries/chiyu.json",
-        "keyItem": "academy:beads_of_ruin"
+        "item": "cobblemon:rare_candy",
+        "percentage": null,
+        "quantityRange": "2-6",
+        "source": "species",
+        "itemName": "Super Bonbon"
+      },
+      {
+        "item": "cobblemon:fire_gem",
+        "percentage": 50.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Joyau Feu"
+      },
+      {
+        "item": "minecraft:nether_star",
+        "percentage": 8.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "minecraft:nether_star"
+      },
+      {
+        "item": "cobblemon:ability_capsule",
+        "percentage": 25.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Pilule Talent"
+      },
+      {
+        "item": "cobblemon:ability_patch",
+        "percentage": 10.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Patch Talent"
       }
     ]
+  },
+  "moves": [
+    {
+      "id": "ember",
+      "name": "Flammèche",
+      "category": "1"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "1"
+    },
+    {
+      "id": "meanlook",
+      "name": "Regard Noir",
+      "category": "1"
+    },
+    {
+      "id": "flamewheel",
+      "name": "Roue de Feu",
+      "category": "5"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "10"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "15"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "20"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "25"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "30"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "35"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "40"
+    },
+    {
+      "id": "lavaplume",
+      "name": "Ébullilave",
+      "category": "45"
+    },
+    {
+      "id": "ruination",
+      "name": "Cataclysme",
+      "category": "50"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "55"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "60"
+    },
+    {
+      "id": "inferno",
+      "name": "Feu d'Enfer",
+      "category": "65"
+    },
+    {
+      "id": "memento",
+      "name": "Souvenir",
+      "category": "70"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "75"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fireblast",
+      "name": "Déflagration",
+      "category": "tm"
+    },
+    {
+      "id": "firespin",
+      "name": "Danse Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flamecharge",
+      "name": "Nitrocharge",
+      "category": "tm"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tm"
+    },
+    {
+      "id": "flareblitz",
+      "name": "Boutefeu",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "overheat",
+      "name": "Surchauffe",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "temperflare",
+      "name": "Indignition",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "flamethrower",
+      "name": "Lance-Flammes",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    }
   ],
+  "forms": [],
+  "evolutions": [],
+  "preEvolution": null,
+  "spawns": [],
   "implemented": false,
   "images": {
     "normal": [
@@ -129,7 +468,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/chiyu.json",
-    "datapacks\\CCC_MAL_1.6.4.1\\data\\cobblemon\\species\\generation9\\chiyu.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/chiyu.json"
   ]
 }

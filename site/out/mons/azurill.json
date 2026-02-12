@@ -2,21 +2,46 @@
   "id": "azurill",
   "dexnum": 298,
   "name": "Azurill",
+  "nameFr": "Azurill",
+  "description": "La grande queue d'Azurill est élastique. Elle lui permet de stocker les nutriments nécessaires à sa croissance. Parfois, on voit Azurill s'amuser à rebondir sur sa queue élastique.",
   "primaryType": "normal",
   "secondaryType": "fairy",
+  "primaryTypeFr": "Normal",
+  "secondaryTypeFr": "Fée",
+  "height": 2,
+  "weight": 20,
   "maleRatio": 0.25,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.5,
+    "height": 0.5,
+    "fixed": false
+  },
   "labels": [
     "gen3",
     "baby"
   ],
   "abilities": [
-    "thickfat",
-    "hugepower",
-    "h:sapsipper"
+    {
+      "id": "thickfat",
+      "name": "Isograisse",
+      "hidden": false
+    },
+    {
+      "id": "hugepower",
+      "name": "Coloforce",
+      "hidden": false
+    },
+    {
+      "id": "sapsipper",
+      "name": "Herbivore",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 10,
   "baseStats": {
     "hp": 50,
     "attack": 20,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 38,
   "experienceGroup": "fast",
   "catchRate": 150,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -42,80 +69,459 @@
         "item": "cobblemon:kebia_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Kébia"
       }
     ]
   },
   "moves": [
-    "1:splash",
-    "1:tailwhip",
-    "1:bubble",
-    "1:watergun",
-    "1:watersport",
-    "3:helpinghand",
-    "6:bubblebeam",
-    "9:charm",
-    "12:slam",
-    "15:bounce",
-    "egg:aquajet",
-    "egg:bellydrum",
-    "egg:camouflage",
-    "egg:copycat",
-    "egg:perishsong",
-    "egg:present",
-    "egg:refresh",
-    "egg:sing",
-    "egg:soak",
-    "egg:supersonic",
-    "egg:tickle",
-    "egg:watersport",
-    "tm:alluringvoice",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:bounce",
-    "tm:brutalswing",
-    "tm:charm",
-    "tm:covet",
-    "tm:drainingkiss",
-    "tm:encore",
-    "tm:endure",
-    "tm:facade",
-    "tm:faketears",
-    "tm:hail",
-    "tm:headbutt",
-    "tm:helpinghand",
-    "tm:hypervoice",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:irontail",
-    "tm:lightscreen",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:rollout",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:surf",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:waterfall",
-    "tm:workup",
-    "tutor:bounce",
-    "tutor:covet",
-    "tutor:helpinghand",
-    "tutor:hypervoice",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:irontail",
-    "tutor:mudslap",
-    "tutor:rest",
-    "tutor:rollout",
-    "tutor:sleeptalk"
+    {
+      "id": "splash",
+      "name": "Trempette",
+      "category": "1"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "1"
+    },
+    {
+      "id": "bubble",
+      "name": "Écume",
+      "category": "1"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "1"
+    },
+    {
+      "id": "watersport",
+      "name": "Tourniquet",
+      "category": "1"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "3"
+    },
+    {
+      "id": "bubblebeam",
+      "name": "Bulles d'O",
+      "category": "6"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "9"
+    },
+    {
+      "id": "slam",
+      "name": "Souplesse",
+      "category": "12"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "15"
+    },
+    {
+      "id": "aquajet",
+      "name": "Aqua-Jet",
+      "category": "egg"
+    },
+    {
+      "id": "bellydrum",
+      "name": "Cognobidon",
+      "category": "egg"
+    },
+    {
+      "id": "camouflage",
+      "name": "Camouflage",
+      "category": "egg"
+    },
+    {
+      "id": "copycat",
+      "name": "Photocopie",
+      "category": "egg"
+    },
+    {
+      "id": "perishsong",
+      "name": "Requiem",
+      "category": "egg"
+    },
+    {
+      "id": "present",
+      "name": "Cadeau",
+      "category": "egg"
+    },
+    {
+      "id": "refresh",
+      "name": "Régénération",
+      "category": "egg"
+    },
+    {
+      "id": "sing",
+      "name": "Berceuse",
+      "category": "egg"
+    },
+    {
+      "id": "soak",
+      "name": "Détrempage",
+      "category": "egg"
+    },
+    {
+      "id": "supersonic",
+      "name": "Ultrason",
+      "category": "egg"
+    },
+    {
+      "id": "tickle",
+      "name": "Chatouille",
+      "category": "egg"
+    },
+    {
+      "id": "watersport",
+      "name": "Tourniquet",
+      "category": "egg"
+    },
+    {
+      "id": "alluringvoice",
+      "name": "Voix Envoûtante",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "brutalswing",
+      "name": "Centrifugifle",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "drainingkiss",
+      "name": "Vampibaiser",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "faketears",
+      "name": "Croco Larme",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "muddywater",
+      "name": "Ocroupi",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "legacy"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "legacy"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "azurill_marill",
@@ -131,24 +537,74 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 2.6,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
+        "rarity": "common",
+        "weight": 9.0,
+        "levels": "1-19",
         "biomeTags": {
           "include": [
-            "eternal_starlight:starlight_permafrost_forest"
+            "#cobblemon:is_floral",
+            "#cobblemon:is_hills",
+            "#cobblemon:is_magical",
+            "#cobblemon:is_river",
+            "#cobblemon:is_snowy_forest",
+            "#cobblemon:is_taiga",
+            "#cobblemon:is_temperate"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/uncommon_starlight_permafrost_forest.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0298_azurill.json",
+        "spawnId": "azurill-1",
+        "sky": {
+          "canSeeSky": true
+        },
+        "spawnType": "fishing",
+        "pokemon": "azurill",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
+        }
+      }
+    ],
+    [
+      {
+        "rarity": "common",
+        "weight": 9.0,
+        "levels": "1-19",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_floral",
+            "#cobblemon:is_hills",
+            "#cobblemon:is_magical",
+            "#cobblemon:is_river",
+            "#cobblemon:is_snowy_forest",
+            "#cobblemon:is_taiga",
+            "#cobblemon:is_temperate"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0298_azurill.json",
+        "spawnId": "azurill-2",
+        "sky": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "fishing",
+        "pokemon": "azurill",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
+        }
       }
     ],
     [
@@ -156,41 +612,54 @@
         "presets": [
           "natural"
         ],
-        "rarity": "uncommon",
-        "weight": 2.5,
-        "levels": "5-16",
-        "contexts": [
-          "grounded"
-        ],
+        "rarity": "common",
+        "weight": 9.0,
+        "levels": "1-19",
         "biomeTags": {
           "include": [
-            "eternal_starlight:warm_shore"
+            "#cobblemon:is_river"
+          ],
+          "exclude": [
+            "#cobblemon:is_freezing"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/warm_shore/uncommon_warm_shore.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0298_azurill.json",
+        "spawnId": "azurill-3",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "azurill",
+        "type": "pokemon"
       }
     ],
     [
       {
-        "rarity": "uncommon",
-        "weight": 3.8,
-        "levels": "1-15",
-        "contexts": [
-          "grounded"
+        "presets": [
+          "water"
         ],
+        "rarity": "uncommon",
+        "weight": 5.04,
+        "levels": "1-19",
         "biomeTags": {
           "include": [
             "#cobblemon:is_river"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/azurill.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0298_azurill.json",
+        "spawnId": "azurill-4",
         "sky": {
-          "canSeeSky": true
-        }
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "surface",
+        "pokemon": "azurill",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/azurill.png"
@@ -200,6 +669,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation3/azurill.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation3/azurill.json"
   ]
 }

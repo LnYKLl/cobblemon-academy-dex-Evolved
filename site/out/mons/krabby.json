@@ -2,20 +2,45 @@
   "id": "krabby",
   "dexnum": 98,
   "name": "Krabby",
+  "nameFr": "Krabby",
+  "description": "Krabby vit sur les plages, enterré dans le sable. Sur les plages où on trouve un peu de nourriture, on peut voir ces Pokémon se disputer pour défendre leur territoire.",
   "primaryType": "water",
   "secondaryType": "",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "",
+  "height": 4,
+  "weight": 65,
   "maleRatio": 0.5,
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 1,
+    "height": 0.7,
+    "fixed": false
+  },
   "labels": [
     "gen1"
   ],
   "abilities": [
-    "hypercutter",
-    "shellarmor",
-    "h:sheerforce"
+    {
+      "id": "hypercutter",
+      "name": "Hyper Cutter",
+      "hidden": false
+    },
+    {
+      "id": "shellarmor",
+      "name": "Coque Armure",
+      "hidden": false
+    },
+    {
+      "id": "sheerforce",
+      "name": "Sans Limite",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_3"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 30,
     "attack": 105,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 65,
   "experienceGroup": "medium_fast",
   "catchRate": 225,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,109 +68,561 @@
         "item": "cobblemon:kings_rock",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Roche Royale"
       },
       {
         "item": "cobblemon:pinap_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Nanana"
       }
     ]
   },
   "moves": [
-    "1:mudsport",
-    "1:bubble",
-    "1:visegrip",
-    "1:leer",
-    "1:watergun",
-    "4:harden",
-    "8:metalclaw",
-    "12:mudshot",
-    "16:protect",
-    "20:bubblebeam",
-    "24:stomp",
-    "29:flail",
-    "32:razorshell",
-    "36:slam",
-    "40:swordsdance",
-    "44:crabhammer",
-    "48:guillotine",
-    "egg:ancientpower",
-    "egg:bide",
-    "egg:chipaway",
-    "egg:hammerarm",
-    "egg:knockoff",
-    "egg:nightslash",
-    "egg:slash",
-    "egg:tickle",
-    "tm:agility",
-    "tm:allyswitch",
-    "tm:amnesia",
-    "tm:ancientpower",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:brickbreak",
-    "tm:brine",
-    "tm:cut",
-    "tm:dig",
-    "tm:dive",
-    "tm:endure",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:fling",
-    "tm:furycutter",
-    "tm:hail",
-    "tm:haze",
-    "tm:honeclaws",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:irondefense",
-    "tm:knockoff",
-    "tm:liquidation",
-    "tm:metalclaw",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:protect",
-    "tm:raindance",
-    "tm:razorshell",
-    "tm:rest",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:scald",
-    "tm:sleeptalk",
-    "tm:strength",
-    "tm:substitute",
-    "tm:superpower",
-    "tm:surf",
-    "tm:swordsdance",
-    "tm:terablast",
-    "tm:thief",
-    "tm:waterpulse",
-    "tm:whirlpool",
-    "tm:xscissor",
-    "tutor:allyswitch",
-    "tutor:ancientpower",
-    "tutor:dive",
-    "tutor:falseswipe",
-    "tutor:furycutter",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:irondefense",
-    "tutor:knockoff",
-    "tutor:liquidation",
-    "tutor:mudslap",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:sleeptalk",
-    "tutor:superpower",
-    "tutor:waterpulse",
-    "tutor:xscissor"
+    {
+      "id": "mudsport",
+      "name": "Lance-Boue",
+      "category": "1"
+    },
+    {
+      "id": "bubble",
+      "name": "Écume",
+      "category": "1"
+    },
+    {
+      "id": "visegrip",
+      "name": "Force Poigne",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "1"
+    },
+    {
+      "id": "harden",
+      "name": "Armure",
+      "category": "4"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "8"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "12"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "16"
+    },
+    {
+      "id": "bubblebeam",
+      "name": "Bulles d'O",
+      "category": "20"
+    },
+    {
+      "id": "stomp",
+      "name": "Écrasement",
+      "category": "24"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "29"
+    },
+    {
+      "id": "razorshell",
+      "name": "Coqui-Lame",
+      "category": "32"
+    },
+    {
+      "id": "slam",
+      "name": "Souplesse",
+      "category": "36"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "40"
+    },
+    {
+      "id": "crabhammer",
+      "name": "Pince-Masse",
+      "category": "44"
+    },
+    {
+      "id": "guillotine",
+      "name": "Guillotine",
+      "category": "48"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "egg"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "egg"
+    },
+    {
+      "id": "chipaway",
+      "name": "Attrition",
+      "category": "egg"
+    },
+    {
+      "id": "hammerarm",
+      "name": "Marto-Poing",
+      "category": "egg"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "egg"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "egg"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "egg"
+    },
+    {
+      "id": "tickle",
+      "name": "Chatouille",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "razorshell",
+      "name": "Coqui-Lame",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "rage",
+      "name": "Frénésie",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "krabby_kingler",
@@ -159,6 +638,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -168,19 +648,20 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "8-33",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_coast"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0098_krabby.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0098_krabby.json",
+        "spawnId": "krabby-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "krabby",
+        "type": "pokemon"
       }
     ],
     [
@@ -191,18 +672,47 @@
         "rarity": "common",
         "weight": 1.8,
         "levels": "8-33",
-        "contexts": [
-          "seafloor"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_coast",
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0098_krabby.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0098_krabby.json",
+        "spawnId": "krabby-2",
         "sky": {
           "canSeeSky": true
+        },
+        "spawnType": "seafloor",
+        "pokemon": "krabby",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "rarity": "common",
+        "weight": 9.0,
+        "levels": "8-33",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_coast",
+            "#cobblemon:is_ocean"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0098_krabby.json",
+        "spawnId": "krabby-3",
+        "sky": {
+          "canSeeSky": true
+        },
+        "spawnType": "fishing",
+        "pokemon": "krabby",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
         }
       }
     ],
@@ -211,40 +721,28 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "8-33",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_coast",
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0098_krabby.json",
-        "sky": {
-          "canSeeSky": true
-        }
-      }
-    ],
-    [
-      {
-        "rarity": "common",
-        "weight": 9.0,
-        "levels": "8-33",
-        "contexts": [
-          "fishing"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_coast",
-            "#cobblemon:is_ocean"
-          ]
-        },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0098_krabby.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0098_krabby.json",
+        "spawnId": "krabby-4",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "fishing",
+        "pokemon": "krabby",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
         }
       }
     ],
@@ -256,15 +754,13 @@
         "rarity": "common",
         "weight": 1.8,
         "levels": "8-33",
-        "contexts": [
-          "seafloor"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0098_krabby.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0098_krabby.json",
+        "spawnId": "krabby-5",
         "structures": [
           "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
         ],
@@ -274,7 +770,10 @@
         "yLevel": {
           "minY": -60,
           "maxY": 13
-        }
+        },
+        "spawnType": "seafloor",
+        "pokemon": "krabby",
+        "type": "pokemon"
       }
     ],
     [
@@ -282,15 +781,13 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "8-33",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0098_krabby.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0098_krabby.json",
+        "spawnId": "krabby-6",
         "structures": [
           "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
         ],
@@ -300,6 +797,16 @@
         "yLevel": {
           "minY": -60,
           "maxY": 13
+        },
+        "spawnType": "fishing",
+        "pokemon": "krabby",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
         }
       }
     ]
@@ -314,6 +821,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/krabby.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/krabby.json"
   ]
 }

@@ -2,20 +2,41 @@
   "id": "frigibax",
   "dexnum": 996,
   "name": "Frigibax",
+  "nameFr": "Frigodo",
+  "description": "Sa crête dorsale absorbe la chaleur et la convertit en énergie de type Glace. Plus la chaleur est intense, plus il emmagasine de l'énergie.",
   "primaryType": "dragon",
   "secondaryType": "ice",
+  "primaryTypeFr": "Dragon",
+  "secondaryTypeFr": "Glace",
+  "height": 5,
+  "weight": 170,
   "maleRatio": 0.5,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.6,
+    "height": 0.8,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "thermalexchange",
-    "h:icebody"
+    {
+      "id": "thermalexchange",
+      "name": "Thermodynamique",
+      "hidden": false
+    },
+    {
+      "id": "icebody",
+      "name": "Corps Gel",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "dragon",
     "mineral"
   ],
+  "eggCycles": 40,
   "baseStats": {
     "hp": 65,
     "attack": 75,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 64,
   "experienceGroup": "slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,70 +64,294 @@
         "item": "cobblemon:haban_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Fraigo"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:leer",
-    "1:dragontail",
-    "6:icywind",
-    "12:dragonbreath",
-    "18:focusenergy",
-    "24:bite",
-    "29:icefang",
-    "32:dragonclaw",
-    "36:takedown",
-    "40:icebeam",
-    "44:crunch",
-    "48:iciclecrash",
-    "egg:aquatail",
-    "egg:dragonrush",
-    "egg:freezedry",
-    "egg:iciclespear",
-    "tm:aquatail",
-    "tm:avalanche",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:crunch",
-    "tm:dig",
-    "tm:dracometeor",
-    "tm:dragonclaw",
-    "tm:dragonpulse",
-    "tm:dragontail",
-    "tm:endure",
-    "tm:facade",
-    "tm:focusenergy",
-    "tm:helpinghand",
-    "tm:icebeam",
-    "tm:icefang",
-    "tm:iciclespear",
-    "tm:icywind",
-    "tm:outrage",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:sleeptalk",
-    "tm:snowscape",
-    "tm:substitute",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:terablast",
-    "tutor:aquatail",
-    "tutor:dracometeor",
-    "tutor:dragonpulse",
-    "tutor:focusenergy",
-    "tutor:helpinghand",
-    "tutor:icebeam",
-    "tutor:icefang",
-    "tutor:icywind",
-    "tutor:outrage",
-    "tutor:rest",
-    "tutor:sleeptalk"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "1"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "6"
+    },
+    {
+      "id": "dragonbreath",
+      "name": "Draco-Souffle",
+      "category": "12"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "18"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "24"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "29"
+    },
+    {
+      "id": "dragonclaw",
+      "name": "Draco-Griffe",
+      "category": "32"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "36"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "40"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "44"
+    },
+    {
+      "id": "iciclecrash",
+      "name": "Chute Glace",
+      "category": "48"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "egg"
+    },
+    {
+      "id": "dragonrush",
+      "name": "Draco-Charge",
+      "category": "egg"
+    },
+    {
+      "id": "freezedry",
+      "name": "Lyophilisation",
+      "category": "egg"
+    },
+    {
+      "id": "iciclespear",
+      "name": "Stalactite",
+      "category": "egg"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tm"
+    },
+    {
+      "id": "dragonclaw",
+      "name": "Draco-Griffe",
+      "category": "tm"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tm"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tm"
+    },
+    {
+      "id": "iciclespear",
+      "name": "Stalactite",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "frigibax_arctibax",
@@ -120,34 +367,16 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
         "presets": [
           "natural"
         ],
-        "rarity": "ultra-rare",
-        "weight": 4.4,
-        "levels": "31-48",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:starlight_permafrost_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/ultra-rare_starlight_permafrost_forest.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "ultra-rare",
+        "rarity": "rare",
         "weight": 5.0,
-        "levels": "1-34",
+        "levels": "28-37",
         "contexts": [
           "grounded"
         ],
@@ -156,14 +385,42 @@
             "#cobblemon:is_glacial"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/frigibax.json",
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0996_frigibax.json",
+        "spawnId": "frigibax-1",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "pokemon": "frigibax",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "rare",
+        "weight": 5.0,
+        "levels": "28-37",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_glacial"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0996_frigibax.json",
+        "spawnId": "ccc-frigibax-1",
+        "sky": {
+          "canSeeSky": true
+        },
+        "pokemon": "frigibax",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/genomons/frigibax.png",
@@ -175,6 +432,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/frigibax.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/frigibax.json"
   ]
 }

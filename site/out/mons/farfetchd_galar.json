@@ -1,22 +1,43 @@
 {
   "id": "farfetchd_galar",
   "dexnum": 83,
-  "name": "Farfetchâ€™d Galar",
+  "name": "Farfetch’d Galar",
+  "nameFr": "Farfetch’d Galar",
+  "description": "Les Canarticho ont pris cette forme à force de manier les poireaux de Galar, qui sont plus longs et plus larges que ceux des autres régions.",
   "primaryType": "fighting",
   "secondaryType": "flying",
+  "primaryTypeFr": "Combat",
+  "secondaryTypeFr": "Vol",
+  "height": 8,
+  "weight": 420,
   "maleRatio": 0.5,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.7,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen8",
     "galarian_form"
   ],
   "abilities": [
-    "steadfast",
-    "h:scrappy"
+    {
+      "id": "steadfast",
+      "name": "Impassible",
+      "hidden": false
+    },
+    {
+      "id": "scrappy",
+      "name": "Querelleur",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "flying",
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 52,
     "attack": 95,
@@ -33,8 +54,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 132,
   "experienceGroup": "medium_fast",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 4,
     "entries": [
@@ -42,107 +65,425 @@
         "item": "minecraft:feather",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:feather"
       },
       {
         "item": "minecraft:chicken",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:chicken"
       },
       {
         "item": "cobblemon:medicinal_leek",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "Soignon"
       },
       {
         "item": "cobblemon:coba_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Cobaba"
       }
     ]
   },
   "moves": [
-    "1:peck",
-    "1:sandattack",
-    "5:leer",
-    "10:furycutter",
-    "15:rocksmash",
-    "20:brutalswing",
-    "25:detect",
-    "30:knockoff",
-    "35:defog",
-    "40:brickbreak",
-    "45:swordsdance",
-    "50:slam",
-    "55:leafblade",
-    "60:finalgambit",
-    "65:bravebird",
-    "egg:counter",
-    "egg:covet",
-    "egg:curse",
-    "egg:doubleedge",
-    "egg:feint",
-    "egg:flail",
-    "egg:nightslash",
-    "egg:quickattack",
-    "egg:quickguard",
-    "egg:simplebeam",
-    "egg:skyattack",
-    "tm:assurance",
-    "tm:bodyslam",
-    "tm:bravebird",
-    "tm:brickbreak",
-    "tm:brutalswing",
-    "tm:closecombat",
-    "tm:covet",
-    "tm:curse",
-    "tm:defog",
-    "tm:doubleedge",
-    "tm:dualwingbeat",
-    "tm:endure",
-    "tm:facade",
-    "tm:focusenergy",
-    "tm:furycutter",
-    "tm:helpinghand",
-    "tm:knockoff",
-    "tm:leafblade",
-    "tm:poisonjab",
-    "tm:protect",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:revenge",
-    "tm:rocksmash",
-    "tm:skyattack",
-    "tm:sleeptalk",
-    "tm:solarblade",
-    "tm:steelwing",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superpower",
-    "tm:swordsdance",
-    "tm:terablast",
-    "tm:throatchop",
-    "tm:workup",
-    "tutor:covet",
-    "tutor:defog",
-    "tutor:dualwingbeat",
-    "tutor:focusenergy",
-    "tutor:furycutter",
-    "tutor:helpinghand",
-    "tutor:knockoff",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:skyattack",
-    "tutor:sleeptalk",
-    "tutor:superpower",
-    "tutor:throatchop"
+    {
+      "id": "peck",
+      "name": "Picpic",
+      "category": "1"
+    },
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "5"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "10"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "15"
+    },
+    {
+      "id": "brutalswing",
+      "name": "Centrifugifle",
+      "category": "20"
+    },
+    {
+      "id": "detect",
+      "name": "Détection",
+      "category": "25"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "30"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "35"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "40"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "45"
+    },
+    {
+      "id": "slam",
+      "name": "Souplesse",
+      "category": "50"
+    },
+    {
+      "id": "leafblade",
+      "name": "Lame Feuille",
+      "category": "55"
+    },
+    {
+      "id": "finalgambit",
+      "name": "Tout ou Rien",
+      "category": "60"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "65"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "egg"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "egg"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "egg"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "egg"
+    },
+    {
+      "id": "feint",
+      "name": "Ruse",
+      "category": "egg"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "egg"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "egg"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "egg"
+    },
+    {
+      "id": "quickguard",
+      "name": "Prévention",
+      "category": "egg"
+    },
+    {
+      "id": "simplebeam",
+      "name": "Rayon Simple",
+      "category": "egg"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "egg"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bravebird",
+      "name": "Rapace",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "brutalswing",
+      "name": "Centrifugifle",
+      "category": "tm"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "leafblade",
+      "name": "Lame Feuille",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarblade",
+      "name": "Lame Solaire",
+      "category": "tm"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "farfetchd_sirfetchd",
@@ -160,6 +501,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -170,38 +512,29 @@
         "rarity": "rare",
         "weight": 8.75,
         "levels": "13-38",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0083_farfetchd.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0083_farfetchd.json",
+        "spawnId": "farfetchd-galarian-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 6.8,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/rare_scarlet_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "farfetchd galarian",
+        "excludeNearbyBlocks": [
+          "minecraft:water"
+        ],
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.25,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
       }
     ]
   ],
@@ -215,6 +548,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/farfetchd.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/farfetchd.json"
   ]
 }

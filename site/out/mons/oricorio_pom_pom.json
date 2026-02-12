@@ -2,19 +2,40 @@
   "id": "oricorio_pom_pom",
   "dexnum": 741,
   "name": "Oricorio Pom-Pom",
+  "nameFr": "Oricorio Pom-Pom",
+  "description": "",
   "primaryType": "electric",
   "secondaryType": "flying",
+  "primaryTypeFr": "Électrik",
+  "secondaryTypeFr": "Vol",
+  "height": 6,
+  "weight": 34,
   "maleRatio": 0.25,
+  "baseScale": 0.55,
+  "hitbox": {
+    "width": 1.5,
+    "height": 1.5,
+    "fixed": false
+  },
   "labels": [
     "gen7"
   ],
   "abilities": [
-    "dancer",
-    "h:dancer"
+    {
+      "id": "dancer",
+      "name": "Danseuse",
+      "hidden": false
+    },
+    {
+      "id": "dancer",
+      "name": "Danseuse",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "flying"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 75,
     "attack": 70,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 167,
   "experienceGroup": "medium_fast",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 5,
     "entries": [
@@ -40,139 +63,508 @@
         "item": "minecraft:feather",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:feather"
       },
       {
         "item": "minecraft:chicken",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:chicken"
       },
       {
         "item": "minecraft:honey_bottle",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:honey_bottle"
       },
       {
         "item": "cobblemon:pinap_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Nanana"
       }
     ]
   },
   "moves": [
-    "1:pound",
-    "1:doubleslap",
-    "1:mirrormove",
-    "4:growl",
-    "6:peck",
-    "10:helpinghand",
-    "13:aircutter",
-    "16:batonpass",
-    "20:featherdance",
-    "23:acrobatics",
-    "26:teeterdance",
-    "30:roost",
-    "33:flatter",
-    "36:airslash",
-    "40:revelationdance",
-    "43:agility",
-    "47:hurricane",
-    "egg:attract",
-    "egg:captivate",
-    "egg:defog",
-    "egg:pluck",
-    "egg:quiverdance",
-    "egg:safeguard",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:aircutter",
-    "tm:airslash",
-    "tm:alluringvoice",
-    "tm:attract",
-    "tm:batonpass",
-    "tm:calmmind",
-    "tm:captivate",
-    "tm:charm",
-    "tm:covet",
-    "tm:defog",
-    "tm:dualwingbeat",
-    "tm:embargo",
-    "tm:endure",
-    "tm:facade",
-    "tm:featherdance",
-    "tm:fly",
-    "tm:helpinghand",
-    "tm:hurricane",
-    "tm:icywind",
-    "tm:pluck",
-    "tm:protect",
-    "tm:psychup",
-    "tm:quash",
-    "tm:raindance",
-    "tm:rest",
-    "tm:reversal",
-    "tm:roleplay",
-    "tm:roost",
-    "tm:safeguard",
-    "tm:sandstorm",
-    "tm:skyattack",
-    "tm:sleeptalk",
-    "tm:steelwing",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:swordsdance",
-    "tm:tailwind",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:trailblaze",
-    "tm:uturn",
-    "tm:workup",
-    "tutor:aerialace",
-    "tutor:aircutter",
-    "tutor:calmmind",
-    "tutor:covet",
-    "tutor:defog",
-    "tutor:dualwingbeat",
-    "tutor:helpinghand",
-    "tutor:icywind",
-    "tutor:rest",
-    "tutor:roleplay",
-    "tutor:roost",
-    "tutor:skyattack",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:tailwind"
+    {
+      "id": "pound",
+      "name": "Écras'Face",
+      "category": "1"
+    },
+    {
+      "id": "doubleslap",
+      "name": "Torgnoles",
+      "category": "1"
+    },
+    {
+      "id": "mirrormove",
+      "name": "Mimique",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "4"
+    },
+    {
+      "id": "peck",
+      "name": "Picpic",
+      "category": "6"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "10"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "13"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "16"
+    },
+    {
+      "id": "featherdance",
+      "name": "Danse Plumes",
+      "category": "20"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "23"
+    },
+    {
+      "id": "teeterdance",
+      "name": "Danse Folle",
+      "category": "26"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "30"
+    },
+    {
+      "id": "flatter",
+      "name": "Flatterie",
+      "category": "33"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "36"
+    },
+    {
+      "id": "revelationdance",
+      "name": "Danse Éveil",
+      "category": "40"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "43"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "47"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "egg"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "egg"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "egg"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "egg"
+    },
+    {
+      "id": "quiverdance",
+      "name": "Papillodanse",
+      "category": "egg"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "alluringvoice",
+      "name": "Voix Envoûtante",
+      "category": "tm"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "embargo",
+      "name": "Embargo",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "featherdance",
+      "name": "Danse Plumes",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "pluck",
+      "name": "Picore",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "quash",
+      "name": "À la Queue",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "steelwing",
+      "name": "Ailes d'Acier",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aircutter",
+      "name": "Tranch'Air",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
-  "spawns": [
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 8.8,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/rare_scarlet_forest.json"
-      }
-    ]
-  ],
+  "preEvolution": null,
+  "spawns": [],
   "implemented": true,
   "images": {
     "normal": [
@@ -183,7 +575,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/oricorio.json",
-    "Cobblemon_MegaShowdown-10.0.7-release-fabric.jar!/data/cobblemon/species/generation7/oricorio.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/oricorio.json"
   ]
 }

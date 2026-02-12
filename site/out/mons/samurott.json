@@ -2,20 +2,41 @@
   "id": "samurott",
   "dexnum": 503,
   "name": "Samurott",
+  "nameFr": "Clamiral",
+  "description": "Il peut terrasser ses ennemis d'un coup de la lame enchâssée dans son armure, et les faire taire d'un seul regard.",
   "primaryType": "water",
   "secondaryType": "",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "",
+  "height": 15,
+  "weight": 946,
   "maleRatio": 0.875,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 1.6,
+    "height": 2.2,
+    "fixed": false
+  },
   "labels": [
     "gen5",
     "unovan_form"
   ],
   "abilities": [
-    "torrent",
-    "h:shellarmor"
+    {
+      "id": "torrent",
+      "name": "Torrent",
+      "hidden": false
+    },
+    {
+      "id": "shellarmor",
+      "name": "Coque Armure",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 95,
     "attack": 100,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 264,
   "experienceGroup": "medium_slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,148 +64,720 @@
         "item": "cobblemon:mystic_water",
         "percentage": 25.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Eau Mystique"
       },
       {
         "item": "cobblemon:shell_bell",
         "percentage": 25.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Grelot Coque"
       }
     ]
   },
   "moves": [
-    "1:megahorn",
-    "1:tackle",
-    "1:tailwhip",
-    "1:watergun",
-    "1:watersport",
-    "1:slash",
-    "1:soak",
-    "13:focusenergy",
-    "18:razorshell",
-    "21:furycutter",
-    "25:waterpulse",
-    "29:aerialace",
-    "34:aquajet",
-    "39:encore",
-    "46:aquatail",
-    "51:retaliate",
-    "58:swordsdance",
-    "63:hydropump",
-    "egg:airslash",
-    "egg:aquacutter",
-    "egg:copycat",
-    "egg:detect",
-    "egg:knockoff",
-    "egg:nightslash",
-    "egg:sacredsword",
-    "egg:screech",
-    "egg:trumpcard",
-    "tm:aerialace",
-    "tm:airslash",
-    "tm:aquatail",
-    "tm:assurance",
-    "tm:avalanche",
-    "tm:blizzard",
-    "tm:block",
-    "tm:bodyslam",
-    "tm:brickbreak",
-    "tm:brine",
-    "tm:bulldoze",
-    "tm:chillingwater",
-    "tm:covet",
-    "tm:cut",
-    "tm:dig",
-    "tm:dive",
-    "tm:drillrun",
-    "tm:encore",
-    "tm:endure",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:fling",
-    "tm:flipturn",
-    "tm:focusenergy",
-    "tm:furycutter",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:hail",
-    "tm:helpinghand",
-    "tm:hydrocannon",
-    "tm:hydropump",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:irontail",
-    "tm:knockoff",
-    "tm:liquidation",
-    "tm:megahorn",
-    "tm:protect",
-    "tm:raindance",
-    "tm:razorshell",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:revenge",
-    "tm:rocksmash",
-    "tm:scaryface",
-    "tm:screech",
-    "tm:sleeptalk",
-    "tm:smartstrike",
-    "tm:snowscape",
-    "tm:strength",
-    "tm:substitute",
-    "tm:superpower",
-    "tm:surf",
-    "tm:swift",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:upperhand",
-    "tm:vacuumwave",
-    "tm:waterfall",
-    "tm:waterpledge",
-    "tm:waterpulse",
-    "tm:whirlpool",
-    "tm:workup",
-    "tm:xscissor",
-    "tutor:aerialace",
-    "tutor:aquatail",
-    "tutor:block",
-    "tutor:bulldoze",
-    "tutor:covet",
-    "tutor:dive",
-    "tutor:drillrun",
-    "tutor:falseswipe",
-    "tutor:flipturn",
-    "tutor:focusenergy",
-    "tutor:furycutter",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:hydrocannon",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:irontail",
-    "tutor:knockoff",
-    "tutor:liquidation",
-    "tutor:megahorn",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:sleeptalk",
-    "tutor:superpower",
-    "tutor:swift",
-    "tutor:vacuumwave",
-    "tutor:waterpledge",
-    "tutor:waterpulse",
-    "tutor:xscissor"
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "1"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "1"
+    },
+    {
+      "id": "watersport",
+      "name": "Tourniquet",
+      "category": "1"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "1"
+    },
+    {
+      "id": "soak",
+      "name": "Détrempage",
+      "category": "1"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "13"
+    },
+    {
+      "id": "razorshell",
+      "name": "Coqui-Lame",
+      "category": "18"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "21"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "25"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "29"
+    },
+    {
+      "id": "aquajet",
+      "name": "Aqua-Jet",
+      "category": "34"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "39"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "46"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "51"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "58"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "63"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "egg"
+    },
+    {
+      "id": "aquacutter",
+      "name": "Tranch'Aqua",
+      "category": "egg"
+    },
+    {
+      "id": "copycat",
+      "name": "Photocopie",
+      "category": "egg"
+    },
+    {
+      "id": "detect",
+      "name": "Détection",
+      "category": "egg"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "egg"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "egg"
+    },
+    {
+      "id": "sacredsword",
+      "name": "Lame Sainte",
+      "category": "egg"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "egg"
+    },
+    {
+      "id": "trumpcard",
+      "name": "Atout",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tm"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "flipturn",
+      "name": "Eau Revoir",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hydrocannon",
+      "name": "Hydroblast",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "razorshell",
+      "name": "Coqui-Lame",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smartstrike",
+      "name": "Estocorne",
+      "category": "tm"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "upperhand",
+      "name": "Prio-Parade",
+      "category": "tm"
+    },
+    {
+      "id": "vacuumwave",
+      "name": "Onde Vide",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "waterpledge",
+      "name": "Aire d'Eau",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tutor"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "flipturn",
+      "name": "Eau Revoir",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hydrocannon",
+      "name": "Hydroblast",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "superpower",
+      "name": "Surpuissance",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "vacuumwave",
+      "name": "Onde Vide",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpledge",
+      "name": "Aire d'Eau",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "holdback",
+      "name": "Retenue",
+      "category": "special"
+    }
   ],
   "forms": [
     "Hisui"
   ],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "dewott",
   "spawns": [
     [
       {
@@ -192,9 +787,6 @@
         "rarity": "ultra-rare",
         "weight": 0.4,
         "levels": "36-53",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_beach"
@@ -203,11 +795,15 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0503_samurott.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0503_samurott.json",
+        "spawnId": "samurott-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "samurott",
+        "type": "pokemon"
       }
     ],
     [
@@ -218,9 +814,6 @@
         "rarity": "ultra-rare",
         "weight": 0.4,
         "levels": "36-53",
-        "contexts": [
-          "surface"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_beach"
@@ -229,11 +822,15 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0503_samurott.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0503_samurott.json",
+        "spawnId": "samurott-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "surface",
+        "pokemon": "samurott",
+        "type": "pokemon"
       }
     ],
     [
@@ -241,9 +838,6 @@
         "rarity": "ultra-rare",
         "weight": 0.4,
         "levels": "36-53",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_beach",
@@ -254,11 +848,15 @@
             "#cobblemon:is_cold"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0503_samurott.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0503_samurott.json",
+        "spawnId": "samurott-3",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "samurott",
+        "type": "pokemon"
       }
     ]
   ],
@@ -272,6 +870,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/samurott.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/samurott.json"
   ]
 }

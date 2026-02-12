@@ -2,20 +2,45 @@
   "id": "shellder",
   "dexnum": 90,
   "name": "Shellder",
+  "nameFr": "Kokiyas",
+  "description": "La nuit, ce Pokémon utilise sa grande langue pour creuser un trou dans le sable des fonds marins afin d'y dormir. Une fois endormi, Kokiyas referme sa coquille, mais laisse sa langue dépasser.",
   "primaryType": "water",
   "secondaryType": "",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "",
+  "height": 3,
+  "weight": 40,
   "maleRatio": 0.5,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.6,
+    "height": 0.5,
+    "fixed": false
+  },
   "labels": [
     "gen1"
   ],
   "abilities": [
-    "shellarmor",
-    "skilllink",
-    "h:overcoat"
+    {
+      "id": "shellarmor",
+      "name": "Coque Armure",
+      "hidden": false
+    },
+    {
+      "id": "skilllink",
+      "name": "Multi-Coups",
+      "hidden": false
+    },
+    {
+      "id": "overcoat",
+      "name": "Envelocape",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_3"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 30,
     "attack": 65,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 61,
   "experienceGroup": "slow",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -41,98 +68,497 @@
         "item": "cobblemon:aspear_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Willia"
       },
       {
         "item": "cobblemon:shell_bell",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Grelot Coque"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:watergun",
-    "4:withdraw",
-    "8:iceshard",
-    "12:leer",
-    "16:whirlpool",
-    "20:supersonic",
-    "24:aurorabeam",
-    "28:protect",
-    "32:razorshell",
-    "36:irondefense",
-    "40:icebeam",
-    "44:shellsmash",
-    "48:hydropump",
-    "egg:aquaring",
-    "egg:barrier",
-    "egg:bubblebeam",
-    "egg:clamp",
-    "egg:lifedew",
-    "egg:rapidspin",
-    "egg:twineedle",
-    "egg:waterpulse",
-    "tm:avalanche",
-    "tm:blizzard",
-    "tm:brine",
-    "tm:chillingwater",
-    "tm:dive",
-    "tm:endure",
-    "tm:explosion",
-    "tm:facade",
-    "tm:hail",
-    "tm:helpinghand",
-    "tm:hydropump",
-    "tm:icebeam",
-    "tm:icespinner",
-    "tm:iciclespear",
-    "tm:icywind",
-    "tm:irondefense",
-    "tm:liquidation",
-    "tm:mudshot",
-    "tm:payback",
-    "tm:protect",
-    "tm:raindance",
-    "tm:razorshell",
-    "tm:rest",
-    "tm:rockblast",
-    "tm:screech",
-    "tm:selfdestruct",
-    "tm:sleeptalk",
-    "tm:snowscape",
-    "tm:spikes",
-    "tm:substitute",
-    "tm:surf",
-    "tm:swift",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:toxicspikes",
-    "tm:triattack",
-    "tm:waterfall",
-    "tm:waterpulse",
-    "tm:whirlpool",
-    "tutor:dive",
-    "tutor:helpinghand",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:irondefense",
-    "tutor:liquidation",
-    "tutor:rest",
-    "tutor:sleeptalk",
-    "tutor:spikes",
-    "tutor:swift",
-    "tutor:waterpulse"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "1"
+    },
+    {
+      "id": "withdraw",
+      "name": "Repli",
+      "category": "4"
+    },
+    {
+      "id": "iceshard",
+      "name": "Éclats Glace",
+      "category": "8"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "12"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "16"
+    },
+    {
+      "id": "supersonic",
+      "name": "Ultrason",
+      "category": "20"
+    },
+    {
+      "id": "aurorabeam",
+      "name": "Onde Boréale",
+      "category": "24"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "28"
+    },
+    {
+      "id": "razorshell",
+      "name": "Coqui-Lame",
+      "category": "32"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "36"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "40"
+    },
+    {
+      "id": "shellsmash",
+      "name": "Exuviation",
+      "category": "44"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "48"
+    },
+    {
+      "id": "aquaring",
+      "name": "Anneau Hydro",
+      "category": "egg"
+    },
+    {
+      "id": "barrier",
+      "name": "Bouclier",
+      "category": "egg"
+    },
+    {
+      "id": "bubblebeam",
+      "name": "Bulles d'O",
+      "category": "egg"
+    },
+    {
+      "id": "clamp",
+      "name": "Claquoir",
+      "category": "egg"
+    },
+    {
+      "id": "lifedew",
+      "name": "Fontaine de Vie",
+      "category": "egg"
+    },
+    {
+      "id": "rapidspin",
+      "name": "Tour Rapide",
+      "category": "egg"
+    },
+    {
+      "id": "twineedle",
+      "name": "Double Dard",
+      "category": "egg"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "egg"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icespinner",
+      "name": "Cryo-Pirouette",
+      "category": "tm"
+    },
+    {
+      "id": "iciclespear",
+      "name": "Stalactite",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "razorshell",
+      "name": "Coqui-Lame",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "tm"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "triattack",
+      "name": "Triplattaque",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "rage",
+      "name": "Frénésie",
+      "category": "legacy"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "teleport",
+      "name": "Téléport",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "refresh",
+      "name": "Régénération",
+      "category": "special"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "shellder_cloyster",
       "variant": "item_interact",
       "result": "cloyster",
-      "consumeHeldItem": true,
+      "consumeHeldItem": false,
       "learnableMoves": [
         "iciclespear"
       ],
@@ -140,6 +566,7 @@
       "requiredContext": "cobblemon:water_stone"
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -149,19 +576,20 @@
         "rarity": "common",
         "weight": 9.5,
         "levels": "6-31",
-        "contexts": [
-          "seafloor"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_cold_ocean",
             "#cobblemon:is_frozen_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0090_shellder.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0090_shellder.json",
+        "spawnId": "shellder-1",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "seafloor",
+        "pokemon": "shellder",
+        "type": "pokemon"
       }
     ],
     [
@@ -172,9 +600,6 @@
         "rarity": "common",
         "weight": 5.7,
         "levels": "6-31",
-        "contexts": [
-          "seafloor"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
@@ -184,10 +609,14 @@
             "#cobblemon:is_frozen_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0090_shellder.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0090_shellder.json",
+        "spawnId": "shellder-2",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "seafloor",
+        "pokemon": "shellder",
+        "type": "pokemon"
       }
     ],
     [
@@ -195,18 +624,26 @@
         "rarity": "common",
         "weight": 9.5,
         "levels": "6-31",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_cold_ocean",
             "#cobblemon:is_frozen_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0090_shellder.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0090_shellder.json",
+        "spawnId": "shellder-3",
         "sky": {
           "canSeeSky": true
+        },
+        "spawnType": "fishing",
+        "pokemon": "shellder",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
         }
       }
     ],
@@ -215,9 +652,6 @@
         "rarity": "common",
         "weight": 1.9,
         "levels": "6-31",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_coast",
@@ -228,10 +662,29 @@
             "#cobblemon:is_frozen_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0090_shellder.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0090_shellder.json",
+        "spawnId": "shellder-4",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "shellder",
+        "type": "pokemon",
+        "weightMultiplier": [
+          {
+            "multiplier": 3.0,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5.0,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ]
       }
     ],
     [
@@ -239,20 +692,28 @@
         "rarity": "common",
         "weight": 9.5,
         "levels": "6-31",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_cold_ocean",
             "#cobblemon:is_frozen_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0090_shellder.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0090_shellder.json",
+        "spawnId": "shellder-5",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "fishing",
+        "pokemon": "shellder",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
         }
       }
     ],
@@ -261,9 +722,6 @@
         "rarity": "common",
         "weight": 1.9,
         "levels": "6-31",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_coast",
@@ -274,12 +732,31 @@
             "#cobblemon:is_frozen_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0090_shellder.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0090_shellder.json",
+        "spawnId": "shellder-6",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "shellder",
+        "type": "pokemon",
+        "weightMultiplier": [
+          {
+            "multiplier": 3.0,
+            "condition": {
+              "minLureLevel": 2,
+              "maxLureLevel": 2
+            }
+          },
+          {
+            "multiplier": 5.0,
+            "condition": {
+              "minLureLevel": 3
+            }
+          }
+        ]
       }
     ],
     [
@@ -290,15 +767,13 @@
         "rarity": "common",
         "weight": 5.7,
         "levels": "6-31",
-        "contexts": [
-          "seafloor"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0090_shellder.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0090_shellder.json",
+        "spawnId": "shellder-7",
         "structures": [
           "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
         ],
@@ -308,7 +783,10 @@
         "yLevel": {
           "minY": -60,
           "maxY": 13
-        }
+        },
+        "spawnType": "seafloor",
+        "pokemon": "shellder",
+        "type": "pokemon"
       }
     ],
     [
@@ -316,15 +794,13 @@
         "rarity": "common",
         "weight": 9.5,
         "levels": "6-31",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0090_shellder.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0090_shellder.json",
+        "spawnId": "shellder-8",
         "structures": [
           "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
         ],
@@ -334,26 +810,17 @@
         "yLevel": {
           "minY": -60,
           "maxY": 13
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "water"
-        ],
-        "rarity": "common",
-        "weight": 4.5,
-        "levels": "4-19",
-        "contexts": [
-          "submerged"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_safari_ocean"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_safari_ocean/common_is_safari_ocean.json"
+        "spawnType": "fishing",
+        "pokemon": "shellder",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 0.6,
+          "condition": {
+            "minLureLevel": 0,
+            "maxLureLevel": 1
+          }
+        }
       }
     ]
   ],
@@ -367,6 +834,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/shellder.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/shellder.json"
   ]
 }

@@ -2,22 +2,47 @@
   "id": "corsola",
   "dexnum": 222,
   "name": "Corsola",
+  "nameFr": "Corayon",
+  "description": "Les Corayon se rassemblent dans les mers chaudes, offrant ainsi un abri idéal aux plus petits Pokémon. Quand la température baisse, ce Pokémon migre vers les mers du sud.",
   "primaryType": "water",
   "secondaryType": "rock",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "Roche",
+  "height": 6,
+  "weight": 50,
   "maleRatio": 0.25,
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 0.65,
+    "height": 0.8,
+    "fixed": false
+  },
   "labels": [
     "gen2",
     "johtonian_form"
   ],
   "abilities": [
-    "hustle",
-    "naturalcure",
-    "h:regenerator"
+    {
+      "id": "hustle",
+      "name": "Agitation",
+      "hidden": false
+    },
+    {
+      "id": "naturalcure",
+      "name": "Médic Nature",
+      "hidden": false
+    },
+    {
+      "id": "regenerator",
+      "name": "Régé-Force",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_1",
     "water_3"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 65,
     "attack": 55,
@@ -34,240 +59,708 @@
     "special_defence": 1,
     "speed": 0
   },
+  "baseExperienceYield": 144,
   "experienceGroup": "fast",
   "catchRate": 60,
+  "baseFriendship": 50,
   "drops": {
-    "amount": 1,
+    "amount": 2,
     "entries": [
+      {
+        "item": "cobblemon:luminous_moss",
+        "percentage": 5.0,
+        "quantityRange": null,
+        "source": "species",
+        "itemName": "Lichen Lumineux"
+      },
       {
         "item": "cobblemon:rindo_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Ratam"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:harden",
-    "1:bubble",
-    "1:refresh",
-    "1:luckychant",
-    "1:spikecannon",
-    "5:watergun",
-    "10:aquaring",
-    "15:endure",
-    "20:ancientpower",
-    "25:bubblebeam",
-    "30:flail",
-    "35:lifedew",
-    "40:powergem",
-    "45:earthpower",
-    "50:recover",
-    "55:mirrorcoat",
-    "egg:aquaring",
-    "egg:barrier",
-    "egg:bide",
-    "egg:camouflage",
-    "egg:confuseray",
-    "egg:curse",
-    "egg:headsmash",
-    "egg:ingrain",
-    "egg:mist",
-    "egg:naturepower",
-    "egg:waterpulse",
-    "tm:amnesia",
-    "tm:ancientpower",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:brine",
-    "tm:bulldoze",
-    "tm:calmmind",
-    "tm:confuseray",
-    "tm:curse",
-    "tm:dig",
-    "tm:earthpower",
-    "tm:earthquake",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:explosion",
-    "tm:facade",
-    "tm:hail",
-    "tm:headbutt",
-    "tm:hydropump",
-    "tm:icebeam",
-    "tm:iciclespear",
-    "tm:icywind",
-    "tm:irondefense",
-    "tm:lightscreen",
-    "tm:liquidation",
-    "tm:magiccoat",
-    "tm:meteorbeam",
-    "tm:mudslap",
-    "tm:naturepower",
-    "tm:powergem",
-    "tm:protect",
-    "tm:psychic",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:rockblast",
-    "tm:rockpolish",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:rocktomb",
-    "tm:rollout",
-    "tm:safeguard",
-    "tm:sandstorm",
-    "tm:scald",
-    "tm:screech",
-    "tm:selfdestruct",
-    "tm:shadowball",
-    "tm:sleeptalk",
-    "tm:stealthrock",
-    "tm:stompingtantrum",
-    "tm:stoneedge",
-    "tm:strength",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:sunnyday",
-    "tm:surf",
-    "tm:terablast",
-    "tm:throatchop",
-    "tm:waterpulse",
-    "tm:whirlpool",
-    "tutor:ancientpower",
-    "tutor:bulldoze",
-    "tutor:calmmind",
-    "tutor:earthpower",
-    "tutor:endeavor",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:irondefense",
-    "tutor:liquidation",
-    "tutor:magiccoat",
-    "tutor:meteorbeam",
-    "tutor:mudslap",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:rollout",
-    "tutor:shadowball",
-    "tutor:sleeptalk",
-    "tutor:stealthrock",
-    "tutor:stompingtantrum",
-    "tutor:stoneedge",
-    "tutor:suckerpunch",
-    "tutor:throatchop",
-    "tutor:waterpulse"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "harden",
+      "name": "Armure",
+      "category": "1"
+    },
+    {
+      "id": "bubble",
+      "name": "Écume",
+      "category": "1"
+    },
+    {
+      "id": "refresh",
+      "name": "Régénération",
+      "category": "1"
+    },
+    {
+      "id": "luckychant",
+      "name": "Air Veinard",
+      "category": "1"
+    },
+    {
+      "id": "spikecannon",
+      "name": "Picanon",
+      "category": "1"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "5"
+    },
+    {
+      "id": "aquaring",
+      "name": "Anneau Hydro",
+      "category": "10"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "15"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "20"
+    },
+    {
+      "id": "bubblebeam",
+      "name": "Bulles d'O",
+      "category": "25"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "30"
+    },
+    {
+      "id": "lifedew",
+      "name": "Fontaine de Vie",
+      "category": "35"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "40"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "45"
+    },
+    {
+      "id": "recover",
+      "name": "Soin",
+      "category": "50"
+    },
+    {
+      "id": "mirrorcoat",
+      "name": "Voile Miroir",
+      "category": "55"
+    },
+    {
+      "id": "aquaring",
+      "name": "Anneau Hydro",
+      "category": "egg"
+    },
+    {
+      "id": "barrier",
+      "name": "Bouclier",
+      "category": "egg"
+    },
+    {
+      "id": "bide",
+      "name": "Patience",
+      "category": "egg"
+    },
+    {
+      "id": "camouflage",
+      "name": "Camouflage",
+      "category": "egg"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "egg"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "egg"
+    },
+    {
+      "id": "headsmash",
+      "name": "Fracass'Tête",
+      "category": "egg"
+    },
+    {
+      "id": "ingrain",
+      "name": "Racines",
+      "category": "egg"
+    },
+    {
+      "id": "mist",
+      "name": "Brume",
+      "category": "egg"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "egg"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "egg"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "iciclespear",
+      "name": "Stalactite",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tm"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "strength",
+      "name": "Force",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "mudsport",
+      "name": "Lance-Boue",
+      "category": "special"
+    }
   ],
   "forms": [
     "Galar"
   ],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
         "presets": [
           "water"
         ],
-        "rarity": "uncommon",
-        "weight": 10.0,
-        "levels": "16-41",
-        "contexts": [
-          "seafloor"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_warm_ocean"
-          ]
-        },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0222_corsola.json",
-        "sky": {
-          "canSeeSky": true
-        }
-      }
-    ],
-    [
-      {
-        "rarity": "uncommon",
-        "weight": 10.0,
-        "levels": "16-41",
-        "contexts": [
-          "fishing"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_warm_ocean"
-          ]
-        },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0222_corsola.json",
-        "sky": {
-          "canSeeSky": true
-        }
-      }
-    ],
-    [
-      {
         "rarity": "common",
         "weight": 10.0,
         "levels": "16-41",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_warm_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0222_corsola.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0222_corsola.json",
+        "spawnId": "corsola-1",
         "sky": {
           "canSeeSky": true
-        }
-      }
-    ],
-    [
-      {
-        "rarity": "uncommon",
-        "weight": 10.0,
-        "levels": "16-41",
-        "contexts": [
-          "fishing"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_warm_ocean"
-          ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0222_corsola.json",
-        "sky": {
-          "canSeeSky": false,
-          "minSkyLight": 8,
-          "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "rarity": "common",
-        "weight": 10.0,
-        "levels": "16-41",
-        "contexts": [
-          "fishing"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_warm_ocean"
-          ]
-        },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0222_corsola.json",
-        "sky": {
-          "canSeeSky": false,
-          "minSkyLight": 8,
-          "maxSkyLight": 15
-        }
+        "spawnType": "seafloor",
+        "pokemon": "corsola",
+        "type": "pokemon"
       }
     ],
     [
@@ -276,17 +769,76 @@
           "water"
         ],
         "rarity": "uncommon",
-        "weight": 3.6,
-        "levels": "18-34",
-        "contexts": [
-          "submerged"
-        ],
+        "weight": 10.0,
+        "levels": "16-41",
         "biomeTags": {
           "include": [
-            "#eternal_starlight:is_safari_ocean"
+            "#cobblemon:is_overworld"
+          ],
+          "exclude": [
+            "#cobblemon:is_warm_ocean"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_safari_ocean/uncommon_is_safari_ocean.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0222_corsola.json",
+        "spawnId": "corsola-2",
+        "nearbyBlocks": {
+          "selectors": [
+            "#minecraft:corals",
+            "#minecraft:coral_blocks"
+          ],
+          "resolved": [
+            "#minecraft:coral_blocks",
+            "#minecraft:corals"
+          ]
+        },
+        "sky": {
+          "canSeeSky": true
+        },
+        "spawnType": "seafloor",
+        "pokemon": "corsola",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "rarity": "common",
+        "weight": 10.0,
+        "levels": "16-41",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_warm_ocean"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0222_corsola.json",
+        "spawnId": "corsola-3",
+        "sky": {
+          "canSeeSky": true
+        },
+        "spawnType": "fishing",
+        "pokemon": "corsola",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "rarity": "common",
+        "weight": 10.0,
+        "levels": "16-41",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_warm_ocean"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0222_corsola.json",
+        "spawnId": "corsola-4",
+        "sky": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "fishing",
+        "pokemon": "corsola",
+        "type": "pokemon"
       }
     ]
   ],
@@ -300,6 +852,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation2/corsola.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation2/corsola.json"
   ]
 }

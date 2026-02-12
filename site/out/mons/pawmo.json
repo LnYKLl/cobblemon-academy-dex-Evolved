@@ -2,20 +2,45 @@
   "id": "pawmo",
   "dexnum": 922,
   "name": "Pawmo",
+  "nameFr": "Pohmotte",
+  "description": "Quand on attaque son groupe, ce Pokémon est le premier à riposter. Il défait ses adversaires avec un art martial qui repose sur l'électricité.",
   "primaryType": "electric",
   "secondaryType": "fighting",
+  "primaryTypeFr": "Électrik",
+  "secondaryTypeFr": "Combat",
+  "height": 4,
+  "weight": 65,
   "maleRatio": 0.5,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 0.7,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "voltabsorb",
-    "naturalcure",
-    "h:ironfist"
+    {
+      "id": "voltabsorb",
+      "name": "Absorbe-Volt",
+      "hidden": false
+    },
+    {
+      "id": "naturalcure",
+      "name": "Médic Nature",
+      "hidden": false
+    },
+    {
+      "id": "ironfist",
+      "name": "Poing de Fer",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 60,
     "attack": 75,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 2
   },
+  "baseExperienceYield": 123,
   "experienceGroup": "medium_fast",
   "catchRate": 80,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,92 +68,409 @@
         "item": "cobblemon:cheri_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Ceriz"
       }
     ]
   },
   "moves": [
-    "1:armthrust",
-    "1:scratch",
-    "1:growl",
-    "3:thundershock",
-    "6:quickattack",
-    "8:charge",
-    "12:nuzzle",
-    "15:dig",
-    "19:bite",
-    "23:spark",
-    "27:thunderwave",
-    "32:slam",
-    "38:entrainment",
-    "42:discharge",
-    "46:agility",
-    "52:wildcharge",
-    "egg:fakeout",
-    "egg:machpunch",
-    "egg:sweetkiss",
-    "egg:wish",
-    "tm:agility",
-    "tm:batonpass",
-    "tm:charge",
-    "tm:chargebeam",
-    "tm:charm",
-    "tm:coaching",
-    "tm:crunch",
-    "tm:dig",
-    "tm:eerieimpulse",
-    "tm:electricterrain",
-    "tm:electroball",
-    "tm:electroweb",
-    "tm:encore",
-    "tm:endure",
-    "tm:facade",
-    "tm:fling",
-    "tm:focuspunch",
-    "tm:helpinghand",
-    "tm:knockoff",
-    "tm:lowkick",
-    "tm:lowsweep",
-    "tm:metalclaw",
-    "tm:playrough",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superfang",
-    "tm:swift",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderfang",
-    "tm:thunderpunch",
-    "tm:thunderwave",
-    "tm:upperhand",
-    "tm:voltswitch",
-    "tm:wildcharge",
-    "tutor:chargebeam",
-    "tutor:coaching",
-    "tutor:electroweb",
-    "tutor:focuspunch",
-    "tutor:helpinghand",
-    "tutor:knockoff",
-    "tutor:lowkick",
-    "tutor:playrough",
-    "tutor:rest",
-    "tutor:sleeptalk",
-    "tutor:superfang",
-    "tutor:swift",
-    "tutor:thunderbolt",
-    "tutor:thunderfang",
-    "tutor:thunderpunch",
-    "tutor:wildcharge"
+    {
+      "id": "armthrust",
+      "name": "Cogne",
+      "category": "1"
+    },
+    {
+      "id": "scratch",
+      "name": "Griffe",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "thundershock",
+      "name": "Éclair",
+      "category": "3"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "6"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "8"
+    },
+    {
+      "id": "nuzzle",
+      "name": "Frotte-Frimousse",
+      "category": "12"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "15"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "19"
+    },
+    {
+      "id": "spark",
+      "name": "Étincelle",
+      "category": "23"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "27"
+    },
+    {
+      "id": "slam",
+      "name": "Souplesse",
+      "category": "32"
+    },
+    {
+      "id": "entrainment",
+      "name": "Ten-Danse",
+      "category": "38"
+    },
+    {
+      "id": "discharge",
+      "name": "Coup d'Jus",
+      "category": "42"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "46"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "52"
+    },
+    {
+      "id": "fakeout",
+      "name": "Bluff",
+      "category": "egg"
+    },
+    {
+      "id": "machpunch",
+      "name": "Mach Punch",
+      "category": "egg"
+    },
+    {
+      "id": "sweetkiss",
+      "name": "Doux Baiser",
+      "category": "egg"
+    },
+    {
+      "id": "wish",
+      "name": "Vœu",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "coaching",
+      "name": "Coaching",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "eerieimpulse",
+      "name": "Ondes Étranges",
+      "category": "tm"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "tm"
+    },
+    {
+      "id": "electroball",
+      "name": "Boule Élek",
+      "category": "tm"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "lowsweep",
+      "name": "Balayette",
+      "category": "tm"
+    },
+    {
+      "id": "metalclaw",
+      "name": "Griffe Acier",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "upperhand",
+      "name": "Prio-Parade",
+      "category": "tm"
+    },
+    {
+      "id": "voltswitch",
+      "name": "Change Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "coaching",
+      "name": "Coaching",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderpunch",
+      "name": "Poing Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "celebrate",
+      "name": "Célébration",
+      "category": "special"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "pawmo_pawmot",
@@ -144,26 +488,8 @@
       ]
     }
   ],
+  "preEvolution": "pawmi",
   "spawns": [
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 1.4,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/uncommon_scarlet_forest.json"
-      }
-    ],
     [
       {
         "rarity": "uncommon",
@@ -177,14 +503,42 @@
             "#cobblemon:is_arid"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/pawmo.json",
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0922_pawmo.json",
+        "spawnId": "pawmo-1",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "pokemon": "pawmo",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "uncommon",
+        "weight": 2.5,
+        "levels": "15-32",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_arid"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0922_pawmo.json",
+        "spawnId": "ccc-pawmo-1",
+        "sky": {
+          "canSeeSky": true
+        },
+        "pokemon": "pawmo",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/pawmo.png"
@@ -194,6 +548,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/pawmo.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/pawmo.json"
   ]
 }

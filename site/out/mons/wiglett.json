@@ -2,20 +2,45 @@
   "id": "wiglett",
   "dexnum": 960,
   "name": "Wiglett",
+  "nameFr": "Taupikeau",
+  "description": "Il détecte l'odeur de Délestin à plus de vingt mètres, ce qui lui donne le temps de s'enfouir dans le sable.",
   "primaryType": "water",
   "secondaryType": "",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "",
+  "height": 12,
+  "weight": 18,
   "maleRatio": 0.5,
+  "baseScale": 0.75,
+  "hitbox": {
+    "width": 0.9,
+    "height": 0.7,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "gooey",
-    "rattled",
-    "h:sandveil"
+    {
+      "id": "gooey",
+      "name": "Poisseux",
+      "hidden": false
+    },
+    {
+      "id": "rattled",
+      "name": "Phobique",
+      "hidden": false
+    },
+    {
+      "id": "sandveil",
+      "name": "Voile Sable",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_3"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 10,
     "attack": 55,
@@ -32,76 +57,317 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 49,
   "experienceGroup": "medium_fast",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 0,
     "entries": []
   },
   "moves": [
-    "1:sandattack",
-    "1:watergun",
-    "4:mudslap",
-    "8:wrap",
-    "12:aquajet",
-    "20:slam",
-    "20:waterpulse",
-    "24:headbutt",
-    "28:dig",
-    "32:suckerpunch",
-    "36:throatchop",
-    "40:liquidation",
-    "egg:finalgambit",
-    "egg:memento",
-    "tm:agility",
-    "tm:blizzard",
-    "tm:bulldoze",
-    "tm:chillingwater",
-    "tm:dig",
-    "tm:earthpower",
-    "tm:endure",
-    "tm:facade",
-    "tm:foulplay",
-    "tm:headbutt",
-    "tm:helpinghand",
-    "tm:hydropump",
-    "tm:icebeam",
-    "tm:liquidation",
-    "tm:muddywater",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:sandstorm",
-    "tm:sleeptalk",
-    "tm:stompingtantrum",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:surf",
-    "tm:swift",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:throatchop",
-    "tm:waterpulse",
-    "tm:whirlpool",
-    "tutor:bulldoze",
-    "tutor:earthpower",
-    "tutor:foulplay",
-    "tutor:helpinghand",
-    "tutor:icebeam",
-    "tutor:liquidation",
-    "tutor:mudslap",
-    "tutor:rest",
-    "tutor:sleeptalk",
-    "tutor:stompingtantrum",
-    "tutor:suckerpunch",
-    "tutor:swift",
-    "tutor:throatchop",
-    "tutor:waterpulse"
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "1"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "1"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "4"
+    },
+    {
+      "id": "wrap",
+      "name": "Ligotage",
+      "category": "8"
+    },
+    {
+      "id": "aquajet",
+      "name": "Aqua-Jet",
+      "category": "12"
+    },
+    {
+      "id": "slam",
+      "name": "Souplesse",
+      "category": "20"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "20"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "24"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "28"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "32"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "36"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "40"
+    },
+    {
+      "id": "finalgambit",
+      "name": "Tout ou Rien",
+      "category": "egg"
+    },
+    {
+      "id": "memento",
+      "name": "Souvenir",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "muddywater",
+      "name": "Ocroupi",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "wiglett_wugtrio",
@@ -117,6 +383,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -126,9 +393,6 @@
         "rarity": "common",
         "weight": 1.8,
         "levels": "1-25",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_beach"
@@ -137,11 +401,15 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0960_wiglett.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0960_wiglett.json",
+        "spawnId": "wiglett-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "wiglett",
+        "type": "pokemon"
       }
     ],
     [
@@ -152,19 +420,20 @@
         "rarity": "common",
         "weight": 5.4,
         "levels": "1-25",
-        "contexts": [
-          "seafloor"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_lukewarm_ocean",
             "#cobblemon:is_warm_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0960_wiglett.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0960_wiglett.json",
+        "spawnId": "wiglett-2",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "seafloor",
+        "pokemon": "wiglett",
+        "type": "pokemon"
       }
     ]
   ],
@@ -178,6 +447,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/wiglett.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/wiglett.json"
   ]
 }

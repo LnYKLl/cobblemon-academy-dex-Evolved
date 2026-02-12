@@ -2,19 +2,42 @@
   "id": "lunala",
   "dexnum": 792,
   "name": "Lunala",
+  "nameFr": "Lunala",
+  "description": "Il lui arrive d'invoquer dans ce monde des créatures et des puissances inconnues via une brèche menant à d'autres dimensions.",
   "primaryType": "psychic",
   "secondaryType": "ghost",
+  "primaryTypeFr": "Psy",
+  "secondaryTypeFr": "Spectre",
+  "height": 40,
+  "weight": 1200,
   "maleRatio": -1,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 2,
+    "height": 5,
+    "fixed": false
+  },
   "labels": [
     "gen7",
-    "legendary"
+    "legendary",
+    "restricted"
   ],
   "abilities": [
-    "shadowshield"
+    {
+      "id": "shadowshield",
+      "name": "Spectro-Bouclier",
+      "hidden": false
+    },
+    {
+      "id": "shadowshield",
+      "name": "Spectro-Bouclier",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 120,
   "baseStats": {
     "hp": 137,
     "attack": 113,
@@ -31,145 +54,668 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 340,
   "experienceGroup": "slow",
-  "catchRate": 45,
+  "catchRate": 3,
+  "baseFriendship": 0,
   "drops": {
-    "amount": 0,
-    "entries": []
-  },
-  "moves": [
-    "1:confusion",
-    "1:cosmicpower",
-    "1:hypnosis",
-    "1:moongeistbeam",
-    "1:teleport",
-    "7:nightshade",
-    "14:confuseray",
-    "21:airslash",
-    "28:shadowball",
-    "35:moonlight",
-    "42:nightdaze",
-    "49:magiccoat",
-    "56:moonblast",
-    "63:phantomforce",
-    "70:dreameater",
-    "77:wideguard",
-    "84:hyperbeam",
-    "tm:acrobatics",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:airslash",
-    "tm:blizzard",
-    "tm:calmmind",
-    "tm:chargebeam",
-    "tm:confide",
-    "tm:cosmicpower",
-    "tm:dazzlinggleam",
-    "tm:doubleteam",
-    "tm:dreameater",
-    "tm:endure",
-    "tm:facade",
-    "tm:fly",
-    "tm:focusblast",
-    "tm:frustration",
-    "tm:futuresight",
-    "tm:gigaimpact",
-    "tm:heatwave",
-    "tm:helpinghand",
-    "tm:hex",
-    "tm:hiddenpower",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:lightscreen",
-    "tm:magicroom",
-    "tm:phantomforce",
-    "tm:protect",
-    "tm:psychic",
-    "tm:psychocut",
-    "tm:psychup",
-    "tm:psyshock",
-    "tm:reflect",
-    "tm:rest",
-    "tm:return",
-    "tm:roar",
-    "tm:roost",
-    "tm:round",
-    "tm:safeguard",
-    "tm:scaryface",
-    "tm:shadowball",
-    "tm:shadowclaw",
-    "tm:skydrop",
-    "tm:sleeptalk",
-    "tm:snore",
-    "tm:solarbeam",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swagger",
-    "tm:swift",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:toxic",
-    "tm:trick",
-    "tm:trickroom",
-    "tm:willowisp",
-    "tm:wonderroom",
-    "tm:workup",
-    "tutor:cosmicpower",
-    "tutor:defog",
-    "tutor:dualwingbeat",
-    "tutor:expandingforce",
-    "tutor:heatwave",
-    "tutor:icywind",
-    "tutor:magiccoat",
-    "tutor:magicroom",
-    "tutor:meteorbeam",
-    "tutor:moonblast",
-    "tutor:moongeistbeam",
-    "tutor:moonlight",
-    "tutor:nightdaze",
-    "tutor:poltergeist",
-    "tutor:psyshock",
-    "tutor:shadowball",
-    "tutor:shockwave",
-    "tutor:signalbeam",
-    "tutor:skyattack",
-    "tutor:snore",
-    "tutor:spite",
-    "tutor:swift",
-    "tutor:tailwind",
-    "tutor:telekinesis",
-    "tutor:trick",
-    "tutor:wonderroom"
-  ],
-  "forms": [],
-  "types": [],
-  "evolutions": [],
-  "spawns": [
-    [
+    "amount": 5,
+    "entries": [
       {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "summons",
-        "weight": 3.0,
-        "levels": "70-80",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "minecraft:dark_forest",
-            "byg:warped_desert",
-            "#cobblemon:is_hills"
-          ]
-        },
-        "source": "datapacks/MythsandLegends-Datapack-v1.0.4/data/cobblemon/spawn_pool_world/mythsandlegends-lunala.json",
-        "keyItem": "myths_and_legends:moon_flute"
+        "item": "minecraft:phantom_membrane",
+        "percentage": null,
+        "quantityRange": "3-5",
+        "source": "species",
+        "itemName": "minecraft:phantom_membrane"
       }
     ]
+  },
+  "moves": [
+    {
+      "id": "moongeistbeam",
+      "name": "Rayon Spectral",
+      "category": "1"
+    },
+    {
+      "id": "cosmicpower",
+      "name": "Force Cosmique",
+      "category": "1"
+    },
+    {
+      "id": "hypnosis",
+      "name": "Hypnose",
+      "category": "1"
+    },
+    {
+      "id": "teleport",
+      "name": "Téléport",
+      "category": "1"
+    },
+    {
+      "id": "confusion",
+      "name": "Choc Mental",
+      "category": "1"
+    },
+    {
+      "id": "splash",
+      "name": "Trempette",
+      "category": "1"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "7"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "14"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "21"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "28"
+    },
+    {
+      "id": "moonlight",
+      "name": "Rayon Lune",
+      "category": "35"
+    },
+    {
+      "id": "nightdaze",
+      "name": "Explonuit",
+      "category": "42"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "49"
+    },
+    {
+      "id": "moonblast",
+      "name": "Pouvoir Lunaire",
+      "category": "56"
+    },
+    {
+      "id": "phantomforce",
+      "name": "Hantise",
+      "category": "63"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "70"
+    },
+    {
+      "id": "wideguard",
+      "name": "Garde Large",
+      "category": "77"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "cosmicpower",
+      "name": "Force Cosmique",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "expandingforce",
+      "name": "Vaste Pouvoir",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fly",
+      "name": "Vol",
+      "category": "tm"
+    },
+    {
+      "id": "focusblast",
+      "name": "Exploforce",
+      "category": "tm"
+    },
+    {
+      "id": "futuresight",
+      "name": "Prescience",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tm"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tm"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tm"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "tm"
+    },
+    {
+      "id": "phantomforce",
+      "name": "Hantise",
+      "category": "tm"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tm"
+    },
+    {
+      "id": "skydrop",
+      "name": "Chute Libre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tm"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "dualwingbeat",
+      "name": "Double Volée",
+      "category": "tutor"
+    },
+    {
+      "id": "expandingforce",
+      "name": "Vaste Pouvoir",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "heatwave",
+      "name": "Canicule",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "magicroom",
+      "name": "Zone Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "skyattack",
+      "name": "Piqué",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "tailwind",
+      "name": "Vent Arrière",
+      "category": "tutor"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tutor"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
+  "forms": [],
+  "evolutions": [],
+  "preEvolution": "cosmoem",
+  "spawns": [],
   "implemented": false,
   "images": {
     "normal": [
@@ -182,7 +728,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/lunala.json",
-    "datapacks\\MysticMons_v3.2.1\\data\\cobblemon\\species\\generation7\\lunala.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/lunala.json"
   ]
 }

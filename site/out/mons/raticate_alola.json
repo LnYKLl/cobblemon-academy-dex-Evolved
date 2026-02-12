@@ -2,21 +2,46 @@
   "id": "raticate_alola",
   "dexnum": 20,
   "name": "Raticate Alola",
+  "nameFr": "Raticate Alola",
+  "description": "Il rassemble des Rattata pour former un groupe. Les hordes ne s'entendent pas entre elles et se disputent violemment les sources de nourriture.",
   "primaryType": "dark",
   "secondaryType": "normal",
+  "primaryTypeFr": "Ténèbres",
+  "secondaryTypeFr": "Normal",
+  "height": 7,
+  "weight": 255,
   "maleRatio": 0.5,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.7,
+    "height": 1.1,
+    "fixed": false
+  },
   "labels": [
     "gen7",
     "alolan_form"
   ],
   "abilities": [
-    "gluttony",
-    "hustle",
-    "h:thickfat"
+    {
+      "id": "gluttony",
+      "name": "Gloutonnerie",
+      "hidden": false
+    },
+    {
+      "id": "hustle",
+      "name": "Agitation",
+      "hidden": false
+    },
+    {
+      "id": "thickfat",
+      "name": "Isograisse",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 75,
     "attack": 71,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 2
   },
+  "baseExperienceYield": 145,
   "experienceGroup": "medium_fast",
   "catchRate": 127,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -42,137 +69,663 @@
         "item": "minecraft:rotten_flesh",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:rotten_flesh"
       },
       {
         "item": "cobblemon:pecha_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Pêcha"
       }
     ]
   },
   "moves": [
-    "1:scaryface",
-    "1:swordsdance",
-    "1:tackle",
-    "1:tailwhip",
-    "1:quickattack",
-    "1:focusenergy",
-    "10:bite",
-    "13:pursuit",
-    "16:hyperfang",
-    "19:assurance",
-    "24:crunch",
-    "29:suckerpunch",
-    "34:superfang",
-    "39:doubleedge",
-    "44:endeavor",
-    "egg:counter",
-    "egg:finalgambit",
-    "egg:furyswipes",
-    "egg:mefirst",
-    "egg:revenge",
-    "egg:reversal",
-    "egg:snatch",
-    "egg:stockpile",
-    "egg:swallow",
-    "egg:switcheroo",
-    "egg:uproar",
-    "tm:assurance",
-    "tm:beatup",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:bulkup",
-    "tm:burningjealousy",
-    "tm:closecombat",
-    "tm:covet",
-    "tm:crunch",
-    "tm:darkpulse",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:embargo",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:focusenergy",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:irontail",
-    "tm:knockoff",
-    "tm:lashout",
-    "tm:lastresort",
-    "tm:protect",
-    "tm:psychicfangs",
-    "tm:quash",
-    "tm:raindance",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:revenge",
-    "tm:reversal",
-    "tm:roar",
-    "tm:scaryface",
-    "tm:screech",
-    "tm:shadowball",
-    "tm:shockwave",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:sludgewave",
-    "tm:snarl",
-    "tm:snatch",
-    "tm:stompingtantrum",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:sunnyday",
-    "tm:superfang",
-    "tm:swordsdance",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:throatchop",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:torment",
-    "tm:uproar",
-    "tm:venoshock",
-    "tm:zenheadbutt",
-    "tutor:bulkup",
-    "tutor:burningjealousy",
-    "tutor:covet",
-    "tutor:darkpulse",
-    "tutor:endeavor",
-    "tutor:focusenergy",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:irontail",
-    "tutor:knockoff",
-    "tutor:lashout",
-    "tutor:lastresort",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:shadowball",
-    "tutor:shockwave",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:snarl",
-    "tutor:snatch",
-    "tutor:stompingtantrum",
-    "tutor:suckerpunch",
-    "tutor:superfang",
-    "tutor:throatchop",
-    "tutor:thunderbolt",
-    "tutor:uproar",
-    "tutor:zenheadbutt"
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "1"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "1"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "1"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "1"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "10"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "13"
+    },
+    {
+      "id": "hyperfang",
+      "name": "Croc de Mort",
+      "category": "16"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "19"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "24"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "29"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "34"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "39"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "44"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "egg"
+    },
+    {
+      "id": "finalgambit",
+      "name": "Tout ou Rien",
+      "category": "egg"
+    },
+    {
+      "id": "furyswipes",
+      "name": "Combo-Griffe",
+      "category": "egg"
+    },
+    {
+      "id": "mefirst",
+      "name": "Moi d'Abord",
+      "category": "egg"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "egg"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "egg"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "egg"
+    },
+    {
+      "id": "stockpile",
+      "name": "Stockage",
+      "category": "egg"
+    },
+    {
+      "id": "swallow",
+      "name": "Avale",
+      "category": "egg"
+    },
+    {
+      "id": "switcheroo",
+      "name": "Passe-Passe",
+      "category": "egg"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "egg"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "beatup",
+      "name": "Baston",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tm"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tm"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "embargo",
+      "name": "Embargo",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tm"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychicfangs",
+      "name": "Psycho-Croc",
+      "category": "tm"
+    },
+    {
+      "id": "quash",
+      "name": "À la Queue",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "roar",
+      "name": "Hurlement",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "bulkup",
+      "name": "Gonflette",
+      "category": "tutor"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tutor"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "rattata alolan",
   "spawns": [
     [
       {
@@ -182,9 +735,6 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "20-41",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -193,11 +743,15 @@
             "#cobblemon:is_deep_dark"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0020_raticate.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0020_raticate.json",
+        "spawnId": "raticate-alolan-4",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "raticate alolan",
+        "type": "pokemon"
       }
     ],
     [
@@ -208,9 +762,6 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "20-41",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -219,10 +770,14 @@
             "#cobblemon:is_deep_dark"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0020_raticate.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0020_raticate.json",
+        "spawnId": "raticate-alolan-5",
         "sky": {
           "canSeeSky": false
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "raticate alolan",
+        "type": "pokemon"
       }
     ],
     [
@@ -233,19 +788,23 @@
         "rarity": "common",
         "weight": 1.0,
         "levels": "20-41",
-        "contexts": [
-          "grounded"
+        "times": [
+          "night"
         ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_spooky"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0020_raticate.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0020_raticate.json",
+        "spawnId": "raticate-alolan-6",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "raticate alolan",
+        "type": "pokemon"
       }
     ],
     [
@@ -256,18 +815,22 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "20-41",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_spooky"
+          ],
+          "exclude": [
+            "#cobblemon:is_deep_dark"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0020_raticate.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0020_raticate.json",
+        "spawnId": "raticate-alolan-7",
         "sky": {
           "canSeeSky": false
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "raticate alolan",
+        "type": "pokemon"
       }
     ],
     [
@@ -290,10 +853,13 @@
           ]
         },
         "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0020_raticate.json",
+        "spawnId": "raticate-alolan-4",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "pokemon": "raticate alolan",
+        "type": "pokemon"
       }
     ],
     [
@@ -316,9 +882,12 @@
           ]
         },
         "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0020_raticate.json",
+        "spawnId": "raticate-alolan-5",
         "sky": {
           "canSeeSky": false
-        }
+        },
+        "pokemon": "raticate alolan",
+        "type": "pokemon"
       }
     ],
     [
@@ -332,16 +901,22 @@
         "contexts": [
           "grounded"
         ],
+        "times": [
+          "night"
+        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_spooky"
           ]
         },
         "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0020_raticate.json",
+        "spawnId": "raticate-alolan-6",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "pokemon": "raticate alolan",
+        "type": "pokemon"
       }
     ],
     [
@@ -361,9 +936,12 @@
           ]
         },
         "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0020_raticate.json",
+        "spawnId": "raticate-alolan-7",
         "sky": {
           "canSeeSky": false
-        }
+        },
+        "pokemon": "raticate alolan",
+        "type": "pokemon"
       }
     ]
   ],
@@ -377,6 +955,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/raticate.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/raticate.json"
   ]
 }

@@ -2,19 +2,40 @@
   "id": "varoom",
   "dexnum": 965,
   "name": "Varoom",
+  "nameFr": "Vrombi",
+  "description": "On raconte qu'il est né lorsqu'un mystérieux Pokémon Poison a pris possession d'un moteur laissé à l'abandon dans une casse.",
   "primaryType": "steel",
   "secondaryType": "poison",
+  "primaryTypeFr": "Acier",
+  "secondaryTypeFr": "Poison",
+  "height": 10,
+  "weight": 350,
   "maleRatio": 0.5,
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 0.75,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "overcoat",
-    "h:slowstart"
+    {
+      "id": "overcoat",
+      "name": "Envelocape",
+      "hidden": false
+    },
+    {
+      "id": "slowstart",
+      "name": "Début Calme",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "mineral"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 45,
     "attack": 70,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 60,
   "experienceGroup": "medium_fast",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -40,100 +63,393 @@
         "item": "minecraft:iron_nugget",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:iron_nugget"
       },
       {
         "item": "cobblemon:black_sludge",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Boue Noire"
       },
       {
         "item": "cobblemon:shuca_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Jouca"
       }
     ]
   },
   "moves": [
-    "1:lick",
-    "1:poisongas",
-    "4:smog",
-    "7:taunt",
-    "10:assurance",
-    "13:sludge",
-    "17:gyroball",
-    "21:headbutt",
-    "25:screech",
-    "28:ironhead",
-    "32:swagger",
-    "36:poisonjab",
-    "41:uproar",
-    "46:spinout",
-    "50:gunkshot",
-    "egg:haze",
-    "egg:partingshot",
-    "egg:selfdestruct",
-    "egg:torment",
-    "egg:toxic",
-    "tm:acidspray",
-    "tm:assurance",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:curse",
-    "tm:doubleedge",
-    "tm:endure",
-    "tm:facade",
-    "tm:flashcannon",
-    "tm:gunkshot",
-    "tm:gyroball",
-    "tm:haze",
-    "tm:headbutt",
-    "tm:irondefense",
-    "tm:ironhead",
-    "tm:metalsound",
-    "tm:poisonjab",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:sandstorm",
-    "tm:scaryface",
-    "tm:screech",
-    "tm:selfdestruct",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:sludgewave",
-    "tm:steelbeam",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swagger",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:torment",
-    "tm:toxic",
-    "tm:toxicspikes",
-    "tm:uproar",
-    "tm:venoshock",
-    "tm:zenheadbutt",
-    "tutor:bulldoze",
-    "tutor:flashcannon",
-    "tutor:gunkshot",
-    "tutor:irondefense",
-    "tutor:ironhead",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:spikes",
-    "tutor:steelbeam",
-    "tutor:uproar",
-    "tutor:zenheadbutt"
+    {
+      "id": "lick",
+      "name": "Léchouille",
+      "category": "1"
+    },
+    {
+      "id": "poisongas",
+      "name": "Gaz Toxik",
+      "category": "1"
+    },
+    {
+      "id": "smog",
+      "name": "Purédpois",
+      "category": "4"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "7"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "10"
+    },
+    {
+      "id": "sludge",
+      "name": "Détritus",
+      "category": "13"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "17"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "21"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "25"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "28"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "32"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "36"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "41"
+    },
+    {
+      "id": "spinout",
+      "name": "Dérapage",
+      "category": "46"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "50"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "egg"
+    },
+    {
+      "id": "partingshot",
+      "name": "Dernier Mot",
+      "category": "egg"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "egg"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "egg"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "egg"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "tm"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "varoom_revavroom",
@@ -151,6 +467,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -160,19 +477,20 @@
         "rarity": "uncommon",
         "weight": 5.04,
         "levels": "5-30",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_badlands"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0965_varoom.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0965_varoom.json",
+        "spawnId": "varoom-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "varoom",
+        "type": "pokemon"
       }
     ],
     [
@@ -180,38 +498,40 @@
         "rarity": "uncommon",
         "weight": 5.04,
         "levels": "5-30",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0965_varoom.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0965_varoom.json",
+        "spawnId": "varoom-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 0.9,
-        "levels": "21-32",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
+        },
+        "spawnType": "grounded",
+        "pokemon": "varoom",
+        "baseBlocks": {
+          "selectors": [
+            "minecraft:white_concrete",
+            "minecraft:orange_concrete",
+            "minecraft:magenta_concrete",
+            "minecraft:light_blue_concrete",
+            "minecraft:yellow_concrete",
+            "minecraft:lime_concrete",
+            "minecraft:pink_concrete",
+            "minecraft:gray_concrete",
+            "minecraft:light_gray_concrete",
+            "minecraft:cyan_concrete",
+            "minecraft:purple_concrete",
+            "minecraft:blue_concrete",
+            "minecraft:brown_concrete",
+            "minecraft:green_concrete",
+            "minecraft:red_concrete",
+            "minecraft:black_concrete"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/uncommon_crystallized_desert.json"
+        "type": "pokemon"
       }
     ]
   ],
@@ -225,6 +545,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/varoom.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/varoom.json"
   ]
 }

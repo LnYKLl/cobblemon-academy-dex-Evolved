@@ -2,20 +2,45 @@
   "id": "shroodle",
   "dexnum": 944,
   "name": "Shroodle",
+  "nameFr": "Gribouraigne",
+  "description": "Ce Pokémon est d'un naturel doux, mais lorsqu'il se met en colère, il mord à l'aide de ses incisives acérées et imprégnées de venin paralysant.",
   "primaryType": "poison",
   "secondaryType": "normal",
+  "primaryTypeFr": "Poison",
+  "secondaryTypeFr": "Normal",
+  "height": 2,
+  "weight": 7,
   "maleRatio": 0.5,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 0.5,
+    "height": 0.5,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "unburden",
-    "pickpocket",
-    "h:prankster"
+    {
+      "id": "unburden",
+      "name": "Délestage",
+      "hidden": false
+    },
+    {
+      "id": "pickpocket",
+      "name": "Pickpocket",
+      "hidden": false
+    },
+    {
+      "id": "prankster",
+      "name": "Farceur",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 40,
     "attack": 65,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 58,
   "experienceGroup": "medium_slow",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,91 +68,399 @@
         "item": "cobblemon:nanab_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Nanab"
       }
     ]
   },
   "moves": [
-    "1:scratch",
-    "1:leer",
-    "5:acidspray",
-    "8:bite",
-    "8:furyswipes",
-    "11:switcheroo",
-    "14:poisonfang",
-    "18:flatter",
-    "21:slash",
-    "25:uturn",
-    "29:poisonjab",
-    "33:taunt",
-    "36:substitute",
-    "40:knockoff",
-    "45:gunkshot",
-    "egg:copycat",
-    "egg:crosspoison",
-    "egg:partingshot",
-    "egg:superfang",
-    "egg:swagger",
-    "egg:toxic",
-    "tm:acidspray",
-    "tm:acrobatics",
-    "tm:batonpass",
-    "tm:crosspoison",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:encore",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:fling",
-    "tm:foulplay",
-    "tm:gunkshot",
-    "tm:helpinghand",
-    "tm:knockoff",
-    "tm:metronome",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:nastyplot",
-    "tm:poisonjab",
-    "tm:pounce",
-    "tm:protect",
-    "tm:psychup",
-    "tm:raindance",
-    "tm:rest",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:sludgewave",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:superfang",
-    "tm:swagger",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:throatchop",
-    "tm:toxic",
-    "tm:trailblaze",
-    "tm:uturn",
-    "tm:venoshock",
-    "tutor:endeavor",
-    "tutor:foulplay",
-    "tutor:gunkshot",
-    "tutor:helpinghand",
-    "tutor:knockoff",
-    "tutor:mudslap",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:superfang",
-    "tutor:throatchop"
+    {
+      "id": "scratch",
+      "name": "Griffe",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "5"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "8"
+    },
+    {
+      "id": "furyswipes",
+      "name": "Combo-Griffe",
+      "category": "8"
+    },
+    {
+      "id": "switcheroo",
+      "name": "Passe-Passe",
+      "category": "11"
+    },
+    {
+      "id": "poisonfang",
+      "name": "Crochet Venin",
+      "category": "14"
+    },
+    {
+      "id": "flatter",
+      "name": "Flatterie",
+      "category": "18"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "21"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "25"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "29"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "33"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "36"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "40"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "45"
+    },
+    {
+      "id": "copycat",
+      "name": "Photocopie",
+      "category": "egg"
+    },
+    {
+      "id": "crosspoison",
+      "name": "Poison Croix",
+      "category": "egg"
+    },
+    {
+      "id": "partingshot",
+      "name": "Dernier Mot",
+      "category": "egg"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "egg"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "egg"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "egg"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "tm"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "crosspoison",
+      "name": "Poison Croix",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "metronome",
+      "name": "Métronome",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tm"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "shroodle_grafaiai",
@@ -143,6 +478,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -154,8 +490,8 @@
         "rarity": "common",
         "weight": 1.8,
         "levels": "4-29",
-        "contexts": [
-          "grounded"
+        "times": [
+          "night"
         ],
         "biomeTags": {
           "include": [
@@ -163,30 +499,15 @@
             "#cobblemon:is_tropical_island"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0944_shroodle.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0944_shroodle.json",
+        "spawnId": "shroodle-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 3.6,
-        "levels": "4-19",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/common_dark_swamp.json"
+        "spawnType": "grounded",
+        "pokemon": "shroodle",
+        "type": "pokemon"
       }
     ]
   ],
@@ -200,6 +521,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/shroodle.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/shroodle.json"
   ]
 }

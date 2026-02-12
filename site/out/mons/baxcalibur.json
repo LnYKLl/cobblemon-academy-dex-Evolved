@@ -2,21 +2,42 @@
   "id": "baxcalibur",
   "dexnum": 998,
   "name": "Baxcalibur",
+  "nameFr": "Glaivodo",
+  "description": "L'air qu'il crache est tellement froid qu'il peut geler instantanément du magma en fusion.",
   "primaryType": "dragon",
   "secondaryType": "ice",
+  "primaryTypeFr": "Dragon",
+  "secondaryTypeFr": "Glace",
+  "height": 21,
+  "weight": 2100,
   "maleRatio": 0.5,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 1.6,
+    "height": 3.4,
+    "fixed": false
+  },
   "labels": [
     "gen9",
     "powerhouse"
   ],
   "abilities": [
-    "thermalexchange",
-    "h:icebody"
+    {
+      "id": "thermalexchange",
+      "name": "Thermodynamique",
+      "hidden": false
+    },
+    {
+      "id": "icebody",
+      "name": "Corps Gel",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "dragon",
     "mineral"
   ],
+  "eggCycles": 40,
   "baseStats": {
     "hp": 115,
     "attack": 145,
@@ -33,8 +54,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 300,
   "experienceGroup": "slow",
   "catchRate": 10,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -42,105 +65,466 @@
         "item": "cobblemon:haban_berry",
         "percentage": 10.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Fraigo"
       }
     ]
   },
   "moves": [
-    "1:glaiverush",
-    "1:snowscape",
-    "1:breakingswipe",
-    "1:dragontail",
-    "1:iceshard",
-    "1:tackle",
-    "1:leer",
-    "6:icywind",
-    "12:dragonbreath",
-    "18:focusenergy",
-    "24:bite",
-    "29:icefang",
-    "35:dragonclaw",
-    "42:takedown",
-    "48:icebeam",
-    "55:crunch",
-    "62:iciclecrash",
-    "egg:aquatail",
-    "egg:dragonrush",
-    "egg:freezedry",
-    "egg:iciclespear",
-    "tm:aerialace",
-    "tm:aquatail",
-    "tm:avalanche",
-    "tm:blizzard",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:breakingswipe",
-    "tm:brickbreak",
-    "tm:bulldoze",
-    "tm:crunch",
-    "tm:dig",
-    "tm:doubleedge",
-    "tm:dracometeor",
-    "tm:dragoncheer",
-    "tm:dragonclaw",
-    "tm:dragondance",
-    "tm:dragonpulse",
-    "tm:dragontail",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:focusenergy",
-    "tm:gigaimpact",
-    "tm:helpinghand",
-    "tm:highhorsepower",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icefang",
-    "tm:iciclespear",
-    "tm:icywind",
-    "tm:ironhead",
-    "tm:outrage",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:scaleshot",
-    "tm:scaryface",
-    "tm:sleeptalk",
-    "tm:snowscape",
-    "tm:stompingtantrum",
-    "tm:substitute",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thunderfang",
-    "tm:zenheadbutt",
-    "tutor:aerialace",
-    "tutor:aquatail",
-    "tutor:bulldoze",
-    "tutor:dracometeor",
-    "tutor:dragonpulse",
-    "tutor:falseswipe",
-    "tutor:focusenergy",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:highhorsepower",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icefang",
-    "tutor:icywind",
-    "tutor:ironhead",
-    "tutor:outrage",
-    "tutor:rest",
-    "tutor:scaleshot",
-    "tutor:sleeptalk",
-    "tutor:stompingtantrum",
-    "tutor:thunderfang",
-    "tutor:zenheadbutt"
+    {
+      "id": "glaiverush",
+      "name": "Charge Glaive",
+      "category": "1"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "1"
+    },
+    {
+      "id": "breakingswipe",
+      "name": "Abattage",
+      "category": "1"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "1"
+    },
+    {
+      "id": "iceshard",
+      "name": "Éclats Glace",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "6"
+    },
+    {
+      "id": "dragonbreath",
+      "name": "Draco-Souffle",
+      "category": "12"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "18"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "24"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "29"
+    },
+    {
+      "id": "dragonclaw",
+      "name": "Draco-Griffe",
+      "category": "35"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "42"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "48"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "55"
+    },
+    {
+      "id": "iciclecrash",
+      "name": "Chute Glace",
+      "category": "62"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "egg"
+    },
+    {
+      "id": "dragonrush",
+      "name": "Draco-Charge",
+      "category": "egg"
+    },
+    {
+      "id": "freezedry",
+      "name": "Lyophilisation",
+      "category": "egg"
+    },
+    {
+      "id": "iciclespear",
+      "name": "Stalactite",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "breakingswipe",
+      "name": "Abattage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tm"
+    },
+    {
+      "id": "dragoncheer",
+      "name": "Cri Draconique",
+      "category": "tm"
+    },
+    {
+      "id": "dragonclaw",
+      "name": "Draco-Griffe",
+      "category": "tm"
+    },
+    {
+      "id": "dragondance",
+      "name": "Danse Draco",
+      "category": "tm"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tm"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tm"
+    },
+    {
+      "id": "iciclespear",
+      "name": "Stalactite",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "dracometeor",
+      "name": "Draco-Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "dragonpulse",
+      "name": "Draco-Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "focusenergy",
+      "name": "Puissance",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "arctibax",
   "spawns": [
     [
       {
@@ -148,7 +532,7 @@
           "natural"
         ],
         "rarity": "ultra-rare",
-        "weight": 5.0,
+        "weight": 4.0,
         "levels": "58-67",
         "contexts": [
           "grounded"
@@ -158,14 +542,42 @@
             "#cobblemon:is_glacial"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/baxcalibur.json",
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0998_baxcalibur.json",
+        "spawnId": "baxcalibur-1",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "pokemon": "baxcalibur",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "ultra-rare",
+        "weight": 4.0,
+        "levels": "58-67",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_glacial"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0998_baxcalibur.json",
+        "spawnId": "ccc-baxcalibur-1",
+        "sky": {
+          "canSeeSky": true
+        },
+        "pokemon": "baxcalibur",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/genomons/baxcalibur.png",
@@ -177,6 +589,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/baxcalibur.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/baxcalibur.json"
   ]
 }

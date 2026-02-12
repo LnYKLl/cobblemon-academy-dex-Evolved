@@ -2,19 +2,40 @@
   "id": "spiritomb",
   "dexnum": 442,
   "name": "Spiritomb",
+  "nameFr": "Spiritomb",
+  "description": "Il fut emprisonné dans la fissure d'une clé de voûte étrange en guise de punition il y a 500 ans.",
   "primaryType": "ghost",
   "secondaryType": "dark",
+  "primaryTypeFr": "Spectre",
+  "secondaryTypeFr": "Ténèbres",
+  "height": 10,
+  "weight": 1080,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 0.8,
+    "height": 0.8,
+    "fixed": false
+  },
   "labels": [
     "gen4"
   ],
   "abilities": [
-    "pressure",
-    "h:infiltrator"
+    {
+      "id": "pressure",
+      "name": "Pression",
+      "hidden": false
+    },
+    {
+      "id": "infiltrator",
+      "name": "Infiltration",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "amorphous"
   ],
+  "eggCycles": 30,
   "baseStats": {
     "hp": 50,
     "attack": 92,
@@ -31,8 +52,10 @@
     "special_defence": 1,
     "speed": 0
   },
+  "baseExperienceYield": 170,
   "experienceGroup": "medium_fast",
   "catchRate": 100,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -40,133 +63,653 @@
         "item": "cobblemon:spell_tag",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Rune Sort"
       },
       {
         "item": "cobblemon:smoke_ball",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Boule Fumée"
       }
     ]
   },
   "moves": [
-    "1:pursuit",
-    "1:confuseray",
-    "1:feintattack",
-    "1:nightshade",
-    "5:shadowsneak",
-    "10:spite",
-    "15:payback",
-    "20:nastyplot",
-    "25:hex",
-    "30:memento",
-    "35:suckerpunch",
-    "40:curse",
-    "45:shadowball",
-    "50:darkpulse",
-    "55:hypnosis",
-    "60:dreameater",
-    "egg:allyswitch",
-    "egg:captivate",
-    "egg:destinybond",
-    "egg:disable",
-    "egg:grudge",
-    "egg:nightmare",
-    "egg:painsplit",
-    "egg:shadowsneak",
-    "egg:smokescreen",
-    "tm:allyswitch",
-    "tm:bodyslam",
-    "tm:burningjealousy",
-    "tm:calmmind",
-    "tm:captivate",
-    "tm:confuseray",
-    "tm:curse",
-    "tm:darkpulse",
-    "tm:dreameater",
-    "tm:embargo",
-    "tm:endure",
-    "tm:facade",
-    "tm:flash",
-    "tm:foulplay",
-    "tm:gigaimpact",
-    "tm:helpinghand",
-    "tm:hex",
-    "tm:hyperbeam",
-    "tm:icywind",
-    "tm:imprison",
-    "tm:infestation",
-    "tm:lashout",
-    "tm:nastyplot",
-    "tm:nightshade",
-    "tm:ominouswind",
-    "tm:painsplit",
-    "tm:payback",
-    "tm:phantomforce",
-    "tm:poltergeist",
-    "tm:protect",
-    "tm:psybeam",
-    "tm:psychic",
-    "tm:psyshock",
-    "tm:quash",
-    "tm:raindance",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:rocktomb",
-    "tm:scaryface",
-    "tm:shadowball",
-    "tm:shockwave",
-    "tm:silverwind",
-    "tm:skillswap",
-    "tm:sleeptalk",
-    "tm:snarl",
-    "tm:snatch",
-    "tm:spite",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:sunnyday",
-    "tm:taunt",
-    "tm:telekinesis",
-    "tm:terablast",
-    "tm:thief",
-    "tm:torment",
-    "tm:toxic",
-    "tm:trick",
-    "tm:trickroom",
-    "tm:willowisp",
-    "tm:wonderroom",
-    "tutor:allyswitch",
-    "tutor:burningjealousy",
-    "tutor:calmmind",
-    "tutor:darkpulse",
-    "tutor:foulplay",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:icywind",
-    "tutor:lashout",
-    "tutor:ominouswind",
-    "tutor:painsplit",
-    "tutor:poltergeist",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:shadowball",
-    "tutor:shockwave",
-    "tutor:skillswap",
-    "tutor:sleeptalk",
-    "tutor:snarl",
-    "tutor:snatch",
-    "tutor:spite",
-    "tutor:suckerpunch",
-    "tutor:telekinesis",
-    "tutor:trick",
-    "tutor:wonderroom"
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "1"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "1"
+    },
+    {
+      "id": "feintattack",
+      "name": "Feinte",
+      "category": "1"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "1"
+    },
+    {
+      "id": "shadowsneak",
+      "name": "Ombre Portée",
+      "category": "5"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "10"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "15"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "20"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "25"
+    },
+    {
+      "id": "memento",
+      "name": "Souvenir",
+      "category": "30"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "35"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "40"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "45"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "50"
+    },
+    {
+      "id": "hypnosis",
+      "name": "Hypnose",
+      "category": "55"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "60"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "egg"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "egg"
+    },
+    {
+      "id": "destinybond",
+      "name": "Lien du Destin",
+      "category": "egg"
+    },
+    {
+      "id": "disable",
+      "name": "Entrave",
+      "category": "egg"
+    },
+    {
+      "id": "grudge",
+      "name": "Rancune",
+      "category": "egg"
+    },
+    {
+      "id": "nightmare",
+      "name": "Cauchemar",
+      "category": "egg"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "egg"
+    },
+    {
+      "id": "shadowsneak",
+      "name": "Ombre Portée",
+      "category": "egg"
+    },
+    {
+      "id": "smokescreen",
+      "name": "Brouillard",
+      "category": "egg"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "embargo",
+      "name": "Embargo",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "tm"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "phantomforce",
+      "name": "Hantise",
+      "category": "tm"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "tm"
+    },
+    {
+      "id": "quash",
+      "name": "À la Queue",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "silverwind",
+      "name": "Vent Argenté",
+      "category": "tm"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tutor"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "legacy"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -176,19 +719,20 @@
         "rarity": "uncommon",
         "weight": 60.0,
         "levels": "24-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_deep_dark"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0442_spiritomb.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0442_spiritomb.json",
+        "spawnId": "spiritomb-1",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "spiritomb",
+        "type": "pokemon"
       }
     ],
     [
@@ -196,21 +740,22 @@
         "rarity": "rare",
         "weight": 100.0,
         "levels": "24-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0442_spiritomb.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0442_spiritomb.json",
+        "spawnId": "spiritomb-2",
         "structures": [
           "#cobblemon:ruin"
         ],
         "yLevel": {
           "minY": 48
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "spiritomb",
+        "type": "pokemon"
       }
     ],
     [
@@ -218,22 +763,23 @@
         "rarity": "uncommon",
         "weight": 100.0,
         "levels": "24-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0442_spiritomb.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0442_spiritomb.json",
+        "spawnId": "spiritomb-3",
         "structures": [
           "#cobblemon:ruins/arch"
         ],
         "yLevel": {
           "minY": -37,
           "maxY": 10
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "spiritomb",
+        "type": "pokemon"
       }
     ],
     [
@@ -244,18 +790,19 @@
         "rarity": "rare",
         "weight": 100.0,
         "levels": "24-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0442_spiritomb.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0442_spiritomb.json",
+        "spawnId": "spiritomb-4",
         "yLevel": {
           "minY": 48
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "spiritomb",
+        "type": "pokemon"
       }
     ],
     [
@@ -267,21 +814,22 @@
         "rarity": "rare",
         "weight": 100.0,
         "levels": "24-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_desert"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0442_spiritomb.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0442_spiritomb.json",
+        "spawnId": "spiritomb-5",
         "sky": {
           "canSeeSky": false
         },
         "yLevel": {
           "minY": 48
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "spiritomb",
+        "type": "pokemon"
       }
     ],
     [
@@ -293,21 +841,22 @@
         "rarity": "rare",
         "weight": 100.0,
         "levels": "24-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_jungle"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0442_spiritomb.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0442_spiritomb.json",
+        "spawnId": "spiritomb-6",
         "sky": {
           "canSeeSky": false
         },
         "yLevel": {
           "minY": 48
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "spiritomb",
+        "type": "pokemon"
       }
     ],
     [
@@ -315,34 +864,19 @@
         "rarity": "rare",
         "weight": 10.0,
         "levels": "24-49",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "the_bumblezone:howling_constructs"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0442_spiritomb.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0442_spiritomb.json",
+        "spawnId": "spiritomb-7",
+        "spawnType": "grounded",
+        "pokemon": "spiritomb",
+        "excludeStructures": [
+          "#the_bumblezone:sempiternal_sanctums"
         ],
-        "rarity": "ultra-rare",
-        "weight": 8.7,
-        "levels": "31-48",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/ultra-rare_dark_swamp.json"
+        "type": "pokemon"
       }
     ]
   ],
@@ -356,6 +890,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation4/spiritomb.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation4/spiritomb.json"
   ]
 }

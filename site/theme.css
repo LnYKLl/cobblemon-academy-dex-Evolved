@@ -1,62 +1,451 @@
 :root {
   color-scheme: light dark;
+  --primary: #6366f1;
+  --primary-light: #818cf8;
+  --primary-dark: #4f46e5;
+  --accent: #f59e0b;
+  --accent-light: #fbbf24;
+  --surface: #ffffff;
+  --surface-hover: #f8fafc;
+  --bg: #f1f5f9;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --success: #10b981;
+  --danger: #ef4444;
 }
 
-/* base */
+html.dark {
+  --primary: #818cf8;
+  --primary-light: #a5b4fc;
+  --primary-dark: #6366f1;
+  --accent: #fbbf24;
+  --accent-light: #fcd34d;
+  --surface: #1e293b;
+  --surface-hover: #334155;
+  --bg: #0f172a;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border: #334155;
+  --success: #34d399;
+  --danger: #f87171;
+}
+
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+body {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Glassmorphism cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+html.dark .glass-card {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Header gradient */
+.header-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+}
+
+/* Navigation pills */
+.nav-pill {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.nav-pill:hover, .nav-pill.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+/* Pokemon type colors */
+.type-normal { background: linear-gradient(135deg, #a8a878 0%, #8a8a5c 100%); color: white; }
+.type-fire { background: linear-gradient(135deg, #f08030 0%, #dd6610 100%); color: white; }
+.type-water { background: linear-gradient(135deg, #6890f0 0%, #4a6fc4 100%); color: white; }
+.type-electric { background: linear-gradient(135deg, #f8d030 0%, #dbb620 100%); color: #333; }
+.type-grass { background: linear-gradient(135deg, #78c850 0%, #5ca935 100%); color: white; }
+.type-ice { background: linear-gradient(135deg, #98d8d8 0%, #7cc4c4 100%); color: #333; }
+.type-fighting { background: linear-gradient(135deg, #c03028 0%, #9d1f18 100%); color: white; }
+.type-poison { background: linear-gradient(135deg, #a040a0 0%, #803380 100%); color: white; }
+.type-ground { background: linear-gradient(135deg, #e0c068 0%, #c4a545 100%); color: #333; }
+.type-flying { background: linear-gradient(135deg, #a890f0 0%, #8a6be0 100%); color: white; }
+.type-psychic { background: linear-gradient(135deg, #f85888 0%, #e63a6a 100%); color: white; }
+.type-bug { background: linear-gradient(135deg, #a8b820 0%, #8a9a1b 100%); color: white; }
+.type-rock { background: linear-gradient(135deg, #b8a038 0%, #9a842e 100%); color: white; }
+.type-ghost { background: linear-gradient(135deg, #705898 0%, #554374 100%); color: white; }
+.type-dragon { background: linear-gradient(135deg, #7038f8 0%, #5a2dc7 100%); color: white; }
+.type-dark { background: linear-gradient(135deg, #705848 0%, #513f34 100%); color: white; }
+.type-steel { background: linear-gradient(135deg, #b8b8d0 0%, #9999b3 100%); color: #333; }
+.type-fairy { background: linear-gradient(135deg, #ee99ac 0%, #e07a91 100%); color: #333; }
+
+/* Stat bars */
+.stat-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.stat-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.stat-hp { background: linear-gradient(90deg, #ff5959, #ff3333); }
+.stat-attack { background: linear-gradient(90deg, #f5ac78, #f08030); }
+.stat-defence { background: linear-gradient(90deg, #fae078, #f8d030); }
+.stat-special_attack { background: linear-gradient(90deg, #9db7f5, #6890f0); }
+.stat-special_defence { background: linear-gradient(90deg, #a7db8d, #78c850); }
+.stat-speed { background: linear-gradient(90deg, #fa92b2, #f85888); }
+
+/* Search input styling */
+.search-input {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 1rem;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  width: 100%;
+  font-size: 1rem;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Select styling */
+.styled-select {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.styled-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Card hover effects */
+.pokemon-card {
+  background: var(--surface);
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary);
+}
+
+html.dark .pokemon-card:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Spawn/biome chips */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.chip-primary {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--primary);
+}
+
+.chip-success {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--success);
+}
+
+.chip-danger {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--danger);
+}
+
+.chip-neutral {
+  background: var(--border);
+  color: var(--text-muted);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--surface-hover);
+  border-color: var(--primary);
+}
+
+/* Snack/Bait category cards */
+.bait-card {
+  background: var(--surface);
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  padding: 1rem;
+  transition: all 0.2s ease;
+}
+
+.bait-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+}
+
+.bait-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.bait-item:hover {
+  background: var(--surface-hover);
+}
+
+/* Dark mode specific overrides */
 html.dark body {
-  background: #0b1220;
-  color: #e5e7eb;
+  background: var(--bg);
+  color: var(--text);
 }
 
-/* cards / surfaces / rings */
 html.dark .bg-white {
-  background-color: #0f172a !important;
+  background-color: var(--surface) !important;
 }
+
 html.dark .ring-slate-200 {
-  box-shadow: 0 0 0 1px #1e293b inset;
-  border-color: #1e293b !important;
+  box-shadow: 0 0 0 1px var(--border) inset;
+  border-color: var(--border) !important;
 }
+
 html.dark .hover\:bg-slate-50:hover {
-  background-color: #0c162a !important;
+  background-color: var(--surface-hover) !important;
 }
 
-/* slate palette (texts + subtle surfaces) */
 html.dark .text-slate-600 {
-  color: #94a3b8 !important;
+  color: var(--text-muted) !important;
 }
+
 html.dark .text-slate-500 {
-  color: #9aa4b2 !important;
+  color: var(--text-muted) !important;
 }
+
 html.dark .bg-slate-100 {
-  background-color: #0f1b31 !important;
+  background-color: var(--surface) !important;
 }
+
 html.dark .bg-slate-200 {
-  background-color: #1e293b !important;
-  color: #e5e7eb !important;
+  background-color: var(--border) !important;
+  color: var(--text) !important;
 }
 
-/* pills/chips you use for types/labels */
 html.dark .bg-emerald-100 {
-  background-color: #064e3b !important;
-  color: #a7f3d0 !important;
+  background-color: rgba(16, 185, 129, 0.2) !important;
+  color: var(--success) !important;
 }
+
 html.dark .bg-indigo-100 {
-  background-color: #1e1b4b !important;
-  color: #a5b4fc !important;
+  background-color: rgba(99, 102, 241, 0.2) !important;
+  color: var(--primary-light) !important;
 }
 
-/* accents you use */
 html.dark .text-indigo-700 {
-  color: #a5b4fc !important;
-}
-html.dark .bg-indigo-500 {
-  background-color: #6366f1 !important;
+  color: var(--primary-light) !important;
 }
 
-/* form fields */
+html.dark .bg-indigo-500 {
+  background-color: var(--primary) !important;
+}
+
+html.dark .bg-rose-100 {
+  background-color: rgba(239, 68, 68, 0.2) !important;
+  color: var(--danger) !important;
+}
+
 html.dark input,
 html.dark select {
-  background: #0f172a;
-  color: #e5e7eb;
-  border-color: #1e293b;
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.3s ease forwards;
+}
+
+/* Pokemon sprite styling */
+.pokemon-sprite {
+  background: linear-gradient(135deg, var(--surface) 0%, var(--border) 100%);
+  border-radius: 50%;
+  padding: 0.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Section headers */
+.section-header {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-header::before {
+  content: '';
+  width: 4px;
+  height: 1.25rem;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* Info boxes */
+.info-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.info-box-header {
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--primary);
+  transform: rotate(15deg);
+}
+
+/* Loading skeleton */
+.skeleton {
+  background: linear-gradient(90deg, var(--border) 25%, var(--surface-hover) 50%, var(--border) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 0.5rem;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }

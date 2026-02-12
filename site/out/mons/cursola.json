@@ -2,20 +2,41 @@
   "id": "cursola",
   "dexnum": 864,
   "name": "Cursola",
+  "nameFr": "Corayôme",
+  "description": "Son énergie spectrale accrue s'est répandue hors de sa coquille. Il protège l'âme de son noyau avec son corps spirituel.",
   "primaryType": "ghost",
   "secondaryType": "",
+  "primaryTypeFr": "Spectre",
+  "secondaryTypeFr": "",
+  "height": 10,
+  "weight": 4,
   "maleRatio": 0.25,
+  "baseScale": 1.0,
+  "hitbox": {
+    "width": 0.9,
+    "height": 1.9,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "weakarmor",
-    "h:perishbody"
+    {
+      "id": "weakarmor",
+      "name": "Armurouillée",
+      "hidden": false
+    },
+    {
+      "id": "perishbody",
+      "name": "Corps Condamné",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_1",
     "water_3"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 60,
     "attack": 95,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 179,
   "experienceGroup": "fast",
   "catchRate": 30,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,203 +64,827 @@
         "item": "cobblemon:kasib_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Sédra"
       }
     ]
   },
   "moves": [
-    "1:perishsong",
-    "1:tackle",
-    "1:harden",
-    "1:astonish",
-    "1:disable",
-    "15:spite",
-    "20:ancientpower",
-    "25:hex",
-    "30:curse",
-    "35:strengthsap",
-    "40:powergem",
-    "45:nightshade",
-    "50:grudge",
-    "55:mirrorcoat",
-    "egg:confuseray",
-    "egg:destinybond",
-    "egg:haze",
-    "egg:headsmash",
-    "egg:naturepower",
-    "egg:waterpulse",
-    "tm:amnesia",
-    "tm:ancientpower",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:brine",
-    "tm:bulldoze",
-    "tm:burningjealousy",
-    "tm:calmmind",
-    "tm:confuseray",
-    "tm:curse",
-    "tm:dig",
-    "tm:earthpower",
-    "tm:earthquake",
-    "tm:endure",
-    "tm:facade",
-    "tm:gigadrain",
-    "tm:gigaimpact",
-    "tm:hail",
-    "tm:haze",
-    "tm:hex",
-    "tm:hydropump",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:iciclespear",
-    "tm:icywind",
-    "tm:irondefense",
-    "tm:leechlife",
-    "tm:lightscreen",
-    "tm:liquidation",
-    "tm:meteorbeam",
-    "tm:naturepower",
-    "tm:nightshade",
-    "tm:pinmissile",
-    "tm:poltergeist",
-    "tm:powergem",
-    "tm:protect",
-    "tm:psychic",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:revenge",
-    "tm:rockblast",
-    "tm:rockslide",
-    "tm:rocktomb",
-    "tm:safeguard",
-    "tm:sandstorm",
-    "tm:scald",
-    "tm:screech",
-    "tm:selfdestruct",
-    "tm:shadowball",
-    "tm:sleeptalk",
-    "tm:spite",
-    "tm:stealthrock",
-    "tm:stompingtantrum",
-    "tm:stoneedge",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:surf",
-    "tm:terablast",
-    "tm:throatchop",
-    "tm:waterpulse",
-    "tm:whirlpool",
-    "tm:willowisp",
-    "tutor:ancientpower",
-    "tutor:bulldoze",
-    "tutor:burningjealousy",
-    "tutor:calmmind",
-    "tutor:earthpower",
-    "tutor:gigadrain",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:irondefense",
-    "tutor:leechlife",
-    "tutor:liquidation",
-    "tutor:meteorbeam",
-    "tutor:poltergeist",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:shadowball",
-    "tutor:sleeptalk",
-    "tutor:spite",
-    "tutor:stealthrock",
-    "tutor:stompingtantrum",
-    "tutor:stoneedge",
-    "tutor:throatchop",
-    "tutor:waterpulse"
+    {
+      "id": "perishsong",
+      "name": "Requiem",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "harden",
+      "name": "Armure",
+      "category": "1"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "1"
+    },
+    {
+      "id": "disable",
+      "name": "Entrave",
+      "category": "1"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "15"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "20"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "25"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "30"
+    },
+    {
+      "id": "strengthsap",
+      "name": "Vole-Force",
+      "category": "35"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "40"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "45"
+    },
+    {
+      "id": "grudge",
+      "name": "Rancune",
+      "category": "50"
+    },
+    {
+      "id": "mirrorcoat",
+      "name": "Voile Miroir",
+      "category": "55"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "egg"
+    },
+    {
+      "id": "destinybond",
+      "name": "Lien du Destin",
+      "category": "egg"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "egg"
+    },
+    {
+      "id": "headsmash",
+      "name": "Fracass'Tête",
+      "category": "egg"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "egg"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "egg"
+    },
+    {
+      "id": "amnesia",
+      "name": "Amnésie",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "iciclespear",
+      "name": "Stalactite",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tm"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tm"
+    },
+    {
+      "id": "naturepower",
+      "name": "Force Nature",
+      "category": "tm"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "tm"
+    },
+    {
+      "id": "pinmissile",
+      "name": "Dard-Nuée",
+      "category": "tm"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tm"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tutor"
+    },
+    {
+      "id": "liquidation",
+      "name": "Aqua-Brèche",
+      "category": "tutor"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stompingtantrum",
+      "name": "Trépignement",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "corsola galarian",
   "spawns": [
     [
       {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 3.1,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/rare_dark_swamp.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
         "rarity": "uncommon",
-        "weight": 2.1,
-        "levels": "24-41",
-        "contexts": [
-          "submerged"
-        ],
+        "weight": 0.32,
+        "levels": "38-51",
         "biomeTags": {
           "include": [
-            "eternal_starlight:spiral_kelp_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/spiral_kelp_forest/uncommon_spiral_kelp_forest.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "underwater"
-        ],
-        "rarity": "rare",
-        "weight": 6.0,
-        "levels": "28-45",
-        "contexts": [
-          "submerged"
-        ],
-        "biomeTags": {
-          "include": [
-            "#minecraft:is_ocean"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/cursola.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "underwater"
-        ],
-        "rarity": "uncommon",
-        "weight": 7.2,
-        "levels": "15-60",
-        "contexts": [
-          "submerged"
-        ],
-        "biomeTags": {
-          "include": [
+            "#cobblemon:is_beach",
             "#cobblemon:is_warm_ocean"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/cursola.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0864_cursola.json",
+        "spawnId": "cursola-6",
+        "sky": {
+          "canSeeSky": true
+        },
+        "spawnType": "fishing",
+        "pokemon": "cursola",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "rarity": "common",
+        "weight": 0.2,
+        "levels": "38-51",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_beach",
+            "#cobblemon:is_warm_ocean"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0864_cursola.json",
+        "spawnId": "cursola-7",
+        "sky": {
+          "canSeeSky": true
+        },
+        "spawnType": "fishing",
+        "pokemon": "cursola",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 3.0,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      }
+    ],
+    [
+      {
+        "rarity": "uncommon",
+        "weight": 0.32,
+        "levels": "38-51",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_beach",
+            "#cobblemon:is_warm_ocean"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0864_cursola.json",
+        "spawnId": "cursola-8",
+        "sky": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "fishing",
+        "pokemon": "cursola",
+        "excludeLure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "rarity": "common",
+        "weight": 0.2,
+        "levels": "38-51",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_beach",
+            "#cobblemon:is_warm_ocean"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0864_cursola.json",
+        "spawnId": "cursola-9",
+        "sky": {
+          "canSeeSky": false,
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "fishing",
+        "pokemon": "cursola",
+        "lure": {
+          "minLureLevel": 1
+        },
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 3.0,
+          "condition": {
+            "minLureLevel": 3
+          }
+        }
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "uncommon",
+        "weight": 0.32,
+        "levels": "38-51",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_beach"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0864_cursola.json",
+        "spawnId": "cursola-1",
+        "spawnType": "grounded",
+        "pokemon": "cursola",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "common",
+        "weight": 1.0,
+        "levels": "38-51",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_overworld"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0864_cursola.json",
+        "spawnId": "cursola-2",
+        "nearbyBlocks": {
+          "selectors": [
+            "#cobblemon:dead_coral"
+          ],
+          "resolved": [
+            "minecraft:dead_brain_coral",
+            "minecraft:dead_brain_coral_block",
+            "minecraft:dead_bubble_coral",
+            "minecraft:dead_bubble_coral_block",
+            "minecraft:dead_fire_coral",
+            "minecraft:dead_fire_coral_block",
+            "minecraft:dead_horn_coral",
+            "minecraft:dead_horn_coral_block",
+            "minecraft:dead_tube_coral",
+            "minecraft:dead_tube_coral_block"
+          ]
+        },
+        "spawnType": "grounded",
+        "pokemon": "cursola",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "rarity": "common",
+        "weight": 1.0,
+        "levels": "38-51",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_overworld"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0864_cursola.json",
+        "spawnId": "cursola-3",
+        "nearbyBlocks": {
+          "selectors": [
+            "#cobblemon:dead_coral"
+          ],
+          "resolved": [
+            "minecraft:dead_brain_coral",
+            "minecraft:dead_brain_coral_block",
+            "minecraft:dead_bubble_coral",
+            "minecraft:dead_bubble_coral_block",
+            "minecraft:dead_fire_coral",
+            "minecraft:dead_fire_coral_block",
+            "minecraft:dead_horn_coral",
+            "minecraft:dead_horn_coral_block",
+            "minecraft:dead_tube_coral",
+            "minecraft:dead_tube_coral_block"
+          ]
+        },
+        "spawnType": "seafloor",
+        "pokemon": "cursola",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "uncommon",
+        "weight": 0.96,
+        "levels": "38-51",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:nether/is_quartz"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0864_cursola.json",
+        "spawnId": "cursola-4",
+        "spawnType": "grounded",
+        "pokemon": "cursola",
+        "baseBlocks": {
+          "selectors": [
+            "minecraft:quartz_block"
+          ]
+        },
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "common",
+        "weight": 1.0,
+        "levels": "38-51",
+        "biomeTags": {
+          "include": [
+            "byg:warped_desert"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0864_cursola.json",
+        "spawnId": "cursola-5",
+        "spawnType": "grounded",
+        "pokemon": "cursola",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/cursola.png"
@@ -247,6 +894,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/cursola.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/cursola.json"
   ]
 }

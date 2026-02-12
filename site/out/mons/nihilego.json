@@ -2,20 +2,41 @@
   "id": "nihilego",
   "dexnum": 793,
   "name": "Nihilego",
+  "nameFr": "Zéroïd",
+  "description": "Il est venu dans ce monde à travers une Ultra-Brèche. Tel un parasite, il aurait besoin d'un hôte, Pokémon ou humain, pour survivre.",
   "primaryType": "rock",
   "secondaryType": "poison",
+  "primaryTypeFr": "Roche",
+  "secondaryTypeFr": "Poison",
+  "height": 12,
+  "weight": 555,
   "maleRatio": -1,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 1,
+    "height": 4,
+    "fixed": false
+  },
   "labels": [
     "gen7",
     "ultra_beast"
   ],
   "abilities": [
-    "beastboost",
-    "h:beastboost"
+    {
+      "id": "beastboost",
+      "name": "Boost Chimère",
+      "hidden": false
+    },
+    {
+      "id": "beastboost",
+      "name": "Boost Chimère",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 120,
   "baseStats": {
     "hp": 109,
     "attack": 53,
@@ -32,8 +53,10 @@
     "special_defence": 3,
     "speed": 0
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
   "catchRate": 45,
+  "baseFriendship": 0,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,116 +64,598 @@
         "item": "minecraft:echo_shard",
         "percentage": null,
         "quantityRange": "1-3",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:echo_shard"
       }
     ]
   },
   "moves": [
-    "1:constrict",
-    "1:pound",
-    "1:psywave",
-    "1:wrap",
-    "5:acid",
-    "10:tickle",
-    "15:acidspray",
-    "20:clearsmog",
-    "25:powersplit",
-    "25:guardsplit",
-    "30:venoshock",
-    "35:headbutt",
-    "40:toxicspikes",
-    "45:venomdrench",
-    "50:powergem",
-    "55:stealthrock",
-    "60:mirrorcoat",
-    "65:wonderroom",
-    "70:headsmash",
-    "tm:acidspray",
-    "tm:allyswitch",
-    "tm:bind",
-    "tm:bodyslam",
-    "tm:brutalswing",
-    "tm:chargebeam",
-    "tm:corrosivegas",
-    "tm:crosspoison",
-    "tm:dazzlinggleam",
-    "tm:echoedvoice",
-    "tm:endure",
-    "tm:facade",
-    "tm:foulplay",
-    "tm:grassknot",
-    "tm:gunkshot",
-    "tm:headbutt",
-    "tm:hex",
-    "tm:ironhead",
-    "tm:knockoff",
-    "tm:lightscreen",
-    "tm:magiccoat",
-    "tm:meteorbeam",
-    "tm:painsplit",
-    "tm:poisonjab",
-    "tm:powergem",
-    "tm:protect",
-    "tm:psychic",
-    "tm:psyshock",
-    "tm:rest",
-    "tm:rockslide",
-    "tm:rocktomb",
-    "tm:roleplay",
-    "tm:safeguard",
-    "tm:sandstorm",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:sludgewave",
-    "tm:spite",
-    "tm:stealthrock",
-    "tm:substitute",
-    "tm:telekinesis",
-    "tm:terablast",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:toxicspikes",
-    "tm:trickroom",
-    "tm:venomdrench",
-    "tm:venoshock",
-    "tm:wonderroom",
-    "tm:worryseed",
-    "tm:zenheadbutt",
-    "tutor:allyswitch",
-    "tutor:bind",
-    "tutor:chargebeam",
-    "tutor:corrosivegas",
-    "tutor:dazzlinggleam",
-    "tutor:foulplay",
-    "tutor:gunkshot",
-    "tutor:ironhead",
-    "tutor:knockoff",
-    "tutor:magiccoat",
-    "tutor:meteorbeam",
-    "tutor:painsplit",
-    "tutor:poisonjab",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:roleplay",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:spikes",
-    "tutor:spite",
-    "tutor:stealthrock",
-    "tutor:telekinesis",
-    "tutor:thunderbolt",
-    "tutor:trick",
-    "tutor:wonderroom",
-    "tutor:worryseed",
-    "tutor:zenheadbutt"
+    {
+      "id": "constrict",
+      "name": "Constriction",
+      "category": "1"
+    },
+    {
+      "id": "pound",
+      "name": "Écras'Face",
+      "category": "1"
+    },
+    {
+      "id": "psywave",
+      "name": "Vague Psy",
+      "category": "1"
+    },
+    {
+      "id": "wrap",
+      "name": "Ligotage",
+      "category": "1"
+    },
+    {
+      "id": "acid",
+      "name": "Acide",
+      "category": "5"
+    },
+    {
+      "id": "tickle",
+      "name": "Chatouille",
+      "category": "10"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "15"
+    },
+    {
+      "id": "clearsmog",
+      "name": "Bain de Smog",
+      "category": "20"
+    },
+    {
+      "id": "powersplit",
+      "name": "Partage Force",
+      "category": "25"
+    },
+    {
+      "id": "guardsplit",
+      "name": "Partage Garde",
+      "category": "25"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "30"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "35"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "40"
+    },
+    {
+      "id": "venomdrench",
+      "name": "Piège de Venin",
+      "category": "45"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "50"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "55"
+    },
+    {
+      "id": "mirrorcoat",
+      "name": "Voile Miroir",
+      "category": "60"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "65"
+    },
+    {
+      "id": "headsmash",
+      "name": "Fracass'Tête",
+      "category": "70"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brutalswing",
+      "name": "Centrifugifle",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "corrosivegas",
+      "name": "Gaz Corrosif",
+      "category": "tm"
+    },
+    {
+      "id": "crosspoison",
+      "name": "Poison Croix",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tm"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "venomdrench",
+      "name": "Piège de Venin",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tm"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "corrosivegas",
+      "name": "Gaz Corrosif",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "gunkshot",
+      "name": "Détricanon",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "roleplay",
+      "name": "Imitation",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "wonderroom",
+      "name": "Zone Étrange",
+      "category": "tutor"
+    },
+    {
+      "id": "worryseed",
+      "name": "Soucigraine",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
-  "spawns": [],
-  "implemented": false,
+  "preEvolution": null,
+  "spawns": [
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "ultra-rare",
+        "weight": 0.3,
+        "levels": "60-88",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#minecraft:is_end"
+          ]
+        },
+        "source": "datapacks/CCC_1.9.2/data/ultra_beasts_spawns/spawn_pool_world/0793_nihilego.json",
+        "spawnId": "nihilego-1",
+        "pokemon": "nihilego",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "ultra-rare",
+        "weight": 0.2,
+        "levels": "60-88",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#minecraft:is_end"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/ub_spawns_ccc/spawn_pool_world/0793_nihilego.json",
+        "spawnId": "nihilego-1",
+        "pokemon": "nihilego",
+        "type": "pokemon"
+      }
+    ]
+  ],
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/nihilego.png"
@@ -160,6 +665,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/nihilego.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/nihilego.json"
   ]
 }

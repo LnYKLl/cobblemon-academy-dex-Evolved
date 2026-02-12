@@ -2,21 +2,46 @@
   "id": "sandaconda",
   "dexnum": 844,
   "name": "Sandaconda",
+  "nameFr": "Dunaconda",
+  "description": "Il peut expulser 100 kilogrammes de sable de ses narines en compressant tout son corps. Quand il est à court de sable, il a tendance à se dérober.",
   "primaryType": "ground",
   "secondaryType": "",
+  "primaryTypeFr": "Sol",
+  "secondaryTypeFr": "",
+  "height": 38,
+  "weight": 655,
   "maleRatio": 0.5,
+  "baseScale": 1.05,
+  "hitbox": {
+    "width": 1.2,
+    "height": 1.0,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "sandspit",
-    "shedskin",
-    "h:sandveil"
+    {
+      "id": "sandspit",
+      "name": "Expul'Sable",
+      "hidden": false
+    },
+    {
+      "id": "shedskin",
+      "name": "Mue",
+      "hidden": false
+    },
+    {
+      "id": "sandveil",
+      "name": "Voile Sable",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field",
     "dragon"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 72,
     "attack": 107,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 179,
   "experienceGroup": "medium_fast",
   "catchRate": 120,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -42,192 +69,486 @@
         "item": "cobblemon:soft_sand",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Sable Doux"
       }
     ]
   },
   "moves": [
-    "1:skullbash",
-    "1:wrap",
-    "1:sandattack",
-    "1:minimize",
-    "1:brutalswing",
-    "15:bulldoze",
-    "20:headbutt",
-    "25:glare",
-    "30:dig",
-    "35:sandstorm",
-    "42:slam",
-    "49:coil",
-    "51:sandtomb",
-    "egg:belch",
-    "egg:dragonrush",
-    "egg:lastresort",
-    "egg:mudslap",
-    "egg:poisontail",
-    "tm:bodypress",
-    "tm:bodyslam",
-    "tm:brutalswing",
-    "tm:bulldoze",
-    "tm:dig",
-    "tm:drillrun",
-    "tm:earthpower",
-    "tm:earthquake",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:firefang",
-    "tm:gigaimpact",
-    "tm:headbutt",
-    "tm:highhorsepower",
-    "tm:hurricane",
-    "tm:hyperbeam",
-    "tm:irondefense",
-    "tm:ironhead",
-    "tm:lastresort",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:outrage",
-    "tm:poisontail",
-    "tm:protect",
-    "tm:rest",
-    "tm:rockblast",
-    "tm:rockslide",
-    "tm:rocktomb",
-    "tm:sandstorm",
-    "tm:sandtomb",
-    "tm:scaleshot",
-    "tm:scaryface",
-    "tm:scorchingsands",
-    "tm:screech",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:stealthrock",
-    "tm:stoneedge",
-    "tm:substitute",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:thunderfang",
-    "tm:zenheadbutt",
-    "tutor:bulldoze",
-    "tutor:drillrun",
-    "tutor:earthpower",
-    "tutor:endeavor",
-    "tutor:firefang",
-    "tutor:gigaimpact",
-    "tutor:highhorsepower",
-    "tutor:hyperbeam",
-    "tutor:irondefense",
-    "tutor:ironhead",
-    "tutor:lastresort",
-    "tutor:mudslap",
-    "tutor:outrage",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:scaleshot",
-    "tutor:scorchingsands",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:stealthrock",
-    "tutor:stoneedge",
-    "tutor:thunderfang",
-    "tutor:zenheadbutt"
+    {
+      "id": "skullbash",
+      "name": "Coud'Krâne",
+      "category": "1"
+    },
+    {
+      "id": "wrap",
+      "name": "Ligotage",
+      "category": "1"
+    },
+    {
+      "id": "sandattack",
+      "name": "Jet de Sable",
+      "category": "1"
+    },
+    {
+      "id": "minimize",
+      "name": "Lilliput",
+      "category": "1"
+    },
+    {
+      "id": "brutalswing",
+      "name": "Centrifugifle",
+      "category": "1"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "15"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "20"
+    },
+    {
+      "id": "glare",
+      "name": "Regard Médusant",
+      "category": "25"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "30"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "35"
+    },
+    {
+      "id": "slam",
+      "name": "Souplesse",
+      "category": "42"
+    },
+    {
+      "id": "coil",
+      "name": "Enroulement",
+      "category": "49"
+    },
+    {
+      "id": "sandtomb",
+      "name": "Tourbi-Sable",
+      "category": "51"
+    },
+    {
+      "id": "belch",
+      "name": "Éructation",
+      "category": "egg"
+    },
+    {
+      "id": "dragonrush",
+      "name": "Draco-Charge",
+      "category": "egg"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "egg"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "egg"
+    },
+    {
+      "id": "poisontail",
+      "name": "Queue-Poison",
+      "category": "egg"
+    },
+    {
+      "id": "bodypress",
+      "name": "Big Splash",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brutalswing",
+      "name": "Centrifugifle",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tm"
+    },
+    {
+      "id": "hurricane",
+      "name": "Vent Violent",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "poisontail",
+      "name": "Queue-Poison",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "sandtomb",
+      "name": "Tourbi-Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "highhorsepower",
+      "name": "Cavalerie Lourde",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tutor"
+    },
+    {
+      "id": "scorchingsands",
+      "name": "Sable Ardent",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [
     "Gmax"
   ],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "silicobra",
   "spawns": [
     [
       {
-        "rarity": "rare",
-        "weight": 3.0,
-        "levels": "37-45",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "biomesoplenty:dryland",
-            "biomesoplenty:wasteland",
-            "biomesoplenty:wasteland_steppe"
-          ]
-        },
-        "source": "Cobblemon_MegaShowdown-10.0.7-release-fabric.jar!/data/cobblemon/spawn_pool_world/0844_sandaconda.json"
-      }
-    ],
-    [
-      {
-        "rarity": "rare",
-        "weight": 2,
-        "levels": "37-44",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_desert"
-          ]
-        },
-        "source": "Cobblemon_MegaShowdown-10.0.7-release-fabric.jar!/data/cobblemon/spawn_pool_world/0844_sandaconda.json"
-      }
-    ],
-    [
-      {
         "presets": [
-          "natural"
+          "natural",
+          "wild"
         ],
-        "rarity": "rare",
-        "weight": 7.3,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/rare_crystallized_desert.json"
-      }
-    ],
-    [
-      {
-        "rarity": "rare",
-        "weight": 7.0,
-        "levels": "37-45",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "biomesoplenty:dryland",
-            "biomesoplenty:wasteland",
-            "biomesoplenty:wasteland_steppe"
-          ]
-        },
-        "source": "datapacks/MegaShowdown/data/cobblemon/spawn_pool_world/0844_sandaconda.json"
-      }
-    ],
-    [
-      {
-        "rarity": "rare",
-        "weight": 9,
-        "levels": "37-44",
-        "contexts": [
-          "grounded"
-        ],
+        "rarity": "common",
+        "weight": 1.0,
+        "levels": "36-51",
         "biomeTags": {
           "include": [
             "#cobblemon:is_desert"
           ]
         },
-        "source": "datapacks/MegaShowdown/data/cobblemon/spawn_pool_world/0844_sandaconda.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0844_sandaconda.json",
+        "spawnId": "sandaconda-1",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "sandaconda",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/sandaconda.png"
@@ -237,6 +558,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/sandaconda.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/sandaconda.json"
   ]
 }

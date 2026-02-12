@@ -2,20 +2,41 @@
   "id": "pheromosa",
   "dexnum": 795,
   "name": "Pheromosa",
+  "nameFr": "Cancrelove",
+  "description": "Une forme de vie venant d'un autre monde. Son corps gracile cache une puissance insoupçonnée.",
   "primaryType": "bug",
   "secondaryType": "fighting",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "Combat",
+  "height": 18,
+  "weight": 250,
   "maleRatio": -1,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen7",
     "ultra_beast"
   ],
   "abilities": [
-    "beastboost",
-    "h:beastboost"
+    {
+      "id": "beastboost",
+      "name": "Boost Chimère",
+      "hidden": false
+    },
+    {
+      "id": "beastboost",
+      "name": "Boost Chimère",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 120,
   "baseStats": {
     "hp": 71,
     "attack": 137,
@@ -32,8 +53,10 @@
     "special_defence": 0,
     "speed": 3
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
   "catchRate": 45,
+  "baseFriendship": 0,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,108 +64,566 @@
         "item": "minecraft:echo_shard",
         "percentage": null,
         "quantityRange": "1-3",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:echo_shard"
       }
     ]
   },
   "moves": [
-    "1:rapidspin",
-    "1:feint",
-    "1:jumpkick",
-    "1:mefirst",
-    "5:leer",
-    "10:quickguard",
-    "15:bugbite",
-    "20:lowkick",
-    "25:doublekick",
-    "30:triplekick",
-    "35:stomp",
-    "40:agility",
-    "45:lunge",
-    "50:bounce",
-    "55:speedswap",
-    "60:bugbuzz",
-    "65:quiverdance",
-    "70:highjumpkick",
-    "tm:agility",
-    "tm:assurance",
-    "tm:blizzard",
-    "tm:block",
-    "tm:bounce",
-    "tm:brickbreak",
-    "tm:bugbite",
-    "tm:bugbuzz",
-    "tm:closecombat",
-    "tm:coaching",
-    "tm:drillrun",
-    "tm:echoedvoice",
-    "tm:electroweb",
-    "tm:endure",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:fling",
-    "tm:focusblast",
-    "tm:foulplay",
-    "tm:gigaimpact",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icywind",
-    "tm:laserfocus",
-    "tm:lowkick",
-    "tm:lowsweep",
-    "tm:lunge",
-    "tm:outrage",
-    "tm:poisonjab",
-    "tm:protect",
-    "tm:rest",
-    "tm:roost",
-    "tm:shockwave",
-    "tm:signalbeam",
-    "tm:silverwind",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:snatch",
-    "tm:speedswap",
-    "tm:substitute",
-    "tm:swift",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:throatchop",
-    "tm:torment",
-    "tm:tripleaxel",
-    "tm:uturn",
-    "tutor:block",
-    "tutor:bounce",
-    "tutor:bugbite",
-    "tutor:coaching",
-    "tutor:drillrun",
-    "tutor:electroweb",
-    "tutor:falseswipe",
-    "tutor:foulplay",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:laserfocus",
-    "tutor:lowkick",
-    "tutor:outrage",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:roost",
-    "tutor:shockwave",
-    "tutor:signalbeam",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:snatch",
-    "tutor:swift",
-    "tutor:throatchop",
-    "tutor:tripleaxel"
+    {
+      "id": "rapidspin",
+      "name": "Tour Rapide",
+      "category": "1"
+    },
+    {
+      "id": "feint",
+      "name": "Ruse",
+      "category": "1"
+    },
+    {
+      "id": "jumpkick",
+      "name": "Pied Sauté",
+      "category": "1"
+    },
+    {
+      "id": "mefirst",
+      "name": "Moi d'Abord",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "5"
+    },
+    {
+      "id": "quickguard",
+      "name": "Prévention",
+      "category": "10"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "15"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "20"
+    },
+    {
+      "id": "doublekick",
+      "name": "Double Pied",
+      "category": "25"
+    },
+    {
+      "id": "triplekick",
+      "name": "Triple Pied",
+      "category": "30"
+    },
+    {
+      "id": "stomp",
+      "name": "Écrasement",
+      "category": "35"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "40"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "45"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "50"
+    },
+    {
+      "id": "speedswap",
+      "name": "Permuvitesse",
+      "category": "55"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "60"
+    },
+    {
+      "id": "quiverdance",
+      "name": "Papillodanse",
+      "category": "65"
+    },
+    {
+      "id": "highjumpkick",
+      "name": "Pied Voltige",
+      "category": "70"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "bugbuzz",
+      "name": "Bourdon",
+      "category": "tm"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "tm"
+    },
+    {
+      "id": "coaching",
+      "name": "Coaching",
+      "category": "tm"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "focusblast",
+      "name": "Exploforce",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "lowsweep",
+      "name": "Balayette",
+      "category": "tm"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "tm"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "silverwind",
+      "name": "Vent Argenté",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tm"
+    },
+    {
+      "id": "speedswap",
+      "name": "Permuvitesse",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "tripleaxel",
+      "name": "Triple Axel",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tutor"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "coaching",
+      "name": "Coaching",
+      "category": "tutor"
+    },
+    {
+      "id": "drillrun",
+      "name": "Tunnelier",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "outrage",
+      "name": "Colère",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "roost",
+      "name": "Atterrissage",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "tripleaxel",
+      "name": "Triple Axel",
+      "category": "tutor"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
-  "spawns": [],
-  "implemented": false,
+  "preEvolution": null,
+  "spawns": [
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "ultra-rare",
+        "weight": 0.05,
+        "levels": "55-65",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#minecraft:is_end"
+          ]
+        },
+        "source": "datapacks/CCC_1.9.2/data/ultra_beasts_spawns/spawn_pool_world/0795_pheromosa.json",
+        "spawnId": "pheromosa-1",
+        "pokemon": "pheromosa",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "ultra-rare",
+        "weight": 0.2,
+        "levels": "55-65",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#minecraft:is_end"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/ub_spawns_ccc/spawn_pool_world/0795_pheromosa.json",
+        "spawnId": "pheromosa-1",
+        "sky": {
+          "canSeeSky": true
+        },
+        "pokemon": "pheromosa",
+        "type": "pokemon"
+      }
+    ]
+  ],
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/pheromosa.png"
@@ -152,6 +633,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation7/pheromosa.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation7/pheromosa.json"
   ]
 }

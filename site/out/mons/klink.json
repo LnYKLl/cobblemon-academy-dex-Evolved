@@ -2,20 +2,45 @@
   "id": "klink",
   "dexnum": 599,
   "name": "Klink",
+  "nameFr": "Tic",
+  "description": "La compatibilité entre ses deux rouages est prédéterminée. Ceux-ci ne se fixeront à aucun autre.",
   "primaryType": "steel",
   "secondaryType": "",
+  "primaryTypeFr": "Acier",
+  "secondaryTypeFr": "",
+  "height": 3,
+  "weight": 210,
   "maleRatio": -1,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "plus",
-    "minus",
-    "h:clearbody"
+    {
+      "id": "plus",
+      "name": "Plus",
+      "hidden": false
+    },
+    {
+      "id": "minus",
+      "name": "Moins",
+      "hidden": false
+    },
+    {
+      "id": "clearbody",
+      "name": "Corps Sain",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "mineral"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 40,
     "attack": 55,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 60,
   "experienceGroup": "medium_slow",
   "catchRate": 130,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -41,85 +68,419 @@
         "item": "minecraft:raw_iron",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:raw_iron"
       }
     ]
   },
   "moves": [
-    "1:visegrip",
-    "1:thundershock",
-    "1:mirrorshot",
-    "4:bind",
-    "8:charge",
-    "12:chargebeam",
-    "16:metalsound",
-    "20:autotomize",
-    "24:discharge",
-    "28:screech",
-    "32:geargrind",
-    "36:lockon",
-    "40:shiftgear",
-    "44:zapcannon",
-    "48:hyperbeam",
-    "tm:assurance",
-    "tm:bind",
-    "tm:charge",
-    "tm:chargebeam",
-    "tm:endure",
-    "tm:facade",
-    "tm:flashcannon",
-    "tm:gravity",
-    "tm:hyperbeam",
-    "tm:irondefense",
-    "tm:magiccoat",
-    "tm:magnetrise",
-    "tm:metalsound",
-    "tm:powergem",
-    "tm:protect",
-    "tm:recycle",
-    "tm:rest",
-    "tm:risingvoltage",
-    "tm:rockpolish",
-    "tm:rocksmash",
-    "tm:sandstorm",
-    "tm:screech",
-    "tm:shockwave",
-    "tm:signalbeam",
-    "tm:sleeptalk",
-    "tm:steelbeam",
-    "tm:steelroller",
-    "tm:substitute",
-    "tm:telekinesis",
-    "tm:terablast",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:uproar",
-    "tm:voltswitch",
-    "tm:wildcharge",
-    "tutor:bind",
-    "tutor:chargebeam",
-    "tutor:flashcannon",
-    "tutor:gravity",
-    "tutor:hyperbeam",
-    "tutor:irondefense",
-    "tutor:magiccoat",
-    "tutor:magnetrise",
-    "tutor:recycle",
-    "tutor:rest",
-    "tutor:risingvoltage",
-    "tutor:rocksmash",
-    "tutor:shockwave",
-    "tutor:signalbeam",
-    "tutor:sleeptalk",
-    "tutor:steelbeam",
-    "tutor:steelroller",
-    "tutor:telekinesis",
-    "tutor:thunderbolt",
-    "tutor:uproar",
-    "tutor:wildcharge"
+    {
+      "id": "visegrip",
+      "name": "Force Poigne",
+      "category": "1"
+    },
+    {
+      "id": "thundershock",
+      "name": "Éclair",
+      "category": "1"
+    },
+    {
+      "id": "mirrorshot",
+      "name": "Miroi-Tir",
+      "category": "1"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "4"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "8"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "12"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "16"
+    },
+    {
+      "id": "autotomize",
+      "name": "Allègement",
+      "category": "20"
+    },
+    {
+      "id": "discharge",
+      "name": "Coup d'Jus",
+      "category": "24"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "28"
+    },
+    {
+      "id": "geargrind",
+      "name": "Lancécrou",
+      "category": "32"
+    },
+    {
+      "id": "lockon",
+      "name": "Verrouillage",
+      "category": "36"
+    },
+    {
+      "id": "shiftgear",
+      "name": "Change-Vitesse",
+      "category": "40"
+    },
+    {
+      "id": "zapcannon",
+      "name": "Élecanon",
+      "category": "44"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "48"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tm"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tm"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tm"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "tm"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tm"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tm"
+    },
+    {
+      "id": "steelroller",
+      "name": "Métalliroue",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "voltswitch",
+      "name": "Change Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "gravity",
+      "name": "Gravité",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tutor"
+    },
+    {
+      "id": "recycle",
+      "name": "Recyclage",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tutor"
+    },
+    {
+      "id": "steelroller",
+      "name": "Métalliroue",
+      "category": "tutor"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "klink_klang",
@@ -135,6 +496,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -144,9 +506,6 @@
         "rarity": "common",
         "weight": 9.0,
         "levels": "5-30",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -155,7 +514,8 @@
             "#cobblemon:is_deep_dark"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0599_klink.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0599_klink.json",
+        "spawnId": "klink-1",
         "nearbyBlocks": {
           "selectors": [
             "#minecraft:redstone_ores",
@@ -169,7 +529,10 @@
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "klink",
+        "type": "pokemon"
       }
     ],
     [
@@ -181,15 +544,16 @@
         "rarity": "common",
         "weight": 1.8,
         "levels": "5-30",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0599_klink.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0599_klink.json",
+        "spawnId": "klink-2",
+        "spawnType": "grounded",
+        "pokemon": "klink",
+        "type": "pokemon"
       }
     ],
     [
@@ -200,15 +564,13 @@
         "rarity": "common",
         "weight": 1.8,
         "levels": "5-30",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0599_klink.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0599_klink.json",
+        "spawnId": "klink-3",
         "nearbyBlocks": {
           "selectors": [
             "create:cogwheel",
@@ -216,26 +578,10 @@
             "create:gearbox",
             "create:vertical_gearbox"
           ]
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 3.1,
-        "levels": "16-31",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/uncommon_crystallized_desert.json"
+        "spawnType": "grounded",
+        "pokemon": "klink",
+        "type": "pokemon"
       }
     ]
   ],
@@ -249,6 +595,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/klink.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/klink.json"
   ]
 }

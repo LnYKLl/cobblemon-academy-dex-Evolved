@@ -2,20 +2,45 @@
   "id": "rolycoly",
   "dexnum": 837,
   "name": "Rolycoly",
+  "nameFr": "Charbi",
+  "description": "On l'a découvert dans une mine il y a 400 ans. Son corps est presque entièrement composé d'une substance identique au charbon.",
   "primaryType": "rock",
   "secondaryType": "",
+  "primaryTypeFr": "Roche",
+  "secondaryTypeFr": "",
+  "height": 3,
+  "weight": 120,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 0.8,
+    "height": 0.6,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "steamengine",
-    "heatproof",
-    "h:flashfire"
+    {
+      "id": "steamengine",
+      "name": "Turbine",
+      "hidden": false
+    },
+    {
+      "id": "heatproof",
+      "name": "Ignifugé",
+      "hidden": false
+    },
+    {
+      "id": "flashfire",
+      "name": "Torche",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "mineral"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 30,
     "attack": 40,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 48,
   "experienceGroup": "medium_slow",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,89 +68,358 @@
         "item": "minecraft:coal",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:coal"
       },
       {
         "item": "cobblemon:black_augurite",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Obsidienne"
       },
       {
         "item": "cobblemon:passho_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Pocpoc"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:smokescreen",
-    "5:rapidspin",
-    "10:smackdown",
-    "15:rockpolish",
-    "20:ancientpower",
-    "25:incinerate",
-    "30:stealthrock",
-    "35:heatcrash",
-    "40:rockblast",
-    "egg:block",
-    "egg:explosion",
-    "egg:mudslap",
-    "tm:ancientpower",
-    "tm:block",
-    "tm:bodyslam",
-    "tm:bulldoze",
-    "tm:curse",
-    "tm:dig",
-    "tm:endure",
-    "tm:explosion",
-    "tm:facade",
-    "tm:gyroball",
-    "tm:heatcrash",
-    "tm:incinerate",
-    "tm:irondefense",
-    "tm:ironhead",
-    "tm:meteorbeam",
-    "tm:mudslap",
-    "tm:powergem",
-    "tm:protect",
-    "tm:reflect",
-    "tm:rest",
-    "tm:rockblast",
-    "tm:rockpolish",
-    "tm:rockslide",
-    "tm:rocktomb",
-    "tm:sandstorm",
-    "tm:sandtomb",
-    "tm:selfdestruct",
-    "tm:sleeptalk",
-    "tm:smackdown",
-    "tm:spikes",
-    "tm:stealthrock",
-    "tm:stoneedge",
-    "tm:substitute",
-    "tm:takedown",
-    "tm:temperflare",
-    "tm:terablast",
-    "tm:willowisp",
-    "tutor:ancientpower",
-    "tutor:block",
-    "tutor:bulldoze",
-    "tutor:irondefense",
-    "tutor:ironhead",
-    "tutor:meteorbeam",
-    "tutor:mudslap",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:sleeptalk",
-    "tutor:spikes",
-    "tutor:stealthrock",
-    "tutor:stoneedge"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "smokescreen",
+      "name": "Brouillard",
+      "category": "1"
+    },
+    {
+      "id": "rapidspin",
+      "name": "Tour Rapide",
+      "category": "5"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "10"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "15"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "20"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "25"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "30"
+    },
+    {
+      "id": "heatcrash",
+      "name": "Tacle Feu",
+      "category": "35"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "40"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "egg"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "egg"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "egg"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "tm"
+    },
+    {
+      "id": "heatcrash",
+      "name": "Tacle Feu",
+      "category": "tm"
+    },
+    {
+      "id": "incinerate",
+      "name": "Calcination",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rockpolish",
+      "name": "Poliroche",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "sandtomb",
+      "name": "Tourbi-Sable",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "smackdown",
+      "name": "Anti-Air",
+      "category": "tm"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "temperflare",
+      "name": "Indignition",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "rolycoly_carkol",
@@ -141,26 +437,8 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 3.2,
-        "levels": "4-18",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:starlight_permafrost_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/common_starlight_permafrost_forest.json"
-      }
-    ],
     [
       {
         "presets": [
@@ -179,12 +457,15 @@
             "#cobblemon:is_mountain"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0837_rolycoly.json",
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0837_rolycoly.json",
+        "spawnId": "rolycoly-1",
         "nearbyBlocks": {
           "selectors": [
             "minecraft:coal_ore"
           ]
-        }
+        },
+        "pokemon": "rolycoly",
+        "type": "pokemon"
       }
     ],
     [
@@ -205,11 +486,67 @@
             "#cobblemon:is_mountain"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0837_rolycoly.json"
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0837_rolycoly.json",
+        "spawnId": "rolycoly-2",
+        "pokemon": "rolycoly",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "rarity": "common",
+        "weight": 20,
+        "levels": "10-25",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_cave",
+            "#cobblemon:is_mountain"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0837_rolycoly.json",
+        "spawnId": "ccc-rolycoly-1",
+        "nearbyBlocks": {
+          "selectors": [
+            "minecraft:coal_ore"
+          ]
+        },
+        "pokemon": "rolycoly",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "rarity": "uncommon",
+        "weight": 20,
+        "levels": "10-25",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_cave",
+            "#cobblemon:is_mountain"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0837_rolycoly.json",
+        "spawnId": "ccc-rolycoly-2",
+        "pokemon": "rolycoly",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon_reanimodel/rolycoly.png",
@@ -221,6 +558,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/rolycoly.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/rolycoly.json"
   ]
 }

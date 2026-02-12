@@ -2,19 +2,40 @@
   "id": "rotom_wash",
   "dexnum": 479,
   "name": "Rotom Wash",
+  "nameFr": "Rotom Wash",
+  "description": "Sous cette forme, Motisma adore utiliser de l'eau pour faire des bêtises, comme complètement inonder les pièces à vivre.",
   "primaryType": "electric",
   "secondaryType": "water",
+  "primaryTypeFr": "Électrik",
+  "secondaryTypeFr": "Eau",
+  "height": 3,
+  "weight": 3,
   "maleRatio": -1,
+  "baseScale": 0.75,
+  "hitbox": {
+    "width": 0.55,
+    "height": 1.3,
+    "fixed": false
+  },
   "labels": [
     "gen4"
   ],
   "abilities": [
-    "levitate",
-    "h:levitate"
+    {
+      "id": "levitate",
+      "name": "Lévitation",
+      "hidden": false
+    },
+    {
+      "id": "levitate",
+      "name": "Lévitation",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "amorphous"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 50,
     "attack": 65,
@@ -31,111 +52,469 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 182,
   "experienceGroup": "medium_fast",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 0,
     "entries": []
   },
   "moves": [
-    "1:astonish",
-    "1:doubleteam",
-    "5:thundershock",
-    "10:confuseray",
-    "15:charge",
-    "20:electroball",
-    "25:thunderwave",
-    "30:shockwave",
-    "35:hex",
-    "40:substitute",
-    "45:trick",
-    "50:discharge",
-    "55:uproar",
-    "form_change:hydropump",
-    "tm:allyswitch",
-    "tm:charge",
-    "tm:chargebeam",
-    "tm:confuseray",
-    "tm:darkpulse",
-    "tm:doubleteam",
-    "tm:dreameater",
-    "tm:eerieimpulse",
-    "tm:electricterrain",
-    "tm:electroball",
-    "tm:electroweb",
-    "tm:endure",
-    "tm:facade",
-    "tm:flash",
-    "tm:foulplay",
-    "tm:helpinghand",
-    "tm:hex",
-    "tm:hydropump",
-    "tm:hypervoice",
-    "tm:lightscreen",
-    "tm:nastyplot",
-    "tm:nightshade",
-    "tm:ominouswind",
-    "tm:painsplit",
-    "tm:poltergeist",
-    "tm:protect",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:risingvoltage",
-    "tm:shadowball",
-    "tm:shockwave",
-    "tm:signalbeam",
-    "tm:sleeptalk",
-    "tm:snatch",
-    "tm:spite",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:telekinesis",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:trick",
-    "tm:uproar",
-    "tm:voltswitch",
-    "tm:willowisp",
-    "tutor:allyswitch",
-    "tutor:chargebeam",
-    "tutor:darkpulse",
-    "tutor:electroweb",
-    "tutor:foulplay",
-    "tutor:helpinghand",
-    "tutor:hypervoice",
-    "tutor:ominouswind",
-    "tutor:painsplit",
-    "tutor:poltergeist",
-    "tutor:rest",
-    "tutor:risingvoltage",
-    "tutor:shadowball",
-    "tutor:shockwave",
-    "tutor:signalbeam",
-    "tutor:sleeptalk",
-    "tutor:snatch",
-    "tutor:spite",
-    "tutor:suckerpunch",
-    "tutor:swift",
-    "tutor:telekinesis",
-    "tutor:thunderbolt",
-    "tutor:trick",
-    "tutor:uproar"
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "1"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "1"
+    },
+    {
+      "id": "thundershock",
+      "name": "Éclair",
+      "category": "5"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "10"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "15"
+    },
+    {
+      "id": "electroball",
+      "name": "Boule Élek",
+      "category": "20"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "25"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "30"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "35"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "40"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "45"
+    },
+    {
+      "id": "discharge",
+      "name": "Coup d'Jus",
+      "category": "50"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "55"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "form_change"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "eerieimpulse",
+      "name": "Ondes Étranges",
+      "category": "tm"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "tm"
+    },
+    {
+      "id": "electroball",
+      "name": "Boule Élek",
+      "category": "tm"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "tm"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "voltswitch",
+      "name": "Change Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "willowisp",
+      "name": "Feu Follet",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "ominouswind",
+      "name": "Vent Mauvais",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
         "rarity": "rare",
-        "weight": 7.0,
+        "weight": 10.0,
         "levels": "20-75",
         "contexts": [
           "grounded"
@@ -145,7 +524,8 @@
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon_MegaShowdown-10.0.7-release-fabric.jar!/data/cobblemon/spawn_pool_world/0479_rotom.json",
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0479_rotom.json",
+        "spawnId": "rotom-1",
         "nearbyBlocks": {
           "selectors": [
             "minecraft:redstone_block",
@@ -162,51 +542,18 @@
             "cobblemon:restoration_tank",
             "cobblemon:fossil_analyzer"
           ]
-        }
+        },
+        "pokemon": "rotom",
+        "type": "pokemon"
       }
     ],
     [
       {
         "presets": [
-          "natural"
+          "mansion"
         ],
-        "rarity": "rare",
-        "weight": 2.1,
-        "levels": "16-49",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_safari_surface"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_safari_surface/rare_is_safari_surface.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 3.0,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_starlight_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/rare_is_starlight_forest.json"
-      }
-    ],
-    [
-      {
-        "rarity": "rare",
-        "weight": 7.0,
+        "rarity": "uncommon",
+        "weight": 5.0,
         "levels": "20-75",
         "contexts": [
           "grounded"
@@ -216,7 +563,88 @@
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "datapacks/MegaShowdown/data/cobblemon/spawn_pool_world/0479_rotom.json",
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0479_rotom.json",
+        "spawnId": "rotom-2",
+        "pokemon": "rotom",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "ancient_city"
+        ],
+        "rarity": "uncommon",
+        "weight": 10.0,
+        "levels": "20-75",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_deep_dark"
+          ]
+        },
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0479_rotom.json",
+        "spawnId": "rotom-3",
+        "nearbyBlocks": {
+          "selectors": [
+            "minecraft:redstone_block",
+            "minecraft:repeater",
+            "minecraft:redstone_torch",
+            "minecraft:comparator",
+            "minecraft:redstone_lamp"
+          ]
+        },
+        "pokemon": "rotom",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "ultra-rare",
+        "weight": 2.0,
+        "levels": "20-75",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_beach"
+          ]
+        },
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0479_rotom.json",
+        "spawnId": "rotom-4",
+        "pokemon": "rotom",
+        "type": "pokemon",
+        "weightMultiplier": [
+          {
+            "multiplier": 5.0,
+            "condition": {
+              "isThundering": true
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "rarity": "rare",
+        "weight": 10.0,
+        "levels": "20-75",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_overworld"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0479_rotom.json",
+        "spawnId": "ccc-rotom-1",
         "nearbyBlocks": {
           "selectors": [
             "minecraft:redstone_block",
@@ -233,7 +661,92 @@
             "cobblemon:restoration_tank",
             "cobblemon:fossil_analyzer"
           ]
-        }
+        },
+        "pokemon": "rotom",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "mansion"
+        ],
+        "rarity": "uncommon",
+        "weight": 5.0,
+        "levels": "20-75",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_overworld"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0479_rotom.json",
+        "spawnId": "ccc-rotom-2",
+        "pokemon": "rotom",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "ancient_city"
+        ],
+        "rarity": "uncommon",
+        "weight": 10.0,
+        "levels": "20-75",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_deep_dark"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0479_rotom.json",
+        "spawnId": "ccc-rotom-3",
+        "nearbyBlocks": {
+          "selectors": [
+            "minecraft:redstone_block",
+            "minecraft:repeater",
+            "minecraft:redstone_torch",
+            "minecraft:comparator",
+            "minecraft:redstone_lamp"
+          ]
+        },
+        "pokemon": "rotom",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "ultra-rare",
+        "weight": 2.0,
+        "levels": "20-75",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_beach"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0479_rotom.json",
+        "spawnId": "ccc-rotom-4",
+        "pokemon": "rotom",
+        "type": "pokemon",
+        "weightMultiplier": [
+          {
+            "multiplier": 5.0,
+            "condition": {
+              "isThundering": true
+            }
+          }
+        ]
       }
     ]
   ],
@@ -247,7 +760,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation4/rotom.json",
-    "Cobblemon_MegaShowdown-10.0.7-release-fabric.jar!/data/cobblemon/species/generation4/rotom.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation4/rotom.json"
   ]
 }

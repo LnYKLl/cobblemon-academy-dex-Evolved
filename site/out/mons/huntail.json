@@ -2,19 +2,40 @@
   "id": "huntail",
   "dexnum": 367,
   "name": "Huntail",
+  "nameFr": "Serpang",
+  "description": "La queue de Serpang est en forme de poisson. Il l'utilise pour attirer sa proie qu'il avale en une fois grâce à sa bouche béante. Ce Pokémon nage en tortillant son corps comme un serpent.",
   "primaryType": "water",
   "secondaryType": "",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "",
+  "height": 17,
+  "weight": 270,
   "maleRatio": 0.5,
+  "baseScale": 1.15,
+  "hitbox": {
+    "width": 1.3,
+    "height": 0.45,
+    "fixed": false
+  },
   "labels": [
     "gen3"
   ],
   "abilities": [
-    "swiftswim",
-    "h:waterveil"
+    {
+      "id": "swiftswim",
+      "name": "Glissade",
+      "hidden": false
+    },
+    {
+      "id": "waterveil",
+      "name": "Ignifu-Voile",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_1"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 55,
     "attack": 104,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 170,
   "experienceGroup": "erratic",
   "catchRate": 60,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -40,100 +63,521 @@
         "item": "cobblemon:deep_sea_tooth",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Dent Océan"
       }
     ]
   },
   "moves": [
-    "1:whirlpool",
-    "1:bite",
-    "1:irondefense",
-    "1:watergun",
-    "1:shellsmash",
-    "1:clamp",
-    "5:screech",
-    "9:scaryface",
-    "11:feintattack",
-    "14:waterpulse",
-    "16:icefang",
-    "19:brine",
-    "23:suckerpunch",
-    "26:dive",
-    "29:batonpass",
-    "34:crunch",
-    "39:aquatail",
-    "45:coil",
-    "50:hydropump",
-    "egg:aquaring",
-    "egg:barrier",
-    "egg:mudsport",
-    "egg:refresh",
-    "egg:supersonic",
-    "tm:aquatail",
-    "tm:batonpass",
-    "tm:bind",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:bounce",
-    "tm:brine",
-    "tm:confuseray",
-    "tm:crunch",
-    "tm:dive",
-    "tm:endure",
-    "tm:facade",
-    "tm:flipturn",
-    "tm:gigaimpact",
-    "tm:hail",
-    "tm:hydropump",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icefang",
-    "tm:icywind",
-    "tm:infestation",
-    "tm:irondefense",
-    "tm:muddywater",
-    "tm:mudslap",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:rocktomb",
-    "tm:scald",
-    "tm:scaleshot",
-    "tm:scaryface",
-    "tm:screech",
-    "tm:sleeptalk",
-    "tm:snatch",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:superfang",
-    "tm:surf",
-    "tm:terablast",
-    "tm:waterfall",
-    "tm:waterpulse",
-    "tm:whirlpool",
-    "tutor:aquatail",
-    "tutor:bind",
-    "tutor:bounce",
-    "tutor:dive",
-    "tutor:flipturn",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icefang",
-    "tutor:icywind",
-    "tutor:irondefense",
-    "tutor:mudslap",
-    "tutor:rest",
-    "tutor:scaleshot",
-    "tutor:sleeptalk",
-    "tutor:snatch",
-    "tutor:suckerpunch",
-    "tutor:superfang",
-    "tutor:waterpulse"
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "1"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "1"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "1"
+    },
+    {
+      "id": "watergun",
+      "name": "Pistolet à O",
+      "category": "1"
+    },
+    {
+      "id": "shellsmash",
+      "name": "Exuviation",
+      "category": "1"
+    },
+    {
+      "id": "clamp",
+      "name": "Claquoir",
+      "category": "1"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "5"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "9"
+    },
+    {
+      "id": "feintattack",
+      "name": "Feinte",
+      "category": "11"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "14"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "16"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "19"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "23"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "26"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "29"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "34"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "39"
+    },
+    {
+      "id": "coil",
+      "name": "Enroulement",
+      "category": "45"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "50"
+    },
+    {
+      "id": "aquaring",
+      "name": "Anneau Hydro",
+      "category": "egg"
+    },
+    {
+      "id": "barrier",
+      "name": "Bouclier",
+      "category": "egg"
+    },
+    {
+      "id": "mudsport",
+      "name": "Lance-Boue",
+      "category": "egg"
+    },
+    {
+      "id": "refresh",
+      "name": "Régénération",
+      "category": "egg"
+    },
+    {
+      "id": "supersonic",
+      "name": "Ultrason",
+      "category": "egg"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "brine",
+      "name": "Saumure",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flipturn",
+      "name": "Eau Revoir",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "muddywater",
+      "name": "Ocroupi",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "tm"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "waterfall",
+      "name": "Cascade",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "whirlpool",
+      "name": "Siphon",
+      "category": "tm"
+    },
+    {
+      "id": "aquatail",
+      "name": "Hydro-Queue",
+      "category": "tutor"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tutor"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "dive",
+      "name": "Plongée",
+      "category": "tutor"
+    },
+    {
+      "id": "flipturn",
+      "name": "Eau Revoir",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snatch",
+      "name": "Saisie",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "superfang",
+      "name": "Croc Fatal",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "clamperl",
   "spawns": [
     [
       {
@@ -143,21 +587,22 @@
         "rarity": "uncommon",
         "weight": 0.4,
         "levels": "30-49",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_deep_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0367_huntail.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0367_huntail.json",
+        "spawnId": "huntail-1",
         "sky": {
           "canSeeSky": true
         },
         "yLevel": {
           "maxY": 48
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "huntail",
+        "type": "pokemon"
       }
     ],
     [
@@ -168,18 +613,19 @@
         "rarity": "rare",
         "weight": 0.625,
         "levels": "30-49",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_warm_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0367_huntail.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0367_huntail.json",
+        "spawnId": "huntail-2",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "huntail",
+        "type": "pokemon"
       }
     ],
     [
@@ -187,18 +633,19 @@
         "rarity": "rare",
         "weight": 0.375,
         "levels": "30-49",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0367_huntail.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0367_huntail.json",
+        "spawnId": "huntail-3",
         "sky": {
           "canSeeSky": true
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "huntail",
+        "type": "pokemon"
       }
     ],
     [
@@ -209,15 +656,13 @@
         "rarity": "uncommon",
         "weight": 0.4,
         "levels": "30-49",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_deep_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0367_huntail.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0367_huntail.json",
+        "spawnId": "huntail-4",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
@@ -225,7 +670,10 @@
         },
         "yLevel": {
           "maxY": 48
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "huntail",
+        "type": "pokemon"
       }
     ],
     [
@@ -236,20 +684,21 @@
         "rarity": "rare",
         "weight": 0.625,
         "levels": "30-49",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_warm_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0367_huntail.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0367_huntail.json",
+        "spawnId": "huntail-5",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "huntail",
+        "type": "pokemon"
       }
     ],
     [
@@ -257,20 +706,21 @@
         "rarity": "rare",
         "weight": 0.375,
         "levels": "30-49",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0367_huntail.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0367_huntail.json",
+        "spawnId": "huntail-6",
         "sky": {
           "canSeeSky": false,
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "fishing",
+        "pokemon": "huntail",
+        "type": "pokemon"
       }
     ],
     [
@@ -281,15 +731,13 @@
         "rarity": "uncommon",
         "weight": 0.4,
         "levels": "30-49",
-        "contexts": [
-          "submerged"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0367_huntail.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0367_huntail.json",
+        "spawnId": "huntail-7",
         "structures": [
           "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
         ],
@@ -299,7 +747,10 @@
         "yLevel": {
           "minY": -60,
           "maxY": 13
-        }
+        },
+        "spawnType": "submerged",
+        "pokemon": "huntail",
+        "type": "pokemon"
       }
     ],
     [
@@ -307,15 +758,13 @@
         "rarity": "rare",
         "weight": 0.375,
         "levels": "30-49",
-        "contexts": [
-          "fishing"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0367_huntail.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0367_huntail.json",
+        "spawnId": "huntail-8",
         "structures": [
           "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
         ],
@@ -325,26 +774,10 @@
         "yLevel": {
           "minY": -60,
           "maxY": 13
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "water"
-        ],
-        "rarity": "rare",
-        "weight": 2.1,
-        "levels": "18-41",
-        "contexts": [
-          "submerged"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_safari_ocean"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_safari_ocean/rare_is_safari_ocean.json"
+        "spawnType": "fishing",
+        "pokemon": "huntail",
+        "type": "pokemon"
       }
     ]
   ],
@@ -358,6 +791,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation3/huntail.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation3/huntail.json"
   ]
 }

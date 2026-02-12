@@ -2,19 +2,40 @@
   "id": "toedscool",
   "dexnum": 948,
   "name": "Toedscool",
+  "nameFr": "Terracool",
+  "description": "Il ressemble à un Tentacool, mais il n'en est pas un. Malgré leur finesse, ses pattes lui permettent de courir à une vitesse de 50 km/h.",
   "primaryType": "ground",
   "secondaryType": "grass",
+  "primaryTypeFr": "Sol",
+  "secondaryTypeFr": "Plante",
+  "height": 9,
+  "weight": 330,
   "maleRatio": 0.5,
+  "baseScale": 1.0,
+  "hitbox": {
+    "width": 1.0,
+    "height": 1.6,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "myceliummight",
-    "h:myceliummight"
+    {
+      "id": "myceliummight",
+      "name": "Force Fongique",
+      "hidden": false
+    },
+    {
+      "id": "myceliummight",
+      "name": "Force Fongique",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "grass"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 40,
     "attack": 40,
@@ -31,8 +52,10 @@
     "special_defence": 1,
     "speed": 0
   },
+  "baseExperienceYield": 67,
   "experienceGroup": "medium_slow",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -40,106 +63,446 @@
         "item": "minecraft:brown_mushroom",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:brown_mushroom"
       },
       {
         "item": "cobblemon:yache_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Nanone"
       }
     ]
   },
   "moves": [
-    "1:wrap",
-    "1:mudslap",
-    "4:absorb",
-    "8:poisonpowder",
-    "8:stunspore",
-    "12:supersonic",
-    "15:tackle",
-    "16:megadrain",
-    "20:screech",
-    "24:mudshot",
-    "28:hex",
-    "32:seedbomb",
-    "36:spore",
-    "40:growth",
-    "44:gigadrain",
-    "48:earthpower",
-    "52:powerwhip",
-    "egg:acupressure",
-    "egg:knockoff",
-    "egg:leechseed",
-    "egg:mirrorcoat",
-    "egg:ragepowder",
-    "egg:rapidspin",
-    "egg:tickle",
-    "egg:toxic",
-    "tm:acidspray",
-    "tm:bulletseed",
-    "tm:confuseray",
-    "tm:dazzlinggleam",
-    "tm:earthpower",
-    "tm:endure",
-    "tm:energyball",
-    "tm:flashcannon",
-    "tm:foulplay",
-    "tm:gigadrain",
-    "tm:grassknot",
-    "tm:grassyglide",
-    "tm:grassyterrain",
-    "tm:hex",
-    "tm:knockoff",
-    "tm:leafstorm",
-    "tm:lightscreen",
-    "tm:lunge",
-    "tm:magicalleaf",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:painsplit",
-    "tm:powerwhip",
-    "tm:protect",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:scaryface",
-    "tm:screech",
-    "tm:seedbomb",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:solarbeam",
-    "tm:spikes",
-    "tm:substitute",
-    "tm:swift",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:toxic",
-    "tm:toxicspikes",
-    "tm:trailblaze",
-    "tm:trickroom",
-    "tm:venoshock",
-    "tutor:dazzlinggleam",
-    "tutor:earthpower",
-    "tutor:energyball",
-    "tutor:flashcannon",
-    "tutor:foulplay",
-    "tutor:gigadrain",
-    "tutor:grassyglide",
-    "tutor:knockoff",
-    "tutor:magicalleaf",
-    "tutor:mudslap",
-    "tutor:painsplit",
-    "tutor:rest",
-    "tutor:seedbomb",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:spikes",
-    "tutor:swift",
-    "tutor:trick"
+    {
+      "id": "wrap",
+      "name": "Ligotage",
+      "category": "1"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "1"
+    },
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "4"
+    },
+    {
+      "id": "poisonpowder",
+      "name": "Poudre Toxik",
+      "category": "8"
+    },
+    {
+      "id": "stunspore",
+      "name": "Para-Spore",
+      "category": "8"
+    },
+    {
+      "id": "supersonic",
+      "name": "Ultrason",
+      "category": "12"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "15"
+    },
+    {
+      "id": "megadrain",
+      "name": "Méga-Sangsue",
+      "category": "16"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "20"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "24"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "28"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "32"
+    },
+    {
+      "id": "spore",
+      "name": "Spore",
+      "category": "36"
+    },
+    {
+      "id": "growth",
+      "name": "Croissance",
+      "category": "40"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "44"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "48"
+    },
+    {
+      "id": "powerwhip",
+      "name": "Mégafouet",
+      "category": "52"
+    },
+    {
+      "id": "acupressure",
+      "name": "Acupression",
+      "category": "egg"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "egg"
+    },
+    {
+      "id": "leechseed",
+      "name": "Vampigraine",
+      "category": "egg"
+    },
+    {
+      "id": "mirrorcoat",
+      "name": "Voile Miroir",
+      "category": "egg"
+    },
+    {
+      "id": "ragepowder",
+      "name": "Poudre Fureur",
+      "category": "egg"
+    },
+    {
+      "id": "rapidspin",
+      "name": "Tour Rapide",
+      "category": "egg"
+    },
+    {
+      "id": "tickle",
+      "name": "Chatouille",
+      "category": "egg"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "egg"
+    },
+    {
+      "id": "acidspray",
+      "name": "Bombe Acide",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "leafstorm",
+      "name": "Tempête Verte",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "lunge",
+      "name": "Furie-Bond",
+      "category": "tm"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "powerwhip",
+      "name": "Mégafouet",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "toxicspikes",
+      "name": "Pics Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "venoshock",
+      "name": "Choc Venin",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "toedscool_toedscruel",
@@ -155,31 +518,59 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
         "presets": [
-          "natural"
+          "natural",
+          "wild"
         ],
-        "rarity": "uncommon",
-        "weight": 5.0,
-        "levels": "11-30",
-        "contexts": [
-          "grounded"
-        ],
+        "rarity": "common",
+        "weight": 9.0,
+        "levels": "9-34",
         "biomeTags": {
           "include": [
-            "#cobblemon:is_swamp"
+            "#cobblemon:is_mushroom"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/genomons/spawn_pool_world/0948_toedscool.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0948_toedscool.json",
+        "spawnId": "toedscool-1",
         "sky": {
-          "canSeeSky": true
-        }
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "toedscool",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural",
+          "wild"
+        ],
+        "rarity": "common",
+        "weight": 5.4,
+        "levels": "9-34",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:nether/is_fungus"
+          ],
+          "exclude": [
+            "#cobblemon:nether/is_warped"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0948_toedscool.json",
+        "spawnId": "toedscool-2",
+        "spawnType": "grounded",
+        "pokemon": "toedscool",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/genomons/toedscool.png",
@@ -191,6 +582,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/toedscool.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/toedscool.json"
   ]
 }

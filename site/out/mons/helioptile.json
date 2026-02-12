@@ -2,21 +2,46 @@
   "id": "helioptile",
   "dexnum": 694,
   "name": "Helioptile",
+  "nameFr": "Galvaran",
+  "description": "Les plis de peau de chaque côté de sa tête sont dotés de cellules produisant de l'électricité quand elles sont exposées à la lumière du soleil.",
   "primaryType": "electric",
   "secondaryType": "normal",
+  "primaryTypeFr": "Électrik",
+  "secondaryTypeFr": "Normal",
+  "height": 5,
+  "weight": 60,
   "maleRatio": 0.5,
+  "baseScale": 0.65,
+  "hitbox": {
+    "width": 0.8,
+    "height": 1.2,
+    "fixed": false
+  },
   "labels": [
     "gen6"
   ],
   "abilities": [
-    "dryskin",
-    "sandveil",
-    "h:solarpower"
+    {
+      "id": "dryskin",
+      "name": "Peau Sèche",
+      "hidden": false
+    },
+    {
+      "id": "sandveil",
+      "name": "Voile Sable",
+      "hidden": false
+    },
+    {
+      "id": "solarpower",
+      "name": "Force Soleil",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "monster",
     "dragon"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 44,
     "attack": 38,
@@ -33,126 +58,480 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 58,
   "experienceGroup": "medium_fast",
   "catchRate": 190,
+  "baseFriendship": 50,
   "drops": {
     "amount": 0,
     "entries": []
   },
   "moves": [
-    "1:tailwhip",
-    "1:mudslap",
-    "4:pound",
-    "8:thundershock",
-    "12:quickattack",
-    "16:charge",
-    "20:bulldoze",
-    "24:voltswitch",
-    "28:paraboliccharge",
-    "32:thunderwave",
-    "36:thunderbolt",
-    "40:electrify",
-    "44:thunder",
-    "egg:camouflage",
-    "egg:dragonrush",
-    "egg:dragontail",
-    "egg:glare",
-    "egg:razorwind",
-    "tm:agility",
-    "tm:allyswitch",
-    "tm:bulldoze",
-    "tm:charge",
-    "tm:chargebeam",
-    "tm:cut",
-    "tm:darkpulse",
-    "tm:dig",
-    "tm:dragontail",
-    "tm:electricterrain",
-    "tm:electroball",
-    "tm:electroweb",
-    "tm:endure",
-    "tm:facade",
-    "tm:flash",
-    "tm:grassknot",
-    "tm:irontail",
-    "tm:lightscreen",
-    "tm:lowsweep",
-    "tm:magnetrise",
-    "tm:mudslap",
-    "tm:protect",
-    "tm:psychup",
-    "tm:raindance",
-    "tm:rest",
-    "tm:risingvoltage",
-    "tm:rockslide",
-    "tm:rocktomb",
-    "tm:sandstorm",
-    "tm:scaleshot",
-    "tm:shockwave",
-    "tm:signalbeam",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:surf",
-    "tm:swift",
-    "tm:terablast",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:uturn",
-    "tm:voltswitch",
-    "tm:wildcharge",
-    "tutor:allyswitch",
-    "tutor:bulldoze",
-    "tutor:chargebeam",
-    "tutor:darkpulse",
-    "tutor:electroweb",
-    "tutor:irontail",
-    "tutor:magnetrise",
-    "tutor:mudslap",
-    "tutor:rest",
-    "tutor:risingvoltage",
-    "tutor:rockslide",
-    "tutor:scaleshot",
-    "tutor:shockwave",
-    "tutor:signalbeam",
-    "tutor:sleeptalk",
-    "tutor:swift",
-    "tutor:thunderbolt",
-    "tutor:wildcharge"
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "1"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "1"
+    },
+    {
+      "id": "pound",
+      "name": "Écras'Face",
+      "category": "4"
+    },
+    {
+      "id": "thundershock",
+      "name": "Éclair",
+      "category": "8"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "12"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "16"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "20"
+    },
+    {
+      "id": "voltswitch",
+      "name": "Change Éclair",
+      "category": "24"
+    },
+    {
+      "id": "paraboliccharge",
+      "name": "Parabocharge",
+      "category": "28"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "32"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "36"
+    },
+    {
+      "id": "electrify",
+      "name": "Électrisation",
+      "category": "40"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "44"
+    },
+    {
+      "id": "camouflage",
+      "name": "Camouflage",
+      "category": "egg"
+    },
+    {
+      "id": "dragonrush",
+      "name": "Draco-Charge",
+      "category": "egg"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "egg"
+    },
+    {
+      "id": "glare",
+      "name": "Regard Médusant",
+      "category": "egg"
+    },
+    {
+      "id": "razorwind",
+      "name": "Coupe-Vent",
+      "category": "egg"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "charge",
+      "name": "Chargeur",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "dragontail",
+      "name": "Draco-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "tm"
+    },
+    {
+      "id": "electroball",
+      "name": "Boule Élek",
+      "category": "tm"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "lowsweep",
+      "name": "Balayette",
+      "category": "tm"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "voltswitch",
+      "name": "Change Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "risingvoltage",
+      "name": "Monte-Tension",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "scaleshot",
+      "name": "Rafale Écailles",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "helioptile_heliolisk",
       "variant": "item_interact",
       "result": "heliolisk",
-      "consumeHeldItem": true,
+      "consumeHeldItem": false,
       "learnableMoves": [],
       "requirements": [],
       "requiredContext": "cobblemon:sun_stone"
     }
   ],
+  "preEvolution": null,
   "spawns": [
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 3.1,
-        "levels": "4-19",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:crystallized_desert"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/common_crystallized_desert.json"
-      }
-    ],
     [
       {
         "rarity": "uncommon",
@@ -160,19 +539,25 @@
         "levels": "10-30",
         "contexts": [
           "grounded"
+        ],
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
             "minecraft:desert"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/genomons/spawn_pool_world/0694_helioptile.json",
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0694_helioptile.json",
+        "spawnId": "helioptile-1",
         "sky": {
           "canSeeSky": true
         },
         "weather": {
           "isRaining": false
-        }
+        },
+        "pokemon": "helioptile",
+        "type": "pokemon"
       }
     ],
     [
@@ -182,19 +567,25 @@
         "levels": "10-30",
         "contexts": [
           "grounded"
+        ],
+        "times": [
+          "day"
         ],
         "biomeTags": {
           "include": [
             "minecraft:savanna"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/genomons/spawn_pool_world/0694_helioptile.json",
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0694_helioptile.json",
+        "spawnId": "helioptile-2",
         "sky": {
           "canSeeSky": true
         },
         "weather": {
           "isRaining": false
-        }
+        },
+        "pokemon": "helioptile",
+        "type": "pokemon"
       }
     ],
     [
@@ -205,22 +596,112 @@
         "contexts": [
           "grounded"
         ],
+        "times": [
+          "day"
+        ],
         "biomeTags": {
           "include": [
             "minecraft:badlands"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/genomons/spawn_pool_world/0694_helioptile.json",
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0694_helioptile.json",
+        "spawnId": "helioptile-3",
         "sky": {
           "canSeeSky": true
         },
         "weather": {
           "isRaining": false
-        }
+        },
+        "pokemon": "helioptile",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "rarity": "uncommon",
+        "weight": 7,
+        "levels": "10-30",
+        "contexts": [
+          "grounded"
+        ],
+        "times": [
+          "day"
+        ],
+        "biomeTags": {
+          "include": [
+            "minecraft:desert"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0694_helioptile.json",
+        "spawnId": "ccc-helioptile-1",
+        "sky": {
+          "canSeeSky": true
+        },
+        "weather": {
+          "isRaining": false
+        },
+        "pokemon": "helioptile",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "rarity": "uncommon",
+        "weight": 7,
+        "levels": "10-30",
+        "contexts": [
+          "grounded"
+        ],
+        "times": [
+          "day"
+        ],
+        "biomeTags": {
+          "include": [
+            "minecraft:savanna"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0694_helioptile.json",
+        "spawnId": "ccc-helioptile-2",
+        "sky": {
+          "canSeeSky": true
+        },
+        "weather": {
+          "isRaining": false
+        },
+        "pokemon": "helioptile",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "rarity": "uncommon",
+        "weight": 7,
+        "levels": "10-30",
+        "contexts": [
+          "grounded"
+        ],
+        "times": [
+          "day"
+        ],
+        "biomeTags": {
+          "include": [
+            "minecraft:badlands"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0694_helioptile.json",
+        "spawnId": "ccc-helioptile-3",
+        "sky": {
+          "canSeeSky": true
+        },
+        "weather": {
+          "isRaining": false
+        },
+        "pokemon": "helioptile",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/genomons/helioptile.png",
@@ -232,6 +713,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation6/helioptile.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation6/helioptile.json"
   ]
 }

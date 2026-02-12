@@ -2,20 +2,45 @@
   "id": "thievul",
   "dexnum": 828,
   "name": "Thievul",
+  "nameFr": "Roublenard",
+  "description": "Il marque sa victime pour la suivre à l'odeur. Sitôt qu'elle est distraite, il s'empresse de lui voler ses biens.",
   "primaryType": "dark",
   "secondaryType": "",
+  "primaryTypeFr": "Ténèbres",
+  "secondaryTypeFr": "",
+  "height": 12,
+  "weight": 199,
   "maleRatio": 0.5,
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 1.2,
+    "height": 2,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "runaway",
-    "unburden",
-    "h:stakeout"
+    {
+      "id": "runaway",
+      "name": "Fuite",
+      "hidden": false
+    },
+    {
+      "id": "unburden",
+      "name": "Délestage",
+      "hidden": false
+    },
+    {
+      "id": "stakeout",
+      "name": "Filature",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 70,
     "attack": 58,
@@ -32,8 +57,10 @@
     "special_defence": 2,
     "speed": 0
   },
+  "baseExperienceYield": 159,
   "experienceGroup": "fast",
   "catchRate": 127,
+  "baseFriendship": 50,
   "drops": {
     "amount": 6,
     "entries": [
@@ -41,105 +68,435 @@
         "item": "minecraft:sweet_berries",
         "percentage": null,
         "quantityRange": "2-4",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:sweet_berries"
       },
       {
         "item": "minecraft:emerald",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:emerald"
       },
       {
         "item": "cobblemon:roseli_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Selro"
       }
     ]
   },
   "moves": [
-    "1:thief",
-    "1:quickattack",
-    "1:tailwhip",
-    "1:beatup",
-    "1:honeclaws",
-    "12:snarl",
-    "16:assurance",
-    "22:nastyplot",
-    "28:suckerpunch",
-    "34:nightslash",
-    "40:tailslap",
-    "46:foulplay",
-    "52:partingshot",
-    "egg:howl",
-    "egg:knockoff",
-    "egg:quickguard",
-    "egg:torment",
-    "tm:acrobatics",
-    "tm:agility",
-    "tm:assurance",
-    "tm:batonpass",
-    "tm:beatup",
-    "tm:burningjealousy",
-    "tm:crunch",
-    "tm:darkpulse",
-    "tm:dig",
-    "tm:endure",
-    "tm:facade",
-    "tm:faketears",
-    "tm:firefang",
-    "tm:foulplay",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:honeclaws",
-    "tm:hyperbeam",
-    "tm:icefang",
-    "tm:knockoff",
-    "tm:lashout",
-    "tm:mudshot",
-    "tm:nastyplot",
-    "tm:playrough",
-    "tm:protect",
-    "tm:psychic",
-    "tm:rest",
-    "tm:screech",
-    "tm:shadowball",
-    "tm:shadowclaw",
-    "tm:sleeptalk",
-    "tm:snarl",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:swift",
-    "tm:tailslap",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:thunderfang",
-    "tm:torment",
-    "tm:uturn",
-    "tutor:burningjealousy",
-    "tutor:darkpulse",
-    "tutor:firefang",
-    "tutor:foulplay",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:icefang",
-    "tutor:knockoff",
-    "tutor:lashout",
-    "tutor:playrough",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:shadowball",
-    "tutor:shadowclaw",
-    "tutor:sleeptalk",
-    "tutor:snarl",
-    "tutor:suckerpunch",
-    "tutor:swift",
-    "tutor:thunderfang"
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "1"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "1"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "1"
+    },
+    {
+      "id": "beatup",
+      "name": "Baston",
+      "category": "1"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "1"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "12"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "16"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "22"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "28"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "34"
+    },
+    {
+      "id": "tailslap",
+      "name": "Plumo-Queue",
+      "category": "40"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "46"
+    },
+    {
+      "id": "partingshot",
+      "name": "Dernier Mot",
+      "category": "52"
+    },
+    {
+      "id": "howl",
+      "name": "Grondement",
+      "category": "egg"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "egg"
+    },
+    {
+      "id": "quickguard",
+      "name": "Prévention",
+      "category": "egg"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "beatup",
+      "name": "Baston",
+      "category": "tm"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tm"
+    },
+    {
+      "id": "crunch",
+      "name": "Mâchouille",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "faketears",
+      "name": "Croco Larme",
+      "category": "tm"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "honeclaws",
+      "name": "Aiguisage",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tm"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tm"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "tailslap",
+      "name": "Plumo-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "uturn",
+      "name": "Demi-Tour",
+      "category": "tm"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "firefang",
+      "name": "Crocs Feu",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icefang",
+      "name": "Crocs Givre",
+      "category": "tutor"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "tutor"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "snarl",
+      "name": "Aboiement",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderfang",
+      "name": "Crocs Éclair",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "nickit",
   "spawns": [
     [
       {
@@ -149,8 +506,8 @@
         "rarity": "common",
         "weight": 0.2,
         "levels": "18-46",
-        "contexts": [
-          "grounded"
+        "times": [
+          "night"
         ],
         "biomeTags": {
           "include": [
@@ -158,11 +515,15 @@
             "#cobblemon:is_taiga"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0828_thievul.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0828_thievul.json",
+        "spawnId": "thievul-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "thievul",
+        "type": "pokemon"
       }
     ],
     [
@@ -173,38 +534,23 @@
         "rarity": "uncommon",
         "weight": 1.6,
         "levels": "18-46",
-        "contexts": [
-          "grounded"
+        "times": [
+          "night"
         ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_plains"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0828_thievul.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0828_thievul.json",
+        "spawnId": "thievul-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 1.6,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_starlight_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/uncommon_is_starlight_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "thievul",
+        "type": "pokemon"
       }
     ]
   ],
@@ -218,6 +564,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/thievul.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/thievul.json"
   ]
 }

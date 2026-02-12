@@ -2,20 +2,41 @@
   "id": "fluttermane",
   "dexnum": 987,
   "name": "Flutter Mane",
+  "nameFr": "Flotte-Mèche",
+  "description": "Il présente des similitudes avec un fantôme de ptérosaure évoqué dans une revue sur les phénomènes paranormaux.",
   "primaryType": "ghost",
   "secondaryType": "fairy",
+  "primaryTypeFr": "Spectre",
+  "secondaryTypeFr": "Fée",
+  "height": 14,
+  "weight": 40,
   "maleRatio": -1,
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 0.6,
+    "height": 2,
+    "fixed": false
+  },
   "labels": [
     "gen9",
     "paradox"
   ],
   "abilities": [
-    "protosynthesis",
-    "h:protosynthesis"
+    {
+      "id": "protosynthesis",
+      "name": "Paléosynthèse",
+      "hidden": false
+    },
+    {
+      "id": "protosynthesis",
+      "name": "Paléosynthèse",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 50,
   "baseStats": {
     "hp": 55,
     "attack": 55,
@@ -32,8 +53,10 @@
     "special_defence": 1,
     "speed": 1
   },
+  "baseExperienceYield": 285,
   "experienceGroup": "slow",
   "catchRate": 30,
+  "baseFriendship": 0,
   "drops": {
     "amount": 4,
     "entries": [
@@ -41,126 +64,432 @@
         "item": "minecraft:phantom_membrane",
         "percentage": null,
         "quantityRange": "0-3",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:phantom_membrane"
       },
       {
         "item": "cobblemon:fairy_feather",
         "percentage": null,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Plume Enchantée"
       }
     ]
   },
   "moves": [
-    "1:confuseray",
-    "1:spite",
-    "1:astonish",
-    "1:sunnyday",
-    "7:psybeam",
-    "14:meanlook",
-    "21:memento",
-    "28:wish",
-    "35:dazzlinggleam",
-    "42:shadowball",
-    "49:mysticalfire",
-    "56:powergem",
-    "63:psyshock",
-    "70:phantomforce",
-    "77:painsplit",
-    "84:moonblast",
-    "91:perishsong",
-    "tm:calmmind",
-    "tm:chargebeam",
-    "tm:charm",
-    "tm:confuseray",
-    "tm:darkpulse",
-    "tm:dazzlinggleam",
-    "tm:disarmingvoice",
-    "tm:drainingkiss",
-    "tm:endure",
-    "tm:energyball",
-    "tm:faketears",
-    "tm:gigaimpact",
-    "tm:helpinghand",
-    "tm:hex",
-    "tm:hyperbeam",
-    "tm:hypervoice",
-    "tm:icywind",
-    "tm:imprison",
-    "tm:magicalleaf",
-    "tm:mistyterrain",
-    "tm:mysticalfire",
-    "tm:nightshade",
-    "tm:painsplit",
-    "tm:phantomforce",
-    "tm:poltergeist",
-    "tm:powergem",
-    "tm:protect",
-    "tm:psybeam",
-    "tm:psyshock",
-    "tm:rest",
-    "tm:shadowball",
-    "tm:sleeptalk",
-    "tm:spite",
-    "tm:storedpower",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swift",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:trickroom",
-    "tutor:calmmind",
-    "tutor:chargebeam",
-    "tutor:darkpulse",
-    "tutor:dazzlinggleam",
-    "tutor:energyball",
-    "tutor:gigaimpact",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:hypervoice",
-    "tutor:icywind",
-    "tutor:magicalleaf",
-    "tutor:mysticalfire",
-    "tutor:painsplit",
-    "tutor:poltergeist",
-    "tutor:rest",
-    "tutor:shadowball",
-    "tutor:sleeptalk",
-    "tutor:spite",
-    "tutor:swift",
-    "tutor:thunderbolt",
-    "tutor:trick"
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "1"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "1"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "1"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "1"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "7"
+    },
+    {
+      "id": "meanlook",
+      "name": "Regard Noir",
+      "category": "14"
+    },
+    {
+      "id": "memento",
+      "name": "Souvenir",
+      "category": "21"
+    },
+    {
+      "id": "wish",
+      "name": "Vœu",
+      "category": "28"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "35"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "42"
+    },
+    {
+      "id": "mysticalfire",
+      "name": "Feu Ensorcelé",
+      "category": "49"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "56"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "63"
+    },
+    {
+      "id": "phantomforce",
+      "name": "Hantise",
+      "category": "70"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "77"
+    },
+    {
+      "id": "moonblast",
+      "name": "Pouvoir Lunaire",
+      "category": "84"
+    },
+    {
+      "id": "perishsong",
+      "name": "Requiem",
+      "category": "91"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "disarmingvoice",
+      "name": "Voix Enjôleuse",
+      "category": "tm"
+    },
+    {
+      "id": "drainingkiss",
+      "name": "Vampibaiser",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "faketears",
+      "name": "Croco Larme",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tm"
+    },
+    {
+      "id": "mistyterrain",
+      "name": "Champ Brumeux",
+      "category": "tm"
+    },
+    {
+      "id": "mysticalfire",
+      "name": "Feu Ensorcelé",
+      "category": "tm"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "phantomforce",
+      "name": "Hantise",
+      "category": "tm"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tm"
+    },
+    {
+      "id": "powergem",
+      "name": "Rayon Gemme",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psybeam",
+      "name": "Rafale Psy",
+      "category": "tm"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "storedpower",
+      "name": "Force Ajoutée",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "magicalleaf",
+      "name": "Feuille Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "mysticalfire",
+      "name": "Feu Ensorcelé",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
         "presets": [
-          "natural"
+          "natural",
+          "deep_dark"
         ],
         "rarity": "ultra-rare",
-        "weight": 1.32,
-        "levels": "24-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:dark_swamp"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/ultra-rare_dark_swamp.json"
-      }
-    ],
-    [
-      {
-        "rarity": "ultra-rare",
-        "weight": 1.0,
+        "weight": 0.3,
         "levels": "48-80",
         "contexts": [
           "grounded"
@@ -170,11 +499,37 @@
             "#cobblemon:is_dripstone"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/paradox_spawns/spawn_pool_world/fluttermane.json"
+        "source": "datapacks/CCC_1.9.2/data/paradox_spawns/spawn_pool_world/0987_fluttermane.json",
+        "spawnId": "fluttermane-1",
+        "pokemon": "fluttermane",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural",
+          "deep_dark"
+        ],
+        "rarity": "ultra-rare",
+        "weight": 0.3,
+        "levels": "48-80",
+        "contexts": [
+          "grounded"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_dripstone"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/paradox_spawns_ccc/spawn_pool_world/0987_fluttermane.json",
+        "spawnId": "fluttermane-1",
+        "pokemon": "fluttermane",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/fluttermane.png"
@@ -184,6 +539,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/fluttermane.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/fluttermane.json"
   ]
 }

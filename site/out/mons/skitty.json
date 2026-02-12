@@ -2,21 +2,46 @@
   "id": "skitty",
   "dexnum": 300,
   "name": "Skitty",
+  "nameFr": "Skitty",
+  "description": "On sait que Skitty court souvent après sa queue. À l'état sauvage, ce Pokémon vit dans les cavités des arbres de la forêt. Il est tellement adorable qu'il a un grand succès comme animal de compagnie.",
   "primaryType": "normal",
   "secondaryType": "",
+  "primaryTypeFr": "Normal",
+  "secondaryTypeFr": "",
+  "height": 6,
+  "weight": 110,
   "maleRatio": 0.25,
+  "baseScale": 0.7,
+  "hitbox": {
+    "width": 0.6,
+    "height": 0.8,
+    "fixed": false
+  },
   "labels": [
     "gen3"
   ],
   "abilities": [
-    "cutecharm",
-    "normalize",
-    "h:wonderskin"
+    {
+      "id": "cutecharm",
+      "name": "Joli Sourire",
+      "hidden": false
+    },
+    {
+      "id": "normalize",
+      "name": "Normalise",
+      "hidden": false
+    },
+    {
+      "id": "wonderskin",
+      "name": "Peau Miracle",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "field",
     "fairy"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 50,
     "attack": 45,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 52,
   "experienceGroup": "fast",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -42,134 +69,636 @@
         "item": "cobblemon:silk_scarf",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Mouchoir Soie"
       },
       {
         "item": "cobblemon:pecha_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Pêcha"
       }
     ]
   },
   "moves": [
-    "1:fakeout",
-    "1:growl",
-    "1:tackle",
-    "1:tailwhip",
-    "4:foresight",
-    "7:sing",
-    "10:attract",
-    "13:disarmingvoice",
-    "16:doubleslap",
-    "19:copycat",
-    "22:feintattack",
-    "25:charm",
-    "28:wakeupslap",
-    "31:assist",
-    "34:covet",
-    "37:healbell",
-    "40:doubleedge",
-    "43:captivate",
-    "46:playrough",
-    "egg:batonpass",
-    "egg:captivate",
-    "egg:cosmicpower",
-    "egg:fakeout",
-    "egg:faketears",
-    "egg:helpinghand",
-    "egg:lastresort",
-    "egg:mudbomb",
-    "egg:psychup",
-    "egg:simplebeam",
-    "egg:substitute",
-    "egg:suckerpunch",
-    "egg:tickle",
-    "egg:uproar",
-    "egg:wish",
-    "egg:zenheadbutt",
-    "tm:attract",
-    "tm:blizzard",
-    "tm:calmmind",
-    "tm:captivate",
-    "tm:chargebeam",
-    "tm:confide",
-    "tm:dig",
-    "tm:doubleteam",
-    "tm:dreameater",
-    "tm:echoedvoice",
-    "tm:endure",
-    "tm:facade",
-    "tm:flash",
-    "tm:frustration",
-    "tm:grassknot",
-    "tm:hiddenpower",
-    "tm:icebeam",
-    "tm:irontail",
-    "tm:naturalgift",
-    "tm:payback",
-    "tm:protect",
-    "tm:psychup",
-    "tm:raindance",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:return",
-    "tm:round",
-    "tm:safeguard",
-    "tm:secretpower",
-    "tm:shadowball",
-    "tm:shockwave",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:swagger",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:thunderwave",
-    "tm:toxic",
-    "tm:waterpulse",
-    "tm:wildcharge",
-    "tm:workup",
-    "tutor:attract",
-    "tutor:bodyslam",
-    "tutor:captivate",
-    "tutor:covet",
-    "tutor:defensecurl",
-    "tutor:doubleedge",
-    "tutor:dreameater",
-    "tutor:endure",
-    "tutor:foresight",
-    "tutor:growl",
-    "tutor:headbutt",
-    "tutor:healbell",
-    "tutor:helpinghand",
-    "tutor:hypervoice",
-    "tutor:icywind",
-    "tutor:irontail",
-    "tutor:lastresort",
-    "tutor:mimic",
-    "tutor:mudslap",
-    "tutor:payday",
-    "tutor:psychup",
-    "tutor:rollout",
-    "tutor:shockwave",
-    "tutor:sleeptalk",
-    "tutor:snore",
-    "tutor:substitute",
-    "tutor:suckerpunch",
-    "tutor:swagger",
-    "tutor:swift",
-    "tutor:tackle",
-    "tutor:tailwhip",
-    "tutor:thunderwave",
-    "tutor:tickle",
-    "tutor:uproar",
-    "tutor:waterpulse",
-    "tutor:zenheadbutt"
+    {
+      "id": "fakeout",
+      "name": "Bluff",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "tailwhip",
+      "name": "Mimi-Queue",
+      "category": "1"
+    },
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "foresight",
+      "name": "Clairvoyance",
+      "category": "4"
+    },
+    {
+      "id": "sing",
+      "name": "Berceuse",
+      "category": "7"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "10"
+    },
+    {
+      "id": "disarmingvoice",
+      "name": "Voix Enjôleuse",
+      "category": "13"
+    },
+    {
+      "id": "doubleslap",
+      "name": "Torgnoles",
+      "category": "16"
+    },
+    {
+      "id": "copycat",
+      "name": "Photocopie",
+      "category": "19"
+    },
+    {
+      "id": "feintattack",
+      "name": "Feinte",
+      "category": "22"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "25"
+    },
+    {
+      "id": "assist",
+      "name": "Assistance",
+      "category": "31"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "34"
+    },
+    {
+      "id": "healbell",
+      "name": "Glas de Soin",
+      "category": "37"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "40"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "43"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "46"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "egg"
+    },
+    {
+      "id": "fakeout",
+      "name": "Bluff",
+      "category": "egg"
+    },
+    {
+      "id": "mudbomb",
+      "name": "Boue-Bombe",
+      "category": "egg"
+    },
+    {
+      "id": "simplebeam",
+      "name": "Rayon Simple",
+      "category": "egg"
+    },
+    {
+      "id": "tickle",
+      "name": "Chatouille",
+      "category": "egg"
+    },
+    {
+      "id": "wakeupslap",
+      "name": "Réveil Forcé",
+      "category": "egg"
+    },
+    {
+      "id": "wish",
+      "name": "Vœu",
+      "category": "egg"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "tm"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tm"
+    },
+    {
+      "id": "batonpass",
+      "name": "Relais",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "cosmicpower",
+      "name": "Force Cosmique",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "dig",
+      "name": "Tunnel",
+      "category": "tm"
+    },
+    {
+      "id": "disarmingvoice",
+      "name": "Voix Enjôleuse",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "drainingkiss",
+      "name": "Vampibaiser",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "faketears",
+      "name": "Croco Larme",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "furyswipes",
+      "name": "Combo-Griffe",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "headbutt",
+      "name": "Coup d'Boule",
+      "category": "tm"
+    },
+    {
+      "id": "healbell",
+      "name": "Glas de Soin",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "payback",
+      "name": "Représailles",
+      "category": "tm"
+    },
+    {
+      "id": "payday",
+      "name": "Jackpot",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "safeguard",
+      "name": "Rune Protect",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "tailslap",
+      "name": "Plumo-Queue",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "workup",
+      "name": "Rengorgement",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "babydolleyes",
+      "name": "Regard Touchant",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "healbell",
+      "name": "Glas de Soin",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irontail",
+      "name": "Queue de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "lastresort",
+      "name": "Dernier Recours",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "mimic",
+      "name": "Copie",
+      "category": "legacy"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "swift",
+      "name": "Météores",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "skitty_delcatty",
@@ -181,99 +710,63 @@
       "requiredContext": "cobblemon:moon_stone"
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
         "presets": [
-          "natural"
+          "natural",
+          "wild"
         ],
-        "rarity": "common",
-        "weight": 3.1,
-        "levels": "4-19",
+        "rarity": "uncommon",
+        "weight": 3.4,
+        "levels": "15-32",
         "contexts": [
           "grounded"
         ],
         "biomeTags": {
           "include": [
-            "#eternal_starlight:is_starlight_forest"
+            "aether:skyroot_woodland",
+            "aether:skyroot_meadow",
+            "aether:skyroot_grove",
+            "aether:skyroot_forest"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/common_is_starlight_forest.json"
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0300_skitty.json",
+        "spawnId": "skitty-1",
+        "sky": {
+          "minSkyLight": 0,
+          "maxSkyLight": 15
+        },
+        "pokemon": "skitty",
+        "type": "pokemon"
       }
     ],
     [
       {
         "presets": [
           "natural",
-          "urban"
+          "wild"
         ],
-        "rarity": "common",
-        "weight": 9.0,
-        "levels": "1-35",
+        "rarity": "uncommon",
+        "weight": 3.4,
+        "levels": "15-32",
         "contexts": [
           "grounded"
         ],
         "biomeTags": {
           "include": [
-            "#cobblemon:is_overworld"
-          ],
-          "exclude": [
-            "#cobblemon:is_arid",
-            "#cobblemon:is_freezing"
+            "#cobblemon:is_floral"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/skitty.json",
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0300_skitty.json",
+        "spawnId": "ccc-skitty-1",
         "sky": {
-          "canSeeSky": true
+          "minSkyLight": 0,
+          "maxSkyLight": 15
         },
-        "weather": {
-          "isRaining": false
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural",
-          "urban"
-        ],
-        "rarity": "common",
-        "weight": 9.0,
-        "levels": "4-29",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_arid"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/skitty.json",
-        "sky": {
-          "canSeeSky": true
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 9.0,
-        "levels": "4-29",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "minecraft:cherry_grove"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/skitty.json",
-        "sky": {
-          "canSeeSky": true
-        }
+        "pokemon": "skitty",
+        "type": "pokemon"
       }
     ]
   ],
@@ -287,7 +780,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation3/skitty.json",
-    "datapacks\\CCC_MAL_1.6.4.1\\data\\cobblemon\\species\\skitty.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation3/skitty.json"
   ]
 }

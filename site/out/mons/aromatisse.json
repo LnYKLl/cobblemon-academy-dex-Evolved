@@ -2,19 +2,40 @@
   "id": "aromatisse",
   "dexnum": 683,
   "name": "Aromatisse",
+  "nameFr": "Cocotine",
+  "description": "Son parfum est tellement capiteux qu'un Dresseur n'appréciant pas pleinement son odeur aura toutes les difficultés du monde à cheminer à ses côtés.",
   "primaryType": "fairy",
   "secondaryType": "",
+  "primaryTypeFr": "Fée",
+  "secondaryTypeFr": "",
+  "height": 8,
+  "weight": 155,
   "maleRatio": 0.5,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 0.8,
+    "height": 1.75,
+    "fixed": false
+  },
   "labels": [
     "gen6"
   ],
   "abilities": [
-    "healer",
-    "h:aromaveil"
+    {
+      "id": "healer",
+      "name": "Cœur Soin",
+      "hidden": false
+    },
+    {
+      "id": "aromaveil",
+      "name": "Aroma-Voile",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "fairy"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 101,
     "attack": 72,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 162,
   "experienceGroup": "medium_fast",
   "catchRate": 140,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -40,199 +63,632 @@
         "item": "cobblemon:kebia_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Kébia"
       },
       {
         "item": "cobblemon:fairy_feather",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Plume Enchantée"
       }
     ]
   },
   "moves": [
-    "1:aromaticmist",
-    "1:healpulse",
-    "1:sweetscent",
-    "1:fairywind",
-    "1:sweetkiss",
-    "1:odorsleuth",
-    "1:echoedvoice",
-    "9:disarmingvoice",
-    "12:aromatherapy",
-    "15:drainingkiss",
-    "18:attract",
-    "21:flail",
-    "24:mistyterrain",
-    "27:psychic",
-    "30:charm",
-    "33:calmmind",
-    "36:moonblast",
-    "39:skillswap",
-    "42:psychup",
-    "egg:afteryou",
-    "egg:captivate",
-    "egg:disable",
-    "egg:refresh",
-    "egg:wish",
-    "tm:afteryou",
-    "tm:allyswitch",
-    "tm:attract",
-    "tm:calmmind",
-    "tm:captivate",
-    "tm:chargebeam",
-    "tm:charm",
-    "tm:covet",
-    "tm:dazzlinggleam",
-    "tm:disarmingvoice",
-    "tm:drainingkiss",
-    "tm:drainpunch",
-    "tm:dreameater",
-    "tm:echoedvoice",
-    "tm:encore",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:faketears",
-    "tm:flash",
-    "tm:flashcannon",
-    "tm:gigaimpact",
-    "tm:gyroball",
-    "tm:healbell",
-    "tm:helpinghand",
-    "tm:hyperbeam",
-    "tm:lightscreen",
-    "tm:magiccoat",
-    "tm:metronome",
-    "tm:mistyexplosion",
-    "tm:mistyterrain",
-    "tm:nastyplot",
-    "tm:protect",
-    "tm:psychic",
-    "tm:psychup",
-    "tm:psyshock",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:skillswap",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:sunnyday",
-    "tm:telekinesis",
-    "tm:terablast",
-    "tm:thunder",
-    "tm:thunderbolt",
-    "tm:torment",
-    "tm:trickroom",
-    "tutor:afteryou",
-    "tutor:allyswitch",
-    "tutor:calmmind",
-    "tutor:chargebeam",
-    "tutor:covet",
-    "tutor:dazzlinggleam",
-    "tutor:drainpunch",
-    "tutor:endeavor",
-    "tutor:energyball",
-    "tutor:flashcannon",
-    "tutor:gigaimpact",
-    "tutor:healbell",
-    "tutor:helpinghand",
-    "tutor:hyperbeam",
-    "tutor:magiccoat",
-    "tutor:mistyexplosion",
-    "tutor:psychic",
-    "tutor:rest",
-    "tutor:skillswap",
-    "tutor:sleeptalk",
-    "tutor:telekinesis",
-    "tutor:thunderbolt",
-    "tutor:trick"
+    {
+      "id": "aromaticmist",
+      "name": "Brume Capiteuse",
+      "category": "1"
+    },
+    {
+      "id": "healpulse",
+      "name": "Vibra Soin",
+      "category": "1"
+    },
+    {
+      "id": "sweetscent",
+      "name": "Doux Parfum",
+      "category": "1"
+    },
+    {
+      "id": "fairywind",
+      "name": "Vent Féérique",
+      "category": "1"
+    },
+    {
+      "id": "sweetkiss",
+      "name": "Doux Baiser",
+      "category": "1"
+    },
+    {
+      "id": "odorsleuth",
+      "name": "Flair",
+      "category": "1"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "1"
+    },
+    {
+      "id": "disarmingvoice",
+      "name": "Voix Enjôleuse",
+      "category": "9"
+    },
+    {
+      "id": "aromatherapy",
+      "name": "Aromathérapie",
+      "category": "12"
+    },
+    {
+      "id": "drainingkiss",
+      "name": "Vampibaiser",
+      "category": "15"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "18"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "21"
+    },
+    {
+      "id": "mistyterrain",
+      "name": "Champ Brumeux",
+      "category": "24"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "27"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "30"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "33"
+    },
+    {
+      "id": "moonblast",
+      "name": "Pouvoir Lunaire",
+      "category": "36"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "39"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "42"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "egg"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "egg"
+    },
+    {
+      "id": "disable",
+      "name": "Entrave",
+      "category": "egg"
+    },
+    {
+      "id": "refresh",
+      "name": "Régénération",
+      "category": "egg"
+    },
+    {
+      "id": "wish",
+      "name": "Vœu",
+      "category": "egg"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "tm"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tm"
+    },
+    {
+      "id": "captivate",
+      "name": "Séduction",
+      "category": "tm"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tm"
+    },
+    {
+      "id": "charm",
+      "name": "Charme",
+      "category": "tm"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "disarmingvoice",
+      "name": "Voix Enjôleuse",
+      "category": "tm"
+    },
+    {
+      "id": "drainingkiss",
+      "name": "Vampibaiser",
+      "category": "tm"
+    },
+    {
+      "id": "drainpunch",
+      "name": "Vampi-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "dreameater",
+      "name": "Dévorêve",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "encore",
+      "name": "Encore",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "faketears",
+      "name": "Croco Larme",
+      "category": "tm"
+    },
+    {
+      "id": "flash",
+      "name": "Flash",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "tm"
+    },
+    {
+      "id": "healbell",
+      "name": "Glas de Soin",
+      "category": "tm"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tm"
+    },
+    {
+      "id": "metronome",
+      "name": "Métronome",
+      "category": "tm"
+    },
+    {
+      "id": "mistyexplosion",
+      "name": "Explo-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "mistyterrain",
+      "name": "Champ Brumeux",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psychup",
+      "name": "Boost",
+      "category": "tm"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "sunnyday",
+      "name": "Zénith",
+      "category": "tm"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thunder",
+      "name": "Fatal-Foudre",
+      "category": "tm"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "trickroom",
+      "name": "Distorsion",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "calmmind",
+      "name": "Plénitude",
+      "category": "tutor"
+    },
+    {
+      "id": "chargebeam",
+      "name": "Rayon Chargé",
+      "category": "tutor"
+    },
+    {
+      "id": "covet",
+      "name": "Implore",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "drainpunch",
+      "name": "Vampi-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "healbell",
+      "name": "Glas de Soin",
+      "category": "tutor"
+    },
+    {
+      "id": "helpinghand",
+      "name": "Coup d'Main",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "mistyexplosion",
+      "name": "Explo-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "skillswap",
+      "name": "Échange",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "telekinesis",
+      "name": "Lévikinésie",
+      "category": "tutor"
+    },
+    {
+      "id": "thunderbolt",
+      "name": "Tonnerre",
+      "category": "tutor"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "spritzee",
   "spawns": [
+    [
+      {
+        "presets": [
+          "mansion_bedrooms"
+        ],
+        "rarity": "common",
+        "weight": 0.3,
+        "levels": "29-46",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_overworld"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0683_aromatisse.json",
+        "spawnId": "aromatisse-2",
+        "sky": {
+          "canSeeSky": false
+        },
+        "spawnType": "grounded",
+        "pokemon": "aromatisse",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "uncommon",
+        "weight": 0.48,
+        "levels": "29-46",
+        "biomeTags": {
+          "include": [
+            "#aether:is_aether",
+            "#cobblemon:is_floral"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0683_aromatisse.json",
+        "spawnId": "aromatisse-1",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "aromatisse",
+        "type": "pokemon"
+      }
+    ],
     [
       {
         "presets": [
           "natural"
         ],
         "rarity": "rare",
-        "weight": 2.4,
-        "levels": "18-41",
+        "weight": 2.75,
+        "levels": "35-65",
         "contexts": [
           "grounded"
         ],
         "biomeTags": {
           "include": [
-            "#eternal_starlight:is_starlight_forest"
+            "#cobblemon:is_aether"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/rare_is_starlight_forest.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "common",
-        "weight": 0.7,
-        "levels": "10-24",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:torreya_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/torreya_forest/common_torreya_forest.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural",
-          "wild"
-        ],
-        "rarity": "uncommon",
-        "weight": 7.6,
-        "levels": "47",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_flower_forest"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0683_aromatisse.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural",
-          "wild"
-        ],
-        "rarity": "uncommon",
-        "weight": 7.6,
-        "levels": "47",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#cobblemon:is_forest"
-          ]
-        },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/0683_aromatisse.json"
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0683_aromatisse.json",
+        "spawnId": "aromatisse-1",
+        "pokemon": "aromatisse",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 8.0,
+          "condition": {
+            "timeRange": "day"
+          }
+        }
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/aromatisse.png"
@@ -242,6 +698,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation6/aromatisse.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation6/aromatisse.json"
   ]
 }

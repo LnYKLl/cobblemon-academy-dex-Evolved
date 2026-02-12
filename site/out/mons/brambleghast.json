@@ -2,19 +2,40 @@
   "id": "brambleghast",
   "dexnum": 947,
   "name": "Brambleghast",
+  "nameFr": "Virevorreur",
+  "description": "Ces Pokémon errent à travers les régions arides. En de très rares occasions, ils apparaissent en masse et peuvent engloutir une ville entière.",
   "primaryType": "grass",
   "secondaryType": "ghost",
+  "primaryTypeFr": "Plante",
+  "secondaryTypeFr": "Spectre",
+  "height": 12,
+  "weight": 60,
   "maleRatio": 0.5,
+  "baseScale": 1.15,
+  "hitbox": {
+    "width": 1.0,
+    "height": 1.0,
+    "fixed": false
+  },
   "labels": [
     "gen9"
   ],
   "abilities": [
-    "windrider",
-    "h:infiltrator"
+    {
+      "id": "windrider",
+      "name": "Aéroporté",
+      "hidden": false
+    },
+    {
+      "id": "infiltrator",
+      "name": "Infiltration",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "grass"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 55,
     "attack": 115,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 168,
   "experienceGroup": "medium_fast",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 5,
     "entries": [
@@ -40,142 +63,454 @@
         "item": "minecraft:dead_bush",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:dead_bush"
       },
       {
         "item": "minecraft:stick",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:stick"
       },
       {
         "item": "cobblemon:kasib_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Sédra"
       }
     ]
   },
   "moves": [
-    "1:defensecurl",
-    "1:rollout",
-    "1:astonish",
-    "5:absorb",
-    "9:rapidspin",
-    "13:bulletseed",
-    "17:infestation",
-    "21:hex",
-    "25:megadrain",
-    "29:disable",
-    "35:phantomforce",
-    "40:gigadrain",
-    "45:curse",
-    "50:painsplit",
-    "55:powerwhip",
-    "egg:beatup",
-    "egg:block",
-    "egg:leechseed",
-    "egg:shadowsneak",
-    "egg:strengthsap",
-    "tm:beatup",
-    "tm:block",
-    "tm:bulletseed",
-    "tm:confuseray",
-    "tm:curse",
-    "tm:endure",
-    "tm:energyball",
-    "tm:facade",
-    "tm:gigadrain",
-    "tm:gigaimpact",
-    "tm:grassknot",
-    "tm:grassyglide",
-    "tm:grassyterrain",
-    "tm:hex",
-    "tm:hyperbeam",
-    "tm:infestation",
-    "tm:leafstorm",
-    "tm:nightshade",
-    "tm:painsplit",
-    "tm:phantomforce",
-    "tm:poltergeist",
-    "tm:pounce",
-    "tm:powerwhip",
-    "tm:protect",
-    "tm:rest",
-    "tm:rollout",
-    "tm:scaryface",
-    "tm:seedbomb",
-    "tm:shadowball",
-    "tm:skittersmack",
-    "tm:sleeptalk",
-    "tm:solarbeam",
-    "tm:spikes",
-    "tm:spite",
-    "tm:substitute",
-    "tm:terablast",
-    "tm:thief",
-    "tm:trailblaze",
-    "tutor:block",
-    "tutor:energyball",
-    "tutor:gigadrain",
-    "tutor:gigaimpact",
-    "tutor:grassyglide",
-    "tutor:hyperbeam",
-    "tutor:painsplit",
-    "tutor:poltergeist",
-    "tutor:rest",
-    "tutor:rollout",
-    "tutor:seedbomb",
-    "tutor:shadowball",
-    "tutor:skittersmack",
-    "tutor:sleeptalk",
-    "tutor:spikes",
-    "tutor:spite"
+    {
+      "id": "defensecurl",
+      "name": "Boul'Armure",
+      "category": "1"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "1"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "1"
+    },
+    {
+      "id": "absorb",
+      "name": "Vole-Vie",
+      "category": "5"
+    },
+    {
+      "id": "rapidspin",
+      "name": "Tour Rapide",
+      "category": "9"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "13"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "17"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "21"
+    },
+    {
+      "id": "megadrain",
+      "name": "Méga-Sangsue",
+      "category": "25"
+    },
+    {
+      "id": "disable",
+      "name": "Entrave",
+      "category": "29"
+    },
+    {
+      "id": "phantomforce",
+      "name": "Hantise",
+      "category": "35"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "40"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "45"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "50"
+    },
+    {
+      "id": "powerwhip",
+      "name": "Mégafouet",
+      "category": "55"
+    },
+    {
+      "id": "beatup",
+      "name": "Baston",
+      "category": "egg"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "egg"
+    },
+    {
+      "id": "leechseed",
+      "name": "Vampigraine",
+      "category": "egg"
+    },
+    {
+      "id": "shadowsneak",
+      "name": "Ombre Portée",
+      "category": "egg"
+    },
+    {
+      "id": "strengthsap",
+      "name": "Vole-Force",
+      "category": "egg"
+    },
+    {
+      "id": "beatup",
+      "name": "Baston",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tm"
+    },
+    {
+      "id": "bulletseed",
+      "name": "Balle Graine",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "curse",
+      "name": "Malédiction",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "grassknot",
+      "name": "Nœud Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tm"
+    },
+    {
+      "id": "grassyterrain",
+      "name": "Champ Herbu",
+      "category": "tm"
+    },
+    {
+      "id": "hex",
+      "name": "Châtiment",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "leafstorm",
+      "name": "Tempête Verte",
+      "category": "tm"
+    },
+    {
+      "id": "nightshade",
+      "name": "Ombre Nocturne",
+      "category": "tm"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tm"
+    },
+    {
+      "id": "phantomforce",
+      "name": "Hantise",
+      "category": "tm"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tm"
+    },
+    {
+      "id": "pounce",
+      "name": "Bond",
+      "category": "tm"
+    },
+    {
+      "id": "powerwhip",
+      "name": "Mégafouet",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tm"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tutor"
+    },
+    {
+      "id": "energyball",
+      "name": "Éco-Sphère",
+      "category": "tutor"
+    },
+    {
+      "id": "gigadrain",
+      "name": "Giga-Sangsue",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "grassyglide",
+      "name": "Gliss'Herbe",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "painsplit",
+      "name": "Balance",
+      "category": "tutor"
+    },
+    {
+      "id": "poltergeist",
+      "name": "Esprit Frappeur",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rollout",
+      "name": "Roulade",
+      "category": "tutor"
+    },
+    {
+      "id": "seedbomb",
+      "name": "Canon Graine",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowball",
+      "name": "Ball'Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spikes",
+      "name": "Picots",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "bramblin",
   "spawns": [
     [
       {
         "presets": [
           "natural"
         ],
-        "rarity": "rare",
-        "weight": 10.2,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
+        "rarity": "common",
+        "weight": 1.0,
+        "levels": "23-48",
         "biomeTags": {
           "include": [
-            "eternal_starlight:crystallized_desert"
+            "#cobblemon:is_badlands",
+            "#cobblemon:is_desert"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/crystallized_desert/rare_crystallized_desert.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0947_brambleghast.json",
+        "spawnId": "brambleghast-1",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "brambleghast",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 1.5,
+          "condition": {
+            "timeRange": "night"
+          }
+        }
       }
     ],
     [
       {
-        "rarity": "common",
-        "weight": 3.5,
-        "levels": "28-42",
-        "contexts": [
-          "grounded"
+        "presets": [
+          "natural"
         ],
+        "rarity": "common",
+        "weight": 1.0,
+        "levels": "23-48",
         "biomeTags": {
           "include": [
-            "#cobblemon:is_desert"
+            "#cobblemon:nether/is_desert"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/brambleghast.json",
-        "sky": {
-          "canSeeSky": true
-        }
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0947_brambleghast.json",
+        "spawnId": "brambleghast-2",
+        "spawnType": "grounded",
+        "pokemon": "brambleghast",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/brambleghast.png"
@@ -185,7 +520,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/brambleghast.json",
-    "datapacks\\CCC_MAL_1.6.4.1\\data\\cobblemon\\species\\generation9\\brambleghast.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/brambleghast.json"
   ]
 }

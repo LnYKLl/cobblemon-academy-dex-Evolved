@@ -2,19 +2,40 @@
   "id": "cryogonal",
   "dexnum": 615,
   "name": "Cryogonal",
+  "nameFr": "Hexagel",
+  "description": "Il attrape ses proies à l'aide de sa chaîne faite de cristaux de givre et les gèle à près de -100 °C.",
   "primaryType": "ice",
   "secondaryType": "",
+  "primaryTypeFr": "Glace",
+  "secondaryTypeFr": "",
+  "height": 11,
+  "weight": 1480,
   "maleRatio": -1,
+  "baseScale": 0.9,
+  "hitbox": {
+    "width": 1.5,
+    "height": 2.2,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "levitate",
-    "h:levitate"
+    {
+      "id": "levitate",
+      "name": "Lévitation",
+      "hidden": false
+    },
+    {
+      "id": "levitate",
+      "name": "Lévitation",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "mineral"
   ],
+  "eggCycles": 25,
   "baseStats": {
     "hp": 80,
     "attack": 50,
@@ -31,8 +52,10 @@
     "special_defence": 2,
     "speed": 0
   },
+  "baseExperienceYield": 180,
   "experienceGroup": "medium_fast",
   "catchRate": 25,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -40,104 +63,498 @@
         "item": "cobblemon:never_melt_ice",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Glace Éternelle"
       },
       {
         "item": "cobblemon:aspear_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Willia"
       }
     ]
   },
   "moves": [
-    "1:bind",
-    "1:iceshard",
-    "1:sharpen",
-    "4:confuseray",
-    "8:rapidspin",
-    "12:icywind",
-    "16:mist",
-    "16:haze",
-    "20:ancientpower",
-    "24:aurorabeam",
-    "28:slash",
-    "32:nightslash",
-    "36:freezedry",
-    "40:lightscreen",
-    "40:reflect",
-    "44:recover",
-    "48:icebeam",
-    "52:acidarmor",
-    "56:solarbeam",
-    "60:sheercold",
-    "egg:auroraveil",
-    "egg:explosion",
-    "egg:frostbreath",
-    "tm:acrobatics",
-    "tm:ancientpower",
-    "tm:auroraveil",
-    "tm:avalanche",
-    "tm:bind",
-    "tm:blizzard",
-    "tm:bodyslam",
-    "tm:chillingwater",
-    "tm:confuseray",
-    "tm:defog",
-    "tm:endure",
-    "tm:explosion",
-    "tm:facade",
-    "tm:flashcannon",
-    "tm:frostbreath",
-    "tm:gigaimpact",
-    "tm:hail",
-    "tm:haze",
-    "tm:hyperbeam",
-    "tm:icebeam",
-    "tm:icespinner",
-    "tm:iciclespear",
-    "tm:icywind",
-    "tm:irondefense",
-    "tm:laserfocus",
-    "tm:lightscreen",
-    "tm:magiccoat",
-    "tm:poisonjab",
-    "tm:protect",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:scaryface",
-    "tm:selfdestruct",
-    "tm:signalbeam",
-    "tm:sleeptalk",
-    "tm:snowscape",
-    "tm:solarbeam",
-    "tm:substitute",
-    "tm:takedown",
-    "tm:terablast",
-    "tm:tripleaxel",
-    "tm:waterpulse",
-    "tutor:ancientpower",
-    "tutor:bind",
-    "tutor:defog",
-    "tutor:flashcannon",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:irondefense",
-    "tutor:laserfocus",
-    "tutor:magiccoat",
-    "tutor:poisonjab",
-    "tutor:rest",
-    "tutor:signalbeam",
-    "tutor:sleeptalk",
-    "tutor:tripleaxel",
-    "tutor:waterpulse"
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "1"
+    },
+    {
+      "id": "iceshard",
+      "name": "Éclats Glace",
+      "category": "1"
+    },
+    {
+      "id": "sharpen",
+      "name": "Affûtage",
+      "category": "1"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "4"
+    },
+    {
+      "id": "rapidspin",
+      "name": "Tour Rapide",
+      "category": "8"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "12"
+    },
+    {
+      "id": "mist",
+      "name": "Brume",
+      "category": "16"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "16"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "20"
+    },
+    {
+      "id": "aurorabeam",
+      "name": "Onde Boréale",
+      "category": "24"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "28"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "32"
+    },
+    {
+      "id": "freezedry",
+      "name": "Lyophilisation",
+      "category": "36"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "40"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "40"
+    },
+    {
+      "id": "recover",
+      "name": "Soin",
+      "category": "44"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "48"
+    },
+    {
+      "id": "acidarmor",
+      "name": "Acidarmure",
+      "category": "52"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "56"
+    },
+    {
+      "id": "sheercold",
+      "name": "Glaciation",
+      "category": "60"
+    },
+    {
+      "id": "auroraveil",
+      "name": "Voile Aurore",
+      "category": "egg"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "egg"
+    },
+    {
+      "id": "frostbreath",
+      "name": "Souffle Glacé",
+      "category": "egg"
+    },
+    {
+      "id": "acrobatics",
+      "name": "Acrobatie",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tm"
+    },
+    {
+      "id": "auroraveil",
+      "name": "Voile Aurore",
+      "category": "tm"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "tm"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "confuseray",
+      "name": "Onde Folie",
+      "category": "tm"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "frostbreath",
+      "name": "Souffle Glacé",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "haze",
+      "name": "Buée Noire",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "icespinner",
+      "name": "Cryo-Pirouette",
+      "category": "tm"
+    },
+    {
+      "id": "iciclespear",
+      "name": "Stalactite",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "snowscape",
+      "name": "Chute de Neige",
+      "category": "tm"
+    },
+    {
+      "id": "solarbeam",
+      "name": "Lance-Soleil",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "tripleaxel",
+      "name": "Triple Axel",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "ancientpower",
+      "name": "Pouvoir Antique",
+      "category": "tutor"
+    },
+    {
+      "id": "bind",
+      "name": "Étreinte",
+      "category": "tutor"
+    },
+    {
+      "id": "defog",
+      "name": "Anti-Brume",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tutor"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "tripleaxel",
+      "name": "Triple Axel",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "knockoff",
+      "name": "Sabotage",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -147,18 +564,25 @@
         "rarity": "uncommon",
         "weight": 2.0,
         "levels": "27-52",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0615_cryogonal.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0615_cryogonal.json",
+        "spawnId": "cryogonal-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "cryogonal",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 5.0,
+          "condition": {
+            "isRaining": true
+          }
         }
       }
     ],
@@ -170,34 +594,16 @@
         "rarity": "common",
         "weight": 2.0,
         "levels": "27-52",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_frozen"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0615_cryogonal.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "uncommon",
-        "weight": 2.0,
-        "levels": "18-34",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:starlight_permafrost_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/uncommon_starlight_permafrost_forest.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0615_cryogonal.json",
+        "spawnId": "cryogonal-2",
+        "spawnType": "grounded",
+        "pokemon": "cryogonal",
+        "type": "pokemon"
       }
     ]
   ],
@@ -211,6 +617,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/cryogonal.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/cryogonal.json"
   ]
 }

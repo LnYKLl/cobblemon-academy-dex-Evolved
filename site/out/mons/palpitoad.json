@@ -2,20 +2,45 @@
   "id": "palpitoad",
   "dexnum": 536,
   "name": "Palpitoad",
+  "nameFr": "Batracné",
+  "description": "Il vit dans l'eau et sur la terre ferme. Il immobilise ses proies avec sa langue longue et gluante.",
   "primaryType": "water",
   "secondaryType": "ground",
+  "primaryTypeFr": "Eau",
+  "secondaryTypeFr": "Sol",
+  "height": 8,
+  "weight": 170,
   "maleRatio": 0.5,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 1,
+    "height": 1.8,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "swiftswim",
-    "hydration",
-    "h:waterabsorb"
+    {
+      "id": "swiftswim",
+      "name": "Glissade",
+      "hidden": false
+    },
+    {
+      "id": "hydration",
+      "name": "Hydratation",
+      "hidden": false
+    },
+    {
+      "id": "waterabsorb",
+      "name": "Absorbe-Eau",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "water_1"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 75,
     "attack": 65,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 134,
   "experienceGroup": "medium_slow",
   "catchRate": 120,
+  "baseFriendship": 50,
   "drops": {
     "amount": 3,
     "entries": [
@@ -41,100 +68,461 @@
         "item": "minecraft:clay_ball",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:clay_ball"
       },
       {
         "item": "cobblemon:persim_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Kika"
       }
     ]
   },
   "moves": [
-    "1:bubble",
-    "1:growl",
-    "1:supersonic",
-    "1:echoedvoice",
-    "1:acid",
-    "12:mudshot",
-    "16:round",
-    "20:bubblebeam",
-    "24:flail",
-    "30:uproar",
-    "37:aquaring",
-    "42:hypervoice",
-    "48:muddywater",
-    "54:raindance",
-    "60:hydropump",
-    "egg:mist",
-    "egg:mudbomb",
-    "egg:mudslap",
-    "egg:mudsport",
-    "egg:refresh",
-    "egg:snore",
-    "egg:toxic",
-    "egg:waterpulse",
-    "tm:afteryou",
-    "tm:bounce",
-    "tm:bulldoze",
-    "tm:earthpower",
-    "tm:echoedvoice",
-    "tm:endeavor",
-    "tm:endure",
-    "tm:facade",
-    "tm:focuspunch",
-    "tm:gastroacid",
-    "tm:hail",
-    "tm:hydropump",
-    "tm:hypervoice",
-    "tm:icywind",
-    "tm:infestation",
-    "tm:muddywater",
-    "tm:mudshot",
-    "tm:mudslap",
-    "tm:powerwhip",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:rocksmash",
-    "tm:round",
-    "tm:scald",
-    "tm:screech",
-    "tm:sleeptalk",
-    "tm:sludgebomb",
-    "tm:sludgewave",
-    "tm:snore",
-    "tm:stealthrock",
-    "tm:substitute",
-    "tm:surf",
-    "tm:terablast",
-    "tm:toxic",
-    "tm:uproar",
-    "tm:venomdrench",
-    "tm:waterpulse",
-    "tm:weatherball",
-    "tutor:afteryou",
-    "tutor:bounce",
-    "tutor:bulldoze",
-    "tutor:earthpower",
-    "tutor:endeavor",
-    "tutor:focuspunch",
-    "tutor:gastroacid",
-    "tutor:hypervoice",
-    "tutor:icywind",
-    "tutor:mudslap",
-    "tutor:rest",
-    "tutor:rocksmash",
-    "tutor:sleeptalk",
-    "tutor:sludgebomb",
-    "tutor:snore",
-    "tutor:stealthrock",
-    "tutor:uproar",
-    "tutor:waterpulse"
+    {
+      "id": "bubble",
+      "name": "Écume",
+      "category": "1"
+    },
+    {
+      "id": "growl",
+      "name": "Rugissement",
+      "category": "1"
+    },
+    {
+      "id": "supersonic",
+      "name": "Ultrason",
+      "category": "1"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "1"
+    },
+    {
+      "id": "acid",
+      "name": "Acide",
+      "category": "1"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "12"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "16"
+    },
+    {
+      "id": "bubblebeam",
+      "name": "Bulles d'O",
+      "category": "20"
+    },
+    {
+      "id": "flail",
+      "name": "Gigotage",
+      "category": "24"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "30"
+    },
+    {
+      "id": "aquaring",
+      "name": "Anneau Hydro",
+      "category": "37"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "42"
+    },
+    {
+      "id": "muddywater",
+      "name": "Ocroupi",
+      "category": "48"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "54"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "60"
+    },
+    {
+      "id": "mist",
+      "name": "Brume",
+      "category": "egg"
+    },
+    {
+      "id": "mudbomb",
+      "name": "Boue-Bombe",
+      "category": "egg"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "egg"
+    },
+    {
+      "id": "mudsport",
+      "name": "Lance-Boue",
+      "category": "egg"
+    },
+    {
+      "id": "refresh",
+      "name": "Régénération",
+      "category": "egg"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "egg"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "egg"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "egg"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tm"
+    },
+    {
+      "id": "echoedvoice",
+      "name": "Écho",
+      "category": "tm"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "hydropump",
+      "name": "Hydrocanon",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "infestation",
+      "name": "Harcèlement",
+      "category": "tm"
+    },
+    {
+      "id": "muddywater",
+      "name": "Ocroupi",
+      "category": "tm"
+    },
+    {
+      "id": "mudshot",
+      "name": "Tir de Boue",
+      "category": "tm"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tm"
+    },
+    {
+      "id": "powerwhip",
+      "name": "Mégafouet",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "tm"
+    },
+    {
+      "id": "scald",
+      "name": "Ébullition",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tm"
+    },
+    {
+      "id": "sludgewave",
+      "name": "Cradovague",
+      "category": "tm"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "tm"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "surf",
+      "name": "Surf",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "venomdrench",
+      "name": "Piège de Venin",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "bounce",
+      "name": "Rebond",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "earthpower",
+      "name": "Telluriforce",
+      "category": "tutor"
+    },
+    {
+      "id": "endeavor",
+      "name": "Effort",
+      "category": "tutor"
+    },
+    {
+      "id": "focuspunch",
+      "name": "Mitra-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "gastroacid",
+      "name": "Suc Digestif",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "mudslap",
+      "name": "Coud'Boue",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "sludgebomb",
+      "name": "Bombe Beurk",
+      "category": "tutor"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "tutor"
+    },
+    {
+      "id": "stealthrock",
+      "name": "Piège de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "palpitoad_seismitoad",
@@ -153,28 +541,111 @@
       ]
     }
   ],
+  "preEvolution": "tympole",
   "spawns": [
+    [
+      {
+        "presets": [
+          "water"
+        ],
+        "rarity": "uncommon",
+        "weight": 8.7,
+        "levels": "24-37",
+        "contexts": [
+          "submerged"
+        ],
+        "biomeTags": {
+          "include": [
+            "deeperdarker:blooming_caverns",
+            "deeperdarker:deeplands",
+            "deeperdarker:echoing_forest"
+          ]
+        },
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0536_palpitoad.json",
+        "spawnId": "deeper-palpitoad-1",
+        "pokemon": "palpitoad",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "rarity": "uncommon",
+        "weight": 1.5,
+        "levels": "24-37",
+        "contexts": [
+          "fishing"
+        ],
+        "biomeTags": {
+          "include": [
+            "deeperdarker:blooming_caverns",
+            "deeperdarker:deeplands",
+            "deeperdarker:echoing_forest"
+          ]
+        },
+        "source": "datapacks/CCC_1.9.2/data/cobblemon/spawn_pool_world/0536_palpitoad.json",
+        "spawnId": "deeper-palpitoad-2",
+        "pokemon": "palpitoad",
+        "type": "pokemon",
+        "weightMultiplier": [
+          {
+            "multiplier": 3.5,
+            "condition": {
+              "minLureLevel": 2
+            }
+          }
+        ]
+      }
+    ],
     [
       {
         "presets": [
           "natural"
         ],
-        "rarity": "uncommon",
-        "weight": 2.4,
-        "levels": "18-34",
+        "rarity": "common",
+        "weight": 0.95,
+        "levels": "25-39",
         "contexts": [
           "grounded"
         ],
         "biomeTags": {
           "include": [
-            "eternal_starlight:dark_swamp"
+            "#cobblemon:is_swamp"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/dark_swamp/uncommon_dark_swamp.json"
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0536_palpitoad.json",
+        "spawnId": "ccc-palpitoad-1",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "pokemon": "palpitoad",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "underwater"
+        ],
+        "rarity": "common",
+        "weight": 0.95,
+        "levels": "25-39",
+        "contexts": [
+          "submerged"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_swamp"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/cobblemon/spawn_pool_world/0536_palpitoad.json",
+        "spawnId": "ccc-palpitoad-2",
+        "pokemon": "palpitoad",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/palpitoad.png"
@@ -184,6 +655,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/palpitoad.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/palpitoad.json"
   ]
 }

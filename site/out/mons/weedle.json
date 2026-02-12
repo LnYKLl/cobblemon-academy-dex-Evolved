@@ -2,19 +2,40 @@
   "id": "weedle",
   "dexnum": 13,
   "name": "Weedle",
+  "nameFr": "Aspicot",
+  "description": "L'odorat d'Aspicot est extrêmement développé. Il lui suffit de renifler ses feuilles préférées avec son gros appendice nasal pour les reconnaître entre mille.",
   "primaryType": "bug",
   "secondaryType": "poison",
+  "primaryTypeFr": "Insecte",
+  "secondaryTypeFr": "Poison",
+  "height": 3,
+  "weight": 32,
   "maleRatio": 0.5,
+  "baseScale": 0.5,
+  "hitbox": {
+    "width": 0.8,
+    "height": 0.4,
+    "fixed": false
+  },
   "labels": [
     "gen1"
   ],
   "abilities": [
-    "shielddust",
-    "h:runaway"
+    {
+      "id": "shielddust",
+      "name": "Écran Poudre",
+      "hidden": false
+    },
+    {
+      "id": "runaway",
+      "name": "Fuite",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "bug"
   ],
+  "eggCycles": 15,
   "baseStats": {
     "hp": 40,
     "attack": 35,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 1
   },
+  "baseExperienceYield": 39,
   "experienceGroup": "medium_fast",
   "catchRate": 255,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -40,32 +63,81 @@
         "item": "minecraft:string",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:string"
       },
       {
         "item": "cobblemon:pinap_berry",
         "percentage": 2.5,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Nanana"
       }
     ]
   },
   "moves": [
-    "1:poisonsting",
-    "1:stringshot",
-    "9:bugbite",
-    "tm:bugbite",
-    "tm:electroweb",
-    "tm:skittersmack",
-    "tm:stringshot",
-    "tm:terablast",
-    "tutor:bugbite",
-    "tutor:electroweb",
-    "tutor:skittersmack",
-    "tutor:stringshot"
+    {
+      "id": "poisonsting",
+      "name": "Dard-Venin",
+      "category": "1"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "1"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "9"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tm"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tm"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tm"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "bugbite",
+      "name": "Piqûre",
+      "category": "tutor"
+    },
+    {
+      "id": "electroweb",
+      "name": "Toile Élek",
+      "category": "tutor"
+    },
+    {
+      "id": "skittersmack",
+      "name": "Ravage Rampant",
+      "category": "tutor"
+    },
+    {
+      "id": "stringshot",
+      "name": "Sécrétion",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "weedle_kakuna",
@@ -83,6 +155,7 @@
       ]
     }
   ],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -93,9 +166,6 @@
         "rarity": "common",
         "weight": 7.0,
         "levels": "1-20",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_forest",
@@ -107,11 +177,15 @@
             "#cobblemon:is_freezing"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0013_weedle.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0013_weedle.json",
+        "spawnId": "weedle-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "weedle",
+        "type": "pokemon"
       }
     ],
     [
@@ -119,34 +193,19 @@
         "rarity": "common",
         "weight": 3.0,
         "levels": "1-20",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#the_bumblezone:the_bumblezone"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0013_weedle.json"
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0013_weedle.json",
+        "spawnId": "weedle-2",
+        "spawnType": "grounded",
+        "pokemon": "weedle",
+        "excludeStructures": [
+          "#the_bumblezone:sempiternal_sanctums"
         ],
-        "rarity": "common",
-        "weight": 3.1,
-        "levels": "4-18",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "eternal_starlight:scarlet_forest"
-          ]
-        },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/scarlet_forest/common_scarlet_forest.json"
+        "type": "pokemon"
       }
     ]
   ],
@@ -160,6 +219,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/weedle.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/weedle.json"
   ]
 }

@@ -13,70 +13,137 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Cobblemon Academy Mini-Dex</title>
+    <title>Cobblemon Academy Dex</title>
     <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./theme.css" />
   </head>
-  <body class="min-h-full bg-slate-50 text-slate-900">
-    <div id="app" class="mx-auto max-w-7xl p-4 md:p-8 space-y-6">
-      <header class="flex items-center justify-between">
-        <h1 class="text-2xl font-bold tracking-tight">Cobblemon Mini-Dex</h1>
-        <nav class="text-sm flex gap-4 text-indigo-700">
-          <a href="#/dex" class="hover:underline">Dex</a>
-          <a href="#/drops" class="hover:underline">Drops</a>
-          <a
-            href="https://github.com/ppVon/cobblemon-academy-dex-site"
-            target="_blank"
-            rel="noopener"
-            class="flex items-center gap-1 hover:underline"
-          >
-            <!-- Simple GitHub Mark -->
-            <svg
-              class="w-4 h-4 fill-current"
-              role="img"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>GitHub</title>
-              <path
-                d="M12 .297c-6.63 0-12 5.373-12 12 
-              0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 
-              0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61 
-              -.546-1.385-1.333-1.754-1.333-1.754-1.087-.744.084-.729.084-.729 
-              1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998 
-              .108-.775.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 
-              0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 
-              1.005-.322 3.3 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.045.138 
-              3.003.404 2.28-1.552 3.285-1.23 3.285-1.23 .645 1.653.24 2.873.12 
-              3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 
-              5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 
-              0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-              />
-            </svg>
-            GitHub
-          </a>
-        </nav>
+  <body class="min-h-screen">
+    <div id="app" class="min-h-screen">
+      <!-- Header -->
+      <header class="sticky top-0 z-50 glass-card border-b border-[var(--border)]">
+        <div class="mx-auto max-w-7xl px-4 py-3 md:px-8">
+          <div class="flex items-center justify-between">
+            <!-- Logo & Title -->
+            <a href="#/dex" class="flex items-center gap-3 group">
+              <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                </svg>
+              </div>
+              <div>
+                <h1 class="text-xl font-bold text-[var(--text)]">Cobblemon Academy</h1>
+                <p class="text-xs text-[var(--text-muted)]">{{ t('header.subtitle') }}</p>
+              </div>
+            </a>
+
+            <!-- Navigation -->
+            <nav class="hidden md:flex items-center gap-2">
+              <a href="#/dex" class="nav-pill" :class="{ active: route.view === 'dex' || route.view === 'mon' }">
+                <span class="flex items-center gap-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                  </svg>
+                  Pokédex
+                </span>
+              </a>
+              <a href="#/drops" class="nav-pill" :class="{ active: route.view === 'drops' }">
+                <span class="flex items-center gap-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                  </svg>
+                  Drops
+                </span>
+              </a>
+              <a href="#/snack" class="nav-pill" :class="{ active: route.view === 'snack' }">
+                <span class="flex items-center gap-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                  PokéSnack
+                </span>
+              </a>
+            </nav>
+
+            <!-- Right side: Language, Theme toggle & GitHub -->
+            <div class="flex items-center gap-3">
+              <!-- Language toggle -->
+              <button @click="toggleLanguage" class="theme-toggle flex items-center gap-1.5" :title="currentLang === 'fr' ? 'Switch to English' : 'Passer en Français'">
+                <span class="text-sm font-medium">{{ currentLang === 'fr' ? '🇫🇷' : '🇬🇧' }}</span>
+                <span class="text-xs text-[var(--text-muted)] hidden sm:inline">{{ currentLang === 'fr' ? 'FR' : 'EN' }}</span>
+              </button>
+              <button @click="toggleTheme" class="theme-toggle" title="Toggle theme">
+                <svg v-if="isDark" class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                </svg>
+                <svg v-else class="w-5 h-5 text-slate-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+              </button>
+              <a
+                href="https://github.com/LnYKLl/cobblemon-academy-dex-Evolved"
+                target="_blank"
+                rel="noopener"
+                class="theme-toggle"
+                title="GitHub"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.333-1.754-1.333-1.754-1.087-.744.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.775.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.045.138 3.003.404 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Mobile Navigation -->
+          <nav class="md:hidden flex items-center gap-2 mt-3 overflow-x-auto pb-2">
+            <a href="#/dex" class="nav-pill whitespace-nowrap" :class="{ active: route.view === 'dex' || route.view === 'mon' }">Pokédex</a>
+            <a href="#/drops" class="nav-pill whitespace-nowrap" :class="{ active: route.view === 'drops' }">Drops</a>
+            <a href="#/snack" class="nav-pill whitespace-nowrap" :class="{ active: route.view === 'snack' }">PokéSnack</a>
+          </nav>
+        </div>
       </header>
 
-      <div v-if="loading" class="text-slate-600">
-        Loading data… Place this with <code>dex.json</code>,
-        <code>presets.json</code>, <code>biomes.json</code>,
-        <code>sprites.json</code>.
-      </div>
-      <div v-if="error" class="text-red-600">{{ error }}</div>
+      <!-- Main Content -->
+      <main class="mx-auto max-w-7xl p-4 md:p-8">
+        <div v-if="loading" class="flex flex-col items-center justify-center py-20">
+          <div class="w-16 h-16 rounded-full border-4 border-[var(--primary)] border-t-transparent animate-spin mb-4"></div>
+          <p class="text-[var(--text-muted)]">{{ t('loading') }}</p>
+        </div>
+        <div v-if="error" class="text-center py-20">
+          <div class="w-16 h-16 rounded-full bg-red-100 text-red-600 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+          </div>
+          <p class="text-red-600 font-medium">{{ t('error') }}: {{ error }}</p>
+        </div>
 
-      <component
-        v-if="!loading && !error"
-        :is="currentView"
-        :dex="dex"
-        :presets="presets"
-        :biomes="biomes"
-        :sprites="sprites"
-        :dropsIndex="dropsIndex"
-        :drop-items="dropItems"
-        :route="route"
-      />
+        <component
+          v-if="!loading && !error"
+          :is="currentView"
+          :key="currentView + '-' + currentLang"
+          :dex="dex"
+          :presets="presets"
+          :biomes="biomes"
+          :sprites="sprites"
+          :dropsIndex="dropsIndex"
+          :drop-items="dropItems"
+          :route="route"
+          :currentLang="currentLang"
+        />
+      </main>
+
+      <!-- Footer -->
+      <footer class="border-t border-[var(--border)] mt-auto">
+        <div class="mx-auto max-w-7xl px-4 py-6 md:px-8">
+          <p class="text-center text-sm text-[var(--text-muted)]">
+            {{ t('footer.text') }}
+          </p>
+        </div>
+      </footer>
     </div>
 
     <!-- Main app as ES module -->

@@ -2,20 +2,45 @@
   "id": "vanilluxe",
   "dexnum": 584,
   "name": "Vanilluxe",
+  "nameFr": "Sorbouboul",
+  "description": "Il avale de grandes quantités d'eau et la transforme en nuages de neige. Il souffle du blizzard quand il se fâche.",
   "primaryType": "ice",
   "secondaryType": "",
+  "primaryTypeFr": "Glace",
+  "secondaryTypeFr": "",
+  "height": 13,
+  "weight": 575,
   "maleRatio": 0.5,
+  "baseScale": 0.75,
+  "hitbox": {
+    "width": 1.2,
+    "height": 2.6,
+    "fixed": false
+  },
   "labels": [
     "gen5"
   ],
   "abilities": [
-    "icebody",
-    "snowwarning",
-    "h:weakarmor"
+    {
+      "id": "icebody",
+      "name": "Corps Gel",
+      "hidden": false
+    },
+    {
+      "id": "snowwarning",
+      "name": "Alerte Neige",
+      "hidden": false
+    },
+    {
+      "id": "weakarmor",
+      "name": "Armurouillée",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "mineral"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 71,
     "attack": 95,
@@ -32,8 +57,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 268,
   "experienceGroup": "slow",
   "catchRate": 45,
+  "baseFriendship": 50,
   "drops": {
     "amount": 5,
     "entries": [
@@ -41,122 +68,499 @@
         "item": "minecraft:snowball",
         "percentage": null,
         "quantityRange": "0-3",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:snowball"
       },
       {
         "item": "cobblemon:never_melt_ice",
         "percentage": 10.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Glace Éternelle"
       },
       {
         "item": "cobblemon:aspear_berry",
         "percentage": 10.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Willia"
       }
     ]
   },
   "moves": [
-    "1:weatherball",
-    "1:harden",
-    "1:astonish",
-    "1:mist",
-    "1:taunt",
-    "1:mirrorshot",
-    "1:freezedry",
-    "1:iciclecrash",
-    "12:icywind",
-    "16:avalanche",
-    "20:hail",
-    "24:iciclespear",
-    "28:uproar",
-    "32:acidarmor",
-    "38:mirrorcoat",
-    "44:icebeam",
-    "52:blizzard",
-    "60:sheercold",
-    "egg:auroraveil",
-    "egg:autotomize",
-    "egg:explosion",
-    "egg:iceshard",
-    "egg:iciclecrash",
-    "egg:magnetrise",
-    "egg:mirrorshot",
-    "egg:naturalgift",
-    "egg:powdersnow",
-    "tm:allyswitch",
-    "tm:auroraveil",
-    "tm:avalanche",
-    "tm:beatup",
-    "tm:blizzard",
-    "tm:endure",
-    "tm:explosion",
-    "tm:facade",
-    "tm:flashcannon",
-    "tm:frostbreath",
-    "tm:gigaimpact",
-    "tm:hail",
-    "tm:hyperbeam",
-    "tm:hypervoice",
-    "tm:icebeam",
-    "tm:iciclespear",
-    "tm:icywind",
-    "tm:imprison",
-    "tm:irondefense",
-    "tm:lightscreen",
-    "tm:magiccoat",
-    "tm:magnetrise",
-    "tm:naturalgift",
-    "tm:protect",
-    "tm:raindance",
-    "tm:rest",
-    "tm:selfdestruct",
-    "tm:signalbeam",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:uproar",
-    "tm:waterpulse",
-    "tm:weatherball",
-    "tutor:allyswitch",
-    "tutor:flashcannon",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:hypervoice",
-    "tutor:icebeam",
-    "tutor:icywind",
-    "tutor:irondefense",
-    "tutor:magiccoat",
-    "tutor:magnetrise",
-    "tutor:rest",
-    "tutor:signalbeam",
-    "tutor:sleeptalk",
-    "tutor:uproar",
-    "tutor:waterpulse"
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "1"
+    },
+    {
+      "id": "harden",
+      "name": "Armure",
+      "category": "1"
+    },
+    {
+      "id": "astonish",
+      "name": "Étonnement",
+      "category": "1"
+    },
+    {
+      "id": "mist",
+      "name": "Brume",
+      "category": "1"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "1"
+    },
+    {
+      "id": "mirrorshot",
+      "name": "Miroi-Tir",
+      "category": "1"
+    },
+    {
+      "id": "freezedry",
+      "name": "Lyophilisation",
+      "category": "1"
+    },
+    {
+      "id": "iciclecrash",
+      "name": "Chute Glace",
+      "category": "1"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "12"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "16"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "20"
+    },
+    {
+      "id": "iciclespear",
+      "name": "Stalactite",
+      "category": "24"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "28"
+    },
+    {
+      "id": "acidarmor",
+      "name": "Acidarmure",
+      "category": "32"
+    },
+    {
+      "id": "mirrorcoat",
+      "name": "Voile Miroir",
+      "category": "38"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "44"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "52"
+    },
+    {
+      "id": "sheercold",
+      "name": "Glaciation",
+      "category": "60"
+    },
+    {
+      "id": "auroraveil",
+      "name": "Voile Aurore",
+      "category": "egg"
+    },
+    {
+      "id": "autotomize",
+      "name": "Allègement",
+      "category": "egg"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "egg"
+    },
+    {
+      "id": "iceshard",
+      "name": "Éclats Glace",
+      "category": "egg"
+    },
+    {
+      "id": "iciclecrash",
+      "name": "Chute Glace",
+      "category": "egg"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "egg"
+    },
+    {
+      "id": "mirrorshot",
+      "name": "Miroi-Tir",
+      "category": "egg"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "egg"
+    },
+    {
+      "id": "powdersnow",
+      "name": "Poudreuse",
+      "category": "egg"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tm"
+    },
+    {
+      "id": "auroraveil",
+      "name": "Voile Aurore",
+      "category": "tm"
+    },
+    {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "category": "tm"
+    },
+    {
+      "id": "beatup",
+      "name": "Baston",
+      "category": "tm"
+    },
+    {
+      "id": "blizzard",
+      "name": "Blizzard",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "explosion",
+      "name": "Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "frostbreath",
+      "name": "Souffle Glacé",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hail",
+      "name": "Grêle",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tm"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tm"
+    },
+    {
+      "id": "iciclespear",
+      "name": "Stalactite",
+      "category": "tm"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tm"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tm"
+    },
+    {
+      "id": "naturalgift",
+      "name": "Don Naturel",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "selfdestruct",
+      "name": "Destruction",
+      "category": "tm"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tm"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tm"
+    },
+    {
+      "id": "weatherball",
+      "name": "Ball'Météo",
+      "category": "tm"
+    },
+    {
+      "id": "allyswitch",
+      "name": "Interversion",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "hypervoice",
+      "name": "Mégaphone",
+      "category": "tutor"
+    },
+    {
+      "id": "icebeam",
+      "name": "Laser Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "icywind",
+      "name": "Vent Glace",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "magiccoat",
+      "name": "Reflet Magik",
+      "category": "tutor"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "signalbeam",
+      "name": "Rayon Signal",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "tutor"
+    },
+    {
+      "id": "waterpulse",
+      "name": "Vibraqua",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": "vanillish",
   "spawns": [
     [
       {
         "presets": [
           "natural"
         ],
-        "rarity": "rare",
-        "weight": 2.2,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
+        "rarity": "common",
+        "weight": 0.02,
+        "levels": "47-54",
         "biomeTags": {
           "include": [
-            "eternal_starlight:starlight_permafrost_forest"
+            "#cobblemon:is_freezing"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/starlight_permafrost_forest/rare_starlight_permafrost_forest.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0584_vanilluxe.json",
+        "spawnId": "vanilluxe-1",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "vanilluxe",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 5.0,
+          "condition": {
+            "timeRange": "dawn"
+          }
+        }
       }
     ],
     [
@@ -164,28 +568,47 @@
         "presets": [
           "natural"
         ],
-        "rarity": "ultra-rare",
-        "weight": 4.0,
-        "levels": "40-50",
-        "contexts": [
-          "grounded"
-        ],
+        "rarity": "uncommon",
+        "weight": 0.096,
+        "levels": "47-54",
         "biomeTags": {
           "include": [
-            "#cobblemon:is_tundra",
-            "minecraft:snowy_plains",
-            "#cobblemon:is_snowy_forest",
-            "minecraft:ice_spikes"
+            "#cobblemon:is_freezing"
           ]
         },
-        "source": "datapacks/CCC_MAL_1.6.4.1/data/cobblemon/spawn_pool_world/vanilluxe.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0584_vanilluxe.json",
+        "spawnId": "vanilluxe-2",
         "sky": {
-          "canSeeSky": true
-        }
+          "minSkyLight": 0,
+          "maxSkyLight": 7
+        },
+        "spawnType": "grounded",
+        "pokemon": "vanilluxe",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "common",
+        "weight": 0.06,
+        "levels": "47-54",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:nether/is_frozen"
+          ]
+        },
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0584_vanilluxe.json",
+        "spawnId": "vanilluxe-3",
+        "spawnType": "grounded",
+        "pokemon": "vanilluxe",
+        "type": "pokemon"
       }
     ]
   ],
-  "implemented": false,
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/vanilluxe.png"
@@ -195,6 +618,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation5/vanilluxe.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation5/vanilluxe.json"
   ]
 }

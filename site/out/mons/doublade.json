@@ -2,19 +2,40 @@
   "id": "doublade",
   "dexnum": 680,
   "name": "Doublade",
+  "nameFr": "Dimoclès",
+  "description": "En évoluant, Monorpale se divise en deux épées qui communiquent par télépathie pour mieux découper leur adversaire en morceaux.",
   "primaryType": "steel",
   "secondaryType": "ghost",
+  "primaryTypeFr": "Acier",
+  "secondaryTypeFr": "Spectre",
+  "height": 8,
+  "weight": 45,
   "maleRatio": 0.5,
+  "baseScale": 0.8,
+  "hitbox": {
+    "width": 1.2,
+    "height": 2,
+    "fixed": false
+  },
   "labels": [
     "gen6"
   ],
   "abilities": [
-    "noguard",
-    "h:noguard"
+    {
+      "id": "noguard",
+      "name": "Annule Garde",
+      "hidden": false
+    },
+    {
+      "id": "noguard",
+      "name": "Annule Garde",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "mineral"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 59,
     "attack": 110,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 157,
   "experienceGroup": "medium_fast",
   "catchRate": 90,
+  "baseFriendship": 50,
   "drops": {
     "amount": 4,
     "entries": [
@@ -40,107 +63,459 @@
         "item": "minecraft:iron_nugget",
         "percentage": null,
         "quantityRange": "0-2",
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:iron_nugget"
       },
       {
         "item": "minecraft:iron_sword",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "minecraft:iron_sword"
       },
       {
         "item": "cobblemon:dusk_stone",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Pierre Nuit"
       }
     ]
   },
   "moves": [
-    "1:tackle",
-    "1:furycutter",
-    "1:pursuit",
-    "1:autotomize",
-    "1:shadowsneak",
-    "12:aerialace",
-    "16:metalsound",
-    "20:slash",
-    "24:nightslash",
-    "28:retaliate",
-    "32:irondefense",
-    "38:ironhead",
-    "44:powertrick",
-    "50:swordsdance",
-    "56:sacredsword",
-    "egg:block",
-    "egg:destinybond",
-    "egg:wideguard",
-    "tm:aerialace",
-    "tm:afteryou",
-    "tm:block",
-    "tm:brickbreak",
-    "tm:brutalswing",
-    "tm:closecombat",
-    "tm:cut",
-    "tm:endure",
-    "tm:facade",
-    "tm:falseswipe",
-    "tm:flashcannon",
-    "tm:furycutter",
-    "tm:gyroball",
-    "tm:irondefense",
-    "tm:ironhead",
-    "tm:laserfocus",
-    "tm:magnetrise",
-    "tm:metalsound",
-    "tm:protect",
-    "tm:psychocut",
-    "tm:raindance",
-    "tm:reflect",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:reversal",
-    "tm:rockslide",
-    "tm:rocksmash",
-    "tm:screech",
-    "tm:shadowclaw",
-    "tm:shockwave",
-    "tm:sleeptalk",
-    "tm:solarblade",
-    "tm:spite",
-    "tm:steelbeam",
-    "tm:substitute",
-    "tm:swordsdance",
-    "tm:terablast",
-    "tutor:aerialace",
-    "tutor:afteryou",
-    "tutor:block",
-    "tutor:falseswipe",
-    "tutor:flashcannon",
-    "tutor:furycutter",
-    "tutor:irondefense",
-    "tutor:ironhead",
-    "tutor:laserfocus",
-    "tutor:magnetrise",
-    "tutor:psychocut",
-    "tutor:rest",
-    "tutor:rockslide",
-    "tutor:rocksmash",
-    "tutor:shadowclaw",
-    "tutor:shockwave",
-    "tutor:sleeptalk",
-    "tutor:spite",
-    "tutor:steelbeam",
-    "tutor:trick"
+    {
+      "id": "tackle",
+      "name": "Charge",
+      "category": "1"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "1"
+    },
+    {
+      "id": "pursuit",
+      "name": "Poursuite",
+      "category": "1"
+    },
+    {
+      "id": "autotomize",
+      "name": "Allègement",
+      "category": "1"
+    },
+    {
+      "id": "shadowsneak",
+      "name": "Ombre Portée",
+      "category": "1"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "12"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "16"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "20"
+    },
+    {
+      "id": "nightslash",
+      "name": "Tranche-Nuit",
+      "category": "24"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "28"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "32"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "38"
+    },
+    {
+      "id": "powertrick",
+      "name": "Astuce Force",
+      "category": "44"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "50"
+    },
+    {
+      "id": "sacredsword",
+      "name": "Lame Sainte",
+      "category": "56"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "egg"
+    },
+    {
+      "id": "destinybond",
+      "name": "Lien du Destin",
+      "category": "egg"
+    },
+    {
+      "id": "wideguard",
+      "name": "Garde Large",
+      "category": "egg"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tm"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "brutalswing",
+      "name": "Centrifugifle",
+      "category": "tm"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "tm"
+    },
+    {
+      "id": "cut",
+      "name": "Coupe",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tm"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tm"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tm"
+    },
+    {
+      "id": "gyroball",
+      "name": "Gyroballe",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tm"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tm"
+    },
+    {
+      "id": "metalsound",
+      "name": "Strido-Son",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tm"
+    },
+    {
+      "id": "raindance",
+      "name": "Danse Pluie",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "reversal",
+      "name": "Contre",
+      "category": "tm"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tm"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tm"
+    },
+    {
+      "id": "screech",
+      "name": "Grincement",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarblade",
+      "name": "Lame Solaire",
+      "category": "tm"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tm"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "afteryou",
+      "name": "Après Vous",
+      "category": "tutor"
+    },
+    {
+      "id": "block",
+      "name": "Barrage",
+      "category": "tutor"
+    },
+    {
+      "id": "falseswipe",
+      "name": "Faux-Chage",
+      "category": "tutor"
+    },
+    {
+      "id": "flashcannon",
+      "name": "Luminocanon",
+      "category": "tutor"
+    },
+    {
+      "id": "furycutter",
+      "name": "Taillade",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "laserfocus",
+      "name": "Affilage",
+      "category": "tutor"
+    },
+    {
+      "id": "magnetrise",
+      "name": "Vol Magnétik",
+      "category": "tutor"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "rockslide",
+      "name": "Éboulement",
+      "category": "tutor"
+    },
+    {
+      "id": "rocksmash",
+      "name": "Éclate-Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "shockwave",
+      "name": "Onde de Choc",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "spite",
+      "name": "Dépit",
+      "category": "tutor"
+    },
+    {
+      "id": "steelbeam",
+      "name": "Métalaser",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "legacy"
+    },
+    {
+      "id": "doubleteam",
+      "name": "Reflet",
+      "category": "legacy"
+    },
+    {
+      "id": "frustration",
+      "name": "Frustration",
+      "category": "legacy"
+    },
+    {
+      "id": "hiddenpower",
+      "name": "Puissance Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "return",
+      "name": "Retour",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "secretpower",
+      "name": "Force Cachée",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "legacy"
+    },
+    {
+      "id": "toxic",
+      "name": "Toxik",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "doublade_aegislash",
       "variant": "item_interact",
       "result": "aegislash stance_forme=shield",
-      "consumeHeldItem": true,
+      "consumeHeldItem": false,
       "learnableMoves": [
         "kingsshield"
       ],
@@ -148,6 +523,7 @@
       "requiredContext": "cobblemon:dusk_stone"
     }
   ],
+  "preEvolution": "honedge",
   "spawns": [
     [
       {
@@ -158,15 +534,16 @@
         "rarity": "uncommon",
         "weight": 15.2,
         "levels": "35-45",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#minecraft:is_nether"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0680_doublade.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0680_doublade.json",
+        "spawnId": "doublade-1",
+        "spawnType": "grounded",
+        "pokemon": "doublade",
+        "type": "pokemon"
       }
     ],
     [
@@ -174,22 +551,23 @@
         "rarity": "uncommon",
         "weight": 7.12,
         "levels": "35-45",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0680_doublade.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0680_doublade.json",
+        "spawnId": "doublade-2",
         "structures": [
           "#cobblemon:ruin"
         ],
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "doublade",
+        "type": "pokemon"
       }
     ],
     [
@@ -200,19 +578,20 @@
         "rarity": "uncommon",
         "weight": 15.2,
         "levels": "35-45",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0680_doublade.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0680_doublade.json",
+        "spawnId": "doublade-3",
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "doublade",
+        "type": "pokemon"
       }
     ],
     [
@@ -220,41 +599,23 @@
         "rarity": "uncommon",
         "weight": 0.712,
         "levels": "35-45",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#aether:is_aether"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0680_doublade.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0680_doublade.json",
+        "spawnId": "doublade-4",
         "structures": [
           "#aether:dungeons"
         ],
         "sky": {
           "minSkyLight": 0,
           "maxSkyLight": 7
-        }
-      }
-    ],
-    [
-      {
-        "presets": [
-          "natural"
-        ],
-        "rarity": "rare",
-        "weight": 4.8,
-        "levels": "18-41",
-        "contexts": [
-          "grounded"
-        ],
-        "biomeTags": {
-          "include": [
-            "#eternal_starlight:is_starlight_forest"
-          ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_starlight_forest/rare_is_starlight_forest.json"
+        "spawnType": "grounded",
+        "pokemon": "doublade",
+        "type": "pokemon"
       }
     ]
   ],
@@ -268,6 +629,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation6/doublade.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation6/doublade.json"
   ]
 }

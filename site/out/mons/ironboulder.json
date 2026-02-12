@@ -2,20 +2,41 @@
   "id": "ironboulder",
   "dexnum": 1022,
   "name": "Iron Boulder",
+  "nameFr": "Roc-de-Fer",
+  "description": "Il ressemble à un Terrakium qui, selon une revue douteuse, aurait été modifié par une organisation maléfique.",
   "primaryType": "rock",
   "secondaryType": "psychic",
+  "primaryTypeFr": "Roche",
+  "secondaryTypeFr": "Psy",
+  "height": 15,
+  "weight": 1625,
   "maleRatio": -1,
+  "baseScale": 1.0,
+  "hitbox": {
+    "width": 2,
+    "height": 2.5,
+    "fixed": false
+  },
   "labels": [
     "gen9",
     "paradox"
   ],
   "abilities": [
-    "quarkdrive",
-    "h:quarkdrive"
+    {
+      "id": "quarkdrive",
+      "name": "Charge Quantique",
+      "hidden": false
+    },
+    {
+      "id": "quarkdrive",
+      "name": "Charge Quantique",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "undiscovered"
   ],
+  "eggCycles": 50,
   "baseStats": {
     "hp": 90,
     "attack": 120,
@@ -32,94 +53,447 @@
     "special_defence": 0,
     "speed": 3
   },
+  "baseExperienceYield": 295,
   "experienceGroup": "slow",
   "catchRate": 10,
+  "baseFriendship": 0,
   "drops": {
     "amount": 0,
     "entries": []
   },
   "moves": [
-    "1:hornattack",
-    "1:leer",
-    "1:rockthrow",
-    "1:electricterrain",
-    "7:quickattack",
-    "14:slash",
-    "21:agility",
-    "28:psychocut",
-    "35:counter",
-    "42:rocktomb",
-    "49:sacredsword",
-    "56:mightycleave",
-    "63:swordsdance",
-    "70:megahorn",
-    "77:quickguard",
-    "84:stoneedge",
-    "91:gigaimpact",
-    "tm:aerialace",
-    "tm:agility",
-    "tm:airslash",
-    "tm:bodyslam",
-    "tm:brickbreak",
-    "tm:bulldoze",
-    "tm:closecombat",
-    "tm:doubleedge",
-    "tm:earthquake",
-    "tm:electricterrain",
-    "tm:endure",
-    "tm:facade",
-    "tm:gigaimpact",
-    "tm:hyperbeam",
-    "tm:irondefense",
-    "tm:ironhead",
-    "tm:megahorn",
-    "tm:meteorbeam",
-    "tm:poisonjab",
-    "tm:protect",
-    "tm:psychic",
-    "tm:psychocut",
-    "tm:psyshock",
-    "tm:rest",
-    "tm:rockblast",
-    "tm:rocktomb",
-    "tm:sandstorm",
-    "tm:scaryface",
-    "tm:sleeptalk",
-    "tm:solarblade",
-    "tm:stoneedge",
-    "tm:substitute",
-    "tm:swordsdance",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:throatchop",
-    "tm:wildcharge",
-    "tm:xscissor",
-    "tm:zenheadbutt",
-    "tutor:aerialace",
-    "tutor:bulldoze",
-    "tutor:gigaimpact",
-    "tutor:hyperbeam",
-    "tutor:irondefense",
-    "tutor:ironhead",
-    "tutor:megahorn",
-    "tutor:meteorbeam",
-    "tutor:poisonjab",
-    "tutor:psychic",
-    "tutor:psychocut",
-    "tutor:rest",
-    "tutor:sleeptalk",
-    "tutor:stoneedge",
-    "tutor:throatchop",
-    "tutor:wildcharge",
-    "tutor:xscissor",
-    "tutor:zenheadbutt"
+    {
+      "id": "hornattack",
+      "name": "Koud'Korne",
+      "category": "1"
+    },
+    {
+      "id": "leer",
+      "name": "Groz'Yeux",
+      "category": "1"
+    },
+    {
+      "id": "rockthrow",
+      "name": "Jet-Pierres",
+      "category": "1"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "1"
+    },
+    {
+      "id": "quickattack",
+      "name": "Vive-Attaque",
+      "category": "7"
+    },
+    {
+      "id": "slash",
+      "name": "Tranche",
+      "category": "14"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "21"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "28"
+    },
+    {
+      "id": "counter",
+      "name": "Riposte",
+      "category": "35"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "42"
+    },
+    {
+      "id": "sacredsword",
+      "name": "Lame Sainte",
+      "category": "49"
+    },
+    {
+      "id": "mightycleave",
+      "name": "Lame Puissante",
+      "category": "56"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "63"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "70"
+    },
+    {
+      "id": "quickguard",
+      "name": "Prévention",
+      "category": "77"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "84"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "91"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tm"
+    },
+    {
+      "id": "agility",
+      "name": "Hâte",
+      "category": "tm"
+    },
+    {
+      "id": "airslash",
+      "name": "Lame d'Air",
+      "category": "tm"
+    },
+    {
+      "id": "bodyslam",
+      "name": "Plaquage",
+      "category": "tm"
+    },
+    {
+      "id": "brickbreak",
+      "name": "Casse-Brique",
+      "category": "tm"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tm"
+    },
+    {
+      "id": "closecombat",
+      "name": "Close Combat",
+      "category": "tm"
+    },
+    {
+      "id": "doubleedge",
+      "name": "Damoclès",
+      "category": "tm"
+    },
+    {
+      "id": "earthquake",
+      "name": "Séisme",
+      "category": "tm"
+    },
+    {
+      "id": "electricterrain",
+      "name": "Champ Électrifié",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tm"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tm"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tm"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tm"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tm"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tm"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tm"
+    },
+    {
+      "id": "psyshock",
+      "name": "Choc Psy",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "rockblast",
+      "name": "Boule Roc",
+      "category": "tm"
+    },
+    {
+      "id": "rocktomb",
+      "name": "Tomberoche",
+      "category": "tm"
+    },
+    {
+      "id": "sandstorm",
+      "name": "Tempête de Sable",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "solarblade",
+      "name": "Lame Solaire",
+      "category": "tm"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "swordsdance",
+      "name": "Danse Lames",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tm"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tm"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tm"
+    },
+    {
+      "id": "aerialace",
+      "name": "Aéropique",
+      "category": "tutor"
+    },
+    {
+      "id": "bulldoze",
+      "name": "Piétisol",
+      "category": "tutor"
+    },
+    {
+      "id": "gigaimpact",
+      "name": "Giga Impact",
+      "category": "tutor"
+    },
+    {
+      "id": "hyperbeam",
+      "name": "Ultralaser",
+      "category": "tutor"
+    },
+    {
+      "id": "irondefense",
+      "name": "Mur de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "ironhead",
+      "name": "Tête de Fer",
+      "category": "tutor"
+    },
+    {
+      "id": "megahorn",
+      "name": "Mégacorne",
+      "category": "tutor"
+    },
+    {
+      "id": "meteorbeam",
+      "name": "Laser Météore",
+      "category": "tutor"
+    },
+    {
+      "id": "poisonjab",
+      "name": "Direct Toxik",
+      "category": "tutor"
+    },
+    {
+      "id": "psychic",
+      "name": "Psyko",
+      "category": "tutor"
+    },
+    {
+      "id": "psychocut",
+      "name": "Coupe Psycho",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "stoneedge",
+      "name": "Lame de Roc",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "wildcharge",
+      "name": "Éclair Fou",
+      "category": "tutor"
+    },
+    {
+      "id": "xscissor",
+      "name": "Plaie Croix",
+      "category": "tutor"
+    },
+    {
+      "id": "zenheadbutt",
+      "name": "Psykoud'Boul",
+      "category": "tutor"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
-  "spawns": [],
-  "implemented": false,
+  "preEvolution": null,
+  "spawns": [
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "ultra-rare",
+        "weight": 0.2,
+        "levels": "65-75",
+        "contexts": [
+          "grounded"
+        ],
+        "times": [
+          "night"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_mountain"
+          ]
+        },
+        "source": "datapacks/CCC_1.9.2/data/paradox_spawns/spawn_pool_world/1022_ironboulder.json",
+        "spawnId": "ironboulder-1",
+        "pokemon": "ironboulder",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "ultra-rare",
+        "weight": 0.3,
+        "levels": "65-75",
+        "contexts": [
+          "grounded"
+        ],
+        "times": [
+          "night"
+        ],
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_mountain"
+          ]
+        },
+        "source": "datapacks/CCC_2.0/data/paradox_spawns_ccc/spawn_pool_world/1022_ironboulder.json",
+        "spawnId": "ironboulder-1",
+        "pokemon": "ironboulder",
+        "type": "pokemon"
+      }
+    ]
+  ],
+  "implemented": true,
   "images": {
     "normal": [
       "out/sprites/cobblemon/ironboulder.png"
@@ -129,6 +503,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation9/ironboulder.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation9/ironboulder.json"
   ]
 }

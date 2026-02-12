@@ -2,19 +2,40 @@
   "id": "ditto",
   "dexnum": 132,
   "name": "Ditto",
+  "nameFr": "Métamorph",
+  "description": "Métamorph peut modifier sa structure moléculaire pour prendre d'autres formes. Lorsqu'il essaie de se transformer de mémoire, il lui arrive de se tromper sur certains détails.",
   "primaryType": "normal",
   "secondaryType": "",
+  "primaryTypeFr": "Normal",
+  "secondaryTypeFr": "",
+  "height": 3,
+  "weight": 40,
   "maleRatio": -1,
+  "baseScale": 1,
+  "hitbox": {
+    "width": 0.5,
+    "height": 0.6,
+    "fixed": false
+  },
   "labels": [
     "gen1"
   ],
   "abilities": [
-    "limber",
-    "h:imposter"
+    {
+      "id": "limber",
+      "name": "Échauffement",
+      "hidden": false
+    },
+    {
+      "id": "imposter",
+      "name": "Imposteur",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "ditto"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 48,
     "attack": 48,
@@ -31,8 +52,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 101,
   "experienceGroup": "medium_fast",
   "catchRate": 35,
+  "baseFriendship": 50,
   "drops": {
     "amount": 2,
     "entries": [
@@ -40,22 +63,28 @@
         "item": "cobblemon:quick_powder",
         "percentage": null,
         "quantityRange": "0-1",
-        "source": "species"
+        "source": "species",
+        "itemName": "Poudre Vite"
       },
       {
         "item": "cobblemon:metal_powder",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Poudre Métal"
       }
     ]
   },
   "moves": [
-    "1:transform"
+    {
+      "id": "transform",
+      "name": "Morphing",
+      "category": "1"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [],
+  "preEvolution": null,
   "spawns": [
     [
       {
@@ -65,9 +94,6 @@
         "rarity": "rare",
         "weight": 10.0,
         "levels": "4-29",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -76,11 +102,16 @@
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0132_ditto.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0132_ditto.json",
+        "spawnId": "ditto-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "ditto",
+        "isSlimeChunk": true,
+        "type": "pokemon"
       }
     ],
     [
@@ -91,9 +122,6 @@
         "rarity": "ultra-rare",
         "weight": 6.0,
         "levels": "4-29",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
@@ -102,11 +130,15 @@
             "#cobblemon:is_ocean"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0132_ditto.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0132_ditto.json",
+        "spawnId": "ditto-2",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "ditto",
+        "type": "pokemon"
       }
     ],
     [
@@ -117,18 +149,19 @@
         "rarity": "uncommon",
         "weight": 10.0,
         "levels": "4-29",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_overworld"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0132_ditto.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0132_ditto.json",
+        "spawnId": "ditto-3",
         "sky": {
           "canSeeSky": false
-        }
+        },
+        "spawnType": "grounded",
+        "pokemon": "ditto",
+        "type": "pokemon"
       }
     ],
     [
@@ -136,18 +169,77 @@
         "presets": [
           "natural"
         ],
-        "rarity": "rare",
-        "weight": 2.8,
-        "levels": "1-29",
-        "contexts": [
-          "grounded"
-        ],
+        "rarity": "ultra-rare",
+        "weight": 2.0,
+        "levels": "4-29",
         "biomeTags": {
           "include": [
-            "#eternal_starlight:is_safari_surface"
+            "#cobblemon:is_overworld"
+          ],
+          "exclude": [
+            "#cobblemon:is_ocean"
           ]
         },
-        "source": "datapacks/Academy/data/academy/spawn_pool_world/safari/is_safari_surface/rare_is_safari_surface.json"
+        "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0132_ditto.json",
+        "spawnId": "ditto-1",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "ditto",
+        "isSlimeChunk": true,
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "natural"
+        ],
+        "rarity": "ultra-rare",
+        "weight": 3.0,
+        "levels": "4-29",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_overworld"
+          ],
+          "exclude": [
+            "#cobblemon:is_ocean"
+          ]
+        },
+        "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0132_ditto.json",
+        "spawnId": "ditto-2",
+        "sky": {
+          "minSkyLight": 8,
+          "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "ditto",
+        "type": "pokemon"
+      }
+    ],
+    [
+      {
+        "presets": [
+          "mansion"
+        ],
+        "rarity": "ultra-rare",
+        "weight": 4.0,
+        "levels": "4-29",
+        "biomeTags": {
+          "include": [
+            "#cobblemon:is_overworld"
+          ]
+        },
+        "source": "datapacks/Academy/data/cobblemon/spawn_pool_world/0132_ditto.json",
+        "spawnId": "ditto-3",
+        "sky": {
+          "canSeeSky": false
+        },
+        "spawnType": "grounded",
+        "pokemon": "ditto",
+        "type": "pokemon"
       }
     ]
   ],
@@ -161,6 +253,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation1/ditto.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation1/ditto.json"
   ]
 }

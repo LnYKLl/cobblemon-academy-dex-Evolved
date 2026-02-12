@@ -2,21 +2,46 @@
   "id": "morgrem",
   "dexnum": 860,
   "name": "Morgrem",
+  "nameFr": "Fourbelin",
+  "description": "Sa technique de combat consiste à faire semblant de se prosterner devant son adversaire pour le transpercer avec ses cheveux aiguisés.",
   "primaryType": "dark",
   "secondaryType": "fairy",
+  "primaryTypeFr": "Ténèbres",
+  "secondaryTypeFr": "Fée",
+  "height": 8,
+  "weight": 125,
   "maleRatio": 1,
+  "baseScale": 0.6,
+  "hitbox": {
+    "width": 0.85,
+    "height": 1.8,
+    "fixed": false
+  },
   "labels": [
     "gen8"
   ],
   "abilities": [
-    "prankster",
-    "frisk",
-    "h:pickpocket"
+    {
+      "id": "prankster",
+      "name": "Farceur",
+      "hidden": false
+    },
+    {
+      "id": "frisk",
+      "name": "Fouille",
+      "hidden": false
+    },
+    {
+      "id": "pickpocket",
+      "name": "Pickpocket",
+      "hidden": true
+    }
   ],
   "eggGroups": [
     "fairy",
     "human_like"
   ],
+  "eggCycles": 20,
   "baseStats": {
     "hp": 65,
     "attack": 60,
@@ -33,8 +58,10 @@
     "special_defence": 0,
     "speed": 0
   },
+  "baseExperienceYield": 130,
   "experienceGroup": "medium_fast",
   "catchRate": 120,
+  "baseFriendship": 50,
   "drops": {
     "amount": 1,
     "entries": [
@@ -42,88 +69,404 @@
         "item": "cobblemon:roseli_berry",
         "percentage": 5.0,
         "quantityRange": null,
-        "source": "species"
+        "source": "species",
+        "itemName": "Baie Selro"
       }
     ]
   },
   "moves": [
-    "1:falsesurrender",
-    "1:fakeout",
-    "1:confide",
-    "1:bite",
-    "1:flatter",
-    "12:faketears",
-    "16:assurance",
-    "20:swagger",
-    "24:suckerpunch",
-    "28:torment",
-    "35:darkpulse",
-    "40:nastyplot",
-    "46:playrough",
-    "52:foulplay",
-    "egg:partingshot",
-    "tm:assurance",
-    "tm:burningjealousy",
-    "tm:chillingwater",
-    "tm:confide",
-    "tm:darkpulse",
-    "tm:dazzlinggleam",
-    "tm:drainingkiss",
-    "tm:drainpunch",
-    "tm:endure",
-    "tm:facade",
-    "tm:faketears",
-    "tm:fling",
-    "tm:foulplay",
-    "tm:imprison",
-    "tm:lashout",
-    "tm:leechlife",
-    "tm:lightscreen",
-    "tm:lowkick",
-    "tm:megakick",
-    "tm:megapunch",
-    "tm:metronome",
-    "tm:mistyterrain",
-    "tm:nastyplot",
-    "tm:playrough",
-    "tm:protect",
-    "tm:reflect",
-    "tm:rest",
-    "tm:retaliate",
-    "tm:revenge",
-    "tm:scaryface",
-    "tm:shadowclaw",
-    "tm:sleeptalk",
-    "tm:substitute",
-    "tm:suckerpunch",
-    "tm:swagger",
-    "tm:takedown",
-    "tm:taunt",
-    "tm:terablast",
-    "tm:thief",
-    "tm:throatchop",
-    "tm:thunderwave",
-    "tm:torment",
-    "tm:trailblaze",
-    "tm:trick",
-    "tutor:burningjealousy",
-    "tutor:darkpulse",
-    "tutor:dazzlinggleam",
-    "tutor:drainpunch",
-    "tutor:foulplay",
-    "tutor:lashout",
-    "tutor:leechlife",
-    "tutor:lowkick",
-    "tutor:playrough",
-    "tutor:rest",
-    "tutor:shadowclaw",
-    "tutor:sleeptalk",
-    "tutor:suckerpunch",
-    "tutor:throatchop",
-    "tutor:trick"
+    {
+      "id": "falsesurrender",
+      "name": "Fourbette",
+      "category": "1"
+    },
+    {
+      "id": "fakeout",
+      "name": "Bluff",
+      "category": "1"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "1"
+    },
+    {
+      "id": "bite",
+      "name": "Morsure",
+      "category": "1"
+    },
+    {
+      "id": "flatter",
+      "name": "Flatterie",
+      "category": "1"
+    },
+    {
+      "id": "faketears",
+      "name": "Croco Larme",
+      "category": "12"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "16"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "20"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "24"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "28"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "35"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "40"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "46"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "52"
+    },
+    {
+      "id": "partingshot",
+      "name": "Dernier Mot",
+      "category": "egg"
+    },
+    {
+      "id": "assurance",
+      "name": "Assurance",
+      "category": "tm"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tm"
+    },
+    {
+      "id": "chillingwater",
+      "name": "Douche Froide",
+      "category": "tm"
+    },
+    {
+      "id": "confide",
+      "name": "Confidence",
+      "category": "tm"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tm"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tm"
+    },
+    {
+      "id": "drainingkiss",
+      "name": "Vampibaiser",
+      "category": "tm"
+    },
+    {
+      "id": "drainpunch",
+      "name": "Vampi-Poing",
+      "category": "tm"
+    },
+    {
+      "id": "endure",
+      "name": "Ténacité",
+      "category": "tm"
+    },
+    {
+      "id": "facade",
+      "name": "Façade",
+      "category": "tm"
+    },
+    {
+      "id": "faketears",
+      "name": "Croco Larme",
+      "category": "tm"
+    },
+    {
+      "id": "fling",
+      "name": "Dégommage",
+      "category": "tm"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tm"
+    },
+    {
+      "id": "imprison",
+      "name": "Possessif",
+      "category": "tm"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tm"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tm"
+    },
+    {
+      "id": "lightscreen",
+      "name": "Mur Lumière",
+      "category": "tm"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tm"
+    },
+    {
+      "id": "megakick",
+      "name": "Ultimawashi",
+      "category": "tm"
+    },
+    {
+      "id": "megapunch",
+      "name": "Ultimapoing",
+      "category": "tm"
+    },
+    {
+      "id": "metronome",
+      "name": "Métronome",
+      "category": "tm"
+    },
+    {
+      "id": "mistyterrain",
+      "name": "Champ Brumeux",
+      "category": "tm"
+    },
+    {
+      "id": "nastyplot",
+      "name": "Machination",
+      "category": "tm"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tm"
+    },
+    {
+      "id": "protect",
+      "name": "Abri",
+      "category": "tm"
+    },
+    {
+      "id": "reflect",
+      "name": "Protection",
+      "category": "tm"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tm"
+    },
+    {
+      "id": "retaliate",
+      "name": "Vengeance",
+      "category": "tm"
+    },
+    {
+      "id": "revenge",
+      "name": "Vendetta",
+      "category": "tm"
+    },
+    {
+      "id": "scaryface",
+      "name": "Grimace",
+      "category": "tm"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tm"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tm"
+    },
+    {
+      "id": "substitute",
+      "name": "Clonage",
+      "category": "tm"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tm"
+    },
+    {
+      "id": "swagger",
+      "name": "Vantardise",
+      "category": "tm"
+    },
+    {
+      "id": "takedown",
+      "name": "Bélier",
+      "category": "tm"
+    },
+    {
+      "id": "taunt",
+      "name": "Provoc",
+      "category": "tm"
+    },
+    {
+      "id": "terablast",
+      "name": "Téra Explosion",
+      "category": "tm"
+    },
+    {
+      "id": "thief",
+      "name": "Larcin",
+      "category": "tm"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tm"
+    },
+    {
+      "id": "thunderwave",
+      "name": "Cage Éclair",
+      "category": "tm"
+    },
+    {
+      "id": "torment",
+      "name": "Tourmente",
+      "category": "tm"
+    },
+    {
+      "id": "trailblaze",
+      "name": "Désherbaffe",
+      "category": "tm"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tm"
+    },
+    {
+      "id": "burningjealousy",
+      "name": "Feu Envieux",
+      "category": "tutor"
+    },
+    {
+      "id": "darkpulse",
+      "name": "Vibrobscur",
+      "category": "tutor"
+    },
+    {
+      "id": "dazzlinggleam",
+      "name": "Éclat Magique",
+      "category": "tutor"
+    },
+    {
+      "id": "drainpunch",
+      "name": "Vampi-Poing",
+      "category": "tutor"
+    },
+    {
+      "id": "foulplay",
+      "name": "Tricherie",
+      "category": "tutor"
+    },
+    {
+      "id": "lashout",
+      "name": "Cent Rancunes",
+      "category": "tutor"
+    },
+    {
+      "id": "leechlife",
+      "name": "Vampirisme",
+      "category": "tutor"
+    },
+    {
+      "id": "lowkick",
+      "name": "Balayage",
+      "category": "tutor"
+    },
+    {
+      "id": "playrough",
+      "name": "Câlinerie",
+      "category": "tutor"
+    },
+    {
+      "id": "rest",
+      "name": "Repos",
+      "category": "tutor"
+    },
+    {
+      "id": "shadowclaw",
+      "name": "Griffe Ombre",
+      "category": "tutor"
+    },
+    {
+      "id": "sleeptalk",
+      "name": "Blabla Dodo",
+      "category": "tutor"
+    },
+    {
+      "id": "suckerpunch",
+      "name": "Coup Bas",
+      "category": "tutor"
+    },
+    {
+      "id": "throatchop",
+      "name": "Exécu-Son",
+      "category": "tutor"
+    },
+    {
+      "id": "trick",
+      "name": "Tour de Magie",
+      "category": "tutor"
+    },
+    {
+      "id": "attract",
+      "name": "Attraction",
+      "category": "legacy"
+    },
+    {
+      "id": "round",
+      "name": "Chant Canon",
+      "category": "legacy"
+    },
+    {
+      "id": "snore",
+      "name": "Ronflement",
+      "category": "legacy"
+    },
+    {
+      "id": "uproar",
+      "name": "Brouhaha",
+      "category": "legacy"
+    }
   ],
   "forms": [],
-  "types": [],
   "evolutions": [
     {
       "id": "morgrem_grimmsnarl",
@@ -141,6 +484,7 @@
       ]
     }
   ],
+  "preEvolution": "impidimp",
   "spawns": [
     [
       {
@@ -151,18 +495,25 @@
         "rarity": "common",
         "weight": 0.54,
         "levels": "32-37",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:is_magical"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0860_morgrem.json",
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0860_morgrem.json",
+        "spawnId": "morgrem-1",
         "sky": {
           "minSkyLight": 8,
           "maxSkyLight": 15
+        },
+        "spawnType": "grounded",
+        "pokemon": "morgrem",
+        "type": "pokemon",
+        "weightMultiplier": {
+          "multiplier": 1.5,
+          "condition": {
+            "timeRange": "night"
+          }
         }
       }
     ],
@@ -175,9 +526,6 @@
         "rarity": "common",
         "weight": 0.54,
         "levels": "32-37",
-        "contexts": [
-          "grounded"
-        ],
         "biomeTags": {
           "include": [
             "#cobblemon:nether/is_forest",
@@ -187,7 +535,11 @@
             "#cobblemon:nether/is_desert"
           ]
         },
-        "source": "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/spawn_pool_world/0860_morgrem.json"
+        "source": "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/spawn_pool_world/0860_morgrem.json",
+        "spawnId": "morgrem-2",
+        "spawnType": "grounded",
+        "pokemon": "morgrem",
+        "type": "pokemon"
       }
     ]
   ],
@@ -201,6 +553,6 @@
     ]
   },
   "speciesSources": [
-    "Cobblemon-fabric-1.6.1+1.21.1.jar!/data/cobblemon/species/generation8/morgrem.json"
+    "Abes-Hutts-Cobblemon-1.21.1.1.7.3-1.0.2.jar!/data/cobblemon/species/generation8/morgrem.json"
   ]
 }
