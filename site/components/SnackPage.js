@@ -3579,21 +3579,21 @@ export default {
                               'bg-orange-500/10 border-orange-500/30 text-orange-400'">
                       <div class="flex items-center gap-2 flex-wrap">
                         <span>{{ eff.allRaritiesCountEffective <= 5 ? '✨' : eff.allRaritiesCountEffective <= 15 ? '⚠️' : '🔥' }}</span>
-                        <strong>{{ eff.allRaritiesCountEffective }} Pokémon attirés</strong>
-                        <span class="text-[var(--text-muted)]">→ consomment le PokéSnack</span>
+                        <strong>{{ eff.allRaritiesCountEffective }} {{ lang === 'fr' ? 'Pokémon attirés' : 'Pokémon attracted' }}</strong>
+                        <span class="text-[var(--text-muted)]">→ {{ lang === 'fr' ? 'consomment le PokéSnack' : 'consume the PokéSnack' }}</span>
                         <span v-if="eff.blockedByHitboxCount > 0 || eff.blockedByConditionsCount > 0" class="text-purple-400">
-                          ({{ eff.blockedByHitboxCount + eff.blockedByConditionsCount }} bloqués<span v-if="eff.blockedByHitboxCount > 0">: {{ eff.blockedByHitboxCount }} plafond</span><span v-if="eff.blockedByConditionsCount > 0">{{ eff.blockedByHitboxCount > 0 ? ', ' : ': ' }}{{ eff.blockedByConditionsCount }} conditions</span>)
+                          ({{ eff.blockedByHitboxCount + eff.blockedByConditionsCount }} {{ lang === 'fr' ? 'bloqués' : 'blocked' }}<span v-if="eff.blockedByHitboxCount > 0">: {{ eff.blockedByHitboxCount }} {{ lang === 'fr' ? 'plafond' : 'ceiling' }}</span><span v-if="eff.blockedByConditionsCount > 0">{{ eff.blockedByHitboxCount > 0 ? ', ' : ': ' }}{{ eff.blockedByConditionsCount }} conditions</span>)
                         </span>
                       </div>
                       <!-- Légende -->
                       <div class="mt-1 flex gap-2 text-[10px] text-[var(--text-muted)]">
-                        <span>🎯 Même biome</span>
-                        <span>🌍 Via biome global (ex: is_overworld)</span>
+                        <span>🎯 {{ lang === 'fr' ? 'Même biome' : 'Same biome' }}</span>
+                        <span>🌍 {{ lang === 'fr' ? 'Via biome global (ex: is_overworld)' : 'Via global biome (e.g.: is_overworld)' }}</span>
                       </div>
                       <!-- Détail par rareté -->
                       <details class="mt-1">
                         <summary class="cursor-pointer hover:text-[var(--text)]">
-                          Voir par rareté...
+                          {{ lang === 'fr' ? 'Voir par rareté...' : 'View by rarity...' }}
                         </summary>
                         <div class="mt-2 space-y-1">
                           <div v-for="(pokemons, rarity) in eff.allRaritiesByRarity" :key="rarity" class="flex items-center gap-2">
@@ -3638,13 +3638,13 @@ export default {
                       ></div>
                     </div>
                     <div class="text-xs text-[var(--text-muted)] mt-1">
-                      {{ eff.berry }} • {{ eff.pokemonWithThisEv === 1 ? '🎯 Seul à donner cet EV !' : 'Seuls ' + eff.pokemonWithThisEv + ' Pokémon donnent cet EV' }}
+                      {{ eff.berry }} • {{ eff.pokemonWithThisEv === 1 ? (lang === 'fr' ? '🎯 Seul a donner cet EV !' : '🎯 Only one gives this EV!') : (lang === 'fr' ? 'Seuls ' + eff.pokemonWithThisEv + ' Pokemon donnent cet EV' : 'Only ' + eff.pokemonWithThisEv + ' Pokemon give this EV') }}
                     </div>
                     
                     <!-- 🚫 Concurrents ÉLIMINÉS (ceux qui ne donnent pas cet EV) -->
                     <details v-if="eff.eliminated && eff.eliminated.length > 0" class="mt-2 p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/30">
                       <summary class="cursor-pointer text-xs text-emerald-400 font-medium hover:text-emerald-300">
-                        ✅ {{ eff.eliminatedCount }} concurrent{{ eff.eliminatedCount > 1 ? 's' : '' }} éliminé{{ eff.eliminatedCount > 1 ? 's' : '' }} par cette baie
+                        ✅ {{ eff.eliminatedCount }} {{ lang === 'fr' ? (eff.eliminatedCount > 1 ? 'concurrents elimines' : 'concurrent elimine') : (eff.eliminatedCount > 1 ? 'competitors eliminated' : 'competitor eliminated') }} {{ lang === 'fr' ? 'par cette baie' : 'by this berry' }}
                       </summary>
                       <div class="mt-2 flex flex-wrap gap-1">
                         <span 
@@ -3661,7 +3661,7 @@ export default {
                     <!-- Liste des concurrents avec même EV (restants) -->
                     <details v-if="eff.competitors && eff.competitors.length > 0" class="mt-2">
                       <summary class="cursor-pointer text-xs text-[var(--text-muted)] hover:text-[var(--text)]">
-                        👥 {{ eff.competitors.length }} autre{{ eff.competitors.length > 1 ? 's' : '' }} donne{{ eff.competitors.length > 1 ? 'nt' : '' }} aussi cet EV (restent)
+                        👥 {{ eff.competitors.length }} {{ lang === 'fr' ? (eff.competitors.length > 1 ? 'autres donnent' : 'autre donne') : (eff.competitors.length > 1 ? 'others also give' : 'other also gives') }} {{ lang === 'fr' ? 'aussi cet EV (restent)' : 'this EV (remain)' }}
                       </summary>
                       <div class="mt-2 flex flex-wrap gap-1">
                         <span 
