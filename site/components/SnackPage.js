@@ -2930,6 +2930,28 @@ export default {
                   <span v-if="spawnAnalysis.bestZone.isSubmerged" class="px-2 py-0.5 rounded bg-blue-600/20 text-blue-300 text-xs">
                     🤿 {{ tSnackUI('underwater') }}
                   </span>
+                  <!-- Conditions spéciales de spawn -->
+                  <span v-for="s in (spawnAnalysis.bestZone.structures || [])" :key="'struct-' + s" class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 text-xs">
+                    🏛️ {{ s }}
+                  </span>
+                  <span v-if="spawnAnalysis.bestZone.baseBlocks?.selectors?.length" class="px-2 py-0.5 rounded bg-orange-500/20 text-orange-300 text-xs">
+                    🧱 {{ lang.value === 'fr' ? 'Base:' : 'Base:' }} {{ spawnAnalysis.bestZone.baseBlocks.selectors.join(', ') }}
+                  </span>
+                  <span v-if="spawnAnalysis.bestZone.nearbyBlocks?.selectors?.length" class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-xs font-medium">
+                    ✅ {{ tSnackUI('proximity') }}: {{ spawnAnalysis.bestZone.nearbyBlocks.selectors.join(', ') }}
+                  </span>
+                  <span v-if="spawnAnalysis.bestZone.excludeNearbyBlocks?.selectors?.length || spawnAnalysis.bestZone.excludeNearbyBlocks?.length" class="px-2 py-0.5 rounded bg-red-500/20 text-red-300 text-xs font-medium">
+                    🚫 {{ tSnackUI('avoid.blocks') }}: {{ (spawnAnalysis.bestZone.excludeNearbyBlocks?.selectors || spawnAnalysis.bestZone.excludeNearbyBlocks || []).join(', ') }}
+                  </span>
+                  <span v-if="spawnAnalysis.bestZone.lure" class="px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 text-xs">
+                    🎣 {{ tSnackUI('lure') }} {{ spawnAnalysis.bestZone.lure.minLureLevel ?? 0 }}+
+                  </span>
+                  <span v-if="spawnAnalysis.bestZone.keyItem" class="px-2 py-0.5 rounded bg-red-500/20 text-red-300 text-xs">
+                    🔑 {{ spawnAnalysis.bestZone.keyItem }}
+                  </span>
+                  <span v-if="spawnAnalysis.bestZone.isSlimeChunk" class="px-2 py-0.5 rounded bg-lime-500/20 text-lime-300 text-xs">
+                    🟢 Chunk Slime
+                  </span>
                 </div>
                 <p class="text-xs text-[var(--text-muted)]">
                   {{ tSnackUI('zone.only.others') }} <strong class="text-emerald-400">{{ spawnAnalysis.bestZone.competitorCount }}</strong> {{ tSnackUI('zone.others.in.zone') }} {{ spawnAnalysis.bestZone.rarity }} {{ tSnackUI('zone.in.this.zone') }}
@@ -2984,7 +3006,8 @@ export default {
                     <!-- Nouvelles conditions -->
                     <span v-for="s in (zone.structures || [])" :key="'struct-' + s" class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 text-xs">🏛️ {{ s }}</span>
                     <span v-if="zone.baseBlocks?.selectors?.length" class="px-2 py-0.5 rounded bg-orange-500/20 text-orange-300 text-xs">🧱 Base: {{ zone.baseBlocks.selectors.join(', ') }}</span>
-                    <span v-if="zone.nearbyBlocks?.selectors?.length" class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-xs">📍 {{ tSnackUI('proximity') }}: {{ zone.nearbyBlocks.selectors.join(', ') }}</span>
+                    <span v-if="zone.nearbyBlocks?.selectors?.length" class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-xs">✅ {{ tSnackUI('proximity') }}: {{ zone.nearbyBlocks.selectors.join(', ') }}</span>
+                    <span v-if="zone.excludeNearbyBlocks?.selectors?.length || zone.excludeNearbyBlocks?.length" class="px-2 py-0.5 rounded bg-red-500/20 text-red-300 text-xs">🚫 {{ tSnackUI('avoid.blocks') }}: {{ (zone.excludeNearbyBlocks?.selectors || zone.excludeNearbyBlocks || []).join(', ') }}</span>
                     <span v-if="zone.lure" class="px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 text-xs">🎣 {{ tSnackUI('lure') }} {{ zone.lure.minLureLevel ?? 0 }}+</span>
                     <span v-if="zone.keyItem" class="px-2 py-0.5 rounded bg-red-500/20 text-red-300 text-xs">🔑 {{ zone.keyItem }}</span>
                     <span v-if="zone.isSlimeChunk" class="px-2 py-0.5 rounded bg-lime-500/20 text-lime-300 text-xs">🟢 Chunk Slime</span>
@@ -3046,8 +3069,11 @@ export default {
                 <span v-if="spawnAnalysis.bestZone.baseBlocks?.selectors?.length" class="px-2 py-0.5 rounded bg-orange-500/20 text-orange-400 text-xs">
                   🧱 {{ spawnAnalysis.bestZone.baseBlocks.selectors.join(', ') }}
                 </span>
-                <span v-if="spawnAnalysis.bestZone.nearbyBlocks?.selectors?.length" class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 text-xs">
-                  📍 {{ spawnAnalysis.bestZone.nearbyBlocks.selectors.join(', ') }}
+                <span v-if="spawnAnalysis.bestZone.nearbyBlocks?.selectors?.length" class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-xs">
+                  ✅ {{ tSnackUI('proximity') }}: {{ spawnAnalysis.bestZone.nearbyBlocks.selectors.join(', ') }}
+                </span>
+                <span v-if="spawnAnalysis.bestZone.excludeNearbyBlocks?.selectors?.length || spawnAnalysis.bestZone.excludeNearbyBlocks?.length" class="px-2 py-0.5 rounded bg-red-500/20 text-red-400 text-xs">
+                  🚫 {{ tSnackUI('avoid.blocks') }}: {{ (spawnAnalysis.bestZone.excludeNearbyBlocks?.selectors || spawnAnalysis.bestZone.excludeNearbyBlocks || []).join(', ') }}
                 </span>
                 <span v-if="spawnAnalysis.bestZone.lure" class="px-2 py-0.5 rounded bg-teal-500/20 text-teal-400 text-xs">
                   🎣 {{ tSnackUI('lure') }} {{ spawnAnalysis.bestZone.lure.minLureLevel ?? 0 }}+

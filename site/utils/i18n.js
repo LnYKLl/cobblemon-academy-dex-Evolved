@@ -1007,7 +1007,8 @@ const snackUiTranslations = {
   'underwater': { fr: 'Sous l\'eau', en: 'Underwater' },
   
   // Proximity
-  'proximity': { fr: 'Proximité', en: 'Proximity' },
+  'proximity': { fr: 'Blocs requis', en: 'Required blocks' },
+  'avoid.blocks': { fr: 'Blocs à éviter', en: 'Avoid blocks' },
   
   // Lure
   'lure': { fr: 'Leurre', en: 'Lure' },
