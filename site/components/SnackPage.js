@@ -455,6 +455,14 @@ export default {
       'minecraft:deep_dark': ['#cobblemon:is_deep_dark', '#cobblemon:is_cave', '#cobblemon:is_overworld'],
     };
     
+    // Biomes Nether et End (pas dans is_overworld)
+    const netherEndBiomes = new Set([
+      'minecraft:nether_wastes', 'minecraft:soul_sand_valley', 'minecraft:crimson_forest',
+      'minecraft:warped_forest', 'minecraft:basalt_deltas', 'minecraft:the_end',
+      'minecraft:end_highlands', 'minecraft:end_midlands', 'minecraft:end_barrens',
+      'minecraft:small_end_islands', 'minecraft:the_void'
+    ]);
+    
     // Fonction pour vérifier si un biome (parent) couvre un autre biome (enfant)
     const biomeCovers = (parentBiome, childBiome) => {
       if (parentBiome === childBiome) return true;
@@ -463,6 +471,15 @@ export default {
       const childTags = biomeToTags[childBiome];
       if (childTags && childTags.includes(parentBiome)) {
         return true;
+      }
+      
+      // IMPORTANT: Tous les biomes minecraft:xxx de l'overworld sont couverts par is_overworld
+      // Cela permet de détecter que les Pokémon avec is_overworld peuvent spawner dans minecraft:mangrove_swamp
+      if (parentBiome === '#cobblemon:is_overworld' && childBiome.startsWith('minecraft:')) {
+        // Exclure les biomes du Nether et de l'End
+        if (!netherEndBiomes.has(childBiome)) {
+          return true;
+        }
       }
       
       const children = biomeParents[parentBiome];
@@ -598,12 +615,24 @@ export default {
                 spawnMatches = true;
                 biomeMatch = true;
               }
-              // NOUVEAU: Match via biome parent (ex: is_overworld couvre is_dripstone)
-              // Si le concurrent spawne dans un biome parent qui contient notre cible
+              // Match via biome parent (ex: is_overworld couvre is_dripstone)
+              // CAS 1: Le concurrent spawne dans un biome parent qui contient notre cible
+              // CAS 2: NOTRE CIBLE spawne dans un biome parent qui contient le biome du concurrent
               else {
                 for (const targetBiome of targetBiomes) {
+                  // CAS 1: Concurrent (is_overworld) couvre Target (is_forest)
                   if (biomeCovers(b, targetBiome)) {
-                    matchScore += 3; // Score un peu plus bas car c'est un parent
+                    matchScore += 3;
+                    if (!matchedBiomes.includes(b)) matchedBiomes.push(b);
+                    spawnMatches = true;
+                    biomeMatch = true;
+                    isParentBiome = true;
+                    break;
+                  }
+                  // CAS 2: Target (is_overworld) couvre Concurrent (is_forest)
+                  // Important pour les Pokémon comme Xurkitree qui spawnent partout
+                  if (biomeCovers(targetBiome, b)) {
+                    matchScore += 2; // Score plus bas car le concurrent est dans un biome plus spécifique
                     if (!matchedBiomes.includes(b)) matchedBiomes.push(b);
                     spawnMatches = true;
                     biomeMatch = true;
@@ -1578,10 +1607,20 @@ export default {
         ['natural', 'urban', 'underground'].includes(p)
       );
       
+      // Vérifier aussi si le biome est générique (is_overworld couvre tout l'overworld)
+      const genericBiomes = ['#cobblemon:is_overworld', '#cobblemon:is_cave', '#cobblemon:is_aquatic'];
+      const hasGenericBiome = [...targetConditions.biomes].some(b => genericBiomes.includes(b));
+      
       for (const [stat, data] of Object.entries(evAnalysis)) {
-        if (hasGenericPreset) {
+        if (hasGenericPreset || hasGenericBiome) {
           data.warningGenericZone = true;
-          data.warningMessage = "Zone générique détectée - d'autres Pokémon peuvent être attirés !";
+          data.warningMessage = hasGenericBiome 
+            ? lang.value === 'fr' 
+              ? "Biome global (is_overworld) - beaucoup de Pokémon peuvent être attirés !"
+              : "Global biome (is_overworld) - many Pokémon can be attracted!"
+            : lang.value === 'fr'
+              ? "Zone générique détectée - d'autres Pokémon peuvent être attirés !"
+              : "Generic zone detected - other Pokémon may be attracted!";
         }
       }
 
@@ -1955,6 +1994,7 @@ export default {
           ev: ev,
           typeSlots: [],
           mechanic: lang.value === 'fr' ? '100% isolation EV + tier 1' : '100% EV isolation + tier 1',
+          fullEvIsolation: true, // Marquer comme isolation complète
         });
       }
 
@@ -2051,11 +2091,27 @@ export default {
       // Trier par: MOINS de non-ultra-rare = moins de gaspillage de PokéSnack
       // Le meilleur combo minimise les communs/uncommons/rare qui "volent" les spawns
       combos.sort((a, b) => {
+        // PRIORITÉ 0: Préférer les combos avec 100% isolation EV (2× baie EV)
+        // Car l'isolation garantit que SEULS les Pokémon avec cet EV peuvent mordre
+        if (a.fullEvIsolation && !b.fullEvIsolation) {
+          // Si le combo a peu de concurrents EV (≤3), c'est clairement meilleur
+          const aEvCount = a.ev?.pokemonWithThisEv ?? 999;
+          if (aEvCount <= 3) return -1;
+        }
+        if (!a.fullEvIsolation && b.fullEvIsolation) {
+          const bEvCount = b.ev?.pokemonWithThisEv ?? 999;
+          if (bEvCount <= 3) return 1;
+        }
+        
         // PRIORITÉ 1: Combos EV avec le MOINS de non-ultra-rare (gaspillage)
         if (a.ev && b.ev) {
           const aNonUR = a.ev.nonUltraRareCount ?? 999;
           const bNonUR = b.ev.nonUltraRareCount ?? 999;
           if (aNonUR !== bNonUR) return aNonUR - bNonUR;
+          
+          // À égalité, préférer l'isolation complète
+          if (a.fullEvIsolation && !b.fullEvIsolation) return -1;
+          if (!a.fullEvIsolation && b.fullEvIsolation) return 1;
           
           // À égalité, préférer celui avec meilleure efficacité hitbox
           const aEffHitbox = a.ev.efficiencyWithHitbox || a.efficiency;
