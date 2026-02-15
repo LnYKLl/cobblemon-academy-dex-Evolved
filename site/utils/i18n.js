@@ -801,8 +801,219 @@ const snackUiTranslations = {
   'ui.egg.groups': { fr: 'Groupes d\'Œufs', en: 'Egg Groups' },
   'ui.evs.given': { fr: 'EVs donnés', en: 'EVs given' },
   'ui.blocks': { fr: 'blocs', en: 'blocks' },
+  'ui.block': { fr: 'bloc', en: 'block' },
   'ui.fixed.size': { fr: 'taille fixe', en: 'fixed size' },
   'ui.spawn.blocks': { fr: 'Spawn', en: 'Spawn' },
+  'ui.results': { fr: 'résultats', en: 'results' },
+  'ui.no.results': { fr: 'Aucun résultat', en: 'No results' },
+  'ui.try.another': { fr: 'Essayez une autre recherche ou catégorie', en: 'Try another search or category' },
+  
+  // Spawn zone analysis
+  'zone.analysis': { fr: 'Analyse par Zone de Spawn', en: 'Spawn Zone Analysis' },
+  'zone.found': { fr: 'zones trouvées', en: 'zones found' },
+  'zone.optimal': { fr: 'Zone Optimale', en: 'Optimal Zone' },
+  'zone.spawn': { fr: 'Zone de Spawn', en: 'Spawn Zone' },
+  'zone.base.chance': { fr: 'chance de base', en: 'base chance' },
+  'zone.only.others': { fr: 'Seulement', en: 'Only' },
+  'zone.others.in.zone': { fr: 'autres', en: 'other' },
+  'zone.in.this.zone': { fr: 'dans cette zone', en: 'in this zone' },
+  'zone.competitors': { fr: 'concurrents', en: 'competitors' },
+  'zone.competitor': { fr: 'concurrent', en: 'competitor' },
+  
+  // Optimal conditions
+  'conditions.optimal': { fr: 'Conditions Optimales de Chasse', en: 'Optimal Hunting Conditions' },
+  'conditions.minimize': { fr: 'Minimisez la compétition naturellement', en: 'Minimize competition naturally' },
+  'conditions.instead.of': { fr: 'au lieu de', en: 'instead of' },
+  'conditions.view.detailed': { fr: 'Voir l\'analyse détaillée par condition...', en: 'View detailed analysis by condition...' },
+  'conditions.times': { fr: 'Horaires', en: 'Time slots' },
+  'conditions.sky': { fr: 'Ciel', en: 'Sky' },
+  'conditions.weather': { fr: 'Météo', en: 'Weather' },
+  'conditions.light': { fr: 'Lumière (torches)', en: 'Light (torches)' },
+  'conditions.moon.phase': { fr: 'Phase lunaire', en: 'Moon phase' },
+  'conditions.y.altitude': { fr: 'Altitude Y (hauteur plateforme)', en: 'Y Altitude (platform height)' },
+  'conditions.ceiling.height': { fr: 'Hauteur de plafond (filtre concurrents)', en: 'Ceiling height (filter competitors)' },
+  
+  // Sky conditions
+  'sky.open': { fr: 'Ciel ouvert', en: 'Open sky' },
+  'sky.covered': { fr: 'Couvert/Souterrain', en: 'Covered/Underground' },
+  'sky.see': { fr: 'Voir le ciel', en: 'See sky' },
+  'sky.none': { fr: 'Sans ciel', en: 'No sky' },
+  'sky.with': { fr: 'Ciel', en: 'Sky' },
+  'sky.search.open': { fr: 'Cherchez en Ciel ouvert au lieu de Couvert/Souterrain pour éviter', en: 'Search in open sky instead of covered/underground to avoid' },
+  
+  // Weather conditions
+  'weather.rain': { fr: 'Pluie', en: 'Rain' },
+  'weather.storm': { fr: 'Orage', en: 'Storm' },
+  'weather.clear': { fr: 'Temps clair', en: 'Clear weather' },
+  'weather.hunt.rain': { fr: 'Chassez par Pluie pour éviter', en: 'Hunt during rain to avoid' },
+  
+  // Light conditions
+  'light': { fr: 'Lumière', en: 'Light' },
+  'light.dark': { fr: 'Sombre', en: 'Dark' },
+  'light.pitch.black': { fr: 'Noir complet', en: 'Pitch black' },
+  'light.keep': { fr: 'Gardez un éclairage', en: 'Keep lighting at' },
+  'light.to.avoid': { fr: 'pour éviter', en: 'to avoid' },
+  
+  // Y altitude
+  'y.build.platform': { fr: 'Construisez votre plateforme entre', en: 'Build your platform between' },
+  'y.and': { fr: 'et', en: 'and' },
+  'y.to.avoid': { fr: 'pour éviter', en: 'to avoid' },
+  'y.avoid.range': { fr: 'Évitez', en: 'Avoid' },
+  
+  // Platform guide
+  'platform.guide': { fr: 'Guide de Construction de Plateforme', en: 'Platform Building Guide' },
+  'platform.optimal.config': { fr: 'Configuration optimale', en: 'Optimal configuration' },
+  'platform.optimal.time': { fr: 'Horaire optimal', en: 'Optimal time' },
+  'platform.use.snack.during': { fr: 'Utilisez le PokéSnack pendant :', en: 'Use PokéSnack during:' },
+  'platform.optimal.ceiling': { fr: 'Plafond optimal', en: 'Optimal ceiling' },
+  'platform.blocks.min': { fr: 'blocs minimum', en: 'minimum blocks' },
+  'platform.ceiling.wont.filter': { fr: 'Un plafond ne filtrera pas de concurrents.', en: 'A ceiling won\'t filter out competitors.' },
+  'platform.ceiling.would.block': { fr: 'Un plafond bloquerait', en: 'A ceiling would block' },
+  'platform.needs': { fr: 'a besoin de', en: 'needs' },
+  'platform.can.spawn.under': { fr: 'peut spawner sous', en: 'can spawn under' },
+  'platform.build.with.ceiling': { fr: 'Construisez avec un plafond à', en: 'Build with a ceiling at' },
+  'platform.to.block': { fr: 'pour BLOQUER', en: 'to BLOCK' },
+  'platform.larger.competitors': { fr: 'concurrents plus grands', en: 'larger competitors' },
+  'platform.all.have.small.hitbox': { fr: 'Tous les concurrents ont aussi une petite hitbox.', en: 'All competitors also have a small hitbox.' },
+  'platform.few.blocked': { fr: 'Peu de concurrents seront bloqués par cette hauteur.', en: 'Few competitors will be blocked by this height.' },
+  'platform.required': { fr: 'REQUIS', en: 'REQUIRED' },
+  'platform.warning': { fr: 'ATTENTION', en: 'WARNING' },
+  'platform.important': { fr: 'IMPORTANT', en: 'IMPORTANT' },
+  'platform.light.title': { fr: 'Luminosité des blocs', en: 'Block light level' },
+  'platform.light.dark': { fr: 'Zone sombre requise', en: 'Dark zone required' },
+  'platform.light.no.torches': { fr: 'N\'ajoutez pas de torches !', en: 'Don\'t add torches!' },
+  'platform.light.required': { fr: 'Lumière des blocs requise :', en: 'Block light required:' },
+  'platform.altitude.title': { fr: 'Altitude (Y)', en: 'Altitude (Y)' },
+  'platform.build.between': { fr: 'Construisez entre', en: 'Build between' },
+  'platform.structure.title': { fr: 'Structure requise', en: 'Structure required' },
+  'platform.must.be.in': { fr: 'Doit être dans :', en: 'Must be in:' },
+  'platform.storm.required': { fr: 'Orage requis', en: 'Storm required' },
+  'platform.rain.required': { fr: 'Pluie requise', en: 'Rain required' },
+  'platform.wait.storm': { fr: 'Attendez un orage pour utiliser le PokéSnack', en: 'Wait for a storm to use PokéSnack' },
+  'platform.wait.rain': { fr: 'Attendez la pluie pour utiliser le PokéSnack', en: 'Wait for rain to use PokéSnack' },
+  'platform.moon.required': { fr: 'Phase lunaire requise', en: 'Moon phase required' },
+  'platform.wait.moon': { fr: 'Attendez la', en: 'Wait for the' },
+  'platform.key.item.title': { fr: 'Item clé requis', en: 'Key item required' },
+  'platform.must.have': { fr: 'Vous devez posséder :', en: 'You must have:' },
+  'platform.slime.chunk.title': { fr: 'Chunk Slime requis', en: 'Slime chunk required' },
+  'platform.slime.chunk.text': { fr: 'La plateforme doit être dans un chunk à slime (utilisez /seed ou un mod pour le trouver)', en: 'The platform must be in a slime chunk (use /seed or a mod to find one)' },
+  'platform.view.blocks': { fr: 'Voir les blocs acceptés en détail...', en: 'View accepted blocks in detail...' },
+  
+  // Moon phases
+  'moon.full': { fr: 'Pleine lune', en: 'Full moon' },
+  'moon.phase': { fr: 'Phase', en: 'Phase' },
+  'moon.0': { fr: '🌕 Pleine', en: '🌕 Full' },
+  'moon.1': { fr: '🌖 Gibbeuse décr.', en: '🌖 Waning gibbous' },
+  'moon.2': { fr: '🌗 Dernier quartier', en: '🌗 Last quarter' },
+  'moon.3': { fr: '🌘 Croissant décr.', en: '🌘 Waning crescent' },
+  'moon.4': { fr: '🌑 Nouvelle', en: '🌑 New' },
+  'moon.5': { fr: '🌒 Croissant crois.', en: '🌒 Waxing crescent' },
+  'moon.6': { fr: '🌓 Premier quartier', en: '🌓 First quarter' },
+  'moon.7': { fr: '🌔 Gibbeuse crois.', en: '🌔 Waxing gibbous' },
+  
+  // Combos
+  'combo.best': { fr: 'Meilleurs Combos PokéSnack (3 slots)', en: 'Best PokéSnack Combos (3 slots)' },
+  'combo.efficiency': { fr: 'Efficacité = Chance rareté × Chance cible', en: 'Efficiency = Rarity chance × Target chance' },
+  'combo.ev.isolation': { fr: '1× Baie EV = 50% isolation, 2× Baie EV = 100% isolation.', en: '1× EV Berry = 50% isolation, 2× EV Berry = 100% isolation.' },
+  'combo.type.boost': { fr: 'Baie Type = x10.', en: 'Type Berry = x10.' },
+  'combo.double.ev': { fr: 'Doubler une baie EV garantit que seuls les Pokémon donnant cet EV seront attirés.', en: 'Doubling an EV berry guarantees only Pokémon giving that EV will be attracted.' },
+  'combo.optimal': { fr: 'Combo Optimal', en: 'Optimal Combo' },
+  'combo.tier': { fr: 'Tier', en: 'Tier' },
+  'combo.rarity.chance': { fr: 'Chance', en: 'Chance' },
+  'combo.target.chance': { fr: 'Chance cible', en: 'Target chance' },
+  'combo.filter': { fr: 'Filtre', en: 'Filter' },
+  'combo.boost': { fr: 'Boost', en: 'Boost' },
+  'combo.special': { fr: 'Spécial', en: 'Special' },
+  'combo.free': { fr: 'Libre', en: 'Free' },
+  'combo.hitbox.advantage': { fr: 'Avantage hitbox!', en: 'Hitbox advantage!' },
+  'combo.with.optimal.ceiling': { fr: 'Avec un plafond optimal, vous bloquez', en: 'With an optimal ceiling, you block' },
+  'combo.extra.competitors': { fr: 'concurrent(s) supplémentaire(s).', en: 'extra competitor(s).' },
+  'combo.efficiency.with.ceiling': { fr: 'Efficacité avec plafond:', en: 'Efficiency with ceiling:' },
+  'combo.vs.without': { fr: 'vs', en: 'vs' },
+  'combo.without.ceiling': { fr: 'sans plafond', en: 'without ceiling' },
+  'combo.rarity': { fr: 'rareté', en: 'rarity' },
+  'combo.target': { fr: 'cible', en: 'target' },
+  
+  // Type berries section
+  'berries.type': { fr: 'Baies de Type', en: 'Type Berries' },
+  'berries.type.multiplier': { fr: 'Multiplicateur x10', en: 'x10 Multiplier' },
+  'berries.same.type': { fr: 'concurrents même type', en: 'same type competitors' },
+  'berries.other.types': { fr: 'autres types', en: 'other types' },
+  'berries.no.type.available': { fr: 'Aucune baie de type disponible', en: 'No type berry available' },
+  
+  // EV berries section
+  'berries.ev': { fr: 'Baies d\'EV', en: 'EV Berries' },
+  'berries.ev.boost': { fr: 'Boost x1.5', en: 'x1.5 Boost' },
+  'berries.only.gives.ev': { fr: 'Seul à donner cet EV !', en: 'Only one gives this EV!' },
+  'berries.only.x.give.ev': { fr: 'Seuls {count} Pokémon donnent cet EV', en: 'Only {count} Pokémon give this EV' },
+  'berries.no.ev.available': { fr: 'Ce Pokémon ne donne pas d\'EV ou pas de baie correspondante', en: 'This Pokémon doesn\'t give EVs or no matching berry' },
+  
+  // Warnings and info
+  'warning.generic.zone': { fr: 'Zone générique détectée', en: 'Generic zone detected' },
+  'warning.generic.zone.text': { fr: 'La liste ci-dessous ne montre que les Pokémon des mêmes biomes. D\'autres Pokémon de la zone peuvent aussi être attirés par cette baie EV !', en: 'The list below only shows Pokémon from the same biomes. Other Pokémon in the zone may also be attracted by this EV berry!' },
+  'warning.blocked.by.ceiling': { fr: 'Pokémon bloqués par plafond', en: 'Pokémon blocked by ceiling' },
+  'warning.ceiling.optimal': { fr: 'Plafond optimal:', en: 'Optimal ceiling:' },
+  'warning.hitbox.too.large': { fr: 'Ces Pokémon ont une hitbox trop grande et ne peuvent pas spawner avec un plafond bas !', en: 'These Pokémon have a hitbox too large and cannot spawn with a low ceiling!' },
+  'warning.blocked.by.conditions': { fr: 'Pokémon bloqués par conditions', en: 'Pokémon blocked by conditions' },
+  'warning.conditions.text': { fr: 'Ces Pokémon ne peuvent pas spawner avec les conditions optimales sélectionnées (ciel/altitude) !', en: 'These Pokémon cannot spawn with the selected optimal conditions (sky/altitude)!' },
+  
+  // View/See buttons
+  'view.blocked': { fr: 'Voir les {count} bloqués...', en: 'View {count} blocked...' },
+  'view.by.rarity': { fr: 'Voir par rareté...', en: 'View by rarity...' },
+  'view.competitors': { fr: 'Voir les {count} Pokémon concurrents dans cette zone', en: 'View {count} competing Pokémon in this zone' },
+  'view.same.type': { fr: 'concurrents même type', en: 'same type competitors' },
+  
+  // Pokemon attracted
+  'attracted.pokemon': { fr: 'Pokémon attirés', en: 'Pokémon attracted' },
+  'attracted.consume': { fr: 'consomment le PokéSnack', en: 'consume the PokéSnack' },
+  'attracted.blocked': { fr: 'bloqués', en: 'blocked' },
+  'attracted.ceiling': { fr: 'plafond', en: 'ceiling' },
+  'attracted.same.biome': { fr: 'Même biome', en: 'Same biome' },
+  'attracted.via.global': { fr: 'Via biome global (ex: is_overworld)', en: 'Via global biome (e.g.: is_overworld)' },
+  
+  // Eliminated
+  'eliminated.by.berry': { fr: 'concurrents éliminés par cette baie', en: 'competitors eliminated by this berry' },
+  'eliminated.one.by.berry': { fr: 'concurrent éliminé par cette baie', en: 'competitor eliminated by this berry' },
+  'eliminated.others.give.ev': { fr: 'autres donnent aussi cet EV (restent)', en: 'others also give this EV (remain)' },
+  'eliminated.other.gives.ev': { fr: 'autre donne aussi cet EV (reste)', en: 'other also gives this EV (remains)' },
+  
+  // Rarity info
+  'rarity.label': { fr: 'Rareté:', en: 'Rarity:' },
+  'rarity.others.same': { fr: 'autres Pokémon de même rareté dans cette zone.', en: 'other Pokémon of same rarity in this zone.' },
+  'rarity.total.all': { fr: 'total toutes raretés', en: 'total all rarities' },
+  'rarity.analyzing': { fr: 'Analyse des zones de spawn en cours...', en: 'Analyzing spawn zones...' },
+  'rarity.no.share': { fr: 'Aucun autre Pokémon ne partage exactement ces conditions de spawn. Toutes les baies seront efficaces !', en: 'No other Pokémon shares exactly these spawn conditions. All berries will be effective!' },
+  
+  // Calculate
+  'calc.with': { fr: 'Calculer avec :', en: 'Calculate with:' },
+  
+  // Search
+  'search.pokemon.title': { fr: 'Recherchez un Pokémon', en: 'Search a Pokémon' },
+  'search.pokemon.hint': { fr: 'Tapez le nom d\'un Pokémon pour voir quelles baies utiliser', en: 'Type a Pokémon name to see which berries to use' },
+  
+  // Tips section
+  'tips.title': { fr: 'Conseils', en: 'Tips' },
+  'tips.combine': { fr: 'Combinez les effets', en: 'Combine effects' },
+  'tips.combine.text': { fr: 'Vous pouvez utiliser plusieurs baies pour cumuler les effets sur votre PokéSnack.', en: 'You can use multiple berries to stack effects on your PokéSnack.' },
+  'tips.probabilities': { fr: 'Probabilités', en: 'Probabilities' },
+  'tips.probabilities.text': { fr: 'Les pourcentages représentent la probabilité que cet effet soit actif.', en: 'The percentages shown represent the chance that the effect applies.' },
+  'tips.rarity.tiers': { fr: 'Rareté tiers', en: 'Rarity tiers' },
+  'tips.rarity.tiers.text': { fr: 'Tier 0 = 86% commun, Tier 3 = 70% commun avec plus de rares.', en: 'Tier 0 = 86% common, Tier 3 = 70% common with more rares.' },
+  'tips.target.pokemon': { fr: 'Pokémon cibles', en: 'Target Pokémon' },
+  'tips.target.pokemon.text': { fr: 'Consultez le Pokédex pour voir les types, groupes Œufs et EVs de chaque Pokémon.', en: 'Check the Pokédex to see the types, egg groups and EVs of each Pokémon.' },
+  'tips.wiki': { fr: 'Voir le Wiki Cobblemon complet', en: 'See the full Cobblemon Wiki' },
+  
+  // Underwater
+  'underwater': { fr: 'Sous l\'eau', en: 'Underwater' },
+  
+  // Proximity
+  'proximity': { fr: 'Proximité', en: 'Proximity' },
+  
+  // Lure
+  'lure': { fr: 'Leurre', en: 'Lure' },
+  
+  // Others
+  'others': { fr: 'autres', en: 'others' },
   
   // Disclaimer
   'snack.disclaimer': { fr: '⚠️ Certaines informations peuvent être incorrectes car la logique d\'analyse provient de mon interprétation personnelle du système PokéSnack.', en: '⚠️ Some information may be inaccurate as the analysis logic comes from my personal interpretation of the PokéSnack system.' },

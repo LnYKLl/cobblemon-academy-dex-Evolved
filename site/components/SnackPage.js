@@ -1042,8 +1042,8 @@ export default {
       // WEATHER - Météo
       const weatherOptions = [
         { value: 'clear', label: '☀️ Temps clair' },
-        { value: 'rain', label: '🌧️ Pluie' },
-        { value: 'thunder', label: '⛈️ Orage' },
+        { value: 'rain', label: lang.value === 'fr' ? '🌧️ Pluie' : '🌧️ Rain' },
+        { value: 'thunder', label: lang.value === 'fr' ? '⛈️ Orage' : '⛈️ Storm' },
       ];
       
       for (const opt of weatherOptions) {
@@ -1080,12 +1080,18 @@ export default {
       }
       
       // Créer des catégories de lumière pratiques
-      const lightCategories = [
+      const lightCategories = lang.value === 'fr' ? [
         { min: 0, max: 0, label: '🌑 Noir complet (0)', description: 'Aucune source de lumière' },
         { min: 1, max: 7, label: '🌘 Sombre (1-7)', description: 'Faible lumière (ex: torches loin)' },
         { min: 8, max: 11, label: '🌗 Modéré (8-11)', description: 'Lumière moyenne' },
         { min: 12, max: 14, label: '🌖 Lumineux (12-14)', description: 'Bien éclairé' },
         { min: 15, max: 15, label: '☀️ Plein jour (15)', description: 'Lumière maximale (soleil/glowstone)' },
+      ] : [
+        { min: 0, max: 0, label: '🌑 Pitch black (0)', description: 'No light source' },
+        { min: 1, max: 7, label: '🌘 Dark (1-7)', description: 'Low light (e.g., distant torches)' },
+        { min: 8, max: 11, label: '🌗 Moderate (8-11)', description: 'Medium light' },
+        { min: 12, max: 14, label: '🌖 Bright (12-14)', description: 'Well lit' },
+        { min: 15, max: 15, label: '☀️ Full daylight (15)', description: 'Maximum light (sun/glowstone)' },
       ];
       
       for (const cat of lightCategories) {
@@ -1119,10 +1125,10 @@ export default {
           blocked: competitorsBlocked,
           targetCanSpawn: true,
           // Conseil pratique
-          tip: cat.min === 0 ? 'Pas de torches, zone très sombre' :
-               cat.max <= 7 ? 'Quelques torches espacées' :
-               cat.min >= 12 ? 'Beaucoup de torches ou glowstone' :
-               'Éclairage modéré',
+          tip: cat.min === 0 ? (lang.value === 'fr' ? 'Pas de torches, zone très sombre' : 'No torches, very dark area') :
+               cat.max <= 7 ? (lang.value === 'fr' ? 'Quelques torches espacées' : 'A few spaced torches') :
+               cat.min >= 12 ? (lang.value === 'fr' ? 'Beaucoup de torches ou glowstone' : 'Many torches or glowstone') :
+               (lang.value === 'fr' ? 'Éclairage modéré' : 'Moderate lighting'),
         });
       }
       // Trier par nombre de concurrents (moins = mieux)
@@ -1130,7 +1136,7 @@ export default {
       
       // MOON PHASE
       if (targetConditionValues.moonPhases.size > 0) {
-        const moonLabels = {
+        const moonLabels = lang.value === 'fr' ? {
           0: '🌕 Pleine lune',
           1: '🌖 Gibbeuse décr.',
           2: '🌗 Dernier quartier',
@@ -1139,6 +1145,15 @@ export default {
           5: '🌒 Croissant crois.',
           6: '🌓 Premier quartier',
           7: '🌔 Gibbeuse crois.',
+        } : {
+          0: '🌕 Full moon',
+          1: '🌖 Waning gibbous',
+          2: '🌗 Last quarter',
+          3: '🌘 Waning crescent',
+          4: '🌑 New moon',
+          5: '🌒 Waxing crescent',
+          6: '🌓 First quarter',
+          7: '🌔 Waxing gibbous',
         };
         
         for (const phase of targetConditionValues.moonPhases) {
@@ -2302,34 +2317,42 @@ export default {
       if (platformGuide.blocks.base.length > 0) {
         platformGuide.tips.push({
           icon: '🧱',
-          title: 'Blocs de base requis',
-          text: `Construisez votre plateforme avec : ${platformGuide.blocks.base.map(b => b.tag).join(', ')}`,
+          title: lang.value === 'fr' ? 'Blocs de base requis' : 'Base blocks required',
+          text: lang.value === 'fr' 
+            ? `Construisez votre plateforme avec : ${platformGuide.blocks.base.map(b => b.tag).join(', ')}`
+            : `Build your platform with: ${platformGuide.blocks.base.map(b => b.tag).join(', ')}`,
           priority: 'required',
         });
       }
       if (platformGuide.blocks.nearby.length > 0) {
         platformGuide.tips.push({
           icon: '📍',
-          title: 'Blocs à proximité requis',
-          text: `Placez ces blocs près du PokéSnack : ${platformGuide.blocks.nearby.map(b => b.tag).join(', ')}`,
+          title: lang.value === 'fr' ? 'Blocs à proximité requis' : 'Nearby blocks required',
+          text: lang.value === 'fr' 
+            ? `Placez ces blocs près du PokéSnack : ${platformGuide.blocks.nearby.map(b => b.tag).join(', ')}`
+            : `Place these blocks near the PokéSnack: ${platformGuide.blocks.nearby.map(b => b.tag).join(', ')}`,
           priority: 'required',
         });
       }
       if (platformGuide.blocks.avoid.length > 0) {
         platformGuide.tips.push({
           icon: '🚫',
-          title: 'Blocs à éviter',
-          text: `Ne placez PAS ces blocs à proximité : ${platformGuide.blocks.avoid.join(', ')}`,
+          title: lang.value === 'fr' ? 'Blocs à éviter' : 'Blocks to avoid',
+          text: lang.value === 'fr' 
+            ? `Ne placez PAS ces blocs à proximité : ${platformGuide.blocks.avoid.join(', ')}`
+            : `Do NOT place these blocks nearby: ${platformGuide.blocks.avoid.join(', ')}`,
           priority: 'warning',
         });
       }
       if (platformGuide.environment.canSeeSky !== null) {
         platformGuide.tips.push({
           icon: platformGuide.environment.canSeeSky ? '☀️' : '🏚️',
-          title: platformGuide.environment.canSeeSky ? 'Ciel visible requis' : 'Zone couverte requise',
+          title: platformGuide.environment.canSeeSky 
+            ? (lang.value === 'fr' ? 'Ciel visible requis' : 'Visible sky required')
+            : (lang.value === 'fr' ? 'Zone couverte requise' : 'Covered zone required'),
           text: platformGuide.environment.canSeeSky 
-            ? 'La plateforme doit être en extérieur avec vue directe sur le ciel'
-            : 'La plateforme doit être sous terre ou sous un toit (pas de vue sur le ciel)',
+            ? (lang.value === 'fr' ? 'La plateforme doit être en extérieur avec vue directe sur le ciel' : 'The platform must be outdoors with a direct view of the sky')
+            : (lang.value === 'fr' ? 'La plateforme doit être sous terre ou sous un toit (pas de vue sur le ciel)' : 'The platform must be underground or under a roof (no sky view)'),
           priority: 'required',
         });
       }
@@ -2338,8 +2361,8 @@ export default {
         if (min > 0 || max < 15) {
           platformGuide.tips.push({
             icon: '☀️',
-            title: 'Luminosité du ciel',
-            text: `Lumière du ciel requise : ${min}-${max}`,
+            title: lang.value === 'fr' ? 'Luminosité du ciel' : 'Sky light',
+            text: lang.value === 'fr' ? `Lumière du ciel requise : ${min}-${max}` : `Sky light required: ${min}-${max}`,
             priority: 'important',
           });
         }
@@ -2348,10 +2371,10 @@ export default {
         const { min, max } = platformGuide.environment.blockLight;
         platformGuide.tips.push({
           icon: '💡',
-          title: 'Luminosité des blocs',
+          title: lang.value === 'fr' ? 'Luminosité des blocs' : 'Block light',
           text: max <= 7 
-            ? `Zone sombre requise (lumière ${min}-${max}) - N'ajoutez pas de torches !`
-            : `Lumière des blocs requise : ${min}-${max}`,
+            ? (lang.value === 'fr' ? `Zone sombre requise (lumière ${min}-${max}) - N'ajoutez pas de torches !` : `Dark zone required (light ${min}-${max}) - Don't add torches!`)
+            : (lang.value === 'fr' ? `Lumière des blocs requise : ${min}-${max}` : `Block light required: ${min}-${max}`),
           priority: max <= 7 ? 'warning' : 'info',
         });
       }
@@ -2360,8 +2383,8 @@ export default {
         if (minY !== undefined || maxY !== undefined) {
           platformGuide.tips.push({
             icon: '📏',
-            title: 'Altitude (Y)',
-            text: `Construisez entre Y=${minY ?? '-∞'} et Y=${maxY ?? '+∞'}`,
+            title: lang.value === 'fr' ? 'Altitude (Y)' : 'Altitude (Y)',
+            text: lang.value === 'fr' ? `Construisez entre Y=${minY ?? '-∞'} et Y=${maxY ?? '+∞'}` : `Build between Y=${minY ?? '-∞'} and Y=${maxY ?? '+∞'}`,
             priority: 'required',
           });
         }
@@ -2369,52 +2392,64 @@ export default {
       if (platformGuide.location.structures.length > 0) {
         platformGuide.tips.push({
           icon: '🏛️',
-          title: 'Structure requise',
-          text: `Doit être dans : ${platformGuide.location.structures.join(', ')}`,
+          title: lang.value === 'fr' ? 'Structure requise' : 'Structure required',
+          text: lang.value === 'fr' ? `Doit être dans : ${platformGuide.location.structures.join(', ')}` : `Must be in: ${platformGuide.location.structures.join(', ')}`,
           priority: 'required',
         });
       }
       if (platformGuide.environment.weather) {
         platformGuide.tips.push({
           icon: platformGuide.environment.weather === 'thunder' ? '⛈️' : '🌧️',
-          title: platformGuide.environment.weather === 'thunder' ? 'Orage requis' : 'Pluie requise',
+          title: platformGuide.environment.weather === 'thunder' 
+            ? (lang.value === 'fr' ? 'Orage requis' : 'Storm required') 
+            : (lang.value === 'fr' ? 'Pluie requise' : 'Rain required'),
           text: platformGuide.environment.weather === 'thunder'
-            ? 'Attendez un orage pour utiliser le PokéSnack'
-            : 'Attendez la pluie pour utiliser le PokéSnack',
+            ? (lang.value === 'fr' ? 'Attendez un orage pour utiliser le PokéSnack' : 'Wait for a storm to use PokéSnack')
+            : (lang.value === 'fr' ? 'Attendez la pluie pour utiliser le PokéSnack' : 'Wait for rain to use PokéSnack'),
           priority: 'important',
         });
       }
       if (platformGuide.environment.moonPhase !== null) {
-        const moonNames = ['🌕 Pleine', '🌖 Gibbeuse décr.', '🌗 Dernier quartier', '🌘 Croissant décr.', '🌑 Nouvelle', '🌒 Croissant crois.', '🌓 Premier quartier', '🌔 Gibbeuse crois.'];
+        const moonNames = lang.value === 'fr' 
+          ? ['🌕 Pleine', '🌖 Gibbeuse décr.', '🌗 Dernier quartier', '🌘 Croissant décr.', '🌑 Nouvelle', '🌒 Croissant crois.', '🌓 Premier quartier', '🌔 Gibbeuse crois.']
+          : ['🌕 Full', '🌖 Waning gibbous', '🌗 Last quarter', '🌘 Waning crescent', '🌑 New', '🌒 Waxing crescent', '🌓 First quarter', '🌔 Waxing gibbous'];
         platformGuide.tips.push({
           icon: '🌙',
-          title: 'Phase lunaire requise',
-          text: `Attendez la ${moonNames[platformGuide.environment.moonPhase] || 'phase ' + platformGuide.environment.moonPhase}`,
+          title: lang.value === 'fr' ? 'Phase lunaire requise' : 'Moon phase required',
+          text: lang.value === 'fr' 
+            ? `Attendez la ${moonNames[platformGuide.environment.moonPhase] || 'phase ' + platformGuide.environment.moonPhase}`
+            : `Wait for the ${moonNames[platformGuide.environment.moonPhase] || 'phase ' + platformGuide.environment.moonPhase}`,
           priority: 'important',
         });
       }
       if (platformGuide.environment.time?.length) {
-        const timeLabels = { day: '☀️ Jour', night: '🌙 Nuit', dawn: '🌅 Aube', dusk: '🌇 Crépuscule' };
+        const timeLabels = lang.value === 'fr' 
+          ? { day: '☀️ Jour', night: '🌙 Nuit', dawn: '🌅 Aube', dusk: '🌇 Crépuscule' }
+          : { day: '☀️ Day', night: '🌙 Night', dawn: '🌅 Dawn', dusk: '🌇 Dusk' };
         platformGuide.tips.push({
           icon: '⏰',
-          title: 'Horaire optimal',
-          text: `Utilisez le PokéSnack pendant : ${platformGuide.environment.time.map(t => timeLabels[t] || t).join(', ')}`,
+          title: lang.value === 'fr' ? 'Horaire optimal' : 'Optimal time',
+          text: lang.value === 'fr' 
+            ? `Utilisez le PokéSnack pendant : ${platformGuide.environment.time.map(t => timeLabels[t] || t).join(', ')}`
+            : `Use PokéSnack during: ${platformGuide.environment.time.map(t => timeLabels[t] || t).join(', ')}`,
           priority: 'important',
         });
       }
       if (platformGuide.special.keyItem) {
         platformGuide.tips.push({
           icon: '🔑',
-          title: 'Item clé requis',
-          text: `Vous devez posséder : ${platformGuide.special.keyItem}`,
+          title: lang.value === 'fr' ? 'Item clé requis' : 'Key item required',
+          text: lang.value === 'fr' ? `Vous devez posséder : ${platformGuide.special.keyItem}` : `You must have: ${platformGuide.special.keyItem}`,
           priority: 'required',
         });
       }
       if (platformGuide.special.isSlimeChunk) {
         platformGuide.tips.push({
           icon: '🟢',
-          title: 'Chunk Slime requis',
-          text: 'La plateforme doit être dans un chunk à slime (utilisez /seed ou un mod pour le trouver)',
+          title: lang.value === 'fr' ? 'Chunk Slime requis' : 'Slime chunk required',
+          text: lang.value === 'fr' 
+            ? 'La plateforme doit être dans un chunk à slime (utilisez /seed ou un mod pour le trouver)'
+            : 'The platform must be in a slime chunk (use /seed or a mod to find one)',
           priority: 'required',
         });
       }
@@ -2442,26 +2477,36 @@ export default {
         // Peut spawn dans 1 bloc de haut - AVANTAGE!
         platformGuide.tips.push({
           icon: '📦',
-          title: 'Plafond optimal: 1 bloc',
+          title: lang.value === 'fr' ? 'Plafond optimal: 1 bloc' : 'Optimal ceiling: 1 block',
           text: competitorsBlockedByCeiling > 0 
-            ? `${mon.name} peut spawner sous 1 bloc! Construisez avec un plafond à 1 bloc pour BLOQUER ${competitorsBlockedByCeiling} concurrent${competitorsBlockedByCeiling > 1 ? 's' : ''} plus grands.`
-            : `${mon.name} peut spawner sous 1 bloc. Tous les concurrents ont aussi une petite hitbox.`,
+            ? (lang.value === 'fr' 
+              ? `${mon.name} peut spawner sous 1 bloc! Construisez avec un plafond à 1 bloc pour BLOQUER ${competitorsBlockedByCeiling} concurrent${competitorsBlockedByCeiling > 1 ? 's' : ''} plus grands.`
+              : `${mon.name} can spawn under 1 block! Build with a 1-block ceiling to BLOCK ${competitorsBlockedByCeiling} larger competitor${competitorsBlockedByCeiling > 1 ? 's' : ''}.`)
+            : (lang.value === 'fr' 
+              ? `${mon.name} peut spawner sous 1 bloc. Tous les concurrents ont aussi une petite hitbox.`
+              : `${mon.name} can spawn under 1 block. All competitors also have a small hitbox.`),
           priority: competitorsBlockedByCeiling > 0 ? 'important' : 'info',
         });
       } else if (monTargetHeight === 2) {
         platformGuide.tips.push({
           icon: '📦',
-          title: 'Plafond optimal: 2 blocs',
+          title: lang.value === 'fr' ? 'Plafond optimal: 2 blocs' : 'Optimal ceiling: 2 blocks',
           text: competitorsBlockedByCeiling > 0 
-            ? `${mon.name} a besoin de 2 blocs. Un plafond à 2 blocs bloquerait ${competitorsBlockedByCeiling} concurrent${competitorsBlockedByCeiling > 1 ? 's' : ''} plus grands.`
-            : `${mon.name} a besoin de 2 blocs. Peu de concurrents seront bloqués par cette hauteur.`,
+            ? (lang.value === 'fr' 
+              ? `${mon.name} a besoin de 2 blocs. Un plafond à 2 blocs bloquerait ${competitorsBlockedByCeiling} concurrent${competitorsBlockedByCeiling > 1 ? 's' : ''} plus grands.`
+              : `${mon.name} needs 2 blocks. A 2-block ceiling would block ${competitorsBlockedByCeiling} larger competitor${competitorsBlockedByCeiling > 1 ? 's' : ''}.`)
+            : (lang.value === 'fr' 
+              ? `${mon.name} a besoin de 2 blocs. Peu de concurrents seront bloqués par cette hauteur.`
+              : `${mon.name} needs 2 blocks. Few competitors will be blocked by this height.`),
           priority: competitorsBlockedByCeiling > 3 ? 'important' : 'info',
         });
       } else {
         platformGuide.tips.push({
           icon: '📦',
-          title: `Plafond optimal: ${monTargetHeight} blocs`,
-          text: `${mon.name} a besoin de ${monTargetHeight} blocs minimum. ${competitorsBlockedByCeiling > 0 ? `Un plafond bloquerait ${competitorsBlockedByCeiling} concurrent${competitorsBlockedByCeiling > 1 ? 's' : ''}.` : 'Un plafond ne filtrera pas de concurrents.'}`,
+          title: lang.value === 'fr' ? `Plafond optimal: ${monTargetHeight} blocs` : `Optimal ceiling: ${monTargetHeight} blocks`,
+          text: lang.value === 'fr' 
+            ? `${mon.name} a besoin de ${monTargetHeight} blocs minimum. ${competitorsBlockedByCeiling > 0 ? `Un plafond bloquerait ${competitorsBlockedByCeiling} concurrent${competitorsBlockedByCeiling > 1 ? 's' : ''}.` : 'Un plafond ne filtrera pas de concurrents.'}`
+            : `${mon.name} needs ${monTargetHeight} blocks minimum. ${competitorsBlockedByCeiling > 0 ? `A ceiling would block ${competitorsBlockedByCeiling} competitor${competitorsBlockedByCeiling > 1 ? 's' : ''}.` : 'A ceiling won\'t filter out competitors.'}`,
           priority: competitorsBlockedByCeiling > 5 ? 'important' : 'info',
         });
       }
@@ -2835,17 +2880,17 @@ export default {
             <!-- 🏆 MEILLEURE ZONE DE SPAWN -->
             <div v-if="spawnAnalysis.zoneAnalysis && spawnAnalysis.zoneAnalysis.length > 1" class="mb-4">
               <h5 class="font-semibold text-[var(--text)] flex items-center gap-2 mb-3 pb-2 border-b border-[var(--border)]">
-                <span>📍</span> {{ lang === 'fr' ? 'Analyse par Zone de Spawn' : 'Spawn Zone Analysis' }}
-                <span class="text-xs font-normal text-[var(--text-muted)] ml-auto">{{ spawnAnalysis.zoneAnalysis.length }} {{ lang === 'fr' ? 'zones trouvées' : 'zones found' }}</span>
+                <span>📍</span> {{ tSnackUI('zone.analysis') }}
+                <span class="text-xs font-normal text-[var(--text-muted)] ml-auto">{{ spawnAnalysis.zoneAnalysis.length }} {{ tSnackUI('zone.found') }}</span>
               </h5>
               
               <!-- Meilleure zone en vedette -->
               <div v-if="spawnAnalysis.bestZone" class="mb-3 p-4 rounded-xl bg-gradient-to-r from-emerald-500/20 via-green-500/20 to-teal-500/20 border-2 border-emerald-500/50">
                 <div class="flex items-center gap-2 mb-2 flex-wrap">
                   <span class="text-xl">🏆</span>
-                  <span class="font-bold text-[var(--text)]">Zone Optimale</span>
+                  <span class="font-bold text-[var(--text)]">{{ tSnackUI('zone.optimal') }}</span>
                   <span class="px-2 py-0.5 rounded-full text-xs font-bold bg-emerald-500 text-white">
-                    {{ spawnAnalysis.bestZone.baseChance }}% chance de base
+                    {{ spawnAnalysis.bestZone.baseChance }}% {{ tSnackUI('zone.base.chance') }}
                   </span>
                 </div>
                 <div class="flex flex-wrap gap-2 mb-2">
@@ -2868,26 +2913,26 @@ export default {
                     {{ formatTime(t) }}
                   </span>
                   <span v-if="spawnAnalysis.bestZone.sky && spawnAnalysis.bestZone.sky.canSeeSky !== undefined" class="px-2 py-0.5 rounded text-xs" :class="spawnAnalysis.bestZone.sky.canSeeSky ? 'bg-cyan-500/20 text-cyan-300' : 'bg-gray-500/20 text-gray-300'">
-                    {{ spawnAnalysis.bestZone.sky.canSeeSky ? '🌤️ Voir le ciel' : '🏚️ Sans ciel' }}
+                    {{ spawnAnalysis.bestZone.sky.canSeeSky ? ('🌤️ ' + tSnackUI('sky.see')) : ('🏚️ ' + tSnackUI('sky.none')) }}
                   </span>
                   <span v-if="spawnAnalysis.bestZone.moonPhase !== undefined" class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 text-xs">
-                    🌙 {{ spawnAnalysis.bestZone.moonPhase === 0 ? 'Pleine lune' : 'Phase ' + spawnAnalysis.bestZone.moonPhase }}
+                    🌙 {{ spawnAnalysis.bestZone.moonPhase === 0 ? tSnackUI('moon.full') : (tSnackUI('moon.phase') + ' ' + spawnAnalysis.bestZone.moonPhase) }}
                   </span>
                   <span v-if="spawnAnalysis.bestZone.weather && spawnAnalysis.bestZone.weather.isRaining" class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 text-xs">
-                    🌧️ Pluie
+                    🌧️ {{ tSnackUI('weather.rain') }}
                   </span>
                   <span v-if="spawnAnalysis.bestZone.weather && spawnAnalysis.bestZone.weather.isThundering" class="px-2 py-0.5 rounded bg-violet-500/20 text-violet-300 text-xs">
-                    ⛈️ Orage
+                    ⛈️ {{ tSnackUI('weather.storm') }}
                   </span>
                   <span v-if="spawnAnalysis.bestZone.yLevel && (spawnAnalysis.bestZone.yLevel.minY !== undefined || spawnAnalysis.bestZone.yLevel.maxY !== undefined)" class="px-2 py-0.5 rounded bg-stone-500/20 text-stone-300 text-xs">
                     📏 Y: {{ spawnAnalysis.bestZone.yLevel.minY ?? '-∞' }} → {{ spawnAnalysis.bestZone.yLevel.maxY ?? '+∞' }}
                   </span>
                   <span v-if="spawnAnalysis.bestZone.isSubmerged" class="px-2 py-0.5 rounded bg-blue-600/20 text-blue-300 text-xs">
-                    🤿 Sous l'eau
+                    🤿 {{ tSnackUI('underwater') }}
                   </span>
                 </div>
                 <p class="text-xs text-[var(--text-muted)]">
-                  Seulement <strong class="text-emerald-400">{{ spawnAnalysis.bestZone.competitorCount }}</strong> autres {{ spawnAnalysis.bestZone.rarity }} dans cette zone
+                  {{ tSnackUI('zone.only.others') }} <strong class="text-emerald-400">{{ spawnAnalysis.bestZone.competitorCount }}</strong> {{ tSnackUI('zone.others.in.zone') }} {{ spawnAnalysis.bestZone.rarity }} {{ tSnackUI('zone.in.this.zone') }}
                 </p>
               </div>
 
@@ -2914,7 +2959,7 @@ export default {
                     </div>
                     <div class="flex items-center gap-3 text-xs">
                       <span class="text-[var(--text-muted)]">
-                        <strong class="text-[var(--text)]">{{ zone.competitorCount }}</strong> concurrents
+                        <strong class="text-[var(--text)]">{{ zone.competitorCount }}</strong> {{ tSnackUI('zone.competitors') }}
                       </span>
                       <span class="px-2 py-0.5 rounded bg-[var(--primary)]/20 text-[var(--primary)] font-medium">
                         {{ zone.baseChance }}%
@@ -2927,20 +2972,20 @@ export default {
                     <span v-if="zone.spawnType" class="px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 text-xs">🎯 {{ zone.spawnType }}</span>
                     <span v-for="t in (zone.times || [])" :key="t" class="px-2 py-0.5 rounded bg-orange-500/20 text-orange-300 text-xs">{{ formatTime(t) }}</span>
                     <span v-if="zone.sky && zone.sky.canSeeSky !== undefined" class="px-2 py-0.5 rounded text-xs" :class="zone.sky.canSeeSky ? 'bg-cyan-500/20 text-cyan-300' : 'bg-gray-500/20 text-gray-300'">
-                      {{ zone.sky.canSeeSky ? '🌤️ Ciel' : '🏚️ Sans ciel' }}
+                      {{ zone.sky.canSeeSky ? ('🌤️ ' + tSnackUI('sky.with')) : ('🏚️ ' + tSnackUI('sky.none')) }}
                     </span>
-                    <span v-if="zone.moonPhase !== undefined" class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 text-xs">🌙 Phase {{ zone.moonPhase }}</span>
-                    <span v-if="zone.weather && zone.weather.isRaining" class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 text-xs">🌧️ Pluie</span>
-                    <span v-if="zone.weather && zone.weather.isThundering" class="px-2 py-0.5 rounded bg-violet-500/20 text-violet-300 text-xs">⛈️ Orage</span>
+                    <span v-if="zone.moonPhase !== undefined" class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 text-xs">🌙 {{ tSnackUI('moon.phase') }} {{ zone.moonPhase }}</span>
+                    <span v-if="zone.weather && zone.weather.isRaining" class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 text-xs">🌧️ {{ tSnackUI('weather.rain') }}</span>
+                    <span v-if="zone.weather && zone.weather.isThundering" class="px-2 py-0.5 rounded bg-violet-500/20 text-violet-300 text-xs">⛈️ {{ tSnackUI('weather.storm') }}</span>
                     <span v-if="zone.yLevel && (zone.yLevel.minY !== undefined || zone.yLevel.maxY !== undefined)" class="px-2 py-0.5 rounded bg-stone-500/20 text-stone-300 text-xs">
                       📏 Y: {{ zone.yLevel.minY ?? '-∞' }} → {{ zone.yLevel.maxY ?? '+∞' }}
                     </span>
-                    <span v-if="zone.isSubmerged" class="px-2 py-0.5 rounded bg-blue-600/20 text-blue-300 text-xs">🤿 Sous l'eau</span>
+                    <span v-if="zone.isSubmerged" class="px-2 py-0.5 rounded bg-blue-600/20 text-blue-300 text-xs">🤿 {{ tSnackUI('underwater') }}</span>
                     <!-- Nouvelles conditions -->
                     <span v-for="s in (zone.structures || [])" :key="'struct-' + s" class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 text-xs">🏛️ {{ s }}</span>
                     <span v-if="zone.baseBlocks?.selectors?.length" class="px-2 py-0.5 rounded bg-orange-500/20 text-orange-300 text-xs">🧱 Base: {{ zone.baseBlocks.selectors.join(', ') }}</span>
-                    <span v-if="zone.nearbyBlocks?.selectors?.length" class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-xs">📍 Proximité: {{ zone.nearbyBlocks.selectors.join(', ') }}</span>
-                    <span v-if="zone.lure" class="px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 text-xs">🎣 Leurre {{ zone.lure.minLureLevel ?? 0 }}+</span>
+                    <span v-if="zone.nearbyBlocks?.selectors?.length" class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-xs">📍 {{ tSnackUI('proximity') }}: {{ zone.nearbyBlocks.selectors.join(', ') }}</span>
+                    <span v-if="zone.lure" class="px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 text-xs">🎣 {{ tSnackUI('lure') }} {{ zone.lure.minLureLevel ?? 0 }}+</span>
                     <span v-if="zone.keyItem" class="px-2 py-0.5 rounded bg-red-500/20 text-red-300 text-xs">🔑 {{ zone.keyItem }}</span>
                     <span v-if="zone.isSlimeChunk" class="px-2 py-0.5 rounded bg-lime-500/20 text-lime-300 text-xs">🟢 Chunk Slime</span>
                   </div>
@@ -2974,25 +3019,25 @@ export default {
                   {{ formatTime(t) }}
                 </span>
                 <span v-if="spawnAnalysis.bestZone.sky && spawnAnalysis.bestZone.sky.canSeeSky !== undefined" class="px-2 py-0.5 rounded text-xs" :class="spawnAnalysis.bestZone.sky.canSeeSky ? 'bg-cyan-500/20 text-cyan-400' : 'bg-gray-500/20 text-gray-400'">
-                  {{ spawnAnalysis.bestZone.sky.canSeeSky ? '🌤️ Voir le ciel' : '🏚️ Sans ciel' }}
+                  {{ spawnAnalysis.bestZone.sky.canSeeSky ? ('🌤️ ' + tSnackUI('sky.see')) : ('🏚️ ' + tSnackUI('sky.none')) }}
                 </span>
                 <span v-if="spawnAnalysis.bestZone.light && (spawnAnalysis.bestZone.light.minLight !== undefined || spawnAnalysis.bestZone.light.maxLight !== undefined)" class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 text-xs">
-                  💡 Lumière: {{ spawnAnalysis.bestZone.light.minLight ?? 0 }}-{{ spawnAnalysis.bestZone.light.maxLight ?? 15 }}
+                  💡 {{ tSnackUI('light') }}: {{ spawnAnalysis.bestZone.light.minLight ?? 0 }}-{{ spawnAnalysis.bestZone.light.maxLight ?? 15 }}
                 </span>
                 <span v-if="spawnAnalysis.bestZone.moonPhase !== undefined" class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-400 text-xs">
-                  🌙 {{ spawnAnalysis.bestZone.moonPhase === 0 ? 'Pleine lune' : 'Phase ' + spawnAnalysis.bestZone.moonPhase }}
+                  🌙 {{ spawnAnalysis.bestZone.moonPhase === 0 ? tSnackUI('moon.full') : (tSnackUI('moon.phase') + ' ' + spawnAnalysis.bestZone.moonPhase) }}
                 </span>
                 <span v-if="spawnAnalysis.bestZone.weather && spawnAnalysis.bestZone.weather.isRaining" class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 text-xs">
-                  🌧️ Pluie
+                  🌧️ {{ tSnackUI('weather.rain') }}
                 </span>
                 <span v-if="spawnAnalysis.bestZone.weather && spawnAnalysis.bestZone.weather.isThundering" class="px-2 py-0.5 rounded bg-violet-500/20 text-violet-400 text-xs">
-                  ⛈️ Orage
+                  ⛈️ {{ tSnackUI('weather.storm') }}
                 </span>
                 <span v-if="spawnAnalysis.bestZone.yLevel && (spawnAnalysis.bestZone.yLevel.minY !== undefined || spawnAnalysis.bestZone.yLevel.maxY !== undefined)" class="px-2 py-0.5 rounded bg-stone-500/20 text-stone-400 text-xs">
                   📏 Y: {{ spawnAnalysis.bestZone.yLevel.minY ?? '-∞' }} → {{ spawnAnalysis.bestZone.yLevel.maxY ?? '+∞' }}
                 </span>
                 <span v-if="spawnAnalysis.bestZone.isSubmerged" class="px-2 py-0.5 rounded bg-blue-600/20 text-blue-400 text-xs">
-                  🤿 Sous l'eau
+                  🤿 {{ tSnackUI('underwater') }}
                 </span>
                 <!-- Nouvelles conditions -->
                 <span v-for="s in (spawnAnalysis.bestZone.structures || [])" :key="'struct-' + s" class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 text-xs">
@@ -3005,7 +3050,7 @@ export default {
                   📍 {{ spawnAnalysis.bestZone.nearbyBlocks.selectors.join(', ') }}
                 </span>
                 <span v-if="spawnAnalysis.bestZone.lure" class="px-2 py-0.5 rounded bg-teal-500/20 text-teal-400 text-xs">
-                  🎣 Leurre {{ spawnAnalysis.bestZone.lure.minLureLevel ?? 0 }}+
+                  🎣 {{ tSnackUI('lure') }} {{ spawnAnalysis.bestZone.lure.minLureLevel ?? 0 }}+
                 </span>
                 <span v-if="spawnAnalysis.bestZone.keyItem" class="px-2 py-0.5 rounded bg-red-500/20 text-red-400 text-xs">
                   🔑 {{ spawnAnalysis.bestZone.keyItem }}
@@ -3023,8 +3068,8 @@ export default {
             <!-- 🎯 CONDITIONS OPTIMALES DE CHASSE -->
             <div v-if="spawnAnalysis.optimalConditions && spawnAnalysis.optimalConditions.summary && spawnAnalysis.optimalConditions.summary.length > 0" class="mb-4 p-4 rounded-xl bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-indigo-500/10 border border-cyan-500/30">
               <h5 class="font-semibold text-cyan-400 flex items-center gap-2 mb-3">
-                <span>🎯</span> Conditions Optimales de Chasse
-                <span class="text-xs font-normal text-[var(--text-muted)] ml-auto">Minimisez la compétition naturellement</span>
+                <span>🎯</span> {{ tSnackUI('conditions.optimal') }}
+                <span class="text-xs font-normal text-[var(--text-muted)] ml-auto">{{ tSnackUI('conditions.minimize') }}</span>
               </h5>
               
               <div class="space-y-2">
@@ -3036,12 +3081,12 @@ export default {
                     </span>
                     <span class="text-sm text-[var(--text)]">
                       <span class="text-emerald-400 font-medium">{{ tip.best }}</span>
-                      <span class="text-[var(--text-muted)]"> au lieu de </span>
+                      <span class="text-[var(--text-muted)]"> {{ tSnackUI('conditions.instead.of') }} </span>
                       <span class="text-red-400 font-medium">{{ tip.worst }}</span>
                     </span>
                     <span class="px-2 py-0.5 rounded-full text-xs font-bold ml-auto"
                       :class="tip.improvement >= 3 ? 'bg-emerald-500/30 text-emerald-400' : tip.improvement >= 1 ? 'bg-yellow-500/30 text-yellow-400' : 'bg-gray-500/30 text-gray-400'">
-                      -{{ tip.improvement }} concurrent{{ tip.improvement > 1 ? 's' : '' }}
+                      -{{ tip.improvement }} {{ tip.improvement > 1 ? tSnackUI('zone.competitors') : tSnackUI('zone.competitor') }}
                     </span>
                   </div>
                   <p class="text-xs text-[var(--text-muted)] mt-2">💡 {{ tip.tip }}</p>
@@ -3051,57 +3096,57 @@ export default {
               <!-- Détails par condition si disponibles -->
               <details v-if="spawnAnalysis.conditionAnalysis" class="mt-3">
                 <summary class="text-xs text-[var(--text-muted)] cursor-pointer hover:text-cyan-400">
-                  📊 Voir l'analyse détaillée par condition...
+                  📊 {{ tSnackUI('conditions.view.detailed') }}
                 </summary>
                 <div class="mt-3 grid gap-2 md:grid-cols-2">
                   <!-- Horaires -->
                   <div v-if="spawnAnalysis.conditionAnalysis.times.length > 1" class="p-2 rounded-lg bg-[var(--surface)]">
-                    <div class="text-xs font-medium text-orange-400 mb-1">⏰ Horaires</div>
+                    <div class="text-xs font-medium text-orange-400 mb-1">⏰ {{ tSnackUI('conditions.times') }}</div>
                     <div class="space-y-0.5">
                       <div v-for="t in spawnAnalysis.conditionAnalysis.times" :key="t.value" 
                         class="flex justify-between text-xs px-1 py-0.5 rounded"
                         :class="t === spawnAnalysis.conditionAnalysis.times[0] ? 'bg-emerald-500/10 text-emerald-400' : ''">
                         <span>{{ t.label }}</span>
-                        <span>{{ t.competitors }} concurrents</span>
+                        <span>{{ t.competitors }} {{ tSnackUI('zone.competitors') }}</span>
                       </div>
                     </div>
                   </div>
                   
                   <!-- Ciel -->
                   <div v-if="spawnAnalysis.conditionAnalysis.sky.length > 1" class="p-2 rounded-lg bg-[var(--surface)]">
-                    <div class="text-xs font-medium text-cyan-400 mb-1">🌤️ Ciel</div>
+                    <div class="text-xs font-medium text-cyan-400 mb-1">🌤️ {{ tSnackUI('conditions.sky') }}</div>
                     <div class="space-y-0.5">
                       <div v-for="s in spawnAnalysis.conditionAnalysis.sky" :key="s.value" 
                         class="flex justify-between text-xs px-1 py-0.5 rounded"
                         :class="s === spawnAnalysis.conditionAnalysis.sky[0] ? 'bg-emerald-500/10 text-emerald-400' : ''">
                         <span>{{ s.label }}</span>
-                        <span>{{ s.competitors }} concurrents</span>
+                        <span>{{ s.competitors }} {{ tSnackUI('zone.competitors') }}</span>
                       </div>
                     </div>
                   </div>
                   
                   <!-- Météo -->
                   <div v-if="spawnAnalysis.conditionAnalysis.weather.length > 1" class="p-2 rounded-lg bg-[var(--surface)]">
-                    <div class="text-xs font-medium text-blue-400 mb-1">🌦️ Météo</div>
+                    <div class="text-xs font-medium text-blue-400 mb-1">🌦️ {{ tSnackUI('conditions.weather') }}</div>
                     <div class="space-y-0.5">
                       <div v-for="w in spawnAnalysis.conditionAnalysis.weather" :key="w.value" 
                         class="flex justify-between text-xs px-1 py-0.5 rounded"
                         :class="w === spawnAnalysis.conditionAnalysis.weather[0] ? 'bg-emerald-500/10 text-emerald-400' : ''">
                         <span>{{ w.label }}</span>
-                        <span>{{ w.competitors }} concurrents</span>
+                        <span>{{ w.competitors }} {{ tSnackUI('zone.competitors') }}</span>
                       </div>
                     </div>
                   </div>
                   
                   <!-- 💡 Lumière - Niveau d'éclairage optimal -->
                   <div v-if="spawnAnalysis.conditionAnalysis.light.length > 1 && spawnAnalysis.conditionAnalysis.light[0].competitors !== spawnAnalysis.conditionAnalysis.light[spawnAnalysis.conditionAnalysis.light.length - 1].competitors" class="p-2 rounded-lg bg-[var(--surface)]">
-                    <div class="text-xs font-medium text-amber-400 mb-1">💡 Lumière (torches)</div>
+                    <div class="text-xs font-medium text-amber-400 mb-1">💡 {{ tSnackUI('conditions.light') }}</div>
                     <div class="space-y-0.5">
                       <div v-for="l in spawnAnalysis.conditionAnalysis.light" :key="l.min + '-' + l.max" 
                         class="flex justify-between text-xs px-1 py-0.5 rounded"
                         :class="l === spawnAnalysis.conditionAnalysis.light[0] ? 'bg-emerald-500/10 text-emerald-400' : ''">
                         <span>{{ l.label }}</span>
-                        <span>{{ l.competitors }} concurrents</span>
+                        <span>{{ l.competitors }} {{ tSnackUI('zone.competitors') }}</span>
                       </div>
                     </div>
                     <!-- Conseil pratique adapté au contexte -->
@@ -3139,41 +3184,41 @@ export default {
                   
                   <!-- Phase lunaire -->
                   <div v-if="spawnAnalysis.conditionAnalysis.moonPhase.length > 1" class="p-2 rounded-lg bg-[var(--surface)]">
-                    <div class="text-xs font-medium text-indigo-400 mb-1">🌙 Phase lunaire</div>
+                    <div class="text-xs font-medium text-indigo-400 mb-1">🌙 {{ tSnackUI('conditions.moon.phase') }}</div>
                     <div class="space-y-0.5">
                       <div v-for="m in spawnAnalysis.conditionAnalysis.moonPhase" :key="m.value" 
                         class="flex justify-between text-xs px-1 py-0.5 rounded"
                         :class="m === spawnAnalysis.conditionAnalysis.moonPhase[0] ? 'bg-emerald-500/10 text-emerald-400' : ''">
                         <span>{{ m.label }}</span>
-                        <span>{{ m.competitors }} concurrents</span>
+                        <span>{{ m.competitors }} {{ tSnackUI('zone.competitors') }}</span>
                       </div>
                     </div>
                   </div>
                   
                   <!-- 📏 Altitude Y - Hauteur optimale (seulement si différence entre tranches) -->
                   <div v-if="spawnAnalysis.conditionAnalysis.yLevel.length > 1 && spawnAnalysis.conditionAnalysis.yLevel[0].competitors !== spawnAnalysis.conditionAnalysis.yLevel[spawnAnalysis.conditionAnalysis.yLevel.length - 1].competitors" class="p-2 rounded-lg bg-[var(--surface)]">
-                    <div class="text-xs font-medium text-stone-400 mb-1">📏 Altitude Y (hauteur plateforme)</div>
+                    <div class="text-xs font-medium text-stone-400 mb-1">📏 {{ tSnackUI('conditions.y.altitude') }}</div>
                     <div class="space-y-0.5">
                       <div v-for="y in spawnAnalysis.conditionAnalysis.yLevel" :key="y.value" 
                         class="flex justify-between text-xs px-1 py-0.5 rounded"
                         :class="y === spawnAnalysis.conditionAnalysis.yLevel[0] ? 'bg-emerald-500/10 text-emerald-400' : ''">
                         <span>Y: {{ y.min }} → {{ y.max }}</span>
-                        <span>{{ y.competitors }} concurrents</span>
+                        <span>{{ y.competitors }} {{ tSnackUI('zone.competitors') }}</span>
                       </div>
                     </div>
                   </div>
                   
                   <!-- 📦 Hitbox - Hauteur de plafond (toujours afficher si différence) -->
                   <div v-if="spawnAnalysis.conditionAnalysis.hitbox.length > 0 && spawnAnalysis.conditionAnalysis.hitbox[0].blocked > 0" class="p-2 rounded-lg bg-[var(--surface)] border border-amber-500/30">
-                    <div class="text-xs font-medium text-amber-400 mb-1">📦 Hauteur de plafond (filtre concurrents)</div>
+                    <div class="text-xs font-medium text-amber-400 mb-1">📦 {{ tSnackUI('conditions.ceiling.height') }}</div>
                     <div class="space-y-0.5">
                       <div v-for="h in spawnAnalysis.conditionAnalysis.hitbox" :key="h.value" 
                         class="flex justify-between text-xs px-1 py-0.5 rounded"
                         :class="h === spawnAnalysis.conditionAnalysis.hitbox[0] ? 'bg-emerald-500/10 text-emerald-400' : ''">
                         <span>{{ h.label }}</span>
                         <span>
-                          <span class="text-[var(--text-muted)]">{{ h.competitors }} concurrents</span>
-                          <span v-if="h.blocked > 0" class="ml-1 text-green-400">({{ h.blocked }} bloqués)</span>
+                          <span class="text-[var(--text-muted)]">{{ h.competitors }} {{ tSnackUI('zone.competitors') }}</span>
+                          <span v-if="h.blocked > 0" class="ml-1 text-green-400">({{ h.blocked }} {{ tSnackUI('attracted.blocked') }})</span>
                         </span>
                       </div>
                     </div>
@@ -3185,8 +3230,8 @@ export default {
             <!-- 🛠️ GUIDE DE CONSTRUCTION DE PLATEFORME -->
             <div v-if="spawnAnalysis.platformGuide && spawnAnalysis.platformGuide.tips.length > 0" class="mb-4 p-4 rounded-xl bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-red-500/10 border border-amber-500/30">
               <h5 class="font-semibold text-amber-400 flex items-center gap-2 mb-3">
-                <span>🛠️</span> Guide de Construction de Plateforme
-                <span class="text-xs font-normal text-[var(--text-muted)] ml-auto">Configuration optimale</span>
+                <span>🛠️</span> {{ tSnackUI('platform.guide') }}
+                <span class="text-xs font-normal text-[var(--text-muted)] ml-auto">{{ tSnackUI('platform.optimal.config') }}</span>
               </h5>
               
               <!-- Tips organisés par priorité -->
@@ -3197,7 +3242,7 @@ export default {
                     <div class="flex items-center gap-2 mb-1">
                       <span class="text-lg">{{ tip.icon }}</span>
                       <span class="font-medium text-red-400 text-sm">{{ tip.title }}</span>
-                      <span class="ml-auto px-2 py-0.5 rounded text-[10px] bg-red-500/20 text-red-400 font-bold">REQUIS</span>
+                      <span class="ml-auto px-2 py-0.5 rounded text-[10px] bg-red-500/20 text-red-400 font-bold">{{ tSnackUI('platform.required') }}</span>
                     </div>
                     <p class="text-xs text-[var(--text-muted)]">{{ tip.text }}</p>
                   </div>
@@ -3209,7 +3254,7 @@ export default {
                     <div class="flex items-center gap-2 mb-1">
                       <span class="text-lg">{{ tip.icon }}</span>
                       <span class="font-medium text-amber-400 text-sm">{{ tip.title }}</span>
-                      <span class="ml-auto px-2 py-0.5 rounded text-[10px] bg-amber-500/20 text-amber-400 font-bold">ATTENTION</span>
+                      <span class="ml-auto px-2 py-0.5 rounded text-[10px] bg-amber-500/20 text-amber-400 font-bold">{{ tSnackUI('platform.warning') }}</span>
                     </div>
                     <p class="text-xs text-[var(--text-muted)]">{{ tip.text }}</p>
                   </div>
@@ -3221,7 +3266,7 @@ export default {
                     <div class="flex items-center gap-2 mb-1">
                       <span class="text-lg">{{ tip.icon }}</span>
                       <span class="font-medium text-blue-400 text-sm">{{ tip.title }}</span>
-                      <span class="ml-auto px-2 py-0.5 rounded text-[10px] bg-blue-500/20 text-blue-400 font-bold">IMPORTANT</span>
+                      <span class="ml-auto px-2 py-0.5 rounded text-[10px] bg-blue-500/20 text-blue-400 font-bold">{{ tSnackUI('platform.important') }}</span>
                     </div>
                     <p class="text-xs text-[var(--text-muted)]">{{ tip.text }}</p>
                   </div>
@@ -3242,7 +3287,7 @@ export default {
               <!-- Détails des blocs si présents -->
               <details v-if="spawnAnalysis.platformGuide.blocks.base.length > 0 || spawnAnalysis.platformGuide.blocks.nearby.length > 0" class="mt-3">
                 <summary class="text-xs text-[var(--text-muted)] cursor-pointer hover:text-amber-400">
-                  🧱 Voir les blocs acceptés en détail...
+                  🧱 {{ tSnackUI('platform.view.blocks') }}
                 </summary>
                 <div class="mt-3 grid gap-3 md:grid-cols-2">
                   <!-- Base blocks -->
@@ -3252,17 +3297,17 @@ export default {
                       <span v-for="resolved in block.resolved?.slice(0, 10)" :key="resolved" class="px-1.5 py-0.5 rounded bg-orange-500/10 text-orange-300 text-[10px]">
                         {{ resolved.replace('minecraft:', '').replace('biomeswevegone:', 'bwg:') }}
                       </span>
-                      <span v-if="block.resolved?.length > 10" class="text-[10px] text-[var(--text-muted)]">+{{ block.resolved.length - 10 }} autres</span>
+                      <span v-if="block.resolved?.length > 10" class="text-[10px] text-[var(--text-muted)]">+{{ block.resolved.length - 10 }} {{ tSnackUI('others') }}</span>
                     </div>
                   </div>
                   <!-- Nearby blocks -->
                   <div v-for="(block, idx) in spawnAnalysis.platformGuide.blocks.nearby" :key="'near-' + idx" class="p-2 rounded-lg bg-[var(--surface)]">
-                    <div class="text-xs font-medium text-amber-400 mb-1">{{ block.tag }} (proximité)</div>
+                    <div class="text-xs font-medium text-amber-400 mb-1">{{ block.tag }} ({{ tSnackUI('proximity') }})</div>
                     <div class="flex flex-wrap gap-1">
                       <span v-for="resolved in block.resolved?.slice(0, 10)" :key="resolved" class="px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-300 text-[10px]">
                         {{ resolved.replace('minecraft:', '').replace('biomeswevegone:', 'bwg:') }}
                       </span>
-                      <span v-if="block.resolved?.length > 10" class="text-[10px] text-[var(--text-muted)]">+{{ block.resolved.length - 10 }} autres</span>
+                      <span v-if="block.resolved?.length > 10" class="text-[10px] text-[var(--text-muted)]">+{{ block.resolved.length - 10 }} {{ tSnackUI('others') }}</span>
                     </div>
                   </div>
                 </div>
@@ -3270,21 +3315,21 @@ export default {
             </div>
             
             <p v-if="spawnAnalysis.competingCount > 0" class="text-sm text-[var(--text-muted)] mb-4">
-              Rareté: <strong class="text-[var(--primary)]">{{ spawnAnalysis.primaryRarity }}</strong> — 
-              <strong>{{ spawnAnalysis.competingCount }}</strong> autres Pokémon de même rareté dans cette zone.
-              <span class="text-xs">({{ spawnAnalysis.totalInZone }} total toutes raretés)</span>
+              {{ tSnackUI('rarity.label') }} <strong class="text-[var(--primary)]">{{ spawnAnalysis.primaryRarity }}</strong> — 
+              <strong>{{ spawnAnalysis.competingCount }}</strong> {{ tSnackUI('rarity.others.same') }}
+              <span class="text-xs">({{ spawnAnalysis.totalInZone }} {{ tSnackUI('rarity.total.all') }})</span>
             </p>
             <p v-else-if="loadingAnalysis" class="text-sm text-[var(--text-muted)] mb-4 flex items-center gap-2">
               <span class="w-4 h-4 border-2 border-[var(--primary)] border-t-transparent rounded-full animate-spin"></span>
-              Analyse des zones de spawn en cours...
+              {{ tSnackUI('rarity.analyzing') }}
             </p>
             <p v-else class="text-sm text-[var(--text-muted)] mb-4">
-              Aucun autre Pokémon ne partage exactement ces conditions de spawn. Toutes les baies seront efficaces !
+              {{ tSnackUI('rarity.no.share') }}
             </p>
 
             <!-- 🍎 Sélecteur de type de pomme -->
             <div class="mb-4 flex items-center justify-center gap-2 flex-wrap">
-              <span class="text-sm text-[var(--text-muted)]">Calculer avec :</span>
+              <span class="text-sm text-[var(--text-muted)]">{{ tSnackUI('calc.with') }}</span>
               <div class="inline-flex rounded-xl bg-[var(--surface)] p-1 border border-[var(--border)]">
                 <button 
                   @click="appleType = 'golden'" 
@@ -3307,22 +3352,22 @@ export default {
             <!-- 🎰 MEILLEURS COMBOS 3 BAIES -->
             <div v-if="spawnAnalysis.bestCombos && spawnAnalysis.bestCombos.length > 0" class="mb-6">
               <h5 class="font-semibold text-[var(--text)] flex items-center gap-2 mb-3 pb-2 border-b border-[var(--border)]">
-                <span>🎰</span> Meilleurs Combos PokéSnack (3 slots)
-                <span class="text-xs font-normal text-[var(--text-muted)] ml-auto">Efficacité = Chance rareté × Chance cible</span>
+                <span>🎰</span> {{ tSnackUI('combo.best') }}
+                <span class="text-xs font-normal text-[var(--text-muted)] ml-auto">{{ tSnackUI('combo.efficiency') }}</span>
               </h5>
               
               <!-- Note explicative EV vs Type -->
               <div class="text-xs text-[var(--text-muted)] mb-3 p-2 rounded-lg bg-purple-500/10 border border-purple-500/30">
-                💡 <strong class="text-purple-400">1× Baie EV = 50%</strong> isolation, <strong class="text-purple-400">2× Baie EV = 100%</strong> isolation. 
-                <strong class="text-blue-400">Baie Type = x10</strong>. 
-                {{ lang === 'fr' ? 'Doubler une baie EV garantit que seuls les Pokémon donnant cet EV seront attirés.' : 'Doubling an EV berry guarantees only Pokémon giving that EV will be attracted.' }}
+                💡 <strong class="text-purple-400">{{ tSnackUI('combo.ev.isolation') }}</strong> 
+                <strong class="text-blue-400">{{ tSnackUI('combo.type.boost') }}</strong> 
+                {{ tSnackUI('combo.double.ev') }}
               </div>
 
               <!-- Meilleur combo en vedette -->
               <div v-if="spawnAnalysis.bestCombo" class="mb-4 p-4 rounded-xl bg-gradient-to-r from-yellow-500/20 via-amber-500/20 to-orange-500/20 border-2 border-yellow-500/50">
                 <div class="flex items-center gap-2 mb-3 flex-wrap">
                   <span class="text-2xl">🏆</span>
-                  <span class="font-bold text-lg text-[var(--text)]">Combo Optimal</span>
+                  <span class="font-bold text-lg text-[var(--text)]">{{ tSnackUI('combo.optimal') }}</span>
                   <span class="px-3 py-1 rounded-full text-sm font-bold bg-green-500 text-white">
                     {{ spawnAnalysis.bestCombo.efficiency }}%
                   </span>
@@ -3336,18 +3381,18 @@ export default {
                 
                 <!-- Message si avantage hitbox avec plafond -->
                 <div v-if="spawnAnalysis.bestCombo.ev && spawnAnalysis.bestCombo.ev.blockedByHitbox > 0" class="text-sm text-amber-400 mb-3 p-2 rounded bg-amber-500/10 border border-amber-500/30">
-                  📦 <strong>Avantage hitbox!</strong> Avec un plafond optimal, vous bloquez <strong>{{ spawnAnalysis.bestCombo.ev.blockedByHitbox }}</strong> concurrent(s) supplémentaire(s).
+                  📦 <strong>{{ tSnackUI('combo.hitbox.advantage') }}</strong> {{ tSnackUI('combo.with.optimal.ceiling') }} <strong>{{ spawnAnalysis.bestCombo.ev.blockedByHitbox }}</strong> {{ tSnackUI('combo.extra.competitors') }}
                   <div class="mt-1 text-xs text-amber-300">
-                    Efficacité avec plafond: <strong>{{ spawnAnalysis.bestCombo.ev.efficiencyWithHitbox }}%</strong> 
-                    (vs {{ spawnAnalysis.bestCombo.ev.efficiency }}% sans plafond)
+                    {{ tSnackUI('combo.efficiency.with.ceiling') }} <strong>{{ spawnAnalysis.bestCombo.ev.efficiencyWithHitbox }}%</strong> 
+                    ({{ tSnackUI('combo.vs.without') }} {{ spawnAnalysis.bestCombo.ev.efficiency }}% {{ tSnackUI('combo.without.ceiling') }})
                   </div>
                 </div>
                 
                 <!-- Détail des chances -->
                 <div class="text-xs text-[var(--text-muted)] mb-3 flex gap-4 flex-wrap">
-                  <span>📊 Tier <strong class="text-[var(--text)]">{{ spawnAnalysis.bestCombo.tier }}</strong></span>
-                  <span>🎲 Chance {{ spawnAnalysis.primaryRarity }}: <strong class="text-[var(--text)]">{{ spawnAnalysis.bestCombo.rarityChance }}%</strong></span>
-                  <span>🎯 Chance cible: <strong class="text-[var(--text)]">{{ spawnAnalysis.bestCombo.targetChance }}%</strong></span>
+                  <span>📊 {{ tSnackUI('combo.tier') }} <strong class="text-[var(--text)]">{{ spawnAnalysis.bestCombo.tier }}</strong></span>
+                  <span>🎲 {{ tSnackUI('combo.rarity.chance') }} {{ spawnAnalysis.primaryRarity }}: <strong class="text-[var(--text)]">{{ spawnAnalysis.bestCombo.rarityChance }}%</strong></span>
+                  <span>🎯 {{ tSnackUI('combo.target.chance') }}: <strong class="text-[var(--text)]">{{ spawnAnalysis.bestCombo.targetChance }}%</strong></span>
                 </div>
                 
                 <!-- 3 slots du combo -->
@@ -3366,10 +3411,10 @@ export default {
                     <span class="text-2xl mb-1">{{ slot.icon }}</span>
                     <span class="text-xs text-center font-medium text-[var(--text)]">{{ slot.name }}</span>
                     <span class="text-xs text-[var(--text-muted)]">
-                      <template v-if="slot.type === 'ev'">🔒 Filtre</template>
-                      <template v-else-if="slot.type === 'type'">×10 Boost</template>
-                      <template v-else-if="slot.type === 'special'">{{ slot.data?.effect || 'Spécial' }}</template>
-                      <template v-else>Libre</template>
+                      <template v-if="slot.type === 'ev'">🔒 {{ tSnackUI('combo.filter') }}</template>
+                      <template v-else-if="slot.type === 'type'">×10 {{ tSnackUI('combo.boost') }}</template>
+                      <template v-else-if="slot.type === 'special'">{{ slot.data?.effect || tSnackUI('combo.special') }}</template>
+                      <template v-else>{{ tSnackUI('combo.free') }}</template>
                     </span>
                   </div>
                 </div>
@@ -3404,7 +3449,7 @@ export default {
                     <div class="flex flex-col">
                       <span class="text-sm text-[var(--text)]">{{ combo.name }}</span>
                       <span class="text-xs text-[var(--text-muted)]">
-                        Tier {{ combo.tier }} • {{ combo.rarityChance }}% rareté • {{ combo.targetChance }}% cible
+                        Tier {{ combo.tier }} • {{ combo.rarityChance }}% {{ tSnackUI('combo.rarity') }} • {{ combo.targetChance }}% {{ tSnackUI('combo.target') }}
                       </span>
                     </div>
                     
@@ -3427,8 +3472,8 @@ export default {
               <!-- Colonne TYPES (Multiplicateur x10) -->
               <div class="space-y-3">
                 <h5 class="font-semibold text-[var(--text)] flex items-center gap-2 pb-2 border-b border-[var(--border)]">
-                  <span>🎯</span> Baies de Type
-                  <span class="text-xs font-normal text-[var(--text-muted)] ml-auto">Multiplicateur x10</span>
+                  <span>🎯</span> {{ tSnackUI('berries.type') }}
+                  <span class="text-xs font-normal text-[var(--text-muted)] ml-auto">{{ tSnackUI('berries.type.multiplier') }}</span>
                 </h5>
                 <div v-if="spawnAnalysis.typeEfficiency.length" class="space-y-2">
                   <div 
@@ -3466,7 +3511,7 @@ export default {
                       ></div>
                     </div>
                     <div class="text-xs text-[var(--text-muted)] mt-1">
-                      {{ eff.sameType }} concurrent{{ eff.sameType > 1 ? 's' : '' }} même type • {{ eff.otherTypes }} autres types
+                      {{ eff.sameType }} {{ tSnackUI('berries.same.type') }} • {{ eff.otherTypes }} {{ tSnackUI('berries.other.types') }}
                     </div>
                     <!-- Liste des concurrents de même type -->
                     <details v-if="eff.competitors && eff.competitors.length > 0" class="mt-2">
@@ -3487,15 +3532,15 @@ export default {
                   </div>
                 </div>
                 <div v-else class="text-sm text-[var(--text-muted)] italic">
-                  Aucune baie de type disponible
+                  {{ tSnackUI('berries.no.type.available') }}
                 </div>
               </div>
 
               <!-- Colonne EVs (Boost x1.5) -->
               <div class="space-y-3">
                 <h5 class="font-semibold text-[var(--text)] flex items-center gap-2 pb-2 border-b border-[var(--border)]">
-                  <span>📊</span> Baies d'EV
-                  <span class="text-xs font-normal px-2 py-0.5 rounded bg-purple-500/20 text-purple-400 ml-auto">📈 Boost x1.5</span>
+                  <span>📊</span> {{ tSnackUI('berries.ev') }}
+                  <span class="text-xs font-normal px-2 py-0.5 rounded bg-purple-500/20 text-purple-400 ml-auto">📈 {{ tSnackUI('berries.ev.boost') }}</span>
                 </h5>
                 
                 <div v-if="spawnAnalysis.evEfficiency && spawnAnalysis.evEfficiency.length" class="space-y-2">
@@ -3528,9 +3573,9 @@ export default {
                       <div class="flex items-start gap-2">
                         <span class="text-lg">⚠️</span>
                         <div>
-                          <strong class="text-amber-400">Zone générique détectée</strong>
+                          <strong class="text-amber-400">{{ tSnackUI('warning.generic.zone') }}</strong>
                           <p class="text-amber-300/80 mt-0.5">
-                            {{ eff.warningMessage || "La liste ci-dessous ne montre que les Pokémon des mêmes biomes. D'autres Pokémon de la zone peuvent aussi être attirés par cette baie EV !" }}
+                            {{ eff.warningMessage || tSnackUI('warning.generic.zone.text') }}
                           </p>
                         </div>
                       </div>
@@ -3542,11 +3587,11 @@ export default {
                         <span class="text-lg">📦</span>
                         <div class="flex-1">
                           <div class="flex items-center gap-2 flex-wrap">
-                            <strong class="text-purple-400">{{ eff.blockedByHitboxCount }} Pokémon bloqués par plafond</strong>
-                            <span class="text-purple-300/70">• Plafond optimal: {{ eff.targetHitboxHeight }} bloc{{ eff.targetHitboxHeight > 1 ? 's' : '' }}</span>
+                            <strong class="text-purple-400">{{ eff.blockedByHitboxCount }} {{ tSnackUI('warning.blocked.by.ceiling') }}</strong>
+                            <span class="text-purple-300/70">• {{ tSnackUI('warning.ceiling.optimal') }} {{ eff.targetHitboxHeight }} {{ eff.targetHitboxHeight > 1 ? tSnackUI('ui.blocks') : tSnackUI('ui.block') }}</span>
                           </div>
                           <p class="text-purple-300/80 mt-0.5">
-                            Ces Pokémon ont une hitbox trop grande et ne peuvent pas spawner avec un plafond bas !
+                            {{ tSnackUI('warning.hitbox.too.large') }}
                           </p>
                           <!-- Détail des bloqués par rareté -->
                           <details class="mt-1">
@@ -3590,10 +3635,10 @@ export default {
                         <span class="text-lg">🎯</span>
                         <div class="flex-1">
                           <div class="flex items-center gap-2 flex-wrap">
-                            <strong class="text-cyan-400">{{ eff.blockedByConditionsCount }} Pokémon bloqués par conditions</strong>
+                            <strong class="text-cyan-400">{{ eff.blockedByConditionsCount }} {{ tSnackUI('warning.blocked.by.conditions') }}</strong>
                           </div>
                           <p class="text-cyan-300/80 mt-0.5">
-                            Ces Pokémon ne peuvent pas spawner avec les conditions optimales sélectionnées (ciel/altitude) !
+                            {{ tSnackUI('warning.conditions.text') }}
                           </p>
                           <!-- Détail des bloqués par conditions -->
                           <details class="mt-1">
@@ -3737,7 +3782,7 @@ export default {
                   </div>
                 </div>
                 <div v-else class="text-sm text-[var(--text-muted)] italic">
-                  Ce Pokémon ne donne pas d'EV ou pas de baie correspondante
+                  {{ tSnackUI('berries.no.ev.available') }}
                 </div>
               </div>
             </div>
@@ -3777,8 +3822,8 @@ export default {
           <div class="w-24 h-24 rounded-full bg-[var(--surface)] flex items-center justify-center mx-auto mb-4 text-5xl">
             🔍
           </div>
-          <h3 class="text-lg font-semibold text-[var(--text)] mb-2">Recherchez un Pokémon</h3>
-          <p class="text-[var(--text-muted)]">Tapez le nom d'un Pokémon pour voir quelles baies utiliser</p>
+          <h3 class="text-lg font-semibold text-[var(--text)] mb-2">{{ tSnackUI('search.pokemon.title') }}</h3>
+          <p class="text-[var(--text-muted)]">{{ tSnackUI('search.pokemon.hint') }}</p>
         </div>
       </template>
 
@@ -3804,7 +3849,7 @@ export default {
           <!-- Stats -->
           <div class="flex items-center justify-end text-sm text-[var(--text-muted)]">
             <span class="px-3 py-1 rounded-full bg-[var(--primary)] text-white font-medium">
-              {{ totalItems }} {{ lang === 'fr' ? 'résultats' : 'results' }}
+              {{ totalItems }} {{ tSnackUI('ui.results') }}
             </span>
           </div>
         </div>
@@ -3878,14 +3923,14 @@ export default {
         <div class="w-20 h-20 rounded-full bg-[var(--surface)] flex items-center justify-center mx-auto mb-4 text-4xl">
           🔍
         </div>
-        <h3 class="text-lg font-semibold text-[var(--text)] mb-2">{{ lang === 'fr' ? 'Aucun résultat' : 'No results' }}</h3>
-        <p class="text-[var(--text-muted)]">{{ lang === 'fr' ? 'Essayez une autre recherche ou catégorie' : 'Try another search or category' }}</p>
+        <h3 class="text-lg font-semibold text-[var(--text)] mb-2">{{ tSnackUI('ui.no.results') }}</h3>
+        <p class="text-[var(--text-muted)]">{{ tSnackUI('ui.try.another') }}</p>
       </div>
 
       <!-- Tips Section -->
       <div class="glass-card rounded-2xl p-4 md:p-6">
         <h3 class="text-lg font-bold text-[var(--text)] mb-4 flex items-center gap-2">
-          <span class="text-2xl">💡</span> {{ lang === 'fr' ? 'Conseils' : 'Tips' }}
+          <span class="text-2xl">💡</span> {{ tSnackUI('tips.title') }}
         </h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
           <div class="flex gap-3">
@@ -3893,8 +3938,8 @@ export default {
               <span class="text-[var(--primary)]">1</span>
             </div>
             <div>
-              <p class="font-medium text-[var(--text)]">{{ lang === 'fr' ? 'Combinez les effets' : 'Combine effects' }}</p>
-              <p class="text-[var(--text-muted)]">{{ lang === 'fr' ? 'Vous pouvez utiliser plusieurs baies pour cumuler les effets sur votre PokéSnack.' : 'You can use multiple berries to stack effects on your PokéSnack.' }}</p>
+              <p class="font-medium text-[var(--text)]">{{ tSnackUI('tips.combine') }}</p>
+              <p class="text-[var(--text-muted)]">{{ tSnackUI('tips.combine.text') }}</p>
             </div>
           </div>
           <div class="flex gap-3">
@@ -3902,8 +3947,8 @@ export default {
               <span class="text-[var(--primary)]">2</span>
             </div>
             <div>
-              <p class="font-medium text-[var(--text)]">{{ lang === 'fr' ? 'Probabilités' : 'Probabilities' }}</p>
-              <p class="text-[var(--text-muted)]">{{ lang === 'fr' ? 'Les pourcentages représentent la probabilité que cet effet soit actif.' : 'The percentages shown represent the chance that the effect applies.' }}</p>
+              <p class="font-medium text-[var(--text)]">{{ tSnackUI('tips.probabilities') }}</p>
+              <p class="text-[var(--text-muted)]">{{ tSnackUI('tips.probabilities.text') }}</p>
             </div>
           </div>
           <div class="flex gap-3">
@@ -3911,8 +3956,8 @@ export default {
               <span class="text-[var(--primary)]">3</span>
             </div>
             <div>
-              <p class="font-medium text-[var(--text)]">{{ lang === 'fr' ? 'Rareté tiers' : 'Rarity tiers' }}</p>
-              <p class="text-[var(--text-muted)]">{{ lang === 'fr' ? 'Tier 0 = 86% commun, Tier 3 = 70% commun avec plus de rares.' : 'Tier 0 = 86% common, Tier 3 = 70% common with more rares.' }}</p>
+              <p class="font-medium text-[var(--text)]">{{ tSnackUI('tips.rarity.tiers') }}</p>
+              <p class="text-[var(--text-muted)]">{{ tSnackUI('tips.rarity.tiers.text') }}</p>
             </div>
           </div>
           <div class="flex gap-3">
@@ -3920,8 +3965,8 @@ export default {
               <span class="text-[var(--primary)]">4</span>
             </div>
             <div>
-              <p class="font-medium text-[var(--text)]">{{ lang === 'fr' ? 'Pokémon cibles' : 'Target Pokémon' }}</p>
-              <p class="text-[var(--text-muted)]">{{ lang === 'fr' ? 'Consultez le Pokédex pour voir les types, groupes Œufs et EVs de chaque Pokémon.' : 'Check the Pokédex to see the types, egg groups and EVs of each Pokémon.' }}</p>
+              <p class="font-medium text-[var(--text)]">{{ tSnackUI('tips.target.pokemon') }}</p>
+              <p class="text-[var(--text-muted)]">{{ tSnackUI('tips.target.pokemon.text') }}</p>
             </div>
           </div>
         </div>
@@ -3938,7 +3983,7 @@ export default {
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
           </svg>
-          {{ lang === 'fr' ? 'Voir le Wiki Cobblemon complet' : 'See the full Cobblemon Wiki' }}
+          {{ tSnackUI('tips.wiki') }}
         </a>
       </div>
       </template>
