@@ -191,8 +191,8 @@ export default {
         description: lang.value === 'fr' ? "Effets uniques et bonus rares" : "Unique effects and rare bonuses",
         items: [
           { berry: "Golden Apple", effect: lang.value === 'fr' ? "Rareté +1 tier, Shiny x2, Morsure -25%" : "Rarity +1 tier, Shiny x2, Bite -25%", icon: "🍎", color: "#ffd700" },
-          { berry: "Enchanted Golden Apple", effect: lang.value === 'fr' ? "Rareté +10 tier, Shiny x10, Morsure -10%" : "Rarity +10 tier, Shiny x10, Bite -10%", icon: "✨", color: "#ffd700" },
-          { berry: "Starf Berry", effect: "Shiny x5", icon: "🌟", color: "#ffd700" },
+          { berry: "Enchanted Golden Apple", effect: lang.value === 'fr' ? "Rareté +3 tiers, Shiny x10, Morsure -10%" : "Rarity +3 tiers, Shiny x10, Bite -10%", icon: "✨", color: "#ffd700" },
+          { berry: "Starf Berry", effect: "Shiny x3", icon: "🌟", color: "#ffd700" },
           { berry: "Enigma Berry", effect: lang.value === 'fr' ? "Talent Caché (5%)" : "Hidden Ability (5%)", icon: "❓", color: "#705898" },
           { berry: "Kee Berry", effect: lang.value === 'fr' ? "Femelle (25%)" : "Female (25%)", icon: "♀️", color: "#f85888" },
           { berry: "Maranga Berry", effect: lang.value === 'fr' ? "Mâle (25%)" : "Male (25%)", icon: "♂️", color: "#6890f0" },
@@ -206,8 +206,8 @@ export default {
         title: lang.value === 'fr' ? "⏱️ Réduire Temps de Morsure" : "⏱️ Reduce Bite Time",
         description: lang.value === 'fr' ? "Réduit le temps d'attente avant qu'un Pokémon morde" : "Reduces the wait time before a Pokémon bites",
         items: [
-          { berry: "Apple", effect: lang.value === 'fr' ? "-50% Temps de morsure" : "-50% Bite Time", icon: "🍎", color: "#78c850" },
-          { berry: "Sitrus Berry", effect: lang.value === 'fr' ? "-50% Temps de morsure" : "-50% Bite Time", icon: "🍋", color: "#f8d030" },
+          { berry: "Apple", effect: lang.value === 'fr' ? "-100% Temps de morsure" : "-100% Bite Time", icon: "🍎", color: "#78c850" },
+          { berry: "Sitrus Berry", effect: lang.value === 'fr' ? "-100% Temps de morsure" : "-100% Bite Time", icon: "🍋", color: "#f8d030" },
           { berry: "Oran Berry", effect: lang.value === 'fr' ? "-33% Temps de morsure" : "-33% Bite Time", icon: "🫐", color: "#6890f0" },
           { berry: "Glow Berries", effect: lang.value === 'fr' ? "-25% Temps de morsure" : "-25% Bite Time", icon: "✨", color: "#ffd700" },
           { berry: "Custap Berry", effect: lang.value === 'fr' ? "-25% + Capture ↑ (70%)" : "-25% + Catch ↑ (70%)", icon: "🍇", color: "#a040a0" },
@@ -222,7 +222,7 @@ export default {
           { berry: "Golden Apple", effect: lang.value === 'fr' ? "Rareté +1 tier" : "Rarity +1 tier", icon: "🍎", color: "#ffd700" },
           { berry: "Glistering Melon Slice", effect: lang.value === 'fr' ? "Rareté +1 tier" : "Rarity +1 tier", icon: "🍉", color: "#78c850" },
           { berry: "Golden Carrot", effect: lang.value === 'fr' ? "Rareté +1 tier" : "Rarity +1 tier", icon: "🥕", color: "#f8d030" },
-          { berry: "Enchanted Golden Apple", effect: lang.value === 'fr' ? "Rareté +10 tiers" : "Rarity +10 tiers", icon: "✨", color: "#ffd700" },
+          { berry: "Enchanted Golden Apple", effect: lang.value === 'fr' ? "Rareté +3 tiers" : "Rarity +3 tiers", icon: "✨", color: "#ffd700" },
         ]
       },
     }));
@@ -1724,8 +1724,8 @@ export default {
       const specialBerries = {
         golden_apple: { id: 'golden_apple', name: 'Golden Apple', icon: '🍎', tierBonus: 1, effect: 'Rareté +1' },
         enchanted_apple: { id: 'enchanted_apple', name: 'Enchanted Golden Apple', icon: '✨', tierBonus: 3, effect: 'Rareté +3' },
-        starf: { id: 'starf', name: 'Starf Berry', icon: '⭐', tierBonus: 0, effect: 'Shiny x5' },
-        apple: { id: 'apple', name: 'Apple/Sitrus', icon: '🍏', tierBonus: 0, effect: '-50% morsure' },
+        starf: { id: 'starf', name: 'Starf Berry', icon: '⭐', tierBonus: 0, effect: 'Shiny x3' },
+        apple: { id: 'apple', name: 'Apple/Sitrus', icon: '🍏', tierBonus: 0, effect: '-100% morsure' },
       };
 
       // Fonction pour calculer le tier de rareté d'un combo
@@ -1789,11 +1789,21 @@ export default {
           targetChanceInRarity = targetWeight / totalWeight;
           
         } else if (hasEv) {
-          // ========== EV SEUL (boost x1.5) ==========
-          // Avec le nerf, EV donne +50% de chances, pas un filtre garanti
-          // Formule: 1.5 / (1.5 + (pokemonWithThisEv - 1))
-          const evCompetitors = combo.ev.pokemonWithThisEv;
-          targetChanceInRarity = 1.5 / (1.5 + (evCompetitors - 1));
+          // ========== EV SEUL ou 2× EV ==========
+          // Compter combien de slots EV dans le combo
+          const evSlotsCount = combo.slots.filter(s => s.type === 'ev').length;
+          
+          if (evSlotsCount >= 2) {
+            // 2× même baie EV = 100% isolation sur les Pokémon avec cet EV
+            // Seuls les concurrents ayant cet EV restent (isolation garantie)
+            const evCompetitors = combo.ev.pokemonWithThisEv;
+            targetChanceInRarity = 1 / evCompetitors;
+          } else {
+            // 1× baie EV = 50% de chances (boost x1.5)
+            // Formule: 1.5 / (1.5 + (pokemonWithThisEv - 1))
+            const evCompetitors = combo.ev.pokemonWithThisEv;
+            targetChanceInRarity = 1.5 / (1.5 + (evCompetitors - 1));
+          }
           
         } else if (typeSlots.length > 0) {
           // ========== TYPES SEULS (multiplicateurs) ==========
@@ -1933,6 +1943,19 @@ export default {
             });
           }
         }
+        
+        // 2× même baie EV + Pomme = 100% isolation sur cet EV
+        combos.push({
+          name: `2× ${ev.berry} + 🍎 Golden`,
+          slots: [
+            { type: 'ev', data: ev, icon: ev.icon, name: ev.berry },
+            { type: 'ev', data: ev, icon: ev.icon, name: ev.berry },
+            { type: 'special', data: goldenApple, icon: '🍎', name: 'Golden Apple' },
+          ],
+          ev: ev,
+          typeSlots: [],
+          mechanic: lang.value === 'fr' ? '100% isolation EV + tier 1' : '100% EV isolation + tier 1',
+        });
       }
 
       // 2. Types + Pommes
@@ -2681,8 +2704,8 @@ export default {
             </h4>
             <ul class="text-sm text-[var(--text-muted)] space-y-1">
               <li>• {{ lang === 'fr' ? 'Combinez une baie de type avec une Pomme Dorée pour augmenter la rareté' : 'Combine a type berry with a Golden Apple to increase rarity' }}</li>
-              <li>• {{ lang === 'fr' ? 'Ajoutez une Baie Étoile pour x5 chances de shiny' : 'Add a Starf Berry for x5 shiny chance' }}</li>
-              <li>• {{ lang === 'fr' ? 'Utilisez une Pomme ou Baie Sitrus pour réduire le délai de 50%' : 'Use an Apple or Sitrus Berry to reduce wait time by 50%' }}</li>
+              <li>• {{ lang === 'fr' ? 'Ajoutez une Baie Étoile pour x3 chances de shiny' : 'Add a Starf Berry for x3 shiny chance' }}</li>
+              <li>• {{ lang === 'fr' ? 'Utilisez une Pomme ou Baie Sitrus pour réduire le délai de 100%' : 'Use an Apple or Sitrus Berry to reduce wait time by 100%' }}</li>
               <li v-if="pokemonRecommendations.types.length >= 2">• {{ lang === 'fr' ? 'Ce Pokémon a 2 types - les deux baies fonctionnent !' : 'This Pokémon has 2 types - both berries work!' }}</li>
             </ul>
           </div>
@@ -3219,7 +3242,7 @@ export default {
                   ✨ Enchanted
                 </button>
               </div>
-              <span class="text-xs text-[var(--text-muted)]">({{ appleType === 'golden' ? '+1 tier' : '+2 tier' }})</span>
+              <span class="text-xs text-[var(--text-muted)]">({{ appleType === 'golden' ? '+1 tier' : '+4 tiers' }})</span>
             </div>
 
             <!-- 🎰 MEILLEURS COMBOS 3 BAIES -->
@@ -3231,8 +3254,9 @@ export default {
               
               <!-- Note explicative EV vs Type -->
               <div class="text-xs text-[var(--text-muted)] mb-3 p-2 rounded-lg bg-purple-500/10 border border-purple-500/30">
-                💡 <strong class="text-purple-400">Baie EV = Boost x1.5</strong> (50% de chances en plus) vs <strong class="text-blue-400">Baie Type = Boost x10</strong>. 
-                Les baies Type sont généralement plus efficaces, mais les baies EV peuvent mieux cibler si peu de concurrents partagent l'EV.
+                💡 <strong class="text-purple-400">1× Baie EV = 50%</strong> isolation, <strong class="text-purple-400">2× Baie EV = 100%</strong> isolation. 
+                <strong class="text-blue-400">Baie Type = x10</strong>. 
+                {{ lang === 'fr' ? 'Doubler une baie EV garantit que seuls les Pokémon donnant cet EV seront attirés.' : 'Doubling an EV berry guarantees only Pokémon giving that EV will be attracted.' }}
               </div>
 
               <!-- Meilleur combo en vedette -->
