@@ -412,6 +412,9 @@ export default {
         '#cobblemon:is_river', '#cobblemon:is_ocean', '#cobblemon:is_mushroom',
         '#cobblemon:is_cherry_grove', '#cobblemon:is_bamboo', '#cobblemon:is_floral',
         '#cobblemon:is_deep_dark', '#cobblemon:is_sky',
+        // Biomes spéciaux overworld
+        '#cobblemon:is_spooky', '#cobblemon:is_volcanic', '#cobblemon:is_magical',
+        '#cobblemon:is_freezing', '#cobblemon:is_hills', '#cobblemon:is_highlands',
         // Biomes Minecraft directs (pour les Pokémon qui utilisent minecraft:xxx)
         'minecraft:lush_caves', 'minecraft:dripstone_caves', 'minecraft:deep_dark'
       ],
@@ -439,7 +442,7 @@ export default {
       ],
       // is_cold inclut les biomes froids
       '#cobblemon:is_cold': [
-        '#cobblemon:is_snowy', '#cobblemon:is_tundra', '#cobblemon:is_taiga'
+        '#cobblemon:is_snowy', '#cobblemon:is_tundra', '#cobblemon:is_taiga', '#cobblemon:is_freezing'
       ],
       // is_aquatic pour les biomes aquatiques
       '#cobblemon:is_aquatic': [
