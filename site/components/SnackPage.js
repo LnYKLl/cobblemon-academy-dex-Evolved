@@ -936,6 +936,88 @@ export default {
       
       const bestZone = zoneAnalysis.length > 0 ? zoneAnalysis[0] : null;
 
+      // ========== ANALYSE PAR BIOME INDIVIDUEL ==========
+      // Analyser chaque biome séparément pour trouver le meilleur biome spécifique
+      const biomeAnalysis = [];
+      
+      for (const spawn of monSpawns) {
+        const zoneBiomes = spawn.biomeTags?.include || [];
+        const zoneRarity = spawn.rarity || 'common';
+        const zoneTimes = spawn.times || [];
+        
+        // Analyser chaque biome individuellement
+        for (const biome of zoneBiomes) {
+          // Éviter les doublons si le même biome apparaît dans plusieurs spawns
+          if (biomeAnalysis.some(b => b.biome === biome && b.rarity === zoneRarity)) continue;
+          
+          // Compter les concurrents dans ce biome spécifique
+          const biomeCompetitors = allCompetingPokemon.filter(comp => {
+            // Même rareté
+            if (!comp.matchedRarities?.includes(zoneRarity)) return false;
+            
+            // Match ce biome spécifique
+            if (!comp.matchedBiomes) return false;
+            
+            let matchesBiome = false;
+            for (const compBiome of comp.matchedBiomes) {
+              // Match direct
+              if (compBiome === biome) {
+                matchesBiome = true;
+                break;
+              }
+              // Match via biome parent
+              if (biomeCovers(compBiome, biome) || biomeCovers(biome, compBiome)) {
+                matchesBiome = true;
+                break;
+              }
+            }
+            
+            if (!matchesBiome) return false;
+            
+            // Vérifier les horaires
+            if (zoneTimes.length > 0 && comp.matchedTimes) {
+              const hasAnyTime = comp.matchedTimes.includes('any');
+              const hasSameTime = zoneTimes.some(t => comp.matchedTimes.includes(t));
+              if (!hasAnyTime && !hasSameTime) return false;
+            }
+            
+            return true;
+          });
+          
+          const totalInBiome = biomeCompetitors.length + 1;
+          const baseChance = (1 / totalInBiome) * 100;
+          
+          // Nom lisible du biome
+          const biomeName = biome
+            .replace('#cobblemon:', '')
+            .replace('#minecraft:', '')
+            .replace('#aether:', 'aether:')
+            .replace('is_', '')
+            .replace(/_/g, ' ');
+          
+          biomeAnalysis.push({
+            biome: biome,
+            name: biomeName,
+            rarity: zoneRarity,
+            competitorCount: biomeCompetitors.length,
+            totalInBiome,
+            baseChance: Math.round(baseChance * 10) / 10,
+            // Garder les infos de spawn d'origine
+            levels: spawn.levels || '?',
+            weight: spawn.weight || 1,
+            spawnType: spawn.spawnType,
+            sky: spawn.sky,
+            nearbyBlocks: spawn.nearbyBlocks,
+            excludeNearbyBlocks: spawn.excludeNearbyBlocks,
+          });
+        }
+      }
+      
+      // Trier par chance (meilleur en premier)
+      biomeAnalysis.sort((a, b) => b.baseChance - a.baseChance);
+      
+      const bestBiome = biomeAnalysis.length > 0 ? biomeAnalysis[0] : null;
+
       // ========== ANALYSE DES CONDITIONS OPTIMALES ==========
       // Analyser chaque condition pour trouver la configuration qui minimise la concurrence
       const conditionAnalysis = {
@@ -2262,27 +2344,9 @@ export default {
             }
           }
         }
-        // Nearby blocks
-        if (zone.nearbyBlocks?.selectors?.length) {
-          for (const b of zone.nearbyBlocks.selectors) {
-            if (!platformGuide.blocks.nearby.some(x => x.tag === b)) {
-              platformGuide.blocks.nearby.push({ 
-                tag: b, 
-                resolved: zone.nearbyBlocks.resolved || [],
-                zone: zone.name 
-              });
-            }
-          }
-        }
-        // Exclude nearby blocks
-        if (zone.excludeNearbyBlocks?.selectors?.length || zone.excludeNearbyBlocks?.length) {
-          const excludeList = zone.excludeNearbyBlocks.selectors || zone.excludeNearbyBlocks;
-          for (const b of excludeList) {
-            if (!platformGuide.blocks.avoid.includes(b)) {
-              platformGuide.blocks.avoid.push(b);
-            }
-          }
-        }
+        // NOTE: Nearby blocks et Exclude nearby blocks sont gérés après la boucle
+        // en utilisant UNIQUEMENT bestZone pour éviter les contradictions entre zones
+        
         // Sky conditions
         if (zone.sky?.canSeeSky !== undefined && platformGuide.environment.canSeeSky === null) {
           platformGuide.environment.canSeeSky = zone.sky.canSeeSky;
@@ -2339,36 +2403,29 @@ export default {
         }
       }
 
-      // Filtrer les conflits: si un bloc est à la fois requis et à éviter, 
-      // on utilise uniquement les données de la meilleure zone
-      const nearbyTags = platformGuide.blocks.nearby.map(b => b.tag);
-      const conflictingBlocks = platformGuide.blocks.avoid.filter(b => nearbyTags.includes(b));
-      
-      if (conflictingBlocks.length > 0) {
-        // Il y a un conflit - on garde uniquement les données de la meilleure zone
-        // (la première zone dans zoneAnalysis est celle avec le moins de concurrents)
-        const bestZone = zoneAnalysis[0];
-        
-        // Reconstruire nearby et avoid à partir de la meilleure zone seulement
-        platformGuide.blocks.nearby = [];
-        platformGuide.blocks.avoid = [];
-        
-        if (bestZone.nearbyBlocks?.selectors?.length) {
-          for (const b of bestZone.nearbyBlocks.selectors) {
-            platformGuide.blocks.nearby.push({ 
-              tag: b, 
-              resolved: bestZone.nearbyBlocks.resolved || [],
-              zone: bestZone.name 
-            });
-          }
-        }
-        if (bestZone.excludeNearbyBlocks?.selectors?.length || bestZone.excludeNearbyBlocks?.length) {
-          const excludeList = bestZone.excludeNearbyBlocks.selectors || bestZone.excludeNearbyBlocks;
-          for (const b of excludeList) {
-            platformGuide.blocks.avoid.push(b);
-          }
+      // Collecter les nearbyBlocks et excludeNearbyBlocks UNIQUEMENT de la bestZone
+      // pour éviter les contradictions entre zones (ex: Pinsir jungle vs overworld)
+      if (bestZone?.nearbyBlocks?.selectors?.length) {
+        for (const b of bestZone.nearbyBlocks.selectors) {
+          platformGuide.blocks.nearby.push({ 
+            tag: b, 
+            resolved: bestZone.nearbyBlocks.resolved || [],
+            zone: bestZone.name 
+          });
         }
       }
+      if (bestZone?.excludeNearbyBlocks?.selectors?.length || bestZone?.excludeNearbyBlocks?.length) {
+        const excludeList = bestZone.excludeNearbyBlocks.selectors || bestZone.excludeNearbyBlocks;
+        for (const b of excludeList) {
+          platformGuide.blocks.avoid.push(b);
+        }
+      }
+
+      // Filtrer les conflits: si un bloc est à la fois requis (nearbyBlocks) et à éviter (excludeNearbyBlocks),
+      // les blocs REQUIS sont prioritaires car ce sont des conditions obligatoires de spawn.
+      // On retire simplement ces blocs de la liste "avoid".
+      const nearbyTags = platformGuide.blocks.nearby.map(b => b.tag);
+      platformGuide.blocks.avoid = platformGuide.blocks.avoid.filter(b => !nearbyTags.includes(b));
 
       // Générer les conseils de construction
       if (platformGuide.blocks.base.length > 0) {
@@ -2382,12 +2439,21 @@ export default {
         });
       }
       if (platformGuide.blocks.nearby.length > 0) {
+        // Préparer le texte avec les blocs resolved si disponibles
+        const nearbyBlocksText = platformGuide.blocks.nearby.map(b => {
+          if (b.resolved && b.resolved.length > 0) {
+            const shortNames = b.resolved.slice(0, 3).map(r => r.replace('cobblemon:', '').replace('minecraft:', ''));
+            return shortNames.join(', ') + (b.resolved.length > 3 ? '...' : '');
+          }
+          return b.tag;
+        }).join(', ');
+        
         platformGuide.tips.push({
           icon: '📍',
           title: lang.value === 'fr' ? 'Blocs à proximité requis' : 'Nearby blocks required',
           text: lang.value === 'fr' 
-            ? `Placez ces blocs près du PokéSnack : ${platformGuide.blocks.nearby.map(b => b.tag).join(', ')}`
-            : `Place these blocks near the PokéSnack: ${platformGuide.blocks.nearby.map(b => b.tag).join(', ')}`,
+            ? `Placez ces blocs près du PokéSnack : ${nearbyBlocksText}`
+            : `Place these blocks near the PokéSnack: ${nearbyBlocksText}`,
           priority: 'required',
         });
       }
@@ -2588,6 +2654,8 @@ export default {
         bestCombo,
         zoneAnalysis,
         bestZone,
+        biomeAnalysis,
+        bestBiome,
         conditionAnalysis,
         optimalConditions,
         platformGuide,
@@ -2995,10 +3063,10 @@ export default {
                     🧱 {{ lang.value === 'fr' ? 'Base:' : 'Base:' }} {{ spawnAnalysis.bestZone.baseBlocks.selectors.join(', ') }}
                   </span>
                   <span v-if="spawnAnalysis.bestZone.nearbyBlocks?.selectors?.length" class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-xs font-medium">
-                    ✅ {{ tSnackUI('proximity') }}: {{ spawnAnalysis.bestZone.nearbyBlocks.selectors.join(', ') }}
+                    ✅ {{ tSnackUI('proximity') }}: {{ spawnAnalysis.bestZone.nearbyBlocks.resolved?.length ? spawnAnalysis.bestZone.nearbyBlocks.resolved.slice(0, 3).map(b => b.replace('cobblemon:', '').replace('minecraft:', '')).join(', ') + (spawnAnalysis.bestZone.nearbyBlocks.resolved.length > 3 ? '...' : '') : spawnAnalysis.bestZone.nearbyBlocks.selectors.join(', ') }}
                   </span>
-                  <span v-if="spawnAnalysis.bestZone.excludeNearbyBlocks?.selectors?.length || spawnAnalysis.bestZone.excludeNearbyBlocks?.length" class="px-2 py-0.5 rounded bg-red-500/20 text-red-300 text-xs font-medium">
-                    🚫 {{ tSnackUI('avoid.blocks') }}: {{ (spawnAnalysis.bestZone.excludeNearbyBlocks?.selectors || spawnAnalysis.bestZone.excludeNearbyBlocks || []).join(', ') }}
+                  <span v-if="spawnAnalysis.bestZone.excludeNearbyBlocks?.selectors?.length || (Array.isArray(spawnAnalysis.bestZone.excludeNearbyBlocks) && spawnAnalysis.bestZone.excludeNearbyBlocks.length)" class="px-2 py-0.5 rounded bg-red-500/20 text-red-300 text-xs font-medium">
+                    🚫 {{ tSnackUI('avoid.blocks') }}: {{ (spawnAnalysis.bestZone.excludeNearbyBlocks?.selectors || spawnAnalysis.bestZone.excludeNearbyBlocks).map(b => b.replace(/#\w+:/g, '')).join(', ') }}
                   </span>
                   <span v-if="spawnAnalysis.bestZone.lure" class="px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 text-xs">
                     🎣 {{ tSnackUI('lure') }} {{ spawnAnalysis.bestZone.lure.minLureLevel ?? 0 }}+
@@ -3013,6 +3081,57 @@ export default {
                 <p class="text-xs text-[var(--text-muted)]">
                   {{ tSnackUI('zone.only.others') }} <strong class="text-emerald-400">{{ spawnAnalysis.bestZone.competitorCount }}</strong> {{ tSnackUI('zone.others.in.zone') }} {{ spawnAnalysis.bestZone.rarity }} {{ tSnackUI('zone.in.this.zone') }}
                 </p>
+              </div>
+              
+              <!-- 🎯 Meilleur biome spécifique -->
+              <div v-if="spawnAnalysis.bestBiome && spawnAnalysis.biomeAnalysis.length > 1" class="mb-3 p-3 rounded-xl bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-indigo-500/10 border border-cyan-500/30">
+                <div class="flex items-center gap-2 mb-2 flex-wrap">
+                  <span class="text-lg">🎯</span>
+                  <span class="font-semibold text-[var(--text)]">{{ lang === 'fr' ? 'Meilleur biome spécifique' : 'Best specific biome' }}</span>
+                </div>
+                <div class="flex flex-wrap gap-2 items-center">
+                  <span class="px-3 py-1.5 rounded-lg bg-cyan-500/30 text-cyan-200 font-bold text-sm">
+                    🏔️ {{ spawnAnalysis.bestBiome.name }}
+                  </span>
+                  <span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 text-xs font-medium">
+                    {{ spawnAnalysis.bestBiome.baseChance }}% {{ lang === 'fr' ? 'chance' : 'chance' }}
+                  </span>
+                  <span class="px-2 py-1 rounded bg-gray-500/20 text-gray-300 text-xs">
+                    {{ spawnAnalysis.bestBiome.competitorCount }} {{ lang === 'fr' ? 'concurrents' : 'competitors' }}
+                  </span>
+                </div>
+                <p class="text-xs text-[var(--text-muted)] mt-2">
+                  💡 {{ lang === 'fr' ? 'Ce biome précis a le moins de concurrents parmi tous les biomes où ' + (snackMon?.nameFr || snackMon?.name) + ' peut apparaître.' : 'This specific biome has the least competitors among all biomes where ' + snackMon?.name + ' can spawn.' }}
+                </p>
+                
+                <!-- Liste des autres biomes si plusieurs -->
+                <details v-if="spawnAnalysis.biomeAnalysis.length > 2" class="mt-2">
+                  <summary class="text-xs text-cyan-400 cursor-pointer hover:underline">
+                    📊 {{ lang === 'fr' ? 'Voir tous les ' + spawnAnalysis.biomeAnalysis.length + ' biomes analysés...' : 'View all ' + spawnAnalysis.biomeAnalysis.length + ' analyzed biomes...' }}
+                  </summary>
+                  <div class="mt-2 grid gap-1">
+                    <div v-for="(biome, idx) in spawnAnalysis.biomeAnalysis" :key="biome.biome + '-' + idx" 
+                         class="flex items-center gap-2 p-2 rounded-lg text-xs"
+                         :class="idx === 0 ? 'bg-cyan-500/20 border border-cyan-500/30' : 'bg-[var(--surface)]'">
+                      <span v-if="idx === 0" class="text-cyan-300 font-bold">🥇</span>
+                      <span v-else-if="idx === 1" class="text-gray-400">🥈</span>
+                      <span v-else-if="idx === 2" class="text-orange-400">🥉</span>
+                      <span v-else class="text-[var(--text-muted)]">{{ idx + 1 }}.</span>
+                      <span class="font-medium text-[var(--text)]">{{ biome.name }}</span>
+                      <span class="px-1.5 py-0.5 rounded text-[10px]"
+                        :class="{
+                          'bg-yellow-500/20 text-yellow-400': biome.rarity === 'ultra-rare',
+                          'bg-orange-500/20 text-orange-400': biome.rarity === 'rare',
+                          'bg-green-500/20 text-green-400': biome.rarity === 'uncommon',
+                          'bg-gray-500/20 text-gray-400': biome.rarity === 'common'
+                        }">
+                        {{ biome.rarity }}
+                      </span>
+                      <span class="ml-auto text-[var(--text-muted)]">{{ biome.competitorCount }} concurrents</span>
+                      <span class="font-bold" :class="idx === 0 ? 'text-cyan-300' : 'text-[var(--text)]'">{{ biome.baseChance }}%</span>
+                    </div>
+                  </div>
+                </details>
               </div>
 
               <!-- Autres zones -->
@@ -3063,8 +3182,8 @@ export default {
                     <!-- Nouvelles conditions -->
                     <span v-for="s in (zone.structures || [])" :key="'struct-' + s" class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 text-xs">🏛️ {{ s }}</span>
                     <span v-if="zone.baseBlocks?.selectors?.length" class="px-2 py-0.5 rounded bg-orange-500/20 text-orange-300 text-xs">🧱 Base: {{ zone.baseBlocks.selectors.join(', ') }}</span>
-                    <span v-if="zone.nearbyBlocks?.selectors?.length" class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-xs">✅ {{ tSnackUI('proximity') }}: {{ zone.nearbyBlocks.selectors.join(', ') }}</span>
-                    <span v-if="zone.excludeNearbyBlocks?.selectors?.length || zone.excludeNearbyBlocks?.length" class="px-2 py-0.5 rounded bg-red-500/20 text-red-300 text-xs">🚫 {{ tSnackUI('avoid.blocks') }}: {{ (zone.excludeNearbyBlocks?.selectors || zone.excludeNearbyBlocks || []).join(', ') }}</span>
+                    <span v-if="zone.nearbyBlocks?.selectors?.length" class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-xs">✅ {{ tSnackUI('proximity') }}: {{ zone.nearbyBlocks.resolved?.length ? zone.nearbyBlocks.resolved.slice(0, 3).map(b => b.replace('cobblemon:', '').replace('minecraft:', '')).join(', ') + (zone.nearbyBlocks.resolved.length > 3 ? '...' : '') : zone.nearbyBlocks.selectors.join(', ') }}</span>
+                    <span v-if="zone.excludeNearbyBlocks?.selectors?.length || (Array.isArray(zone.excludeNearbyBlocks) && zone.excludeNearbyBlocks.length)" class="px-2 py-0.5 rounded bg-red-500/20 text-red-300 text-xs">🚫 {{ tSnackUI('avoid.blocks') }}: {{ (zone.excludeNearbyBlocks?.selectors || zone.excludeNearbyBlocks).map(b => b.replace(/#\w+:/g, '')).join(', ') }}</span>
                     <span v-if="zone.lure" class="px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 text-xs">🎣 {{ tSnackUI('lure') }} {{ zone.lure.minLureLevel ?? 0 }}+</span>
                     <span v-if="zone.keyItem" class="px-2 py-0.5 rounded bg-red-500/20 text-red-300 text-xs">🔑 {{ zone.keyItem }}</span>
                     <span v-if="zone.isSlimeChunk" class="px-2 py-0.5 rounded bg-lime-500/20 text-lime-300 text-xs">🟢 Chunk Slime</span>
@@ -3127,10 +3246,10 @@ export default {
                   🧱 {{ spawnAnalysis.bestZone.baseBlocks.selectors.join(', ') }}
                 </span>
                 <span v-if="spawnAnalysis.bestZone.nearbyBlocks?.selectors?.length" class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-xs">
-                  ✅ {{ tSnackUI('proximity') }}: {{ spawnAnalysis.bestZone.nearbyBlocks.selectors.join(', ') }}
+                  ✅ {{ tSnackUI('proximity') }}: {{ spawnAnalysis.bestZone.nearbyBlocks.resolved?.length ? spawnAnalysis.bestZone.nearbyBlocks.resolved.slice(0, 3).map(b => b.replace('cobblemon:', '').replace('minecraft:', '')).join(', ') + (spawnAnalysis.bestZone.nearbyBlocks.resolved.length > 3 ? '...' : '') : spawnAnalysis.bestZone.nearbyBlocks.selectors.join(', ') }}
                 </span>
-                <span v-if="spawnAnalysis.bestZone.excludeNearbyBlocks?.selectors?.length || spawnAnalysis.bestZone.excludeNearbyBlocks?.length" class="px-2 py-0.5 rounded bg-red-500/20 text-red-400 text-xs">
-                  🚫 {{ tSnackUI('avoid.blocks') }}: {{ (spawnAnalysis.bestZone.excludeNearbyBlocks?.selectors || spawnAnalysis.bestZone.excludeNearbyBlocks || []).join(', ') }}
+                <span v-if="spawnAnalysis.bestZone.excludeNearbyBlocks?.selectors?.length || (Array.isArray(spawnAnalysis.bestZone.excludeNearbyBlocks) && spawnAnalysis.bestZone.excludeNearbyBlocks.length)" class="px-2 py-0.5 rounded bg-red-500/20 text-red-400 text-xs">
+                  🚫 {{ tSnackUI('avoid.blocks') }}: {{ (spawnAnalysis.bestZone.excludeNearbyBlocks?.selectors || spawnAnalysis.bestZone.excludeNearbyBlocks).map(b => b.replace(/#\w+:/g, '')).join(', ') }}
                 </span>
                 <span v-if="spawnAnalysis.bestZone.lure" class="px-2 py-0.5 rounded bg-teal-500/20 text-teal-400 text-xs">
                   🎣 {{ tSnackUI('lure') }} {{ spawnAnalysis.bestZone.lure.minLureLevel ?? 0 }}+
