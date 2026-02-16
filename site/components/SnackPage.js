@@ -1015,8 +1015,8 @@ export default {
       
       // SKY - Ciel ouvert vs couvert
       const skyOptions = [
-        { value: true, label: '🌤️ Ciel ouvert' },
-        { value: false, label: '🏚️ Couvert/Souterrain' },
+        { value: true, label: lang.value === 'fr' ? '🌤️ Ciel ouvert' : '🌤️ Open sky' },
+        { value: false, label: lang.value === 'fr' ? '🏚️ Couvert/Souterrain' : '🏚️ Covered/Underground' },
       ];
       
       for (const opt of skyOptions) {
@@ -1041,7 +1041,7 @@ export default {
       
       // WEATHER - Météo
       const weatherOptions = [
-        { value: 'clear', label: '☀️ Temps clair' },
+        { value: 'clear', label: lang.value === 'fr' ? '☀️ Temps clair' : '☀️ Clear weather' },
         { value: 'rain', label: lang.value === 'fr' ? '🌧️ Pluie' : '🌧️ Rain' },
         { value: 'thunder', label: lang.value === 'fr' ? '⛈️ Orage' : '⛈️ Storm' },
       ];
@@ -1307,11 +1307,13 @@ export default {
         const improvement = worst.competitors - optimalConditions.time.competitors;
         if (improvement > 0) {
           optimalConditions.summary.push({
-            condition: 'Horaire',
+            condition: lang.value === 'fr' ? 'Horaire' : 'Time',
             best: optimalConditions.time.label,
             worst: worst.label,
             improvement: improvement,
-            tip: `Chassez ${optimalConditions.time.label} au lieu de ${worst.label} pour éviter ${improvement} concurrent${improvement > 1 ? 's' : ''}.`
+            tip: lang.value === 'fr' 
+              ? `Chassez ${optimalConditions.time.label} au lieu de ${worst.label} pour éviter ${improvement} concurrent${improvement > 1 ? 's' : ''}.`
+              : `Hunt during ${optimalConditions.time.label} instead of ${worst.label} to avoid ${improvement} competitor${improvement > 1 ? 's' : ''}.`
           });
         }
       }
@@ -1321,12 +1323,16 @@ export default {
         const worst = conditionAnalysis.sky[conditionAnalysis.sky.length - 1];
         const improvement = worst.competitors - optimalConditions.sky.competitors;
         if (improvement > 0) {
+          const bestLabel = optimalConditions.sky.label.split(' ').slice(1).join(' ');
+          const worstLabel = worst.label.split(' ').slice(1).join(' ');
           optimalConditions.summary.push({
-            condition: 'Ciel',
+            condition: lang.value === 'fr' ? 'Ciel' : 'Sky',
             best: optimalConditions.sky.label,
             worst: worst.label,
             improvement: improvement,
-            tip: `Cherchez en ${optimalConditions.sky.label.split(' ').slice(1).join(' ')} au lieu de ${worst.label.split(' ').slice(1).join(' ')} pour éviter ${improvement} concurrent${improvement > 1 ? 's' : ''}.`
+            tip: lang.value === 'fr' 
+              ? `Cherchez en ${bestLabel} au lieu de ${worstLabel} pour éviter ${improvement} concurrent${improvement > 1 ? 's' : ''}.`
+              : `Search in ${bestLabel} instead of ${worstLabel} to avoid ${improvement} competitor${improvement > 1 ? 's' : ''}.`
           });
         }
       }
@@ -1336,12 +1342,15 @@ export default {
         const worst = conditionAnalysis.weather[conditionAnalysis.weather.length - 1];
         const improvement = worst.competitors - optimalConditions.weather.competitors;
         if (improvement > 0) {
+          const weatherLabel = optimalConditions.weather.label.split(' ').slice(1).join(' ');
           optimalConditions.summary.push({
-            condition: 'Météo',
+            condition: lang.value === 'fr' ? 'Météo' : 'Weather',
             best: optimalConditions.weather.label,
             worst: worst.label,
             improvement: improvement,
-            tip: `Chassez par ${optimalConditions.weather.label.split(' ').slice(1).join(' ')} pour éviter ${improvement} concurrent${improvement > 1 ? 's' : ''}.`
+            tip: lang.value === 'fr' 
+              ? `Chassez par ${weatherLabel} pour éviter ${improvement} concurrent${improvement > 1 ? 's' : ''}.`
+              : `Hunt during ${weatherLabel} to avoid ${improvement} competitor${improvement > 1 ? 's' : ''}.`
           });
         }
       }
@@ -1351,16 +1360,27 @@ export default {
         const worst = conditionAnalysis.light[conditionAnalysis.light.length - 1];
         const improvement = worst.competitors - optimalConditions.light.competitors;
         if (improvement > 0) {
-          optimalConditions.summary.push({
-            condition: 'Lumière',
-            best: optimalConditions.light.label,
-            worst: worst.label,
-            improvement: improvement,
-            tip: optimalConditions.light.min === 0 
+          const lightLabel = optimalConditions.light.label.split(' ').slice(1).join(' ');
+          let tipText;
+          if (lang.value === 'fr') {
+            tipText = optimalConditions.light.min === 0 
               ? `Ne mettez PAS de torches ! La zone très sombre évite ${improvement} concurrent${improvement > 1 ? 's' : ''}.`
               : optimalConditions.light.min >= 12
               ? `Mettez beaucoup de lumière (torches/glowstone) pour éviter ${improvement} concurrent${improvement > 1 ? 's' : ''}.`
-              : `Gardez un éclairage ${optimalConditions.light.label.split(' ').slice(1).join(' ')} pour éviter ${improvement} concurrent${improvement > 1 ? 's' : ''}.`
+              : `Gardez un éclairage ${lightLabel} pour éviter ${improvement} concurrent${improvement > 1 ? 's' : ''}.`;
+          } else {
+            tipText = optimalConditions.light.min === 0 
+              ? `Do NOT place torches! The very dark area avoids ${improvement} competitor${improvement > 1 ? 's' : ''}.`
+              : optimalConditions.light.min >= 12
+              ? `Place lots of light (torches/glowstone) to avoid ${improvement} competitor${improvement > 1 ? 's' : ''}.`
+              : `Keep ${lightLabel} lighting to avoid ${improvement} competitor${improvement > 1 ? 's' : ''}.`;
+          }
+          optimalConditions.summary.push({
+            condition: lang.value === 'fr' ? 'Lumière' : 'Light',
+            best: optimalConditions.light.label,
+            worst: worst.label,
+            improvement: improvement,
+            tip: tipText
           });
         }
       }
@@ -1370,12 +1390,16 @@ export default {
         const worst = conditionAnalysis.moonPhase[conditionAnalysis.moonPhase.length - 1];
         const improvement = worst.competitors - optimalConditions.moonPhase.competitors;
         if (improvement > 0) {
+          const bestMoon = optimalConditions.moonPhase.label.split(' ').slice(1).join(' ');
+          const worstMoon = worst.label.split(' ').slice(1).join(' ');
           optimalConditions.summary.push({
-            condition: 'Phase lunaire',
+            condition: lang.value === 'fr' ? 'Phase lunaire' : 'Moon phase',
             best: optimalConditions.moonPhase.label,
             worst: worst.label,
             improvement: improvement,
-            tip: `Attendez la ${optimalConditions.moonPhase.label.split(' ').slice(1).join(' ')} au lieu de ${worst.label.split(' ').slice(1).join(' ')} pour éviter ${improvement} concurrent${improvement > 1 ? 's' : ''}.`
+            tip: lang.value === 'fr' 
+              ? `Attendez la ${bestMoon} au lieu de ${worstMoon} pour éviter ${improvement} concurrent${improvement > 1 ? 's' : ''}.`
+              : `Wait for the ${bestMoon} instead of ${worstMoon} to avoid ${improvement} competitor${improvement > 1 ? 's' : ''}.`
           });
         }
       }
@@ -1386,11 +1410,13 @@ export default {
         const improvement = worst.competitors - optimalConditions.yLevel.competitors;
         if (improvement > 0) {
           optimalConditions.summary.push({
-            condition: 'Altitude Y',
+            condition: lang.value === 'fr' ? 'Altitude Y' : 'Y Altitude',
             best: `Y ${optimalConditions.yLevel.min} → ${optimalConditions.yLevel.max}`,
             worst: `Y ${worst.min} → ${worst.max}`,
             improvement: improvement,
-            tip: `Construisez votre plateforme entre Y=${optimalConditions.yLevel.min} et Y=${optimalConditions.yLevel.max} pour éviter ${improvement} concurrent${improvement > 1 ? 's' : ''}. Évitez Y=${worst.min}-${worst.max}.`
+            tip: lang.value === 'fr' 
+              ? `Construisez votre plateforme entre Y=${optimalConditions.yLevel.min} et Y=${optimalConditions.yLevel.max} pour éviter ${improvement} concurrent${improvement > 1 ? 's' : ''}. Évitez Y=${worst.min}-${worst.max}.`
+              : `Build your platform between Y=${optimalConditions.yLevel.min} and Y=${optimalConditions.yLevel.max} to avoid ${improvement} competitor${improvement > 1 ? 's' : ''}. Avoid Y=${worst.min}-${worst.max}.`
           });
         }
       }
@@ -2313,6 +2339,37 @@ export default {
         }
       }
 
+      // Filtrer les conflits: si un bloc est à la fois requis et à éviter, 
+      // on utilise uniquement les données de la meilleure zone
+      const nearbyTags = platformGuide.blocks.nearby.map(b => b.tag);
+      const conflictingBlocks = platformGuide.blocks.avoid.filter(b => nearbyTags.includes(b));
+      
+      if (conflictingBlocks.length > 0) {
+        // Il y a un conflit - on garde uniquement les données de la meilleure zone
+        // (la première zone dans zoneAnalysis est celle avec le moins de concurrents)
+        const bestZone = zoneAnalysis[0];
+        
+        // Reconstruire nearby et avoid à partir de la meilleure zone seulement
+        platformGuide.blocks.nearby = [];
+        platformGuide.blocks.avoid = [];
+        
+        if (bestZone.nearbyBlocks?.selectors?.length) {
+          for (const b of bestZone.nearbyBlocks.selectors) {
+            platformGuide.blocks.nearby.push({ 
+              tag: b, 
+              resolved: bestZone.nearbyBlocks.resolved || [],
+              zone: bestZone.name 
+            });
+          }
+        }
+        if (bestZone.excludeNearbyBlocks?.selectors?.length || bestZone.excludeNearbyBlocks?.length) {
+          const excludeList = bestZone.excludeNearbyBlocks.selectors || bestZone.excludeNearbyBlocks;
+          for (const b of excludeList) {
+            platformGuide.blocks.avoid.push(b);
+          }
+        }
+      }
+
       // Générer les conseils de construction
       if (platformGuide.blocks.base.length > 0) {
         platformGuide.tips.push({
@@ -3020,7 +3077,7 @@ export default {
             <div v-else-if="spawnAnalysis.bestZone" class="mb-4 p-3 rounded-xl bg-[var(--surface-hover)]">
               <div class="flex items-center gap-2 mb-2">
                 <span>📍</span>
-                <span class="font-medium text-[var(--text)]">Zone de Spawn</span>
+                <span class="font-medium text-[var(--text)]">{{ lang === 'fr' ? 'Zone de Spawn' : 'Spawn Zone' }}</span>
               </div>
               <div class="flex flex-wrap gap-2 mb-2">
                 <span class="px-2 py-1 rounded-lg bg-emerald-500/20 text-emerald-400 text-sm">
@@ -3086,8 +3143,8 @@ export default {
                 </span>
               </div>
               <p class="text-xs text-[var(--text-muted)]">
-                <strong class="text-[var(--text)]">{{ spawnAnalysis.bestZone.competitorCount }}</strong> autres {{ spawnAnalysis.bestZone.rarity }} dans cette zone
-                ({{ spawnAnalysis.bestZone.baseChance }}% chance de base)
+                <strong class="text-[var(--text)]">{{ spawnAnalysis.bestZone.competitorCount }}</strong> {{ lang === 'fr' ? 'autres' : 'other' }} {{ spawnAnalysis.bestZone.rarity }} {{ lang === 'fr' ? 'dans cette zone' : 'in this zone' }}
+                ({{ spawnAnalysis.bestZone.baseChance }}% {{ lang === 'fr' ? 'chance de base' : 'base chance' }})
               </p>
             </div>
 
@@ -3182,23 +3239,23 @@ export default {
                         : 'text-amber-300/80 bg-amber-500/10 border-amber-500/20'">
                       <!-- Avertissement si ciel ouvert + faible lumière -->
                       <template v-if="spawnAnalysis.optimalConditions.sky?.value === true && spawnAnalysis.optimalConditions.light.max <= 7">
-                        ⚠️ <strong>Ciel ouvert + faible lumière</strong> = chassez <strong>la nuit</strong> sans torches ! 
-                        (Lumière naturelle nocturne: 4-8 selon la lune)
+                        ⚠️ <strong>{{ lang === 'fr' ? 'Ciel ouvert + faible lumière' : 'Open sky + low light' }}</strong> = {{ lang === 'fr' ? 'chassez' : 'hunt at' }} <strong>{{ lang === 'fr' ? 'la nuit' : 'night' }}</strong> {{ lang === 'fr' ? 'sans torches !' : 'without torches!' }} 
+                        ({{ lang === 'fr' ? 'Lumière naturelle nocturne: 4-8 selon la lune' : 'Natural night light: 4-8 depending on moon' }})
                       </template>
                       <!-- Avertissement si ciel ouvert + lumière élevée requise -->
                       <template v-else-if="spawnAnalysis.optimalConditions.sky?.value === true && spawnAnalysis.optimalConditions.light.min >= 12">
-                        ☀️ <strong>Ciel ouvert + lumière forte</strong> = chassez <strong>en journée</strong> ! Pas besoin de torches.
+                        ☀️ <strong>{{ lang === 'fr' ? 'Ciel ouvert + lumière forte' : 'Open sky + bright light' }}</strong> = {{ lang === 'fr' ? 'chassez' : 'hunt during' }} <strong>{{ lang === 'fr' ? 'en journée' : 'daytime' }}</strong>! {{ lang === 'fr' ? 'Pas besoin de torches.' : 'No torches needed.' }}
                       </template>
                       <!-- Souterrain/couvert -->
                       <template v-else-if="spawnAnalysis.optimalConditions.sky?.value === false">
                         <template v-if="spawnAnalysis.optimalConditions.light.min === 0">
-                          🌑 <strong>Zone souterraine sans torches</strong> - gardez la zone dans le noir complet !
+                          🌑 <strong>{{ lang === 'fr' ? 'Zone souterraine sans torches' : 'Underground zone without torches' }}</strong> - {{ lang === 'fr' ? 'gardez la zone dans le noir complet !' : 'keep the area in complete darkness!' }}
                         </template>
                         <template v-else-if="spawnAnalysis.optimalConditions.light.max <= 7">
-                          🕯️ <strong>Zone souterraine peu éclairée</strong> - quelques torches espacées suffisent.
+                          🕯️ <strong>{{ lang === 'fr' ? 'Zone souterraine peu éclairée' : 'Dimly lit underground zone' }}</strong> - {{ lang === 'fr' ? 'quelques torches espacées suffisent.' : 'a few spaced torches are enough.' }}
                         </template>
                         <template v-else>
-                          🔦 <strong>Zone souterraine bien éclairée</strong> - mettez des torches/glowstone partout !
+                          🔦 <strong>{{ lang === 'fr' ? 'Zone souterraine bien éclairée' : 'Well-lit underground zone' }}</strong> - {{ lang === 'fr' ? 'mettez des torches/glowstone partout !' : 'place torches/glowstone everywhere!' }}
                         </template>
                       </template>
                       <!-- Conseil par défaut -->
