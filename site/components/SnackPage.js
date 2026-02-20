@@ -931,10 +931,27 @@ export default {
         });
       }
       
+      // Détecter les zones avec des conditions impossibles/contradictoires
+      for (const zone of zoneAnalysis) {
+        zone.hasImpossibleConditions = false;
+        zone.impossibleReason = null;
+        
+        // Contradiction: canSeeSky: false + skyLight > 0 est impossible
+        // Si tu ne vois pas le ciel, skyLight sera toujours 0
+        if (zone.sky?.canSeeSky === false && 
+            zone.sky?.minSkyLight !== undefined && 
+            zone.sky.minSkyLight > 0) {
+          zone.hasImpossibleConditions = true;
+          zone.impossibleReason = 'canSeeSky=false + skyLight>0';
+        }
+      }
+      
       // Trier par base chance (meilleur en premier = moins de compétition)
       zoneAnalysis.sort((a, b) => b.baseChance - a.baseChance);
       
-      const bestZone = zoneAnalysis.length > 0 ? zoneAnalysis[0] : null;
+      // Choisir la meilleure zone SANS conditions impossibles
+      const validZones = zoneAnalysis.filter(z => !z.hasImpossibleConditions);
+      const bestZone = validZones.length > 0 ? validZones[0] : (zoneAnalysis.length > 0 ? zoneAnalysis[0] : null);
 
       // ========== ANALYSE PAR BIOME INDIVIDUEL ==========
       // Analyser chaque biome séparément pour trouver le meilleur biome spécifique
@@ -1009,6 +1026,10 @@ export default {
             sky: spawn.sky,
             nearbyBlocks: spawn.nearbyBlocks,
             excludeNearbyBlocks: spawn.excludeNearbyBlocks,
+            // Détecter conditions impossibles
+            hasImpossibleConditions: spawn.sky?.canSeeSky === false && 
+              spawn.sky?.minSkyLight !== undefined && 
+              spawn.sky.minSkyLight > 0,
           });
         }
       }
@@ -1016,7 +1037,9 @@ export default {
       // Trier par chance (meilleur en premier)
       biomeAnalysis.sort((a, b) => b.baseChance - a.baseChance);
       
-      const bestBiome = biomeAnalysis.length > 0 ? biomeAnalysis[0] : null;
+      // Choisir le meilleur biome SANS conditions impossibles
+      const validBiomes = biomeAnalysis.filter(b => !b.hasImpossibleConditions);
+      const bestBiome = validBiomes.length > 0 ? validBiomes[0] : (biomeAnalysis.length > 0 ? biomeAnalysis[0] : null);
 
       // ========== ANALYSE DES CONDITIONS OPTIMALES ==========
       // Analyser chaque condition pour trouver la configuration qui minimise la concurrence
@@ -2303,7 +2326,7 @@ export default {
 
       // Analyser toutes les zones pour compiler les requirements
       for (const zone of zoneAnalysis) {
-        // Structures
+        // Structures - agrégé de toutes les zones car c'est informatif
         if (zone.structures?.length) {
           for (const s of zone.structures) {
             if (!platformGuide.location.structures.includes(s)) {
@@ -2311,7 +2334,7 @@ export default {
             }
           }
         }
-        // Dimensions
+        // Dimensions - agrégé de toutes les zones
         if (zone.dimensions?.length) {
           for (const d of zone.dimensions) {
             if (!platformGuide.location.dimensions.includes(d)) {
@@ -2319,7 +2342,7 @@ export default {
             }
           }
         }
-        // Y Level
+        // Y Level - on prend la plage la plus restrictive
         if (zone.yLevel) {
           if (!platformGuide.location.yLevel) {
             platformGuide.location.yLevel = { minY: zone.yLevel.minY, maxY: zone.yLevel.maxY };
@@ -2332,7 +2355,7 @@ export default {
             }
           }
         }
-        // Base blocks
+        // Base blocks - agrégé car informatif
         if (zone.baseBlocks?.selectors?.length) {
           for (const b of zone.baseBlocks.selectors) {
             if (!platformGuide.blocks.base.some(x => x.tag === b)) {
@@ -2344,61 +2367,63 @@ export default {
             }
           }
         }
-        // NOTE: Nearby blocks et Exclude nearby blocks sont gérés après la boucle
-        // en utilisant UNIQUEMENT bestZone pour éviter les contradictions entre zones
-        
+      }
+      
+      // ========== CONDITIONS ENVIRONNEMENTALES: UNIQUEMENT DE LA BESTZONE ==========
+      // Pour éviter les contradictions (ex: canSeeSky true/false mélangés)
+      if (bestZone) {
         // Sky conditions
-        if (zone.sky?.canSeeSky !== undefined && platformGuide.environment.canSeeSky === null) {
-          platformGuide.environment.canSeeSky = zone.sky.canSeeSky;
+        if (bestZone.sky?.canSeeSky !== undefined) {
+          platformGuide.environment.canSeeSky = bestZone.sky.canSeeSky;
         }
-        if (zone.sky?.minSkyLight !== undefined || zone.sky?.maxSkyLight !== undefined) {
+        if (bestZone.sky?.minSkyLight !== undefined || bestZone.sky?.maxSkyLight !== undefined) {
           platformGuide.environment.skyLight = {
-            min: zone.sky.minSkyLight ?? 0,
-            max: zone.sky.maxSkyLight ?? 15,
+            min: bestZone.sky.minSkyLight ?? 0,
+            max: bestZone.sky.maxSkyLight ?? 15,
           };
         }
         // Block light
-        if (zone.light) {
+        if (bestZone.light) {
           platformGuide.environment.blockLight = {
-            min: zone.light.minLight ?? 0,
-            max: zone.light.maxLight ?? 15,
+            min: bestZone.light.minLight ?? 0,
+            max: bestZone.light.maxLight ?? 15,
           };
         }
         // Weather
-        if (zone.weather) {
-          if (zone.weather.isThundering) platformGuide.environment.weather = 'thunder';
-          else if (zone.weather.isRaining) platformGuide.environment.weather = 'rain';
+        if (bestZone.weather) {
+          if (bestZone.weather.isThundering) platformGuide.environment.weather = 'thunder';
+          else if (bestZone.weather.isRaining) platformGuide.environment.weather = 'rain';
         }
         // Moon phase
-        if (zone.moonPhase !== undefined) {
-          platformGuide.environment.moonPhase = zone.moonPhase;
+        if (bestZone.moonPhase !== undefined) {
+          platformGuide.environment.moonPhase = bestZone.moonPhase;
         }
         // Time
-        if (zone.times?.length) {
-          platformGuide.environment.time = zone.times;
+        if (bestZone.times?.length) {
+          platformGuide.environment.time = bestZone.times;
         }
         // Fluid
-        if (zone.fluid) {
-          platformGuide.environment.fluid = zone.fluid;
+        if (bestZone.fluid) {
+          platformGuide.environment.fluid = bestZone.fluid;
         }
         // Lure
-        if (zone.lure) {
-          platformGuide.special.lure = zone.lure;
+        if (bestZone.lure) {
+          platformGuide.special.lure = bestZone.lure;
         }
         // Rod type
-        if (zone.rodType) {
-          platformGuide.special.rodType = zone.rodType;
+        if (bestZone.rodType) {
+          platformGuide.special.rodType = bestZone.rodType;
         }
         // Bait
-        if (zone.bait) {
-          platformGuide.special.bait = zone.bait;
+        if (bestZone.bait) {
+          platformGuide.special.bait = bestZone.bait;
         }
         // Key item
-        if (zone.keyItem) {
-          platformGuide.special.keyItem = zone.keyItem;
+        if (bestZone.keyItem) {
+          platformGuide.special.keyItem = bestZone.keyItem;
         }
         // Slime chunk
-        if (zone.isSlimeChunk) {
+        if (bestZone.isSlimeChunk) {
           platformGuide.special.isSlimeChunk = true;
         }
       }
@@ -2595,42 +2620,55 @@ export default {
       const optimalCeilingHeight = monTargetHeight;
       const competitorsBlockedByCeiling = competitorsNeedingMoreSpace;
       
-      // Toujours afficher le conseil de hauteur
-      if (monTargetHeight <= 1) {
-        // Peut spawn dans 1 bloc de haut - AVANTAGE!
-        platformGuide.tips.push({
-          icon: '📦',
-          title: lang.value === 'fr' ? 'Plafond optimal: 1 bloc' : 'Optimal ceiling: 1 block',
-          text: competitorsBlockedByCeiling > 0 
-            ? (lang.value === 'fr' 
-              ? `${mon.name} peut spawner sous 1 bloc! Construisez avec un plafond à 1 bloc pour BLOQUER ${competitorsBlockedByCeiling} concurrent${competitorsBlockedByCeiling > 1 ? 's' : ''} plus grands.`
-              : `${mon.name} can spawn under 1 block! Build with a 1-block ceiling to BLOCK ${competitorsBlockedByCeiling} larger competitor${competitorsBlockedByCeiling > 1 ? 's' : ''}.`)
-            : (lang.value === 'fr' 
-              ? `${mon.name} peut spawner sous 1 bloc. Tous les concurrents ont aussi une petite hitbox.`
-              : `${mon.name} can spawn under 1 block. All competitors also have a small hitbox.`),
-          priority: competitorsBlockedByCeiling > 0 ? 'important' : 'info',
-        });
-      } else if (monTargetHeight === 2) {
-        platformGuide.tips.push({
-          icon: '📦',
-          title: lang.value === 'fr' ? 'Plafond optimal: 2 blocs' : 'Optimal ceiling: 2 blocks',
-          text: competitorsBlockedByCeiling > 0 
-            ? (lang.value === 'fr' 
-              ? `${mon.name} a besoin de 2 blocs. Un plafond à 2 blocs bloquerait ${competitorsBlockedByCeiling} concurrent${competitorsBlockedByCeiling > 1 ? 's' : ''} plus grands.`
-              : `${mon.name} needs 2 blocks. A 2-block ceiling would block ${competitorsBlockedByCeiling} larger competitor${competitorsBlockedByCeiling > 1 ? 's' : ''}.`)
-            : (lang.value === 'fr' 
-              ? `${mon.name} a besoin de 2 blocs. Peu de concurrents seront bloqués par cette hauteur.`
-              : `${mon.name} needs 2 blocks. Few competitors will be blocked by this height.`),
-          priority: competitorsBlockedByCeiling > 3 ? 'important' : 'info',
-        });
+      // Afficher le conseil de hauteur SEULEMENT si le Pokémon n'a pas besoin de voir le ciel
+      // Si canSeeSky === true, un plafond est impossible
+      if (platformGuide.environment.canSeeSky !== true) {
+        if (monTargetHeight <= 1) {
+          // Peut spawn dans 1 bloc de haut - AVANTAGE!
+          platformGuide.tips.push({
+            icon: '📦',
+            title: lang.value === 'fr' ? 'Plafond optimal: 1 bloc' : 'Optimal ceiling: 1 block',
+            text: competitorsBlockedByCeiling > 0 
+              ? (lang.value === 'fr' 
+                ? `${mon.name} peut spawner sous 1 bloc! Construisez avec un plafond à 1 bloc pour BLOQUER ${competitorsBlockedByCeiling} concurrent${competitorsBlockedByCeiling > 1 ? 's' : ''} plus grands.`
+                : `${mon.name} can spawn under 1 block! Build with a 1-block ceiling to BLOCK ${competitorsBlockedByCeiling} larger competitor${competitorsBlockedByCeiling > 1 ? 's' : ''}.`)
+              : (lang.value === 'fr' 
+                ? `${mon.name} peut spawner sous 1 bloc. Tous les concurrents ont aussi une petite hitbox.`
+                : `${mon.name} can spawn under 1 block. All competitors also have a small hitbox.`),
+            priority: competitorsBlockedByCeiling > 0 ? 'important' : 'info',
+          });
+        } else if (monTargetHeight === 2) {
+          platformGuide.tips.push({
+            icon: '📦',
+            title: lang.value === 'fr' ? 'Plafond optimal: 2 blocs' : 'Optimal ceiling: 2 blocks',
+            text: competitorsBlockedByCeiling > 0 
+              ? (lang.value === 'fr' 
+                ? `${mon.name} a besoin de 2 blocs. Un plafond à 2 blocs bloquerait ${competitorsBlockedByCeiling} concurrent${competitorsBlockedByCeiling > 1 ? 's' : ''} plus grands.`
+                : `${mon.name} needs 2 blocks. A 2-block ceiling would block ${competitorsBlockedByCeiling} larger competitor${competitorsBlockedByCeiling > 1 ? 's' : ''}.`)
+              : (lang.value === 'fr' 
+                ? `${mon.name} a besoin de 2 blocs. Peu de concurrents seront bloqués par cette hauteur.`
+                : `${mon.name} needs 2 blocks. Few competitors will be blocked by this height.`),
+            priority: competitorsBlockedByCeiling > 3 ? 'important' : 'info',
+          });
+        } else {
+          platformGuide.tips.push({
+            icon: '📦',
+            title: lang.value === 'fr' ? `Plafond optimal: ${monTargetHeight} blocs` : `Optimal ceiling: ${monTargetHeight} blocks`,
+            text: lang.value === 'fr' 
+              ? `${mon.name} a besoin de ${monTargetHeight} blocs minimum. ${competitorsBlockedByCeiling > 0 ? `Un plafond bloquerait ${competitorsBlockedByCeiling} concurrent${competitorsBlockedByCeiling > 1 ? 's' : ''}.` : 'Un plafond ne filtrera pas de concurrents.'}`
+              : `${mon.name} needs ${monTargetHeight} blocks minimum. ${competitorsBlockedByCeiling > 0 ? `A ceiling would block ${competitorsBlockedByCeiling} competitor${competitorsBlockedByCeiling > 1 ? 's' : ''}.` : 'A ceiling won\'t filter out competitors.'}`,
+            priority: competitorsBlockedByCeiling > 5 ? 'important' : 'info',
+          });
+        }
       } else {
+        // Le Pokémon doit voir le ciel - pas de plafond possible
         platformGuide.tips.push({
-          icon: '📦',
-          title: lang.value === 'fr' ? `Plafond optimal: ${monTargetHeight} blocs` : `Optimal ceiling: ${monTargetHeight} blocks`,
+          icon: '🚫',
+          title: lang.value === 'fr' ? 'Pas de plafond' : 'No ceiling',
           text: lang.value === 'fr' 
-            ? `${mon.name} a besoin de ${monTargetHeight} blocs minimum. ${competitorsBlockedByCeiling > 0 ? `Un plafond bloquerait ${competitorsBlockedByCeiling} concurrent${competitorsBlockedByCeiling > 1 ? 's' : ''}.` : 'Un plafond ne filtrera pas de concurrents.'}`
-            : `${mon.name} needs ${monTargetHeight} blocks minimum. ${competitorsBlockedByCeiling > 0 ? `A ceiling would block ${competitorsBlockedByCeiling} competitor${competitorsBlockedByCeiling > 1 ? 's' : ''}.` : 'A ceiling won\'t filter out competitors.'}`,
-          priority: competitorsBlockedByCeiling > 5 ? 'important' : 'info',
+            ? `${mon.name} doit voir le ciel - pas de plafond possible. Le filtrage par hauteur ne s'applique pas.`
+            : `${mon.name} must see the sky - no ceiling possible. Height filtering does not apply.`,
+          priority: 'info',
         });
       }
       
@@ -3101,7 +3139,7 @@ export default {
                   </span>
                 </div>
                 <p class="text-xs text-[var(--text-muted)] mt-2">
-                  💡 {{ lang === 'fr' ? 'Ce biome précis a le moins de concurrents parmi tous les biomes où ' + (snackMon?.nameFr || snackMon?.name) + ' peut apparaître.' : 'This specific biome has the least competitors among all biomes where ' + snackMon?.name + ' can spawn.' }}
+                  💡 {{ lang === 'fr' ? 'Ce biome précis a le moins de concurrents parmi tous les biomes où ' + (fullPokemonData?.nameFr || fullPokemonData?.name || 'ce Pokémon') + ' peut apparaître.' : 'This specific biome has the least competitors among all biomes where ' + (fullPokemonData?.name || 'this Pokémon') + ' can spawn.' }}
                 </p>
                 
                 <!-- Liste des autres biomes si plusieurs -->
@@ -3127,7 +3165,7 @@ export default {
                         }">
                         {{ biome.rarity }}
                       </span>
-                      <span class="ml-auto text-[var(--text-muted)]">{{ biome.competitorCount }} concurrents</span>
+                      <span class="ml-auto text-[var(--text-muted)]">{{ biome.competitorCount }} {{ lang === 'fr' ? 'concurrents' : 'competitors' }}</span>
                       <span class="font-bold" :class="idx === 0 ? 'text-cyan-300' : 'text-[var(--text)]'">{{ biome.baseChance }}%</span>
                     </div>
                   </div>
@@ -3139,12 +3177,13 @@ export default {
                 <details 
                   v-for="(zone, idx) in spawnAnalysis.zoneAnalysis.slice(1)" 
                   :key="idx"
-                  class="p-3 rounded-xl bg-[var(--surface)] border border-[var(--border)] group"
+                  class="p-3 rounded-xl border group"
+                  :class="zone.hasImpossibleConditions ? 'bg-red-500/5 border-red-500/30' : 'bg-[var(--surface)] border-[var(--border)]'"
                 >
                   <summary class="flex items-center justify-between flex-wrap gap-2 cursor-pointer list-none">
                     <div class="flex items-center gap-2 flex-wrap">
-                      <span class="text-lg">🌍</span>
-                      <span class="font-medium text-[var(--text)] text-sm">{{ zone.name }}</span>
+                      <span class="text-lg">{{ zone.hasImpossibleConditions ? '⚠️' : '🌍' }}</span>
+                      <span class="font-medium text-sm" :class="zone.hasImpossibleConditions ? 'text-red-400' : 'text-[var(--text)]'">{{ zone.name }}</span>
                       <span class="px-2 py-0.5 rounded text-xs"
                         :class="{
                           'bg-yellow-500/20 text-yellow-400': zone.rarity === 'ultra-rare',
@@ -3153,6 +3192,9 @@ export default {
                           'bg-gray-500/20 text-gray-400': zone.rarity === 'common'
                         }">
                         {{ zone.rarity }}
+                      </span>
+                      <span v-if="zone.hasImpossibleConditions" class="px-2 py-0.5 rounded bg-red-500/20 text-red-400 text-xs font-medium">
+                        {{ lang === 'fr' ? '⛔ Impossible' : '⛔ Impossible' }}
                       </span>
                     </div>
                     <div class="flex items-center gap-3 text-xs">
@@ -3783,8 +3825,8 @@ export default {
                       </div>
                     </div>
                     
-                    <!-- 📦 AVANTAGE HITBOX: Pokémon bloqués par le plafond -->
-                    <div v-if="eff.blockedByHitboxCount > 0" class="text-xs mb-2 p-2 rounded border bg-purple-500/15 border-purple-500/40">
+                    <!-- 📦 AVANTAGE HITBOX: Pokémon bloqués par le plafond (pas de plafond possible si canSeeSky) -->
+                    <div v-if="eff.blockedByHitboxCount > 0 && spawnAnalysis.platformGuide?.environment?.canSeeSky !== true" class="text-xs mb-2 p-2 rounded border bg-purple-500/15 border-purple-500/40">
                       <div class="flex items-start gap-2">
                         <span class="text-lg">📦</span>
                         <div class="flex-1">
@@ -3798,7 +3840,7 @@ export default {
                           <!-- Détail des bloqués par rareté -->
                           <details class="mt-1">
                             <summary class="cursor-pointer hover:text-purple-300 text-purple-400/80">
-                              Voir les {{ eff.blockedByHitboxCount }} bloqués...
+                              {{ lang === 'fr' ? 'Voir les ' + eff.blockedByHitboxCount + ' bloqués...' : 'View ' + eff.blockedByHitboxCount + ' blocked...' }}
                             </summary>
                             <div class="mt-2 space-y-1">
                               <div v-for="(pokemons, rarity) in eff.blockedByHitboxByRarity" :key="rarity" class="flex items-center gap-2">
@@ -3811,13 +3853,13 @@ export default {
                                   }">
                                   {{ rarity }}
                                 </span>
-                                <span class="text-purple-300/60">{{ pokemons.length }} bloqués</span>
+                                <span class="text-purple-300/60">{{ pokemons.length }} {{ lang === 'fr' ? 'bloqués' : 'blocked' }}</span>
                                 <div class="flex gap-0.5 flex-wrap">
                                   <template v-for="p in pokemons.slice(0, 8)" :key="p?.id || Math.random()">
                                     <span class="relative opacity-50 grayscale">
                                       <img v-if="p && sprite(p.id)" 
                                         :src="sprite(p.id)" 
-                                        :title="'🚫 ' + (p.nameFr || p.name) + ' (hitbox: ' + p.hitboxHeight + ' blocs)'"
+                                        :title="'🚫 ' + (p.nameFr || p.name) + ' (hitbox: ' + p.hitboxHeight + (lang === 'fr' ? ' blocs' : ' blocks') + ')'"
                                         class="w-4 h-4 object-contain" />
                                       <span class="absolute -bottom-0.5 -right-0.5 text-[8px]">🚫</span>
                                     </span>
@@ -3845,7 +3887,7 @@ export default {
                           <!-- Détail des bloqués par conditions -->
                           <details class="mt-1">
                             <summary class="cursor-pointer hover:text-cyan-300 text-cyan-400/80">
-                              Voir les {{ eff.blockedByConditionsCount }} bloqués...
+                              {{ lang === 'fr' ? 'Voir les ' + eff.blockedByConditionsCount + ' bloqués...' : 'View ' + eff.blockedByConditionsCount + ' blocked...' }}
                             </summary>
                             <div class="mt-2 space-y-1">
                               <div v-for="(pokemons, rarity) in eff.blockedByConditionsByRarity" :key="rarity" class="flex items-center gap-2">
@@ -3858,13 +3900,13 @@ export default {
                                   }">
                                   {{ rarity }}
                                 </span>
-                                <span class="text-cyan-300/60">{{ pokemons.length }} bloqués</span>
+                                <span class="text-cyan-300/60">{{ pokemons.length }} {{ lang === 'fr' ? 'bloqués' : 'blocked' }}</span>
                                 <div class="flex gap-0.5 flex-wrap">
                                   <template v-for="p in pokemons.slice(0, 8)" :key="p?.id || Math.random()">
                                     <span class="relative opacity-50 grayscale">
                                       <img v-if="p && sprite(p.id)" 
                                         :src="sprite(p.id)" 
-                                        :title="'🚫 ' + (p.nameFr || p.name) + (p.blockedBySky ? ' (ciel incompatible)' : '') + (p.blockedByY ? ' (altitude incompatible)' : '')"
+                                        :title="'🚫 ' + (p.nameFr || p.name) + (p.blockedBySky ? (lang === 'fr' ? ' (ciel incompatible)' : ' (incompatible sky)') : '') + (p.blockedByY ? (lang === 'fr' ? ' (altitude incompatible)' : ' (incompatible altitude)') : '')"
                                         class="w-4 h-4 object-contain" />
                                       <span class="absolute -bottom-0.5 -right-0.5 text-[8px]">🚫</span>
                                     </span>
@@ -3887,8 +3929,8 @@ export default {
                         <span>{{ eff.allRaritiesCountEffective <= 5 ? '✨' : eff.allRaritiesCountEffective <= 15 ? '⚠️' : '🔥' }}</span>
                         <strong>{{ eff.allRaritiesCountEffective }} {{ lang === 'fr' ? 'Pokémon attirés' : 'Pokémon attracted' }}</strong>
                         <span class="text-[var(--text-muted)]">→ {{ lang === 'fr' ? 'consomment le PokéSnack' : 'consume the PokéSnack' }}</span>
-                        <span v-if="eff.blockedByHitboxCount > 0 || eff.blockedByConditionsCount > 0" class="text-purple-400">
-                          ({{ eff.blockedByHitboxCount + eff.blockedByConditionsCount }} {{ lang === 'fr' ? 'bloqués' : 'blocked' }}<span v-if="eff.blockedByHitboxCount > 0">: {{ eff.blockedByHitboxCount }} {{ lang === 'fr' ? 'plafond' : 'ceiling' }}</span><span v-if="eff.blockedByConditionsCount > 0">{{ eff.blockedByHitboxCount > 0 ? ', ' : ': ' }}{{ eff.blockedByConditionsCount }} conditions</span>)
+                        <span v-if="(eff.blockedByHitboxCount > 0 && spawnAnalysis.platformGuide?.environment?.canSeeSky !== true) || eff.blockedByConditionsCount > 0" class="text-purple-400">
+                          ({{ (spawnAnalysis.platformGuide?.environment?.canSeeSky === true ? 0 : eff.blockedByHitboxCount) + eff.blockedByConditionsCount }} {{ lang === 'fr' ? 'bloqués' : 'blocked' }}<span v-if="eff.blockedByHitboxCount > 0 && spawnAnalysis.platformGuide?.environment?.canSeeSky !== true">: {{ eff.blockedByHitboxCount }} {{ lang === 'fr' ? 'plafond' : 'ceiling' }}</span><span v-if="eff.blockedByConditionsCount > 0">{{ (eff.blockedByHitboxCount > 0 && spawnAnalysis.platformGuide?.environment?.canSeeSky !== true) ? ', ' : ': ' }}{{ eff.blockedByConditionsCount }} conditions</span>)
                         </span>
                       </div>
                       <!-- Légende -->
